@@ -42,6 +42,12 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				IntermediateCertificates: pulumi.Any(certificateIntermediateCertificates),
+//				Locks: apigateway.CertificateLockArray{
+//					&apigateway.CertificateLockArgs{
+//						Type:    pulumi.Any(certificateLocksType),
+//						Message: pulumi.Any(certificateLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -76,8 +82,9 @@ type Certificate struct {
 	IntermediateCertificates pulumi.StringOutput `pulumi:"intermediateCertificates"`
 	IsLockOverride           pulumi.BoolOutput   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput        `pulumi:"lifecycleDetails"`
-	Locks            CertificateLockArrayOutput `pulumi:"locks"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks CertificateLockArrayOutput `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -87,7 +94,8 @@ type Certificate struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames pulumi.StringArrayOutput `pulumi:"subjectNames"`
-	SystemTags   pulumi.StringMapOutput   `pulumi:"systemTags"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -156,8 +164,9 @@ type certificateState struct {
 	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
 	IsLockOverride           *bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string           `pulumi:"lifecycleDetails"`
-	Locks            []CertificateLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []CertificateLock `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -166,8 +175,9 @@ type certificateState struct {
 	// The current state of the certificate.
 	State *string `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
-	SubjectNames []string          `pulumi:"subjectNames"`
-	SystemTags   map[string]string `pulumi:"systemTags"`
+	SubjectNames []string `pulumi:"subjectNames"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -192,7 +202,8 @@ type CertificateState struct {
 	IsLockOverride           pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            CertificateLockArrayInput
+	// Locks associated with this resource.
+	Locks CertificateLockArrayInput
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -202,7 +213,8 @@ type CertificateState struct {
 	State pulumi.StringPtrInput
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames pulumi.StringArrayInput
-	SystemTags   pulumi.StringMapInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the certificate will expire.
@@ -227,9 +239,10 @@ type certificateArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The intermediate certificate data associated with the certificate in pem format.
-	IntermediateCertificates *string           `pulumi:"intermediateCertificates"`
-	IsLockOverride           *bool             `pulumi:"isLockOverride"`
-	Locks                    []CertificateLock `pulumi:"locks"`
+	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
+	IsLockOverride           *bool   `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []CertificateLock `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -252,7 +265,8 @@ type CertificateArgs struct {
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates pulumi.StringPtrInput
 	IsLockOverride           pulumi.BoolPtrInput
-	Locks                    CertificateLockArrayInput
+	// Locks associated with this resource.
+	Locks CertificateLockArrayInput
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -386,6 +400,7 @@ func (o CertificateOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o CertificateOutput) Locks() CertificateLockArrayOutput {
 	return o.ApplyT(func(v *Certificate) CertificateLockArrayOutput { return v.Locks }).(CertificateLockArrayOutput)
 }
@@ -408,6 +423,7 @@ func (o CertificateOutput) SubjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringArrayOutput { return v.SubjectNames }).(pulumi.StringArrayOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o CertificateOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

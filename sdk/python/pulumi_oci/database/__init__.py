@@ -187,6 +187,8 @@ from .get_managed_preferred_credentials import *
 from .get_oneoff_patch import *
 from .get_oneoff_patches import *
 from .get_pluggable_database import *
+from .get_pluggable_database_snapshot import *
+from .get_pluggable_database_snapshots import *
 from .get_pluggable_databases import *
 from .get_scheduled_action import *
 from .get_scheduled_action_params import *
@@ -219,6 +221,7 @@ from .maintenance_run import *
 from .oneoff_patch import *
 from .pluggable_database import *
 from .pluggable_database_managements_management import *
+from .pluggable_database_snapshot import *
 from .pluggable_databases_local_clone import *
 from .pluggable_databases_remote_clone import *
 from .scheduled_action import *

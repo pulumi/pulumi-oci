@@ -32,6 +32,10 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
      * 
      */
     private @Nullable String functionId;
+    /**
+     * @return The List of Headers
+     * 
+     */
     private @Nullable List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
     /**
      * @return Defines whether or not to uphold SSL verification.
@@ -58,6 +62,10 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
      * 
      */
     private String type;
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     private @Nullable String url;
 
     private DeploymentSpecificationRouteBackendRoutingBackendBackend() {}
@@ -82,6 +90,10 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
     public Optional<String> functionId() {
         return Optional.ofNullable(this.functionId);
     }
+    /**
+     * @return The List of Headers
+     * 
+     */
     public List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers() {
         return this.headers == null ? List.of() : this.headers;
     }
@@ -120,6 +132,10 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
     public String type() {
         return this.type;
     }
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);
     }

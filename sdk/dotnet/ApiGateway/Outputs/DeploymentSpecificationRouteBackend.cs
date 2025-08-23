@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteBackend
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         /// </summary>
         public readonly ImmutableArray<string> AllowedPostLogoutUris;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The url of the HTTP Backend
         /// </summary>
         public readonly string? Url;
 

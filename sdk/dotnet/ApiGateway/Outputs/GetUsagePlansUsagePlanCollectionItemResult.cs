@@ -42,11 +42,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsagePlansUsagePlanCollectionItemLockResult> Locks;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

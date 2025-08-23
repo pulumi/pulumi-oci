@@ -12,9 +12,15 @@ namespace Pulumi.Oci.ApiGateway.Inputs
 
     public sealed class CertificateLockArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
+        /// <summary>
+        /// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        /// </summary>
         [Input("relatedResourceId")]
         public Input<string>? RelatedResourceId { get; set; }
 
@@ -24,6 +30,9 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
+        /// <summary>
+        /// Type of the lock.
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

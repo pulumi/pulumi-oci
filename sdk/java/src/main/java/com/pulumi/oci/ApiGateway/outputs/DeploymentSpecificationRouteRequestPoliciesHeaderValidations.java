@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations {
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Headers
      * 
      */
     private @Nullable List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers;
@@ -32,7 +32,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations 
 
     private DeploymentSpecificationRouteRequestPoliciesHeaderValidations() {}
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Headers
      * 
      */
     public List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> headers() {

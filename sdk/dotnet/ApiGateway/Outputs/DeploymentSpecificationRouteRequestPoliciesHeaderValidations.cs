@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderValidations
     {
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The List of Headers
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader> Headers;
         /// <summary>

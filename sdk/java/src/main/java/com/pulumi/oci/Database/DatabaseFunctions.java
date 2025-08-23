@@ -254,6 +254,10 @@ import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
 import com.pulumi.oci.Database.inputs.GetOneoffPatchesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasePlainArgs;
+import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotPlainArgs;
+import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetPluggableDatabasesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
@@ -432,6 +436,8 @@ import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsResult;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchResult;
 import com.pulumi.oci.Database.outputs.GetOneoffPatchesResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabaseResult;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabaseSnapshotResult;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabaseSnapshotsResult;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetScheduledActionParamsResult;
 import com.pulumi.oci.Database.outputs.GetScheduledActionResult;
@@ -28528,6 +28534,562 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetPluggableDatabaseResult> getPluggableDatabasePlain(GetPluggableDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabase:getPluggableDatabase", TypeShape.of(GetPluggableDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshot = DatabaseFunctions.getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs.builder()
+     *             .pluggableDatabaseSnapshotId(testPluggableDatabaseSnapshotOciDatabasePluggableDatabaseSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotResult> getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs args) {
+        return getPluggableDatabaseSnapshot(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshot = DatabaseFunctions.getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs.builder()
+     *             .pluggableDatabaseSnapshotId(testPluggableDatabaseSnapshotOciDatabasePluggableDatabaseSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluggableDatabaseSnapshotResult> getPluggableDatabaseSnapshotPlain(GetPluggableDatabaseSnapshotPlainArgs args) {
+        return getPluggableDatabaseSnapshotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshot = DatabaseFunctions.getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs.builder()
+     *             .pluggableDatabaseSnapshotId(testPluggableDatabaseSnapshotOciDatabasePluggableDatabaseSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotResult> getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabaseSnapshot:getPluggableDatabaseSnapshot", TypeShape.of(GetPluggableDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshot = DatabaseFunctions.getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs.builder()
+     *             .pluggableDatabaseSnapshotId(testPluggableDatabaseSnapshotOciDatabasePluggableDatabaseSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotResult> getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabaseSnapshot:getPluggableDatabaseSnapshot", TypeShape.of(GetPluggableDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Pluggable Database Snapshot in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshot = DatabaseFunctions.getPluggableDatabaseSnapshot(GetPluggableDatabaseSnapshotArgs.builder()
+     *             .pluggableDatabaseSnapshotId(testPluggableDatabaseSnapshotOciDatabasePluggableDatabaseSnapshot.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluggableDatabaseSnapshotResult> getPluggableDatabaseSnapshotPlain(GetPluggableDatabaseSnapshotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabaseSnapshot:getPluggableDatabaseSnapshot", TypeShape.of(GetPluggableDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshots() {
+        return getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshotsPlain() {
+        return getPluggableDatabaseSnapshotsPlain(GetPluggableDatabaseSnapshotsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs args) {
+        return getPluggableDatabaseSnapshots(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshotsPlain(GetPluggableDatabaseSnapshotsPlainArgs args) {
+        return getPluggableDatabaseSnapshotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabaseSnapshots:getPluggableDatabaseSnapshots", TypeShape.of(GetPluggableDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getPluggableDatabaseSnapshots:getPluggableDatabaseSnapshots", TypeShape.of(GetPluggableDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Pluggable Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabaseSnapshots = DatabaseFunctions.getPluggableDatabaseSnapshots(GetPluggableDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .name(pluggableDatabaseSnapshotName)
+     *             .pluggableDatabaseId(testPluggableDatabase.id())
+     *             .state(pluggableDatabaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetPluggableDatabaseSnapshotsResult> getPluggableDatabaseSnapshotsPlain(GetPluggableDatabaseSnapshotsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getPluggableDatabaseSnapshots:getPluggableDatabaseSnapshots", TypeShape.of(GetPluggableDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.

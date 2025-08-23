@@ -910,6 +910,16 @@ export const getPluggableDatabase: typeof import("./getPluggableDatabase").getPl
 export const getPluggableDatabaseOutput: typeof import("./getPluggableDatabase").getPluggableDatabaseOutput = null as any;
 utilities.lazyLoad(exports, ["getPluggableDatabase","getPluggableDatabaseOutput"], () => require("./getPluggableDatabase"));
 
+export { GetPluggableDatabaseSnapshotArgs, GetPluggableDatabaseSnapshotResult, GetPluggableDatabaseSnapshotOutputArgs } from "./getPluggableDatabaseSnapshot";
+export const getPluggableDatabaseSnapshot: typeof import("./getPluggableDatabaseSnapshot").getPluggableDatabaseSnapshot = null as any;
+export const getPluggableDatabaseSnapshotOutput: typeof import("./getPluggableDatabaseSnapshot").getPluggableDatabaseSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getPluggableDatabaseSnapshot","getPluggableDatabaseSnapshotOutput"], () => require("./getPluggableDatabaseSnapshot"));
+
+export { GetPluggableDatabaseSnapshotsArgs, GetPluggableDatabaseSnapshotsResult, GetPluggableDatabaseSnapshotsOutputArgs } from "./getPluggableDatabaseSnapshots";
+export const getPluggableDatabaseSnapshots: typeof import("./getPluggableDatabaseSnapshots").getPluggableDatabaseSnapshots = null as any;
+export const getPluggableDatabaseSnapshotsOutput: typeof import("./getPluggableDatabaseSnapshots").getPluggableDatabaseSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getPluggableDatabaseSnapshots","getPluggableDatabaseSnapshotsOutput"], () => require("./getPluggableDatabaseSnapshots"));
+
 export { GetPluggableDatabasesArgs, GetPluggableDatabasesResult, GetPluggableDatabasesOutputArgs } from "./getPluggableDatabases";
 export const getPluggableDatabases: typeof import("./getPluggableDatabases").getPluggableDatabases = null as any;
 export const getPluggableDatabasesOutput: typeof import("./getPluggableDatabases").getPluggableDatabasesOutput = null as any;
@@ -1069,6 +1079,11 @@ export { PluggableDatabaseManagementsManagementArgs, PluggableDatabaseManagement
 export type PluggableDatabaseManagementsManagement = import("./pluggableDatabaseManagementsManagement").PluggableDatabaseManagementsManagement;
 export const PluggableDatabaseManagementsManagement: typeof import("./pluggableDatabaseManagementsManagement").PluggableDatabaseManagementsManagement = null as any;
 utilities.lazyLoad(exports, ["PluggableDatabaseManagementsManagement"], () => require("./pluggableDatabaseManagementsManagement"));
+
+export { PluggableDatabaseSnapshotArgs, PluggableDatabaseSnapshotState } from "./pluggableDatabaseSnapshot";
+export type PluggableDatabaseSnapshot = import("./pluggableDatabaseSnapshot").PluggableDatabaseSnapshot;
+export const PluggableDatabaseSnapshot: typeof import("./pluggableDatabaseSnapshot").PluggableDatabaseSnapshot = null as any;
+utilities.lazyLoad(exports, ["PluggableDatabaseSnapshot"], () => require("./pluggableDatabaseSnapshot"));
 
 export { PluggableDatabasesLocalCloneArgs, PluggableDatabasesLocalCloneState } from "./pluggableDatabasesLocalClone";
 export type PluggableDatabasesLocalClone = import("./pluggableDatabasesLocalClone").PluggableDatabasesLocalClone;
@@ -1249,6 +1264,8 @@ const _module = {
                 return new PluggableDatabase(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
                 return new PluggableDatabaseManagementsManagement(name, <any>undefined, { urn })
+            case "oci:Database/pluggableDatabaseSnapshot:PluggableDatabaseSnapshot":
+                return new PluggableDatabaseSnapshot(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone":
                 return new PluggableDatabasesLocalClone(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
@@ -1336,6 +1353,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/maintenanceRun", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/oneoffPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabaseManagementsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabaseSnapshot", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesLocalClone", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesRemoteClone", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/scheduledAction", _module)

@@ -17879,6 +17879,7 @@ func (o GetIpv6sFilterArrayOutput) Index(i pulumi.IntInput) GetIpv6sFilterOutput
 }
 
 type GetIpv6sIpv6 struct {
+	CidrPrefixLength int `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -17917,6 +17918,7 @@ type GetIpv6sIpv6Input interface {
 }
 
 type GetIpv6sIpv6Args struct {
+	CidrPrefixLength pulumi.IntInput `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -17992,6 +17994,10 @@ func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6Output() GetIpv6sIpv6Output {
 
 func (o GetIpv6sIpv6Output) ToGetIpv6sIpv6OutputWithContext(ctx context.Context) GetIpv6sIpv6Output {
 	return o
+}
+
+func (o GetIpv6sIpv6Output) CidrPrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpv6sIpv6) int { return v.CidrPrefixLength }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.

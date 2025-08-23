@@ -72,10 +72,12 @@ type LookupUsagePlanResult struct {
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string             `pulumi:"lifecycleDetails"`
-	Locks            []GetUsagePlanLock `pulumi:"locks"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetUsagePlanLock `pulumi:"locks"`
 	// The current state of the usage plan.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -157,6 +159,7 @@ func (o LookupUsagePlanResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o LookupUsagePlanResultOutput) Locks() GetUsagePlanLockArrayOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) []GetUsagePlanLock { return v.Locks }).(GetUsagePlanLockArrayOutput)
 }
@@ -166,6 +169,7 @@ func (o LookupUsagePlanResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupUsagePlanResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

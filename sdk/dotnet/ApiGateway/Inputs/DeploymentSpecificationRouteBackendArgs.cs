@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<string>? _allowedPostLogoutUris;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         /// </summary>
         public InputList<string> AllowedPostLogoutUris
         {
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The url of the HTTP Backend
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

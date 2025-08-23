@@ -579,6 +579,8 @@ __all__ = [
     'GetManagedPreferredCredentialsFilterArgsDict',
     'GetOneoffPatchesFilterArgs',
     'GetOneoffPatchesFilterArgsDict',
+    'GetPluggableDatabaseSnapshotsFilterArgs',
+    'GetPluggableDatabaseSnapshotsFilterArgsDict',
     'GetPluggableDatabasesFilterArgs',
     'GetPluggableDatabasesFilterArgsDict',
     'GetScheduledActionParamsFilterArgs',
@@ -19947,6 +19949,10 @@ if not MYPY:
         """
         The DB system administrator password of the source Container Database.
         """
+        source_pluggable_database_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the Source Pluggable Database Snapshot id.
+        """
 elif False:
     PluggableDatabasePdbCreationTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -19959,7 +19965,8 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
                  dblink_username: Optional[pulumi.Input[_builtins.str]] = None,
                  is_thin_clone: Optional[pulumi.Input[_builtins.bool]] = None,
                  refreshable_clone_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']] = None,
-                 source_container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 source_container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_pluggable_database_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] creation_type: The Pluggable Database creation type.
         :param pulumi.Input[_builtins.str] source_pluggable_database_id: The OCID of the Source Pluggable Database.
@@ -19968,6 +19975,7 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
         :param pulumi.Input[_builtins.bool] is_thin_clone: True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
         :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs'] refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[_builtins.str] source_container_database_admin_password: The DB system administrator password of the source Container Database.
+        :param pulumi.Input[_builtins.str] source_pluggable_database_snapshot_id: The OCID of the Source Pluggable Database Snapshot id.
         """
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
@@ -19981,6 +19989,8 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
             pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         if source_container_database_admin_password is not None:
             pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
+        if source_pluggable_database_snapshot_id is not None:
+            pulumi.set(__self__, "source_pluggable_database_snapshot_id", source_pluggable_database_snapshot_id)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
@@ -20065,6 +20075,18 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @source_container_database_admin_password.setter
     def source_container_database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "source_container_database_admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePluggableDatabaseSnapshotId")
+    def source_pluggable_database_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the Source Pluggable Database Snapshot id.
+        """
+        return pulumi.get(self, "source_pluggable_database_snapshot_id")
+
+    @source_pluggable_database_snapshot_id.setter
+    def source_pluggable_database_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_pluggable_database_snapshot_id", value)
 
 
 if not MYPY:
@@ -25606,6 +25628,62 @@ class GetOneoffPatchesFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPluggableDatabaseSnapshotsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPluggableDatabaseSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPluggableDatabaseSnapshotsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

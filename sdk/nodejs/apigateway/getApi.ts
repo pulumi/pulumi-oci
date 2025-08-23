@@ -77,6 +77,9 @@ export interface GetApiResult {
      * * 'Canceled' the document validation was canceled
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
     readonly locks: outputs.ApiGateway.GetApiLock[];
     /**
      * Type of API Specification file.
@@ -86,6 +89,9 @@ export interface GetApiResult {
      * The current state of the API.
      */
     readonly state: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

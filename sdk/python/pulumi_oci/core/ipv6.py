@@ -19,6 +19,7 @@ __all__ = ['Ipv6Args', 'Ipv6']
 @pulumi.input_type
 class Ipv6Args:
     def __init__(__self__, *,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -30,6 +31,7 @@ class Ipv6Args:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Ipv6 resource.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: Length of cidr range. Optional field to specify flexible cidr.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -46,6 +48,8 @@ class Ipv6Args:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if cidr_prefix_length is not None:
+            pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -64,6 +68,18 @@ class Ipv6Args:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vnic_id is not None:
             pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Length of cidr range. Optional field to specify flexible cidr.
+        """
+        return pulumi.get(self, "cidr_prefix_length")
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -183,6 +199,7 @@ class Ipv6Args:
 @pulumi.input_type
 class _Ipv6State:
     def __init__(__self__, *,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -198,6 +215,7 @@ class _Ipv6State:
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Ipv6 resources.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: Length of cidr range. Optional field to specify flexible cidr.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -218,6 +236,8 @@ class _Ipv6State:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if cidr_prefix_length is not None:
+            pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -244,6 +264,18 @@ class _Ipv6State:
             pulumi.set(__self__, "time_created", time_created)
         if vnic_id is not None:
             pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Length of cidr range. Optional field to specify flexible cidr.
+        """
+        return pulumi.get(self, "cidr_prefix_length")
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "cidr_prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -414,6 +446,7 @@ class Ipv6(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -436,6 +469,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
+            cidr_prefix_length=ipv6_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -461,6 +495,7 @@ class Ipv6(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: Length of cidr range. Optional field to specify flexible cidr.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -495,6 +530,7 @@ class Ipv6(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_ipv6 = oci.core.Ipv6("test_ipv6",
+            cidr_prefix_length=ipv6_cidr_prefix_length,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -533,6 +569,7 @@ class Ipv6(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -551,6 +588,7 @@ class Ipv6(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = Ipv6Args.__new__(Ipv6Args)
 
+            __props__.__dict__["cidr_prefix_length"] = cidr_prefix_length
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
@@ -574,6 +612,7 @@ class Ipv6(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            cidr_prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -594,6 +633,7 @@ class Ipv6(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.int] cidr_prefix_length: Length of cidr range. Optional field to specify flexible cidr.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -618,6 +658,7 @@ class Ipv6(pulumi.CustomResource):
 
         __props__ = _Ipv6State.__new__(_Ipv6State)
 
+        __props__.__dict__["cidr_prefix_length"] = cidr_prefix_length
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -632,6 +673,14 @@ class Ipv6(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vnic_id"] = vnic_id
         return Ipv6(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> pulumi.Output[_builtins.int]:
+        """
+        Length of cidr range. Optional field to specify flexible cidr.
+        """
+        return pulumi.get(self, "cidr_prefix_length")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

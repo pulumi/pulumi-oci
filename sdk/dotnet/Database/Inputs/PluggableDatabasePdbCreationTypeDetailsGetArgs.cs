@@ -74,6 +74,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("sourcePluggableDatabaseId", required: true)]
         public Input<string> SourcePluggableDatabaseId { get; set; } = null!;
 
+        /// <summary>
+        /// The OCID of the Source Pluggable Database Snapshot id.
+        /// </summary>
+        [Input("sourcePluggableDatabaseSnapshotId")]
+        public Input<string>? SourcePluggableDatabaseSnapshotId { get; set; }
+
         public PluggableDatabasePdbCreationTypeDetailsGetArgs()
         {
         }

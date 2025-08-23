@@ -39,6 +39,7 @@ class DeploymentArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "gateway_id", gateway_id)
@@ -151,6 +152,9 @@ class DeploymentArgs:
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @locks.setter
@@ -185,9 +189,11 @@ class _DeploymentState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] path_prefix: A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         :param pulumi.Input['DeploymentSpecificationArgs'] specification: (Updatable) The logical configuration of the API exposed by a deployment.
         :param pulumi.Input[_builtins.str] state: The current state of the deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -318,6 +324,9 @@ class _DeploymentState:
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @locks.setter
@@ -363,6 +372,9 @@ class _DeploymentState:
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -875,7 +887,11 @@ class Deployment(pulumi.CustomResource):
             display_name=deployment_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            locks=[{
+                "type": deployment_locks_type,
+                "message": deployment_locks_message,
+            }])
         ```
 
         ## Import
@@ -893,6 +909,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] path_prefix: A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         :param pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']] specification: (Updatable) The logical configuration of the API exposed by a deployment.
         """
@@ -1367,7 +1384,11 @@ class Deployment(pulumi.CustomResource):
             display_name=deployment_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            locks=[{
+                "type": deployment_locks_type,
+                "message": deployment_locks_message,
+            }])
         ```
 
         ## Import
@@ -1473,9 +1494,11 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] path_prefix: A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         :param pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']] specification: (Updatable) The logical configuration of the API exposed by a deployment.
         :param pulumi.Input[_builtins.str] state: The current state of the deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -1564,6 +1587,9 @@ class Deployment(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> pulumi.Output[Sequence['outputs.DeploymentLock']]:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -1593,6 +1619,9 @@ class Deployment(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property

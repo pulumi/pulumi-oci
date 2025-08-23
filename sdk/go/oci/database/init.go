@@ -145,6 +145,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PluggableDatabase{}
 	case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
 		r = &PluggableDatabaseManagementsManagement{}
+	case "oci:Database/pluggableDatabaseSnapshot:PluggableDatabaseSnapshot":
+		r = &PluggableDatabaseSnapshot{}
 	case "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone":
 		r = &PluggableDatabasesLocalClone{}
 	case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
@@ -486,6 +488,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/pluggableDatabaseManagementsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/pluggableDatabaseSnapshot",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

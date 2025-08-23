@@ -39,6 +39,14 @@ namespace Pulumi.Oci.ApiGateway
     ///             { "Department", "Finance" },
     ///         },
     ///         IntermediateCertificates = certificateIntermediateCertificates,
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.ApiGateway.Inputs.CertificateLockArgs
+    ///             {
+    ///                 Type = certificateLocksType,
+    ///                 Message = certificateLocksMessage,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -100,6 +108,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         [Output("locks")]
         public Output<ImmutableArray<Outputs.CertificateLock>> Locks { get; private set; } = null!;
 
@@ -125,6 +136,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("subjectNames")]
         public Output<ImmutableArray<string>> SubjectNames { get; private set; } = null!;
 
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
@@ -249,6 +263,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.CertificateLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.CertificateLockArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.CertificateLockArgs>());
@@ -342,6 +360,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.CertificateLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.CertificateLockGetArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.CertificateLockGetArgs>());
@@ -388,6 +410,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public InputMap<string> SystemTags
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());

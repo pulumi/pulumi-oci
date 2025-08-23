@@ -43,6 +43,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     locks: [{
+ *         type: usagePlanLocksType,
+ *         message: usagePlanLocksMessage,
+ *     }],
  * });
  * ```
  *
@@ -99,11 +103,7 @@ export class UsagePlan extends pulumi.CustomResource {
      */
     public readonly entitlements!: pulumi.Output<outputs.ApiGateway.UsagePlanEntitlement[]>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public readonly isLockOverride!: pulumi.Output<boolean>;
@@ -111,11 +111,17 @@ export class UsagePlan extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
     public readonly locks!: pulumi.Output<outputs.ApiGateway.UsagePlanLock[]>;
     /**
      * The current state of the usage plan.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -198,11 +204,7 @@ export interface UsagePlanState {
      */
     entitlements?: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanEntitlement>[]>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     isLockOverride?: pulumi.Input<boolean>;
@@ -210,11 +212,17 @@ export interface UsagePlanState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanLock>[]>;
     /**
      * The current state of the usage plan.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -247,13 +255,12 @@ export interface UsagePlanArgs {
      */
     entitlements: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanEntitlement>[]>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanLock>[]>;
 }

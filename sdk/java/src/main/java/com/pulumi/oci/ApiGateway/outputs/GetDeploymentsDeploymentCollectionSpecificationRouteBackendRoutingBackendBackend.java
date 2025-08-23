@@ -30,6 +30,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
      * 
      */
     private String functionId;
+    /**
+     * @return The List of Headers
+     * 
+     */
     private List<GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeader> headers;
     /**
      * @return Defines whether or not to uphold SSL verification.
@@ -56,6 +60,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
      * 
      */
     private String type;
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     private String url;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackend() {}
@@ -80,6 +88,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
     public String functionId() {
         return this.functionId;
     }
+    /**
+     * @return The List of Headers
+     * 
+     */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeader> headers() {
         return this.headers;
     }
@@ -118,6 +130,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
     public String type() {
         return this.type;
     }
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     public String url() {
         return this.url;
     }

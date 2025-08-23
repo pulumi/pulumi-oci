@@ -43252,6 +43252,7 @@ class GetIpv6sFilterResult(dict):
 @pulumi.output_type
 class GetIpv6sIpv6Result(dict):
     def __init__(__self__, *,
+                 cidr_prefix_length: _builtins.int,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
@@ -43278,6 +43279,7 @@ class GetIpv6sIpv6Result(dict):
         :param _builtins.str time_created: The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str vnic_id: The OCID of the VNIC.
         """
+        pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -43292,6 +43294,11 @@ class GetIpv6sIpv6Result(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> _builtins.int:
+        return pulumi.get(self, "cidr_prefix_length")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

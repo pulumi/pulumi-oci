@@ -40,6 +40,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: apigateway.ApiLockArray{
+//					&apigateway.ApiLockArgs{
+//						Type:    pulumi.Any(apiLocksType),
+//						Message: pulumi.Any(apiLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -69,9 +75,6 @@ type Api struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
 	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
@@ -83,11 +86,13 @@ type Api struct {
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	Locks            ApiLockArrayOutput  `pulumi:"locks"`
+	// Locks associated with this resource.
+	Locks ApiLockArrayOutput `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType pulumi.StringOutput `pulumi:"specificationType"`
 	// The current state of the API.
-	State      pulumi.StringOutput    `pulumi:"state"`
+	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -139,9 +144,6 @@ type apiState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
@@ -152,12 +154,14 @@ type apiState struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails *string   `pulumi:"lifecycleDetails"`
-	Locks            []ApiLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []ApiLock `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType *string `pulumi:"specificationType"`
 	// The current state of the API.
-	State      *string           `pulumi:"state"`
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -177,9 +181,6 @@ type ApiState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
@@ -191,11 +192,13 @@ type ApiState struct {
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            ApiLockArrayInput
+	// Locks associated with this resource.
+	Locks ApiLockArrayInput
 	// Type of API Specification file.
 	SpecificationType pulumi.StringPtrInput
 	// The current state of the API.
-	State      pulumi.StringPtrInput
+	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -219,12 +222,10 @@ type apiArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
-	Locks          []ApiLock         `pulumi:"locks"`
+	// Locks associated with this resource.
+	Locks []ApiLock `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a Api resource.
@@ -238,12 +239,10 @@ type ApiArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
-	Locks          ApiLockArrayInput
+	// Locks associated with this resource.
+	Locks ApiLockArrayInput
 }
 
 func (ApiArgs) ElementType() reflect.Type {
@@ -354,9 +353,6 @@ func (o ApiOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ApiOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -377,6 +373,7 @@ func (o ApiOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o ApiOutput) Locks() ApiLockArrayOutput {
 	return o.ApplyT(func(v *Api) ApiLockArrayOutput { return v.Locks }).(ApiLockArrayOutput)
 }
@@ -391,6 +388,7 @@ func (o ApiOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o ApiOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

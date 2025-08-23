@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetIpv6sIpv6Result
     {
+        public readonly int CidrPrefixLength;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         /// </summary>
@@ -60,6 +61,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetIpv6sIpv6Result(
+            int cidrPrefixLength,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -88,6 +91,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string vnicId)
         {
+            CidrPrefixLength = cidrPrefixLength;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

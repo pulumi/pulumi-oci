@@ -83,18 +83,12 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -137,9 +131,17 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.lifecycleDetails);
     }
 
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Import(name="locks")
     private @Nullable Output<List<ApiLockArgs>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Optional<Output<List<ApiLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
     }
@@ -174,9 +176,17 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
@@ -350,9 +360,6 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -363,9 +370,6 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -418,15 +422,33 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
             return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(@Nullable Output<List<ApiLockArgs>> locks) {
             $.locks = locks;
             return this;
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(List<ApiLockArgs> locks) {
             return locks(Output.of(locks));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(ApiLockArgs... locks) {
             return locks(List.of(locks));
         }
@@ -473,11 +495,23 @@ public final class ApiState extends com.pulumi.resources.ResourceArgs {
             return state(Output.of(state));
         }
 
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
 
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }

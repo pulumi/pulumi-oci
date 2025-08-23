@@ -37,6 +37,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
         /// </summary>
         public readonly double MaxClockSkewInSeconds;
+        /// <summary>
+        /// The List of Query Parameters
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Parameters;
         /// <summary>
         /// A set of Public Keys that will be used to verify the JWT signature.

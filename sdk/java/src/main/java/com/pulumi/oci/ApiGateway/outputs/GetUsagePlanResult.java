@@ -51,12 +51,20 @@ public final class GetUsagePlanResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     private List<GetUsagePlanLock> locks;
     /**
      * @return The current state of the usage plan.
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -123,6 +131,10 @@ public final class GetUsagePlanResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public List<GetUsagePlanLock> locks() {
         return this.locks;
     }
@@ -133,6 +145,10 @@ public final class GetUsagePlanResult {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }

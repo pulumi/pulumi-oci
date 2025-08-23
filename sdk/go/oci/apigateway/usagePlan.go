@@ -60,6 +60,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: apigateway.UsagePlanLockArray{
+//					&apigateway.UsagePlanLockArgs{
+//						Type:    pulumi.Any(usagePlanLocksType),
+//						Message: pulumi.Any(usagePlanLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -89,16 +95,15 @@ type UsagePlan struct {
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements UsagePlanEntitlementArrayOutput `pulumi:"entitlements"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
 	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput      `pulumi:"lifecycleDetails"`
-	Locks            UsagePlanLockArrayOutput `pulumi:"locks"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks UsagePlanLockArrayOutput `pulumi:"locks"`
 	// The current state of the usage plan.
-	State      pulumi.StringOutput    `pulumi:"state"`
+	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -151,16 +156,15 @@ type usagePlanState struct {
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements []UsagePlanEntitlement `pulumi:"entitlements"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string         `pulumi:"lifecycleDetails"`
-	Locks            []UsagePlanLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []UsagePlanLock `pulumi:"locks"`
 	// The current state of the usage plan.
-	State      *string           `pulumi:"state"`
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -178,16 +182,15 @@ type UsagePlanState struct {
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements UsagePlanEntitlementArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            UsagePlanLockArrayInput
+	// Locks associated with this resource.
+	Locks UsagePlanLockArrayInput
 	// The current state of the usage plan.
-	State      pulumi.StringPtrInput
+	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -209,12 +212,10 @@ type usagePlanArgs struct {
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements []UsagePlanEntitlement `pulumi:"entitlements"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
-	Locks          []UsagePlanLock   `pulumi:"locks"`
+	// Locks associated with this resource.
+	Locks []UsagePlanLock `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a UsagePlan resource.
@@ -228,12 +229,10 @@ type UsagePlanArgs struct {
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements UsagePlanEntitlementArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
-	Locks          UsagePlanLockArrayInput
+	// Locks associated with this resource.
+	Locks UsagePlanLockArrayInput
 }
 
 func (UsagePlanArgs) ElementType() reflect.Type {
@@ -344,9 +343,6 @@ func (o UsagePlanOutput) Entitlements() UsagePlanEntitlementArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UsagePlanOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -360,6 +356,7 @@ func (o UsagePlanOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o UsagePlanOutput) Locks() UsagePlanLockArrayOutput {
 	return o.ApplyT(func(v *UsagePlan) UsagePlanLockArrayOutput { return v.Locks }).(UsagePlanLockArrayOutput)
 }
@@ -369,6 +366,7 @@ func (o UsagePlanOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o UsagePlanOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

@@ -26,6 +26,7 @@ namespace Pulumi.Oci.Core
     /// {
     ///     var testIpv6 = new Oci.Core.Ipv6("test_ipv6", new()
     ///     {
+    ///         CidrPrefixLength = ipv6CidrPrefixLength,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -57,6 +58,12 @@ namespace Pulumi.Oci.Core
     [OciResourceType("oci:Core/ipv6:Ipv6")]
     public partial class Ipv6 : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Length of cidr range. Optional field to specify flexible cidr.
+        /// </summary>
+        [Output("cidrPrefixLength")]
+        public Output<int> CidrPrefixLength { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         /// </summary>
@@ -187,6 +194,12 @@ namespace Pulumi.Oci.Core
 
     public sealed class Ipv6Args : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Length of cidr range. Optional field to specify flexible cidr.
+        /// </summary>
+        [Input("cidrPrefixLength")]
+        public Input<int>? CidrPrefixLength { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -267,6 +280,12 @@ namespace Pulumi.Oci.Core
 
     public sealed class Ipv6State : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Length of cidr range. Optional field to specify flexible cidr.
+        /// </summary>
+        [Input("cidrPrefixLength")]
+        public Input<int>? CidrPrefixLength { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
         /// </summary>

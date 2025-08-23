@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.Ipv6Args;
 import com.pulumi.oci.Core.inputs.Ipv6State;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIpv6 = new Ipv6("testIpv6", Ipv6Args.builder()
+ *             .cidrPrefixLength(ipv6CidrPrefixLength)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(ipv6DisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -74,6 +76,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Core/ipv6:Ipv6")
 public class Ipv6 extends com.pulumi.resources.CustomResource {
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    @Export(name="cidrPrefixLength", refs={Integer.class}, tree="[0]")
+    private Output<Integer> cidrPrefixLength;
+
+    /**
+     * @return Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    public Output<Integer> cidrPrefixLength() {
+        return this.cidrPrefixLength;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC&#39;s compartment.
      * 

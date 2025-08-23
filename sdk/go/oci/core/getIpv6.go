@@ -61,6 +61,8 @@ type LookupIpv6Args struct {
 
 // A collection of values returned by getIpv6.
 type LookupIpv6Result struct {
+	// Length of cidr range. Optional field to specify flexible cidr.
+	CidrPrefixLength int `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -125,6 +127,11 @@ func (o LookupIpv6ResultOutput) ToLookupIpv6ResultOutput() LookupIpv6ResultOutpu
 
 func (o LookupIpv6ResultOutput) ToLookupIpv6ResultOutputWithContext(ctx context.Context) LookupIpv6ResultOutput {
 	return o
+}
+
+// Length of cidr range. Optional field to specify flexible cidr.
+func (o LookupIpv6ResultOutput) CidrPrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupIpv6Result) int { return v.CidrPrefixLength }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.

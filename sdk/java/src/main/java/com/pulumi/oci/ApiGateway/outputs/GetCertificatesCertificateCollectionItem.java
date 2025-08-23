@@ -55,6 +55,10 @@ public final class GetCertificatesCertificateCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     private List<GetCertificatesCertificateCollectionItemLock> locks;
     private String privateKey;
     /**
@@ -67,6 +71,10 @@ public final class GetCertificatesCertificateCollectionItem {
      * 
      */
     private List<String> subjectNames;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -144,6 +152,10 @@ public final class GetCertificatesCertificateCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public List<GetCertificatesCertificateCollectionItemLock> locks() {
         return this.locks;
     }
@@ -164,6 +176,10 @@ public final class GetCertificatesCertificateCollectionItem {
     public List<String> subjectNames() {
         return this.subjectNames;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }

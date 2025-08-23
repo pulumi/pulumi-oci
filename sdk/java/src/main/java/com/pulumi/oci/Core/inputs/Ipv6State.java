@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
 
     public static final Ipv6State Empty = new Ipv6State();
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    @Import(name="cidrPrefixLength")
+    private @Nullable Output<Integer> cidrPrefixLength;
+
+    /**
+     * @return Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    public Optional<Output<Integer>> cidrPrefixLength() {
+        return Optional.ofNullable(this.cidrPrefixLength);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC&#39;s compartment.
@@ -224,6 +240,7 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
     private Ipv6State() {}
 
     private Ipv6State(Ipv6State $) {
+        this.cidrPrefixLength = $.cidrPrefixLength;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -255,6 +272,27 @@ public final class Ipv6State extends com.pulumi.resources.ResourceArgs {
 
         public Builder(Ipv6State defaults) {
             $ = new Ipv6State(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param cidrPrefixLength Length of cidr range. Optional field to specify flexible cidr.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(@Nullable Output<Integer> cidrPrefixLength) {
+            $.cidrPrefixLength = cidrPrefixLength;
+            return this;
+        }
+
+        /**
+         * @param cidrPrefixLength Length of cidr range. Optional field to specify flexible cidr.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            return cidrPrefixLength(Output.of(cidrPrefixLength));
         }
 
         /**

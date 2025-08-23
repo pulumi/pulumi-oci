@@ -117,9 +117,17 @@ public final class SubscriberState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.lifecycleDetails);
     }
 
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Import(name="locks")
     private @Nullable Output<List<SubscriberLockArgs>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Optional<Output<List<SubscriberLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
     }
@@ -139,9 +147,17 @@ public final class SubscriberState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
@@ -378,15 +394,33 @@ public final class SubscriberState extends com.pulumi.resources.ResourceArgs {
             return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(@Nullable Output<List<SubscriberLockArgs>> locks) {
             $.locks = locks;
             return this;
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(List<SubscriberLockArgs> locks) {
             return locks(Output.of(locks));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(SubscriberLockArgs... locks) {
             return locks(List.of(locks));
         }
@@ -412,11 +446,23 @@ public final class SubscriberState extends com.pulumi.resources.ResourceArgs {
             return state(Output.of(state));
         }
 
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
 
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }

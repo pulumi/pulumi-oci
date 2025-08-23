@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     [OutputType]
     public sealed class GetApiDeploymentSpecificationRouteBackendResult
     {
+        /// <summary>
+        /// A list of allowed post-logout URLs to which a request can be redirected after revoke access
+        /// </summary>
         public readonly ImmutableArray<string> AllowedPostLogoutUris;
         /// <summary>
         /// The body of the stock response from the mock backend.
@@ -26,6 +29,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
         public readonly string FunctionId;
+        /// <summary>
+        /// The List of Headers
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetApiDeploymentSpecificationRouteBackendHeaderResult> Headers;
         /// <summary>
         /// Defines whether or not to uphold SSL verification.
@@ -59,6 +65,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// Type of the Response Cache Store Policy.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The url of the HTTP Backend
+        /// </summary>
         public readonly string Url;
 
         [OutputConstructor]

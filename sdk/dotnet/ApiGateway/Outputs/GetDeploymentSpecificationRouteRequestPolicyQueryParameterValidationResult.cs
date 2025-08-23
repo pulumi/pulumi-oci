@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     [OutputType]
     public sealed class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult
     {
+        /// <summary>
+        /// The List of Query Parameters
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult> Parameters;
         /// <summary>
         /// Validation behavior mode.

@@ -46,6 +46,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// * 'Canceled' the document validation was canceled
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetApisApiCollectionItemLockResult> Locks;
         /// <summary>
         /// Type of API Specification file.
@@ -55,6 +58,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

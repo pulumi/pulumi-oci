@@ -12,6 +12,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation {
+    /**
+     * @return The List of Query Parameters
+     * 
+     */
     private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
     /**
      * @return Validation behavior mode.
@@ -20,6 +24,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     private String validationMode;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidation() {}
+    /**
+     * @return The List of Query Parameters
+     * 
+     */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters() {
         return this.parameters;
     }

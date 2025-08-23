@@ -24,14 +24,14 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     public static final DeploymentSpecificationRouteBackendArgs Empty = new DeploymentSpecificationRouteBackendArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
      * 
      */
     @Import(name="allowedPostLogoutUris")
     private @Nullable Output<List<String>> allowedPostLogoutUris;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
      * 
      */
     public Optional<Output<List<String>>> allowedPostLogoutUris() {
@@ -219,14 +219,14 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable)
+     * (Updatable) The url of the HTTP Backend
      * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The url of the HTTP Backend
      * 
      */
     public Optional<Output<String>> url() {
@@ -271,7 +271,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param allowedPostLogoutUris (Updatable)
+         * @param allowedPostLogoutUris (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param allowedPostLogoutUris (Updatable)
+         * @param allowedPostLogoutUris (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param allowedPostLogoutUris (Updatable)
+         * @param allowedPostLogoutUris (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param url (Updatable)
+         * @param url (Updatable) The url of the HTTP Backend
          * 
          * @return builder
          * 
@@ -585,7 +585,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param url (Updatable)
+         * @param url (Updatable) The url of the HTTP Backend
          * 
          * @return builder
          * 

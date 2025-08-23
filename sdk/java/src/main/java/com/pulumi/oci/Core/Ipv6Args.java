@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
 
     public static final Ipv6Args Empty = new Ipv6Args();
+
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    @Import(name="cidrPrefixLength")
+    private @Nullable Output<Integer> cidrPrefixLength;
+
+    /**
+     * @return Length of cidr range. Optional field to specify flexible cidr.
+     * 
+     */
+    public Optional<Output<Integer>> cidrPrefixLength() {
+        return Optional.ofNullable(this.cidrPrefixLength);
+    }
 
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -164,6 +180,7 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
     private Ipv6Args() {}
 
     private Ipv6Args(Ipv6Args $) {
+        this.cidrPrefixLength = $.cidrPrefixLength;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
@@ -191,6 +208,27 @@ public final class Ipv6Args extends com.pulumi.resources.ResourceArgs {
 
         public Builder(Ipv6Args defaults) {
             $ = new Ipv6Args(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param cidrPrefixLength Length of cidr range. Optional field to specify flexible cidr.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(@Nullable Output<Integer> cidrPrefixLength) {
+            $.cidrPrefixLength = cidrPrefixLength;
+            return this;
+        }
+
+        /**
+         * @param cidrPrefixLength Length of cidr range. Optional field to specify flexible cidr.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            return cidrPrefixLength(Output.of(cidrPrefixLength));
         }
 
         /**

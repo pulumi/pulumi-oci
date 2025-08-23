@@ -5,12 +5,14 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetIpv6sIpv6 {
+    private Integer cidrPrefixLength;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC&#39;s compartment.
      * 
@@ -67,6 +69,9 @@ public final class GetIpv6sIpv6 {
     private String vnicId;
 
     private GetIpv6sIpv6() {}
+    public Integer cidrPrefixLength() {
+        return this.cidrPrefixLength;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC&#39;s compartment.
      * 
@@ -159,6 +164,7 @@ public final class GetIpv6sIpv6 {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer cidrPrefixLength;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String displayName;
@@ -176,6 +182,7 @@ public final class GetIpv6sIpv6 {
         public Builder() {}
         public Builder(GetIpv6sIpv6 defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cidrPrefixLength = defaults.cidrPrefixLength;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -192,6 +199,14 @@ public final class GetIpv6sIpv6 {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            if (cidrPrefixLength == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sIpv6", "cidrPrefixLength");
+            }
+            this.cidrPrefixLength = cidrPrefixLength;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -306,6 +321,7 @@ public final class GetIpv6sIpv6 {
         }
         public GetIpv6sIpv6 build() {
             final var _resultValue = new GetIpv6sIpv6();
+            _resultValue.cidrPrefixLength = cidrPrefixLength;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

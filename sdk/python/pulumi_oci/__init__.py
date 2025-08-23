@@ -3178,6 +3178,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/pluggableDatabaseSnapshot",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/pluggableDatabaseSnapshot:PluggableDatabaseSnapshot": "PluggableDatabaseSnapshot"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/pluggableDatabasesLocalClone",
   "fqn": "pulumi_oci.database",
   "classes": {

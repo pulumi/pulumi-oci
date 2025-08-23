@@ -48,6 +48,14 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.ApiGateway.Inputs.GatewayLockArgs
+    ///             {
+    ///                 Type = gatewayLocksType,
+    ///                 Message = gatewayLocksMessage,
+    ///             },
+    ///         },
     ///         NetworkSecurityGroupIds = gatewayNetworkSecurityGroupIds,
     ///         ResponseCacheDetails = new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsArgs
     ///         {
@@ -91,7 +99,7 @@ namespace Pulumi.Oci.ApiGateway
         public Output<ImmutableArray<Outputs.GatewayCaBundle>> CaBundles { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
@@ -147,6 +155,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         [Output("locks")]
         public Output<ImmutableArray<Outputs.GatewayLock>> Locks { get; private set; } = null!;
 
@@ -178,6 +189,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
@@ -252,7 +266,7 @@ namespace Pulumi.Oci.ApiGateway
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
@@ -304,6 +318,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.GatewayLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.GatewayLockArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.GatewayLockArgs>());
@@ -359,7 +377,7 @@ namespace Pulumi.Oci.ApiGateway
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
@@ -435,6 +453,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.GatewayLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.GatewayLockGetArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.GatewayLockGetArgs>());
@@ -477,6 +499,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public InputMap<string> SystemTags
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());

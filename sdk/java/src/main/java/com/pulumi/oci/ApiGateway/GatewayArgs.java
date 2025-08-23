@@ -38,14 +38,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -134,9 +134,17 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isLockOverride);
     }
 
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Import(name="locks")
     private @Nullable Output<List<GatewayLockArgs>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Optional<Output<List<GatewayLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
     }
@@ -259,7 +267,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * @param certificateId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
          * 
          * @return builder
          * 
@@ -270,7 +278,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * @param certificateId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
          * 
          * @return builder
          * 
@@ -393,15 +401,33 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
             return isLockOverride(Output.of(isLockOverride));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(@Nullable Output<List<GatewayLockArgs>> locks) {
             $.locks = locks;
             return this;
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(List<GatewayLockArgs> locks) {
             return locks(Output.of(locks));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(GatewayLockArgs... locks) {
             return locks(List.of(locks));
         }

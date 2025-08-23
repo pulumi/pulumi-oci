@@ -24062,6 +24062,7 @@ type GetPluggableDatabasePdbCreationTypeDetail struct {
 	RefreshableCloneDetails              []GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword string                                                            `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            string                                                            `pulumi:"sourcePluggableDatabaseId"`
+	SourcePluggableDatabaseSnapshotId    string                                                            `pulumi:"sourcePluggableDatabaseSnapshotId"`
 }
 
 // GetPluggableDatabasePdbCreationTypeDetailInput is an input type that accepts GetPluggableDatabasePdbCreationTypeDetailArgs and GetPluggableDatabasePdbCreationTypeDetailOutput values.
@@ -24083,6 +24084,7 @@ type GetPluggableDatabasePdbCreationTypeDetailArgs struct {
 	RefreshableCloneDetails              GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                        `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            pulumi.StringInput                                                        `pulumi:"sourcePluggableDatabaseId"`
+	SourcePluggableDatabaseSnapshotId    pulumi.StringInput                                                        `pulumi:"sourcePluggableDatabaseSnapshotId"`
 }
 
 func (GetPluggableDatabasePdbCreationTypeDetailArgs) ElementType() reflect.Type {
@@ -24166,6 +24168,10 @@ func (o GetPluggableDatabasePdbCreationTypeDetailOutput) SourceContainerDatabase
 
 func (o GetPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.SourcePluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.SourcePluggableDatabaseSnapshotId }).(pulumi.StringOutput)
 }
 
 type GetPluggableDatabasePdbCreationTypeDetailArrayOutput struct{ *pulumi.OutputState }
@@ -24585,6 +24591,304 @@ func (o GetPluggableDatabaseRefreshableCloneConfigArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabaseRefreshableCloneConfig {
 		return vs[0].([]GetPluggableDatabaseRefreshableCloneConfig)[vs[1].(int)]
 	}).(GetPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+type GetPluggableDatabaseSnapshotsFilter struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPluggableDatabaseSnapshotsFilterInput is an input type that accepts GetPluggableDatabaseSnapshotsFilterArgs and GetPluggableDatabaseSnapshotsFilterOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseSnapshotsFilterInput` via:
+//
+//	GetPluggableDatabaseSnapshotsFilterArgs{...}
+type GetPluggableDatabaseSnapshotsFilterInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseSnapshotsFilterOutput() GetPluggableDatabaseSnapshotsFilterOutput
+	ToGetPluggableDatabaseSnapshotsFilterOutputWithContext(context.Context) GetPluggableDatabaseSnapshotsFilterOutput
+}
+
+type GetPluggableDatabaseSnapshotsFilterArgs struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPluggableDatabaseSnapshotsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseSnapshotsFilterArgs) ToGetPluggableDatabaseSnapshotsFilterOutput() GetPluggableDatabaseSnapshotsFilterOutput {
+	return i.ToGetPluggableDatabaseSnapshotsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseSnapshotsFilterArgs) ToGetPluggableDatabaseSnapshotsFilterOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseSnapshotsFilterOutput)
+}
+
+// GetPluggableDatabaseSnapshotsFilterArrayInput is an input type that accepts GetPluggableDatabaseSnapshotsFilterArray and GetPluggableDatabaseSnapshotsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseSnapshotsFilterArrayInput` via:
+//
+//	GetPluggableDatabaseSnapshotsFilterArray{ GetPluggableDatabaseSnapshotsFilterArgs{...} }
+type GetPluggableDatabaseSnapshotsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseSnapshotsFilterArrayOutput() GetPluggableDatabaseSnapshotsFilterArrayOutput
+	ToGetPluggableDatabaseSnapshotsFilterArrayOutputWithContext(context.Context) GetPluggableDatabaseSnapshotsFilterArrayOutput
+}
+
+type GetPluggableDatabaseSnapshotsFilterArray []GetPluggableDatabaseSnapshotsFilterInput
+
+func (GetPluggableDatabaseSnapshotsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseSnapshotsFilterArray) ToGetPluggableDatabaseSnapshotsFilterArrayOutput() GetPluggableDatabaseSnapshotsFilterArrayOutput {
+	return i.ToGetPluggableDatabaseSnapshotsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseSnapshotsFilterArray) ToGetPluggableDatabaseSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseSnapshotsFilterArrayOutput)
+}
+
+type GetPluggableDatabaseSnapshotsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseSnapshotsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterOutput) ToGetPluggableDatabaseSnapshotsFilterOutput() GetPluggableDatabaseSnapshotsFilterOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterOutput) ToGetPluggableDatabaseSnapshotsFilterOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetPluggableDatabaseSnapshotsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPluggableDatabaseSnapshotsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseSnapshotsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterArrayOutput) ToGetPluggableDatabaseSnapshotsFilterArrayOutput() GetPluggableDatabaseSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterArrayOutput) ToGetPluggableDatabaseSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabaseSnapshotsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabaseSnapshotsFilter {
+		return vs[0].([]GetPluggableDatabaseSnapshotsFilter)[vs[1].(int)]
+	}).(GetPluggableDatabaseSnapshotsFilterOutput)
+}
+
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot struct {
+	// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database Snapshot.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+	// A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Exadata Pluggable Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotInput is an input type that accepts GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs and GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotInput` via:
+//
+//	GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs{...}
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput
+	ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutputWithContext(context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput
+}
+
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs struct {
+	// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database Snapshot.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	PluggableDatabaseId pulumi.StringInput `pulumi:"pluggableDatabaseId"`
+	// A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the Exadata Pluggable Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput {
+	return i.ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput)
+}
+
+// GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayInput is an input type that accepts GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray and GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayInput` via:
+//
+//	GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray{ GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs{...} }
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput
+	ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutputWithContext(context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput
+}
+
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray []GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotInput
+
+func (GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput {
+	return i.ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput)
+}
+
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput {
+	return o
+}
+
+// A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database Snapshot.
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) PluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the Exadata Pluggable Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput() GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput) ToGetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot {
+		return vs[0].([]GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshot)[vs[1].(int)]
+	}).(GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput)
 }
 
 type GetPluggableDatabasesFilter struct {
@@ -25120,6 +25424,7 @@ type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail struct {
 	RefreshableCloneDetails              []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword string                                                                              `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            string                                                                              `pulumi:"sourcePluggableDatabaseId"`
+	SourcePluggableDatabaseSnapshotId    string                                                                              `pulumi:"sourcePluggableDatabaseSnapshotId"`
 }
 
 // GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs and GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput values.
@@ -25141,6 +25446,7 @@ type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs struct {
 	RefreshableCloneDetails              GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                                          `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            pulumi.StringInput                                                                          `pulumi:"sourcePluggableDatabaseId"`
+	SourcePluggableDatabaseSnapshotId    pulumi.StringInput                                                                          `pulumi:"sourcePluggableDatabaseSnapshotId"`
 }
 
 func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs) ElementType() reflect.Type {
@@ -25227,6 +25533,12 @@ func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) Sourc
 func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string {
 		return v.SourcePluggableDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string {
+		return v.SourcePluggableDatabaseSnapshotId
 	}).(pulumi.StringOutput)
 }
 
@@ -34872,6 +35184,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasePluggableDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabaseRefreshableCloneConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfigArrayInput)(nil)).Elem(), GetPluggableDatabaseRefreshableCloneConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseSnapshotsFilterInput)(nil)).Elem(), GetPluggableDatabaseSnapshotsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseSnapshotsFilterArrayInput)(nil)).Elem(), GetPluggableDatabaseSnapshotsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotInput)(nil)).Elem(), GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayInput)(nil)).Elem(), GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesFilterInput)(nil)).Elem(), GetPluggableDatabasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesFilterArrayInput)(nil)).Elem(), GetPluggableDatabasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseArgs{})
@@ -35362,6 +35678,10 @@ func init() {
 	pulumi.RegisterOutputType(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabaseRefreshableCloneConfigOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabaseRefreshableCloneConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseSnapshotsFilterOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseSnapshotsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesFilterOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseOutput{})

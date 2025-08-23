@@ -41,6 +41,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The OCID of the Source Pluggable Database.
         /// </summary>
         public readonly string SourcePluggableDatabaseId;
+        /// <summary>
+        /// The OCID of the Source Pluggable Database Snapshot id.
+        /// </summary>
+        public readonly string? SourcePluggableDatabaseSnapshotId;
 
         [OutputConstructor]
         private PluggableDatabasePdbCreationTypeDetails(
@@ -56,7 +60,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? sourceContainerDatabaseAdminPassword,
 
-            string sourcePluggableDatabaseId)
+            string sourcePluggableDatabaseId,
+
+            string? sourcePluggableDatabaseSnapshotId)
         {
             CreationType = creationType;
             DblinkUserPassword = dblinkUserPassword;
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.Database.Outputs
             RefreshableCloneDetails = refreshableCloneDetails;
             SourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             SourcePluggableDatabaseId = sourcePluggableDatabaseId;
+            SourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
         }
     }
 }

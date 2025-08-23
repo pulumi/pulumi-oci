@@ -49,6 +49,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: apigateway.GatewayLockArray{
+//					&apigateway.GatewayLockArgs{
+//						Type:    pulumi.Any(gatewayLocksType),
+//						Message: pulumi.Any(gatewayLocksMessage),
+//					},
+//				},
 //				NetworkSecurityGroupIds: pulumi.Any(gatewayNetworkSecurityGroupIds),
 //				ResponseCacheDetails: &apigateway.GatewayResponseCacheDetailsArgs{
 //					Type:                              pulumi.Any(gatewayResponseCacheDetailsType),
@@ -88,7 +94,7 @@ type Gateway struct {
 
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles GatewayCaBundleArrayOutput `pulumi:"caBundles"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -106,8 +112,9 @@ type Gateway struct {
 	IpAddresses    GatewayIpAddressArrayOutput `pulumi:"ipAddresses"`
 	IsLockOverride pulumi.BoolOutput           `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput    `pulumi:"lifecycleDetails"`
-	Locks            GatewayLockArrayOutput `pulumi:"locks"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GatewayLockArrayOutput `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -118,7 +125,8 @@ type Gateway struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId   pulumi.StringOutput    `pulumi:"subnetId"`
+	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -167,7 +175,7 @@ func GetGateway(ctx *pulumi.Context,
 type gatewayState struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles []GatewayCaBundle `pulumi:"caBundles"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -185,8 +193,9 @@ type gatewayState struct {
 	IpAddresses    []GatewayIpAddress `pulumi:"ipAddresses"`
 	IsLockOverride *bool              `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string       `pulumi:"lifecycleDetails"`
-	Locks            []GatewayLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GatewayLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -197,7 +206,8 @@ type gatewayState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId   *string           `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -208,7 +218,7 @@ type gatewayState struct {
 type GatewayState struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles GatewayCaBundleArrayInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 	CertificateId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId pulumi.StringPtrInput
@@ -227,7 +237,8 @@ type GatewayState struct {
 	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            GatewayLockArrayInput
+	// Locks associated with this resource.
+	Locks GatewayLockArrayInput
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Base Gateway response cache.
@@ -238,7 +249,8 @@ type GatewayState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId   pulumi.StringPtrInput
+	SubnetId pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -253,7 +265,7 @@ func (GatewayState) ElementType() reflect.Type {
 type gatewayArgs struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles []GatewayCaBundle `pulumi:"caBundles"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -266,7 +278,8 @@ type gatewayArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
-	Locks          []GatewayLock     `pulumi:"locks"`
+	// Locks associated with this resource.
+	Locks []GatewayLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -282,7 +295,7 @@ type gatewayArgs struct {
 type GatewayArgs struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles GatewayCaBundleArrayInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 	CertificateId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId pulumi.StringInput
@@ -295,7 +308,8 @@ type GatewayArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
-	Locks          GatewayLockArrayInput
+	// Locks associated with this resource.
+	Locks GatewayLockArrayInput
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Base Gateway response cache.
@@ -399,7 +413,7 @@ func (o GatewayOutput) CaBundles() GatewayCaBundleArrayOutput {
 	return o.ApplyT(func(v *Gateway) GatewayCaBundleArrayOutput { return v.CaBundles }).(GatewayCaBundleArrayOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
 func (o GatewayOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
@@ -448,6 +462,7 @@ func (o GatewayOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o GatewayOutput) Locks() GatewayLockArrayOutput {
 	return o.ApplyT(func(v *Gateway) GatewayLockArrayOutput { return v.Locks }).(GatewayLockArrayOutput)
 }
@@ -475,6 +490,7 @@ func (o GatewayOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GatewayOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

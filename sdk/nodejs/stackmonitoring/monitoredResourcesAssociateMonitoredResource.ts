@@ -66,30 +66,30 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
     /**
      * Association type to be created between source and destination resources.
      */
-    public readonly associationType!: pulumi.Output<string>;
+    declare public readonly associationType: pulumi.Output<string>;
     /**
      * Association category. Possible values are:
      * * System created (SYSTEM),
      * * User created using API (USER_API)
      * * User created using tags (USER_TAG_ASSOC).
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Association Resource Details.
      */
-    public /*out*/ readonly destinationResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail[]>;
+    declare public /*out*/ readonly destinationResourceDetails: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail[]>;
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly destinationResourceId!: pulumi.Output<string>;
+    declare public readonly destinationResourceId: pulumi.Output<string>;
     /**
      * Association Resource Details.
      */
-    public /*out*/ readonly sourceResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail[]>;
+    declare public /*out*/ readonly sourceResourceDetails: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail[]>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
      *
@@ -97,15 +97,15 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceResourceId!: pulumi.Output<string>;
+    declare public readonly sourceResourceId: pulumi.Output<string>;
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The time when the association was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a MonitoredResourcesAssociateMonitoredResource resource with the given unique name, arguments, and options.
@@ -120,33 +120,33 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourcesAssociateMonitoredResourceState | undefined;
-            resourceInputs["associationType"] = state ? state.associationType : undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["destinationResourceDetails"] = state ? state.destinationResourceDetails : undefined;
-            resourceInputs["destinationResourceId"] = state ? state.destinationResourceId : undefined;
-            resourceInputs["sourceResourceDetails"] = state ? state.sourceResourceDetails : undefined;
-            resourceInputs["sourceResourceId"] = state ? state.sourceResourceId : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["associationType"] = state?.associationType;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["destinationResourceDetails"] = state?.destinationResourceDetails;
+            resourceInputs["destinationResourceId"] = state?.destinationResourceId;
+            resourceInputs["sourceResourceDetails"] = state?.sourceResourceDetails;
+            resourceInputs["sourceResourceId"] = state?.sourceResourceId;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as MonitoredResourcesAssociateMonitoredResourceArgs | undefined;
-            if ((!args || args.associationType === undefined) && !opts.urn) {
+            if (args?.associationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'associationType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.destinationResourceId === undefined) && !opts.urn) {
+            if (args?.destinationResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationResourceId'");
             }
-            if ((!args || args.sourceResourceId === undefined) && !opts.urn) {
+            if (args?.sourceResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceResourceId'");
             }
-            resourceInputs["associationType"] = args ? args.associationType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["destinationResourceId"] = args ? args.destinationResourceId : undefined;
-            resourceInputs["sourceResourceId"] = args ? args.sourceResourceId : undefined;
+            resourceInputs["associationType"] = args?.associationType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["destinationResourceId"] = args?.destinationResourceId;
+            resourceInputs["sourceResourceId"] = args?.sourceResourceId;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["destinationResourceDetails"] = undefined /*out*/;
             resourceInputs["sourceResourceDetails"] = undefined /*out*/;

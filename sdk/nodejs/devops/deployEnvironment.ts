@@ -85,47 +85,47 @@ export class DeployEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the Kubernetes cluster.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * The OCID of a compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      */
-    public readonly computeInstanceGroupSelectors!: pulumi.Output<outputs.DevOps.DeployEnvironmentComputeInstanceGroupSelectors>;
+    declare public readonly computeInstanceGroupSelectors: pulumi.Output<outputs.DevOps.DeployEnvironmentComputeInstanceGroupSelectors>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Deployment environment type.
      */
-    public readonly deployEnvironmentType!: pulumi.Output<string>;
+    declare public readonly deployEnvironmentType: pulumi.Output<string>;
     /**
      * (Updatable) Optional description about the deployment environment.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Deployment environment display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The OCID of the Function.
      */
-    public readonly functionId!: pulumi.Output<string>;
+    declare public readonly functionId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    public readonly networkChannel!: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel>;
+    declare public readonly networkChannel: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
      *
@@ -133,23 +133,23 @@ export class DeployEnvironment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the deployment environment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DeployEnvironment resource with the given unique name, arguments, and options.
@@ -164,40 +164,40 @@ export class DeployEnvironment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeployEnvironmentState | undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeInstanceGroupSelectors"] = state ? state.computeInstanceGroupSelectors : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deployEnvironmentType"] = state ? state.deployEnvironmentType : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["functionId"] = state ? state.functionId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["networkChannel"] = state ? state.networkChannel : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeInstanceGroupSelectors"] = state?.computeInstanceGroupSelectors;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deployEnvironmentType"] = state?.deployEnvironmentType;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["functionId"] = state?.functionId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["networkChannel"] = state?.networkChannel;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DeployEnvironmentArgs | undefined;
-            if ((!args || args.deployEnvironmentType === undefined) && !opts.urn) {
+            if (args?.deployEnvironmentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deployEnvironmentType'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["computeInstanceGroupSelectors"] = args ? args.computeInstanceGroupSelectors : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deployEnvironmentType"] = args ? args.deployEnvironmentType : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["functionId"] = args ? args.functionId : undefined;
-            resourceInputs["networkChannel"] = args ? args.networkChannel : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["computeInstanceGroupSelectors"] = args?.computeInstanceGroupSelectors;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deployEnvironmentType"] = args?.deployEnvironmentType;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["functionId"] = args?.functionId;
+            resourceInputs["networkChannel"] = args?.networkChannel;
+            resourceInputs["projectId"] = args?.projectId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

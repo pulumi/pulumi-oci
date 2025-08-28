@@ -194,59 +194,59 @@ export class MysqlConfiguration extends pulumi.CustomResource {
     /**
      * The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-provided data about the Configuration.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the Configuration.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      */
-    public readonly initVariables!: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables>;
+    declare public readonly initVariables: pulumi.Output<outputs.Mysql.MysqlConfigurationInitVariables>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
-    public readonly parentConfigurationId!: pulumi.Output<string>;
+    declare public readonly parentConfigurationId: pulumi.Output<string>;
     /**
      * The name of the associated Shape.
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
     /**
      * The current state of the Configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The Configuration type, DEFAULT or CUSTOM.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * User-defined service variables.
      */
-    public readonly variables!: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables>;
+    declare public readonly variables: pulumi.Output<outputs.Mysql.MysqlConfigurationVariables>;
 
     /**
      * Create a MysqlConfiguration resource with the given unique name, arguments, and options.
@@ -261,37 +261,37 @@ export class MysqlConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MysqlConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["initVariables"] = state ? state.initVariables : undefined;
-            resourceInputs["parentConfigurationId"] = state ? state.parentConfigurationId : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["initVariables"] = state?.initVariables;
+            resourceInputs["parentConfigurationId"] = state?.parentConfigurationId;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["variables"] = state?.variables;
         } else {
             const args = argsOrState as MysqlConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["initVariables"] = args ? args.initVariables : undefined;
-            resourceInputs["parentConfigurationId"] = args ? args.parentConfigurationId : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
-            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["initVariables"] = args?.initVariables;
+            resourceInputs["parentConfigurationId"] = args?.parentConfigurationId;
+            resourceInputs["shapeName"] = args?.shapeName;
+            resourceInputs["variables"] = args?.variables;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

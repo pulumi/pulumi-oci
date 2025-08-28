@@ -76,119 +76,119 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * The OCID of the user who created this operator control assignment.
      */
-    public /*out*/ readonly assignerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assignerId: pulumi.Output<string>;
     /**
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      */
-    public readonly comment!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * description containing reason for releasing of OperatorControl.
      */
-    public /*out*/ readonly detachmentDescription!: pulumi.Output<string>;
+    declare public /*out*/ readonly detachmentDescription: pulumi.Output<string>;
     /**
      * The code identifying the error occurred during Assignment operation.
      */
-    public /*out*/ readonly errorCode!: pulumi.Output<number>;
+    declare public /*out*/ readonly errorCode: pulumi.Output<number>;
     /**
      * The message describing the error occurred during Assignment operation.
      */
-    public /*out*/ readonly errorMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly errorMessage: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The boolean if true would autoApprove during maintenance.
      */
-    public readonly isAutoApproveDuringMaintenance!: pulumi.Output<boolean>;
+    declare public readonly isAutoApproveDuringMaintenance: pulumi.Output<boolean>;
     /**
      * Whether the assignment is a default assignment.
      */
-    public /*out*/ readonly isDefaultAssignment!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDefaultAssignment: pulumi.Output<boolean>;
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
-    public readonly isEnforcedAlways!: pulumi.Output<boolean>;
+    declare public readonly isEnforcedAlways: pulumi.Output<boolean>;
     /**
      * (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
      */
-    public readonly isHypervisorLogForwarded!: pulumi.Output<boolean>;
+    declare public readonly isHypervisorLogForwarded: pulumi.Output<boolean>;
     /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
-    public readonly isLogForwarded!: pulumi.Output<boolean>;
+    declare public readonly isLogForwarded: pulumi.Output<boolean>;
     /**
      * More in detail about the lifeCycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Name of the operator control name associated.
      */
-    public /*out*/ readonly opControlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly opControlName: pulumi.Output<string>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
-    public readonly operatorControlId!: pulumi.Output<string>;
+    declare public readonly operatorControlId: pulumi.Output<string>;
     /**
      * (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      */
-    public readonly remoteSyslogServerAddress!: pulumi.Output<string>;
+    declare public readonly remoteSyslogServerAddress: pulumi.Output<string>;
     /**
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      */
-    public readonly remoteSyslogServerCaCert!: pulumi.Output<string>;
+    declare public readonly remoteSyslogServerCaCert: pulumi.Output<string>;
     /**
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      */
-    public readonly remoteSyslogServerPort!: pulumi.Output<number>;
+    declare public readonly remoteSyslogServerPort: pulumi.Output<number>;
     /**
      * The OCID of the compartment that contains the target resource.
      */
-    public readonly resourceCompartmentId!: pulumi.Output<string>;
+    declare public readonly resourceCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the target resource being brought under the governance of the operator control.
      */
-    public readonly resourceId!: pulumi.Output<string>;
+    declare public readonly resourceId: pulumi.Output<string>;
     /**
      * Name of the target resource.
      */
-    public readonly resourceName!: pulumi.Output<string>;
+    declare public readonly resourceName: pulumi.Output<string>;
     /**
      * Type of the target resource.
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current lifcycle state of the OperatorControl.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public readonly timeAssignmentFrom!: pulumi.Output<string>;
+    declare public readonly timeAssignmentFrom: pulumi.Output<string>;
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    public readonly timeAssignmentTo!: pulumi.Output<string>;
+    declare public readonly timeAssignmentTo: pulumi.Output<string>;
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfAssignment!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfAssignment: pulumi.Output<string>;
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfDeletion: pulumi.Output<string>;
     /**
      * User id who released the operatorControl.
      */
-    public /*out*/ readonly unassignerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly unassignerId: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
      *
@@ -196,7 +196,7 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly validateAssignmentTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly validateAssignmentTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a OperatorControlAssignment resource with the given unique name, arguments, and options.
@@ -211,78 +211,78 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OperatorControlAssignmentState | undefined;
-            resourceInputs["assignerId"] = state ? state.assignerId : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["detachmentDescription"] = state ? state.detachmentDescription : undefined;
-            resourceInputs["errorCode"] = state ? state.errorCode : undefined;
-            resourceInputs["errorMessage"] = state ? state.errorMessage : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoApproveDuringMaintenance"] = state ? state.isAutoApproveDuringMaintenance : undefined;
-            resourceInputs["isDefaultAssignment"] = state ? state.isDefaultAssignment : undefined;
-            resourceInputs["isEnforcedAlways"] = state ? state.isEnforcedAlways : undefined;
-            resourceInputs["isHypervisorLogForwarded"] = state ? state.isHypervisorLogForwarded : undefined;
-            resourceInputs["isLogForwarded"] = state ? state.isLogForwarded : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["opControlName"] = state ? state.opControlName : undefined;
-            resourceInputs["operatorControlId"] = state ? state.operatorControlId : undefined;
-            resourceInputs["remoteSyslogServerAddress"] = state ? state.remoteSyslogServerAddress : undefined;
-            resourceInputs["remoteSyslogServerCaCert"] = state ? state.remoteSyslogServerCaCert : undefined;
-            resourceInputs["remoteSyslogServerPort"] = state ? state.remoteSyslogServerPort : undefined;
-            resourceInputs["resourceCompartmentId"] = state ? state.resourceCompartmentId : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["resourceName"] = state ? state.resourceName : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeAssignmentFrom"] = state ? state.timeAssignmentFrom : undefined;
-            resourceInputs["timeAssignmentTo"] = state ? state.timeAssignmentTo : undefined;
-            resourceInputs["timeOfAssignment"] = state ? state.timeOfAssignment : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
-            resourceInputs["unassignerId"] = state ? state.unassignerId : undefined;
-            resourceInputs["validateAssignmentTrigger"] = state ? state.validateAssignmentTrigger : undefined;
+            resourceInputs["assignerId"] = state?.assignerId;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detachmentDescription"] = state?.detachmentDescription;
+            resourceInputs["errorCode"] = state?.errorCode;
+            resourceInputs["errorMessage"] = state?.errorMessage;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoApproveDuringMaintenance"] = state?.isAutoApproveDuringMaintenance;
+            resourceInputs["isDefaultAssignment"] = state?.isDefaultAssignment;
+            resourceInputs["isEnforcedAlways"] = state?.isEnforcedAlways;
+            resourceInputs["isHypervisorLogForwarded"] = state?.isHypervisorLogForwarded;
+            resourceInputs["isLogForwarded"] = state?.isLogForwarded;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["opControlName"] = state?.opControlName;
+            resourceInputs["operatorControlId"] = state?.operatorControlId;
+            resourceInputs["remoteSyslogServerAddress"] = state?.remoteSyslogServerAddress;
+            resourceInputs["remoteSyslogServerCaCert"] = state?.remoteSyslogServerCaCert;
+            resourceInputs["remoteSyslogServerPort"] = state?.remoteSyslogServerPort;
+            resourceInputs["resourceCompartmentId"] = state?.resourceCompartmentId;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["resourceName"] = state?.resourceName;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeAssignmentFrom"] = state?.timeAssignmentFrom;
+            resourceInputs["timeAssignmentTo"] = state?.timeAssignmentTo;
+            resourceInputs["timeOfAssignment"] = state?.timeOfAssignment;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
+            resourceInputs["unassignerId"] = state?.unassignerId;
+            resourceInputs["validateAssignmentTrigger"] = state?.validateAssignmentTrigger;
         } else {
             const args = argsOrState as OperatorControlAssignmentArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.isEnforcedAlways === undefined) && !opts.urn) {
+            if (args?.isEnforcedAlways === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnforcedAlways'");
             }
-            if ((!args || args.operatorControlId === undefined) && !opts.urn) {
+            if (args?.operatorControlId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operatorControlId'");
             }
-            if ((!args || args.resourceCompartmentId === undefined) && !opts.urn) {
+            if (args?.resourceCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceCompartmentId'");
             }
-            if ((!args || args.resourceId === undefined) && !opts.urn) {
+            if (args?.resourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceId'");
             }
-            if ((!args || args.resourceName === undefined) && !opts.urn) {
+            if (args?.resourceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceName'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoApproveDuringMaintenance"] = args ? args.isAutoApproveDuringMaintenance : undefined;
-            resourceInputs["isEnforcedAlways"] = args ? args.isEnforcedAlways : undefined;
-            resourceInputs["isHypervisorLogForwarded"] = args ? args.isHypervisorLogForwarded : undefined;
-            resourceInputs["isLogForwarded"] = args ? args.isLogForwarded : undefined;
-            resourceInputs["operatorControlId"] = args ? args.operatorControlId : undefined;
-            resourceInputs["remoteSyslogServerAddress"] = args ? args.remoteSyslogServerAddress : undefined;
-            resourceInputs["remoteSyslogServerCaCert"] = args ? args.remoteSyslogServerCaCert : undefined;
-            resourceInputs["remoteSyslogServerPort"] = args ? args.remoteSyslogServerPort : undefined;
-            resourceInputs["resourceCompartmentId"] = args ? args.resourceCompartmentId : undefined;
-            resourceInputs["resourceId"] = args ? args.resourceId : undefined;
-            resourceInputs["resourceName"] = args ? args.resourceName : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
-            resourceInputs["timeAssignmentFrom"] = args ? args.timeAssignmentFrom : undefined;
-            resourceInputs["timeAssignmentTo"] = args ? args.timeAssignmentTo : undefined;
-            resourceInputs["validateAssignmentTrigger"] = args ? args.validateAssignmentTrigger : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoApproveDuringMaintenance"] = args?.isAutoApproveDuringMaintenance;
+            resourceInputs["isEnforcedAlways"] = args?.isEnforcedAlways;
+            resourceInputs["isHypervisorLogForwarded"] = args?.isHypervisorLogForwarded;
+            resourceInputs["isLogForwarded"] = args?.isLogForwarded;
+            resourceInputs["operatorControlId"] = args?.operatorControlId;
+            resourceInputs["remoteSyslogServerAddress"] = args?.remoteSyslogServerAddress;
+            resourceInputs["remoteSyslogServerCaCert"] = args?.remoteSyslogServerCaCert;
+            resourceInputs["remoteSyslogServerPort"] = args?.remoteSyslogServerPort;
+            resourceInputs["resourceCompartmentId"] = args?.resourceCompartmentId;
+            resourceInputs["resourceId"] = args?.resourceId;
+            resourceInputs["resourceName"] = args?.resourceName;
+            resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["timeAssignmentFrom"] = args?.timeAssignmentFrom;
+            resourceInputs["timeAssignmentTo"] = args?.timeAssignmentTo;
+            resourceInputs["validateAssignmentTrigger"] = args?.validateAssignmentTrigger;
             resourceInputs["assignerId"] = undefined /*out*/;
             resourceInputs["detachmentDescription"] = undefined /*out*/;
             resourceInputs["errorCode"] = undefined /*out*/;

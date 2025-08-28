@@ -61,15 +61,15 @@ export class ExternalPluggableDatabasesStackMonitoring extends pulumi.CustomReso
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableStackMonitoring!: pulumi.Output<boolean>;
+    declare public readonly enableStackMonitoring: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
+    declare public readonly externalDatabaseConnectorId: pulumi.Output<string>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly externalPluggableDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalPluggableDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a ExternalPluggableDatabasesStackMonitoring resource with the given unique name, arguments, and options.
@@ -84,23 +84,23 @@ export class ExternalPluggableDatabasesStackMonitoring extends pulumi.CustomReso
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalPluggableDatabasesStackMonitoringState | undefined;
-            resourceInputs["enableStackMonitoring"] = state ? state.enableStackMonitoring : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = state ? state.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = state ? state.externalPluggableDatabaseId : undefined;
+            resourceInputs["enableStackMonitoring"] = state?.enableStackMonitoring;
+            resourceInputs["externalDatabaseConnectorId"] = state?.externalDatabaseConnectorId;
+            resourceInputs["externalPluggableDatabaseId"] = state?.externalPluggableDatabaseId;
         } else {
             const args = argsOrState as ExternalPluggableDatabasesStackMonitoringArgs | undefined;
-            if ((!args || args.enableStackMonitoring === undefined) && !opts.urn) {
+            if (args?.enableStackMonitoring === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableStackMonitoring'");
             }
-            if ((!args || args.externalDatabaseConnectorId === undefined) && !opts.urn) {
+            if (args?.externalDatabaseConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDatabaseConnectorId'");
             }
-            if ((!args || args.externalPluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalPluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalPluggableDatabaseId'");
             }
-            resourceInputs["enableStackMonitoring"] = args ? args.enableStackMonitoring : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = args ? args.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = args ? args.externalPluggableDatabaseId : undefined;
+            resourceInputs["enableStackMonitoring"] = args?.enableStackMonitoring;
+            resourceInputs["externalDatabaseConnectorId"] = args?.externalDatabaseConnectorId;
+            resourceInputs["externalPluggableDatabaseId"] = args?.externalPluggableDatabaseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalPluggableDatabasesStackMonitoring.__pulumiType, name, resourceInputs, opts);

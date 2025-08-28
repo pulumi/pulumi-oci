@@ -66,23 +66,23 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this URL List belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Total count of URLs in the URL List
      */
-    public /*out*/ readonly totalUrls!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalUrls: pulumi.Output<number>;
     /**
      * (Updatable) List of urls.
      */
-    public readonly urls!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyUrlListUrl[]>;
+    declare public readonly urls: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyUrlListUrl[]>;
 
     /**
      * Create a NetworkFirewallPolicyUrlList resource with the given unique name, arguments, and options.
@@ -97,22 +97,22 @@ export class NetworkFirewallPolicyUrlList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyUrlListState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["totalUrls"] = state ? state.totalUrls : undefined;
-            resourceInputs["urls"] = state ? state.urls : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["totalUrls"] = state?.totalUrls;
+            resourceInputs["urls"] = state?.urls;
         } else {
             const args = argsOrState as NetworkFirewallPolicyUrlListArgs | undefined;
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.urls === undefined) && !opts.urn) {
+            if (args?.urls === undefined && !opts.urn) {
                 throw new Error("Missing required property 'urls'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["urls"] = args ? args.urls : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["urls"] = args?.urls;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["totalUrls"] = undefined /*out*/;
         }

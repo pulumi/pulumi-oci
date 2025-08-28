@@ -54,7 +54,7 @@ export class Configuration extends pulumi.CustomResource {
     /**
      * ID of the root compartment (tenancy)
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
      *
@@ -62,7 +62,7 @@ export class Configuration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionPeriodDays!: pulumi.Output<number>;
+    declare public readonly retentionPeriodDays: pulumi.Output<number>;
 
     /**
      * Create a Configuration resource with the given unique name, arguments, and options.
@@ -77,18 +77,18 @@ export class Configuration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["retentionPeriodDays"] = state ? state.retentionPeriodDays : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["retentionPeriodDays"] = state?.retentionPeriodDays;
         } else {
             const args = argsOrState as ConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.retentionPeriodDays === undefined) && !opts.urn) {
+            if (args?.retentionPeriodDays === undefined && !opts.urn) {
                 throw new Error("Missing required property 'retentionPeriodDays'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["retentionPeriodDays"] = args ? args.retentionPeriodDays : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["retentionPeriodDays"] = args?.retentionPeriodDays;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Configuration.__pulumiType, name, resourceInputs, opts);

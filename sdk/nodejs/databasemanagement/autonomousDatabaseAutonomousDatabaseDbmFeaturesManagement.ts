@@ -42,7 +42,7 @@ export class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends p
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -50,11 +50,11 @@ export class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends p
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableAutonomousDatabaseDbmFeature!: pulumi.Output<boolean>;
+    declare public readonly enableAutonomousDatabaseDbmFeature: pulumi.Output<boolean>;
     /**
      * The details required to enable the specified Database Management feature for an Autonomous Database.
      */
-    public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    declare public readonly featureDetails: pulumi.Output<outputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
 
     /**
      * Create a AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -69,20 +69,20 @@ export class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends p
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState | undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["enableAutonomousDatabaseDbmFeature"] = state ? state.enableAutonomousDatabaseDbmFeature : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["enableAutonomousDatabaseDbmFeature"] = state?.enableAutonomousDatabaseDbmFeature;
+            resourceInputs["featureDetails"] = state?.featureDetails;
         } else {
             const args = argsOrState as AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs | undefined;
-            if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            if ((!args || args.enableAutonomousDatabaseDbmFeature === undefined) && !opts.urn) {
+            if (args?.enableAutonomousDatabaseDbmFeature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableAutonomousDatabaseDbmFeature'");
             }
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["enableAutonomousDatabaseDbmFeature"] = args ? args.enableAutonomousDatabaseDbmFeature : undefined;
-            resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["enableAutonomousDatabaseDbmFeature"] = args?.enableAutonomousDatabaseDbmFeature;
+            resourceInputs["featureDetails"] = args?.featureDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);

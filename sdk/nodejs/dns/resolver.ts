@@ -53,51 +53,51 @@ export class Resolver extends pulumi.CustomResource {
     /**
      * The OCID of the attached VCN.
      */
-    public /*out*/ readonly attachedVcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly attachedVcnId: pulumi.Output<string>;
     /**
      * (Updatable) The attached views. Views are evaluated in order.
      */
-    public readonly attachedViews!: pulumi.Output<outputs.Dns.ResolverAttachedView[] | undefined>;
+    declare public readonly attachedViews: pulumi.Output<outputs.Dns.ResolverAttachedView[] | undefined>;
     /**
      * (Updatable) The OCID of the owning compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the default view.
      */
-    public /*out*/ readonly defaultViewId!: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultViewId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the resolver.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Read-only array of endpoints for the resolver.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Dns.ResolverEndpoint[]>;
+    declare public /*out*/ readonly endpoints: pulumi.Output<outputs.Dns.ResolverEndpoint[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isProtected: pulumi.Output<boolean>;
     /**
      * The OCID of the target resolver.
      */
-    public readonly resolverId!: pulumi.Output<string>;
+    declare public readonly resolverId: pulumi.Output<string>;
     /**
      * (Updatable) Rules for the resolver. Rules are evaluated in order.
      */
-    public readonly rules!: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.Dns.ResolverRule[] | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope. 
      *
@@ -105,23 +105,23 @@ export class Resolver extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Resolver resource with the given unique name, arguments, and options.
@@ -136,35 +136,35 @@ export class Resolver extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResolverState | undefined;
-            resourceInputs["attachedVcnId"] = state ? state.attachedVcnId : undefined;
-            resourceInputs["attachedViews"] = state ? state.attachedViews : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["defaultViewId"] = state ? state.defaultViewId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isProtected"] = state ? state.isProtected : undefined;
-            resourceInputs["resolverId"] = state ? state.resolverId : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["attachedVcnId"] = state?.attachedVcnId;
+            resourceInputs["attachedViews"] = state?.attachedViews;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["defaultViewId"] = state?.defaultViewId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isProtected"] = state?.isProtected;
+            resourceInputs["resolverId"] = state?.resolverId;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ResolverArgs | undefined;
-            if ((!args || args.resolverId === undefined) && !opts.urn) {
+            if (args?.resolverId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resolverId'");
             }
-            resourceInputs["attachedViews"] = args ? args.attachedViews : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["resolverId"] = args ? args.resolverId : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["attachedViews"] = args?.attachedViews;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["resolverId"] = args?.resolverId;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["scope"] = args?.scope;
             resourceInputs["attachedVcnId"] = undefined /*out*/;
             resourceInputs["defaultViewId"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;

@@ -84,20 +84,20 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
     /**
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      */
-    public /*out*/ readonly applyLag!: pulumi.Output<string>;
+    declare public /*out*/ readonly applyLag: pulumi.Output<string>;
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
-    public /*out*/ readonly applyRate!: pulumi.Output<string>;
-    public readonly autonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly applyRate: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseDataguardAssociationId: pulumi.Output<string>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
-    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
+    declare public readonly fastStartFailOverLagLimitInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      *
@@ -105,87 +105,87 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutomaticFailoverEnabled: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      */
-    public readonly migrateTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly migrateTrigger: pulumi.Output<number | undefined>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    public readonly peerAutonomousContainerDatabaseBackupConfig!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig>;
+    declare public readonly peerAutonomousContainerDatabaseBackupConfig: pulumi.Output<outputs.Database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    public readonly peerAutonomousContainerDatabaseCompartmentId!: pulumi.Output<string>;
+    declare public readonly peerAutonomousContainerDatabaseCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      */
-    public /*out*/ readonly peerAutonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerAutonomousContainerDatabaseDataguardAssociationId: pulumi.Output<string>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
-    public readonly peerAutonomousContainerDatabaseDisplayName!: pulumi.Output<string>;
+    declare public readonly peerAutonomousContainerDatabaseDisplayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
-    public /*out*/ readonly peerAutonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerAutonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    public readonly peerAutonomousVmClusterId!: pulumi.Output<string>;
+    declare public readonly peerAutonomousVmClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    public readonly peerCloudAutonomousVmClusterId!: pulumi.Output<string>;
+    declare public readonly peerCloudAutonomousVmClusterId: pulumi.Output<string>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    public readonly peerDbUniqueName!: pulumi.Output<string>;
+    declare public readonly peerDbUniqueName: pulumi.Output<string>;
     /**
      * The current state of the Autonomous Container Database.
      */
-    public /*out*/ readonly peerLifecycleState!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerLifecycleState: pulumi.Output<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly peerRole!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerRole: pulumi.Output<string>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    declare public readonly protectionMode: pulumi.Output<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
-    public readonly standbyMaintenanceBufferInDays!: pulumi.Output<number>;
+    declare public readonly standbyMaintenanceBufferInDays: pulumi.Output<number>;
     /**
      * The current state of Autonomous Data Guard.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the Autonomous DataGuard association was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time when the last role change action happened.
      */
-    public /*out*/ readonly timeLastRoleChanged!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastRoleChanged: pulumi.Output<string>;
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      */
-    public /*out*/ readonly timeLastSynced!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSynced: pulumi.Output<string>;
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      */
-    public /*out*/ readonly transportLag!: pulumi.Output<string>;
+    declare public /*out*/ readonly transportLag: pulumi.Output<string>;
 
     /**
      * Create a AutonomousContainerDatabaseDataguardAssociation resource with the given unique name, arguments, and options.
@@ -200,56 +200,56 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseDataguardAssociationState | undefined;
-            resourceInputs["applyLag"] = state ? state.applyLag : undefined;
-            resourceInputs["applyRate"] = state ? state.applyRate : undefined;
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state ? state.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
-            resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrateTrigger"] = state ? state.migrateTrigger : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state ? state.peerAutonomousContainerDatabaseBackupConfig : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = state ? state.peerAutonomousContainerDatabaseCompartmentId : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseDataguardAssociationId"] = state ? state.peerAutonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = state ? state.peerAutonomousContainerDatabaseDisplayName : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseId"] = state ? state.peerAutonomousContainerDatabaseId : undefined;
-            resourceInputs["peerAutonomousVmClusterId"] = state ? state.peerAutonomousVmClusterId : undefined;
-            resourceInputs["peerCloudAutonomousVmClusterId"] = state ? state.peerCloudAutonomousVmClusterId : undefined;
-            resourceInputs["peerDbUniqueName"] = state ? state.peerDbUniqueName : undefined;
-            resourceInputs["peerLifecycleState"] = state ? state.peerLifecycleState : undefined;
-            resourceInputs["peerRole"] = state ? state.peerRole : undefined;
-            resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastRoleChanged"] = state ? state.timeLastRoleChanged : undefined;
-            resourceInputs["timeLastSynced"] = state ? state.timeLastSynced : undefined;
-            resourceInputs["transportLag"] = state ? state.transportLag : undefined;
+            resourceInputs["applyLag"] = state?.applyLag;
+            resourceInputs["applyRate"] = state?.applyRate;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state?.fastStartFailOverLagLimitInSeconds;
+            resourceInputs["isAutomaticFailoverEnabled"] = state?.isAutomaticFailoverEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrateTrigger"] = state?.migrateTrigger;
+            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state?.peerAutonomousContainerDatabaseBackupConfig;
+            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = state?.peerAutonomousContainerDatabaseCompartmentId;
+            resourceInputs["peerAutonomousContainerDatabaseDataguardAssociationId"] = state?.peerAutonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = state?.peerAutonomousContainerDatabaseDisplayName;
+            resourceInputs["peerAutonomousContainerDatabaseId"] = state?.peerAutonomousContainerDatabaseId;
+            resourceInputs["peerAutonomousVmClusterId"] = state?.peerAutonomousVmClusterId;
+            resourceInputs["peerCloudAutonomousVmClusterId"] = state?.peerCloudAutonomousVmClusterId;
+            resourceInputs["peerDbUniqueName"] = state?.peerDbUniqueName;
+            resourceInputs["peerLifecycleState"] = state?.peerLifecycleState;
+            resourceInputs["peerRole"] = state?.peerRole;
+            resourceInputs["protectionMode"] = state?.protectionMode;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["standbyMaintenanceBufferInDays"] = state?.standbyMaintenanceBufferInDays;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastRoleChanged"] = state?.timeLastRoleChanged;
+            resourceInputs["timeLastSynced"] = state?.timeLastSynced;
+            resourceInputs["transportLag"] = state?.transportLag;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseDataguardAssociationArgs | undefined;
-            if ((!args || args.autonomousContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseId'");
             }
-            if ((!args || args.peerAutonomousContainerDatabaseDisplayName === undefined) && !opts.urn) {
+            if (args?.peerAutonomousContainerDatabaseDisplayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'peerAutonomousContainerDatabaseDisplayName'");
             }
-            if ((!args || args.protectionMode === undefined) && !opts.urn) {
+            if (args?.protectionMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protectionMode'");
             }
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args ? args.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
-            resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
-            resourceInputs["migrateTrigger"] = args ? args.migrateTrigger : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args ? args.peerAutonomousContainerDatabaseBackupConfig : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args ? args.peerAutonomousContainerDatabaseCompartmentId : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = args ? args.peerAutonomousContainerDatabaseDisplayName : undefined;
-            resourceInputs["peerAutonomousVmClusterId"] = args ? args.peerAutonomousVmClusterId : undefined;
-            resourceInputs["peerCloudAutonomousVmClusterId"] = args ? args.peerCloudAutonomousVmClusterId : undefined;
-            resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
-            resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
-            resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args?.fastStartFailOverLagLimitInSeconds;
+            resourceInputs["isAutomaticFailoverEnabled"] = args?.isAutomaticFailoverEnabled;
+            resourceInputs["migrateTrigger"] = args?.migrateTrigger;
+            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args?.peerAutonomousContainerDatabaseBackupConfig;
+            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args?.peerAutonomousContainerDatabaseCompartmentId;
+            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = args?.peerAutonomousContainerDatabaseDisplayName;
+            resourceInputs["peerAutonomousVmClusterId"] = args?.peerAutonomousVmClusterId;
+            resourceInputs["peerCloudAutonomousVmClusterId"] = args?.peerCloudAutonomousVmClusterId;
+            resourceInputs["peerDbUniqueName"] = args?.peerDbUniqueName;
+            resourceInputs["protectionMode"] = args?.protectionMode;
+            resourceInputs["standbyMaintenanceBufferInDays"] = args?.standbyMaintenanceBufferInDays;
             resourceInputs["applyLag"] = undefined /*out*/;
             resourceInputs["applyRate"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

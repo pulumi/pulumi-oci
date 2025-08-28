@@ -50,91 +50,91 @@ export class Pipeline extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The Minimum number of OCPUs to be made available for this Deployment.
      */
-    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) An object's Display Name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    public /*out*/ readonly isAutoScalingEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAutoScalingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Possible lifecycle substates when retrieving a pipeline.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubState: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.GoldenGate.PipelineLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.GoldenGate.PipelineLock[]>;
     /**
      * Mapping for source/target schema/tables for the pipeline data replication.
      */
-    public /*out*/ readonly mappingRules!: pulumi.Output<outputs.GoldenGate.PipelineMappingRule[]>;
+    declare public /*out*/ readonly mappingRules: pulumi.Output<outputs.GoldenGate.PipelineMappingRule[]>;
     /**
      * Information regarding the pipeline diagnostic collection
      */
-    public /*out*/ readonly pipelineDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.PipelinePipelineDiagnosticData[]>;
+    declare public /*out*/ readonly pipelineDiagnosticDatas: pulumi.Output<outputs.GoldenGate.PipelinePipelineDiagnosticData[]>;
     /**
      * (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
      */
-    public readonly processOptions!: pulumi.Output<outputs.GoldenGate.PipelineProcessOptions>;
+    declare public readonly processOptions: pulumi.Output<outputs.GoldenGate.PipelineProcessOptions>;
     /**
      * (Updatable) The type of the recipe
      */
-    public readonly recipeType!: pulumi.Output<string>;
+    declare public readonly recipeType: pulumi.Output<string>;
     /**
      * The source connection details for creating a pipeline.
      */
-    public readonly sourceConnectionDetails!: pulumi.Output<outputs.GoldenGate.PipelineSourceConnectionDetails>;
+    declare public readonly sourceConnectionDetails: pulumi.Output<outputs.GoldenGate.PipelineSourceConnectionDetails>;
     /**
      * Lifecycle state of the pipeline.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The target connection details for creating a pipeline.
      */
-    public readonly targetConnectionDetails!: pulumi.Output<outputs.GoldenGate.PipelineTargetConnectionDetails>;
+    declare public readonly targetConnectionDetails: pulumi.Output<outputs.GoldenGate.PipelineTargetConnectionDetails>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeLastRecorded!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastRecorded: pulumi.Output<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Pipeline resource with the given unique name, arguments, and options.
@@ -149,59 +149,59 @@ export class Pipeline extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PipelineState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["mappingRules"] = state ? state.mappingRules : undefined;
-            resourceInputs["pipelineDiagnosticDatas"] = state ? state.pipelineDiagnosticDatas : undefined;
-            resourceInputs["processOptions"] = state ? state.processOptions : undefined;
-            resourceInputs["recipeType"] = state ? state.recipeType : undefined;
-            resourceInputs["sourceConnectionDetails"] = state ? state.sourceConnectionDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetConnectionDetails"] = state ? state.targetConnectionDetails : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastRecorded"] = state ? state.timeLastRecorded : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoScalingEnabled"] = state?.isAutoScalingEnabled;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubState"] = state?.lifecycleSubState;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["mappingRules"] = state?.mappingRules;
+            resourceInputs["pipelineDiagnosticDatas"] = state?.pipelineDiagnosticDatas;
+            resourceInputs["processOptions"] = state?.processOptions;
+            resourceInputs["recipeType"] = state?.recipeType;
+            resourceInputs["sourceConnectionDetails"] = state?.sourceConnectionDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetConnectionDetails"] = state?.targetConnectionDetails;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastRecorded"] = state?.timeLastRecorded;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as PipelineArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.licenseModel === undefined) && !opts.urn) {
+            if (args?.licenseModel === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseModel'");
             }
-            if ((!args || args.recipeType === undefined) && !opts.urn) {
+            if (args?.recipeType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recipeType'");
             }
-            if ((!args || args.sourceConnectionDetails === undefined) && !opts.urn) {
+            if (args?.sourceConnectionDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceConnectionDetails'");
             }
-            if ((!args || args.targetConnectionDetails === undefined) && !opts.urn) {
+            if (args?.targetConnectionDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetConnectionDetails'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["processOptions"] = args ? args.processOptions : undefined;
-            resourceInputs["recipeType"] = args ? args.recipeType : undefined;
-            resourceInputs["sourceConnectionDetails"] = args ? args.sourceConnectionDetails : undefined;
-            resourceInputs["targetConnectionDetails"] = args ? args.targetConnectionDetails : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["processOptions"] = args?.processOptions;
+            resourceInputs["recipeType"] = args?.recipeType;
+            resourceInputs["sourceConnectionDetails"] = args?.sourceConnectionDetails;
+            resourceInputs["targetConnectionDetails"] = args?.targetConnectionDetails;
             resourceInputs["cpuCoreCount"] = undefined /*out*/;
             resourceInputs["isAutoScalingEnabled"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

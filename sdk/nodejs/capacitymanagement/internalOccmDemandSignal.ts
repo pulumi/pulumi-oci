@@ -60,33 +60,33 @@ export class InternalOccmDemandSignal extends pulumi.CustomResource {
     /**
      * The OCID of the tenancy from which the request to create the demand signal was made.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A short description about the demand signal.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The display name of the demand signal.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The subset of demand signal states available for operators for updating the demand signal.
      *
      * IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
      */
-    public readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the customer group in which the demand signal is created.
      */
-    public /*out*/ readonly occCustomerGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly occCustomerGroupId: pulumi.Output<string>;
     /**
      * The OCID of the demand signal. 
      *
@@ -94,23 +94,23 @@ export class InternalOccmDemandSignal extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly occmDemandSignalId!: pulumi.Output<string>;
+    declare public readonly occmDemandSignalId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the demand signal.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the demand signal was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the demand signal was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a InternalOccmDemandSignal resource with the given unique name, arguments, and options.
@@ -125,25 +125,25 @@ export class InternalOccmDemandSignal extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InternalOccmDemandSignalState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["occCustomerGroupId"] = state ? state.occCustomerGroupId : undefined;
-            resourceInputs["occmDemandSignalId"] = state ? state.occmDemandSignalId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["occCustomerGroupId"] = state?.occCustomerGroupId;
+            resourceInputs["occmDemandSignalId"] = state?.occmDemandSignalId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as InternalOccmDemandSignalArgs | undefined;
-            if ((!args || args.occmDemandSignalId === undefined) && !opts.urn) {
+            if (args?.occmDemandSignalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'occmDemandSignalId'");
             }
-            resourceInputs["lifecycleDetails"] = args ? args.lifecycleDetails : undefined;
-            resourceInputs["occmDemandSignalId"] = args ? args.occmDemandSignalId : undefined;
+            resourceInputs["lifecycleDetails"] = args?.lifecycleDetails;
+            resourceInputs["occmDemandSignalId"] = args?.occmDemandSignalId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;

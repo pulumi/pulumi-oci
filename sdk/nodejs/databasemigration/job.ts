@@ -48,43 +48,43 @@ export class Job extends pulumi.CustomResource {
     /**
      * Information regarding the DB trace and alert log collection
      */
-    public /*out*/ readonly collectTracesDatas!: pulumi.Output<outputs.DatabaseMigration.JobCollectTracesData[]>;
+    declare public /*out*/ readonly collectTracesDatas: pulumi.Output<outputs.DatabaseMigration.JobCollectTracesData[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Name of the job.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the job
      */
-    public readonly jobId!: pulumi.Output<string>;
+    declare public readonly jobId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the Migration that this job belongs to.
      */
-    public /*out*/ readonly migrationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly migrationId: pulumi.Output<string>;
     /**
      * A list of parameter file versions that can be viewed or edited for the current job.
      */
-    public /*out*/ readonly parameterFileVersions!: pulumi.Output<outputs.DatabaseMigration.JobParameterFileVersion[]>;
+    declare public /*out*/ readonly parameterFileVersions: pulumi.Output<outputs.DatabaseMigration.JobParameterFileVersion[]>;
     /**
      * Percent progress of job phase.
      */
-    public /*out*/ readonly progresses!: pulumi.Output<outputs.DatabaseMigration.JobProgress[]>;
+    declare public /*out*/ readonly progresses: pulumi.Output<outputs.DatabaseMigration.JobProgress[]>;
     /**
      * The current state of the migration job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
      *
@@ -92,27 +92,27 @@ export class Job extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly suspendTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly suspendTrigger: pulumi.Output<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Migration Job was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Migration Job was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Type of unsupported object
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * Database objects not supported.
      */
-    public /*out*/ readonly unsupportedObjects!: pulumi.Output<outputs.DatabaseMigration.JobUnsupportedObject[]>;
+    declare public /*out*/ readonly unsupportedObjects: pulumi.Output<outputs.DatabaseMigration.JobUnsupportedObject[]>;
 
     /**
      * Create a Job resource with the given unique name, arguments, and options.
@@ -127,32 +127,32 @@ export class Job extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JobState | undefined;
-            resourceInputs["collectTracesDatas"] = state ? state.collectTracesDatas : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["jobId"] = state ? state.jobId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrationId"] = state ? state.migrationId : undefined;
-            resourceInputs["parameterFileVersions"] = state ? state.parameterFileVersions : undefined;
-            resourceInputs["progresses"] = state ? state.progresses : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["suspendTrigger"] = state ? state.suspendTrigger : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["unsupportedObjects"] = state ? state.unsupportedObjects : undefined;
+            resourceInputs["collectTracesDatas"] = state?.collectTracesDatas;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["jobId"] = state?.jobId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrationId"] = state?.migrationId;
+            resourceInputs["parameterFileVersions"] = state?.parameterFileVersions;
+            resourceInputs["progresses"] = state?.progresses;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["suspendTrigger"] = state?.suspendTrigger;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["unsupportedObjects"] = state?.unsupportedObjects;
         } else {
             const args = argsOrState as JobArgs | undefined;
-            if ((!args || args.jobId === undefined) && !opts.urn) {
+            if (args?.jobId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'jobId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["jobId"] = args ? args.jobId : undefined;
-            resourceInputs["suspendTrigger"] = args ? args.suspendTrigger : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["jobId"] = args?.jobId;
+            resourceInputs["suspendTrigger"] = args?.suspendTrigger;
             resourceInputs["collectTracesDatas"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["migrationId"] = undefined /*out*/;

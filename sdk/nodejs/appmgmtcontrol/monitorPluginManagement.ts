@@ -52,9 +52,9 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === MonitorPluginManagement.__pulumiType;
     }
 
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceDescription!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
+    declare public /*out*/ readonly monitoredInstanceDescription: pulumi.Output<string>;
+    declare public /*out*/ readonly monitoredInstanceDisplayName: pulumi.Output<string>;
     /**
      * OCID of monitored instance.
      *
@@ -62,9 +62,9 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly monitoredInstanceId!: pulumi.Output<string>;
-    public /*out*/ readonly monitoredInstanceManagementAgentId!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly monitoredInstanceId: pulumi.Output<string>;
+    declare public /*out*/ readonly monitoredInstanceManagementAgentId: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a MonitorPluginManagement resource with the given unique name, arguments, and options.
@@ -79,18 +79,18 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitorPluginManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["monitoredInstanceDescription"] = state ? state.monitoredInstanceDescription : undefined;
-            resourceInputs["monitoredInstanceDisplayName"] = state ? state.monitoredInstanceDisplayName : undefined;
-            resourceInputs["monitoredInstanceId"] = state ? state.monitoredInstanceId : undefined;
-            resourceInputs["monitoredInstanceManagementAgentId"] = state ? state.monitoredInstanceManagementAgentId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["monitoredInstanceDescription"] = state?.monitoredInstanceDescription;
+            resourceInputs["monitoredInstanceDisplayName"] = state?.monitoredInstanceDisplayName;
+            resourceInputs["monitoredInstanceId"] = state?.monitoredInstanceId;
+            resourceInputs["monitoredInstanceManagementAgentId"] = state?.monitoredInstanceManagementAgentId;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as MonitorPluginManagementArgs | undefined;
-            if ((!args || args.monitoredInstanceId === undefined) && !opts.urn) {
+            if (args?.monitoredInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoredInstanceId'");
             }
-            resourceInputs["monitoredInstanceId"] = args ? args.monitoredInstanceId : undefined;
+            resourceInputs["monitoredInstanceId"] = args?.monitoredInstanceId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["monitoredInstanceDescription"] = undefined /*out*/;
             resourceInputs["monitoredInstanceDisplayName"] = undefined /*out*/;

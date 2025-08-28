@@ -74,35 +74,35 @@ export class FusionEnvironmentFamily extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment where the environment family is located.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    public readonly familyMaintenancePolicy!: pulumi.Output<outputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy>;
+    declare public readonly familyMaintenancePolicy: pulumi.Output<outputs.FusionApps.FusionEnvironmentFamilyFamilyMaintenancePolicy>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * When set to True, a subscription update is required for the environment family.
      */
-    public /*out*/ readonly isSubscriptionUpdateNeeded!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSubscriptionUpdateNeeded: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current state of the FusionEnvironmentFamily.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
      *
@@ -110,16 +110,16 @@ export class FusionEnvironmentFamily extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionIds!: pulumi.Output<string[]>;
+    declare public readonly subscriptionIds: pulumi.Output<string[]>;
     /**
      * Environment Specific Guid/ System Name
      */
-    public /*out*/ readonly systemName!: pulumi.Output<string>;
+    declare public /*out*/ readonly systemName: pulumi.Output<string>;
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public readonly timeUpdated!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public readonly timeUpdated: pulumi.Output<string | undefined>;
 
     /**
      * Create a FusionEnvironmentFamily resource with the given unique name, arguments, and options.
@@ -134,36 +134,36 @@ export class FusionEnvironmentFamily extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentFamilyState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["familyMaintenancePolicy"] = state ? state.familyMaintenancePolicy : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isSubscriptionUpdateNeeded"] = state ? state.isSubscriptionUpdateNeeded : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscriptionIds"] = state ? state.subscriptionIds : undefined;
-            resourceInputs["systemName"] = state ? state.systemName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["familyMaintenancePolicy"] = state?.familyMaintenancePolicy;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSubscriptionUpdateNeeded"] = state?.isSubscriptionUpdateNeeded;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscriptionIds"] = state?.subscriptionIds;
+            resourceInputs["systemName"] = state?.systemName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FusionEnvironmentFamilyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.subscriptionIds === undefined) && !opts.urn) {
+            if (args?.subscriptionIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscriptionIds'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["familyMaintenancePolicy"] = args ? args.familyMaintenancePolicy : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["subscriptionIds"] = args ? args.subscriptionIds : undefined;
-            resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["familyMaintenancePolicy"] = args?.familyMaintenancePolicy;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["subscriptionIds"] = args?.subscriptionIds;
+            resourceInputs["timeUpdated"] = args?.timeUpdated;
             resourceInputs["isSubscriptionUpdateNeeded"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

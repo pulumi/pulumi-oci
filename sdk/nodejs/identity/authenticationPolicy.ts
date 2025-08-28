@@ -72,15 +72,15 @@ export class AuthenticationPolicy extends pulumi.CustomResource {
     /**
      * The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Network policy, Consists of a list of Network Source ids.
      */
-    public readonly networkPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyNetworkPolicy>;
+    declare public readonly networkPolicy: pulumi.Output<outputs.Identity.AuthenticationPolicyNetworkPolicy>;
     /**
      * (Updatable) Password policy, currently set for the given compartment.
      */
-    public readonly passwordPolicy!: pulumi.Output<outputs.Identity.AuthenticationPolicyPasswordPolicy>;
+    declare public readonly passwordPolicy: pulumi.Output<outputs.Identity.AuthenticationPolicyPasswordPolicy>;
 
     /**
      * Create a AuthenticationPolicy resource with the given unique name, arguments, and options.
@@ -95,17 +95,17 @@ export class AuthenticationPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuthenticationPolicyState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["networkPolicy"] = state ? state.networkPolicy : undefined;
-            resourceInputs["passwordPolicy"] = state ? state.passwordPolicy : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["networkPolicy"] = state?.networkPolicy;
+            resourceInputs["passwordPolicy"] = state?.passwordPolicy;
         } else {
             const args = argsOrState as AuthenticationPolicyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["networkPolicy"] = args ? args.networkPolicy : undefined;
-            resourceInputs["passwordPolicy"] = args ? args.passwordPolicy : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["networkPolicy"] = args?.networkPolicy;
+            resourceInputs["passwordPolicy"] = args?.passwordPolicy;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuthenticationPolicy.__pulumiType, name, resourceInputs, opts);

@@ -71,97 +71,97 @@ export class VolumeAttachment extends pulumi.CustomResource {
     /**
      * The type of volume. The only supported values are "iscsi" and "paravirtualized".
      */
-    public readonly attachmentType!: pulumi.Output<string>;
+    declare public readonly attachmentType: pulumi.Output<string>;
     /**
      * The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
      */
-    public /*out*/ readonly chapSecret!: pulumi.Output<string>;
+    declare public /*out*/ readonly chapSecret: pulumi.Output<string>;
     /**
      * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
      */
-    public /*out*/ readonly chapUsername!: pulumi.Output<string>;
+    declare public /*out*/ readonly chapUsername: pulumi.Output<string>;
     /**
      * The OCID of the compartment.
      *
      * @deprecated The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      */
-    public readonly device!: pulumi.Output<string>;
+    declare public readonly device: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      */
-    public readonly encryptionInTransitType!: pulumi.Output<string>;
+    declare public readonly encryptionInTransitType: pulumi.Output<string>;
     /**
      * The OCID of the instance.
      */
-    public readonly instanceId!: pulumi.Output<string>;
+    declare public readonly instanceId: pulumi.Output<string>;
     /**
      * The volume's iSCSI IP address.  Example: `169.254.2.2`
      */
-    public /*out*/ readonly ipv4!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipv4: pulumi.Output<string>;
     /**
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */
-    public /*out*/ readonly iqn!: pulumi.Output<string>;
+    declare public /*out*/ readonly iqn: pulumi.Output<string>;
     /**
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      */
-    public readonly isAgentAutoIscsiLoginEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAgentAutoIscsiLoginEnabled: pulumi.Output<boolean>;
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      */
-    public /*out*/ readonly isMultipath!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMultipath: pulumi.Output<boolean>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      */
-    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean>;
+    declare public readonly isPvEncryptionInTransitEnabled: pulumi.Output<boolean>;
     /**
      * Whether the attachment was created in read-only mode.
      */
-    public readonly isReadOnly!: pulumi.Output<boolean>;
+    declare public readonly isReadOnly: pulumi.Output<boolean>;
     /**
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      */
-    public readonly isShareable!: pulumi.Output<boolean>;
+    declare public readonly isShareable: pulumi.Output<boolean>;
     /**
      * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
      */
-    public /*out*/ readonly isVolumeCreatedDuringLaunch!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isVolumeCreatedDuringLaunch: pulumi.Output<boolean>;
     /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      */
-    public /*out*/ readonly iscsiLoginState!: pulumi.Output<string>;
+    declare public /*out*/ readonly iscsiLoginState: pulumi.Output<string>;
     /**
      * A list of secondary multipath devices
      */
-    public /*out*/ readonly multipathDevices!: pulumi.Output<outputs.Core.VolumeAttachmentMultipathDevice[]>;
+    declare public /*out*/ readonly multipathDevices: pulumi.Output<outputs.Core.VolumeAttachmentMultipathDevice[]>;
     /**
      * The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
      */
-    public /*out*/ readonly port!: pulumi.Output<number>;
+    declare public /*out*/ readonly port: pulumi.Output<number>;
     /**
      * The current state of the volume attachment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      */
-    public readonly useChap!: pulumi.Output<boolean>;
+    declare public readonly useChap: pulumi.Output<boolean>;
     /**
      * The OCID of the volume.
      *
@@ -169,7 +169,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly volumeId!: pulumi.Output<string>;
+    declare public readonly volumeId: pulumi.Output<string>;
 
     /**
      * Create a VolumeAttachment resource with the given unique name, arguments, and options.
@@ -184,53 +184,53 @@ export class VolumeAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeAttachmentState | undefined;
-            resourceInputs["attachmentType"] = state ? state.attachmentType : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["chapSecret"] = state ? state.chapSecret : undefined;
-            resourceInputs["chapUsername"] = state ? state.chapUsername : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["device"] = state ? state.device : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encryptionInTransitType"] = state ? state.encryptionInTransitType : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["ipv4"] = state ? state.ipv4 : undefined;
-            resourceInputs["iqn"] = state ? state.iqn : undefined;
-            resourceInputs["isAgentAutoIscsiLoginEnabled"] = state ? state.isAgentAutoIscsiLoginEnabled : undefined;
-            resourceInputs["isMultipath"] = state ? state.isMultipath : undefined;
-            resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
-            resourceInputs["isReadOnly"] = state ? state.isReadOnly : undefined;
-            resourceInputs["isShareable"] = state ? state.isShareable : undefined;
-            resourceInputs["isVolumeCreatedDuringLaunch"] = state ? state.isVolumeCreatedDuringLaunch : undefined;
-            resourceInputs["iscsiLoginState"] = state ? state.iscsiLoginState : undefined;
-            resourceInputs["multipathDevices"] = state ? state.multipathDevices : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["useChap"] = state ? state.useChap : undefined;
-            resourceInputs["volumeId"] = state ? state.volumeId : undefined;
+            resourceInputs["attachmentType"] = state?.attachmentType;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["chapSecret"] = state?.chapSecret;
+            resourceInputs["chapUsername"] = state?.chapUsername;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["device"] = state?.device;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encryptionInTransitType"] = state?.encryptionInTransitType;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["ipv4"] = state?.ipv4;
+            resourceInputs["iqn"] = state?.iqn;
+            resourceInputs["isAgentAutoIscsiLoginEnabled"] = state?.isAgentAutoIscsiLoginEnabled;
+            resourceInputs["isMultipath"] = state?.isMultipath;
+            resourceInputs["isPvEncryptionInTransitEnabled"] = state?.isPvEncryptionInTransitEnabled;
+            resourceInputs["isReadOnly"] = state?.isReadOnly;
+            resourceInputs["isShareable"] = state?.isShareable;
+            resourceInputs["isVolumeCreatedDuringLaunch"] = state?.isVolumeCreatedDuringLaunch;
+            resourceInputs["iscsiLoginState"] = state?.iscsiLoginState;
+            resourceInputs["multipathDevices"] = state?.multipathDevices;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["useChap"] = state?.useChap;
+            resourceInputs["volumeId"] = state?.volumeId;
         } else {
             const args = argsOrState as VolumeAttachmentArgs | undefined;
-            if ((!args || args.attachmentType === undefined) && !opts.urn) {
+            if (args?.attachmentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attachmentType'");
             }
-            if ((!args || args.instanceId === undefined) && !opts.urn) {
+            if (args?.instanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceId'");
             }
-            if ((!args || args.volumeId === undefined) && !opts.urn) {
+            if (args?.volumeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'volumeId'");
             }
-            resourceInputs["attachmentType"] = args ? args.attachmentType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["device"] = args ? args.device : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["encryptionInTransitType"] = args ? args.encryptionInTransitType : undefined;
-            resourceInputs["instanceId"] = args ? args.instanceId : undefined;
-            resourceInputs["isAgentAutoIscsiLoginEnabled"] = args ? args.isAgentAutoIscsiLoginEnabled : undefined;
-            resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
-            resourceInputs["isReadOnly"] = args ? args.isReadOnly : undefined;
-            resourceInputs["isShareable"] = args ? args.isShareable : undefined;
-            resourceInputs["useChap"] = args ? args.useChap : undefined;
-            resourceInputs["volumeId"] = args ? args.volumeId : undefined;
+            resourceInputs["attachmentType"] = args?.attachmentType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["device"] = args?.device;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["encryptionInTransitType"] = args?.encryptionInTransitType;
+            resourceInputs["instanceId"] = args?.instanceId;
+            resourceInputs["isAgentAutoIscsiLoginEnabled"] = args?.isAgentAutoIscsiLoginEnabled;
+            resourceInputs["isPvEncryptionInTransitEnabled"] = args?.isPvEncryptionInTransitEnabled;
+            resourceInputs["isReadOnly"] = args?.isReadOnly;
+            resourceInputs["isShareable"] = args?.isShareable;
+            resourceInputs["useChap"] = args?.useChap;
+            resourceInputs["volumeId"] = args?.volumeId;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["chapSecret"] = undefined /*out*/;
             resourceInputs["chapUsername"] = undefined /*out*/;

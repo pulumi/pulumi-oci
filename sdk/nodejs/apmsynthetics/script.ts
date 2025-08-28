@@ -76,55 +76,55 @@ export class Script extends pulumi.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
      */
-    public readonly content!: pulumi.Output<string>;
+    declare public readonly content: pulumi.Output<string>;
     /**
      * (Updatable) File name of uploaded script content.
      */
-    public readonly contentFileName!: pulumi.Output<string>;
+    declare public readonly contentFileName: pulumi.Output<string>;
     /**
      * Size of the script content.
      */
-    public /*out*/ readonly contentSizeInBytes!: pulumi.Output<number>;
+    declare public /*out*/ readonly contentSizeInBytes: pulumi.Output<number>;
     /**
      * (Updatable) Content type of script.
      */
-    public readonly contentType!: pulumi.Output<string>;
+    declare public readonly contentType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    public /*out*/ readonly monitorStatusCountMaps!: pulumi.Output<outputs.ApmSynthetics.ScriptMonitorStatusCountMap[]>;
+    declare public /*out*/ readonly monitorStatusCountMaps: pulumi.Output<outputs.ApmSynthetics.ScriptMonitorStatusCountMap[]>;
     /**
      * (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
      */
-    public readonly parameters!: pulumi.Output<outputs.ApmSynthetics.ScriptParameter[]>;
+    declare public readonly parameters: pulumi.Output<outputs.ApmSynthetics.ScriptParameter[]>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The time the script was uploaded.
      */
-    public /*out*/ readonly timeUploaded!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUploaded: pulumi.Output<string>;
 
     /**
      * Create a Script resource with the given unique name, arguments, and options.
@@ -139,41 +139,41 @@ export class Script extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScriptState | undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["contentFileName"] = state ? state.contentFileName : undefined;
-            resourceInputs["contentSizeInBytes"] = state ? state.contentSizeInBytes : undefined;
-            resourceInputs["contentType"] = state ? state.contentType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["monitorStatusCountMaps"] = state ? state.monitorStatusCountMaps : undefined;
-            resourceInputs["parameters"] = state ? state.parameters : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeUploaded"] = state ? state.timeUploaded : undefined;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["contentFileName"] = state?.contentFileName;
+            resourceInputs["contentSizeInBytes"] = state?.contentSizeInBytes;
+            resourceInputs["contentType"] = state?.contentType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["monitorStatusCountMaps"] = state?.monitorStatusCountMaps;
+            resourceInputs["parameters"] = state?.parameters;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeUploaded"] = state?.timeUploaded;
         } else {
             const args = argsOrState as ScriptArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            if ((!args || args.content === undefined) && !opts.urn) {
+            if (args?.content === undefined && !opts.urn) {
                 throw new Error("Missing required property 'content'");
             }
-            if ((!args || args.contentType === undefined) && !opts.urn) {
+            if (args?.contentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentType'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["content"] = args ? args.content : undefined;
-            resourceInputs["contentFileName"] = args ? args.contentFileName : undefined;
-            resourceInputs["contentType"] = args ? args.contentType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["parameters"] = args ? args.parameters : undefined;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["content"] = args?.content;
+            resourceInputs["contentFileName"] = args?.contentFileName;
+            resourceInputs["contentType"] = args?.contentType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["parameters"] = args?.parameters;
             resourceInputs["contentSizeInBytes"] = undefined /*out*/;
             resourceInputs["monitorStatusCountMaps"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

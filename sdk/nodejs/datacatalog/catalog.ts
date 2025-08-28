@@ -73,59 +73,59 @@ export class Catalog extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly attachedCatalogPrivateEndpoints!: pulumi.Output<string[]>;
+    declare public readonly attachedCatalogPrivateEndpoints: pulumi.Output<string[]>;
     /**
      * (Updatable) Compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Data catalog identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public /*out*/ readonly locks!: pulumi.Output<outputs.DataCatalog.CatalogLock[]>;
+    declare public /*out*/ readonly locks: pulumi.Output<outputs.DataCatalog.CatalogLock[]>;
     /**
      * The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      */
-    public /*out*/ readonly numberOfObjects!: pulumi.Output<number>;
+    declare public /*out*/ readonly numberOfObjects: pulumi.Output<number>;
     /**
      * The REST front endpoint URL to the data catalog instance.
      */
-    public /*out*/ readonly serviceApiUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceApiUrl: pulumi.Output<string>;
     /**
      * The console front endpoint URL to the data catalog instance.
      */
-    public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceConsoleUrl: pulumi.Output<string>;
     /**
      * The current state of the data catalog resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Catalog resource with the given unique name, arguments, and options.
@@ -140,30 +140,30 @@ export class Catalog extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CatalogState | undefined;
-            resourceInputs["attachedCatalogPrivateEndpoints"] = state ? state.attachedCatalogPrivateEndpoints : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["numberOfObjects"] = state ? state.numberOfObjects : undefined;
-            resourceInputs["serviceApiUrl"] = state ? state.serviceApiUrl : undefined;
-            resourceInputs["serviceConsoleUrl"] = state ? state.serviceConsoleUrl : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["attachedCatalogPrivateEndpoints"] = state?.attachedCatalogPrivateEndpoints;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["numberOfObjects"] = state?.numberOfObjects;
+            resourceInputs["serviceApiUrl"] = state?.serviceApiUrl;
+            resourceInputs["serviceConsoleUrl"] = state?.serviceConsoleUrl;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as CatalogArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["attachedCatalogPrivateEndpoints"] = args ? args.attachedCatalogPrivateEndpoints : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["attachedCatalogPrivateEndpoints"] = args?.attachedCatalogPrivateEndpoints;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["locks"] = undefined /*out*/;
             resourceInputs["numberOfObjects"] = undefined /*out*/;

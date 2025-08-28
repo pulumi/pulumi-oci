@@ -52,15 +52,15 @@ export class ContainerConfiguration extends pulumi.CustomResource {
         return obj['__pulumiType'] === ContainerConfiguration.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
      */
-    public readonly isRepositoryCreatedOnFirstPush!: pulumi.Output<boolean>;
+    declare public readonly isRepositoryCreatedOnFirstPush: pulumi.Output<boolean>;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    declare public /*out*/ readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a ContainerConfiguration resource with the given unique name, arguments, and options.
@@ -75,19 +75,19 @@ export class ContainerConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isRepositoryCreatedOnFirstPush"] = state ? state.isRepositoryCreatedOnFirstPush : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isRepositoryCreatedOnFirstPush"] = state?.isRepositoryCreatedOnFirstPush;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as ContainerConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.isRepositoryCreatedOnFirstPush === undefined) && !opts.urn) {
+            if (args?.isRepositoryCreatedOnFirstPush === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isRepositoryCreatedOnFirstPush'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isRepositoryCreatedOnFirstPush"] = args ? args.isRepositoryCreatedOnFirstPush : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isRepositoryCreatedOnFirstPush"] = args?.isRepositoryCreatedOnFirstPush;
             resourceInputs["namespace"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

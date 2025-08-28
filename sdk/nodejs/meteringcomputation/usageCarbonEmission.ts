@@ -75,47 +75,47 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
     /**
      * The compartment depth level.
      */
-    public readonly compartmentDepth!: pulumi.Output<number>;
+    declare public readonly compartmentDepth: pulumi.Output<number>;
     /**
      * Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
      */
-    public readonly emissionCalculationMethod!: pulumi.Output<string>;
+    declare public readonly emissionCalculationMethod: pulumi.Output<string>;
     /**
      * Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
      */
-    public readonly emissionType!: pulumi.Output<string>;
+    declare public readonly emissionType: pulumi.Output<string>;
     /**
      * The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
      */
-    public readonly granularity!: pulumi.Output<string>;
+    declare public readonly granularity: pulumi.Output<string>;
     /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
      */
-    public readonly groupBies!: pulumi.Output<string[]>;
+    declare public readonly groupBies: pulumi.Output<string[]>;
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
      */
-    public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionGroupByTag[]>;
+    declare public readonly groupByTags: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionGroupByTag[]>;
     /**
      * Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
      */
-    public readonly isAggregateByTime!: pulumi.Output<boolean>;
+    declare public readonly isAggregateByTime: pulumi.Output<boolean>;
     /**
      * A list of carbon emission usage items.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.MeteringComputation.UsageCarbonEmissionItem[]>;
     /**
      * Tenant ID.
      */
-    public readonly tenantId!: pulumi.Output<string>;
+    declare public readonly tenantId: pulumi.Output<string>;
     /**
      * The usage end time.
      */
-    public readonly timeUsageEnded!: pulumi.Output<string>;
+    declare public readonly timeUsageEnded: pulumi.Output<string>;
     /**
      * The usage start time.
      */
-    public readonly timeUsageStarted!: pulumi.Output<string>;
+    declare public readonly timeUsageStarted: pulumi.Output<string>;
     /**
      * The filter object for query usage.
      *
@@ -123,7 +123,7 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly usageCarbonEmissionFilter!: pulumi.Output<string>;
+    declare public readonly usageCarbonEmissionFilter: pulumi.Output<string>;
 
     /**
      * Create a UsageCarbonEmission resource with the given unique name, arguments, and options.
@@ -138,40 +138,40 @@ export class UsageCarbonEmission extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsageCarbonEmissionState | undefined;
-            resourceInputs["compartmentDepth"] = state ? state.compartmentDepth : undefined;
-            resourceInputs["emissionCalculationMethod"] = state ? state.emissionCalculationMethod : undefined;
-            resourceInputs["emissionType"] = state ? state.emissionType : undefined;
-            resourceInputs["granularity"] = state ? state.granularity : undefined;
-            resourceInputs["groupBies"] = state ? state.groupBies : undefined;
-            resourceInputs["groupByTags"] = state ? state.groupByTags : undefined;
-            resourceInputs["isAggregateByTime"] = state ? state.isAggregateByTime : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeUsageEnded"] = state ? state.timeUsageEnded : undefined;
-            resourceInputs["timeUsageStarted"] = state ? state.timeUsageStarted : undefined;
-            resourceInputs["usageCarbonEmissionFilter"] = state ? state.usageCarbonEmissionFilter : undefined;
+            resourceInputs["compartmentDepth"] = state?.compartmentDepth;
+            resourceInputs["emissionCalculationMethod"] = state?.emissionCalculationMethod;
+            resourceInputs["emissionType"] = state?.emissionType;
+            resourceInputs["granularity"] = state?.granularity;
+            resourceInputs["groupBies"] = state?.groupBies;
+            resourceInputs["groupByTags"] = state?.groupByTags;
+            resourceInputs["isAggregateByTime"] = state?.isAggregateByTime;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeUsageEnded"] = state?.timeUsageEnded;
+            resourceInputs["timeUsageStarted"] = state?.timeUsageStarted;
+            resourceInputs["usageCarbonEmissionFilter"] = state?.usageCarbonEmissionFilter;
         } else {
             const args = argsOrState as UsageCarbonEmissionArgs | undefined;
-            if ((!args || args.tenantId === undefined) && !opts.urn) {
+            if (args?.tenantId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenantId'");
             }
-            if ((!args || args.timeUsageEnded === undefined) && !opts.urn) {
+            if (args?.timeUsageEnded === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeUsageEnded'");
             }
-            if ((!args || args.timeUsageStarted === undefined) && !opts.urn) {
+            if (args?.timeUsageStarted === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeUsageStarted'");
             }
-            resourceInputs["compartmentDepth"] = args ? args.compartmentDepth : undefined;
-            resourceInputs["emissionCalculationMethod"] = args ? args.emissionCalculationMethod : undefined;
-            resourceInputs["emissionType"] = args ? args.emissionType : undefined;
-            resourceInputs["granularity"] = args ? args.granularity : undefined;
-            resourceInputs["groupBies"] = args ? args.groupBies : undefined;
-            resourceInputs["groupByTags"] = args ? args.groupByTags : undefined;
-            resourceInputs["isAggregateByTime"] = args ? args.isAggregateByTime : undefined;
-            resourceInputs["tenantId"] = args ? args.tenantId : undefined;
-            resourceInputs["timeUsageEnded"] = args ? args.timeUsageEnded : undefined;
-            resourceInputs["timeUsageStarted"] = args ? args.timeUsageStarted : undefined;
-            resourceInputs["usageCarbonEmissionFilter"] = args ? args.usageCarbonEmissionFilter : undefined;
+            resourceInputs["compartmentDepth"] = args?.compartmentDepth;
+            resourceInputs["emissionCalculationMethod"] = args?.emissionCalculationMethod;
+            resourceInputs["emissionType"] = args?.emissionType;
+            resourceInputs["granularity"] = args?.granularity;
+            resourceInputs["groupBies"] = args?.groupBies;
+            resourceInputs["groupByTags"] = args?.groupByTags;
+            resourceInputs["isAggregateByTime"] = args?.isAggregateByTime;
+            resourceInputs["tenantId"] = args?.tenantId;
+            resourceInputs["timeUsageEnded"] = args?.timeUsageEnded;
+            resourceInputs["timeUsageStarted"] = args?.timeUsageStarted;
+            resourceInputs["usageCarbonEmissionFilter"] = args?.usageCarbonEmissionFilter;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

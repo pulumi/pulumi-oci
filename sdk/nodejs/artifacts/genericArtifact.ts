@@ -63,23 +63,23 @@ export class GenericArtifact extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
      */
-    public readonly artifactId!: pulumi.Output<string>;
+    declare public readonly artifactId: pulumi.Output<string>;
     /**
      * A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
      */
-    public /*out*/ readonly artifactPath!: pulumi.Output<string>;
+    declare public /*out*/ readonly artifactPath: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -87,31 +87,31 @@ export class GenericArtifact extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
-    public /*out*/ readonly repositoryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly repositoryId: pulumi.Output<string>;
     /**
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      */
-    public /*out*/ readonly sha256!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha256: pulumi.Output<string>;
     /**
      * The size of the artifact in bytes.
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInBytes: pulumi.Output<string>;
     /**
      * The current state of the artifact.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a GenericArtifact resource with the given unique name, arguments, and options.
@@ -126,26 +126,26 @@ export class GenericArtifact extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GenericArtifactState | undefined;
-            resourceInputs["artifactId"] = state ? state.artifactId : undefined;
-            resourceInputs["artifactPath"] = state ? state.artifactPath : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
-            resourceInputs["sha256"] = state ? state.sha256 : undefined;
-            resourceInputs["sizeInBytes"] = state ? state.sizeInBytes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["artifactId"] = state?.artifactId;
+            resourceInputs["artifactPath"] = state?.artifactPath;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["repositoryId"] = state?.repositoryId;
+            resourceInputs["sha256"] = state?.sha256;
+            resourceInputs["sizeInBytes"] = state?.sizeInBytes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as GenericArtifactArgs | undefined;
-            if ((!args || args.artifactId === undefined) && !opts.urn) {
+            if (args?.artifactId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'artifactId'");
             }
-            resourceInputs["artifactId"] = args ? args.artifactId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["artifactId"] = args?.artifactId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["artifactPath"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;

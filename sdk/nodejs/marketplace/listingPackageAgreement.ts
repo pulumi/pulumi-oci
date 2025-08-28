@@ -59,35 +59,35 @@ export class ListingPackageAgreement extends pulumi.CustomResource {
     /**
      * The unique identifier for the agreement.
      */
-    public readonly agreementId!: pulumi.Output<string>;
+    declare public readonly agreementId: pulumi.Output<string>;
     /**
      * Who authored the agreement.
      */
-    public /*out*/ readonly author!: pulumi.Output<string>;
+    declare public /*out*/ readonly author: pulumi.Output<string>;
     /**
      * The unique identifier for the compartment, required in gov regions.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The content URL of the agreement.
      */
-    public /*out*/ readonly contentUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentUrl: pulumi.Output<string>;
     /**
      * The unique identifier for the listing.
      */
-    public readonly listingId!: pulumi.Output<string>;
+    declare public readonly listingId: pulumi.Output<string>;
     /**
      * The version of the package. Package versions are unique within a listing.
      */
-    public readonly packageVersion!: pulumi.Output<string>;
+    declare public readonly packageVersion: pulumi.Output<string>;
     /**
      * Textual prompt to read and accept the agreement.
      */
-    public /*out*/ readonly prompt!: pulumi.Output<string>;
+    declare public /*out*/ readonly prompt: pulumi.Output<string>;
     /**
      * A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      */
-    public /*out*/ readonly signature!: pulumi.Output<string>;
+    declare public /*out*/ readonly signature: pulumi.Output<string>;
 
     /**
      * Create a ListingPackageAgreement resource with the given unique name, arguments, and options.
@@ -102,29 +102,29 @@ export class ListingPackageAgreement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ListingPackageAgreementState | undefined;
-            resourceInputs["agreementId"] = state ? state.agreementId : undefined;
-            resourceInputs["author"] = state ? state.author : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["contentUrl"] = state ? state.contentUrl : undefined;
-            resourceInputs["listingId"] = state ? state.listingId : undefined;
-            resourceInputs["packageVersion"] = state ? state.packageVersion : undefined;
-            resourceInputs["prompt"] = state ? state.prompt : undefined;
-            resourceInputs["signature"] = state ? state.signature : undefined;
+            resourceInputs["agreementId"] = state?.agreementId;
+            resourceInputs["author"] = state?.author;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["contentUrl"] = state?.contentUrl;
+            resourceInputs["listingId"] = state?.listingId;
+            resourceInputs["packageVersion"] = state?.packageVersion;
+            resourceInputs["prompt"] = state?.prompt;
+            resourceInputs["signature"] = state?.signature;
         } else {
             const args = argsOrState as ListingPackageAgreementArgs | undefined;
-            if ((!args || args.agreementId === undefined) && !opts.urn) {
+            if (args?.agreementId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agreementId'");
             }
-            if ((!args || args.listingId === undefined) && !opts.urn) {
+            if (args?.listingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingId'");
             }
-            if ((!args || args.packageVersion === undefined) && !opts.urn) {
+            if (args?.packageVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageVersion'");
             }
-            resourceInputs["agreementId"] = args ? args.agreementId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["listingId"] = args ? args.listingId : undefined;
-            resourceInputs["packageVersion"] = args ? args.packageVersion : undefined;
+            resourceInputs["agreementId"] = args?.agreementId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["listingId"] = args?.listingId;
+            resourceInputs["packageVersion"] = args?.packageVersion;
             resourceInputs["author"] = undefined /*out*/;
             resourceInputs["contentUrl"] = undefined /*out*/;
             resourceInputs["prompt"] = undefined /*out*/;

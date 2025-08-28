@@ -76,99 +76,99 @@ export class Provision extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A display Name of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly configCatalogItemDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly configCatalogItemDisplayName: pulumi.Output<string>;
     /**
      * A [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
      */
-    public readonly configCatalogItemId!: pulumi.Output<string>;
+    declare public readonly configCatalogItemId: pulumi.Output<string>;
     /**
      * A listing ID of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly configCatalogItemListingId!: pulumi.Output<string>;
+    declare public /*out*/ readonly configCatalogItemListingId: pulumi.Output<string>;
     /**
      * A listing version of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly configCatalogItemListingVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly configCatalogItemListingVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The deployed resources and their summary
      */
-    public /*out*/ readonly deployedResources!: pulumi.Output<outputs.FleetAppsManagement.ProvisionDeployedResource[]>;
+    declare public /*out*/ readonly deployedResources: pulumi.Output<outputs.FleetAppsManagement.ProvisionDeployedResource[]>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message that describes the current state of the FamProvision in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A display Name of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly packageCatalogItemDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageCatalogItemDisplayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item.
      */
-    public readonly packageCatalogItemId!: pulumi.Output<string>;
+    declare public readonly packageCatalogItemId: pulumi.Output<string>;
     /**
      * A listing ID of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly packageCatalogItemListingId!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageCatalogItemListingId: pulumi.Output<string>;
     /**
      * A listing version of the Catalog Item in the Catalog.
      */
-    public /*out*/ readonly packageCatalogItemListingVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageCatalogItemListingVersion: pulumi.Output<string>;
     /**
      * (Updatable) A description of the provision.
      */
-    public readonly provisionDescription!: pulumi.Output<string>;
+    declare public readonly provisionDescription: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS APPLY Job.
      */
-    public /*out*/ readonly rmsApplyJobId!: pulumi.Output<string>;
+    declare public /*out*/ readonly rmsApplyJobId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS Stack.
      */
-    public /*out*/ readonly stackId!: pulumi.Output<string>;
+    declare public /*out*/ readonly stackId: pulumi.Output<string>;
     /**
      * The current state of the FamProvision.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Outputs from the pulumi up job
      */
-    public /*out*/ readonly tfOutputs!: pulumi.Output<outputs.FleetAppsManagement.ProvisionTfOutput[]>;
+    declare public /*out*/ readonly tfOutputs: pulumi.Output<outputs.FleetAppsManagement.ProvisionTfOutput[]>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    public readonly tfVariableCompartmentId!: pulumi.Output<string>;
+    declare public readonly tfVariableCompartmentId: pulumi.Output<string>;
     /**
      * An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    public readonly tfVariableCurrentUserId!: pulumi.Output<string>;
+    declare public readonly tfVariableCurrentUserId: pulumi.Output<string>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      */
-    public readonly tfVariableRegionId!: pulumi.Output<string>;
+    declare public readonly tfVariableRegionId: pulumi.Output<string>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      *
@@ -176,15 +176,15 @@ export class Provision extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly tfVariableTenancyId!: pulumi.Output<string>;
+    declare public readonly tfVariableTenancyId: pulumi.Output<string>;
     /**
      * The date and time the FamProvision was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the FamProvision was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Provision resource with the given unique name, arguments, and options.
@@ -199,65 +199,65 @@ export class Provision extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProvisionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configCatalogItemDisplayName"] = state ? state.configCatalogItemDisplayName : undefined;
-            resourceInputs["configCatalogItemId"] = state ? state.configCatalogItemId : undefined;
-            resourceInputs["configCatalogItemListingId"] = state ? state.configCatalogItemListingId : undefined;
-            resourceInputs["configCatalogItemListingVersion"] = state ? state.configCatalogItemListingVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deployedResources"] = state ? state.deployedResources : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["packageCatalogItemDisplayName"] = state ? state.packageCatalogItemDisplayName : undefined;
-            resourceInputs["packageCatalogItemId"] = state ? state.packageCatalogItemId : undefined;
-            resourceInputs["packageCatalogItemListingId"] = state ? state.packageCatalogItemListingId : undefined;
-            resourceInputs["packageCatalogItemListingVersion"] = state ? state.packageCatalogItemListingVersion : undefined;
-            resourceInputs["provisionDescription"] = state ? state.provisionDescription : undefined;
-            resourceInputs["rmsApplyJobId"] = state ? state.rmsApplyJobId : undefined;
-            resourceInputs["stackId"] = state ? state.stackId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tfOutputs"] = state ? state.tfOutputs : undefined;
-            resourceInputs["tfVariableCompartmentId"] = state ? state.tfVariableCompartmentId : undefined;
-            resourceInputs["tfVariableCurrentUserId"] = state ? state.tfVariableCurrentUserId : undefined;
-            resourceInputs["tfVariableRegionId"] = state ? state.tfVariableRegionId : undefined;
-            resourceInputs["tfVariableTenancyId"] = state ? state.tfVariableTenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configCatalogItemDisplayName"] = state?.configCatalogItemDisplayName;
+            resourceInputs["configCatalogItemId"] = state?.configCatalogItemId;
+            resourceInputs["configCatalogItemListingId"] = state?.configCatalogItemListingId;
+            resourceInputs["configCatalogItemListingVersion"] = state?.configCatalogItemListingVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deployedResources"] = state?.deployedResources;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["packageCatalogItemDisplayName"] = state?.packageCatalogItemDisplayName;
+            resourceInputs["packageCatalogItemId"] = state?.packageCatalogItemId;
+            resourceInputs["packageCatalogItemListingId"] = state?.packageCatalogItemListingId;
+            resourceInputs["packageCatalogItemListingVersion"] = state?.packageCatalogItemListingVersion;
+            resourceInputs["provisionDescription"] = state?.provisionDescription;
+            resourceInputs["rmsApplyJobId"] = state?.rmsApplyJobId;
+            resourceInputs["stackId"] = state?.stackId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tfOutputs"] = state?.tfOutputs;
+            resourceInputs["tfVariableCompartmentId"] = state?.tfVariableCompartmentId;
+            resourceInputs["tfVariableCurrentUserId"] = state?.tfVariableCurrentUserId;
+            resourceInputs["tfVariableRegionId"] = state?.tfVariableRegionId;
+            resourceInputs["tfVariableTenancyId"] = state?.tfVariableTenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ProvisionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.configCatalogItemId === undefined) && !opts.urn) {
+            if (args?.configCatalogItemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configCatalogItemId'");
             }
-            if ((!args || args.fleetId === undefined) && !opts.urn) {
+            if (args?.fleetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fleetId'");
             }
-            if ((!args || args.packageCatalogItemId === undefined) && !opts.urn) {
+            if (args?.packageCatalogItemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageCatalogItemId'");
             }
-            if ((!args || args.tfVariableRegionId === undefined) && !opts.urn) {
+            if (args?.tfVariableRegionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tfVariableRegionId'");
             }
-            if ((!args || args.tfVariableTenancyId === undefined) && !opts.urn) {
+            if (args?.tfVariableTenancyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tfVariableTenancyId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configCatalogItemId"] = args ? args.configCatalogItemId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["packageCatalogItemId"] = args ? args.packageCatalogItemId : undefined;
-            resourceInputs["provisionDescription"] = args ? args.provisionDescription : undefined;
-            resourceInputs["tfVariableCompartmentId"] = args ? args.tfVariableCompartmentId : undefined;
-            resourceInputs["tfVariableCurrentUserId"] = args ? args.tfVariableCurrentUserId : undefined;
-            resourceInputs["tfVariableRegionId"] = args ? args.tfVariableRegionId : undefined;
-            resourceInputs["tfVariableTenancyId"] = args ? args.tfVariableTenancyId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configCatalogItemId"] = args?.configCatalogItemId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["packageCatalogItemId"] = args?.packageCatalogItemId;
+            resourceInputs["provisionDescription"] = args?.provisionDescription;
+            resourceInputs["tfVariableCompartmentId"] = args?.tfVariableCompartmentId;
+            resourceInputs["tfVariableCurrentUserId"] = args?.tfVariableCurrentUserId;
+            resourceInputs["tfVariableRegionId"] = args?.tfVariableRegionId;
+            resourceInputs["tfVariableTenancyId"] = args?.tfVariableTenancyId;
             resourceInputs["configCatalogItemDisplayName"] = undefined /*out*/;
             resourceInputs["configCatalogItemListingId"] = undefined /*out*/;
             resourceInputs["configCatalogItemListingVersion"] = undefined /*out*/;

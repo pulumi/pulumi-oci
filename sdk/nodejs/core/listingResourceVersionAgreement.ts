@@ -50,27 +50,27 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
     /**
      * EULA link
      */
-    public /*out*/ readonly eulaLink!: pulumi.Output<string>;
+    declare public /*out*/ readonly eulaLink: pulumi.Output<string>;
     /**
      * The OCID of the listing.
      */
-    public readonly listingId!: pulumi.Output<string>;
+    declare public readonly listingId: pulumi.Output<string>;
     /**
      * Listing Resource Version.
      */
-    public readonly listingResourceVersion!: pulumi.Output<string>;
+    declare public readonly listingResourceVersion: pulumi.Output<string>;
     /**
      * Oracle TOU link
      */
-    public /*out*/ readonly oracleTermsOfUseLink!: pulumi.Output<string>;
+    declare public /*out*/ readonly oracleTermsOfUseLink: pulumi.Output<string>;
     /**
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      */
-    public /*out*/ readonly signature!: pulumi.Output<string>;
+    declare public /*out*/ readonly signature: pulumi.Output<string>;
     /**
      * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      */
-    public /*out*/ readonly timeRetrieved!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRetrieved: pulumi.Output<string>;
 
     /**
      * Create a ListingResourceVersionAgreement resource with the given unique name, arguments, and options.
@@ -85,22 +85,22 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ListingResourceVersionAgreementState | undefined;
-            resourceInputs["eulaLink"] = state ? state.eulaLink : undefined;
-            resourceInputs["listingId"] = state ? state.listingId : undefined;
-            resourceInputs["listingResourceVersion"] = state ? state.listingResourceVersion : undefined;
-            resourceInputs["oracleTermsOfUseLink"] = state ? state.oracleTermsOfUseLink : undefined;
-            resourceInputs["signature"] = state ? state.signature : undefined;
-            resourceInputs["timeRetrieved"] = state ? state.timeRetrieved : undefined;
+            resourceInputs["eulaLink"] = state?.eulaLink;
+            resourceInputs["listingId"] = state?.listingId;
+            resourceInputs["listingResourceVersion"] = state?.listingResourceVersion;
+            resourceInputs["oracleTermsOfUseLink"] = state?.oracleTermsOfUseLink;
+            resourceInputs["signature"] = state?.signature;
+            resourceInputs["timeRetrieved"] = state?.timeRetrieved;
         } else {
             const args = argsOrState as ListingResourceVersionAgreementArgs | undefined;
-            if ((!args || args.listingId === undefined) && !opts.urn) {
+            if (args?.listingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingId'");
             }
-            if ((!args || args.listingResourceVersion === undefined) && !opts.urn) {
+            if (args?.listingResourceVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingResourceVersion'");
             }
-            resourceInputs["listingId"] = args ? args.listingId : undefined;
-            resourceInputs["listingResourceVersion"] = args ? args.listingResourceVersion : undefined;
+            resourceInputs["listingId"] = args?.listingId;
+            resourceInputs["listingResourceVersion"] = args?.listingResourceVersion;
             resourceInputs["eulaLink"] = undefined /*out*/;
             resourceInputs["oracleTermsOfUseLink"] = undefined /*out*/;
             resourceInputs["signature"] = undefined /*out*/;

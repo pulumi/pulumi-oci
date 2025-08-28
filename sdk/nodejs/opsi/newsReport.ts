@@ -87,67 +87,67 @@ export class NewsReport extends pulumi.CustomResource {
     /**
      * (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
      */
-    public readonly areChildCompartmentsIncluded!: pulumi.Output<boolean>;
+    declare public readonly areChildCompartmentsIncluded: pulumi.Output<boolean>;
     /**
      * (Updatable) Compartment Identifier where the news report will be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Content types that the news report can handle.
      */
-    public readonly contentTypes!: pulumi.Output<outputs.Opsi.NewsReportContentTypes>;
+    declare public readonly contentTypes: pulumi.Output<outputs.Opsi.NewsReportContentTypes>;
     /**
      * (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
      */
-    public readonly dayOfWeek!: pulumi.Output<string>;
+    declare public readonly dayOfWeek: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the news report.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Language of the news report.
      */
-    public readonly locale!: pulumi.Output<string>;
+    declare public readonly locale: pulumi.Output<string>;
     /**
      * (Updatable) Match rule used for tag filters.
      */
-    public readonly matchRule!: pulumi.Output<string>;
+    declare public readonly matchRule: pulumi.Output<string>;
     /**
      * (Updatable) The news report name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) News report frequency.
      */
-    public readonly newsFrequency!: pulumi.Output<string>;
+    declare public readonly newsFrequency: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
      */
-    public readonly onsTopicId!: pulumi.Output<string>;
+    declare public readonly onsTopicId: pulumi.Output<string>;
     /**
      * The current state of the news report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Defines if the news report will be enabled or disabled.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
      *
@@ -155,15 +155,15 @@ export class NewsReport extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly tagFilters!: pulumi.Output<string[]>;
+    declare public readonly tagFilters: pulumi.Output<string[]>;
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the news report was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a NewsReport resource with the given unique name, arguments, and options.
@@ -178,59 +178,59 @@ export class NewsReport extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NewsReportState | undefined;
-            resourceInputs["areChildCompartmentsIncluded"] = state ? state.areChildCompartmentsIncluded : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["contentTypes"] = state ? state.contentTypes : undefined;
-            resourceInputs["dayOfWeek"] = state ? state.dayOfWeek : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locale"] = state ? state.locale : undefined;
-            resourceInputs["matchRule"] = state ? state.matchRule : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["newsFrequency"] = state ? state.newsFrequency : undefined;
-            resourceInputs["onsTopicId"] = state ? state.onsTopicId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tagFilters"] = state ? state.tagFilters : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["areChildCompartmentsIncluded"] = state?.areChildCompartmentsIncluded;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["contentTypes"] = state?.contentTypes;
+            resourceInputs["dayOfWeek"] = state?.dayOfWeek;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locale"] = state?.locale;
+            resourceInputs["matchRule"] = state?.matchRule;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["newsFrequency"] = state?.newsFrequency;
+            resourceInputs["onsTopicId"] = state?.onsTopicId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tagFilters"] = state?.tagFilters;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as NewsReportArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.contentTypes === undefined) && !opts.urn) {
+            if (args?.contentTypes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentTypes'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.locale === undefined) && !opts.urn) {
+            if (args?.locale === undefined && !opts.urn) {
                 throw new Error("Missing required property 'locale'");
             }
-            if ((!args || args.newsFrequency === undefined) && !opts.urn) {
+            if (args?.newsFrequency === undefined && !opts.urn) {
                 throw new Error("Missing required property 'newsFrequency'");
             }
-            if ((!args || args.onsTopicId === undefined) && !opts.urn) {
+            if (args?.onsTopicId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'onsTopicId'");
             }
-            resourceInputs["areChildCompartmentsIncluded"] = args ? args.areChildCompartmentsIncluded : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["contentTypes"] = args ? args.contentTypes : undefined;
-            resourceInputs["dayOfWeek"] = args ? args.dayOfWeek : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["locale"] = args ? args.locale : undefined;
-            resourceInputs["matchRule"] = args ? args.matchRule : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["newsFrequency"] = args ? args.newsFrequency : undefined;
-            resourceInputs["onsTopicId"] = args ? args.onsTopicId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["tagFilters"] = args ? args.tagFilters : undefined;
+            resourceInputs["areChildCompartmentsIncluded"] = args?.areChildCompartmentsIncluded;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["contentTypes"] = args?.contentTypes;
+            resourceInputs["dayOfWeek"] = args?.dayOfWeek;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["locale"] = args?.locale;
+            resourceInputs["matchRule"] = args?.matchRule;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["newsFrequency"] = args?.newsFrequency;
+            resourceInputs["onsTopicId"] = args?.onsTopicId;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["tagFilters"] = args?.tagFilters;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

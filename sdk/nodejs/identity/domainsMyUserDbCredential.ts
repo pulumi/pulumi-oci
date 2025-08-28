@@ -50,7 +50,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -64,7 +64,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * The user's database password.
      *
@@ -74,7 +74,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: true
      */
-    public readonly dbPassword!: pulumi.Output<string>;
+    declare public readonly dbPassword: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -88,7 +88,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * Description
      *
@@ -101,7 +101,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * required: false
      * * returned: default
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -115,7 +115,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Indicates that the database password has expired.
      *
@@ -124,7 +124,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * mutability: readOnly
      * * returned: default
      */
-    public /*out*/ readonly expired!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly expired: pulumi.Output<boolean>;
     /**
      * When the user credential expires.
      *
@@ -140,7 +140,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly expiresOn!: pulumi.Output<string>;
+    declare public readonly expiresOn: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -152,11 +152,11 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -168,7 +168,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -182,7 +182,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -195,7 +195,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) A DateTime that specifies the date and time when the current database password was set.
      *
@@ -204,7 +204,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * mutability: readOnly
      * * returned: default
      */
-    public /*out*/ readonly lastSetDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastSetDate: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -218,7 +218,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialMeta[]>;
     /**
      * (Updatable) The user's database password with mixed salt.
      *
@@ -228,7 +228,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly mixedDbPassword!: pulumi.Output<string>;
+    declare public /*out*/ readonly mixedDbPassword: pulumi.Output<string>;
     /**
      * (Updatable) The mixed salt of the password.
      *
@@ -238,7 +238,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly mixedSalt!: pulumi.Output<string>;
+    declare public /*out*/ readonly mixedSalt: pulumi.Output<string>;
     /**
      * (Updatable) Name
      *
@@ -251,7 +251,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * required: false
      * * returned: default
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -265,11 +265,11 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The salt of the password.
      *
@@ -279,7 +279,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * returned: default
      * * required: false
      */
-    public /*out*/ readonly salt!: pulumi.Output<string>;
+    declare public /*out*/ readonly salt: pulumi.Output<string>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -293,7 +293,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * User credential status
      *
@@ -309,7 +309,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * A list of tags on this resource.
      *
@@ -323,7 +323,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -337,7 +337,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * The user linked to the database credential.
      *
@@ -352,7 +352,7 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly user!: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialUser>;
+    declare public readonly user: pulumi.Output<outputs.Identity.DomainsMyUserDbCredentialUser>;
 
     /**
      * Create a DomainsMyUserDbCredential resource with the given unique name, arguments, and options.
@@ -367,54 +367,54 @@ export class DomainsMyUserDbCredential extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsMyUserDbCredentialState | undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["dbPassword"] = state ? state.dbPassword : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["expired"] = state ? state.expired : undefined;
-            resourceInputs["expiresOn"] = state ? state.expiresOn : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["lastSetDate"] = state ? state.lastSetDate : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["mixedDbPassword"] = state ? state.mixedDbPassword : undefined;
-            resourceInputs["mixedSalt"] = state ? state.mixedSalt : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["salt"] = state ? state.salt : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["dbPassword"] = state?.dbPassword;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["expired"] = state?.expired;
+            resourceInputs["expiresOn"] = state?.expiresOn;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["lastSetDate"] = state?.lastSetDate;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["mixedDbPassword"] = state?.mixedDbPassword;
+            resourceInputs["mixedSalt"] = state?.mixedSalt;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["salt"] = state?.salt;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["user"] = state?.user;
         } else {
             const args = argsOrState as DomainsMyUserDbCredentialArgs | undefined;
-            if ((!args || args.dbPassword === undefined) && !opts.urn) {
+            if (args?.dbPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbPassword'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
+            resourceInputs["authorization"] = args?.authorization;
             resourceInputs["dbPassword"] = args?.dbPassword ? pulumi.secret(args.dbPassword) : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["expiresOn"] = args ? args.expiresOn : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["expiresOn"] = args?.expiresOn;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["user"] = args?.user;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

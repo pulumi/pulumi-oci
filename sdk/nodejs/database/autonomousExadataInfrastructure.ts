@@ -92,73 +92,73 @@ export class AutonomousExadataInfrastructure extends pulumi.CustomResource {
      *
      * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly createAsync!: pulumi.Output<boolean | undefined>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly createAsync: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The host name for the Autonomous Exadata Infrastructure node.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
     /**
      * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails | undefined>;
+    declare public readonly maintenanceWindowDetails: pulumi.Output<outputs.Database.AutonomousExadataInfrastructureMaintenanceWindowDetails | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousExadataInfrastructureMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.AutonomousExadataInfrastructureMaintenanceWindow[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
      */
-    public /*out*/ readonly scanDnsName!: pulumi.Output<string>;
+    declare public /*out*/ readonly scanDnsName: pulumi.Output<string>;
     /**
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Autonomous Exadata Infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
      *
@@ -171,15 +171,15 @@ export class AutonomousExadataInfrastructure extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Exadata Infrastructure was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
      */
-    public /*out*/ readonly zoneId!: pulumi.Output<string>;
+    declare public /*out*/ readonly zoneId: pulumi.Output<string>;
 
     /**
      * Create a AutonomousExadataInfrastructure resource with the given unique name, arguments, and options.
@@ -194,53 +194,53 @@ export class AutonomousExadataInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousExadataInfrastructureState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createAsync"] = state ? state.createAsync : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["zoneId"] = state ? state.zoneId : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createAsync"] = state?.createAsync;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceWindowDetails"] = state?.maintenanceWindowDetails;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["scanDnsName"] = state?.scanDnsName;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as AutonomousExadataInfrastructureArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["createAsync"] = args ? args.createAsync : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["createAsync"] = args?.createAsync;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["maintenanceWindowDetails"] = args?.maintenanceWindowDetails;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["hostname"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

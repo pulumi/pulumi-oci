@@ -136,72 +136,72 @@ export class PipelineRun extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The configuration details of a pipeline.
      */
-    public /*out*/ readonly configurationDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationDetail[]>;
+    declare public /*out*/ readonly configurationDetails: pulumi.Output<outputs.DataScience.PipelineRunConfigurationDetail[]>;
     /**
      * The configuration details of a pipeline.
      */
-    public readonly configurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationOverrideDetails>;
+    declare public readonly configurationOverrideDetails: pulumi.Output<outputs.DataScience.PipelineRunConfigurationOverrideDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly deleteRelatedJobRuns!: pulumi.Output<boolean | undefined>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly deleteRelatedJobRuns: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The infrastructure configuration details of a pipeline or a step.
      */
-    public readonly infrastructureConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
+    declare public readonly infrastructureConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
     /**
      * Details of the state of the step run.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The pipeline log configuration details.
      */
-    public readonly logConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
+    declare public readonly logConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
     /**
      * Customer logging details for pipeline run.
      */
-    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogDetail[]>;
+    declare public /*out*/ readonly logDetails: pulumi.Output<outputs.DataScience.PipelineRunLogDetail[]>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    declare public readonly opcParentRptUrl: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
-    public readonly pipelineId!: pulumi.Output<string>;
+    declare public readonly pipelineId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The state of the step run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
-    public readonly stepOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunStepOverrideDetail[]>;
+    declare public readonly stepOverrideDetails: pulumi.Output<outputs.DataScience.PipelineRunStepOverrideDetail[]>;
     /**
      * Array of StepRun object for each step.
      */
-    public /*out*/ readonly stepRuns!: pulumi.Output<outputs.DataScience.PipelineRunStepRun[]>;
+    declare public /*out*/ readonly stepRuns: pulumi.Output<outputs.DataScience.PipelineRunStepRun[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -209,23 +209,23 @@ export class PipelineRun extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
     /**
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a PipelineRun resource with the given unique name, arguments, and options.
@@ -240,53 +240,53 @@ export class PipelineRun extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PipelineRunState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurationDetails"] = state ? state.configurationDetails : undefined;
-            resourceInputs["configurationOverrideDetails"] = state ? state.configurationOverrideDetails : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deleteRelatedJobRuns"] = state ? state.deleteRelatedJobRuns : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["infrastructureConfigurationOverrideDetails"] = state ? state.infrastructureConfigurationOverrideDetails : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["logConfigurationOverrideDetails"] = state ? state.logConfigurationOverrideDetails : undefined;
-            resourceInputs["logDetails"] = state ? state.logDetails : undefined;
-            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
-            resourceInputs["pipelineId"] = state ? state.pipelineId : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stepOverrideDetails"] = state ? state.stepOverrideDetails : undefined;
-            resourceInputs["stepRuns"] = state ? state.stepRuns : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurationDetails"] = state?.configurationDetails;
+            resourceInputs["configurationOverrideDetails"] = state?.configurationOverrideDetails;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deleteRelatedJobRuns"] = state?.deleteRelatedJobRuns;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["infrastructureConfigurationOverrideDetails"] = state?.infrastructureConfigurationOverrideDetails;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logConfigurationOverrideDetails"] = state?.logConfigurationOverrideDetails;
+            resourceInputs["logDetails"] = state?.logDetails;
+            resourceInputs["opcParentRptUrl"] = state?.opcParentRptUrl;
+            resourceInputs["pipelineId"] = state?.pipelineId;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stepOverrideDetails"] = state?.stepOverrideDetails;
+            resourceInputs["stepRuns"] = state?.stepRuns;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as PipelineRunArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.pipelineId === undefined) && !opts.urn) {
+            if (args?.pipelineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pipelineId'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configurationOverrideDetails"] = args ? args.configurationOverrideDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deleteRelatedJobRuns"] = args ? args.deleteRelatedJobRuns : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["infrastructureConfigurationOverrideDetails"] = args ? args.infrastructureConfigurationOverrideDetails : undefined;
-            resourceInputs["logConfigurationOverrideDetails"] = args ? args.logConfigurationOverrideDetails : undefined;
-            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
-            resourceInputs["pipelineId"] = args ? args.pipelineId : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["stepOverrideDetails"] = args ? args.stepOverrideDetails : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configurationOverrideDetails"] = args?.configurationOverrideDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deleteRelatedJobRuns"] = args?.deleteRelatedJobRuns;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["infrastructureConfigurationOverrideDetails"] = args?.infrastructureConfigurationOverrideDetails;
+            resourceInputs["logConfigurationOverrideDetails"] = args?.logConfigurationOverrideDetails;
+            resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
+            resourceInputs["pipelineId"] = args?.pipelineId;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["stepOverrideDetails"] = args?.stepOverrideDetails;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["configurationDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

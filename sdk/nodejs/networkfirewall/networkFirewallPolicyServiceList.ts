@@ -61,15 +61,15 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
     /**
      * Name of the service Group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this serviceList belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
      *
@@ -77,11 +77,11 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly services!: pulumi.Output<string[]>;
+    declare public readonly services: pulumi.Output<string[]>;
     /**
      * Count of total services in the given service List.
      */
-    public /*out*/ readonly totalServices!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalServices: pulumi.Output<number>;
 
     /**
      * Create a NetworkFirewallPolicyServiceList resource with the given unique name, arguments, and options.
@@ -96,22 +96,22 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyServiceListState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["services"] = state ? state.services : undefined;
-            resourceInputs["totalServices"] = state ? state.totalServices : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["services"] = state?.services;
+            resourceInputs["totalServices"] = state?.totalServices;
         } else {
             const args = argsOrState as NetworkFirewallPolicyServiceListArgs | undefined;
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.services === undefined) && !opts.urn) {
+            if (args?.services === undefined && !opts.urn) {
                 throw new Error("Missing required property 'services'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["services"] = args ? args.services : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["services"] = args?.services;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["totalServices"] = undefined /*out*/;
         }

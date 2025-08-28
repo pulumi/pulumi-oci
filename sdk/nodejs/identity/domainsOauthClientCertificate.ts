@@ -67,7 +67,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Certificate end date
      *
@@ -80,7 +80,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public /*out*/ readonly certEndDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly certEndDate: pulumi.Output<string>;
     /**
      * (Updatable) Certificate start date
      *
@@ -93,7 +93,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public /*out*/ readonly certStartDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly certStartDate: pulumi.Output<string>;
     /**
      * Certificate alias
      *
@@ -107,7 +107,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    public readonly certificateAlias!: pulumi.Output<string>;
+    declare public readonly certificateAlias: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -121,7 +121,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -135,7 +135,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -149,7 +149,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -162,7 +162,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -174,11 +174,11 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -190,7 +190,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -204,7 +204,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -217,7 +217,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * Key store ID
      *
@@ -230,7 +230,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    public readonly keyStoreId!: pulumi.Output<string>;
+    declare public readonly keyStoreId: pulumi.Output<string>;
     /**
      * Key store name
      *
@@ -242,7 +242,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: always
      * * uniqueness: none
      */
-    public readonly keyStoreName!: pulumi.Output<string>;
+    declare public readonly keyStoreName: pulumi.Output<string>;
     /**
      * Key store password
      *
@@ -255,7 +255,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: never
      * * uniqueness: none
      */
-    public readonly keyStorePassword!: pulumi.Output<string>;
+    declare public readonly keyStorePassword: pulumi.Output<string>;
     /**
      * Map
      *
@@ -267,7 +267,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: always
      * * uniqueness: none
      */
-    public readonly map!: pulumi.Output<string>;
+    declare public readonly map: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -281,7 +281,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateMeta[]>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -295,11 +295,11 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -313,7 +313,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) SHA-1 Thumbprint
      *
@@ -326,7 +326,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public /*out*/ readonly sha1thumbprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha1thumbprint: pulumi.Output<string>;
     /**
      * (Updatable) SHA-256 Thumbprint
      *
@@ -339,7 +339,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public /*out*/ readonly sha256thumbprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha256thumbprint: pulumi.Output<string>;
     /**
      * A list of tags on this resource.
      *
@@ -353,7 +353,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsOauthClientCertificateTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -367,7 +367,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * Base 64Key data attribute
      *
@@ -384,7 +384,7 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly x509base64certificate!: pulumi.Output<string>;
+    declare public readonly x509base64certificate: pulumi.Output<string>;
 
     /**
      * Create a DomainsOauthClientCertificate resource with the given unique name, arguments, and options.
@@ -399,59 +399,59 @@ export class DomainsOauthClientCertificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsOauthClientCertificateState | undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["certEndDate"] = state ? state.certEndDate : undefined;
-            resourceInputs["certStartDate"] = state ? state.certStartDate : undefined;
-            resourceInputs["certificateAlias"] = state ? state.certificateAlias : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
-            resourceInputs["keyStoreName"] = state ? state.keyStoreName : undefined;
-            resourceInputs["keyStorePassword"] = state ? state.keyStorePassword : undefined;
-            resourceInputs["map"] = state ? state.map : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["sha1thumbprint"] = state ? state.sha1thumbprint : undefined;
-            resourceInputs["sha256thumbprint"] = state ? state.sha256thumbprint : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["x509base64certificate"] = state ? state.x509base64certificate : undefined;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["certEndDate"] = state?.certEndDate;
+            resourceInputs["certStartDate"] = state?.certStartDate;
+            resourceInputs["certificateAlias"] = state?.certificateAlias;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["keyStoreId"] = state?.keyStoreId;
+            resourceInputs["keyStoreName"] = state?.keyStoreName;
+            resourceInputs["keyStorePassword"] = state?.keyStorePassword;
+            resourceInputs["map"] = state?.map;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["sha1thumbprint"] = state?.sha1thumbprint;
+            resourceInputs["sha256thumbprint"] = state?.sha256thumbprint;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["x509base64certificate"] = state?.x509base64certificate;
         } else {
             const args = argsOrState as DomainsOauthClientCertificateArgs | undefined;
-            if ((!args || args.certificateAlias === undefined) && !opts.urn) {
+            if (args?.certificateAlias === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateAlias'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.x509base64certificate === undefined) && !opts.urn) {
+            if (args?.x509base64certificate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'x509base64certificate'");
             }
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["certificateAlias"] = args ? args.certificateAlias : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
-            resourceInputs["keyStoreName"] = args ? args.keyStoreName : undefined;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["certificateAlias"] = args?.certificateAlias;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["keyStoreId"] = args?.keyStoreId;
+            resourceInputs["keyStoreName"] = args?.keyStoreName;
             resourceInputs["keyStorePassword"] = args?.keyStorePassword ? pulumi.secret(args.keyStorePassword) : undefined;
-            resourceInputs["map"] = args ? args.map : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["x509base64certificate"] = args ? args.x509base64certificate : undefined;
+            resourceInputs["map"] = args?.map;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["x509base64certificate"] = args?.x509base64certificate;
             resourceInputs["certEndDate"] = undefined /*out*/;
             resourceInputs["certStartDate"] = undefined /*out*/;
             resourceInputs["compartmentOcid"] = undefined /*out*/;

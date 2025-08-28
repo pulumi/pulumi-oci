@@ -72,51 +72,51 @@ export class PrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the private endpoint. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The private endpoint display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      */
-    public readonly dnsZones!: pulumi.Output<string[]>;
+    declare public readonly dnsZones: pulumi.Output<string[]>;
     /**
      * (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
      */
-    public readonly isUsedWithConfigurationSourceProvider!: pulumi.Output<boolean>;
+    declare public readonly isUsedWithConfigurationSourceProvider: pulumi.Output<boolean>;
     /**
      * (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
      */
-    public readonly nsgIdLists!: pulumi.Output<string[]>;
+    declare public readonly nsgIdLists: pulumi.Output<string[]>;
     /**
      * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
      */
-    public /*out*/ readonly sourceIps!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly sourceIps: pulumi.Output<string[]>;
     /**
      * The current lifecycle state of the private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
      *
@@ -124,7 +124,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a PrivateEndpoint resource with the given unique name, arguments, and options.
@@ -139,43 +139,43 @@ export class PrivateEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PrivateEndpointState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsZones"] = state ? state.dnsZones : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isUsedWithConfigurationSourceProvider"] = state ? state.isUsedWithConfigurationSourceProvider : undefined;
-            resourceInputs["nsgIdLists"] = state ? state.nsgIdLists : undefined;
-            resourceInputs["sourceIps"] = state ? state.sourceIps : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsZones"] = state?.dnsZones;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isUsedWithConfigurationSourceProvider"] = state?.isUsedWithConfigurationSourceProvider;
+            resourceInputs["nsgIdLists"] = state?.nsgIdLists;
+            resourceInputs["sourceIps"] = state?.sourceIps;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as PrivateEndpointArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsZones"] = args ? args.dnsZones : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isUsedWithConfigurationSourceProvider"] = args ? args.isUsedWithConfigurationSourceProvider : undefined;
-            resourceInputs["nsgIdLists"] = args ? args.nsgIdLists : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsZones"] = args?.dnsZones;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isUsedWithConfigurationSourceProvider"] = args?.isUsedWithConfigurationSourceProvider;
+            resourceInputs["nsgIdLists"] = args?.nsgIdLists;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["sourceIps"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

@@ -92,63 +92,63 @@ export class WorkspaceApplicationSchedule extends pulumi.CustomResource {
     /**
      * The application key.
      */
-    public readonly applicationKey!: pulumi.Output<string>;
+    declare public readonly applicationKey: pulumi.Output<string>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The model that holds the frequency details.
      */
-    public readonly frequencyDetails!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleFrequencyDetails>;
+    declare public readonly frequencyDetails: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleFrequencyDetails>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
      */
-    public readonly isDaylightAdjustmentEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDaylightAdjustmentEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleMetadata[]>;
     /**
      * The type of the object.
      */
-    public /*out*/ readonly modelType!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelType: pulumi.Output<string>;
     /**
      * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    public readonly objectVersion!: pulumi.Output<number>;
+    declare public readonly objectVersion: pulumi.Output<number>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleParentRef[]>;
+    declare public /*out*/ readonly parentReves: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleParentRef[]>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleRegistryMetadata>;
     /**
      * (Updatable) The timezone for the schedule.
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
     /**
      * The workspace ID.
      *
@@ -156,7 +156,7 @@ export class WorkspaceApplicationSchedule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceApplicationSchedule resource with the given unique name, arguments, and options.
@@ -171,46 +171,46 @@ export class WorkspaceApplicationSchedule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceApplicationScheduleState | undefined;
-            resourceInputs["applicationKey"] = state ? state.applicationKey : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["frequencyDetails"] = state ? state.frequencyDetails : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["isDaylightAdjustmentEnabled"] = state ? state.isDaylightAdjustmentEnabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["parentReves"] = state ? state.parentReves : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["applicationKey"] = state?.applicationKey;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["frequencyDetails"] = state?.frequencyDetails;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["isDaylightAdjustmentEnabled"] = state?.isDaylightAdjustmentEnabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["parentReves"] = state?.parentReves;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceApplicationScheduleArgs | undefined;
-            if ((!args || args.applicationKey === undefined) && !opts.urn) {
+            if (args?.applicationKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationKey'");
             }
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["applicationKey"] = args ? args.applicationKey : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["frequencyDetails"] = args ? args.frequencyDetails : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["isDaylightAdjustmentEnabled"] = args ? args.isDaylightAdjustmentEnabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["objectVersion"] = args ? args.objectVersion : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["applicationKey"] = args?.applicationKey;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["frequencyDetails"] = args?.frequencyDetails;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["isDaylightAdjustmentEnabled"] = args?.isDaylightAdjustmentEnabled;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["objectVersion"] = args?.objectVersion;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["timezone"] = args?.timezone;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["modelType"] = undefined /*out*/;
             resourceInputs["parentReves"] = undefined /*out*/;

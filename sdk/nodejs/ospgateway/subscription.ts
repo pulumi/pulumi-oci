@@ -50,75 +50,75 @@ export class Subscription extends pulumi.CustomResource {
     /**
      * Account type.
      */
-    public /*out*/ readonly accountType!: pulumi.Output<string>;
+    declare public /*out*/ readonly accountType: pulumi.Output<string>;
     /**
      * Bill to customer Account id.
      */
-    public /*out*/ readonly billToCustAccountId!: pulumi.Output<string>;
+    declare public /*out*/ readonly billToCustAccountId: pulumi.Output<string>;
     /**
      * Address details model.
      */
-    public /*out*/ readonly billingAddresses!: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[]>;
+    declare public /*out*/ readonly billingAddresses: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Currency code
      */
-    public /*out*/ readonly currencyCode!: pulumi.Output<string>;
+    declare public /*out*/ readonly currencyCode: pulumi.Output<string>;
     /**
      * (Updatable) User email
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
     /**
      * GSI Subscription external code.
      */
-    public /*out*/ readonly gsiOrgCode!: pulumi.Output<string>;
+    declare public /*out*/ readonly gsiOrgCode: pulumi.Output<string>;
     /**
      * Corporate conversion allowed status
      */
-    public /*out*/ readonly isCorporateConversionAllowed!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCorporateConversionAllowed: pulumi.Output<boolean>;
     /**
      * Payment intension.
      */
-    public /*out*/ readonly isIntentToPay!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isIntentToPay: pulumi.Output<boolean>;
     /**
      * Language short code (en, de, hu, etc)
      */
-    public /*out*/ readonly languageCode!: pulumi.Output<string>;
+    declare public /*out*/ readonly languageCode: pulumi.Output<string>;
     /**
      * GSI organization external identifier.
      */
-    public /*out*/ readonly organizationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly organizationId: pulumi.Output<string>;
     /**
      * (Updatable) The home region's public name of the logged in user.
      */
-    public readonly ospHomeRegion!: pulumi.Output<string>;
+    declare public readonly ospHomeRegion: pulumi.Output<string>;
     /**
      * Payment gateway details.
      */
-    public /*out*/ readonly paymentGateways!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentGateway[]>;
+    declare public /*out*/ readonly paymentGateways: pulumi.Output<outputs.OspGateway.SubscriptionPaymentGateway[]>;
     /**
      * Payment option list of a subscription.
      */
-    public /*out*/ readonly paymentOptions!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentOption[]>;
+    declare public /*out*/ readonly paymentOptions: pulumi.Output<outputs.OspGateway.SubscriptionPaymentOption[]>;
     /**
      * Subscription plan type.
      */
-    public /*out*/ readonly planType!: pulumi.Output<string>;
+    declare public /*out*/ readonly planType: pulumi.Output<string>;
     /**
      * Ship to customer account role.
      */
-    public /*out*/ readonly shipToCustAcctRoleId!: pulumi.Output<string>;
+    declare public /*out*/ readonly shipToCustAcctRoleId: pulumi.Output<string>;
     /**
      * Ship to customer account site address id.
      */
-    public /*out*/ readonly shipToCustAcctSiteId!: pulumi.Output<string>;
+    declare public /*out*/ readonly shipToCustAcctSiteId: pulumi.Output<string>;
     /**
      * (Updatable) Subscription details object which extends the SubscriptionSummary
      */
-    public readonly subscription!: pulumi.Output<outputs.OspGateway.SubscriptionSubscription>;
+    declare public readonly subscription: pulumi.Output<outputs.OspGateway.SubscriptionSubscription>;
     /**
      * Subscription id(OCID).
      *
@@ -126,35 +126,35 @@ export class Subscription extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * Subscription plan number.
      */
-    public /*out*/ readonly subscriptionPlanNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly subscriptionPlanNumber: pulumi.Output<string>;
     /**
      * Tax details.
      */
-    public /*out*/ readonly taxInfos!: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[]>;
+    declare public /*out*/ readonly taxInfos: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[]>;
     /**
      * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
-    public /*out*/ readonly timePersonalToCorporateConv!: pulumi.Output<string>;
+    declare public /*out*/ readonly timePersonalToCorporateConv: pulumi.Output<string>;
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
-    public /*out*/ readonly timePlanUpgrade!: pulumi.Output<string>;
+    declare public /*out*/ readonly timePlanUpgrade: pulumi.Output<string>;
     /**
      * Start date of the subscription.
      */
-    public /*out*/ readonly timeStart!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStart: pulumi.Output<string>;
     /**
      * Status of the upgrade.
      */
-    public /*out*/ readonly upgradeState!: pulumi.Output<string>;
+    declare public /*out*/ readonly upgradeState: pulumi.Output<string>;
     /**
      * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
-    public /*out*/ readonly upgradeStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly upgradeStateDetails: pulumi.Output<string>;
 
     /**
      * Create a Subscription resource with the given unique name, arguments, and options.
@@ -169,54 +169,54 @@ export class Subscription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubscriptionState | undefined;
-            resourceInputs["accountType"] = state ? state.accountType : undefined;
-            resourceInputs["billToCustAccountId"] = state ? state.billToCustAccountId : undefined;
-            resourceInputs["billingAddresses"] = state ? state.billingAddresses : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["currencyCode"] = state ? state.currencyCode : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["gsiOrgCode"] = state ? state.gsiOrgCode : undefined;
-            resourceInputs["isCorporateConversionAllowed"] = state ? state.isCorporateConversionAllowed : undefined;
-            resourceInputs["isIntentToPay"] = state ? state.isIntentToPay : undefined;
-            resourceInputs["languageCode"] = state ? state.languageCode : undefined;
-            resourceInputs["organizationId"] = state ? state.organizationId : undefined;
-            resourceInputs["ospHomeRegion"] = state ? state.ospHomeRegion : undefined;
-            resourceInputs["paymentGateways"] = state ? state.paymentGateways : undefined;
-            resourceInputs["paymentOptions"] = state ? state.paymentOptions : undefined;
-            resourceInputs["planType"] = state ? state.planType : undefined;
-            resourceInputs["shipToCustAcctRoleId"] = state ? state.shipToCustAcctRoleId : undefined;
-            resourceInputs["shipToCustAcctSiteId"] = state ? state.shipToCustAcctSiteId : undefined;
-            resourceInputs["subscription"] = state ? state.subscription : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["subscriptionPlanNumber"] = state ? state.subscriptionPlanNumber : undefined;
-            resourceInputs["taxInfos"] = state ? state.taxInfos : undefined;
-            resourceInputs["timePersonalToCorporateConv"] = state ? state.timePersonalToCorporateConv : undefined;
-            resourceInputs["timePlanUpgrade"] = state ? state.timePlanUpgrade : undefined;
-            resourceInputs["timeStart"] = state ? state.timeStart : undefined;
-            resourceInputs["upgradeState"] = state ? state.upgradeState : undefined;
-            resourceInputs["upgradeStateDetails"] = state ? state.upgradeStateDetails : undefined;
+            resourceInputs["accountType"] = state?.accountType;
+            resourceInputs["billToCustAccountId"] = state?.billToCustAccountId;
+            resourceInputs["billingAddresses"] = state?.billingAddresses;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["currencyCode"] = state?.currencyCode;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["gsiOrgCode"] = state?.gsiOrgCode;
+            resourceInputs["isCorporateConversionAllowed"] = state?.isCorporateConversionAllowed;
+            resourceInputs["isIntentToPay"] = state?.isIntentToPay;
+            resourceInputs["languageCode"] = state?.languageCode;
+            resourceInputs["organizationId"] = state?.organizationId;
+            resourceInputs["ospHomeRegion"] = state?.ospHomeRegion;
+            resourceInputs["paymentGateways"] = state?.paymentGateways;
+            resourceInputs["paymentOptions"] = state?.paymentOptions;
+            resourceInputs["planType"] = state?.planType;
+            resourceInputs["shipToCustAcctRoleId"] = state?.shipToCustAcctRoleId;
+            resourceInputs["shipToCustAcctSiteId"] = state?.shipToCustAcctSiteId;
+            resourceInputs["subscription"] = state?.subscription;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["subscriptionPlanNumber"] = state?.subscriptionPlanNumber;
+            resourceInputs["taxInfos"] = state?.taxInfos;
+            resourceInputs["timePersonalToCorporateConv"] = state?.timePersonalToCorporateConv;
+            resourceInputs["timePlanUpgrade"] = state?.timePlanUpgrade;
+            resourceInputs["timeStart"] = state?.timeStart;
+            resourceInputs["upgradeState"] = state?.upgradeState;
+            resourceInputs["upgradeStateDetails"] = state?.upgradeStateDetails;
         } else {
             const args = argsOrState as SubscriptionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.ospHomeRegion === undefined) && !opts.urn) {
+            if (args?.ospHomeRegion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ospHomeRegion'");
             }
-            if ((!args || args.subscription === undefined) && !opts.urn) {
+            if (args?.subscription === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscription'");
             }
-            if ((!args || args.subscriptionId === undefined) && !opts.urn) {
+            if (args?.subscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscriptionId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["ospHomeRegion"] = args ? args.ospHomeRegion : undefined;
-            resourceInputs["subscription"] = args ? args.subscription : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["ospHomeRegion"] = args?.ospHomeRegion;
+            resourceInputs["subscription"] = args?.subscription;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["accountType"] = undefined /*out*/;
             resourceInputs["billToCustAccountId"] = undefined /*out*/;
             resourceInputs["billingAddresses"] = undefined /*out*/;

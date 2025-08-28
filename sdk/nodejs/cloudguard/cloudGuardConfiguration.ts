@@ -41,15 +41,15 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment in which to list resources.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The reporting region
      */
-    public readonly reportingRegion!: pulumi.Output<string>;
+    declare public readonly reportingRegion: pulumi.Output<string>;
     /**
      * (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      */
-    public readonly selfManageResources!: pulumi.Output<boolean>;
+    declare public readonly selfManageResources: pulumi.Output<boolean>;
     /**
      * (Updatable) Status of Cloud Guard tenant
      *
@@ -57,7 +57,7 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
 
     /**
      * Create a CloudGuardConfiguration resource with the given unique name, arguments, and options.
@@ -72,25 +72,25 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudGuardConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["reportingRegion"] = state ? state.reportingRegion : undefined;
-            resourceInputs["selfManageResources"] = state ? state.selfManageResources : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["reportingRegion"] = state?.reportingRegion;
+            resourceInputs["selfManageResources"] = state?.selfManageResources;
+            resourceInputs["status"] = state?.status;
         } else {
             const args = argsOrState as CloudGuardConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.reportingRegion === undefined) && !opts.urn) {
+            if (args?.reportingRegion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'reportingRegion'");
             }
-            if ((!args || args.status === undefined) && !opts.urn) {
+            if (args?.status === undefined && !opts.urn) {
                 throw new Error("Missing required property 'status'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["reportingRegion"] = args ? args.reportingRegion : undefined;
-            resourceInputs["selfManageResources"] = args ? args.selfManageResources : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["reportingRegion"] = args?.reportingRegion;
+            resourceInputs["selfManageResources"] = args?.selfManageResources;
+            resourceInputs["status"] = args?.status;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudGuardConfiguration.__pulumiType, name, resourceInputs, opts);

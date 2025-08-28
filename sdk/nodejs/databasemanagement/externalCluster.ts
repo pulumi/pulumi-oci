@@ -50,35 +50,35 @@ export class ExternalCluster extends pulumi.CustomResource {
     /**
      * The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of the external cluster.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      */
-    public readonly externalClusterId!: pulumi.Output<string>;
+    declare public readonly externalClusterId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    declare public readonly externalConnectorId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -86,55 +86,55 @@ export class ExternalCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    declare public /*out*/ readonly gridHome: pulumi.Output<string>;
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      */
-    public /*out*/ readonly isFlexCluster!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isFlexCluster: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The list of network address configurations of the external cluster.
      */
-    public /*out*/ readonly networkConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterNetworkConfiguration[]>;
+    declare public /*out*/ readonly networkConfigurations: pulumi.Output<outputs.DatabaseManagement.ExternalClusterNetworkConfiguration[]>;
     /**
      * The location of the Oracle Cluster Registry (OCR).
      */
-    public /*out*/ readonly ocrFileLocation!: pulumi.Output<string>;
+    declare public /*out*/ readonly ocrFileLocation: pulumi.Output<string>;
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
      */
-    public /*out*/ readonly scanConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterScanConfiguration[]>;
+    declare public /*out*/ readonly scanConfigurations: pulumi.Output<outputs.DatabaseManagement.ExternalClusterScanConfiguration[]>;
     /**
      * The current lifecycle state of the external cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the external cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the external cluster was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The cluster version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
      */
-    public /*out*/ readonly vipConfigurations!: pulumi.Output<outputs.DatabaseManagement.ExternalClusterVipConfiguration[]>;
+    declare public /*out*/ readonly vipConfigurations: pulumi.Output<outputs.DatabaseManagement.ExternalClusterVipConfiguration[]>;
 
     /**
      * Create a ExternalCluster resource with the given unique name, arguments, and options.
@@ -149,36 +149,36 @@ export class ExternalCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalClusterState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentName"] = state ? state.componentName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalClusterId"] = state ? state.externalClusterId : undefined;
-            resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gridHome"] = state ? state.gridHome : undefined;
-            resourceInputs["isFlexCluster"] = state ? state.isFlexCluster : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["networkConfigurations"] = state ? state.networkConfigurations : undefined;
-            resourceInputs["ocrFileLocation"] = state ? state.ocrFileLocation : undefined;
-            resourceInputs["scanConfigurations"] = state ? state.scanConfigurations : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["vipConfigurations"] = state ? state.vipConfigurations : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentName"] = state?.componentName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalClusterId"] = state?.externalClusterId;
+            resourceInputs["externalConnectorId"] = state?.externalConnectorId;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gridHome"] = state?.gridHome;
+            resourceInputs["isFlexCluster"] = state?.isFlexCluster;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["networkConfigurations"] = state?.networkConfigurations;
+            resourceInputs["ocrFileLocation"] = state?.ocrFileLocation;
+            resourceInputs["scanConfigurations"] = state?.scanConfigurations;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["vipConfigurations"] = state?.vipConfigurations;
         } else {
             const args = argsOrState as ExternalClusterArgs | undefined;
-            if ((!args || args.externalClusterId === undefined) && !opts.urn) {
+            if (args?.externalClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalClusterId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["externalClusterId"] = args ? args.externalClusterId : undefined;
-            resourceInputs["externalConnectorId"] = args ? args.externalConnectorId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["externalClusterId"] = args?.externalClusterId;
+            resourceInputs["externalConnectorId"] = args?.externalConnectorId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["componentName"] = undefined /*out*/;

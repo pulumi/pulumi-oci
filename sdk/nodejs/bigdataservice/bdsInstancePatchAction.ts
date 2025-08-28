@@ -67,15 +67,15 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    public readonly patchingConfig!: pulumi.Output<outputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
+    declare public readonly patchingConfig: pulumi.Output<outputs.BigDataService.BdsInstancePatchActionPatchingConfig>;
     /**
      * The version of the patch to be installed.
      *
@@ -83,7 +83,7 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
 
     /**
      * Create a BdsInstancePatchAction resource with the given unique name, arguments, and options.
@@ -98,25 +98,25 @@ export class BdsInstancePatchAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstancePatchActionState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["patchingConfig"] = state ? state.patchingConfig : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["patchingConfig"] = state?.patchingConfig;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as BdsInstancePatchActionArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["patchingConfig"] = args ? args.patchingConfig : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["patchingConfig"] = args?.patchingConfig;
+            resourceInputs["version"] = args?.version;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };

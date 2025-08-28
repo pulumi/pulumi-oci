@@ -89,36 +89,36 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
     /**
      * (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
      */
-    public readonly actions!: pulumi.Output<outputs.LogAnalytics.NamespaceIngestTimeRuleAction[]>;
+    declare public readonly actions: pulumi.Output<outputs.LogAnalytics.NamespaceIngestTimeRuleAction[]>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The condition(s) to evaluate for an ingest time rule.
      */
-    public readonly conditions!: pulumi.Output<outputs.LogAnalytics.NamespaceIngestTimeRuleConditions>;
+    declare public readonly conditions: pulumi.Output<outputs.LogAnalytics.NamespaceIngestTimeRuleConditions>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description for this resource.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The ingest time rule display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly ingestTimeRuleId!: pulumi.Output<string>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly ingestTimeRuleId: pulumi.Output<string>;
     /**
      * A flag indicating whether or not the ingest time rule is enabled.
      */
-    public /*out*/ readonly isEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -126,19 +126,19 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The current state of the ingest time rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a NamespaceIngestTimeRule resource with the given unique name, arguments, and options.
@@ -153,44 +153,44 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceIngestTimeRuleState | undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ingestTimeRuleId"] = state ? state.ingestTimeRuleId : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ingestTimeRuleId"] = state?.ingestTimeRuleId;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as NamespaceIngestTimeRuleArgs | undefined;
-            if ((!args || args.actions === undefined) && !opts.urn) {
+            if (args?.actions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actions'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.conditions === undefined) && !opts.urn) {
+            if (args?.conditions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditions'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["actions"] = args ? args.actions : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["actions"] = args?.actions;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["ingestTimeRuleId"] = undefined /*out*/;
             resourceInputs["isEnabled"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

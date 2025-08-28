@@ -53,7 +53,7 @@ export class ExternalMySqlDatabaseExternalMysqlDatabasesManagement extends pulum
     /**
      * OCID of External MySQL Database connector.
      */
-    public readonly connectorId!: pulumi.Output<string>;
+    declare public readonly connectorId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -61,11 +61,11 @@ export class ExternalMySqlDatabaseExternalMysqlDatabasesManagement extends pulum
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableExternalMysqlDatabase!: pulumi.Output<boolean>;
+    declare public readonly enableExternalMysqlDatabase: pulumi.Output<boolean>;
     /**
      * The OCID of the External MySQL Database.
      */
-    public readonly externalMySqlDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalMySqlDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a ExternalMySqlDatabaseExternalMysqlDatabasesManagement resource with the given unique name, arguments, and options.
@@ -80,20 +80,20 @@ export class ExternalMySqlDatabaseExternalMysqlDatabasesManagement extends pulum
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalMySqlDatabaseExternalMysqlDatabasesManagementState | undefined;
-            resourceInputs["connectorId"] = state ? state.connectorId : undefined;
-            resourceInputs["enableExternalMysqlDatabase"] = state ? state.enableExternalMysqlDatabase : undefined;
-            resourceInputs["externalMySqlDatabaseId"] = state ? state.externalMySqlDatabaseId : undefined;
+            resourceInputs["connectorId"] = state?.connectorId;
+            resourceInputs["enableExternalMysqlDatabase"] = state?.enableExternalMysqlDatabase;
+            resourceInputs["externalMySqlDatabaseId"] = state?.externalMySqlDatabaseId;
         } else {
             const args = argsOrState as ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs | undefined;
-            if ((!args || args.enableExternalMysqlDatabase === undefined) && !opts.urn) {
+            if (args?.enableExternalMysqlDatabase === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableExternalMysqlDatabase'");
             }
-            if ((!args || args.externalMySqlDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalMySqlDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalMySqlDatabaseId'");
             }
-            resourceInputs["connectorId"] = args ? args.connectorId : undefined;
-            resourceInputs["enableExternalMysqlDatabase"] = args ? args.enableExternalMysqlDatabase : undefined;
-            resourceInputs["externalMySqlDatabaseId"] = args ? args.externalMySqlDatabaseId : undefined;
+            resourceInputs["connectorId"] = args?.connectorId;
+            resourceInputs["enableExternalMysqlDatabase"] = args?.enableExternalMysqlDatabase;
+            resourceInputs["externalMySqlDatabaseId"] = args?.externalMySqlDatabaseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalMySqlDatabaseExternalMysqlDatabasesManagement.__pulumiType, name, resourceInputs, opts);

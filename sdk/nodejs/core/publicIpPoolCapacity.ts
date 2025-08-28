@@ -57,18 +57,18 @@ export class PublicIpPoolCapacity extends pulumi.CustomResource {
     /**
      * The OCID of the Byoip Range Id object to which the cidr block belongs.
      */
-    public readonly byoipId!: pulumi.Output<string>;
+    declare public readonly byoipId: pulumi.Output<string>;
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly cidrBlock!: pulumi.Output<string>;
+    declare public readonly cidrBlock: pulumi.Output<string>;
     /**
      * The OCID of the pool object created by the current tenancy
      */
-    public readonly publicIpPoolId!: pulumi.Output<string>;
+    declare public readonly publicIpPoolId: pulumi.Output<string>;
 
     /**
      * Create a PublicIpPoolCapacity resource with the given unique name, arguments, and options.
@@ -83,23 +83,23 @@ export class PublicIpPoolCapacity extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PublicIpPoolCapacityState | undefined;
-            resourceInputs["byoipId"] = state ? state.byoipId : undefined;
-            resourceInputs["cidrBlock"] = state ? state.cidrBlock : undefined;
-            resourceInputs["publicIpPoolId"] = state ? state.publicIpPoolId : undefined;
+            resourceInputs["byoipId"] = state?.byoipId;
+            resourceInputs["cidrBlock"] = state?.cidrBlock;
+            resourceInputs["publicIpPoolId"] = state?.publicIpPoolId;
         } else {
             const args = argsOrState as PublicIpPoolCapacityArgs | undefined;
-            if ((!args || args.byoipId === undefined) && !opts.urn) {
+            if (args?.byoipId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'byoipId'");
             }
-            if ((!args || args.cidrBlock === undefined) && !opts.urn) {
+            if (args?.cidrBlock === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cidrBlock'");
             }
-            if ((!args || args.publicIpPoolId === undefined) && !opts.urn) {
+            if (args?.publicIpPoolId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicIpPoolId'");
             }
-            resourceInputs["byoipId"] = args ? args.byoipId : undefined;
-            resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
-            resourceInputs["publicIpPoolId"] = args ? args.publicIpPoolId : undefined;
+            resourceInputs["byoipId"] = args?.byoipId;
+            resourceInputs["cidrBlock"] = args?.cidrBlock;
+            resourceInputs["publicIpPoolId"] = args?.publicIpPoolId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PublicIpPoolCapacity.__pulumiType, name, resourceInputs, opts);

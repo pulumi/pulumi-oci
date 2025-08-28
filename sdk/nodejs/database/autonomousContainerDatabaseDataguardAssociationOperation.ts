@@ -57,15 +57,15 @@ export class AutonomousContainerDatabaseDataguardAssociationOperation extends pu
     /**
      * The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      */
-    public readonly autonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseDataguardAssociationId: pulumi.Output<string>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      */
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
      */
-    public readonly operation!: pulumi.Output<string>;
+    declare public readonly operation: pulumi.Output<string>;
 
     /**
      * Create a AutonomousContainerDatabaseDataguardAssociationOperation resource with the given unique name, arguments, and options.
@@ -80,23 +80,23 @@ export class AutonomousContainerDatabaseDataguardAssociationOperation extends pu
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseDataguardAssociationOperationState | undefined;
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state ? state.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["operation"] = state ? state.operation : undefined;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["operation"] = state?.operation;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseDataguardAssociationOperationArgs | undefined;
-            if ((!args || args.autonomousContainerDatabaseDataguardAssociationId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseDataguardAssociationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseDataguardAssociationId'");
             }
-            if ((!args || args.autonomousContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseId'");
             }
-            if ((!args || args.operation === undefined) && !opts.urn) {
+            if (args?.operation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operation'");
             }
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args ? args.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["operation"] = args ? args.operation : undefined;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["operation"] = args?.operation;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousContainerDatabaseDataguardAssociationOperation.__pulumiType, name, resourceInputs, opts);

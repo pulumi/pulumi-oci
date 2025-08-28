@@ -68,70 +68,70 @@ export class AuditProfileManagement extends pulumi.CustomResource {
     /**
      * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      */
-    public /*out*/ readonly auditCollectedVolume!: pulumi.Output<string>;
+    declare public /*out*/ readonly auditCollectedVolume: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when set to true triggers Change Retention.
      */
-    public readonly changeRetentionTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly changeRetentionTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the audit.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the audit profile.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      */
-    public readonly isOverrideGlobalRetentionSetting!: pulumi.Output<boolean | undefined>;
+    declare public readonly isOverrideGlobalRetentionSetting: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      */
-    public readonly isPaidUsageEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isPaidUsageEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Details about the current state of the audit profile in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      */
-    public readonly offlineMonths!: pulumi.Output<number | undefined>;
+    declare public readonly offlineMonths: pulumi.Output<number | undefined>;
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly onlineMonths!: pulumi.Output<number | undefined>;
+    declare public readonly onlineMonths: pulumi.Output<number | undefined>;
     /**
      * The current state of the audit profile.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the target.
      */
-    public readonly targetId!: pulumi.Output<string | undefined>;
+    declare public readonly targetId: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AuditProfileManagement resource with the given unique name, arguments, and options.
@@ -146,35 +146,35 @@ export class AuditProfileManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditProfileManagementState | undefined;
-            resourceInputs["auditCollectedVolume"] = state ? state.auditCollectedVolume : undefined;
-            resourceInputs["changeRetentionTrigger"] = state ? state.changeRetentionTrigger : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isOverrideGlobalRetentionSetting"] = state ? state.isOverrideGlobalRetentionSetting : undefined;
-            resourceInputs["isPaidUsageEnabled"] = state ? state.isPaidUsageEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["offlineMonths"] = state ? state.offlineMonths : undefined;
-            resourceInputs["onlineMonths"] = state ? state.onlineMonths : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["auditCollectedVolume"] = state?.auditCollectedVolume;
+            resourceInputs["changeRetentionTrigger"] = state?.changeRetentionTrigger;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isOverrideGlobalRetentionSetting"] = state?.isOverrideGlobalRetentionSetting;
+            resourceInputs["isPaidUsageEnabled"] = state?.isPaidUsageEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["offlineMonths"] = state?.offlineMonths;
+            resourceInputs["onlineMonths"] = state?.onlineMonths;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AuditProfileManagementArgs | undefined;
-            resourceInputs["changeRetentionTrigger"] = args ? args.changeRetentionTrigger : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isOverrideGlobalRetentionSetting"] = args ? args.isOverrideGlobalRetentionSetting : undefined;
-            resourceInputs["isPaidUsageEnabled"] = args ? args.isPaidUsageEnabled : undefined;
-            resourceInputs["offlineMonths"] = args ? args.offlineMonths : undefined;
-            resourceInputs["onlineMonths"] = args ? args.onlineMonths : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["changeRetentionTrigger"] = args?.changeRetentionTrigger;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isOverrideGlobalRetentionSetting"] = args?.isOverrideGlobalRetentionSetting;
+            resourceInputs["isPaidUsageEnabled"] = args?.isPaidUsageEnabled;
+            resourceInputs["offlineMonths"] = args?.offlineMonths;
+            resourceInputs["onlineMonths"] = args?.onlineMonths;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["auditCollectedVolume"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

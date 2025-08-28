@@ -56,7 +56,7 @@ export class MetricExtensionsTestManagement extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
      */
-    public readonly metricExtensionId!: pulumi.Output<string>;
+    declare public readonly metricExtensionId: pulumi.Output<string>;
     /**
      * List of Resource IDs [OCID]. Currently, supports only one resource id per request.
      *
@@ -64,23 +64,23 @@ export class MetricExtensionsTestManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceIds!: pulumi.Output<string>;
+    declare public readonly resourceIds: pulumi.Output<string>;
     /**
      * Test Run Id
      */
-    public /*out*/ readonly testRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly testRunId: pulumi.Output<string>;
     /**
      * Test Run Metric Suffix
      */
-    public /*out*/ readonly testRunMetricSuffix!: pulumi.Output<string>;
+    declare public /*out*/ readonly testRunMetricSuffix: pulumi.Output<string>;
     /**
      * Test Run Namespace name
      */
-    public /*out*/ readonly testRunNamespaceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly testRunNamespaceName: pulumi.Output<string>;
     /**
      * Test Run Resource Group name
      */
-    public /*out*/ readonly testRunResourceGroupName!: pulumi.Output<string>;
+    declare public /*out*/ readonly testRunResourceGroupName: pulumi.Output<string>;
 
     /**
      * Create a MetricExtensionsTestManagement resource with the given unique name, arguments, and options.
@@ -95,22 +95,22 @@ export class MetricExtensionsTestManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricExtensionsTestManagementState | undefined;
-            resourceInputs["metricExtensionId"] = state ? state.metricExtensionId : undefined;
-            resourceInputs["resourceIds"] = state ? state.resourceIds : undefined;
-            resourceInputs["testRunId"] = state ? state.testRunId : undefined;
-            resourceInputs["testRunMetricSuffix"] = state ? state.testRunMetricSuffix : undefined;
-            resourceInputs["testRunNamespaceName"] = state ? state.testRunNamespaceName : undefined;
-            resourceInputs["testRunResourceGroupName"] = state ? state.testRunResourceGroupName : undefined;
+            resourceInputs["metricExtensionId"] = state?.metricExtensionId;
+            resourceInputs["resourceIds"] = state?.resourceIds;
+            resourceInputs["testRunId"] = state?.testRunId;
+            resourceInputs["testRunMetricSuffix"] = state?.testRunMetricSuffix;
+            resourceInputs["testRunNamespaceName"] = state?.testRunNamespaceName;
+            resourceInputs["testRunResourceGroupName"] = state?.testRunResourceGroupName;
         } else {
             const args = argsOrState as MetricExtensionsTestManagementArgs | undefined;
-            if ((!args || args.metricExtensionId === undefined) && !opts.urn) {
+            if (args?.metricExtensionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricExtensionId'");
             }
-            if ((!args || args.resourceIds === undefined) && !opts.urn) {
+            if (args?.resourceIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceIds'");
             }
-            resourceInputs["metricExtensionId"] = args ? args.metricExtensionId : undefined;
-            resourceInputs["resourceIds"] = args ? args.resourceIds : undefined;
+            resourceInputs["metricExtensionId"] = args?.metricExtensionId;
+            resourceInputs["resourceIds"] = args?.resourceIds;
             resourceInputs["testRunId"] = undefined /*out*/;
             resourceInputs["testRunMetricSuffix"] = undefined /*out*/;
             resourceInputs["testRunNamespaceName"] = undefined /*out*/;

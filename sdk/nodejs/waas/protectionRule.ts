@@ -52,35 +52,35 @@ export class ProtectionRule extends pulumi.CustomResource {
     /**
      * (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The description of the protection rule.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * (Updatable)
      */
-    public readonly exclusions!: pulumi.Output<outputs.Waas.ProtectionRuleExclusion[]>;
+    declare public readonly exclusions: pulumi.Output<outputs.Waas.ProtectionRuleExclusion[]>;
     /**
      * (Updatable) The unique key of the protection rule.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * The list of labels for the protection rule.
      */
-    public /*out*/ readonly labels!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly labels: pulumi.Output<string[]>;
     /**
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      */
-    public /*out*/ readonly modSecurityRuleIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly modSecurityRuleIds: pulumi.Output<string[]>;
     /**
      * The name of the protection rule.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
-    public readonly waasPolicyId!: pulumi.Output<string>;
+    declare public readonly waasPolicyId: pulumi.Output<string>;
 
     /**
      * Create a ProtectionRule resource with the given unique name, arguments, and options.
@@ -95,26 +95,26 @@ export class ProtectionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProtectionRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["exclusions"] = state ? state.exclusions : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["labels"] = state ? state.labels : undefined;
-            resourceInputs["modSecurityRuleIds"] = state ? state.modSecurityRuleIds : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["waasPolicyId"] = state ? state.waasPolicyId : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["exclusions"] = state?.exclusions;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["labels"] = state?.labels;
+            resourceInputs["modSecurityRuleIds"] = state?.modSecurityRuleIds;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["waasPolicyId"] = state?.waasPolicyId;
         } else {
             const args = argsOrState as ProtectionRuleArgs | undefined;
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.waasPolicyId === undefined) && !opts.urn) {
+            if (args?.waasPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'waasPolicyId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["exclusions"] = args ? args.exclusions : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["waasPolicyId"] = args ? args.waasPolicyId : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["exclusions"] = args?.exclusions;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["waasPolicyId"] = args?.waasPolicyId;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["labels"] = undefined /*out*/;
             resourceInputs["modSecurityRuleIds"] = undefined /*out*/;

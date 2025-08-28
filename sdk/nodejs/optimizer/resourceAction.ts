@@ -55,67 +55,67 @@ export class ResourceAction extends pulumi.CustomResource {
     /**
      * Details about the recommended action.
      */
-    public /*out*/ readonly actions!: pulumi.Output<outputs.Optimizer.ResourceActionAction[]>;
+    declare public /*out*/ readonly actions: pulumi.Output<outputs.Optimizer.ResourceActionAction[]>;
     /**
      * The unique OCID associated with the category.
      */
-    public /*out*/ readonly categoryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly categoryId: pulumi.Output<string>;
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name associated with the compartment.
      */
-    public /*out*/ readonly compartmentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentName: pulumi.Output<string>;
     /**
      * The estimated cost savings, in dollars, for the resource action.
      */
-    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedCostSaving: pulumi.Output<number>;
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly extendedMetadata: pulumi.Output<{[key: string]: string}>;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The name assigned to the resource.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    public /*out*/ readonly recommendationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly recommendationId: pulumi.Output<string>;
     /**
      * The unique OCID associated with the resource action.
      */
-    public readonly resourceActionId!: pulumi.Output<string>;
+    declare public readonly resourceActionId: pulumi.Output<string>;
     /**
      * The unique OCID associated with the resource.
      */
-    public /*out*/ readonly resourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceId: pulumi.Output<string>;
     /**
      * The kind of resource.
      */
-    public /*out*/ readonly resourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceType: pulumi.Output<string>;
     /**
      * The resource action's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The status of the resource action.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      */
-    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStatusBegin: pulumi.Output<string>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -125,11 +125,11 @@ export class ResourceAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStatusEnd!: pulumi.Output<string>;
+    declare public readonly timeStatusEnd: pulumi.Output<string>;
     /**
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ResourceAction resource with the given unique name, arguments, and options.
@@ -144,35 +144,35 @@ export class ResourceAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResourceActionState | undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compartmentName"] = state ? state.compartmentName : undefined;
-            resourceInputs["estimatedCostSaving"] = state ? state.estimatedCostSaving : undefined;
-            resourceInputs["extendedMetadata"] = state ? state.extendedMetadata : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["recommendationId"] = state ? state.recommendationId : undefined;
-            resourceInputs["resourceActionId"] = state ? state.resourceActionId : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeStatusBegin"] = state ? state.timeStatusBegin : undefined;
-            resourceInputs["timeStatusEnd"] = state ? state.timeStatusEnd : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compartmentName"] = state?.compartmentName;
+            resourceInputs["estimatedCostSaving"] = state?.estimatedCostSaving;
+            resourceInputs["extendedMetadata"] = state?.extendedMetadata;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["recommendationId"] = state?.recommendationId;
+            resourceInputs["resourceActionId"] = state?.resourceActionId;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeStatusBegin"] = state?.timeStatusBegin;
+            resourceInputs["timeStatusEnd"] = state?.timeStatusEnd;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ResourceActionArgs | undefined;
-            if ((!args || args.resourceActionId === undefined) && !opts.urn) {
+            if (args?.resourceActionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceActionId'");
             }
-            if ((!args || args.status === undefined) && !opts.urn) {
+            if (args?.status === undefined && !opts.urn) {
                 throw new Error("Missing required property 'status'");
             }
-            resourceInputs["resourceActionId"] = args ? args.resourceActionId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["timeStatusEnd"] = args ? args.timeStatusEnd : undefined;
+            resourceInputs["resourceActionId"] = args?.resourceActionId;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["timeStatusEnd"] = args?.timeStatusEnd;
             resourceInputs["actions"] = undefined /*out*/;
             resourceInputs["categoryId"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;

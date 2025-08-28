@@ -55,7 +55,7 @@ export class CloudDbSystemCloudDatabaseManagementsManagement extends pulumi.Cust
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      */
-    public readonly cloudDbSystemId!: pulumi.Output<string>;
+    declare public readonly cloudDbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -63,15 +63,15 @@ export class CloudDbSystemCloudDatabaseManagementsManagement extends pulumi.Cust
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableCloudDatabaseManagement!: pulumi.Output<boolean>;
+    declare public readonly enableCloudDatabaseManagement: pulumi.Output<boolean>;
     /**
      * The status of the associated service.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    public readonly metadata!: pulumi.Output<string>;
+    declare public readonly metadata: pulumi.Output<string>;
 
     /**
      * Create a CloudDbSystemCloudDatabaseManagementsManagement resource with the given unique name, arguments, and options.
@@ -86,22 +86,22 @@ export class CloudDbSystemCloudDatabaseManagementsManagement extends pulumi.Cust
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudDbSystemCloudDatabaseManagementsManagementState | undefined;
-            resourceInputs["cloudDbSystemId"] = state ? state.cloudDbSystemId : undefined;
-            resourceInputs["enableCloudDatabaseManagement"] = state ? state.enableCloudDatabaseManagement : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["cloudDbSystemId"] = state?.cloudDbSystemId;
+            resourceInputs["enableCloudDatabaseManagement"] = state?.enableCloudDatabaseManagement;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["metadata"] = state?.metadata;
         } else {
             const args = argsOrState as CloudDbSystemCloudDatabaseManagementsManagementArgs | undefined;
-            if ((!args || args.cloudDbSystemId === undefined) && !opts.urn) {
+            if (args?.cloudDbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudDbSystemId'");
             }
-            if ((!args || args.enableCloudDatabaseManagement === undefined) && !opts.urn) {
+            if (args?.enableCloudDatabaseManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableCloudDatabaseManagement'");
             }
-            resourceInputs["cloudDbSystemId"] = args ? args.cloudDbSystemId : undefined;
-            resourceInputs["enableCloudDatabaseManagement"] = args ? args.enableCloudDatabaseManagement : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["cloudDbSystemId"] = args?.cloudDbSystemId;
+            resourceInputs["enableCloudDatabaseManagement"] = args?.enableCloudDatabaseManagement;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["metadata"] = args?.metadata;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudDbSystemCloudDatabaseManagementsManagement.__pulumiType, name, resourceInputs, opts);

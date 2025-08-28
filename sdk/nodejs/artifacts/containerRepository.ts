@@ -74,71 +74,71 @@ export class ContainerRepository extends pulumi.CustomResource {
     /**
      * Total storage size in GBs that will be charged.
      */
-    public /*out*/ readonly billableSizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly billableSizeInGbs: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The id of the user or principal that created the resource.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The container repository name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Total number of images.
      */
-    public /*out*/ readonly imageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly imageCount: pulumi.Output<number>;
     /**
      * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      */
-    public readonly isImmutable!: pulumi.Output<boolean>;
+    declare public readonly isImmutable: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
      */
-    public readonly isPublic!: pulumi.Output<boolean>;
+    declare public readonly isPublic: pulumi.Output<boolean>;
     /**
      * Total number of layers.
      */
-    public /*out*/ readonly layerCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly layerCount: pulumi.Output<number>;
     /**
      * Total storage in bytes consumed by layers.
      */
-    public /*out*/ readonly layersSizeInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly layersSizeInBytes: pulumi.Output<string>;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    declare public /*out*/ readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Container repository readme.
      */
-    public readonly readme!: pulumi.Output<outputs.Artifacts.ContainerRepositoryReadme>;
+    declare public readonly readme: pulumi.Output<outputs.Artifacts.ContainerRepositoryReadme>;
     /**
      * The current state of the container repository.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      */
-    public /*out*/ readonly timeLastPushed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastPushed: pulumi.Output<string>;
 
     /**
      * Create a ContainerRepository resource with the given unique name, arguments, and options.
@@ -153,38 +153,38 @@ export class ContainerRepository extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerRepositoryState | undefined;
-            resourceInputs["billableSizeInGbs"] = state ? state.billableSizeInGbs : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageCount"] = state ? state.imageCount : undefined;
-            resourceInputs["isImmutable"] = state ? state.isImmutable : undefined;
-            resourceInputs["isPublic"] = state ? state.isPublic : undefined;
-            resourceInputs["layerCount"] = state ? state.layerCount : undefined;
-            resourceInputs["layersSizeInBytes"] = state ? state.layersSizeInBytes : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["readme"] = state ? state.readme : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastPushed"] = state ? state.timeLastPushed : undefined;
+            resourceInputs["billableSizeInGbs"] = state?.billableSizeInGbs;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageCount"] = state?.imageCount;
+            resourceInputs["isImmutable"] = state?.isImmutable;
+            resourceInputs["isPublic"] = state?.isPublic;
+            resourceInputs["layerCount"] = state?.layerCount;
+            resourceInputs["layersSizeInBytes"] = state?.layersSizeInBytes;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["readme"] = state?.readme;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastPushed"] = state?.timeLastPushed;
         } else {
             const args = argsOrState as ContainerRepositoryArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isImmutable"] = args ? args.isImmutable : undefined;
-            resourceInputs["isPublic"] = args ? args.isPublic : undefined;
-            resourceInputs["readme"] = args ? args.readme : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isImmutable"] = args?.isImmutable;
+            resourceInputs["isPublic"] = args?.isPublic;
+            resourceInputs["readme"] = args?.readme;
             resourceInputs["billableSizeInGbs"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["imageCount"] = undefined /*out*/;

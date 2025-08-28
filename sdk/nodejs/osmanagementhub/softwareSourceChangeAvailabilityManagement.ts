@@ -63,7 +63,7 @@ export class SoftwareSourceChangeAvailabilityManagement extends pulumi.CustomRes
     /**
      * List of vendor software sources and their availability statuses.
      */
-    public readonly softwareSourceAvailabilities!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability[]>;
+    declare public readonly softwareSourceAvailabilities: pulumi.Output<outputs.OsManagementHub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability[]>;
 
     /**
      * Create a SoftwareSourceChangeAvailabilityManagement resource with the given unique name, arguments, and options.
@@ -78,13 +78,13 @@ export class SoftwareSourceChangeAvailabilityManagement extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceChangeAvailabilityManagementState | undefined;
-            resourceInputs["softwareSourceAvailabilities"] = state ? state.softwareSourceAvailabilities : undefined;
+            resourceInputs["softwareSourceAvailabilities"] = state?.softwareSourceAvailabilities;
         } else {
             const args = argsOrState as SoftwareSourceChangeAvailabilityManagementArgs | undefined;
-            if ((!args || args.softwareSourceAvailabilities === undefined) && !opts.urn) {
+            if (args?.softwareSourceAvailabilities === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceAvailabilities'");
             }
-            resourceInputs["softwareSourceAvailabilities"] = args ? args.softwareSourceAvailabilities : undefined;
+            resourceInputs["softwareSourceAvailabilities"] = args?.softwareSourceAvailabilities;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SoftwareSourceChangeAvailabilityManagement.__pulumiType, name, resourceInputs, opts);

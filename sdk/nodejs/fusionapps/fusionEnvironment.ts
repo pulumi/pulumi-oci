@@ -92,115 +92,115 @@ export class FusionEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Language packs.
      */
-    public readonly additionalLanguagePacks!: pulumi.Output<string[]>;
+    declare public readonly additionalLanguagePacks: pulumi.Output<string[]>;
     /**
      * Patch bundle names
      */
-    public /*out*/ readonly appliedPatchBundles!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly appliedPatchBundles: pulumi.Output<string[]>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The credentials for the Fusion Applications service administrator.
      */
-    public readonly createFusionEnvironmentAdminUserDetails!: pulumi.Output<outputs.FusionApps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails>;
+    declare public readonly createFusionEnvironmentAdminUserDetails: pulumi.Output<outputs.FusionApps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) FusionEnvironment Identifier can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * DNS prefix.
      */
-    public readonly dnsPrefix!: pulumi.Output<string>;
+    declare public readonly dnsPrefix: pulumi.Output<string>;
     /**
      * The IDCS domain created for the fusion instance
      */
-    public /*out*/ readonly domainId!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
      */
-    public readonly fusionEnvironmentFamilyId!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentFamilyId: pulumi.Output<string>;
     /**
      * The type of environment. Valid values are Production, Test, or Development.
      */
-    public readonly fusionEnvironmentType!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentType: pulumi.Output<string>;
     /**
      * The IDCS Domain URL
      */
-    public /*out*/ readonly idcsDomainUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsDomainUrl: pulumi.Output<string>;
     /**
      * If it's true, then the Break Glass feature is enabled
      */
-    public /*out*/ readonly isBreakGlassEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isBreakGlassEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) byok kms keyId
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * BYOK key info
      */
-    public /*out*/ readonly kmsKeyInfos!: pulumi.Output<outputs.FusionApps.FusionEnvironmentKmsKeyInfo[]>;
+    declare public /*out*/ readonly kmsKeyInfos: pulumi.Output<outputs.FusionApps.FusionEnvironmentKmsKeyInfo[]>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
      */
-    public /*out*/ readonly lockboxId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lockboxId: pulumi.Output<string>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    public readonly maintenancePolicy!: pulumi.Output<outputs.FusionApps.FusionEnvironmentMaintenancePolicy>;
+    declare public readonly maintenancePolicy: pulumi.Output<outputs.FusionApps.FusionEnvironmentMaintenancePolicy>;
     /**
      * Public URL
      */
-    public /*out*/ readonly publicUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicUrl: pulumi.Output<string>;
     /**
      * Describes a refresh of a fusion environment
      */
-    public /*out*/ readonly refreshes!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefresh[]>;
+    declare public /*out*/ readonly refreshes: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefresh[]>;
     /**
      * (Updatable) Rules.
      */
-    public readonly rules!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRule[]>;
+    declare public readonly rules: pulumi.Output<outputs.FusionApps.FusionEnvironmentRule[]>;
     /**
      * The current state of the ServiceInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * List of subscription IDs.
      */
-    public /*out*/ readonly subscriptionIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly subscriptionIds: pulumi.Output<string[]>;
     /**
      * Environment Specific Guid/ System Name
      */
-    public /*out*/ readonly systemName!: pulumi.Output<string>;
+    declare public /*out*/ readonly systemName: pulumi.Output<string>;
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The next maintenance for this environment
      */
-    public /*out*/ readonly timeUpcomingMaintenance!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpcomingMaintenance: pulumi.Output<string>;
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Version of Fusion Apps used by this environment
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a FusionEnvironment resource with the given unique name, arguments, and options.
@@ -215,63 +215,63 @@ export class FusionEnvironment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentState | undefined;
-            resourceInputs["additionalLanguagePacks"] = state ? state.additionalLanguagePacks : undefined;
-            resourceInputs["appliedPatchBundles"] = state ? state.appliedPatchBundles : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createFusionEnvironmentAdminUserDetails"] = state ? state.createFusionEnvironmentAdminUserDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsPrefix"] = state ? state.dnsPrefix : undefined;
-            resourceInputs["domainId"] = state ? state.domainId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["fusionEnvironmentFamilyId"] = state ? state.fusionEnvironmentFamilyId : undefined;
-            resourceInputs["fusionEnvironmentType"] = state ? state.fusionEnvironmentType : undefined;
-            resourceInputs["idcsDomainUrl"] = state ? state.idcsDomainUrl : undefined;
-            resourceInputs["isBreakGlassEnabled"] = state ? state.isBreakGlassEnabled : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyInfos"] = state ? state.kmsKeyInfos : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lockboxId"] = state ? state.lockboxId : undefined;
-            resourceInputs["maintenancePolicy"] = state ? state.maintenancePolicy : undefined;
-            resourceInputs["publicUrl"] = state ? state.publicUrl : undefined;
-            resourceInputs["refreshes"] = state ? state.refreshes : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscriptionIds"] = state ? state.subscriptionIds : undefined;
-            resourceInputs["systemName"] = state ? state.systemName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpcomingMaintenance"] = state ? state.timeUpcomingMaintenance : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalLanguagePacks"] = state?.additionalLanguagePacks;
+            resourceInputs["appliedPatchBundles"] = state?.appliedPatchBundles;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createFusionEnvironmentAdminUserDetails"] = state?.createFusionEnvironmentAdminUserDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsPrefix"] = state?.dnsPrefix;
+            resourceInputs["domainId"] = state?.domainId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["fusionEnvironmentFamilyId"] = state?.fusionEnvironmentFamilyId;
+            resourceInputs["fusionEnvironmentType"] = state?.fusionEnvironmentType;
+            resourceInputs["idcsDomainUrl"] = state?.idcsDomainUrl;
+            resourceInputs["isBreakGlassEnabled"] = state?.isBreakGlassEnabled;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyInfos"] = state?.kmsKeyInfos;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lockboxId"] = state?.lockboxId;
+            resourceInputs["maintenancePolicy"] = state?.maintenancePolicy;
+            resourceInputs["publicUrl"] = state?.publicUrl;
+            resourceInputs["refreshes"] = state?.refreshes;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscriptionIds"] = state?.subscriptionIds;
+            resourceInputs["systemName"] = state?.systemName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpcomingMaintenance"] = state?.timeUpcomingMaintenance;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as FusionEnvironmentArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.createFusionEnvironmentAdminUserDetails === undefined) && !opts.urn) {
+            if (args?.createFusionEnvironmentAdminUserDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'createFusionEnvironmentAdminUserDetails'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.fusionEnvironmentFamilyId === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentFamilyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentFamilyId'");
             }
-            if ((!args || args.fusionEnvironmentType === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentType'");
             }
-            resourceInputs["additionalLanguagePacks"] = args ? args.additionalLanguagePacks : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["createFusionEnvironmentAdminUserDetails"] = args ? args.createFusionEnvironmentAdminUserDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsPrefix"] = args ? args.dnsPrefix : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["fusionEnvironmentFamilyId"] = args ? args.fusionEnvironmentFamilyId : undefined;
-            resourceInputs["fusionEnvironmentType"] = args ? args.fusionEnvironmentType : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["maintenancePolicy"] = args ? args.maintenancePolicy : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["additionalLanguagePacks"] = args?.additionalLanguagePacks;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["createFusionEnvironmentAdminUserDetails"] = args?.createFusionEnvironmentAdminUserDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsPrefix"] = args?.dnsPrefix;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["fusionEnvironmentFamilyId"] = args?.fusionEnvironmentFamilyId;
+            resourceInputs["fusionEnvironmentType"] = args?.fusionEnvironmentType;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["maintenancePolicy"] = args?.maintenancePolicy;
+            resourceInputs["rules"] = args?.rules;
             resourceInputs["appliedPatchBundles"] = undefined /*out*/;
             resourceInputs["domainId"] = undefined /*out*/;
             resourceInputs["idcsDomainUrl"] = undefined /*out*/;

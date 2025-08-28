@@ -93,59 +93,59 @@ export class Domain extends pulumi.CustomResource {
     /**
      * The admin email address
      */
-    public readonly adminEmail!: pulumi.Output<string>;
+    declare public readonly adminEmail: pulumi.Output<string>;
     /**
      * The admin first name
      */
-    public readonly adminFirstName!: pulumi.Output<string>;
+    declare public readonly adminFirstName: pulumi.Output<string>;
     /**
      * The admin last name
      */
-    public readonly adminLastName!: pulumi.Output<string>;
+    declare public readonly adminLastName: pulumi.Output<string>;
     /**
      * The admin user name
      */
-    public readonly adminUserName!: pulumi.Output<string>;
+    declare public readonly adminUserName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Compartment where domain is created
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Domain entity description
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The mutable display name of the domain.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      */
-    public readonly homeRegion!: pulumi.Output<string>;
+    declare public readonly homeRegion: pulumi.Output<string>;
     /**
      * Region specific domain URL.
      */
-    public /*out*/ readonly homeRegionUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly homeRegionUrl: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      */
-    public readonly isHiddenOnLogin!: pulumi.Output<boolean>;
+    declare public readonly isHiddenOnLogin: pulumi.Output<boolean>;
     /**
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      */
-    public readonly isNotificationBypassed!: pulumi.Output<boolean>;
+    declare public readonly isNotificationBypassed: pulumi.Output<boolean>;
     /**
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      */
-    public readonly isPrimaryEmailRequired!: pulumi.Output<boolean>;
+    declare public readonly isPrimaryEmailRequired: pulumi.Output<boolean>;
     /**
      * The License type of Domain
      *
@@ -153,31 +153,31 @@ export class Domain extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly licenseType!: pulumi.Output<string>;
+    declare public readonly licenseType: pulumi.Output<string>;
     /**
      * Any additional details about the current state of the Domain.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The regions domain is replication to.
      */
-    public /*out*/ readonly replicaRegions!: pulumi.Output<outputs.Identity.DomainReplicaRegion[]>;
+    declare public /*out*/ readonly replicaRegions: pulumi.Output<outputs.Identity.DomainReplicaRegion[]>;
     /**
      * The current state.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The type of the domain.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * Region agnostic domain URL.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    declare public /*out*/ readonly url: pulumi.Output<string>;
 
     /**
      * Create a Domain resource with the given unique name, arguments, and options.
@@ -192,59 +192,59 @@ export class Domain extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainState | undefined;
-            resourceInputs["adminEmail"] = state ? state.adminEmail : undefined;
-            resourceInputs["adminFirstName"] = state ? state.adminFirstName : undefined;
-            resourceInputs["adminLastName"] = state ? state.adminLastName : undefined;
-            resourceInputs["adminUserName"] = state ? state.adminUserName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["homeRegion"] = state ? state.homeRegion : undefined;
-            resourceInputs["homeRegionUrl"] = state ? state.homeRegionUrl : undefined;
-            resourceInputs["isHiddenOnLogin"] = state ? state.isHiddenOnLogin : undefined;
-            resourceInputs["isNotificationBypassed"] = state ? state.isNotificationBypassed : undefined;
-            resourceInputs["isPrimaryEmailRequired"] = state ? state.isPrimaryEmailRequired : undefined;
-            resourceInputs["licenseType"] = state ? state.licenseType : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["replicaRegions"] = state ? state.replicaRegions : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["adminEmail"] = state?.adminEmail;
+            resourceInputs["adminFirstName"] = state?.adminFirstName;
+            resourceInputs["adminLastName"] = state?.adminLastName;
+            resourceInputs["adminUserName"] = state?.adminUserName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["homeRegion"] = state?.homeRegion;
+            resourceInputs["homeRegionUrl"] = state?.homeRegionUrl;
+            resourceInputs["isHiddenOnLogin"] = state?.isHiddenOnLogin;
+            resourceInputs["isNotificationBypassed"] = state?.isNotificationBypassed;
+            resourceInputs["isPrimaryEmailRequired"] = state?.isPrimaryEmailRequired;
+            resourceInputs["licenseType"] = state?.licenseType;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["replicaRegions"] = state?.replicaRegions;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as DomainArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.homeRegion === undefined) && !opts.urn) {
+            if (args?.homeRegion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'homeRegion'");
             }
-            if ((!args || args.licenseType === undefined) && !opts.urn) {
+            if (args?.licenseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseType'");
             }
-            resourceInputs["adminEmail"] = args ? args.adminEmail : undefined;
-            resourceInputs["adminFirstName"] = args ? args.adminFirstName : undefined;
-            resourceInputs["adminLastName"] = args ? args.adminLastName : undefined;
-            resourceInputs["adminUserName"] = args ? args.adminUserName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["homeRegion"] = args ? args.homeRegion : undefined;
-            resourceInputs["isHiddenOnLogin"] = args ? args.isHiddenOnLogin : undefined;
-            resourceInputs["isNotificationBypassed"] = args ? args.isNotificationBypassed : undefined;
-            resourceInputs["isPrimaryEmailRequired"] = args ? args.isPrimaryEmailRequired : undefined;
-            resourceInputs["licenseType"] = args ? args.licenseType : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["adminEmail"] = args?.adminEmail;
+            resourceInputs["adminFirstName"] = args?.adminFirstName;
+            resourceInputs["adminLastName"] = args?.adminLastName;
+            resourceInputs["adminUserName"] = args?.adminUserName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["homeRegion"] = args?.homeRegion;
+            resourceInputs["isHiddenOnLogin"] = args?.isHiddenOnLogin;
+            resourceInputs["isNotificationBypassed"] = args?.isNotificationBypassed;
+            resourceInputs["isPrimaryEmailRequired"] = args?.isPrimaryEmailRequired;
+            resourceInputs["licenseType"] = args?.licenseType;
+            resourceInputs["state"] = args?.state;
             resourceInputs["homeRegionUrl"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["replicaRegions"] = undefined /*out*/;

@@ -57,40 +57,40 @@ export class InvokeFunction extends pulumi.CustomResource {
         return obj['__pulumiType'] === InvokeFunction.__pulumiType;
     }
 
-    public readonly base64EncodeContent!: pulumi.Output<boolean | undefined>;
+    declare public readonly base64EncodeContent: pulumi.Output<boolean | undefined>;
     /**
      * Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    public /*out*/ readonly content!: pulumi.Output<string>;
+    declare public /*out*/ readonly content: pulumi.Output<string>;
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
      */
-    public readonly fnIntent!: pulumi.Output<string>;
+    declare public readonly fnIntent: pulumi.Output<string>;
     /**
      * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      */
-    public readonly fnInvokeType!: pulumi.Output<string>;
+    declare public readonly fnInvokeType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
      */
-    public readonly functionId!: pulumi.Output<string>;
+    declare public readonly functionId: pulumi.Output<string>;
     /**
      * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly inputBodySourcePath!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string>;
+    declare public readonly inputBodySourcePath: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly invokeEndpoint: pulumi.Output<string>;
     /**
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      */
-    public readonly invokeFunctionBody!: pulumi.Output<string>;
-    public readonly invokeFunctionBodyBase64Encoded!: pulumi.Output<string>;
+    declare public readonly invokeFunctionBody: pulumi.Output<string>;
+    declare public readonly invokeFunctionBodyBase64Encoded: pulumi.Output<string>;
     /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not execute the function.
      */
-    public readonly isDryRun!: pulumi.Output<boolean>;
+    declare public readonly isDryRun: pulumi.Output<boolean>;
 
     /**
      * Create a InvokeFunction resource with the given unique name, arguments, and options.
@@ -105,29 +105,29 @@ export class InvokeFunction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InvokeFunctionState | undefined;
-            resourceInputs["base64EncodeContent"] = state ? state.base64EncodeContent : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["fnIntent"] = state ? state.fnIntent : undefined;
-            resourceInputs["fnInvokeType"] = state ? state.fnInvokeType : undefined;
-            resourceInputs["functionId"] = state ? state.functionId : undefined;
-            resourceInputs["inputBodySourcePath"] = state ? state.inputBodySourcePath : undefined;
-            resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
-            resourceInputs["invokeFunctionBody"] = state ? state.invokeFunctionBody : undefined;
-            resourceInputs["invokeFunctionBodyBase64Encoded"] = state ? state.invokeFunctionBodyBase64Encoded : undefined;
-            resourceInputs["isDryRun"] = state ? state.isDryRun : undefined;
+            resourceInputs["base64EncodeContent"] = state?.base64EncodeContent;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["fnIntent"] = state?.fnIntent;
+            resourceInputs["fnInvokeType"] = state?.fnInvokeType;
+            resourceInputs["functionId"] = state?.functionId;
+            resourceInputs["inputBodySourcePath"] = state?.inputBodySourcePath;
+            resourceInputs["invokeEndpoint"] = state?.invokeEndpoint;
+            resourceInputs["invokeFunctionBody"] = state?.invokeFunctionBody;
+            resourceInputs["invokeFunctionBodyBase64Encoded"] = state?.invokeFunctionBodyBase64Encoded;
+            resourceInputs["isDryRun"] = state?.isDryRun;
         } else {
             const args = argsOrState as InvokeFunctionArgs | undefined;
-            if ((!args || args.functionId === undefined) && !opts.urn) {
+            if (args?.functionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'functionId'");
             }
-            resourceInputs["base64EncodeContent"] = args ? args.base64EncodeContent : undefined;
-            resourceInputs["fnIntent"] = args ? args.fnIntent : undefined;
-            resourceInputs["fnInvokeType"] = args ? args.fnInvokeType : undefined;
-            resourceInputs["functionId"] = args ? args.functionId : undefined;
-            resourceInputs["inputBodySourcePath"] = args ? args.inputBodySourcePath : undefined;
-            resourceInputs["invokeFunctionBody"] = args ? args.invokeFunctionBody : undefined;
-            resourceInputs["invokeFunctionBodyBase64Encoded"] = args ? args.invokeFunctionBodyBase64Encoded : undefined;
-            resourceInputs["isDryRun"] = args ? args.isDryRun : undefined;
+            resourceInputs["base64EncodeContent"] = args?.base64EncodeContent;
+            resourceInputs["fnIntent"] = args?.fnIntent;
+            resourceInputs["fnInvokeType"] = args?.fnInvokeType;
+            resourceInputs["functionId"] = args?.functionId;
+            resourceInputs["inputBodySourcePath"] = args?.inputBodySourcePath;
+            resourceInputs["invokeFunctionBody"] = args?.invokeFunctionBody;
+            resourceInputs["invokeFunctionBodyBase64Encoded"] = args?.invokeFunctionBodyBase64Encoded;
+            resourceInputs["isDryRun"] = args?.isDryRun;
             resourceInputs["content"] = undefined /*out*/;
             resourceInputs["invokeEndpoint"] = undefined /*out*/;
         }

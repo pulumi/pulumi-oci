@@ -81,99 +81,99 @@ export class DatabaseRegistration extends pulumi.CustomResource {
     /**
      * (Updatable) Credential store alias.
      */
-    public readonly aliasName!: pulumi.Output<string>;
+    declare public readonly aliasName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    declare public readonly connectionString: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) An object's Display Name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    public readonly fqdn!: pulumi.Output<string>;
+    declare public readonly fqdn: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      */
-    public /*out*/ readonly rcePrivateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly rcePrivateIp: pulumi.Output<string>;
     /**
      * The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    public readonly secretCompartmentId!: pulumi.Output<string>;
+    declare public readonly secretCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      */
-    public /*out*/ readonly secretId!: pulumi.Output<string>;
+    declare public /*out*/ readonly secretId: pulumi.Output<string>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
-    public readonly sessionMode!: pulumi.Output<string>;
+    declare public readonly sessionMode: pulumi.Output<string>;
     /**
      * Possible lifecycle states.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
     /**
      * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
      *
@@ -181,7 +181,7 @@ export class DatabaseRegistration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly wallet!: pulumi.Output<string>;
+    declare public readonly wallet: pulumi.Output<string>;
 
     /**
      * Create a DatabaseRegistration resource with the given unique name, arguments, and options.
@@ -196,69 +196,69 @@ export class DatabaseRegistration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseRegistrationState | undefined;
-            resourceInputs["aliasName"] = state ? state.aliasName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fqdn"] = state ? state.fqdn : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["rcePrivateIp"] = state ? state.rcePrivateIp : undefined;
-            resourceInputs["secretCompartmentId"] = state ? state.secretCompartmentId : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["sessionMode"] = state ? state.sessionMode : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["wallet"] = state ? state.wallet : undefined;
+            resourceInputs["aliasName"] = state?.aliasName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fqdn"] = state?.fqdn;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["rcePrivateIp"] = state?.rcePrivateIp;
+            resourceInputs["secretCompartmentId"] = state?.secretCompartmentId;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["sessionMode"] = state?.sessionMode;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["wallet"] = state?.wallet;
         } else {
             const args = argsOrState as DatabaseRegistrationArgs | undefined;
-            if ((!args || args.aliasName === undefined) && !opts.urn) {
+            if (args?.aliasName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'aliasName'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.fqdn === undefined) && !opts.urn) {
+            if (args?.fqdn === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fqdn'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["aliasName"] = args ? args.aliasName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionString"] = args ? args.connectionString : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["fqdn"] = args ? args.fqdn : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
+            resourceInputs["aliasName"] = args?.aliasName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionString"] = args?.connectionString;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["fqdn"] = args?.fqdn;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["keyId"] = args?.keyId;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["secretCompartmentId"] = args ? args.secretCompartmentId : undefined;
-            resourceInputs["sessionMode"] = args ? args.sessionMode : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
-            resourceInputs["wallet"] = args ? args.wallet : undefined;
+            resourceInputs["secretCompartmentId"] = args?.secretCompartmentId;
+            resourceInputs["sessionMode"] = args?.sessionMode;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["vaultId"] = args?.vaultId;
+            resourceInputs["wallet"] = args?.wallet;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["rcePrivateIp"] = undefined /*out*/;
             resourceInputs["secretId"] = undefined /*out*/;

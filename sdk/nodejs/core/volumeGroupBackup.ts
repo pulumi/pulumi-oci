@@ -71,78 +71,78 @@ export class VolumeGroupBackup extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      */
-    public /*out*/ readonly expirationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly expirationTime: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The aggregate size of the volume group backup, in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInGbs: pulumi.Output<string>;
     /**
      * The aggregate size of the volume group backup, in MBs.
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInMbs: pulumi.Output<string>;
     /**
      * Details of the volume group backup source in the cloud.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.VolumeGroupBackupSourceDetails | undefined>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Core.VolumeGroupBackupSourceDetails | undefined>;
     /**
      * Specifies whether the volume group backup was created manually, or via scheduled backup policy.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceType: pulumi.Output<string>;
     /**
      * The OCID of the source volume group backup.
      */
-    public /*out*/ readonly sourceVolumeGroupBackupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceVolumeGroupBackupId: pulumi.Output<string>;
     /**
      * The current state of a volume group backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRequestReceived: pulumi.Output<string>;
     /**
      * The type of backup to create. If omitted, defaults to incremental.
      * * Allowed values are :
      * * FULL
      * * INCREMENTAL
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueSizeInGbs: pulumi.Output<string>;
     /**
      * The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInMbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueSizeInMbs: pulumi.Output<string>;
     /**
      * OCIDs for the volume backups in this volume group backup.
      */
-    public /*out*/ readonly volumeBackupIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly volumeBackupIds: pulumi.Output<string[]>;
     /**
      * The OCID of the volume group that needs to be backed up.
      */
-    public readonly volumeGroupId!: pulumi.Output<string>;
+    declare public readonly volumeGroupId: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroupBackup resource with the given unique name, arguments, and options.
@@ -157,33 +157,33 @@ export class VolumeGroupBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupBackupState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["expirationTime"] = state ? state.expirationTime : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["sizeInGbs"] = state ? state.sizeInGbs : undefined;
-            resourceInputs["sizeInMbs"] = state ? state.sizeInMbs : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["sourceVolumeGroupBackupId"] = state ? state.sourceVolumeGroupBackupId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeRequestReceived"] = state ? state.timeRequestReceived : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["uniqueSizeInGbs"] = state ? state.uniqueSizeInGbs : undefined;
-            resourceInputs["uniqueSizeInMbs"] = state ? state.uniqueSizeInMbs : undefined;
-            resourceInputs["volumeBackupIds"] = state ? state.volumeBackupIds : undefined;
-            resourceInputs["volumeGroupId"] = state ? state.volumeGroupId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["expirationTime"] = state?.expirationTime;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["sizeInGbs"] = state?.sizeInGbs;
+            resourceInputs["sizeInMbs"] = state?.sizeInMbs;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["sourceVolumeGroupBackupId"] = state?.sourceVolumeGroupBackupId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeRequestReceived"] = state?.timeRequestReceived;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["uniqueSizeInGbs"] = state?.uniqueSizeInGbs;
+            resourceInputs["uniqueSizeInMbs"] = state?.uniqueSizeInMbs;
+            resourceInputs["volumeBackupIds"] = state?.volumeBackupIds;
+            resourceInputs["volumeGroupId"] = state?.volumeGroupId;
         } else {
             const args = argsOrState as VolumeGroupBackupArgs | undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["volumeGroupId"] = args ? args.volumeGroupId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["volumeGroupId"] = args?.volumeGroupId;
             resourceInputs["expirationTime"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;
             resourceInputs["sizeInMbs"] = undefined /*out*/;

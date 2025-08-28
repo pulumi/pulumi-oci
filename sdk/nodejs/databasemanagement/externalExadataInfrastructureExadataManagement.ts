@@ -62,15 +62,15 @@ export class ExternalExadataInfrastructureExadataManagement extends pulumi.Custo
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableExadata!: pulumi.Output<boolean>;
+    declare public readonly enableExadata: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public readonly externalExadataInfrastructureId!: pulumi.Output<string>;
+    declare public readonly externalExadataInfrastructureId: pulumi.Output<string>;
     /**
      * The Oracle license model.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
 
     /**
      * Create a ExternalExadataInfrastructureExadataManagement resource with the given unique name, arguments, and options.
@@ -85,20 +85,20 @@ export class ExternalExadataInfrastructureExadataManagement extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalExadataInfrastructureExadataManagementState | undefined;
-            resourceInputs["enableExadata"] = state ? state.enableExadata : undefined;
-            resourceInputs["externalExadataInfrastructureId"] = state ? state.externalExadataInfrastructureId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
+            resourceInputs["enableExadata"] = state?.enableExadata;
+            resourceInputs["externalExadataInfrastructureId"] = state?.externalExadataInfrastructureId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
         } else {
             const args = argsOrState as ExternalExadataInfrastructureExadataManagementArgs | undefined;
-            if ((!args || args.enableExadata === undefined) && !opts.urn) {
+            if (args?.enableExadata === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableExadata'");
             }
-            if ((!args || args.externalExadataInfrastructureId === undefined) && !opts.urn) {
+            if (args?.externalExadataInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalExadataInfrastructureId'");
             }
-            resourceInputs["enableExadata"] = args ? args.enableExadata : undefined;
-            resourceInputs["externalExadataInfrastructureId"] = args ? args.externalExadataInfrastructureId : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["enableExadata"] = args?.enableExadata;
+            resourceInputs["externalExadataInfrastructureId"] = args?.externalExadataInfrastructureId;
+            resourceInputs["licenseModel"] = args?.licenseModel;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalExadataInfrastructureExadataManagement.__pulumiType, name, resourceInputs, opts);

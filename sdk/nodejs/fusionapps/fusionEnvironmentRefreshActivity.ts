@@ -50,56 +50,56 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     /**
      * A friendly name for the refresh activity. Can be changed later.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * unique FusionEnvironment identifier
      */
-    public readonly fusionEnvironmentId!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentId: pulumi.Output<string>;
     /**
      * Represents if the customer opted for Data Masking or not during refreshActivity.
      */
-    public readonly isDataMaskingOpted!: pulumi.Output<boolean>;
+    declare public readonly isDataMaskingOpted: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public /*out*/ readonly refreshActivityId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    declare public /*out*/ readonly refreshActivityId: pulumi.Output<string>;
     /**
      * Details of refresh investigation information, each item represents a different issue.
      */
-    public /*out*/ readonly refreshIssueDetailsLists!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList[]>;
+    declare public /*out*/ readonly refreshIssueDetailsLists: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList[]>;
     /**
      * Service availability / impact during refresh activity execution up down
      */
-    public /*out*/ readonly serviceAvailability!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceAvailability: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      */
-    public readonly sourceFusionEnvironmentId!: pulumi.Output<string>;
+    declare public readonly sourceFusionEnvironmentId: pulumi.Output<string>;
     /**
      * The current state of the refreshActivity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeExpectedFinish!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeExpectedFinish: pulumi.Output<string>;
     /**
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The date and time of the most recent source environment backup used for the environment refresh.
      */
-    public /*out*/ readonly timeOfRestorationPoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfRestorationPoint: pulumi.Output<string>;
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a FusionEnvironmentRefreshActivity resource with the given unique name, arguments, and options.
@@ -114,31 +114,31 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentRefreshActivityState | undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
-            resourceInputs["isDataMaskingOpted"] = state ? state.isDataMaskingOpted : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["refreshActivityId"] = state ? state.refreshActivityId : undefined;
-            resourceInputs["refreshIssueDetailsLists"] = state ? state.refreshIssueDetailsLists : undefined;
-            resourceInputs["serviceAvailability"] = state ? state.serviceAvailability : undefined;
-            resourceInputs["sourceFusionEnvironmentId"] = state ? state.sourceFusionEnvironmentId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
-            resourceInputs["timeExpectedFinish"] = state ? state.timeExpectedFinish : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeOfRestorationPoint"] = state ? state.timeOfRestorationPoint : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fusionEnvironmentId"] = state?.fusionEnvironmentId;
+            resourceInputs["isDataMaskingOpted"] = state?.isDataMaskingOpted;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["refreshActivityId"] = state?.refreshActivityId;
+            resourceInputs["refreshIssueDetailsLists"] = state?.refreshIssueDetailsLists;
+            resourceInputs["serviceAvailability"] = state?.serviceAvailability;
+            resourceInputs["sourceFusionEnvironmentId"] = state?.sourceFusionEnvironmentId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
+            resourceInputs["timeExpectedFinish"] = state?.timeExpectedFinish;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeOfRestorationPoint"] = state?.timeOfRestorationPoint;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FusionEnvironmentRefreshActivityArgs | undefined;
-            if ((!args || args.fusionEnvironmentId === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentId'");
             }
-            if ((!args || args.sourceFusionEnvironmentId === undefined) && !opts.urn) {
+            if (args?.sourceFusionEnvironmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceFusionEnvironmentId'");
             }
-            resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
-            resourceInputs["isDataMaskingOpted"] = args ? args.isDataMaskingOpted : undefined;
-            resourceInputs["sourceFusionEnvironmentId"] = args ? args.sourceFusionEnvironmentId : undefined;
+            resourceInputs["fusionEnvironmentId"] = args?.fusionEnvironmentId;
+            resourceInputs["isDataMaskingOpted"] = args?.isDataMaskingOpted;
+            resourceInputs["sourceFusionEnvironmentId"] = args?.sourceFusionEnvironmentId;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["refreshActivityId"] = undefined /*out*/;

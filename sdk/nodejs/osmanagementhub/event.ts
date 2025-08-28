@@ -50,27 +50,27 @@ export class Event extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Provides additional information for a management station event.
      */
-    public /*out*/ readonly datas!: pulumi.Output<outputs.OsManagementHub.EventData[]>;
+    declare public /*out*/ readonly datas: pulumi.Output<outputs.OsManagementHub.EventData[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details of an event.
      */
-    public /*out*/ readonly eventDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly eventDetails: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
      */
-    public readonly eventId!: pulumi.Output<string>;
+    declare public readonly eventId: pulumi.Output<string>;
     /**
      * Summary of the event.
      */
-    public /*out*/ readonly eventSummary!: pulumi.Output<string>;
+    declare public /*out*/ readonly eventSummary: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -78,43 +78,43 @@ export class Event extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the event occurred on a resource that is managed by the Autonomous Linux service.
      */
-    public /*out*/ readonly isManagedByAutonomousLinux!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isManagedByAutonomousLinux: pulumi.Output<boolean>;
     /**
      * Describes the current state of the event in more detail. For example, the  message can provide actionable information for a resource in the 'FAILED' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance or resource where the event occurred.
      */
-    public /*out*/ readonly resourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceId: pulumi.Output<string>;
     /**
      * The current state of the event.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Provides information about the system architecture and operating system.
      */
-    public /*out*/ readonly systemDetails!: pulumi.Output<outputs.OsManagementHub.EventSystemDetail[]>;
+    declare public /*out*/ readonly systemDetails: pulumi.Output<outputs.OsManagementHub.EventSystemDetail[]>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Event was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the event occurred.
      */
-    public /*out*/ readonly timeOccurred!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOccurred: pulumi.Output<string>;
     /**
      * The date and time that the event was updated (in [RFC 3339](https://tools.ietf.org/html/rfc3339) format). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Event type:
      * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
@@ -128,7 +128,7 @@ export class Event extends pulumi.CustomResource {
      * * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
      * * `REBOOT` - Reboot
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a Event resource with the given unique name, arguments, and options.
@@ -143,32 +143,32 @@ export class Event extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EventState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["datas"] = state ? state.datas : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["eventDetails"] = state ? state.eventDetails : undefined;
-            resourceInputs["eventId"] = state ? state.eventId : undefined;
-            resourceInputs["eventSummary"] = state ? state.eventSummary : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isManagedByAutonomousLinux"] = state ? state.isManagedByAutonomousLinux : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemDetails"] = state ? state.systemDetails : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOccurred"] = state ? state.timeOccurred : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["datas"] = state?.datas;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["eventDetails"] = state?.eventDetails;
+            resourceInputs["eventId"] = state?.eventId;
+            resourceInputs["eventSummary"] = state?.eventSummary;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isManagedByAutonomousLinux"] = state?.isManagedByAutonomousLinux;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemDetails"] = state?.systemDetails;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOccurred"] = state?.timeOccurred;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as EventArgs | undefined;
-            if ((!args || args.eventId === undefined) && !opts.urn) {
+            if (args?.eventId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eventId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["eventId"] = args ? args.eventId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["eventId"] = args?.eventId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["datas"] = undefined /*out*/;
             resourceInputs["eventDetails"] = undefined /*out*/;
             resourceInputs["eventSummary"] = undefined /*out*/;

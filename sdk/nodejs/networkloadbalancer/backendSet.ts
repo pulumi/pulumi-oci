@@ -88,35 +88,35 @@ export class BackendSet extends pulumi.CustomResource {
     /**
      * (Updatable) If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
      */
-    public readonly areOperationallyActiveBackendsPreferred!: pulumi.Output<boolean>;
+    declare public readonly areOperationallyActiveBackendsPreferred: pulumi.Output<boolean>;
     /**
      * (Updatable) An array of backends to be associated with the backend set.
      */
-    public /*out*/ readonly backends!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[]>;
+    declare public /*out*/ readonly backends: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[]>;
     /**
      * (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      */
-    public readonly healthChecker!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetHealthChecker>;
+    declare public readonly healthChecker: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
      * (Updatable) IP version associated with the backend set.
      */
-    public readonly ipVersion!: pulumi.Output<string>;
+    declare public readonly ipVersion: pulumi.Output<string>;
     /**
      * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
      */
-    public readonly isFailOpen!: pulumi.Output<boolean>;
+    declare public readonly isFailOpen: pulumi.Output<boolean>;
     /**
      * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
      */
-    public readonly isInstantFailoverEnabled!: pulumi.Output<boolean>;
+    declare public readonly isInstantFailoverEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover. By default, TCP RST is enabled.
      */
-    public readonly isInstantFailoverTcpResetEnabled!: pulumi.Output<boolean>;
+    declare public readonly isInstantFailoverTcpResetEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
-    public readonly isPreserveSource!: pulumi.Output<boolean>;
+    declare public readonly isPreserveSource: pulumi.Output<boolean>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      *
@@ -124,11 +124,11 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * Example: `exampleBackendSet`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    public readonly networkLoadBalancerId!: pulumi.Output<string>;
+    declare public readonly networkLoadBalancerId: pulumi.Output<string>;
     /**
      * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
      *
@@ -136,7 +136,7 @@ export class BackendSet extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly policy!: pulumi.Output<string>;
+    declare public readonly policy: pulumi.Output<string>;
 
     /**
      * Create a BackendSet resource with the given unique name, arguments, and options.
@@ -151,38 +151,38 @@ export class BackendSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackendSetState | undefined;
-            resourceInputs["areOperationallyActiveBackendsPreferred"] = state ? state.areOperationallyActiveBackendsPreferred : undefined;
-            resourceInputs["backends"] = state ? state.backends : undefined;
-            resourceInputs["healthChecker"] = state ? state.healthChecker : undefined;
-            resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
-            resourceInputs["isFailOpen"] = state ? state.isFailOpen : undefined;
-            resourceInputs["isInstantFailoverEnabled"] = state ? state.isInstantFailoverEnabled : undefined;
-            resourceInputs["isInstantFailoverTcpResetEnabled"] = state ? state.isInstantFailoverTcpResetEnabled : undefined;
-            resourceInputs["isPreserveSource"] = state ? state.isPreserveSource : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
-            resourceInputs["policy"] = state ? state.policy : undefined;
+            resourceInputs["areOperationallyActiveBackendsPreferred"] = state?.areOperationallyActiveBackendsPreferred;
+            resourceInputs["backends"] = state?.backends;
+            resourceInputs["healthChecker"] = state?.healthChecker;
+            resourceInputs["ipVersion"] = state?.ipVersion;
+            resourceInputs["isFailOpen"] = state?.isFailOpen;
+            resourceInputs["isInstantFailoverEnabled"] = state?.isInstantFailoverEnabled;
+            resourceInputs["isInstantFailoverTcpResetEnabled"] = state?.isInstantFailoverTcpResetEnabled;
+            resourceInputs["isPreserveSource"] = state?.isPreserveSource;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkLoadBalancerId"] = state?.networkLoadBalancerId;
+            resourceInputs["policy"] = state?.policy;
         } else {
             const args = argsOrState as BackendSetArgs | undefined;
-            if ((!args || args.healthChecker === undefined) && !opts.urn) {
+            if (args?.healthChecker === undefined && !opts.urn) {
                 throw new Error("Missing required property 'healthChecker'");
             }
-            if ((!args || args.networkLoadBalancerId === undefined) && !opts.urn) {
+            if (args?.networkLoadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkLoadBalancerId'");
             }
-            if ((!args || args.policy === undefined) && !opts.urn) {
+            if (args?.policy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policy'");
             }
-            resourceInputs["areOperationallyActiveBackendsPreferred"] = args ? args.areOperationallyActiveBackendsPreferred : undefined;
-            resourceInputs["healthChecker"] = args ? args.healthChecker : undefined;
-            resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
-            resourceInputs["isFailOpen"] = args ? args.isFailOpen : undefined;
-            resourceInputs["isInstantFailoverEnabled"] = args ? args.isInstantFailoverEnabled : undefined;
-            resourceInputs["isInstantFailoverTcpResetEnabled"] = args ? args.isInstantFailoverTcpResetEnabled : undefined;
-            resourceInputs["isPreserveSource"] = args ? args.isPreserveSource : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
-            resourceInputs["policy"] = args ? args.policy : undefined;
+            resourceInputs["areOperationallyActiveBackendsPreferred"] = args?.areOperationallyActiveBackendsPreferred;
+            resourceInputs["healthChecker"] = args?.healthChecker;
+            resourceInputs["ipVersion"] = args?.ipVersion;
+            resourceInputs["isFailOpen"] = args?.isFailOpen;
+            resourceInputs["isInstantFailoverEnabled"] = args?.isInstantFailoverEnabled;
+            resourceInputs["isInstantFailoverTcpResetEnabled"] = args?.isInstantFailoverTcpResetEnabled;
+            resourceInputs["isPreserveSource"] = args?.isPreserveSource;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkLoadBalancerId"] = args?.networkLoadBalancerId;
+            resourceInputs["policy"] = args?.policy;
             resourceInputs["backends"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

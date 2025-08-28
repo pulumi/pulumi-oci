@@ -80,35 +80,35 @@ export class MonitoringTemplateAlarmCondition extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
      */
-    public readonly compositeType!: pulumi.Output<string>;
+    declare public readonly compositeType: pulumi.Output<string>;
     /**
      * (Updatable) Type of defined monitoring template.
      */
-    public readonly conditionType!: pulumi.Output<string>;
+    declare public readonly conditionType: pulumi.Output<string>;
     /**
      * (Updatable) Monitoring template conditions.
      */
-    public readonly conditions!: pulumi.Output<outputs.StackMonitoring.MonitoringTemplateAlarmConditionCondition[]>;
+    declare public readonly conditions: pulumi.Output<outputs.StackMonitoring.MonitoringTemplateAlarmConditionCondition[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The metric name.
      */
-    public readonly metricName!: pulumi.Output<string>;
+    declare public readonly metricName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      */
-    public readonly monitoringTemplateId!: pulumi.Output<string>;
+    declare public readonly monitoringTemplateId: pulumi.Output<string>;
     /**
      * (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) The resource group OCID.
      *
@@ -116,27 +116,27 @@ export class MonitoringTemplateAlarmCondition extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current lifecycle state of the monitoring template
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The current status of the monitoring template i.e. whether it is Published or Unpublished
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the alarm condition was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the alarm condition was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MonitoringTemplateAlarmCondition resource with the given unique name, arguments, and options.
@@ -151,49 +151,49 @@ export class MonitoringTemplateAlarmCondition extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoringTemplateAlarmConditionState | undefined;
-            resourceInputs["compositeType"] = state ? state.compositeType : undefined;
-            resourceInputs["conditionType"] = state ? state.conditionType : undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["metricName"] = state ? state.metricName : undefined;
-            resourceInputs["monitoringTemplateId"] = state ? state.monitoringTemplateId : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compositeType"] = state?.compositeType;
+            resourceInputs["conditionType"] = state?.conditionType;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["metricName"] = state?.metricName;
+            resourceInputs["monitoringTemplateId"] = state?.monitoringTemplateId;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MonitoringTemplateAlarmConditionArgs | undefined;
-            if ((!args || args.conditionType === undefined) && !opts.urn) {
+            if (args?.conditionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditionType'");
             }
-            if ((!args || args.conditions === undefined) && !opts.urn) {
+            if (args?.conditions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditions'");
             }
-            if ((!args || args.metricName === undefined) && !opts.urn) {
+            if (args?.metricName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricName'");
             }
-            if ((!args || args.monitoringTemplateId === undefined) && !opts.urn) {
+            if (args?.monitoringTemplateId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringTemplateId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["compositeType"] = args ? args.compositeType : undefined;
-            resourceInputs["conditionType"] = args ? args.conditionType : undefined;
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["metricName"] = args ? args.metricName : undefined;
-            resourceInputs["monitoringTemplateId"] = args ? args.monitoringTemplateId : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["compositeType"] = args?.compositeType;
+            resourceInputs["conditionType"] = args?.conditionType;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["metricName"] = args?.metricName;
+            resourceInputs["monitoringTemplateId"] = args?.monitoringTemplateId;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["resourceType"] = args?.resourceType;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

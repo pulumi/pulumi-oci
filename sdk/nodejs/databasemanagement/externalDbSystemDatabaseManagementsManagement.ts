@@ -58,15 +58,15 @@ export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.Custom
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableDatabaseManagement!: pulumi.Output<boolean>;
+    declare public readonly enableDatabaseManagement: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    public readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * The Oracle license model that applies to the external database.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
 
     /**
      * Create a ExternalDbSystemDatabaseManagementsManagement resource with the given unique name, arguments, and options.
@@ -81,20 +81,20 @@ export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.Custom
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalDbSystemDatabaseManagementsManagementState | undefined;
-            resourceInputs["enableDatabaseManagement"] = state ? state.enableDatabaseManagement : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
+            resourceInputs["enableDatabaseManagement"] = state?.enableDatabaseManagement;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
         } else {
             const args = argsOrState as ExternalDbSystemDatabaseManagementsManagementArgs | undefined;
-            if ((!args || args.enableDatabaseManagement === undefined) && !opts.urn) {
+            if (args?.enableDatabaseManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableDatabaseManagement'");
             }
-            if ((!args || args.externalDbSystemId === undefined) && !opts.urn) {
+            if (args?.externalDbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDbSystemId'");
             }
-            resourceInputs["enableDatabaseManagement"] = args ? args.enableDatabaseManagement : undefined;
-            resourceInputs["externalDbSystemId"] = args ? args.externalDbSystemId : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["enableDatabaseManagement"] = args?.enableDatabaseManagement;
+            resourceInputs["externalDbSystemId"] = args?.externalDbSystemId;
+            resourceInputs["licenseModel"] = args?.licenseModel;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalDbSystemDatabaseManagementsManagement.__pulumiType, name, resourceInputs, opts);

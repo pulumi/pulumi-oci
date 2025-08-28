@@ -89,39 +89,39 @@ export class PublicIp extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
      */
-    public /*out*/ readonly assignedEntityId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assignedEntityId: pulumi.Output<string>;
     /**
      * The type of entity the public IP is assigned to, or in the process of being assigned to.
      */
-    public /*out*/ readonly assignedEntityType!: pulumi.Output<string>;
+    declare public /*out*/ readonly assignedEntityType: pulumi.Output<string>;
     /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The public IP address of the `publicIp` object.  Example: `203.0.113.2`
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipAddress: pulumi.Output<string>;
     /**
      * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      */
-    public readonly lifetime!: pulumi.Output<string>;
+    declare public readonly lifetime: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
      *
@@ -129,7 +129,7 @@ export class PublicIp extends pulumi.CustomResource {
      *
      * Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
      */
-    public readonly privateIpId!: pulumi.Output<string | undefined>;
+    declare public readonly privateIpId: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
      *
@@ -137,21 +137,21 @@ export class PublicIp extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publicIpPoolId!: pulumi.Output<string>;
+    declare public readonly publicIpPoolId: pulumi.Output<string>;
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
      * * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      */
-    public /*out*/ readonly scope!: pulumi.Output<string>;
+    declare public /*out*/ readonly scope: pulumi.Output<string>;
     /**
      * The public IP's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a PublicIp resource with the given unique name, arguments, and options.
@@ -166,35 +166,35 @@ export class PublicIp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PublicIpState | undefined;
-            resourceInputs["assignedEntityId"] = state ? state.assignedEntityId : undefined;
-            resourceInputs["assignedEntityType"] = state ? state.assignedEntityType : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["lifetime"] = state ? state.lifetime : undefined;
-            resourceInputs["privateIpId"] = state ? state.privateIpId : undefined;
-            resourceInputs["publicIpPoolId"] = state ? state.publicIpPoolId : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["assignedEntityId"] = state?.assignedEntityId;
+            resourceInputs["assignedEntityType"] = state?.assignedEntityType;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["lifetime"] = state?.lifetime;
+            resourceInputs["privateIpId"] = state?.privateIpId;
+            resourceInputs["publicIpPoolId"] = state?.publicIpPoolId;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as PublicIpArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.lifetime === undefined) && !opts.urn) {
+            if (args?.lifetime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lifetime'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["lifetime"] = args ? args.lifetime : undefined;
-            resourceInputs["privateIpId"] = args ? args.privateIpId : undefined;
-            resourceInputs["publicIpPoolId"] = args ? args.publicIpPoolId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["lifetime"] = args?.lifetime;
+            resourceInputs["privateIpId"] = args?.privateIpId;
+            resourceInputs["publicIpPoolId"] = args?.publicIpPoolId;
             resourceInputs["assignedEntityId"] = undefined /*out*/;
             resourceInputs["assignedEntityType"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;

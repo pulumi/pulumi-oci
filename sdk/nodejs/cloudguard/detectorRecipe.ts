@@ -50,49 +50,49 @@ export class DetectorRecipe extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Detector recipe description.
      *
      * Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Detector for the rule
      */
-    public readonly detector!: pulumi.Output<string>;
+    declare public readonly detector: pulumi.Output<string>;
     /**
      * Recipe type ( STANDARD, ENTERPRISE )
      */
-    public /*out*/ readonly detectorRecipeType!: pulumi.Output<string>;
+    declare public /*out*/ readonly detectorRecipeType: pulumi.Output<string>;
     /**
      * (Updatable) Detector rules to override from source detector recipe
      */
-    public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
+    declare public readonly detectorRules: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
     /**
      * (Updatable) Detector recipe display name.
      *
      * Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * List of effective detector rules for the detector type for recipe after applying defaults
      */
-    public /*out*/ readonly effectiveDetectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeEffectiveDetectorRule[]>;
+    declare public /*out*/ readonly effectiveDetectorRules: pulumi.Output<outputs.CloudGuard.DetectorRecipeEffectiveDetectorRule[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Owner of detector recipe
      */
-    public /*out*/ readonly owner!: pulumi.Output<string>;
+    declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
      * The ID of the source detector recipe
      *
@@ -100,27 +100,27 @@ export class DetectorRecipe extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceDetectorRecipeId!: pulumi.Output<string>;
+    declare public readonly sourceDetectorRecipeId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of target IDs to which the recipe is attached
      */
-    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly targetIds: pulumi.Output<string[]>;
     /**
      * The date and time the detector recipe was created Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the detector recipe was last updated Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DetectorRecipe resource with the given unique name, arguments, and options.
@@ -135,38 +135,38 @@ export class DetectorRecipe extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DetectorRecipeState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["detector"] = state ? state.detector : undefined;
-            resourceInputs["detectorRecipeType"] = state ? state.detectorRecipeType : undefined;
-            resourceInputs["detectorRules"] = state ? state.detectorRules : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["effectiveDetectorRules"] = state ? state.effectiveDetectorRules : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["sourceDetectorRecipeId"] = state ? state.sourceDetectorRecipeId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["detector"] = state?.detector;
+            resourceInputs["detectorRecipeType"] = state?.detectorRecipeType;
+            resourceInputs["detectorRules"] = state?.detectorRules;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["effectiveDetectorRules"] = state?.effectiveDetectorRules;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["sourceDetectorRecipeId"] = state?.sourceDetectorRecipeId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetIds"] = state?.targetIds;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DetectorRecipeArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["detector"] = args ? args.detector : undefined;
-            resourceInputs["detectorRules"] = args ? args.detectorRules : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["sourceDetectorRecipeId"] = args ? args.sourceDetectorRecipeId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["detector"] = args?.detector;
+            resourceInputs["detectorRules"] = args?.detectorRules;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["sourceDetectorRecipeId"] = args?.sourceDetectorRecipeId;
             resourceInputs["detectorRecipeType"] = undefined /*out*/;
             resourceInputs["effectiveDetectorRules"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;

@@ -204,427 +204,427 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
      */
-    public readonly accessKeyId!: pulumi.Output<string>;
+    declare public readonly accessKeyId: pulumi.Output<string>;
     /**
      * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
      */
-    public readonly accountKey!: pulumi.Output<string | undefined>;
+    declare public readonly accountKey: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
      */
-    public readonly accountKeySecretId!: pulumi.Output<string>;
+    declare public readonly accountKeySecretId: pulumi.Output<string>;
     /**
      * (Updatable) Sets the Azure storage account name.
      */
-    public readonly accountName!: pulumi.Output<string>;
+    declare public readonly accountName: pulumi.Output<string>;
     /**
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
-    public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
+    declare public readonly additionalAttributes: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
     /**
      * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      */
-    public readonly authenticationMode!: pulumi.Output<string>;
+    declare public readonly authenticationMode: pulumi.Output<string>;
     /**
      * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
-    public readonly authenticationType!: pulumi.Output<string>;
+    declare public readonly authenticationType: pulumi.Output<string>;
     /**
      * (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
      * * Azure China: https://login.chinacloudapi.cn/
      * * Azure US Government: https://login.microsoftonline.us/
      */
-    public readonly azureAuthorityHost!: pulumi.Output<string>;
+    declare public readonly azureAuthorityHost: pulumi.Output<string>;
     /**
      * (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
-    public readonly azureTenantId!: pulumi.Output<string>;
+    declare public readonly azureTenantId: pulumi.Output<string>;
     /**
      * (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
      */
-    public readonly bootstrapServers!: pulumi.Output<outputs.GoldenGate.ConnectionBootstrapServer[]>;
+    declare public readonly bootstrapServers: pulumi.Output<outputs.GoldenGate.ConnectionBootstrapServer[]>;
     /**
      * (Updatable) The information about a new catalog of given type used in an Iceberg connection.
      */
-    public readonly catalog!: pulumi.Output<outputs.GoldenGate.ConnectionCatalog>;
+    declare public readonly catalog: pulumi.Output<outputs.GoldenGate.ConnectionCatalog>;
     /**
      * (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
-    public readonly clientId!: pulumi.Output<string>;
+    declare public readonly clientId: pulumi.Output<string>;
     /**
      * (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
      */
-    public readonly clientSecret!: pulumi.Output<string | undefined>;
+    declare public readonly clientSecret: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
      */
-    public readonly clientSecretSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly clientSecretSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
      */
-    public readonly connectionFactory!: pulumi.Output<string>;
+    declare public readonly connectionFactory: pulumi.Output<string>;
     /**
      * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    declare public readonly connectionString: pulumi.Output<string>;
     /**
      * (Updatable) The connection type.
      */
-    public readonly connectionType!: pulumi.Output<string>;
+    declare public readonly connectionType: pulumi.Output<string>;
     /**
      * (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
      */
-    public readonly connectionUrl!: pulumi.Output<string>;
+    declare public readonly connectionUrl: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      */
-    public readonly consumerProperties!: pulumi.Output<string>;
+    declare public readonly consumerProperties: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly coreSiteXml!: pulumi.Output<string>;
+    declare public readonly coreSiteXml: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * (Updatable) The name of the database.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    public readonly deploymentId!: pulumi.Output<string>;
+    declare public readonly deploymentId: pulumi.Output<string>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) An object's Display Name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Indicates that sensitive attributes are provided via Secrets.
      */
-    public readonly doesUseSecretIds!: pulumi.Output<boolean>;
+    declare public readonly doesUseSecretIds: pulumi.Output<boolean>;
     /**
      * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
      */
-    public readonly endpoint!: pulumi.Output<string>;
+    declare public readonly endpoint: pulumi.Output<string>;
     /**
      * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
-    public readonly fingerprint!: pulumi.Output<string>;
+    declare public readonly fingerprint: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
      * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[]>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly ingressIps: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[]>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
-    public readonly jndiConnectionFactory!: pulumi.Output<string>;
+    declare public readonly jndiConnectionFactory: pulumi.Output<string>;
     /**
      * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
      */
-    public readonly jndiInitialContextFactory!: pulumi.Output<string>;
+    declare public readonly jndiInitialContextFactory: pulumi.Output<string>;
     /**
      * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
      */
-    public readonly jndiProviderUrl!: pulumi.Output<string>;
+    declare public readonly jndiProviderUrl: pulumi.Output<string>;
     /**
      * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by "jndiSecurityCredentialsSecretId". This field will be removed after February 15 2026.
      */
-    public readonly jndiSecurityCredentials!: pulumi.Output<string | undefined>;
+    declare public readonly jndiSecurityCredentials: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
      */
-    public readonly jndiSecurityCredentialsSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly jndiSecurityCredentialsSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
      */
-    public readonly jndiSecurityPrincipal!: pulumi.Output<string>;
+    declare public readonly jndiSecurityPrincipal: pulumi.Output<string>;
     /**
      * (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      */
-    public readonly keyStore!: pulumi.Output<string | undefined>;
+    declare public readonly keyStore: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly keyStorePassword!: pulumi.Output<string | undefined>;
+    declare public readonly keyStorePassword: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
      */
-    public readonly keyStorePasswordSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly keyStorePasswordSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
      */
-    public readonly keyStoreSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly keyStoreSecretId: pulumi.Output<string | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.GoldenGate.ConnectionLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.GoldenGate.ConnectionLock[]>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. If secretId is used plaintext field must not be provided. Note: When provided, 'password' field must not be provided.
      */
-    public readonly passwordSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly passwordSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The port of an endpoint usually specified for a connection.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
      *
      * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
-    public readonly privateIp!: pulumi.Output<string>;
+    declare public readonly privateIp: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed after February 15 2026.
      */
-    public readonly privateKeyFile!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyFile: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
      */
-    public readonly privateKeyFileSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyFileSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      */
-    public readonly privateKeyPassphrase!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyPassphrase: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
      */
-    public readonly privateKeyPassphraseSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyPassphraseSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the producer.properties file.
      */
-    public readonly producerProperties!: pulumi.Output<string>;
+    declare public readonly producerProperties: pulumi.Output<string>;
     /**
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
-    public readonly publicKeyFingerprint!: pulumi.Output<string>;
+    declare public readonly publicKeyFingerprint: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
      */
-    public readonly redisClusterId!: pulumi.Output<string>;
+    declare public readonly redisClusterId: pulumi.Output<string>;
     /**
      * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
      */
-    public readonly routingMethod!: pulumi.Output<string>;
+    declare public readonly routingMethod: pulumi.Output<string>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
      */
-    public readonly sasToken!: pulumi.Output<string | undefined>;
+    declare public readonly sasToken: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
      */
-    public readonly sasTokenSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sasTokenSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
      */
-    public readonly secretAccessKey!: pulumi.Output<string | undefined>;
+    declare public readonly secretAccessKey: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
      */
-    public readonly secretAccessKeySecretId!: pulumi.Output<string | undefined>;
+    declare public readonly secretAccessKeySecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
-    public readonly securityProtocol!: pulumi.Output<string>;
+    declare public readonly securityProtocol: pulumi.Output<string>;
     /**
      * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
      */
-    public readonly servers!: pulumi.Output<string>;
+    declare public readonly servers: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      */
-    public readonly serviceAccountKeyFile!: pulumi.Output<string | undefined>;
+    declare public readonly serviceAccountKeyFile: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      */
-    public readonly serviceAccountKeyFileSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly serviceAccountKeyFileSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
-    public readonly sessionMode!: pulumi.Output<string>;
+    declare public readonly sessionMode: pulumi.Output<string>;
     /**
      * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      */
-    public readonly shouldUseJndi!: pulumi.Output<boolean>;
+    declare public readonly shouldUseJndi: pulumi.Output<boolean>;
     /**
      * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      */
-    public readonly shouldUseResourcePrincipal!: pulumi.Output<boolean>;
+    declare public readonly shouldUseResourcePrincipal: pulumi.Output<boolean>;
     /**
      * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      */
-    public readonly shouldValidateServerCertificate!: pulumi.Output<boolean>;
+    declare public readonly shouldValidateServerCertificate: pulumi.Output<boolean>;
     /**
      * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly sslCa!: pulumi.Output<string>;
+    declare public readonly sslCa: pulumi.Output<string>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly sslCert!: pulumi.Output<string>;
+    declare public readonly sslCert: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
      */
-    public readonly sslClientKeystash!: pulumi.Output<string | undefined>;
+    declare public readonly sslClientKeystash: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * Note: When provided, 'sslClientKeystash' field must not be provided.
      */
-    public readonly sslClientKeystashSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sslClientKeystashSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      */
-    public readonly sslClientKeystoredb!: pulumi.Output<string | undefined>;
+    declare public readonly sslClientKeystoredb: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
-    public readonly sslClientKeystoredbSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sslClientKeystoredbSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly sslCrl!: pulumi.Output<string>;
+    declare public readonly sslCrl: pulumi.Output<string>;
     /**
      * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
      */
-    public readonly sslKey!: pulumi.Output<string | undefined>;
+    declare public readonly sslKey: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly sslKeyPassword!: pulumi.Output<string | undefined>;
+    declare public readonly sslKeyPassword: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
      */
-    public readonly sslKeyPasswordSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sslKeyPasswordSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
      * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
      */
-    public readonly sslKeySecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sslKeySecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) SSL modes for PostgreSQL.
      */
-    public readonly sslMode!: pulumi.Output<string>;
+    declare public readonly sslMode: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly sslServerCertificate!: pulumi.Output<string>;
+    declare public readonly sslServerCertificate: pulumi.Output<string>;
     /**
      * Possible lifecycle states for connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The information about a new storage of given type used in an Iceberg connection.
      */
-    public readonly storage!: pulumi.Output<outputs.GoldenGate.ConnectionStorage>;
+    declare public readonly storage: pulumi.Output<outputs.GoldenGate.ConnectionStorage>;
     /**
      * (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
      */
-    public readonly storageCredentialName!: pulumi.Output<string>;
+    declare public readonly storageCredentialName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */
-    public readonly streamPoolId!: pulumi.Output<string>;
+    declare public readonly streamPoolId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The Kafka (e.g. Confluent) Schema Registry technology type.
      */
-    public readonly technologyType!: pulumi.Output<string>;
+    declare public readonly technologyType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    declare public readonly tenancyId: pulumi.Output<string>;
     /**
      * (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
-    public readonly tenantId!: pulumi.Output<string>;
+    declare public readonly tenantId: pulumi.Output<string>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
-    public readonly tlsCaFile!: pulumi.Output<string>;
+    declare public readonly tlsCaFile: pulumi.Output<string>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
      */
-    public readonly tlsCertificateKeyFile!: pulumi.Output<string>;
+    declare public readonly tlsCertificateKeyFile: pulumi.Output<string>;
     /**
      * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly tlsCertificateKeyFilePassword!: pulumi.Output<string>;
+    declare public readonly tlsCertificateKeyFilePassword: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
      */
-    public readonly tlsCertificateKeyFilePasswordSecretId!: pulumi.Output<string>;
+    declare public readonly tlsCertificateKeyFilePasswordSecretId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
-    public readonly tlsCertificateKeyFileSecretId!: pulumi.Output<string>;
+    declare public readonly tlsCertificateKeyFileSecretId: pulumi.Output<string>;
     /**
      * (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
      *
@@ -632,47 +632,47 @@ export class Connection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly triggerRefresh!: pulumi.Output<boolean | undefined>;
+    declare public readonly triggerRefresh: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      */
-    public readonly trustStore!: pulumi.Output<string | undefined>;
+    declare public readonly trustStore: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      */
-    public readonly trustStorePassword!: pulumi.Output<string | undefined>;
+    declare public readonly trustStorePassword: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
      */
-    public readonly trustStorePasswordSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly trustStorePasswordSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
      */
-    public readonly trustStoreSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly trustStoreSecretId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
     /**
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
     /**
      * (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
      */
-    public readonly wallet!: pulumi.Output<string | undefined>;
+    declare public readonly wallet: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
      */
-    public readonly walletSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly walletSecretId: pulumi.Output<string | undefined>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.
@@ -687,242 +687,242 @@ export class Connection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionState | undefined;
-            resourceInputs["accessKeyId"] = state ? state.accessKeyId : undefined;
-            resourceInputs["accountKey"] = state ? state.accountKey : undefined;
-            resourceInputs["accountKeySecretId"] = state ? state.accountKeySecretId : undefined;
-            resourceInputs["accountName"] = state ? state.accountName : undefined;
-            resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
-            resourceInputs["authenticationMode"] = state ? state.authenticationMode : undefined;
-            resourceInputs["authenticationType"] = state ? state.authenticationType : undefined;
-            resourceInputs["azureAuthorityHost"] = state ? state.azureAuthorityHost : undefined;
-            resourceInputs["azureTenantId"] = state ? state.azureTenantId : undefined;
-            resourceInputs["bootstrapServers"] = state ? state.bootstrapServers : undefined;
-            resourceInputs["catalog"] = state ? state.catalog : undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
-            resourceInputs["clientSecretSecretId"] = state ? state.clientSecretSecretId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionFactory"] = state ? state.connectionFactory : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["connectionType"] = state ? state.connectionType : undefined;
-            resourceInputs["connectionUrl"] = state ? state.connectionUrl : undefined;
-            resourceInputs["consumerProperties"] = state ? state.consumerProperties : undefined;
-            resourceInputs["coreSiteXml"] = state ? state.coreSiteXml : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["doesUseSecretIds"] = state ? state.doesUseSecretIds : undefined;
-            resourceInputs["endpoint"] = state ? state.endpoint : undefined;
-            resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["jndiConnectionFactory"] = state ? state.jndiConnectionFactory : undefined;
-            resourceInputs["jndiInitialContextFactory"] = state ? state.jndiInitialContextFactory : undefined;
-            resourceInputs["jndiProviderUrl"] = state ? state.jndiProviderUrl : undefined;
-            resourceInputs["jndiSecurityCredentials"] = state ? state.jndiSecurityCredentials : undefined;
-            resourceInputs["jndiSecurityCredentialsSecretId"] = state ? state.jndiSecurityCredentialsSecretId : undefined;
-            resourceInputs["jndiSecurityPrincipal"] = state ? state.jndiSecurityPrincipal : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["keyStore"] = state ? state.keyStore : undefined;
-            resourceInputs["keyStorePassword"] = state ? state.keyStorePassword : undefined;
-            resourceInputs["keyStorePasswordSecretId"] = state ? state.keyStorePasswordSecretId : undefined;
-            resourceInputs["keyStoreSecretId"] = state ? state.keyStoreSecretId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["passwordSecretId"] = state ? state.passwordSecretId : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["privateKeyFile"] = state ? state.privateKeyFile : undefined;
-            resourceInputs["privateKeyFileSecretId"] = state ? state.privateKeyFileSecretId : undefined;
-            resourceInputs["privateKeyPassphrase"] = state ? state.privateKeyPassphrase : undefined;
-            resourceInputs["privateKeyPassphraseSecretId"] = state ? state.privateKeyPassphraseSecretId : undefined;
-            resourceInputs["producerProperties"] = state ? state.producerProperties : undefined;
-            resourceInputs["publicKeyFingerprint"] = state ? state.publicKeyFingerprint : undefined;
-            resourceInputs["redisClusterId"] = state ? state.redisClusterId : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["routingMethod"] = state ? state.routingMethod : undefined;
-            resourceInputs["sasToken"] = state ? state.sasToken : undefined;
-            resourceInputs["sasTokenSecretId"] = state ? state.sasTokenSecretId : undefined;
-            resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
-            resourceInputs["secretAccessKeySecretId"] = state ? state.secretAccessKeySecretId : undefined;
-            resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
-            resourceInputs["servers"] = state ? state.servers : undefined;
-            resourceInputs["serviceAccountKeyFile"] = state ? state.serviceAccountKeyFile : undefined;
-            resourceInputs["serviceAccountKeyFileSecretId"] = state ? state.serviceAccountKeyFileSecretId : undefined;
-            resourceInputs["sessionMode"] = state ? state.sessionMode : undefined;
-            resourceInputs["shouldUseJndi"] = state ? state.shouldUseJndi : undefined;
-            resourceInputs["shouldUseResourcePrincipal"] = state ? state.shouldUseResourcePrincipal : undefined;
-            resourceInputs["shouldValidateServerCertificate"] = state ? state.shouldValidateServerCertificate : undefined;
-            resourceInputs["sslCa"] = state ? state.sslCa : undefined;
-            resourceInputs["sslCert"] = state ? state.sslCert : undefined;
-            resourceInputs["sslClientKeystash"] = state ? state.sslClientKeystash : undefined;
-            resourceInputs["sslClientKeystashSecretId"] = state ? state.sslClientKeystashSecretId : undefined;
-            resourceInputs["sslClientKeystoredb"] = state ? state.sslClientKeystoredb : undefined;
-            resourceInputs["sslClientKeystoredbSecretId"] = state ? state.sslClientKeystoredbSecretId : undefined;
-            resourceInputs["sslCrl"] = state ? state.sslCrl : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["sslKeyPassword"] = state ? state.sslKeyPassword : undefined;
-            resourceInputs["sslKeyPasswordSecretId"] = state ? state.sslKeyPasswordSecretId : undefined;
-            resourceInputs["sslKeySecretId"] = state ? state.sslKeySecretId : undefined;
-            resourceInputs["sslMode"] = state ? state.sslMode : undefined;
-            resourceInputs["sslServerCertificate"] = state ? state.sslServerCertificate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storage"] = state ? state.storage : undefined;
-            resourceInputs["storageCredentialName"] = state ? state.storageCredentialName : undefined;
-            resourceInputs["streamPoolId"] = state ? state.streamPoolId : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["technologyType"] = state ? state.technologyType : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["tlsCaFile"] = state ? state.tlsCaFile : undefined;
-            resourceInputs["tlsCertificateKeyFile"] = state ? state.tlsCertificateKeyFile : undefined;
-            resourceInputs["tlsCertificateKeyFilePassword"] = state ? state.tlsCertificateKeyFilePassword : undefined;
-            resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = state ? state.tlsCertificateKeyFilePasswordSecretId : undefined;
-            resourceInputs["tlsCertificateKeyFileSecretId"] = state ? state.tlsCertificateKeyFileSecretId : undefined;
-            resourceInputs["triggerRefresh"] = state ? state.triggerRefresh : undefined;
-            resourceInputs["trustStore"] = state ? state.trustStore : undefined;
-            resourceInputs["trustStorePassword"] = state ? state.trustStorePassword : undefined;
-            resourceInputs["trustStorePasswordSecretId"] = state ? state.trustStorePasswordSecretId : undefined;
-            resourceInputs["trustStoreSecretId"] = state ? state.trustStoreSecretId : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["wallet"] = state ? state.wallet : undefined;
-            resourceInputs["walletSecretId"] = state ? state.walletSecretId : undefined;
+            resourceInputs["accessKeyId"] = state?.accessKeyId;
+            resourceInputs["accountKey"] = state?.accountKey;
+            resourceInputs["accountKeySecretId"] = state?.accountKeySecretId;
+            resourceInputs["accountName"] = state?.accountName;
+            resourceInputs["additionalAttributes"] = state?.additionalAttributes;
+            resourceInputs["authenticationMode"] = state?.authenticationMode;
+            resourceInputs["authenticationType"] = state?.authenticationType;
+            resourceInputs["azureAuthorityHost"] = state?.azureAuthorityHost;
+            resourceInputs["azureTenantId"] = state?.azureTenantId;
+            resourceInputs["bootstrapServers"] = state?.bootstrapServers;
+            resourceInputs["catalog"] = state?.catalog;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["clientSecret"] = state?.clientSecret;
+            resourceInputs["clientSecretSecretId"] = state?.clientSecretSecretId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionFactory"] = state?.connectionFactory;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["connectionType"] = state?.connectionType;
+            resourceInputs["connectionUrl"] = state?.connectionUrl;
+            resourceInputs["consumerProperties"] = state?.consumerProperties;
+            resourceInputs["coreSiteXml"] = state?.coreSiteXml;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deploymentId"] = state?.deploymentId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["doesUseSecretIds"] = state?.doesUseSecretIds;
+            resourceInputs["endpoint"] = state?.endpoint;
+            resourceInputs["fingerprint"] = state?.fingerprint;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["ingressIps"] = state?.ingressIps;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["jndiConnectionFactory"] = state?.jndiConnectionFactory;
+            resourceInputs["jndiInitialContextFactory"] = state?.jndiInitialContextFactory;
+            resourceInputs["jndiProviderUrl"] = state?.jndiProviderUrl;
+            resourceInputs["jndiSecurityCredentials"] = state?.jndiSecurityCredentials;
+            resourceInputs["jndiSecurityCredentialsSecretId"] = state?.jndiSecurityCredentialsSecretId;
+            resourceInputs["jndiSecurityPrincipal"] = state?.jndiSecurityPrincipal;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["keyStore"] = state?.keyStore;
+            resourceInputs["keyStorePassword"] = state?.keyStorePassword;
+            resourceInputs["keyStorePasswordSecretId"] = state?.keyStorePasswordSecretId;
+            resourceInputs["keyStoreSecretId"] = state?.keyStoreSecretId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["passwordSecretId"] = state?.passwordSecretId;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["privateKeyFile"] = state?.privateKeyFile;
+            resourceInputs["privateKeyFileSecretId"] = state?.privateKeyFileSecretId;
+            resourceInputs["privateKeyPassphrase"] = state?.privateKeyPassphrase;
+            resourceInputs["privateKeyPassphraseSecretId"] = state?.privateKeyPassphraseSecretId;
+            resourceInputs["producerProperties"] = state?.producerProperties;
+            resourceInputs["publicKeyFingerprint"] = state?.publicKeyFingerprint;
+            resourceInputs["redisClusterId"] = state?.redisClusterId;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["routingMethod"] = state?.routingMethod;
+            resourceInputs["sasToken"] = state?.sasToken;
+            resourceInputs["sasTokenSecretId"] = state?.sasTokenSecretId;
+            resourceInputs["secretAccessKey"] = state?.secretAccessKey;
+            resourceInputs["secretAccessKeySecretId"] = state?.secretAccessKeySecretId;
+            resourceInputs["securityProtocol"] = state?.securityProtocol;
+            resourceInputs["servers"] = state?.servers;
+            resourceInputs["serviceAccountKeyFile"] = state?.serviceAccountKeyFile;
+            resourceInputs["serviceAccountKeyFileSecretId"] = state?.serviceAccountKeyFileSecretId;
+            resourceInputs["sessionMode"] = state?.sessionMode;
+            resourceInputs["shouldUseJndi"] = state?.shouldUseJndi;
+            resourceInputs["shouldUseResourcePrincipal"] = state?.shouldUseResourcePrincipal;
+            resourceInputs["shouldValidateServerCertificate"] = state?.shouldValidateServerCertificate;
+            resourceInputs["sslCa"] = state?.sslCa;
+            resourceInputs["sslCert"] = state?.sslCert;
+            resourceInputs["sslClientKeystash"] = state?.sslClientKeystash;
+            resourceInputs["sslClientKeystashSecretId"] = state?.sslClientKeystashSecretId;
+            resourceInputs["sslClientKeystoredb"] = state?.sslClientKeystoredb;
+            resourceInputs["sslClientKeystoredbSecretId"] = state?.sslClientKeystoredbSecretId;
+            resourceInputs["sslCrl"] = state?.sslCrl;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["sslKeyPassword"] = state?.sslKeyPassword;
+            resourceInputs["sslKeyPasswordSecretId"] = state?.sslKeyPasswordSecretId;
+            resourceInputs["sslKeySecretId"] = state?.sslKeySecretId;
+            resourceInputs["sslMode"] = state?.sslMode;
+            resourceInputs["sslServerCertificate"] = state?.sslServerCertificate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storage"] = state?.storage;
+            resourceInputs["storageCredentialName"] = state?.storageCredentialName;
+            resourceInputs["streamPoolId"] = state?.streamPoolId;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["technologyType"] = state?.technologyType;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["tlsCaFile"] = state?.tlsCaFile;
+            resourceInputs["tlsCertificateKeyFile"] = state?.tlsCertificateKeyFile;
+            resourceInputs["tlsCertificateKeyFilePassword"] = state?.tlsCertificateKeyFilePassword;
+            resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = state?.tlsCertificateKeyFilePasswordSecretId;
+            resourceInputs["tlsCertificateKeyFileSecretId"] = state?.tlsCertificateKeyFileSecretId;
+            resourceInputs["triggerRefresh"] = state?.triggerRefresh;
+            resourceInputs["trustStore"] = state?.trustStore;
+            resourceInputs["trustStorePassword"] = state?.trustStorePassword;
+            resourceInputs["trustStorePasswordSecretId"] = state?.trustStorePasswordSecretId;
+            resourceInputs["trustStoreSecretId"] = state?.trustStoreSecretId;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["userId"] = state?.userId;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["wallet"] = state?.wallet;
+            resourceInputs["walletSecretId"] = state?.walletSecretId;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.connectionType === undefined) && !opts.urn) {
+            if (args?.connectionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionType'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.technologyType === undefined) && !opts.urn) {
+            if (args?.technologyType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'technologyType'");
             }
-            resourceInputs["accessKeyId"] = args ? args.accessKeyId : undefined;
+            resourceInputs["accessKeyId"] = args?.accessKeyId;
             resourceInputs["accountKey"] = args?.accountKey ? pulumi.secret(args.accountKey) : undefined;
-            resourceInputs["accountKeySecretId"] = args ? args.accountKeySecretId : undefined;
-            resourceInputs["accountName"] = args ? args.accountName : undefined;
-            resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
-            resourceInputs["authenticationMode"] = args ? args.authenticationMode : undefined;
-            resourceInputs["authenticationType"] = args ? args.authenticationType : undefined;
-            resourceInputs["azureAuthorityHost"] = args ? args.azureAuthorityHost : undefined;
-            resourceInputs["azureTenantId"] = args ? args.azureTenantId : undefined;
-            resourceInputs["bootstrapServers"] = args ? args.bootstrapServers : undefined;
-            resourceInputs["catalog"] = args ? args.catalog : undefined;
-            resourceInputs["clientId"] = args ? args.clientId : undefined;
+            resourceInputs["accountKeySecretId"] = args?.accountKeySecretId;
+            resourceInputs["accountName"] = args?.accountName;
+            resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["authenticationMode"] = args?.authenticationMode;
+            resourceInputs["authenticationType"] = args?.authenticationType;
+            resourceInputs["azureAuthorityHost"] = args?.azureAuthorityHost;
+            resourceInputs["azureTenantId"] = args?.azureTenantId;
+            resourceInputs["bootstrapServers"] = args?.bootstrapServers;
+            resourceInputs["catalog"] = args?.catalog;
+            resourceInputs["clientId"] = args?.clientId;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
-            resourceInputs["clientSecretSecretId"] = args ? args.clientSecretSecretId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionFactory"] = args ? args.connectionFactory : undefined;
-            resourceInputs["connectionString"] = args ? args.connectionString : undefined;
-            resourceInputs["connectionType"] = args ? args.connectionType : undefined;
-            resourceInputs["connectionUrl"] = args ? args.connectionUrl : undefined;
-            resourceInputs["consumerProperties"] = args ? args.consumerProperties : undefined;
-            resourceInputs["coreSiteXml"] = args ? args.coreSiteXml : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["doesUseSecretIds"] = args ? args.doesUseSecretIds : undefined;
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["fingerprint"] = args ? args.fingerprint : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["jndiConnectionFactory"] = args ? args.jndiConnectionFactory : undefined;
-            resourceInputs["jndiInitialContextFactory"] = args ? args.jndiInitialContextFactory : undefined;
-            resourceInputs["jndiProviderUrl"] = args ? args.jndiProviderUrl : undefined;
+            resourceInputs["clientSecretSecretId"] = args?.clientSecretSecretId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionFactory"] = args?.connectionFactory;
+            resourceInputs["connectionString"] = args?.connectionString;
+            resourceInputs["connectionType"] = args?.connectionType;
+            resourceInputs["connectionUrl"] = args?.connectionUrl;
+            resourceInputs["consumerProperties"] = args?.consumerProperties;
+            resourceInputs["coreSiteXml"] = args?.coreSiteXml;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deploymentId"] = args?.deploymentId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["doesUseSecretIds"] = args?.doesUseSecretIds;
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["fingerprint"] = args?.fingerprint;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["jndiConnectionFactory"] = args?.jndiConnectionFactory;
+            resourceInputs["jndiInitialContextFactory"] = args?.jndiInitialContextFactory;
+            resourceInputs["jndiProviderUrl"] = args?.jndiProviderUrl;
             resourceInputs["jndiSecurityCredentials"] = args?.jndiSecurityCredentials ? pulumi.secret(args.jndiSecurityCredentials) : undefined;
-            resourceInputs["jndiSecurityCredentialsSecretId"] = args ? args.jndiSecurityCredentialsSecretId : undefined;
-            resourceInputs["jndiSecurityPrincipal"] = args ? args.jndiSecurityPrincipal : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
+            resourceInputs["jndiSecurityCredentialsSecretId"] = args?.jndiSecurityCredentialsSecretId;
+            resourceInputs["jndiSecurityPrincipal"] = args?.jndiSecurityPrincipal;
+            resourceInputs["keyId"] = args?.keyId;
             resourceInputs["keyStore"] = args?.keyStore ? pulumi.secret(args.keyStore) : undefined;
             resourceInputs["keyStorePassword"] = args?.keyStorePassword ? pulumi.secret(args.keyStorePassword) : undefined;
-            resourceInputs["keyStorePasswordSecretId"] = args ? args.keyStorePasswordSecretId : undefined;
-            resourceInputs["keyStoreSecretId"] = args ? args.keyStoreSecretId : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["keyStorePasswordSecretId"] = args?.keyStorePasswordSecretId;
+            resourceInputs["keyStoreSecretId"] = args?.keyStoreSecretId;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["passwordSecretId"] = args ? args.passwordSecretId : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["privateIp"] = args ? args.privateIp : undefined;
+            resourceInputs["passwordSecretId"] = args?.passwordSecretId;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["privateIp"] = args?.privateIp;
             resourceInputs["privateKeyFile"] = args?.privateKeyFile ? pulumi.secret(args.privateKeyFile) : undefined;
-            resourceInputs["privateKeyFileSecretId"] = args ? args.privateKeyFileSecretId : undefined;
+            resourceInputs["privateKeyFileSecretId"] = args?.privateKeyFileSecretId;
             resourceInputs["privateKeyPassphrase"] = args?.privateKeyPassphrase ? pulumi.secret(args.privateKeyPassphrase) : undefined;
-            resourceInputs["privateKeyPassphraseSecretId"] = args ? args.privateKeyPassphraseSecretId : undefined;
-            resourceInputs["producerProperties"] = args ? args.producerProperties : undefined;
-            resourceInputs["publicKeyFingerprint"] = args ? args.publicKeyFingerprint : undefined;
-            resourceInputs["redisClusterId"] = args ? args.redisClusterId : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["routingMethod"] = args ? args.routingMethod : undefined;
+            resourceInputs["privateKeyPassphraseSecretId"] = args?.privateKeyPassphraseSecretId;
+            resourceInputs["producerProperties"] = args?.producerProperties;
+            resourceInputs["publicKeyFingerprint"] = args?.publicKeyFingerprint;
+            resourceInputs["redisClusterId"] = args?.redisClusterId;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["routingMethod"] = args?.routingMethod;
             resourceInputs["sasToken"] = args?.sasToken ? pulumi.secret(args.sasToken) : undefined;
-            resourceInputs["sasTokenSecretId"] = args ? args.sasTokenSecretId : undefined;
+            resourceInputs["sasTokenSecretId"] = args?.sasTokenSecretId;
             resourceInputs["secretAccessKey"] = args?.secretAccessKey ? pulumi.secret(args.secretAccessKey) : undefined;
-            resourceInputs["secretAccessKeySecretId"] = args ? args.secretAccessKeySecretId : undefined;
-            resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
-            resourceInputs["servers"] = args ? args.servers : undefined;
+            resourceInputs["secretAccessKeySecretId"] = args?.secretAccessKeySecretId;
+            resourceInputs["securityProtocol"] = args?.securityProtocol;
+            resourceInputs["servers"] = args?.servers;
             resourceInputs["serviceAccountKeyFile"] = args?.serviceAccountKeyFile ? pulumi.secret(args.serviceAccountKeyFile) : undefined;
-            resourceInputs["serviceAccountKeyFileSecretId"] = args ? args.serviceAccountKeyFileSecretId : undefined;
-            resourceInputs["sessionMode"] = args ? args.sessionMode : undefined;
-            resourceInputs["shouldUseJndi"] = args ? args.shouldUseJndi : undefined;
-            resourceInputs["shouldUseResourcePrincipal"] = args ? args.shouldUseResourcePrincipal : undefined;
-            resourceInputs["shouldValidateServerCertificate"] = args ? args.shouldValidateServerCertificate : undefined;
-            resourceInputs["sslCa"] = args ? args.sslCa : undefined;
-            resourceInputs["sslCert"] = args ? args.sslCert : undefined;
+            resourceInputs["serviceAccountKeyFileSecretId"] = args?.serviceAccountKeyFileSecretId;
+            resourceInputs["sessionMode"] = args?.sessionMode;
+            resourceInputs["shouldUseJndi"] = args?.shouldUseJndi;
+            resourceInputs["shouldUseResourcePrincipal"] = args?.shouldUseResourcePrincipal;
+            resourceInputs["shouldValidateServerCertificate"] = args?.shouldValidateServerCertificate;
+            resourceInputs["sslCa"] = args?.sslCa;
+            resourceInputs["sslCert"] = args?.sslCert;
             resourceInputs["sslClientKeystash"] = args?.sslClientKeystash ? pulumi.secret(args.sslClientKeystash) : undefined;
-            resourceInputs["sslClientKeystashSecretId"] = args ? args.sslClientKeystashSecretId : undefined;
+            resourceInputs["sslClientKeystashSecretId"] = args?.sslClientKeystashSecretId;
             resourceInputs["sslClientKeystoredb"] = args?.sslClientKeystoredb ? pulumi.secret(args.sslClientKeystoredb) : undefined;
-            resourceInputs["sslClientKeystoredbSecretId"] = args ? args.sslClientKeystoredbSecretId : undefined;
-            resourceInputs["sslCrl"] = args ? args.sslCrl : undefined;
+            resourceInputs["sslClientKeystoredbSecretId"] = args?.sslClientKeystoredbSecretId;
+            resourceInputs["sslCrl"] = args?.sslCrl;
             resourceInputs["sslKey"] = args?.sslKey ? pulumi.secret(args.sslKey) : undefined;
             resourceInputs["sslKeyPassword"] = args?.sslKeyPassword ? pulumi.secret(args.sslKeyPassword) : undefined;
-            resourceInputs["sslKeyPasswordSecretId"] = args ? args.sslKeyPasswordSecretId : undefined;
-            resourceInputs["sslKeySecretId"] = args ? args.sslKeySecretId : undefined;
-            resourceInputs["sslMode"] = args ? args.sslMode : undefined;
-            resourceInputs["sslServerCertificate"] = args ? args.sslServerCertificate : undefined;
-            resourceInputs["storage"] = args ? args.storage : undefined;
-            resourceInputs["storageCredentialName"] = args ? args.storageCredentialName : undefined;
-            resourceInputs["streamPoolId"] = args ? args.streamPoolId : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["technologyType"] = args ? args.technologyType : undefined;
-            resourceInputs["tenancyId"] = args ? args.tenancyId : undefined;
-            resourceInputs["tenantId"] = args ? args.tenantId : undefined;
-            resourceInputs["tlsCaFile"] = args ? args.tlsCaFile : undefined;
-            resourceInputs["tlsCertificateKeyFile"] = args ? args.tlsCertificateKeyFile : undefined;
+            resourceInputs["sslKeyPasswordSecretId"] = args?.sslKeyPasswordSecretId;
+            resourceInputs["sslKeySecretId"] = args?.sslKeySecretId;
+            resourceInputs["sslMode"] = args?.sslMode;
+            resourceInputs["sslServerCertificate"] = args?.sslServerCertificate;
+            resourceInputs["storage"] = args?.storage;
+            resourceInputs["storageCredentialName"] = args?.storageCredentialName;
+            resourceInputs["streamPoolId"] = args?.streamPoolId;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["technologyType"] = args?.technologyType;
+            resourceInputs["tenancyId"] = args?.tenancyId;
+            resourceInputs["tenantId"] = args?.tenantId;
+            resourceInputs["tlsCaFile"] = args?.tlsCaFile;
+            resourceInputs["tlsCertificateKeyFile"] = args?.tlsCertificateKeyFile;
             resourceInputs["tlsCertificateKeyFilePassword"] = args?.tlsCertificateKeyFilePassword ? pulumi.secret(args.tlsCertificateKeyFilePassword) : undefined;
             resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = args?.tlsCertificateKeyFilePasswordSecretId ? pulumi.secret(args.tlsCertificateKeyFilePasswordSecretId) : undefined;
-            resourceInputs["tlsCertificateKeyFileSecretId"] = args ? args.tlsCertificateKeyFileSecretId : undefined;
-            resourceInputs["triggerRefresh"] = args ? args.triggerRefresh : undefined;
+            resourceInputs["tlsCertificateKeyFileSecretId"] = args?.tlsCertificateKeyFileSecretId;
+            resourceInputs["triggerRefresh"] = args?.triggerRefresh;
             resourceInputs["trustStore"] = args?.trustStore ? pulumi.secret(args.trustStore) : undefined;
             resourceInputs["trustStorePassword"] = args?.trustStorePassword ? pulumi.secret(args.trustStorePassword) : undefined;
-            resourceInputs["trustStorePasswordSecretId"] = args ? args.trustStorePasswordSecretId : undefined;
-            resourceInputs["trustStoreSecretId"] = args ? args.trustStoreSecretId : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
+            resourceInputs["trustStorePasswordSecretId"] = args?.trustStorePasswordSecretId;
+            resourceInputs["trustStoreSecretId"] = args?.trustStoreSecretId;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["userId"] = args?.userId;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["wallet"] = args?.wallet ? pulumi.secret(args.wallet) : undefined;
-            resourceInputs["walletSecretId"] = args ? args.walletSecretId : undefined;
+            resourceInputs["walletSecretId"] = args?.walletSecretId;
             resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

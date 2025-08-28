@@ -48,41 +48,41 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly actualEsxiHostsCount: pulumi.Output<number>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacityReservationId` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
      * The number of Clusters in the SDDC.
      */
-    public /*out*/ readonly clustersCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly clustersCount: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Required) The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `computeAvailabilityDomain` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly computeAvailabilityDomain!: pulumi.Output<string | undefined>;
+    declare public readonly computeAvailabilityDomain: pulumi.Output<string | undefined>;
     /**
      * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly datastores!: pulumi.Output<outputs.Ocvp.SddcDatastore[]>;
+    declare public readonly datastores: pulumi.Output<outputs.Ocvp.SddcDatastore[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC. **Deprecated**. Please use `esxiHostsCount` of `initialClusterConfigurations` instead.
      *
@@ -90,72 +90,72 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly esxiHostsCount!: pulumi.Output<number | undefined>;
+    declare public readonly esxiHostsCount: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The ESXi software bundle to install on the ESXi hosts in the SDDC.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    public readonly esxiSoftwareVersion!: pulumi.Output<string>;
+    declare public readonly esxiSoftwareVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly hcxAction!: pulumi.Output<string | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly hcxAction: pulumi.Output<string | undefined>;
     /**
      * The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly hcxFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly hcxFqdn: pulumi.Output<string>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      *
      * @deprecated The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
      */
-    public /*out*/ readonly hcxInitialPassword!: pulumi.Output<string>;
+    declare public /*out*/ readonly hcxInitialPassword: pulumi.Output<string>;
     /**
      * HCX configuration of the SDDC.
      */
-    public /*out*/ readonly hcxMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly hcxMode: pulumi.Output<string>;
     /**
      * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcxOnPremLicenses` instead.
      *
      * @deprecated The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly hcxOnPremKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly hcxOnPremKey: pulumi.Output<string>;
     /**
      * The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      */
-    public /*out*/ readonly hcxOnPremLicenses!: pulumi.Output<outputs.Ocvp.SddcHcxOnPremLicense[]>;
+    declare public /*out*/ readonly hcxOnPremLicenses: pulumi.Output<outputs.Ocvp.SddcHcxOnPremLicense[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly hcxPrivateIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hcxPrivateIpId: pulumi.Output<string>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcxVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly hcxVlanId!: pulumi.Output<string>;
+    declare public readonly hcxVlanId: pulumi.Output<string>;
     /**
      * Details of SDDC initial configuration
      */
-    public readonly initialConfigurations!: pulumi.Output<outputs.Ocvp.SddcInitialConfiguration[] | undefined>;
+    declare public readonly initialConfigurations: pulumi.Output<outputs.Ocvp.SddcInitialConfiguration[] | undefined>;
     /**
      * (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly initialHostOcpuCount: pulumi.Output<number>;
     /**
      * (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialHostShapeName!: pulumi.Output<string>;
+    declare public readonly initialHostShapeName: pulumi.Output<string>;
     /**
      * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initialCommitment` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialSku!: pulumi.Output<string>;
+    declare public readonly initialSku: pulumi.Output<string>;
     /**
      * (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
      *
@@ -163,37 +163,37 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly instanceDisplayNamePrefix!: pulumi.Output<string>;
+    declare public readonly instanceDisplayNamePrefix: pulumi.Output<string>;
     /**
      * For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      */
-    public readonly isHcxEnabled!: pulumi.Output<boolean>;
+    declare public readonly isHcxEnabled: pulumi.Output<boolean>;
     /**
      * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
      *
      * @deprecated The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isHcxEnterpriseEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      */
-    public /*out*/ readonly isHcxPendingDowngrade!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isHcxPendingDowngrade: pulumi.Output<boolean>;
     /**
      * (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      *
      * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean>;
+    declare public readonly isShieldedInstanceEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether this SDDC is designated for only single ESXi host.
      */
-    public readonly isSingleHostSddc!: pulumi.Output<boolean>;
+    declare public readonly isSingleHostSddc: pulumi.Output<boolean>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly nsxEdgeUplink1vlanId!: pulumi.Output<string | undefined>;
+    declare public readonly nsxEdgeUplink1vlanId: pulumi.Output<string | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink2vlanId` of `networkConfiguration` instead.
      *
@@ -201,155 +201,155 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly nsxEdgeUplink2vlanId!: pulumi.Output<string | undefined>;
+    declare public readonly nsxEdgeUplink2vlanId: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly nsxEdgeUplinkIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxEdgeUplinkIpId: pulumi.Output<string>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly nsxEdgeVtepVlanId!: pulumi.Output<string | undefined>;
+    declare public readonly nsxEdgeVtepVlanId: pulumi.Output<string | undefined>;
     /**
      * The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly nsxManagerFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxManagerFqdn: pulumi.Output<string>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      *
      * @deprecated The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
      */
-    public /*out*/ readonly nsxManagerInitialPassword!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxManagerInitialPassword: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly nsxManagerPrivateIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxManagerPrivateIpId: pulumi.Output<string>;
     /**
      * The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      */
-    public /*out*/ readonly nsxManagerUsername!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxManagerUsername: pulumi.Output<string>;
     /**
      * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      *
      * @deprecated The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly nsxOverlaySegmentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly nsxOverlaySegmentName: pulumi.Output<string>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly nsxVtepVlanId!: pulumi.Output<string | undefined>;
+    declare public readonly nsxVtepVlanId: pulumi.Output<string | undefined>;
     /**
      * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      *
      * @deprecated The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly provisioningSubnetId!: pulumi.Output<string | undefined>;
+    declare public readonly provisioningSubnetId: pulumi.Output<string | undefined>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly provisioningVlanId!: pulumi.Output<string>;
+    declare public readonly provisioningVlanId: pulumi.Output<string>;
     /**
      * (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
      */
-    public readonly refreshHcxLicenseStatus!: pulumi.Output<boolean | undefined>;
+    declare public readonly refreshHcxLicenseStatus: pulumi.Output<boolean | undefined>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly replicationVlanId!: pulumi.Output<string>;
+    declare public readonly replicationVlanId: pulumi.Output<string>;
     /**
      * (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
      */
-    public readonly reservingHcxOnPremiseLicenseKeys!: pulumi.Output<string[] | undefined>;
+    declare public readonly reservingHcxOnPremiseLicenseKeys: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file
      */
-    public readonly sshAuthorizedKeys!: pulumi.Output<string>;
+    declare public readonly sshAuthorizedKeys: pulumi.Output<string>;
     /**
      * The current state of the SDDC.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeHcxBillingCycleEnd!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeHcxBillingCycleEnd: pulumi.Output<string>;
     /**
      * The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeHcxLicenseStatusUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeHcxLicenseStatusUpdated: pulumi.Output<string>;
     /**
      * The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
      *
      * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
-    public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
+    declare public /*out*/ readonly upgradeLicenses: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
     /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly vcenterFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcenterFqdn: pulumi.Output<string>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      *
      * @deprecated The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
      */
-    public /*out*/ readonly vcenterInitialPassword!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcenterInitialPassword: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly vcenterPrivateIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcenterPrivateIpId: pulumi.Output<string>;
     /**
      * The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      */
-    public /*out*/ readonly vcenterUsername!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcenterUsername: pulumi.Output<string>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly vmotionVlanId!: pulumi.Output<string | undefined>;
+    declare public readonly vmotionVlanId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The VMware software bundle to install on the ESXi hosts in the SDDC. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    public readonly vmwareSoftwareVersion!: pulumi.Output<string>;
+    declare public readonly vmwareSoftwareVersion: pulumi.Output<string>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly vsanVlanId!: pulumi.Output<string | undefined>;
+    declare public readonly vsanVlanId: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The link to guidance for upgrading vSphere.
      *
      * @deprecated The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string>;
+    declare public /*out*/ readonly vsphereUpgradeGuide: pulumi.Output<string>;
     /**
      * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
      *
      * @deprecated The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
-    public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
+    declare public /*out*/ readonly vsphereUpgradeObjects: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
      *
      * @deprecated The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly vsphereVlanId!: pulumi.Output<string | undefined>;
+    declare public readonly vsphereVlanId: pulumi.Output<string | undefined>;
     /**
      * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
      *
@@ -359,7 +359,7 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly workloadNetworkCidr!: pulumi.Output<string>;
+    declare public readonly workloadNetworkCidr: pulumi.Output<string>;
 
     /**
      * Create a Sddc resource with the given unique name, arguments, and options.
@@ -374,113 +374,113 @@ export class Sddc extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SddcState | undefined;
-            resourceInputs["actualEsxiHostsCount"] = state ? state.actualEsxiHostsCount : undefined;
-            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
-            resourceInputs["clustersCount"] = state ? state.clustersCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
-            resourceInputs["datastores"] = state ? state.datastores : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["esxiHostsCount"] = state ? state.esxiHostsCount : undefined;
-            resourceInputs["esxiSoftwareVersion"] = state ? state.esxiSoftwareVersion : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hcxAction"] = state ? state.hcxAction : undefined;
-            resourceInputs["hcxFqdn"] = state ? state.hcxFqdn : undefined;
-            resourceInputs["hcxInitialPassword"] = state ? state.hcxInitialPassword : undefined;
-            resourceInputs["hcxMode"] = state ? state.hcxMode : undefined;
-            resourceInputs["hcxOnPremKey"] = state ? state.hcxOnPremKey : undefined;
-            resourceInputs["hcxOnPremLicenses"] = state ? state.hcxOnPremLicenses : undefined;
-            resourceInputs["hcxPrivateIpId"] = state ? state.hcxPrivateIpId : undefined;
-            resourceInputs["hcxVlanId"] = state ? state.hcxVlanId : undefined;
-            resourceInputs["initialConfigurations"] = state ? state.initialConfigurations : undefined;
-            resourceInputs["initialHostOcpuCount"] = state ? state.initialHostOcpuCount : undefined;
-            resourceInputs["initialHostShapeName"] = state ? state.initialHostShapeName : undefined;
-            resourceInputs["initialSku"] = state ? state.initialSku : undefined;
-            resourceInputs["instanceDisplayNamePrefix"] = state ? state.instanceDisplayNamePrefix : undefined;
-            resourceInputs["isHcxEnabled"] = state ? state.isHcxEnabled : undefined;
-            resourceInputs["isHcxEnterpriseEnabled"] = state ? state.isHcxEnterpriseEnabled : undefined;
-            resourceInputs["isHcxPendingDowngrade"] = state ? state.isHcxPendingDowngrade : undefined;
-            resourceInputs["isShieldedInstanceEnabled"] = state ? state.isShieldedInstanceEnabled : undefined;
-            resourceInputs["isSingleHostSddc"] = state ? state.isSingleHostSddc : undefined;
-            resourceInputs["nsxEdgeUplink1vlanId"] = state ? state.nsxEdgeUplink1vlanId : undefined;
-            resourceInputs["nsxEdgeUplink2vlanId"] = state ? state.nsxEdgeUplink2vlanId : undefined;
-            resourceInputs["nsxEdgeUplinkIpId"] = state ? state.nsxEdgeUplinkIpId : undefined;
-            resourceInputs["nsxEdgeVtepVlanId"] = state ? state.nsxEdgeVtepVlanId : undefined;
-            resourceInputs["nsxManagerFqdn"] = state ? state.nsxManagerFqdn : undefined;
-            resourceInputs["nsxManagerInitialPassword"] = state ? state.nsxManagerInitialPassword : undefined;
-            resourceInputs["nsxManagerPrivateIpId"] = state ? state.nsxManagerPrivateIpId : undefined;
-            resourceInputs["nsxManagerUsername"] = state ? state.nsxManagerUsername : undefined;
-            resourceInputs["nsxOverlaySegmentName"] = state ? state.nsxOverlaySegmentName : undefined;
-            resourceInputs["nsxVtepVlanId"] = state ? state.nsxVtepVlanId : undefined;
-            resourceInputs["provisioningSubnetId"] = state ? state.provisioningSubnetId : undefined;
-            resourceInputs["provisioningVlanId"] = state ? state.provisioningVlanId : undefined;
-            resourceInputs["refreshHcxLicenseStatus"] = state ? state.refreshHcxLicenseStatus : undefined;
-            resourceInputs["replicationVlanId"] = state ? state.replicationVlanId : undefined;
-            resourceInputs["reservingHcxOnPremiseLicenseKeys"] = state ? state.reservingHcxOnPremiseLicenseKeys : undefined;
-            resourceInputs["sshAuthorizedKeys"] = state ? state.sshAuthorizedKeys : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeHcxBillingCycleEnd"] = state ? state.timeHcxBillingCycleEnd : undefined;
-            resourceInputs["timeHcxLicenseStatusUpdated"] = state ? state.timeHcxLicenseStatusUpdated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upgradeLicenses"] = state ? state.upgradeLicenses : undefined;
-            resourceInputs["vcenterFqdn"] = state ? state.vcenterFqdn : undefined;
-            resourceInputs["vcenterInitialPassword"] = state ? state.vcenterInitialPassword : undefined;
-            resourceInputs["vcenterPrivateIpId"] = state ? state.vcenterPrivateIpId : undefined;
-            resourceInputs["vcenterUsername"] = state ? state.vcenterUsername : undefined;
-            resourceInputs["vmotionVlanId"] = state ? state.vmotionVlanId : undefined;
-            resourceInputs["vmwareSoftwareVersion"] = state ? state.vmwareSoftwareVersion : undefined;
-            resourceInputs["vsanVlanId"] = state ? state.vsanVlanId : undefined;
-            resourceInputs["vsphereUpgradeGuide"] = state ? state.vsphereUpgradeGuide : undefined;
-            resourceInputs["vsphereUpgradeObjects"] = state ? state.vsphereUpgradeObjects : undefined;
-            resourceInputs["vsphereVlanId"] = state ? state.vsphereVlanId : undefined;
-            resourceInputs["workloadNetworkCidr"] = state ? state.workloadNetworkCidr : undefined;
+            resourceInputs["actualEsxiHostsCount"] = state?.actualEsxiHostsCount;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["clustersCount"] = state?.clustersCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
+            resourceInputs["datastores"] = state?.datastores;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["esxiHostsCount"] = state?.esxiHostsCount;
+            resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hcxAction"] = state?.hcxAction;
+            resourceInputs["hcxFqdn"] = state?.hcxFqdn;
+            resourceInputs["hcxInitialPassword"] = state?.hcxInitialPassword;
+            resourceInputs["hcxMode"] = state?.hcxMode;
+            resourceInputs["hcxOnPremKey"] = state?.hcxOnPremKey;
+            resourceInputs["hcxOnPremLicenses"] = state?.hcxOnPremLicenses;
+            resourceInputs["hcxPrivateIpId"] = state?.hcxPrivateIpId;
+            resourceInputs["hcxVlanId"] = state?.hcxVlanId;
+            resourceInputs["initialConfigurations"] = state?.initialConfigurations;
+            resourceInputs["initialHostOcpuCount"] = state?.initialHostOcpuCount;
+            resourceInputs["initialHostShapeName"] = state?.initialHostShapeName;
+            resourceInputs["initialSku"] = state?.initialSku;
+            resourceInputs["instanceDisplayNamePrefix"] = state?.instanceDisplayNamePrefix;
+            resourceInputs["isHcxEnabled"] = state?.isHcxEnabled;
+            resourceInputs["isHcxEnterpriseEnabled"] = state?.isHcxEnterpriseEnabled;
+            resourceInputs["isHcxPendingDowngrade"] = state?.isHcxPendingDowngrade;
+            resourceInputs["isShieldedInstanceEnabled"] = state?.isShieldedInstanceEnabled;
+            resourceInputs["isSingleHostSddc"] = state?.isSingleHostSddc;
+            resourceInputs["nsxEdgeUplink1vlanId"] = state?.nsxEdgeUplink1vlanId;
+            resourceInputs["nsxEdgeUplink2vlanId"] = state?.nsxEdgeUplink2vlanId;
+            resourceInputs["nsxEdgeUplinkIpId"] = state?.nsxEdgeUplinkIpId;
+            resourceInputs["nsxEdgeVtepVlanId"] = state?.nsxEdgeVtepVlanId;
+            resourceInputs["nsxManagerFqdn"] = state?.nsxManagerFqdn;
+            resourceInputs["nsxManagerInitialPassword"] = state?.nsxManagerInitialPassword;
+            resourceInputs["nsxManagerPrivateIpId"] = state?.nsxManagerPrivateIpId;
+            resourceInputs["nsxManagerUsername"] = state?.nsxManagerUsername;
+            resourceInputs["nsxOverlaySegmentName"] = state?.nsxOverlaySegmentName;
+            resourceInputs["nsxVtepVlanId"] = state?.nsxVtepVlanId;
+            resourceInputs["provisioningSubnetId"] = state?.provisioningSubnetId;
+            resourceInputs["provisioningVlanId"] = state?.provisioningVlanId;
+            resourceInputs["refreshHcxLicenseStatus"] = state?.refreshHcxLicenseStatus;
+            resourceInputs["replicationVlanId"] = state?.replicationVlanId;
+            resourceInputs["reservingHcxOnPremiseLicenseKeys"] = state?.reservingHcxOnPremiseLicenseKeys;
+            resourceInputs["sshAuthorizedKeys"] = state?.sshAuthorizedKeys;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeHcxBillingCycleEnd"] = state?.timeHcxBillingCycleEnd;
+            resourceInputs["timeHcxLicenseStatusUpdated"] = state?.timeHcxLicenseStatusUpdated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upgradeLicenses"] = state?.upgradeLicenses;
+            resourceInputs["vcenterFqdn"] = state?.vcenterFqdn;
+            resourceInputs["vcenterInitialPassword"] = state?.vcenterInitialPassword;
+            resourceInputs["vcenterPrivateIpId"] = state?.vcenterPrivateIpId;
+            resourceInputs["vcenterUsername"] = state?.vcenterUsername;
+            resourceInputs["vmotionVlanId"] = state?.vmotionVlanId;
+            resourceInputs["vmwareSoftwareVersion"] = state?.vmwareSoftwareVersion;
+            resourceInputs["vsanVlanId"] = state?.vsanVlanId;
+            resourceInputs["vsphereUpgradeGuide"] = state?.vsphereUpgradeGuide;
+            resourceInputs["vsphereUpgradeObjects"] = state?.vsphereUpgradeObjects;
+            resourceInputs["vsphereVlanId"] = state?.vsphereVlanId;
+            resourceInputs["workloadNetworkCidr"] = state?.workloadNetworkCidr;
         } else {
             const args = argsOrState as SddcArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.sshAuthorizedKeys === undefined) && !opts.urn) {
+            if (args?.sshAuthorizedKeys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sshAuthorizedKeys'");
             }
-            if ((!args || args.vmwareSoftwareVersion === undefined) && !opts.urn) {
+            if (args?.vmwareSoftwareVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmwareSoftwareVersion'");
             }
-            resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
-            resourceInputs["datastores"] = args ? args.datastores : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["esxiHostsCount"] = args ? args.esxiHostsCount : undefined;
-            resourceInputs["esxiSoftwareVersion"] = args ? args.esxiSoftwareVersion : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hcxAction"] = args ? args.hcxAction : undefined;
-            resourceInputs["hcxVlanId"] = args ? args.hcxVlanId : undefined;
-            resourceInputs["initialConfigurations"] = args ? args.initialConfigurations : undefined;
-            resourceInputs["initialHostOcpuCount"] = args ? args.initialHostOcpuCount : undefined;
-            resourceInputs["initialHostShapeName"] = args ? args.initialHostShapeName : undefined;
-            resourceInputs["initialSku"] = args ? args.initialSku : undefined;
-            resourceInputs["instanceDisplayNamePrefix"] = args ? args.instanceDisplayNamePrefix : undefined;
-            resourceInputs["isHcxEnabled"] = args ? args.isHcxEnabled : undefined;
-            resourceInputs["isShieldedInstanceEnabled"] = args ? args.isShieldedInstanceEnabled : undefined;
-            resourceInputs["isSingleHostSddc"] = args ? args.isSingleHostSddc : undefined;
-            resourceInputs["nsxEdgeUplink1vlanId"] = args ? args.nsxEdgeUplink1vlanId : undefined;
-            resourceInputs["nsxEdgeUplink2vlanId"] = args ? args.nsxEdgeUplink2vlanId : undefined;
-            resourceInputs["nsxEdgeVtepVlanId"] = args ? args.nsxEdgeVtepVlanId : undefined;
-            resourceInputs["nsxVtepVlanId"] = args ? args.nsxVtepVlanId : undefined;
-            resourceInputs["provisioningSubnetId"] = args ? args.provisioningSubnetId : undefined;
-            resourceInputs["provisioningVlanId"] = args ? args.provisioningVlanId : undefined;
-            resourceInputs["refreshHcxLicenseStatus"] = args ? args.refreshHcxLicenseStatus : undefined;
-            resourceInputs["replicationVlanId"] = args ? args.replicationVlanId : undefined;
-            resourceInputs["reservingHcxOnPremiseLicenseKeys"] = args ? args.reservingHcxOnPremiseLicenseKeys : undefined;
-            resourceInputs["sshAuthorizedKeys"] = args ? args.sshAuthorizedKeys : undefined;
-            resourceInputs["vmotionVlanId"] = args ? args.vmotionVlanId : undefined;
-            resourceInputs["vmwareSoftwareVersion"] = args ? args.vmwareSoftwareVersion : undefined;
-            resourceInputs["vsanVlanId"] = args ? args.vsanVlanId : undefined;
-            resourceInputs["vsphereVlanId"] = args ? args.vsphereVlanId : undefined;
-            resourceInputs["workloadNetworkCidr"] = args ? args.workloadNetworkCidr : undefined;
+            resourceInputs["capacityReservationId"] = args?.capacityReservationId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
+            resourceInputs["datastores"] = args?.datastores;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["esxiHostsCount"] = args?.esxiHostsCount;
+            resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hcxAction"] = args?.hcxAction;
+            resourceInputs["hcxVlanId"] = args?.hcxVlanId;
+            resourceInputs["initialConfigurations"] = args?.initialConfigurations;
+            resourceInputs["initialHostOcpuCount"] = args?.initialHostOcpuCount;
+            resourceInputs["initialHostShapeName"] = args?.initialHostShapeName;
+            resourceInputs["initialSku"] = args?.initialSku;
+            resourceInputs["instanceDisplayNamePrefix"] = args?.instanceDisplayNamePrefix;
+            resourceInputs["isHcxEnabled"] = args?.isHcxEnabled;
+            resourceInputs["isShieldedInstanceEnabled"] = args?.isShieldedInstanceEnabled;
+            resourceInputs["isSingleHostSddc"] = args?.isSingleHostSddc;
+            resourceInputs["nsxEdgeUplink1vlanId"] = args?.nsxEdgeUplink1vlanId;
+            resourceInputs["nsxEdgeUplink2vlanId"] = args?.nsxEdgeUplink2vlanId;
+            resourceInputs["nsxEdgeVtepVlanId"] = args?.nsxEdgeVtepVlanId;
+            resourceInputs["nsxVtepVlanId"] = args?.nsxVtepVlanId;
+            resourceInputs["provisioningSubnetId"] = args?.provisioningSubnetId;
+            resourceInputs["provisioningVlanId"] = args?.provisioningVlanId;
+            resourceInputs["refreshHcxLicenseStatus"] = args?.refreshHcxLicenseStatus;
+            resourceInputs["replicationVlanId"] = args?.replicationVlanId;
+            resourceInputs["reservingHcxOnPremiseLicenseKeys"] = args?.reservingHcxOnPremiseLicenseKeys;
+            resourceInputs["sshAuthorizedKeys"] = args?.sshAuthorizedKeys;
+            resourceInputs["vmotionVlanId"] = args?.vmotionVlanId;
+            resourceInputs["vmwareSoftwareVersion"] = args?.vmwareSoftwareVersion;
+            resourceInputs["vsanVlanId"] = args?.vsanVlanId;
+            resourceInputs["vsphereVlanId"] = args?.vsphereVlanId;
+            resourceInputs["workloadNetworkCidr"] = args?.workloadNetworkCidr;
             resourceInputs["actualEsxiHostsCount"] = undefined /*out*/;
             resourceInputs["clustersCount"] = undefined /*out*/;
             resourceInputs["hcxFqdn"] = undefined /*out*/;

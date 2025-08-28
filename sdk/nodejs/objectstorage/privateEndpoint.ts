@@ -34,23 +34,23 @@ export class PrivateEndpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === PrivateEndpoint.__pulumiType;
     }
 
-    public readonly accessTargets!: pulumi.Output<outputs.ObjectStorage.PrivateEndpointAccessTarget[]>;
-    public readonly additionalPrefixes!: pulumi.Output<string[] | undefined>;
-    public readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly etag!: pulumi.Output<string>;
-    public readonly fqdns!: pulumi.Output<{[key: string]: {[key: string]: {[key: string]: string}}} | undefined>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly namespace!: pulumi.Output<string>;
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
-    public readonly prefix!: pulumi.Output<string>;
-    public readonly privateEndpointIp!: pulumi.Output<string>;
-    public readonly state!: pulumi.Output<string>;
-    public readonly subnetId!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    declare public readonly accessTargets: pulumi.Output<outputs.ObjectStorage.PrivateEndpointAccessTarget[]>;
+    declare public readonly additionalPrefixes: pulumi.Output<string[] | undefined>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly etag: pulumi.Output<string>;
+    declare public readonly fqdns: pulumi.Output<{[key: string]: {[key: string]: {[key: string]: string}}} | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
+    declare public readonly prefix: pulumi.Output<string>;
+    declare public readonly privateEndpointIp: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public /*out*/ readonly timeModified: pulumi.Output<string>;
 
     /**
      * Create a PrivateEndpoint resource with the given unique name, arguments, and options.
@@ -65,53 +65,53 @@ export class PrivateEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PrivateEndpointState | undefined;
-            resourceInputs["accessTargets"] = state ? state.accessTargets : undefined;
-            resourceInputs["additionalPrefixes"] = state ? state.additionalPrefixes : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["etag"] = state ? state.etag : undefined;
-            resourceInputs["fqdns"] = state ? state.fqdns : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["prefix"] = state ? state.prefix : undefined;
-            resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeModified"] = state ? state.timeModified : undefined;
+            resourceInputs["accessTargets"] = state?.accessTargets;
+            resourceInputs["additionalPrefixes"] = state?.additionalPrefixes;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["etag"] = state?.etag;
+            resourceInputs["fqdns"] = state?.fqdns;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["prefix"] = state?.prefix;
+            resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeModified"] = state?.timeModified;
         } else {
             const args = argsOrState as PrivateEndpointArgs | undefined;
-            if ((!args || args.accessTargets === undefined) && !opts.urn) {
+            if (args?.accessTargets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'accessTargets'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.prefix === undefined) && !opts.urn) {
+            if (args?.prefix === undefined && !opts.urn) {
                 throw new Error("Missing required property 'prefix'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["accessTargets"] = args ? args.accessTargets : undefined;
-            resourceInputs["additionalPrefixes"] = args ? args.additionalPrefixes : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["fqdns"] = args ? args.fqdns : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["prefix"] = args ? args.prefix : undefined;
-            resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["accessTargets"] = args?.accessTargets;
+            resourceInputs["additionalPrefixes"] = args?.additionalPrefixes;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["fqdns"] = args?.fqdns;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["prefix"] = args?.prefix;
+            resourceInputs["privateEndpointIp"] = args?.privateEndpointIp;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["etag"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

@@ -68,51 +68,51 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
     /**
      * The type for the network resource attached to the DRG.
      */
-    public readonly attachmentType!: pulumi.Output<string>;
+    declare public readonly attachmentType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    public readonly drgId!: pulumi.Output<string>;
+    declare public readonly drgId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */
-    public readonly drgRouteTableId!: pulumi.Output<string>;
+    declare public readonly drgRouteTableId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      */
-    public readonly exportDrgRouteDistributionId!: pulumi.Output<string>;
+    declare public readonly exportDrgRouteDistributionId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancy!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCrossTenancy: pulumi.Output<boolean>;
     /**
      * (Updatable)
      */
-    public readonly networkDetails!: pulumi.Output<outputs.Core.DrgAttachmentManagementNetworkDetails>;
+    declare public readonly networkDetails: pulumi.Output<outputs.Core.DrgAttachmentManagementNetworkDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
      */
-    public readonly networkId!: pulumi.Output<string | undefined>;
+    declare public readonly networkId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      */
-    public readonly removeExportDrgRouteDistributionTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly removeExportDrgRouteDistributionTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the route table the DRG attachment is using.
      *
@@ -120,19 +120,19 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
      * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
      * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    declare public readonly routeTableId: pulumi.Output<string>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a DrgAttachmentManagement resource with the given unique name, arguments, and options.
@@ -147,46 +147,46 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrgAttachmentManagementState | undefined;
-            resourceInputs["attachmentType"] = state ? state.attachmentType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drgId"] = state ? state.drgId : undefined;
-            resourceInputs["drgRouteTableId"] = state ? state.drgRouteTableId : undefined;
-            resourceInputs["exportDrgRouteDistributionId"] = state ? state.exportDrgRouteDistributionId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCrossTenancy"] = state ? state.isCrossTenancy : undefined;
-            resourceInputs["networkDetails"] = state ? state.networkDetails : undefined;
-            resourceInputs["networkId"] = state ? state.networkId : undefined;
-            resourceInputs["removeExportDrgRouteDistributionTrigger"] = state ? state.removeExportDrgRouteDistributionTrigger : undefined;
-            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["attachmentType"] = state?.attachmentType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["drgRouteTableId"] = state?.drgRouteTableId;
+            resourceInputs["exportDrgRouteDistributionId"] = state?.exportDrgRouteDistributionId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCrossTenancy"] = state?.isCrossTenancy;
+            resourceInputs["networkDetails"] = state?.networkDetails;
+            resourceInputs["networkId"] = state?.networkId;
+            resourceInputs["removeExportDrgRouteDistributionTrigger"] = state?.removeExportDrgRouteDistributionTrigger;
+            resourceInputs["routeTableId"] = state?.routeTableId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as DrgAttachmentManagementArgs | undefined;
-            if ((!args || args.attachmentType === undefined) && !opts.urn) {
+            if (args?.attachmentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attachmentType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.drgId === undefined) && !opts.urn) {
+            if (args?.drgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgId'");
             }
-            resourceInputs["attachmentType"] = args ? args.attachmentType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["drgId"] = args ? args.drgId : undefined;
-            resourceInputs["drgRouteTableId"] = args ? args.drgRouteTableId : undefined;
-            resourceInputs["exportDrgRouteDistributionId"] = args ? args.exportDrgRouteDistributionId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["networkDetails"] = args ? args.networkDetails : undefined;
-            resourceInputs["networkId"] = args ? args.networkId : undefined;
-            resourceInputs["removeExportDrgRouteDistributionTrigger"] = args ? args.removeExportDrgRouteDistributionTrigger : undefined;
-            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["attachmentType"] = args?.attachmentType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["drgRouteTableId"] = args?.drgRouteTableId;
+            resourceInputs["exportDrgRouteDistributionId"] = args?.exportDrgRouteDistributionId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["networkDetails"] = args?.networkDetails;
+            resourceInputs["networkId"] = args?.networkId;
+            resourceInputs["removeExportDrgRouteDistributionTrigger"] = args?.removeExportDrgRouteDistributionTrigger;
+            resourceInputs["routeTableId"] = args?.routeTableId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["isCrossTenancy"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

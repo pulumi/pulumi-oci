@@ -66,11 +66,11 @@ export class WorkRequestRerunManagement extends pulumi.CustomResource {
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
      */
-    public readonly managedInstances!: pulumi.Output<string[]>;
+    declare public readonly managedInstances: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.WorkRequestRerunManagementWorkRequestDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      *
@@ -78,7 +78,7 @@ export class WorkRequestRerunManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workRequestId!: pulumi.Output<string>;
+    declare public readonly workRequestId: pulumi.Output<string>;
 
     /**
      * Create a WorkRequestRerunManagement resource with the given unique name, arguments, and options.
@@ -93,17 +93,17 @@ export class WorkRequestRerunManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkRequestRerunManagementState | undefined;
-            resourceInputs["managedInstances"] = state ? state.managedInstances : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
+            resourceInputs["managedInstances"] = state?.managedInstances;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
+            resourceInputs["workRequestId"] = state?.workRequestId;
         } else {
             const args = argsOrState as WorkRequestRerunManagementArgs | undefined;
-            if ((!args || args.workRequestId === undefined) && !opts.urn) {
+            if (args?.workRequestId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workRequestId'");
             }
-            resourceInputs["managedInstances"] = args ? args.managedInstances : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
-            resourceInputs["workRequestId"] = args ? args.workRequestId : undefined;
+            resourceInputs["managedInstances"] = args?.managedInstances;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
+            resourceInputs["workRequestId"] = args?.workRequestId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(WorkRequestRerunManagement.__pulumiType, name, resourceInputs, opts);

@@ -68,11 +68,11 @@ export class AnnouncementSubscriptionsFilterGroup extends pulumi.CustomResource 
     /**
      * The OCID of the announcement subscription.
      */
-    public readonly announcementSubscriptionId!: pulumi.Output<string>;
+    declare public readonly announcementSubscriptionId: pulumi.Output<string>;
     /**
      * (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
      */
-    public readonly filters!: pulumi.Output<outputs.AnnouncementsService.AnnouncementSubscriptionsFilterGroupFilter[]>;
+    declare public readonly filters: pulumi.Output<outputs.AnnouncementsService.AnnouncementSubscriptionsFilterGroupFilter[]>;
     /**
      * The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      *
@@ -80,7 +80,7 @@ export class AnnouncementSubscriptionsFilterGroup extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a AnnouncementSubscriptionsFilterGroup resource with the given unique name, arguments, and options.
@@ -95,20 +95,20 @@ export class AnnouncementSubscriptionsFilterGroup extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnnouncementSubscriptionsFilterGroupState | undefined;
-            resourceInputs["announcementSubscriptionId"] = state ? state.announcementSubscriptionId : undefined;
-            resourceInputs["filters"] = state ? state.filters : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["announcementSubscriptionId"] = state?.announcementSubscriptionId;
+            resourceInputs["filters"] = state?.filters;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as AnnouncementSubscriptionsFilterGroupArgs | undefined;
-            if ((!args || args.announcementSubscriptionId === undefined) && !opts.urn) {
+            if (args?.announcementSubscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'announcementSubscriptionId'");
             }
-            if ((!args || args.filters === undefined) && !opts.urn) {
+            if (args?.filters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filters'");
             }
-            resourceInputs["announcementSubscriptionId"] = args ? args.announcementSubscriptionId : undefined;
-            resourceInputs["filters"] = args ? args.filters : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["announcementSubscriptionId"] = args?.announcementSubscriptionId;
+            resourceInputs["filters"] = args?.filters;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AnnouncementSubscriptionsFilterGroup.__pulumiType, name, resourceInputs, opts);

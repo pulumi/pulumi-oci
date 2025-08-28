@@ -70,87 +70,87 @@ export class AwrHubSource extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    public readonly associatedOpsiId!: pulumi.Output<string>;
+    declare public readonly associatedOpsiId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    public readonly associatedResourceId!: pulumi.Output<string>;
+    declare public readonly associatedResourceId: pulumi.Output<string>;
     /**
      * AWR Hub OCID
      */
-    public readonly awrHubId!: pulumi.Output<string>;
+    declare public readonly awrHubId: pulumi.Output<string>;
     /**
      * The shorted string of the Awr Hub source database identifier.
      */
-    public /*out*/ readonly awrHubOpsiSourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly awrHubOpsiSourceId: pulumi.Output<string>;
     /**
      * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      */
-    public /*out*/ readonly awrSourceDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly awrSourceDatabaseId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Number of hours since last AWR snapshots import happened from the Source database.
      */
-    public /*out*/ readonly hoursSinceLastImport!: pulumi.Output<number>;
+    declare public /*out*/ readonly hoursSinceLastImport: pulumi.Output<number>;
     /**
      * This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
      */
-    public /*out*/ readonly isRegisteredWithAwrHub!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRegisteredWithAwrHub: pulumi.Output<boolean>;
     /**
      * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      */
-    public /*out*/ readonly maxSnapshotIdentifier!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxSnapshotIdentifier: pulumi.Output<number>;
     /**
      * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      */
-    public /*out*/ readonly minSnapshotIdentifier!: pulumi.Output<number>;
+    declare public /*out*/ readonly minSnapshotIdentifier: pulumi.Output<number>;
     /**
      * The name of the Awr Hub source database.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
      */
-    public /*out*/ readonly sourceMailBoxUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceMailBoxUrl: pulumi.Output<string>;
     /**
      * the current state of the source database
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Indicates the status of a source database in Operations Insights
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeFirstSnapshotGenerated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFirstSnapshotGenerated: pulumi.Output<string>;
     /**
      * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeLastSnapshotGenerated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSnapshotGenerated: pulumi.Output<string>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) source type of the database
      *
@@ -158,7 +158,7 @@ export class AwrHubSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a AwrHubSource resource with the given unique name, arguments, and options.
@@ -173,47 +173,47 @@ export class AwrHubSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwrHubSourceState | undefined;
-            resourceInputs["associatedOpsiId"] = state ? state.associatedOpsiId : undefined;
-            resourceInputs["associatedResourceId"] = state ? state.associatedResourceId : undefined;
-            resourceInputs["awrHubId"] = state ? state.awrHubId : undefined;
-            resourceInputs["awrHubOpsiSourceId"] = state ? state.awrHubOpsiSourceId : undefined;
-            resourceInputs["awrSourceDatabaseId"] = state ? state.awrSourceDatabaseId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hoursSinceLastImport"] = state ? state.hoursSinceLastImport : undefined;
-            resourceInputs["isRegisteredWithAwrHub"] = state ? state.isRegisteredWithAwrHub : undefined;
-            resourceInputs["maxSnapshotIdentifier"] = state ? state.maxSnapshotIdentifier : undefined;
-            resourceInputs["minSnapshotIdentifier"] = state ? state.minSnapshotIdentifier : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["sourceMailBoxUrl"] = state ? state.sourceMailBoxUrl : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeFirstSnapshotGenerated"] = state ? state.timeFirstSnapshotGenerated : undefined;
-            resourceInputs["timeLastSnapshotGenerated"] = state ? state.timeLastSnapshotGenerated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["associatedOpsiId"] = state?.associatedOpsiId;
+            resourceInputs["associatedResourceId"] = state?.associatedResourceId;
+            resourceInputs["awrHubId"] = state?.awrHubId;
+            resourceInputs["awrHubOpsiSourceId"] = state?.awrHubOpsiSourceId;
+            resourceInputs["awrSourceDatabaseId"] = state?.awrSourceDatabaseId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hoursSinceLastImport"] = state?.hoursSinceLastImport;
+            resourceInputs["isRegisteredWithAwrHub"] = state?.isRegisteredWithAwrHub;
+            resourceInputs["maxSnapshotIdentifier"] = state?.maxSnapshotIdentifier;
+            resourceInputs["minSnapshotIdentifier"] = state?.minSnapshotIdentifier;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["sourceMailBoxUrl"] = state?.sourceMailBoxUrl;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeFirstSnapshotGenerated"] = state?.timeFirstSnapshotGenerated;
+            resourceInputs["timeLastSnapshotGenerated"] = state?.timeLastSnapshotGenerated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as AwrHubSourceArgs | undefined;
-            if ((!args || args.awrHubId === undefined) && !opts.urn) {
+            if (args?.awrHubId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'awrHubId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["associatedOpsiId"] = args ? args.associatedOpsiId : undefined;
-            resourceInputs["associatedResourceId"] = args ? args.associatedResourceId : undefined;
-            resourceInputs["awrHubId"] = args ? args.awrHubId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["associatedOpsiId"] = args?.associatedOpsiId;
+            resourceInputs["associatedResourceId"] = args?.associatedResourceId;
+            resourceInputs["awrHubId"] = args?.awrHubId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
             resourceInputs["awrHubOpsiSourceId"] = undefined /*out*/;
             resourceInputs["awrSourceDatabaseId"] = undefined /*out*/;
             resourceInputs["hoursSinceLastImport"] = undefined /*out*/;

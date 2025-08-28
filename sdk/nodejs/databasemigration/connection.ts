@@ -94,163 +94,163 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) An array of name-value pair attribute entries.
      */
-    public readonly additionalAttributes!: pulumi.Output<outputs.DatabaseMigration.ConnectionAdditionalAttribute[]>;
+    declare public readonly additionalAttributes: pulumi.Output<outputs.DatabaseMigration.ConnectionAdditionalAttribute[]>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    declare public readonly connectionString: pulumi.Output<string>;
     /**
      * (Updatable) Defines the type of connection. For example, ORACLE.
      */
-    public readonly connectionType!: pulumi.Output<string>;
+    declare public readonly connectionType: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the database being referenced.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * (Updatable) The name of the database being referenced.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the database system being referenced.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The IP Address of the host.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * List of ingress IP addresses from where to connect to this connection's privateIp.
      */
-    public /*out*/ readonly ingressIps!: pulumi.Output<outputs.DatabaseMigration.ConnectionIngressIp[]>;
+    declare public /*out*/ readonly ingressIps: pulumi.Output<outputs.DatabaseMigration.ConnectionIngressIp[]>;
     /**
      * (Updatable) The OCID of the key used in cryptographic operations.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * (Updatable) The port to be used for the connection.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The OCID of the resource being referenced.
      */
-    public /*out*/ readonly privateEndpointId!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpointId: pulumi.Output<string>;
     /**
      * (Updatable) The password (credential) used when creating or updating this resource.
      */
-    public readonly replicationPassword!: pulumi.Output<string>;
+    declare public readonly replicationPassword: pulumi.Output<string>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    public readonly replicationUsername!: pulumi.Output<string>;
+    declare public readonly replicationUsername: pulumi.Output<string>;
     /**
      * The OCID of the resource being referenced.
      */
-    public /*out*/ readonly secretId!: pulumi.Output<string>;
+    declare public /*out*/ readonly secretId: pulumi.Output<string>;
     /**
      * (Updatable) Security Type for MySQL.
      */
-    public readonly securityProtocol!: pulumi.Output<string>;
+    declare public readonly securityProtocol: pulumi.Output<string>;
     /**
      * (Updatable) Name of the host the SSH key is valid for.
      */
-    public readonly sshHost!: pulumi.Output<string>;
+    declare public readonly sshHost: pulumi.Output<string>;
     /**
      * (Updatable) Private SSH key string.
      */
-    public readonly sshKey!: pulumi.Output<string>;
+    declare public readonly sshKey: pulumi.Output<string>;
     /**
      * (Updatable) Sudo location
      */
-    public readonly sshSudoLocation!: pulumi.Output<string>;
+    declare public readonly sshSudoLocation: pulumi.Output<string>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    public readonly sshUser!: pulumi.Output<string>;
+    declare public readonly sshUser: pulumi.Output<string>;
     /**
      * (Updatable) Database Certificate - The base64 encoded content of mysql.pem file containing the server public key (for 1 and 2-way SSL).
      */
-    public readonly sslCa!: pulumi.Output<string>;
+    declare public readonly sslCa: pulumi.Output<string>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      */
-    public readonly sslCert!: pulumi.Output<string>;
+    declare public readonly sslCert: pulumi.Output<string>;
     /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
-    public readonly sslCrl!: pulumi.Output<string>;
+    declare public readonly sslCrl: pulumi.Output<string>;
     /**
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      */
-    public readonly sslKey!: pulumi.Output<string>;
+    declare public readonly sslKey: pulumi.Output<string>;
     /**
      * (Updatable) SSL modes for MySQL.
      */
-    public readonly sslMode!: pulumi.Output<string>;
+    declare public readonly sslMode: pulumi.Output<string>;
     /**
      * The Connection's current lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure resource ID.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
      */
-    public readonly technologyType!: pulumi.Output<string>;
+    declare public readonly technologyType: pulumi.Output<string>;
     /**
      * The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The username (credential) used when creating or updating this resource.
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure resource ID.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * (Updatable) The wallet contents used to make connections to a database.  This attribute is expected to be base64 encoded.
      *
@@ -258,7 +258,7 @@ export class Connection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly wallet!: pulumi.Output<string>;
+    declare public readonly wallet: pulumi.Output<string>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.
@@ -273,106 +273,106 @@ export class Connection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionState | undefined;
-            resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["connectionType"] = state ? state.connectionType : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["privateEndpointId"] = state ? state.privateEndpointId : undefined;
-            resourceInputs["replicationPassword"] = state ? state.replicationPassword : undefined;
-            resourceInputs["replicationUsername"] = state ? state.replicationUsername : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
-            resourceInputs["sshHost"] = state ? state.sshHost : undefined;
-            resourceInputs["sshKey"] = state ? state.sshKey : undefined;
-            resourceInputs["sshSudoLocation"] = state ? state.sshSudoLocation : undefined;
-            resourceInputs["sshUser"] = state ? state.sshUser : undefined;
-            resourceInputs["sslCa"] = state ? state.sslCa : undefined;
-            resourceInputs["sslCert"] = state ? state.sslCert : undefined;
-            resourceInputs["sslCrl"] = state ? state.sslCrl : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["sslMode"] = state ? state.sslMode : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["technologyType"] = state ? state.technologyType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["wallet"] = state ? state.wallet : undefined;
+            resourceInputs["additionalAttributes"] = state?.additionalAttributes;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["connectionType"] = state?.connectionType;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["ingressIps"] = state?.ingressIps;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["privateEndpointId"] = state?.privateEndpointId;
+            resourceInputs["replicationPassword"] = state?.replicationPassword;
+            resourceInputs["replicationUsername"] = state?.replicationUsername;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["securityProtocol"] = state?.securityProtocol;
+            resourceInputs["sshHost"] = state?.sshHost;
+            resourceInputs["sshKey"] = state?.sshKey;
+            resourceInputs["sshSudoLocation"] = state?.sshSudoLocation;
+            resourceInputs["sshUser"] = state?.sshUser;
+            resourceInputs["sslCa"] = state?.sslCa;
+            resourceInputs["sslCert"] = state?.sslCert;
+            resourceInputs["sslCrl"] = state?.sslCrl;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["sslMode"] = state?.sslMode;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["technologyType"] = state?.technologyType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["wallet"] = state?.wallet;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.connectionType === undefined) && !opts.urn) {
+            if (args?.connectionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionType'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.technologyType === undefined) && !opts.urn) {
+            if (args?.technologyType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'technologyType'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            if ((!args || args.vaultId === undefined) && !opts.urn) {
+            if (args?.vaultId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vaultId'");
             }
-            resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionString"] = args ? args.connectionString : undefined;
-            resourceInputs["connectionType"] = args ? args.connectionType : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionString"] = args?.connectionString;
+            resourceInputs["connectionType"] = args?.connectionType;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
+            resourceInputs["port"] = args?.port;
             resourceInputs["replicationPassword"] = args?.replicationPassword ? pulumi.secret(args.replicationPassword) : undefined;
-            resourceInputs["replicationUsername"] = args ? args.replicationUsername : undefined;
-            resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
-            resourceInputs["sshHost"] = args ? args.sshHost : undefined;
-            resourceInputs["sshKey"] = args ? args.sshKey : undefined;
-            resourceInputs["sshSudoLocation"] = args ? args.sshSudoLocation : undefined;
-            resourceInputs["sshUser"] = args ? args.sshUser : undefined;
-            resourceInputs["sslCa"] = args ? args.sslCa : undefined;
-            resourceInputs["sslCert"] = args ? args.sslCert : undefined;
-            resourceInputs["sslCrl"] = args ? args.sslCrl : undefined;
-            resourceInputs["sslKey"] = args ? args.sslKey : undefined;
-            resourceInputs["sslMode"] = args ? args.sslMode : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["technologyType"] = args ? args.technologyType : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
-            resourceInputs["wallet"] = args ? args.wallet : undefined;
+            resourceInputs["replicationUsername"] = args?.replicationUsername;
+            resourceInputs["securityProtocol"] = args?.securityProtocol;
+            resourceInputs["sshHost"] = args?.sshHost;
+            resourceInputs["sshKey"] = args?.sshKey;
+            resourceInputs["sshSudoLocation"] = args?.sshSudoLocation;
+            resourceInputs["sshUser"] = args?.sshUser;
+            resourceInputs["sslCa"] = args?.sslCa;
+            resourceInputs["sslCert"] = args?.sslCert;
+            resourceInputs["sslCrl"] = args?.sslCrl;
+            resourceInputs["sslKey"] = args?.sslKey;
+            resourceInputs["sslMode"] = args?.sslMode;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["technologyType"] = args?.technologyType;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["vaultId"] = args?.vaultId;
+            resourceInputs["wallet"] = args?.wallet;
             resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateEndpointId"] = undefined /*out*/;

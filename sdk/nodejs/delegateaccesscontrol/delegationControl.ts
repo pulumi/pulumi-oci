@@ -77,83 +77,83 @@ export class DelegationControl extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains this Delegation Control.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) List of Delegation Subscription OCID that are allowed for this Delegation Control. The allowed subscriptions will determine the available Service Provider Actions. Only support operators for the allowed subscriptions are allowed to create Delegated Resource Access Request.
      */
-    public readonly delegationSubscriptionIds!: pulumi.Output<string[]>;
+    declare public readonly delegationSubscriptionIds: pulumi.Output<string[]>;
     /**
      * (Updatable) Description of the Delegation Control.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Name of the Delegation Control. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
      */
-    public readonly isAutoApproveDuringMaintenance!: pulumi.Output<boolean>;
+    declare public readonly isAutoApproveDuringMaintenance: pulumi.Output<boolean>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * (Updatable) The format of the Oracle Cloud Infrastructure Notification messages for this Delegation Control.
      */
-    public readonly notificationMessageFormat!: pulumi.Output<string>;
+    declare public readonly notificationMessageFormat: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
      */
-    public readonly notificationTopicId!: pulumi.Output<string>;
+    declare public readonly notificationTopicId: pulumi.Output<string>;
     /**
      * (Updatable) number of approvals required.
      */
-    public readonly numApprovalsRequired!: pulumi.Output<number>;
+    declare public readonly numApprovalsRequired: pulumi.Output<number>;
     /**
      * (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
      */
-    public readonly preApprovedServiceProviderActionNames!: pulumi.Output<string[]>;
+    declare public readonly preApprovedServiceProviderActionNames: pulumi.Output<string[]>;
     /**
      * (Updatable) The OCID of the selected resources that this Delegation Control is applicable to.
      */
-    public readonly resourceIds!: pulumi.Output<string[]>;
+    declare public readonly resourceIds: pulumi.Output<string[]>;
     /**
      * Resource type for which the Delegation Control is applicable to.
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Delegation Control.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
      */
-    public /*out*/ readonly timeDeleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDeleted: pulumi.Output<string>;
     /**
      * Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
      *
@@ -161,7 +161,7 @@ export class DelegationControl extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vaultKeyId!: pulumi.Output<string>;
+    declare public readonly vaultKeyId: pulumi.Output<string>;
 
     /**
      * Create a DelegationControl resource with the given unique name, arguments, and options.
@@ -176,65 +176,65 @@ export class DelegationControl extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DelegationControlState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["delegationSubscriptionIds"] = state ? state.delegationSubscriptionIds : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoApproveDuringMaintenance"] = state ? state.isAutoApproveDuringMaintenance : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["notificationMessageFormat"] = state ? state.notificationMessageFormat : undefined;
-            resourceInputs["notificationTopicId"] = state ? state.notificationTopicId : undefined;
-            resourceInputs["numApprovalsRequired"] = state ? state.numApprovalsRequired : undefined;
-            resourceInputs["preApprovedServiceProviderActionNames"] = state ? state.preApprovedServiceProviderActionNames : undefined;
-            resourceInputs["resourceIds"] = state ? state.resourceIds : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDeleted"] = state ? state.timeDeleted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["vaultKeyId"] = state ? state.vaultKeyId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["delegationSubscriptionIds"] = state?.delegationSubscriptionIds;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoApproveDuringMaintenance"] = state?.isAutoApproveDuringMaintenance;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["notificationMessageFormat"] = state?.notificationMessageFormat;
+            resourceInputs["notificationTopicId"] = state?.notificationTopicId;
+            resourceInputs["numApprovalsRequired"] = state?.numApprovalsRequired;
+            resourceInputs["preApprovedServiceProviderActionNames"] = state?.preApprovedServiceProviderActionNames;
+            resourceInputs["resourceIds"] = state?.resourceIds;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDeleted"] = state?.timeDeleted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["vaultKeyId"] = state?.vaultKeyId;
         } else {
             const args = argsOrState as DelegationControlArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.delegationSubscriptionIds === undefined) && !opts.urn) {
+            if (args?.delegationSubscriptionIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'delegationSubscriptionIds'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.notificationMessageFormat === undefined) && !opts.urn) {
+            if (args?.notificationMessageFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationMessageFormat'");
             }
-            if ((!args || args.notificationTopicId === undefined) && !opts.urn) {
+            if (args?.notificationTopicId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationTopicId'");
             }
-            if ((!args || args.resourceIds === undefined) && !opts.urn) {
+            if (args?.resourceIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceIds'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["delegationSubscriptionIds"] = args ? args.delegationSubscriptionIds : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoApproveDuringMaintenance"] = args ? args.isAutoApproveDuringMaintenance : undefined;
-            resourceInputs["notificationMessageFormat"] = args ? args.notificationMessageFormat : undefined;
-            resourceInputs["notificationTopicId"] = args ? args.notificationTopicId : undefined;
-            resourceInputs["numApprovalsRequired"] = args ? args.numApprovalsRequired : undefined;
-            resourceInputs["preApprovedServiceProviderActionNames"] = args ? args.preApprovedServiceProviderActionNames : undefined;
-            resourceInputs["resourceIds"] = args ? args.resourceIds : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
-            resourceInputs["vaultKeyId"] = args ? args.vaultKeyId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["delegationSubscriptionIds"] = args?.delegationSubscriptionIds;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoApproveDuringMaintenance"] = args?.isAutoApproveDuringMaintenance;
+            resourceInputs["notificationMessageFormat"] = args?.notificationMessageFormat;
+            resourceInputs["notificationTopicId"] = args?.notificationTopicId;
+            resourceInputs["numApprovalsRequired"] = args?.numApprovalsRequired;
+            resourceInputs["preApprovedServiceProviderActionNames"] = args?.preApprovedServiceProviderActionNames;
+            resourceInputs["resourceIds"] = args?.resourceIds;
+            resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["vaultId"] = args?.vaultId;
+            resourceInputs["vaultKeyId"] = args?.vaultKeyId;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

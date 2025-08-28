@@ -40,15 +40,15 @@ export class ShapeManagement extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the image.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the Image to which the shape should be added.
      */
-    public readonly imageId!: pulumi.Output<string>;
+    declare public readonly imageId: pulumi.Output<string>;
     /**
      * The compatible shape that is to be added to the compatible shapes list for the image.
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
 
     /**
      * Create a ShapeManagement resource with the given unique name, arguments, and options.
@@ -63,23 +63,23 @@ export class ShapeManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ShapeManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["imageId"] = state ? state.imageId : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["imageId"] = state?.imageId;
+            resourceInputs["shapeName"] = state?.shapeName;
         } else {
             const args = argsOrState as ShapeManagementArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.imageId === undefined) && !opts.urn) {
+            if (args?.imageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'imageId'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["imageId"] = args ? args.imageId : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["imageId"] = args?.imageId;
+            resourceInputs["shapeName"] = args?.shapeName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ShapeManagement.__pulumiType, name, resourceInputs, opts);

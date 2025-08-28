@@ -62,49 +62,49 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     /**
      * Additional properties for the route, computed by the service.
      */
-    public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly attributes: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      *
      * Potential values:
      * * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
-    public readonly destination!: pulumi.Output<string>;
+    declare public readonly destination: pulumi.Output<string>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
      * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
      */
-    public readonly destinationType!: pulumi.Output<string>;
+    declare public readonly destinationType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      *
      * Potential values:
      * * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
      */
-    public readonly drgRouteTableId!: pulumi.Output<string>;
+    declare public readonly drgRouteTableId: pulumi.Output<string>;
     /**
      * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      */
-    public /*out*/ readonly isBlackhole!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isBlackhole: pulumi.Output<boolean>;
     /**
      * Indicates that the route was not imported due to a conflict between route rules.
      */
-    public /*out*/ readonly isConflict!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isConflict: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly nextHopDrgAttachmentId!: pulumi.Output<string>;
+    declare public readonly nextHopDrgAttachmentId: pulumi.Output<string>;
     /**
      * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      */
-    public /*out*/ readonly routeProvenance!: pulumi.Output<string>;
+    declare public /*out*/ readonly routeProvenance: pulumi.Output<string>;
     /**
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      */
-    public /*out*/ readonly routeType!: pulumi.Output<string>;
+    declare public /*out*/ readonly routeType: pulumi.Output<string>;
 
     /**
      * Create a DrgRouteTableRouteRule resource with the given unique name, arguments, and options.
@@ -119,33 +119,33 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrgRouteTableRouteRuleState | undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["destination"] = state ? state.destination : undefined;
-            resourceInputs["destinationType"] = state ? state.destinationType : undefined;
-            resourceInputs["drgRouteTableId"] = state ? state.drgRouteTableId : undefined;
-            resourceInputs["isBlackhole"] = state ? state.isBlackhole : undefined;
-            resourceInputs["isConflict"] = state ? state.isConflict : undefined;
-            resourceInputs["nextHopDrgAttachmentId"] = state ? state.nextHopDrgAttachmentId : undefined;
-            resourceInputs["routeProvenance"] = state ? state.routeProvenance : undefined;
-            resourceInputs["routeType"] = state ? state.routeType : undefined;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["destination"] = state?.destination;
+            resourceInputs["destinationType"] = state?.destinationType;
+            resourceInputs["drgRouteTableId"] = state?.drgRouteTableId;
+            resourceInputs["isBlackhole"] = state?.isBlackhole;
+            resourceInputs["isConflict"] = state?.isConflict;
+            resourceInputs["nextHopDrgAttachmentId"] = state?.nextHopDrgAttachmentId;
+            resourceInputs["routeProvenance"] = state?.routeProvenance;
+            resourceInputs["routeType"] = state?.routeType;
         } else {
             const args = argsOrState as DrgRouteTableRouteRuleArgs | undefined;
-            if ((!args || args.destination === undefined) && !opts.urn) {
+            if (args?.destination === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destination'");
             }
-            if ((!args || args.destinationType === undefined) && !opts.urn) {
+            if (args?.destinationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationType'");
             }
-            if ((!args || args.drgRouteTableId === undefined) && !opts.urn) {
+            if (args?.drgRouteTableId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgRouteTableId'");
             }
-            if ((!args || args.nextHopDrgAttachmentId === undefined) && !opts.urn) {
+            if (args?.nextHopDrgAttachmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nextHopDrgAttachmentId'");
             }
-            resourceInputs["destination"] = args ? args.destination : undefined;
-            resourceInputs["destinationType"] = args ? args.destinationType : undefined;
-            resourceInputs["drgRouteTableId"] = args ? args.drgRouteTableId : undefined;
-            resourceInputs["nextHopDrgAttachmentId"] = args ? args.nextHopDrgAttachmentId : undefined;
+            resourceInputs["destination"] = args?.destination;
+            resourceInputs["destinationType"] = args?.destinationType;
+            resourceInputs["drgRouteTableId"] = args?.drgRouteTableId;
+            resourceInputs["nextHopDrgAttachmentId"] = args?.nextHopDrgAttachmentId;
             resourceInputs["attributes"] = undefined /*out*/;
             resourceInputs["isBlackhole"] = undefined /*out*/;
             resourceInputs["isConflict"] = undefined /*out*/;

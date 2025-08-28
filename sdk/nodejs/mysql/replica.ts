@@ -76,95 +76,95 @@ export class Replica extends pulumi.CustomResource {
     /**
      * The name of the Availability Domain the read replica is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The OCID of the compartment that contains the read replica.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the Configuration to be used by the read replica.
      */
-    public /*out*/ readonly configurationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly configurationId: pulumi.Output<string>;
     /**
      * The OCID of the DB System the read replica is associated with.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User provided description of the read replica.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Encrypt data details.
      */
-    public /*out*/ readonly encryptDatas!: pulumi.Output<outputs.Mysql.ReplicaEncryptData[]>;
+    declare public /*out*/ readonly encryptDatas: pulumi.Output<outputs.Mysql.ReplicaEncryptData[]>;
     /**
      * The name of the Fault Domain the read replica is located in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The IP address the read replica is configured to listen on.
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipAddress: pulumi.Output<string>;
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */
-    public readonly isDeleteProtected!: pulumi.Output<boolean>;
+    declare public readonly isDeleteProtected: pulumi.Output<boolean>;
     /**
      * A message describing the state of the read replica.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The MySQL version to be used by the read replica.
      */
-    public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly mysqlVersion: pulumi.Output<string>;
     /**
      * Network Security Group OCIDs used for the VNIC attachment.
      */
-    public /*out*/ readonly nsgIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly nsgIds: pulumi.Output<string[]>;
     /**
      * The port the read replica is configured to listen on.
      */
-    public /*out*/ readonly port!: pulumi.Output<number>;
+    declare public /*out*/ readonly port: pulumi.Output<number>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    public /*out*/ readonly portX!: pulumi.Output<number>;
+    declare public /*out*/ readonly portX: pulumi.Output<number>;
     /**
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
      */
-    public readonly replicaOverrides!: pulumi.Output<outputs.Mysql.ReplicaReplicaOverrides>;
+    declare public readonly replicaOverrides: pulumi.Output<outputs.Mysql.ReplicaReplicaOverrides>;
     /**
      * Secure connection configuration details.
      */
-    public /*out*/ readonly secureConnections!: pulumi.Output<outputs.Mysql.ReplicaSecureConnection[]>;
+    declare public /*out*/ readonly secureConnections: pulumi.Output<outputs.Mysql.ReplicaSecureConnection[]>;
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
-    public /*out*/ readonly shapeName!: pulumi.Output<string>;
+    declare public /*out*/ readonly shapeName: pulumi.Output<string>;
     /**
      * The state of the read replica.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Replica resource with the given unique name, arguments, and options.
@@ -179,41 +179,41 @@ export class Replica extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ReplicaState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurationId"] = state ? state.configurationId : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encryptDatas"] = state ? state.encryptDatas : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["isDeleteProtected"] = state ? state.isDeleteProtected : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["portX"] = state ? state.portX : undefined;
-            resourceInputs["replicaOverrides"] = state ? state.replicaOverrides : undefined;
-            resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurationId"] = state?.configurationId;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encryptDatas"] = state?.encryptDatas;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["isDeleteProtected"] = state?.isDeleteProtected;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["mysqlVersion"] = state?.mysqlVersion;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["portX"] = state?.portX;
+            resourceInputs["replicaOverrides"] = state?.replicaOverrides;
+            resourceInputs["secureConnections"] = state?.secureConnections;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ReplicaArgs | undefined;
-            if ((!args || args.dbSystemId === undefined) && !opts.urn) {
+            if (args?.dbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbSystemId'");
             }
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isDeleteProtected"] = args ? args.isDeleteProtected : undefined;
-            resourceInputs["replicaOverrides"] = args ? args.replicaOverrides : undefined;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isDeleteProtected"] = args?.isDeleteProtected;
+            resourceInputs["replicaOverrides"] = args?.replicaOverrides;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["configurationId"] = undefined /*out*/;

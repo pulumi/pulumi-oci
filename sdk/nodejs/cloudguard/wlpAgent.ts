@@ -69,33 +69,33 @@ export class WlpAgent extends pulumi.CustomResource {
     /**
      * The version of the agent making the request
      */
-    public readonly agentVersion!: pulumi.Output<string>;
+    declare public readonly agentVersion: pulumi.Output<string>;
     /**
      * The certificate ID returned by Oracle Cloud Infrastructure certificates service
      */
-    public /*out*/ readonly certificateId!: pulumi.Output<string>;
+    declare public /*out*/ readonly certificateId: pulumi.Output<string>;
     /**
      * (Updatable) The certificate signed request containing domain, organization names, organization units, city, state, country, email and public key, among other certificate details, signed by private key
      */
-    public readonly certificateSignedRequest!: pulumi.Output<string>;
+    declare public readonly certificateSignedRequest: pulumi.Output<string>;
     /**
      * Compartment OCID of the host
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * OCID for instance in which WlpAgent is installed
      */
-    public /*out*/ readonly hostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostId: pulumi.Output<string>;
     /**
      * Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
      *
@@ -103,23 +103,23 @@ export class WlpAgent extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly osInfo!: pulumi.Output<string>;
+    declare public readonly osInfo: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * TenantId of the host
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The date and time the WlpAgent was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the WlpAgent was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a WlpAgent resource with the given unique name, arguments, and options.
@@ -134,38 +134,38 @@ export class WlpAgent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WlpAgentState | undefined;
-            resourceInputs["agentVersion"] = state ? state.agentVersion : undefined;
-            resourceInputs["certificateId"] = state ? state.certificateId : undefined;
-            resourceInputs["certificateSignedRequest"] = state ? state.certificateSignedRequest : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["osInfo"] = state ? state.osInfo : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["agentVersion"] = state?.agentVersion;
+            resourceInputs["certificateId"] = state?.certificateId;
+            resourceInputs["certificateSignedRequest"] = state?.certificateSignedRequest;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["osInfo"] = state?.osInfo;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as WlpAgentArgs | undefined;
-            if ((!args || args.agentVersion === undefined) && !opts.urn) {
+            if (args?.agentVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentVersion'");
             }
-            if ((!args || args.certificateSignedRequest === undefined) && !opts.urn) {
+            if (args?.certificateSignedRequest === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateSignedRequest'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.osInfo === undefined) && !opts.urn) {
+            if (args?.osInfo === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osInfo'");
             }
-            resourceInputs["agentVersion"] = args ? args.agentVersion : undefined;
-            resourceInputs["certificateSignedRequest"] = args ? args.certificateSignedRequest : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["osInfo"] = args ? args.osInfo : undefined;
+            resourceInputs["agentVersion"] = args?.agentVersion;
+            resourceInputs["certificateSignedRequest"] = args?.certificateSignedRequest;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["osInfo"] = args?.osInfo;
             resourceInputs["certificateId"] = undefined /*out*/;
             resourceInputs["hostId"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

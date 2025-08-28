@@ -57,43 +57,43 @@ export class FleetProperty extends pulumi.CustomResource {
     /**
      * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      */
-    public /*out*/ readonly allowedValues!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly allowedValues: pulumi.Output<string[]>;
     /**
      * Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Unique Fleet identifier.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * OCID referring to global level metadata property.
      */
-    public readonly propertyId!: pulumi.Output<string>;
+    declare public readonly propertyId: pulumi.Output<string>;
     /**
      * Text selection of the property.
      */
-    public /*out*/ readonly selectionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly selectionType: pulumi.Output<string>;
     /**
      * The current state of the FleetProperty.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Value of the Property.
      *
@@ -101,11 +101,11 @@ export class FleetProperty extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
     /**
      * Format of the value.
      */
-    public /*out*/ readonly valueType!: pulumi.Output<string>;
+    declare public /*out*/ readonly valueType: pulumi.Output<string>;
 
     /**
      * Create a FleetProperty resource with the given unique name, arguments, and options.
@@ -120,36 +120,36 @@ export class FleetProperty extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetPropertyState | undefined;
-            resourceInputs["allowedValues"] = state ? state.allowedValues : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["propertyId"] = state ? state.propertyId : undefined;
-            resourceInputs["selectionType"] = state ? state.selectionType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
-            resourceInputs["valueType"] = state ? state.valueType : undefined;
+            resourceInputs["allowedValues"] = state?.allowedValues;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["propertyId"] = state?.propertyId;
+            resourceInputs["selectionType"] = state?.selectionType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["value"] = state?.value;
+            resourceInputs["valueType"] = state?.valueType;
         } else {
             const args = argsOrState as FleetPropertyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.fleetId === undefined) && !opts.urn) {
+            if (args?.fleetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fleetId'");
             }
-            if ((!args || args.propertyId === undefined) && !opts.urn) {
+            if (args?.propertyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'propertyId'");
             }
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["propertyId"] = args ? args.propertyId : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["propertyId"] = args?.propertyId;
+            resourceInputs["value"] = args?.value;
             resourceInputs["allowedValues"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["selectionType"] = undefined /*out*/;

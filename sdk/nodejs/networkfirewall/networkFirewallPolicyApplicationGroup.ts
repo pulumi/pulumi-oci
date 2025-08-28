@@ -61,11 +61,11 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
     /**
      * (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
      */
-    public readonly apps!: pulumi.Output<string[]>;
+    declare public readonly apps: pulumi.Output<string[]>;
     /**
      * Name of the application group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      *
@@ -73,15 +73,15 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this application group belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Count of total applications in the given application group.
      */
-    public /*out*/ readonly totalApps!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalApps: pulumi.Output<number>;
 
     /**
      * Create a NetworkFirewallPolicyApplicationGroup resource with the given unique name, arguments, and options.
@@ -96,22 +96,22 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyApplicationGroupState | undefined;
-            resourceInputs["apps"] = state ? state.apps : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["totalApps"] = state ? state.totalApps : undefined;
+            resourceInputs["apps"] = state?.apps;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["totalApps"] = state?.totalApps;
         } else {
             const args = argsOrState as NetworkFirewallPolicyApplicationGroupArgs | undefined;
-            if ((!args || args.apps === undefined) && !opts.urn) {
+            if (args?.apps === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apps'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            resourceInputs["apps"] = args ? args.apps : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
+            resourceInputs["apps"] = args?.apps;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["totalApps"] = undefined /*out*/;
         }

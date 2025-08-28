@@ -91,127 +91,127 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
     /**
      * (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      */
-    public readonly charEncoding!: pulumi.Output<string>;
+    declare public readonly charEncoding: pulumi.Output<string>;
     /**
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      */
-    public readonly collectionType!: pulumi.Output<string>;
+    declare public readonly collectionType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      */
-    public readonly entityId!: pulumi.Output<string>;
+    declare public readonly entityId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether or not this rule is currently enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
      */
-    public readonly isForceHistoricCollection!: pulumi.Output<boolean>;
+    declare public readonly isForceHistoricCollection: pulumi.Output<boolean>;
     /**
      * Last Collected Object for the rule
      */
-    public /*out*/ readonly lastCollectedObject!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastCollectedObject: pulumi.Output<string>;
     /**
      * A detailed status of the life cycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
      */
-    public readonly logGroupId!: pulumi.Output<string>;
+    declare public readonly logGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      */
-    public readonly logSet!: pulumi.Output<string>;
+    declare public readonly logSet: pulumi.Output<string>;
     /**
      * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      */
-    public readonly logSetExtRegex!: pulumi.Output<string>;
+    declare public readonly logSetExtRegex: pulumi.Output<string>;
     /**
      * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
      */
-    public readonly logSetKey!: pulumi.Output<string>;
+    declare public readonly logSetKey: pulumi.Output<string>;
     /**
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      */
-    public readonly logSourceName!: pulumi.Output<string>;
+    declare public readonly logSourceName: pulumi.Output<string>;
     /**
      * Type of files/objects in this object collection rule.
      */
-    public readonly logType!: pulumi.Output<string>;
+    declare public readonly logType: pulumi.Output<string>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      */
-    public readonly objectNameFilters!: pulumi.Output<string[] | undefined>;
+    declare public readonly objectNameFilters: pulumi.Output<string[] | undefined>;
     /**
      * Name of the Object Storage bucket.
      */
-    public readonly osBucketName!: pulumi.Output<string>;
+    declare public readonly osBucketName: pulumi.Output<string>;
     /**
      * Object Storage namespace.
      */
-    public readonly osNamespace!: pulumi.Output<string>;
+    declare public readonly osNamespace: pulumi.Output<string>;
     /**
      * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
      */
-    public readonly overrides!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride[]>;
+    declare public readonly overrides: pulumi.Output<outputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride[]>;
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      */
-    public readonly pollSince!: pulumi.Output<string>;
+    declare public readonly pollSince: pulumi.Output<string>;
     /**
      * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      */
-    public readonly pollTill!: pulumi.Output<string>;
+    declare public readonly pollTill: pulumi.Output<string>;
     /**
      * The current state of the rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
      */
-    public readonly streamCursorTime!: pulumi.Output<string>;
+    declare public readonly streamCursorTime: pulumi.Output<string>;
     /**
      * (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
      */
-    public readonly streamCursorType!: pulumi.Output<string>;
+    declare public readonly streamCursorType: pulumi.Output<string>;
     /**
      * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      */
-    public readonly streamId!: pulumi.Output<string>;
+    declare public readonly streamId: pulumi.Output<string>;
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
      *
@@ -219,7 +219,7 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsObjectCollectionRule resource with the given unique name, arguments, and options.
@@ -234,82 +234,82 @@ export class LogAnalyticsObjectCollectionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsObjectCollectionRuleState | undefined;
-            resourceInputs["charEncoding"] = state ? state.charEncoding : undefined;
-            resourceInputs["collectionType"] = state ? state.collectionType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["entityId"] = state ? state.entityId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["isForceHistoricCollection"] = state ? state.isForceHistoricCollection : undefined;
-            resourceInputs["lastCollectedObject"] = state ? state.lastCollectedObject : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["logGroupId"] = state ? state.logGroupId : undefined;
-            resourceInputs["logSet"] = state ? state.logSet : undefined;
-            resourceInputs["logSetExtRegex"] = state ? state.logSetExtRegex : undefined;
-            resourceInputs["logSetKey"] = state ? state.logSetKey : undefined;
-            resourceInputs["logSourceName"] = state ? state.logSourceName : undefined;
-            resourceInputs["logType"] = state ? state.logType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["objectNameFilters"] = state ? state.objectNameFilters : undefined;
-            resourceInputs["osBucketName"] = state ? state.osBucketName : undefined;
-            resourceInputs["osNamespace"] = state ? state.osNamespace : undefined;
-            resourceInputs["overrides"] = state ? state.overrides : undefined;
-            resourceInputs["pollSince"] = state ? state.pollSince : undefined;
-            resourceInputs["pollTill"] = state ? state.pollTill : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["streamCursorTime"] = state ? state.streamCursorTime : undefined;
-            resourceInputs["streamCursorType"] = state ? state.streamCursorType : undefined;
-            resourceInputs["streamId"] = state ? state.streamId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
+            resourceInputs["charEncoding"] = state?.charEncoding;
+            resourceInputs["collectionType"] = state?.collectionType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["entityId"] = state?.entityId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["isForceHistoricCollection"] = state?.isForceHistoricCollection;
+            resourceInputs["lastCollectedObject"] = state?.lastCollectedObject;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logGroupId"] = state?.logGroupId;
+            resourceInputs["logSet"] = state?.logSet;
+            resourceInputs["logSetExtRegex"] = state?.logSetExtRegex;
+            resourceInputs["logSetKey"] = state?.logSetKey;
+            resourceInputs["logSourceName"] = state?.logSourceName;
+            resourceInputs["logType"] = state?.logType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["objectNameFilters"] = state?.objectNameFilters;
+            resourceInputs["osBucketName"] = state?.osBucketName;
+            resourceInputs["osNamespace"] = state?.osNamespace;
+            resourceInputs["overrides"] = state?.overrides;
+            resourceInputs["pollSince"] = state?.pollSince;
+            resourceInputs["pollTill"] = state?.pollTill;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["streamCursorTime"] = state?.streamCursorTime;
+            resourceInputs["streamCursorType"] = state?.streamCursorType;
+            resourceInputs["streamId"] = state?.streamId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as LogAnalyticsObjectCollectionRuleArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.logGroupId === undefined) && !opts.urn) {
+            if (args?.logGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'logGroupId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.osBucketName === undefined) && !opts.urn) {
+            if (args?.osBucketName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osBucketName'");
             }
-            if ((!args || args.osNamespace === undefined) && !opts.urn) {
+            if (args?.osNamespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osNamespace'");
             }
-            resourceInputs["charEncoding"] = args ? args.charEncoding : undefined;
-            resourceInputs["collectionType"] = args ? args.collectionType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["entityId"] = args ? args.entityId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["isForceHistoricCollection"] = args ? args.isForceHistoricCollection : undefined;
-            resourceInputs["logGroupId"] = args ? args.logGroupId : undefined;
-            resourceInputs["logSet"] = args ? args.logSet : undefined;
-            resourceInputs["logSetExtRegex"] = args ? args.logSetExtRegex : undefined;
-            resourceInputs["logSetKey"] = args ? args.logSetKey : undefined;
-            resourceInputs["logSourceName"] = args ? args.logSourceName : undefined;
-            resourceInputs["logType"] = args ? args.logType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["objectNameFilters"] = args ? args.objectNameFilters : undefined;
-            resourceInputs["osBucketName"] = args ? args.osBucketName : undefined;
-            resourceInputs["osNamespace"] = args ? args.osNamespace : undefined;
-            resourceInputs["overrides"] = args ? args.overrides : undefined;
-            resourceInputs["pollSince"] = args ? args.pollSince : undefined;
-            resourceInputs["pollTill"] = args ? args.pollTill : undefined;
-            resourceInputs["streamCursorTime"] = args ? args.streamCursorTime : undefined;
-            resourceInputs["streamCursorType"] = args ? args.streamCursorType : undefined;
-            resourceInputs["streamId"] = args ? args.streamId : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["charEncoding"] = args?.charEncoding;
+            resourceInputs["collectionType"] = args?.collectionType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["entityId"] = args?.entityId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["isForceHistoricCollection"] = args?.isForceHistoricCollection;
+            resourceInputs["logGroupId"] = args?.logGroupId;
+            resourceInputs["logSet"] = args?.logSet;
+            resourceInputs["logSetExtRegex"] = args?.logSetExtRegex;
+            resourceInputs["logSetKey"] = args?.logSetKey;
+            resourceInputs["logSourceName"] = args?.logSourceName;
+            resourceInputs["logType"] = args?.logType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["objectNameFilters"] = args?.objectNameFilters;
+            resourceInputs["osBucketName"] = args?.osBucketName;
+            resourceInputs["osNamespace"] = args?.osNamespace;
+            resourceInputs["overrides"] = args?.overrides;
+            resourceInputs["pollSince"] = args?.pollSince;
+            resourceInputs["pollTill"] = args?.pollTill;
+            resourceInputs["streamCursorTime"] = args?.streamCursorTime;
+            resourceInputs["streamCursorType"] = args?.streamCursorType;
+            resourceInputs["streamId"] = args?.streamId;
+            resourceInputs["timezone"] = args?.timezone;
             resourceInputs["lastCollectedObject"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

@@ -75,69 +75,69 @@ export class OccmDemandSignalItem extends pulumi.CustomResource {
     /**
      * (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The OCID of the tenancy from which the demand signal item was created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The quantity of the resource that you want to demand from OCI.
      */
-    public readonly demandQuantity!: pulumi.Output<string>;
+    declare public readonly demandQuantity: pulumi.Output<string>;
     /**
      * The OCID of the correponding demand signal catalog resource.
      */
-    public readonly demandSignalCatalogResourceId!: pulumi.Output<string>;
+    declare public readonly demandSignalCatalogResourceId: pulumi.Output<string>;
     /**
      * The OCID of the demand signal under which we need to create this item.
      */
-    public readonly demandSignalId!: pulumi.Output<string>;
+    declare public readonly demandSignalId: pulumi.Output<string>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
      */
-    public /*out*/ readonly demandSignalNamespace!: pulumi.Output<string>;
+    declare public /*out*/ readonly demandSignalNamespace: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
      *
      * NOTE: The previous value gets overwritten with the new one for this once updated.
      */
-    public readonly notes!: pulumi.Output<string>;
+    declare public readonly notes: pulumi.Output<string>;
     /**
      * (Updatable) The name of region for which you want to request the Oracle Cloud Infrastructure resource.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The type of request (DEMAND or RETURN) that you want to make for this demand signal item.
      */
-    public readonly requestType!: pulumi.Output<string>;
+    declare public readonly requestType: pulumi.Output<string>;
     /**
      * The name of the Oracle Cloud Infrastructure resource that you want to request.
      */
-    public /*out*/ readonly resourceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceName: pulumi.Output<string>;
     /**
      * (Updatable) A map of various properties associated with the Oracle Cloud Infrastructure resource.
      */
-    public readonly resourceProperties!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly resourceProperties: pulumi.Output<{[key: string]: string}>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
      */
-    public readonly targetCompartmentId!: pulumi.Output<string>;
+    declare public readonly targetCompartmentId: pulumi.Output<string>;
     /**
      * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
      *
@@ -145,7 +145,7 @@ export class OccmDemandSignalItem extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeNeededBefore!: pulumi.Output<string>;
+    declare public readonly timeNeededBefore: pulumi.Output<string>;
 
     /**
      * Create a OccmDemandSignalItem resource with the given unique name, arguments, and options.
@@ -160,62 +160,62 @@ export class OccmDemandSignalItem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OccmDemandSignalItemState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["demandQuantity"] = state ? state.demandQuantity : undefined;
-            resourceInputs["demandSignalCatalogResourceId"] = state ? state.demandSignalCatalogResourceId : undefined;
-            resourceInputs["demandSignalId"] = state ? state.demandSignalId : undefined;
-            resourceInputs["demandSignalNamespace"] = state ? state.demandSignalNamespace : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["notes"] = state ? state.notes : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["requestType"] = state ? state.requestType : undefined;
-            resourceInputs["resourceName"] = state ? state.resourceName : undefined;
-            resourceInputs["resourceProperties"] = state ? state.resourceProperties : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetCompartmentId"] = state ? state.targetCompartmentId : undefined;
-            resourceInputs["timeNeededBefore"] = state ? state.timeNeededBefore : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["demandQuantity"] = state?.demandQuantity;
+            resourceInputs["demandSignalCatalogResourceId"] = state?.demandSignalCatalogResourceId;
+            resourceInputs["demandSignalId"] = state?.demandSignalId;
+            resourceInputs["demandSignalNamespace"] = state?.demandSignalNamespace;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["notes"] = state?.notes;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["requestType"] = state?.requestType;
+            resourceInputs["resourceName"] = state?.resourceName;
+            resourceInputs["resourceProperties"] = state?.resourceProperties;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetCompartmentId"] = state?.targetCompartmentId;
+            resourceInputs["timeNeededBefore"] = state?.timeNeededBefore;
         } else {
             const args = argsOrState as OccmDemandSignalItemArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.demandQuantity === undefined) && !opts.urn) {
+            if (args?.demandQuantity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'demandQuantity'");
             }
-            if ((!args || args.demandSignalCatalogResourceId === undefined) && !opts.urn) {
+            if (args?.demandSignalCatalogResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'demandSignalCatalogResourceId'");
             }
-            if ((!args || args.demandSignalId === undefined) && !opts.urn) {
+            if (args?.demandSignalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'demandSignalId'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            if ((!args || args.requestType === undefined) && !opts.urn) {
+            if (args?.requestType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'requestType'");
             }
-            if ((!args || args.resourceProperties === undefined) && !opts.urn) {
+            if (args?.resourceProperties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceProperties'");
             }
-            if ((!args || args.timeNeededBefore === undefined) && !opts.urn) {
+            if (args?.timeNeededBefore === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeNeededBefore'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["demandQuantity"] = args ? args.demandQuantity : undefined;
-            resourceInputs["demandSignalCatalogResourceId"] = args ? args.demandSignalCatalogResourceId : undefined;
-            resourceInputs["demandSignalId"] = args ? args.demandSignalId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["notes"] = args ? args.notes : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["requestType"] = args ? args.requestType : undefined;
-            resourceInputs["resourceProperties"] = args ? args.resourceProperties : undefined;
-            resourceInputs["targetCompartmentId"] = args ? args.targetCompartmentId : undefined;
-            resourceInputs["timeNeededBefore"] = args ? args.timeNeededBefore : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["demandQuantity"] = args?.demandQuantity;
+            resourceInputs["demandSignalCatalogResourceId"] = args?.demandSignalCatalogResourceId;
+            resourceInputs["demandSignalId"] = args?.demandSignalId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["notes"] = args?.notes;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["requestType"] = args?.requestType;
+            resourceInputs["resourceProperties"] = args?.resourceProperties;
+            resourceInputs["targetCompartmentId"] = args?.targetCompartmentId;
+            resourceInputs["timeNeededBefore"] = args?.timeNeededBefore;
             resourceInputs["demandSignalNamespace"] = undefined /*out*/;
             resourceInputs["resourceName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

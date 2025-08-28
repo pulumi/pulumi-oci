@@ -52,75 +52,75 @@ export class Model extends pulumi.CustomResource {
     /**
      * The OCID of the base model that's used for fine-tuning.
      */
-    public readonly baseModelId!: pulumi.Output<string>;
+    declare public readonly baseModelId: pulumi.Output<string>;
     /**
      * Describes what this model can be used for.
      */
-    public /*out*/ readonly capabilities!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly capabilities: pulumi.Output<string[]>;
     /**
      * (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional description of the model.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Details about fine-tuning a custom model.
      */
-    public readonly fineTuneDetails!: pulumi.Output<outputs.GenerativeAi.ModelFineTuneDetails>;
+    declare public readonly fineTuneDetails: pulumi.Output<outputs.GenerativeAi.ModelFineTuneDetails>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Whether a model is supported long-term. Only applicable to base models.
      */
-    public /*out*/ readonly isLongTermSupported!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isLongTermSupported: pulumi.Output<boolean>;
     /**
      * A message describing the current state of the model in more detail that can provide actionable information.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Model metrics during the creation of a new model.
      */
-    public /*out*/ readonly modelMetrics!: pulumi.Output<outputs.GenerativeAi.ModelModelMetric[]>;
+    declare public /*out*/ readonly modelMetrics: pulumi.Output<outputs.GenerativeAi.ModelModelMetric[]>;
     /**
      * The lifecycle state of the model.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the model was created in the format of an RFC3339 datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
      */
-    public /*out*/ readonly timeDeprecated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDeprecated: pulumi.Output<string>;
     /**
      * The date and time that the model was updated in the format of an RFC3339 datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * (Updatable) The provider of the model.
      */
-    public readonly vendor!: pulumi.Output<string>;
+    declare public readonly vendor: pulumi.Output<string>;
     /**
      * (Updatable) The version of the model.
      *
@@ -128,7 +128,7 @@ export class Model extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.
@@ -143,45 +143,45 @@ export class Model extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelState | undefined;
-            resourceInputs["baseModelId"] = state ? state.baseModelId : undefined;
-            resourceInputs["capabilities"] = state ? state.capabilities : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fineTuneDetails"] = state ? state.fineTuneDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLongTermSupported"] = state ? state.isLongTermSupported : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["modelMetrics"] = state ? state.modelMetrics : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDeprecated"] = state ? state.timeDeprecated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vendor"] = state ? state.vendor : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["baseModelId"] = state?.baseModelId;
+            resourceInputs["capabilities"] = state?.capabilities;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fineTuneDetails"] = state?.fineTuneDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLongTermSupported"] = state?.isLongTermSupported;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["modelMetrics"] = state?.modelMetrics;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDeprecated"] = state?.timeDeprecated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vendor"] = state?.vendor;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ModelArgs | undefined;
-            if ((!args || args.baseModelId === undefined) && !opts.urn) {
+            if (args?.baseModelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'baseModelId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.fineTuneDetails === undefined) && !opts.urn) {
+            if (args?.fineTuneDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fineTuneDetails'");
             }
-            resourceInputs["baseModelId"] = args ? args.baseModelId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["fineTuneDetails"] = args ? args.fineTuneDetails : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["vendor"] = args ? args.vendor : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["baseModelId"] = args?.baseModelId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["fineTuneDetails"] = args?.fineTuneDetails;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["vendor"] = args?.vendor;
+            resourceInputs["version"] = args?.version;
             resourceInputs["capabilities"] = undefined /*out*/;
             resourceInputs["isLongTermSupported"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

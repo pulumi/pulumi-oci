@@ -34,15 +34,15 @@ export class DefaultSecurityList extends pulumi.CustomResource {
         return obj['__pulumiType'] === DefaultSecurityList.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly egressSecurityRules!: pulumi.Output<outputs.Core.DefaultSecurityListEgressSecurityRule[] | undefined>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly ingressSecurityRules!: pulumi.Output<outputs.Core.DefaultSecurityListIngressSecurityRule[] | undefined>;
-    public readonly manageDefaultResourceId!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly egressSecurityRules: pulumi.Output<outputs.Core.DefaultSecurityListEgressSecurityRule[] | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ingressSecurityRules: pulumi.Output<outputs.Core.DefaultSecurityListIngressSecurityRule[] | undefined>;
+    declare public readonly manageDefaultResourceId: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a DefaultSecurityList resource with the given unique name, arguments, and options.
@@ -57,27 +57,27 @@ export class DefaultSecurityList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DefaultSecurityListState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["egressSecurityRules"] = state ? state.egressSecurityRules : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ingressSecurityRules"] = state ? state.ingressSecurityRules : undefined;
-            resourceInputs["manageDefaultResourceId"] = state ? state.manageDefaultResourceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["egressSecurityRules"] = state?.egressSecurityRules;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ingressSecurityRules"] = state?.ingressSecurityRules;
+            resourceInputs["manageDefaultResourceId"] = state?.manageDefaultResourceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as DefaultSecurityListArgs | undefined;
-            if ((!args || args.manageDefaultResourceId === undefined) && !opts.urn) {
+            if (args?.manageDefaultResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'manageDefaultResourceId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["egressSecurityRules"] = args ? args.egressSecurityRules : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ingressSecurityRules"] = args ? args.ingressSecurityRules : undefined;
-            resourceInputs["manageDefaultResourceId"] = args ? args.manageDefaultResourceId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["egressSecurityRules"] = args?.egressSecurityRules;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ingressSecurityRules"] = args?.ingressSecurityRules;
+            resourceInputs["manageDefaultResourceId"] = args?.manageDefaultResourceId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

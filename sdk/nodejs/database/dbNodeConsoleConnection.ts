@@ -66,31 +66,31 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
     /**
      * The OCID of the compartment to contain the console connection.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The SSH connection string for the console connection.
      */
-    public /*out*/ readonly connectionString!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectionString: pulumi.Output<string>;
     /**
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly dbNodeId!: pulumi.Output<string>;
+    declare public readonly dbNodeId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The SSH public key fingerprint for the console connection.
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly fingerprint: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The SSH public key used to authenticate the console connection.
      *
@@ -98,15 +98,15 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publicKey!: pulumi.Output<string>;
+    declare public readonly publicKey: pulumi.Output<string>;
     /**
      * The SSH public key's fingerprint for the console connection service host.
      */
-    public /*out*/ readonly serviceHostKeyFingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceHostKeyFingerprint: pulumi.Output<string>;
     /**
      * The current state of the console connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a DbNodeConsoleConnection resource with the given unique name, arguments, and options.
@@ -121,28 +121,28 @@ export class DbNodeConsoleConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbNodeConsoleConnectionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["dbNodeId"] = state ? state.dbNodeId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["publicKey"] = state ? state.publicKey : undefined;
-            resourceInputs["serviceHostKeyFingerprint"] = state ? state.serviceHostKeyFingerprint : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["dbNodeId"] = state?.dbNodeId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["fingerprint"] = state?.fingerprint;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["publicKey"] = state?.publicKey;
+            resourceInputs["serviceHostKeyFingerprint"] = state?.serviceHostKeyFingerprint;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as DbNodeConsoleConnectionArgs | undefined;
-            if ((!args || args.dbNodeId === undefined) && !opts.urn) {
+            if (args?.dbNodeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbNodeId'");
             }
-            if ((!args || args.publicKey === undefined) && !opts.urn) {
+            if (args?.publicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicKey'");
             }
-            resourceInputs["dbNodeId"] = args ? args.dbNodeId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["publicKey"] = args ? args.publicKey : undefined;
+            resourceInputs["dbNodeId"] = args?.dbNodeId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["publicKey"] = args?.publicKey;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionString"] = undefined /*out*/;
             resourceInputs["fingerprint"] = undefined /*out*/;

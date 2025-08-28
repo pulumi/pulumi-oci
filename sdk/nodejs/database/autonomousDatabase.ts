@@ -50,67 +50,67 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     /**
      * The current amount of storage in use for user and system data, in terabytes (TB).
      */
-    public /*out*/ readonly actualUsedDataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly actualUsedDataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
      */
-    public readonly adminPassword!: pulumi.Output<string>;
+    declare public readonly adminPassword: pulumi.Output<string>;
     /**
      * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      */
-    public /*out*/ readonly allocatedStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly allocatedStorageSizeInTbs: pulumi.Output<number>;
     /**
      * Information about Oracle APEX Application Development.
      */
-    public /*out*/ readonly apexDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseApexDetail[]>;
+    declare public /*out*/ readonly apexDetails: pulumi.Output<outputs.Database.AutonomousDatabaseApexDetail[]>;
     /**
      * (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      */
-    public readonly arePrimaryWhitelistedIpsUsed!: pulumi.Output<boolean>;
+    declare public readonly arePrimaryWhitelistedIpsUsed: pulumi.Output<boolean>;
     /**
      * (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
      */
-    public readonly autoRefreshFrequencyInSeconds!: pulumi.Output<number>;
+    declare public readonly autoRefreshFrequencyInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
      */
-    public readonly autoRefreshPointLagInSeconds!: pulumi.Output<number>;
+    declare public readonly autoRefreshPointLagInSeconds: pulumi.Output<number>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      */
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
      */
-    public readonly autonomousDatabaseBackupId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseBackupId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
      * (Updatable) The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      */
-    public readonly autonomousMaintenanceScheduleType!: pulumi.Output<string>;
+    declare public readonly autonomousMaintenanceScheduleType: pulumi.Output<string>;
     /**
      * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */
-    public /*out*/ readonly availableUpgradeVersions!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly availableUpgradeVersions: pulumi.Output<string[]>;
     /**
      * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      */
-    public /*out*/ readonly backupConfigs!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupConfig[]>;
+    declare public /*out*/ readonly backupConfigs: pulumi.Output<outputs.Database.AutonomousDatabaseBackupConfig[]>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      */
-    public readonly backupRetentionPeriodInDays!: pulumi.Output<number>;
+    declare public readonly backupRetentionPeriodInDays: pulumi.Output<number>;
     /**
      * (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
      */
-    public readonly byolComputeCountLimit!: pulumi.Output<number>;
+    declare public readonly byolComputeCountLimit: pulumi.Output<number>;
     /**
      * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      *
@@ -118,55 +118,55 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
      */
-    public readonly characterSet!: pulumi.Output<string>;
+    declare public readonly characterSet: pulumi.Output<string>;
     /**
      * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
      */
-    public readonly cloneTableSpaceLists!: pulumi.Output<number[]>;
+    declare public readonly cloneTableSpaceLists: pulumi.Output<number[]>;
     /**
      * The Autonomous Database clone type.
      * * `FULL` - This option creates a new database that includes all source database data.
      * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      */
-    public readonly cloneType!: pulumi.Output<string>;
+    declare public readonly cloneType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
      */
-    public /*out*/ readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    declare public readonly computeModel: pulumi.Output<string>;
     /**
      * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionString[]>;
+    declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionString[]>;
     /**
      * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
      */
-    public /*out*/ readonly connectionUrls!: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionUrl[]>;
+    declare public /*out*/ readonly connectionUrls: pulumi.Output<outputs.Database.AutonomousDatabaseConnectionUrl[]>;
     /**
      * (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      *
      * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      */
-    public readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * (Updatable) Customer Contacts.
      */
-    public readonly customerContacts!: pulumi.Output<outputs.Database.AutonomousDatabaseCustomerContact[]>;
+    declare public readonly customerContacts: pulumi.Output<outputs.Database.AutonomousDatabaseCustomerContact[]>;
     /**
      * (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      */
-    public readonly dataSafeStatus!: pulumi.Output<string>;
+    declare public readonly dataSafeStatus: pulumi.Output<string>;
     /**
      * (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      *
@@ -174,39 +174,39 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * * This parameter is only supported for dedicated Exadata infrastructure.
      * * This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details. A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
      *
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      */
-    public readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
      */
-    public readonly databaseEdition!: pulumi.Output<string>;
+    declare public readonly databaseEdition: pulumi.Output<string>;
     /**
      * Status of Database Management for this Autonomous Database.
      */
-    public readonly databaseManagementStatus!: pulumi.Output<string>;
+    declare public readonly databaseManagementStatus: pulumi.Output<string>;
     /**
      * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      */
-    public /*out*/ readonly dataguardRegionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataguardRegionType: pulumi.Output<string>;
     /**
      * The database name. The name must begin with an alphabetic character and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
      */
-    public readonly dbName!: pulumi.Output<string>;
+    declare public readonly dbName: pulumi.Output<string>;
     /**
      * (Updatable) The list of database tools details.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly dbToolsDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseDbToolsDetail[]>;
+    declare public readonly dbToolsDetails: pulumi.Output<outputs.Database.AutonomousDatabaseDbToolsDetail[]>;
     /**
      * (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * (Updatable) The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -216,201 +216,201 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      */
-    public readonly dbWorkload!: pulumi.Output<string>;
+    declare public readonly dbWorkload: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      */
-    public /*out*/ readonly disasterRecoveryRegionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly disasterRecoveryRegionType: pulumi.Output<string>;
     /**
      * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
-    public readonly disasterRecoveryType!: pulumi.Output<string>;
+    declare public readonly disasterRecoveryType: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly enableDeleteScheduledOperations!: pulumi.Output<boolean | undefined>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly enableDeleteScheduledOperations: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Details of the Autonomous Database encryption key.
      */
-    public readonly encryptionKey!: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKey>;
+    declare public readonly encryptionKey: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKey>;
     /**
      * Key History Entry.
      */
-    public /*out*/ readonly encryptionKeyHistoryEntries!: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry[]>;
+    declare public /*out*/ readonly encryptionKeyHistoryEntries: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
-    public /*out*/ readonly failedDataRecoveryInSeconds!: pulumi.Output<number>;
+    declare public /*out*/ readonly failedDataRecoveryInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The area assigned to In-Memory tables in Autonomous Database.
      */
-    public /*out*/ readonly inMemoryAreaInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly inMemoryAreaInGbs: pulumi.Output<number>;
     /**
      * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
      */
-    public readonly inMemoryPercentage!: pulumi.Output<number>;
+    declare public readonly inMemoryPercentage: pulumi.Output<number>;
     /**
      * The infrastructure type this resource belongs to.
      */
-    public /*out*/ readonly infrastructureType!: pulumi.Output<string>;
+    declare public /*out*/ readonly infrastructureType: pulumi.Output<string>;
     /**
      * (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      *
      * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
      */
-    public readonly isAccessControlEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAccessControlEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
      */
-    public readonly isAutoScalingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoScalingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      */
-    public readonly isAutoScalingForStorageEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoScalingForStorageEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) True if the Autonomous Database is backup retention locked.
      */
-    public readonly isBackupRetentionLocked!: pulumi.Output<boolean>;
+    declare public readonly isBackupRetentionLocked: pulumi.Output<boolean>;
     /**
      * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    public readonly isDataGuardEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDataGuardEnabled: pulumi.Output<boolean>;
     /**
      * True if the database is on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      */
-    public readonly isDedicated!: pulumi.Output<boolean>;
+    declare public readonly isDedicated: pulumi.Output<boolean>;
     /**
      * (Updatable) Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      */
-    public readonly isDevTier!: pulumi.Output<boolean>;
-    public readonly isDisableDbVersionUpgradeSchedule!: pulumi.Output<boolean>;
-    public readonly isDisconnectPeer!: pulumi.Output<boolean | undefined>;
+    declare public readonly isDevTier: pulumi.Output<boolean>;
+    declare public readonly isDisableDbVersionUpgradeSchedule: pulumi.Output<boolean>;
+    declare public readonly isDisconnectPeer: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `dbWorkload` is `AJD` it cannot be `true`.
      */
-    public readonly isFreeTier!: pulumi.Output<boolean>;
+    declare public readonly isFreeTier: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    public readonly isLocalDataGuardEnabled!: pulumi.Output<boolean>;
-    public readonly isMtlsConnectionRequired!: pulumi.Output<boolean>;
+    declare public readonly isLocalDataGuardEnabled: pulumi.Output<boolean>;
+    declare public readonly isMtlsConnectionRequired: pulumi.Output<boolean>;
     /**
      * Indicates if the Autonomous Database version is a preview version.
      */
-    public /*out*/ readonly isPreview!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isPreview: pulumi.Output<boolean>;
     /**
      * If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      */
-    public readonly isPreviewVersionWithServiceTermsAccepted!: pulumi.Output<boolean>;
+    declare public readonly isPreviewVersionWithServiceTermsAccepted: pulumi.Output<boolean>;
     /**
      * Indicates if the refreshable clone can be reconnected to its source database.
      */
-    public /*out*/ readonly isReconnectCloneEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isReconnectCloneEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if the Autonomous Database is a refreshable clone.
      */
-    public readonly isRefreshableClone!: pulumi.Output<boolean>;
+    declare public readonly isRefreshableClone: pulumi.Output<boolean>;
     /**
      * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    public /*out*/ readonly isRemoteDataGuardEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRemoteDataGuardEnabled: pulumi.Output<boolean>;
     /**
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
-    public readonly isReplicateAutomaticBackups!: pulumi.Output<boolean>;
-    public readonly isScheduleDbVersionUpgradeToEarliest!: pulumi.Output<boolean>;
+    declare public readonly isReplicateAutomaticBackups: pulumi.Output<boolean>;
+    declare public readonly isScheduleDbVersionUpgradeToEarliest: pulumi.Output<boolean>;
     /**
      * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
-    public readonly isShrinkOnly!: pulumi.Output<boolean | undefined>;
+    declare public readonly isShrinkOnly: pulumi.Output<boolean | undefined>;
     /**
      * Key History Entry.
      */
-    public /*out*/ readonly keyHistoryEntries!: pulumi.Output<outputs.Database.AutonomousDatabaseKeyHistoryEntry[]>;
+    declare public /*out*/ readonly keyHistoryEntries: pulumi.Output<outputs.Database.AutonomousDatabaseKeyHistoryEntry[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreId: pulumi.Output<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
-    public readonly keyVersionId!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly keyStoreWalletName: pulumi.Output<string>;
+    declare public readonly keyVersionId: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * KMS key lifecycle details.
      */
-    public /*out*/ readonly kmsKeyLifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyLifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      *
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      */
-    public readonly localAdgAutoFailoverMaxDataLossLimit!: pulumi.Output<number>;
+    declare public readonly localAdgAutoFailoverMaxDataLossLimit: pulumi.Output<number>;
     /**
      * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
-    public /*out*/ readonly localDisasterRecoveryType!: pulumi.Output<string>;
+    declare public /*out*/ readonly localDisasterRecoveryType: pulumi.Output<string>;
     /**
      * Autonomous Data Guard standby database details.
      */
-    public /*out*/ readonly localStandbyDbs!: pulumi.Output<outputs.Database.AutonomousDatabaseLocalStandbyDb[]>;
+    declare public /*out*/ readonly localStandbyDbs: pulumi.Output<outputs.Database.AutonomousDatabaseLocalStandbyDb[]>;
     /**
      * Details for the long-term backup schedule.
      */
-    public readonly longTermBackupSchedules!: pulumi.Output<outputs.Database.AutonomousDatabaseLongTermBackupSchedule[]>;
+    declare public readonly longTermBackupSchedules: pulumi.Output<outputs.Database.AutonomousDatabaseLongTermBackupSchedule[]>;
     /**
      * The component chosen for maintenance.
      */
-    public /*out*/ readonly maintenanceTargetComponent!: pulumi.Output<string>;
-    public readonly maxCpuCoreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly maintenanceTargetComponent: pulumi.Output<string>;
+    declare public readonly maxCpuCoreCount: pulumi.Output<number>;
     /**
      * The amount of memory (in GBs) enabled per ECPU or OCPU.
      */
-    public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
      * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous Database Serverless instance. For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
      */
-    public readonly ncharacterSet!: pulumi.Output<string>;
+    declare public readonly ncharacterSet: pulumi.Output<string>;
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
-    public /*out*/ readonly netServicesArchitecture!: pulumi.Output<string>;
+    declare public /*out*/ readonly netServicesArchitecture: pulumi.Output<string>;
     /**
      * The date and time when the next long-term backup would be created.
      */
-    public /*out*/ readonly nextLongTermBackupTimeStamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextLongTermBackupTimeStamp: pulumi.Output<string>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The number of OCPU cores to be made available to the database.
      *
@@ -423,118 +423,118 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      */
-    public readonly ocpuCount!: pulumi.Output<number>;
+    declare public readonly ocpuCount: pulumi.Output<number>;
     /**
      * (Updatable) Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      *
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      */
-    public readonly openMode!: pulumi.Output<string>;
+    declare public readonly openMode: pulumi.Output<string>;
     /**
      * Status of Operations Insights for this Autonomous Database.
      */
-    public readonly operationsInsightsStatus!: pulumi.Output<string>;
-    public readonly peerDbId!: pulumi.Output<string>;
+    declare public readonly operationsInsightsStatus: pulumi.Output<string>;
+    declare public readonly peerDbId: pulumi.Output<string>;
     /**
      * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      */
-    public /*out*/ readonly peerDbIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly peerDbIds: pulumi.Output<string[]>;
     /**
      * The Autonomous Database permission level. Restricted mode allows access only by admin users.
      */
-    public readonly permissionLevel!: pulumi.Output<string>;
+    declare public readonly permissionLevel: pulumi.Output<string>;
     /**
      * The private endpoint for the resource.
      */
-    public /*out*/ readonly privateEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The private endpoint Ip address for the resource.
      */
-    public readonly privateEndpointIp!: pulumi.Output<string>;
+    declare public readonly privateEndpointIp: pulumi.Output<string>;
     /**
      * (Updatable) The private endpoint label for the resource.
      */
-    public readonly privateEndpointLabel!: pulumi.Output<string>;
+    declare public readonly privateEndpointLabel: pulumi.Output<string>;
     /**
      * An array of CPU values that an Autonomous Database can be scaled to.
      */
-    public /*out*/ readonly provisionableCpuses!: pulumi.Output<number[]>;
+    declare public /*out*/ readonly provisionableCpuses: pulumi.Output<number[]>;
     /**
      * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
      */
-    public /*out*/ readonly publicConnectionUrls!: pulumi.Output<outputs.Database.AutonomousDatabasePublicConnectionUrl[]>;
+    declare public /*out*/ readonly publicConnectionUrls: pulumi.Output<outputs.Database.AutonomousDatabasePublicConnectionUrl[]>;
     /**
      * The public endpoint for the private endpoint enabled resource.
      */
-    public /*out*/ readonly publicEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
-    public readonly refreshableMode!: pulumi.Output<string>;
+    declare public readonly refreshableMode: pulumi.Output<string>;
     /**
      * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      */
-    public /*out*/ readonly refreshableStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly refreshableStatus: pulumi.Output<string>;
     /**
      * Configurations of a Disaster Recovery.
      */
-    public /*out*/ readonly remoteDisasterRecoveryConfigurations!: pulumi.Output<outputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration[]>;
+    declare public /*out*/ readonly remoteDisasterRecoveryConfigurations: pulumi.Output<outputs.Database.AutonomousDatabaseRemoteDisasterRecoveryConfiguration[]>;
     /**
      * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
-    public readonly remoteDisasterRecoveryType!: pulumi.Output<string>;
+    declare public readonly remoteDisasterRecoveryType: pulumi.Output<string>;
     /**
      * (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly resourcePoolLeaderId!: pulumi.Output<string>;
+    declare public readonly resourcePoolLeaderId: pulumi.Output<string>;
     /**
      * (Updatable) The configuration details for resource pool
      */
-    public readonly resourcePoolSummary!: pulumi.Output<outputs.Database.AutonomousDatabaseResourcePoolSummary>;
+    declare public readonly resourcePoolSummary: pulumi.Output<outputs.Database.AutonomousDatabaseResourcePoolSummary>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
-    public readonly rotateKeyTrigger!: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
+    declare public readonly rotateKeyTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly scheduledOperations!: pulumi.Output<outputs.Database.AutonomousDatabaseScheduledOperation[]>;
+    declare public readonly scheduledOperations: pulumi.Output<outputs.Database.AutonomousDatabaseScheduledOperation[]>;
     /**
      * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      *
      * This cannot be used in conjunction with adminPassword.
      */
-    public readonly secretId!: pulumi.Output<string>;
+    declare public readonly secretId: pulumi.Output<string>;
     /**
      * (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
      */
-    public readonly secretVersionNumber!: pulumi.Output<number>;
+    declare public readonly secretVersionNumber: pulumi.Output<number>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The URL of the Service Console for the Autonomous Database.
      */
-    public /*out*/ readonly serviceConsoleUrl!: pulumi.Output<string>;
-    public readonly shrinkAdbTrigger!: pulumi.Output<number>;
+    declare public /*out*/ readonly serviceConsoleUrl: pulumi.Output<string>;
+    declare public readonly shrinkAdbTrigger: pulumi.Output<number>;
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      *
      * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    declare public readonly sourceId: pulumi.Output<string>;
     /**
      * **Deprecated** Autonomous Data Guard standby database details.
      */
-    public /*out*/ readonly standbyDbs!: pulumi.Output<outputs.Database.AutonomousDatabaseStandbyDb[]>;
+    declare public /*out*/ readonly standbyDbs: pulumi.Output<outputs.Database.AutonomousDatabaseStandbyDb[]>;
     /**
      * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      *
@@ -544,11 +544,11 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly standbyWhitelistedIps!: pulumi.Output<string[]>;
+    declare public readonly standbyWhitelistedIps: pulumi.Output<string[]>;
     /**
      * The current state of the Autonomous Database.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      *
@@ -559,125 +559,125 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      *
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      */
-    public /*out*/ readonly supportedRegionsToCloneTos!: pulumi.Output<string[]>;
-    public readonly switchoverTo!: pulumi.Output<string | undefined>;
-    public readonly switchoverToRemotePeerId!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly supportedRegionsToCloneTos: pulumi.Output<string[]>;
+    declare public readonly switchoverTo: pulumi.Output<string | undefined>;
+    declare public readonly switchoverToRemotePeerId: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Autonomous Database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      */
-    public /*out*/ readonly timeDataGuardRoleChanged!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDataGuardRoleChanged: pulumi.Output<string>;
     /**
      * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      */
-    public /*out*/ readonly timeDeletionOfFreeAutonomousDatabase!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDeletionOfFreeAutonomousDatabase: pulumi.Output<string>;
     /**
      * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      */
-    public /*out*/ readonly timeDisasterRecoveryRoleChanged!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDisasterRecoveryRoleChanged: pulumi.Output<string>;
     /**
      * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
      */
-    public /*out*/ readonly timeEarliestAvailableDbVersionUpgrade!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEarliestAvailableDbVersionUpgrade: pulumi.Output<string>;
     /**
      * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
      */
-    public /*out*/ readonly timeLatestAvailableDbVersionUpgrade!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLatestAvailableDbVersionUpgrade: pulumi.Output<string>;
     /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */
-    public /*out*/ readonly timeLocalDataGuardEnabled!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLocalDataGuardEnabled: pulumi.Output<string>;
     /**
      * The date and time when maintenance will begin.
      */
-    public /*out*/ readonly timeMaintenanceBegin!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaintenanceBegin: pulumi.Output<string>;
     /**
      * The date and time when maintenance will end.
      */
-    public /*out*/ readonly timeMaintenanceEnd!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaintenanceEnd: pulumi.Output<string>;
     /**
      * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      */
-    public readonly timeOfAutoRefreshStart!: pulumi.Output<string>;
+    declare public readonly timeOfAutoRefreshStart: pulumi.Output<string>;
     /**
      * The time the member joined the resource pool.
      */
-    public /*out*/ readonly timeOfJoiningResourcePool!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfJoiningResourcePool: pulumi.Output<string>;
     /**
      * The timestamp of the last failover operation.
      */
-    public /*out*/ readonly timeOfLastFailover!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfLastFailover: pulumi.Output<string>;
     /**
      * The date and time when last refresh happened.
      */
-    public /*out*/ readonly timeOfLastRefresh!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfLastRefresh: pulumi.Output<string>;
     /**
      * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      */
-    public /*out*/ readonly timeOfLastRefreshPoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfLastRefreshPoint: pulumi.Output<string>;
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.
      */
-    public /*out*/ readonly timeOfLastSwitchover!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfLastSwitchover: pulumi.Output<string>;
     /**
      * The date and time of next refresh.
      */
-    public /*out*/ readonly timeOfNextRefresh!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfNextRefresh: pulumi.Output<string>;
     /**
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
-    public /*out*/ readonly timeReclamationOfFreeAutonomousDatabase!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeReclamationOfFreeAutonomousDatabase: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target dbVersion value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the dbVersion value the same as the backend's current db_version.
      */
-    public readonly timeScheduledDbVersionUpgrade!: pulumi.Output<string>;
+    declare public readonly timeScheduledDbVersionUpgrade: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Database was most recently undeleted.
      */
-    public /*out*/ readonly timeUndeleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUndeleted: pulumi.Output<string>;
     /**
      * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      */
-    public /*out*/ readonly timeUntilReconnectCloneEnabled!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUntilReconnectCloneEnabled: pulumi.Output<string>;
     /**
      * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
      */
-    public readonly timestamp!: pulumi.Output<string>;
+    declare public readonly timestamp: pulumi.Output<string>;
     /**
      * The backup storage to the database.
      */
-    public /*out*/ readonly totalBackupStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalBackupStorageSizeInGbs: pulumi.Output<number>;
     /**
      * Clone from latest available backup timestamp.
      */
-    public readonly useLatestAvailableBackupTimeStamp!: pulumi.Output<boolean>;
+    declare public readonly useLatestAvailableBackupTimeStamp: pulumi.Output<boolean>;
     /**
      * The storage space consumed by Autonomous Database in GBs.
      */
-    public /*out*/ readonly usedDataStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly usedDataStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      */
-    public /*out*/ readonly usedDataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly usedDataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      *
@@ -691,7 +691,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly whitelistedIps!: pulumi.Output<string[] | undefined>;
+    declare public readonly whitelistedIps: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a AutonomousDatabase resource with the given unique name, arguments, and options.
@@ -706,257 +706,257 @@ export class AutonomousDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseState | undefined;
-            resourceInputs["actualUsedDataStorageSizeInTbs"] = state ? state.actualUsedDataStorageSizeInTbs : undefined;
-            resourceInputs["adminPassword"] = state ? state.adminPassword : undefined;
-            resourceInputs["allocatedStorageSizeInTbs"] = state ? state.allocatedStorageSizeInTbs : undefined;
-            resourceInputs["apexDetails"] = state ? state.apexDetails : undefined;
-            resourceInputs["arePrimaryWhitelistedIpsUsed"] = state ? state.arePrimaryWhitelistedIpsUsed : undefined;
-            resourceInputs["autoRefreshFrequencyInSeconds"] = state ? state.autoRefreshFrequencyInSeconds : undefined;
-            resourceInputs["autoRefreshPointLagInSeconds"] = state ? state.autoRefreshPointLagInSeconds : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["autonomousDatabaseBackupId"] = state ? state.autonomousDatabaseBackupId : undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["autonomousMaintenanceScheduleType"] = state ? state.autonomousMaintenanceScheduleType : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["availableUpgradeVersions"] = state ? state.availableUpgradeVersions : undefined;
-            resourceInputs["backupConfigs"] = state ? state.backupConfigs : undefined;
-            resourceInputs["backupRetentionPeriodInDays"] = state ? state.backupRetentionPeriodInDays : undefined;
-            resourceInputs["byolComputeCountLimit"] = state ? state.byolComputeCountLimit : undefined;
-            resourceInputs["characterSet"] = state ? state.characterSet : undefined;
-            resourceInputs["cloneTableSpaceLists"] = state ? state.cloneTableSpaceLists : undefined;
-            resourceInputs["cloneType"] = state ? state.cloneType : undefined;
-            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
-            resourceInputs["connectionUrls"] = state ? state.connectionUrls : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
-            resourceInputs["dataSafeStatus"] = state ? state.dataSafeStatus : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["databaseEdition"] = state ? state.databaseEdition : undefined;
-            resourceInputs["databaseManagementStatus"] = state ? state.databaseManagementStatus : undefined;
-            resourceInputs["dataguardRegionType"] = state ? state.dataguardRegionType : undefined;
-            resourceInputs["dbName"] = state ? state.dbName : undefined;
-            resourceInputs["dbToolsDetails"] = state ? state.dbToolsDetails : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["dbWorkload"] = state ? state.dbWorkload : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["disasterRecoveryRegionType"] = state ? state.disasterRecoveryRegionType : undefined;
-            resourceInputs["disasterRecoveryType"] = state ? state.disasterRecoveryType : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enableDeleteScheduledOperations"] = state ? state.enableDeleteScheduledOperations : undefined;
-            resourceInputs["encryptionKey"] = state ? state.encryptionKey : undefined;
-            resourceInputs["encryptionKeyHistoryEntries"] = state ? state.encryptionKeyHistoryEntries : undefined;
-            resourceInputs["failedDataRecoveryInSeconds"] = state ? state.failedDataRecoveryInSeconds : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inMemoryAreaInGbs"] = state ? state.inMemoryAreaInGbs : undefined;
-            resourceInputs["inMemoryPercentage"] = state ? state.inMemoryPercentage : undefined;
-            resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
-            resourceInputs["isAccessControlEnabled"] = state ? state.isAccessControlEnabled : undefined;
-            resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
-            resourceInputs["isAutoScalingForStorageEnabled"] = state ? state.isAutoScalingForStorageEnabled : undefined;
-            resourceInputs["isBackupRetentionLocked"] = state ? state.isBackupRetentionLocked : undefined;
-            resourceInputs["isDataGuardEnabled"] = state ? state.isDataGuardEnabled : undefined;
-            resourceInputs["isDedicated"] = state ? state.isDedicated : undefined;
-            resourceInputs["isDevTier"] = state ? state.isDevTier : undefined;
-            resourceInputs["isDisableDbVersionUpgradeSchedule"] = state ? state.isDisableDbVersionUpgradeSchedule : undefined;
-            resourceInputs["isDisconnectPeer"] = state ? state.isDisconnectPeer : undefined;
-            resourceInputs["isFreeTier"] = state ? state.isFreeTier : undefined;
-            resourceInputs["isLocalDataGuardEnabled"] = state ? state.isLocalDataGuardEnabled : undefined;
-            resourceInputs["isMtlsConnectionRequired"] = state ? state.isMtlsConnectionRequired : undefined;
-            resourceInputs["isPreview"] = state ? state.isPreview : undefined;
-            resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = state ? state.isPreviewVersionWithServiceTermsAccepted : undefined;
-            resourceInputs["isReconnectCloneEnabled"] = state ? state.isReconnectCloneEnabled : undefined;
-            resourceInputs["isRefreshableClone"] = state ? state.isRefreshableClone : undefined;
-            resourceInputs["isRemoteDataGuardEnabled"] = state ? state.isRemoteDataGuardEnabled : undefined;
-            resourceInputs["isReplicateAutomaticBackups"] = state ? state.isReplicateAutomaticBackups : undefined;
-            resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = state ? state.isScheduleDbVersionUpgradeToEarliest : undefined;
-            resourceInputs["isShrinkOnly"] = state ? state.isShrinkOnly : undefined;
-            resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
-            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
-            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
-            resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyLifecycleDetails"] = state ? state.kmsKeyLifecycleDetails : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = state ? state.localAdgAutoFailoverMaxDataLossLimit : undefined;
-            resourceInputs["localDisasterRecoveryType"] = state ? state.localDisasterRecoveryType : undefined;
-            resourceInputs["localStandbyDbs"] = state ? state.localStandbyDbs : undefined;
-            resourceInputs["longTermBackupSchedules"] = state ? state.longTermBackupSchedules : undefined;
-            resourceInputs["maintenanceTargetComponent"] = state ? state.maintenanceTargetComponent : undefined;
-            resourceInputs["maxCpuCoreCount"] = state ? state.maxCpuCoreCount : undefined;
-            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
-            resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
-            resourceInputs["netServicesArchitecture"] = state ? state.netServicesArchitecture : undefined;
-            resourceInputs["nextLongTermBackupTimeStamp"] = state ? state.nextLongTermBackupTimeStamp : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
-            resourceInputs["openMode"] = state ? state.openMode : undefined;
-            resourceInputs["operationsInsightsStatus"] = state ? state.operationsInsightsStatus : undefined;
-            resourceInputs["peerDbId"] = state ? state.peerDbId : undefined;
-            resourceInputs["peerDbIds"] = state ? state.peerDbIds : undefined;
-            resourceInputs["permissionLevel"] = state ? state.permissionLevel : undefined;
-            resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
-            resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
-            resourceInputs["privateEndpointLabel"] = state ? state.privateEndpointLabel : undefined;
-            resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
-            resourceInputs["publicConnectionUrls"] = state ? state.publicConnectionUrls : undefined;
-            resourceInputs["publicEndpoint"] = state ? state.publicEndpoint : undefined;
-            resourceInputs["refreshableMode"] = state ? state.refreshableMode : undefined;
-            resourceInputs["refreshableStatus"] = state ? state.refreshableStatus : undefined;
-            resourceInputs["remoteDisasterRecoveryConfigurations"] = state ? state.remoteDisasterRecoveryConfigurations : undefined;
-            resourceInputs["remoteDisasterRecoveryType"] = state ? state.remoteDisasterRecoveryType : undefined;
-            resourceInputs["resourcePoolLeaderId"] = state ? state.resourcePoolLeaderId : undefined;
-            resourceInputs["resourcePoolSummary"] = state ? state.resourcePoolSummary : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
-            resourceInputs["scheduledOperations"] = state ? state.scheduledOperations : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["secretVersionNumber"] = state ? state.secretVersionNumber : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["serviceConsoleUrl"] = state ? state.serviceConsoleUrl : undefined;
-            resourceInputs["shrinkAdbTrigger"] = state ? state.shrinkAdbTrigger : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceId"] = state ? state.sourceId : undefined;
-            resourceInputs["standbyDbs"] = state ? state.standbyDbs : undefined;
-            resourceInputs["standbyWhitelistedIps"] = state ? state.standbyWhitelistedIps : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["supportedRegionsToCloneTos"] = state ? state.supportedRegionsToCloneTos : undefined;
-            resourceInputs["switchoverTo"] = state ? state.switchoverTo : undefined;
-            resourceInputs["switchoverToRemotePeerId"] = state ? state.switchoverToRemotePeerId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDataGuardRoleChanged"] = state ? state.timeDataGuardRoleChanged : undefined;
-            resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = state ? state.timeDeletionOfFreeAutonomousDatabase : undefined;
-            resourceInputs["timeDisasterRecoveryRoleChanged"] = state ? state.timeDisasterRecoveryRoleChanged : undefined;
-            resourceInputs["timeEarliestAvailableDbVersionUpgrade"] = state ? state.timeEarliestAvailableDbVersionUpgrade : undefined;
-            resourceInputs["timeLatestAvailableDbVersionUpgrade"] = state ? state.timeLatestAvailableDbVersionUpgrade : undefined;
-            resourceInputs["timeLocalDataGuardEnabled"] = state ? state.timeLocalDataGuardEnabled : undefined;
-            resourceInputs["timeMaintenanceBegin"] = state ? state.timeMaintenanceBegin : undefined;
-            resourceInputs["timeMaintenanceEnd"] = state ? state.timeMaintenanceEnd : undefined;
-            resourceInputs["timeOfAutoRefreshStart"] = state ? state.timeOfAutoRefreshStart : undefined;
-            resourceInputs["timeOfJoiningResourcePool"] = state ? state.timeOfJoiningResourcePool : undefined;
-            resourceInputs["timeOfLastFailover"] = state ? state.timeOfLastFailover : undefined;
-            resourceInputs["timeOfLastRefresh"] = state ? state.timeOfLastRefresh : undefined;
-            resourceInputs["timeOfLastRefreshPoint"] = state ? state.timeOfLastRefreshPoint : undefined;
-            resourceInputs["timeOfLastSwitchover"] = state ? state.timeOfLastSwitchover : undefined;
-            resourceInputs["timeOfNextRefresh"] = state ? state.timeOfNextRefresh : undefined;
-            resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state ? state.timeReclamationOfFreeAutonomousDatabase : undefined;
-            resourceInputs["timeScheduledDbVersionUpgrade"] = state ? state.timeScheduledDbVersionUpgrade : undefined;
-            resourceInputs["timeUndeleted"] = state ? state.timeUndeleted : undefined;
-            resourceInputs["timeUntilReconnectCloneEnabled"] = state ? state.timeUntilReconnectCloneEnabled : undefined;
-            resourceInputs["timestamp"] = state ? state.timestamp : undefined;
-            resourceInputs["totalBackupStorageSizeInGbs"] = state ? state.totalBackupStorageSizeInGbs : undefined;
-            resourceInputs["useLatestAvailableBackupTimeStamp"] = state ? state.useLatestAvailableBackupTimeStamp : undefined;
-            resourceInputs["usedDataStorageSizeInGbs"] = state ? state.usedDataStorageSizeInGbs : undefined;
-            resourceInputs["usedDataStorageSizeInTbs"] = state ? state.usedDataStorageSizeInTbs : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["whitelistedIps"] = state ? state.whitelistedIps : undefined;
+            resourceInputs["actualUsedDataStorageSizeInTbs"] = state?.actualUsedDataStorageSizeInTbs;
+            resourceInputs["adminPassword"] = state?.adminPassword;
+            resourceInputs["allocatedStorageSizeInTbs"] = state?.allocatedStorageSizeInTbs;
+            resourceInputs["apexDetails"] = state?.apexDetails;
+            resourceInputs["arePrimaryWhitelistedIpsUsed"] = state?.arePrimaryWhitelistedIpsUsed;
+            resourceInputs["autoRefreshFrequencyInSeconds"] = state?.autoRefreshFrequencyInSeconds;
+            resourceInputs["autoRefreshPointLagInSeconds"] = state?.autoRefreshPointLagInSeconds;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["autonomousDatabaseBackupId"] = state?.autonomousDatabaseBackupId;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["autonomousMaintenanceScheduleType"] = state?.autonomousMaintenanceScheduleType;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["availableUpgradeVersions"] = state?.availableUpgradeVersions;
+            resourceInputs["backupConfigs"] = state?.backupConfigs;
+            resourceInputs["backupRetentionPeriodInDays"] = state?.backupRetentionPeriodInDays;
+            resourceInputs["byolComputeCountLimit"] = state?.byolComputeCountLimit;
+            resourceInputs["characterSet"] = state?.characterSet;
+            resourceInputs["cloneTableSpaceLists"] = state?.cloneTableSpaceLists;
+            resourceInputs["cloneType"] = state?.cloneType;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["connectionStrings"] = state?.connectionStrings;
+            resourceInputs["connectionUrls"] = state?.connectionUrls;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["customerContacts"] = state?.customerContacts;
+            resourceInputs["dataSafeStatus"] = state?.dataSafeStatus;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["databaseEdition"] = state?.databaseEdition;
+            resourceInputs["databaseManagementStatus"] = state?.databaseManagementStatus;
+            resourceInputs["dataguardRegionType"] = state?.dataguardRegionType;
+            resourceInputs["dbName"] = state?.dbName;
+            resourceInputs["dbToolsDetails"] = state?.dbToolsDetails;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["dbWorkload"] = state?.dbWorkload;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["disasterRecoveryRegionType"] = state?.disasterRecoveryRegionType;
+            resourceInputs["disasterRecoveryType"] = state?.disasterRecoveryType;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enableDeleteScheduledOperations"] = state?.enableDeleteScheduledOperations;
+            resourceInputs["encryptionKey"] = state?.encryptionKey;
+            resourceInputs["encryptionKeyHistoryEntries"] = state?.encryptionKeyHistoryEntries;
+            resourceInputs["failedDataRecoveryInSeconds"] = state?.failedDataRecoveryInSeconds;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inMemoryAreaInGbs"] = state?.inMemoryAreaInGbs;
+            resourceInputs["inMemoryPercentage"] = state?.inMemoryPercentage;
+            resourceInputs["infrastructureType"] = state?.infrastructureType;
+            resourceInputs["isAccessControlEnabled"] = state?.isAccessControlEnabled;
+            resourceInputs["isAutoScalingEnabled"] = state?.isAutoScalingEnabled;
+            resourceInputs["isAutoScalingForStorageEnabled"] = state?.isAutoScalingForStorageEnabled;
+            resourceInputs["isBackupRetentionLocked"] = state?.isBackupRetentionLocked;
+            resourceInputs["isDataGuardEnabled"] = state?.isDataGuardEnabled;
+            resourceInputs["isDedicated"] = state?.isDedicated;
+            resourceInputs["isDevTier"] = state?.isDevTier;
+            resourceInputs["isDisableDbVersionUpgradeSchedule"] = state?.isDisableDbVersionUpgradeSchedule;
+            resourceInputs["isDisconnectPeer"] = state?.isDisconnectPeer;
+            resourceInputs["isFreeTier"] = state?.isFreeTier;
+            resourceInputs["isLocalDataGuardEnabled"] = state?.isLocalDataGuardEnabled;
+            resourceInputs["isMtlsConnectionRequired"] = state?.isMtlsConnectionRequired;
+            resourceInputs["isPreview"] = state?.isPreview;
+            resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = state?.isPreviewVersionWithServiceTermsAccepted;
+            resourceInputs["isReconnectCloneEnabled"] = state?.isReconnectCloneEnabled;
+            resourceInputs["isRefreshableClone"] = state?.isRefreshableClone;
+            resourceInputs["isRemoteDataGuardEnabled"] = state?.isRemoteDataGuardEnabled;
+            resourceInputs["isReplicateAutomaticBackups"] = state?.isReplicateAutomaticBackups;
+            resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = state?.isScheduleDbVersionUpgradeToEarliest;
+            resourceInputs["isShrinkOnly"] = state?.isShrinkOnly;
+            resourceInputs["keyHistoryEntries"] = state?.keyHistoryEntries;
+            resourceInputs["keyStoreId"] = state?.keyStoreId;
+            resourceInputs["keyStoreWalletName"] = state?.keyStoreWalletName;
+            resourceInputs["keyVersionId"] = state?.keyVersionId;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyLifecycleDetails"] = state?.kmsKeyLifecycleDetails;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = state?.localAdgAutoFailoverMaxDataLossLimit;
+            resourceInputs["localDisasterRecoveryType"] = state?.localDisasterRecoveryType;
+            resourceInputs["localStandbyDbs"] = state?.localStandbyDbs;
+            resourceInputs["longTermBackupSchedules"] = state?.longTermBackupSchedules;
+            resourceInputs["maintenanceTargetComponent"] = state?.maintenanceTargetComponent;
+            resourceInputs["maxCpuCoreCount"] = state?.maxCpuCoreCount;
+            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
+            resourceInputs["ncharacterSet"] = state?.ncharacterSet;
+            resourceInputs["netServicesArchitecture"] = state?.netServicesArchitecture;
+            resourceInputs["nextLongTermBackupTimeStamp"] = state?.nextLongTermBackupTimeStamp;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["ocpuCount"] = state?.ocpuCount;
+            resourceInputs["openMode"] = state?.openMode;
+            resourceInputs["operationsInsightsStatus"] = state?.operationsInsightsStatus;
+            resourceInputs["peerDbId"] = state?.peerDbId;
+            resourceInputs["peerDbIds"] = state?.peerDbIds;
+            resourceInputs["permissionLevel"] = state?.permissionLevel;
+            resourceInputs["privateEndpoint"] = state?.privateEndpoint;
+            resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
+            resourceInputs["privateEndpointLabel"] = state?.privateEndpointLabel;
+            resourceInputs["provisionableCpuses"] = state?.provisionableCpuses;
+            resourceInputs["publicConnectionUrls"] = state?.publicConnectionUrls;
+            resourceInputs["publicEndpoint"] = state?.publicEndpoint;
+            resourceInputs["refreshableMode"] = state?.refreshableMode;
+            resourceInputs["refreshableStatus"] = state?.refreshableStatus;
+            resourceInputs["remoteDisasterRecoveryConfigurations"] = state?.remoteDisasterRecoveryConfigurations;
+            resourceInputs["remoteDisasterRecoveryType"] = state?.remoteDisasterRecoveryType;
+            resourceInputs["resourcePoolLeaderId"] = state?.resourcePoolLeaderId;
+            resourceInputs["resourcePoolSummary"] = state?.resourcePoolSummary;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["rotateKeyTrigger"] = state?.rotateKeyTrigger;
+            resourceInputs["scheduledOperations"] = state?.scheduledOperations;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["secretVersionNumber"] = state?.secretVersionNumber;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["serviceConsoleUrl"] = state?.serviceConsoleUrl;
+            resourceInputs["shrinkAdbTrigger"] = state?.shrinkAdbTrigger;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceId"] = state?.sourceId;
+            resourceInputs["standbyDbs"] = state?.standbyDbs;
+            resourceInputs["standbyWhitelistedIps"] = state?.standbyWhitelistedIps;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["supportedRegionsToCloneTos"] = state?.supportedRegionsToCloneTos;
+            resourceInputs["switchoverTo"] = state?.switchoverTo;
+            resourceInputs["switchoverToRemotePeerId"] = state?.switchoverToRemotePeerId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDataGuardRoleChanged"] = state?.timeDataGuardRoleChanged;
+            resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = state?.timeDeletionOfFreeAutonomousDatabase;
+            resourceInputs["timeDisasterRecoveryRoleChanged"] = state?.timeDisasterRecoveryRoleChanged;
+            resourceInputs["timeEarliestAvailableDbVersionUpgrade"] = state?.timeEarliestAvailableDbVersionUpgrade;
+            resourceInputs["timeLatestAvailableDbVersionUpgrade"] = state?.timeLatestAvailableDbVersionUpgrade;
+            resourceInputs["timeLocalDataGuardEnabled"] = state?.timeLocalDataGuardEnabled;
+            resourceInputs["timeMaintenanceBegin"] = state?.timeMaintenanceBegin;
+            resourceInputs["timeMaintenanceEnd"] = state?.timeMaintenanceEnd;
+            resourceInputs["timeOfAutoRefreshStart"] = state?.timeOfAutoRefreshStart;
+            resourceInputs["timeOfJoiningResourcePool"] = state?.timeOfJoiningResourcePool;
+            resourceInputs["timeOfLastFailover"] = state?.timeOfLastFailover;
+            resourceInputs["timeOfLastRefresh"] = state?.timeOfLastRefresh;
+            resourceInputs["timeOfLastRefreshPoint"] = state?.timeOfLastRefreshPoint;
+            resourceInputs["timeOfLastSwitchover"] = state?.timeOfLastSwitchover;
+            resourceInputs["timeOfNextRefresh"] = state?.timeOfNextRefresh;
+            resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state?.timeReclamationOfFreeAutonomousDatabase;
+            resourceInputs["timeScheduledDbVersionUpgrade"] = state?.timeScheduledDbVersionUpgrade;
+            resourceInputs["timeUndeleted"] = state?.timeUndeleted;
+            resourceInputs["timeUntilReconnectCloneEnabled"] = state?.timeUntilReconnectCloneEnabled;
+            resourceInputs["timestamp"] = state?.timestamp;
+            resourceInputs["totalBackupStorageSizeInGbs"] = state?.totalBackupStorageSizeInGbs;
+            resourceInputs["useLatestAvailableBackupTimeStamp"] = state?.useLatestAvailableBackupTimeStamp;
+            resourceInputs["usedDataStorageSizeInGbs"] = state?.usedDataStorageSizeInGbs;
+            resourceInputs["usedDataStorageSizeInTbs"] = state?.usedDataStorageSizeInTbs;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["whitelistedIps"] = state?.whitelistedIps;
         } else {
             const args = argsOrState as AutonomousDatabaseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbName === undefined) && !opts.urn) {
+            if (args?.dbName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbName'");
             }
             resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
-            resourceInputs["arePrimaryWhitelistedIpsUsed"] = args ? args.arePrimaryWhitelistedIpsUsed : undefined;
-            resourceInputs["autoRefreshFrequencyInSeconds"] = args ? args.autoRefreshFrequencyInSeconds : undefined;
-            resourceInputs["autoRefreshPointLagInSeconds"] = args ? args.autoRefreshPointLagInSeconds : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["autonomousDatabaseBackupId"] = args ? args.autonomousDatabaseBackupId : undefined;
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["autonomousMaintenanceScheduleType"] = args ? args.autonomousMaintenanceScheduleType : undefined;
-            resourceInputs["backupRetentionPeriodInDays"] = args ? args.backupRetentionPeriodInDays : undefined;
-            resourceInputs["byolComputeCountLimit"] = args ? args.byolComputeCountLimit : undefined;
-            resourceInputs["characterSet"] = args ? args.characterSet : undefined;
-            resourceInputs["cloneTableSpaceLists"] = args ? args.cloneTableSpaceLists : undefined;
-            resourceInputs["cloneType"] = args ? args.cloneType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
-            resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
-            resourceInputs["dataSafeStatus"] = args ? args.dataSafeStatus : undefined;
-            resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = args ? args.dataStorageSizeInTbs : undefined;
-            resourceInputs["databaseEdition"] = args ? args.databaseEdition : undefined;
-            resourceInputs["databaseManagementStatus"] = args ? args.databaseManagementStatus : undefined;
-            resourceInputs["dbName"] = args ? args.dbName : undefined;
-            resourceInputs["dbToolsDetails"] = args ? args.dbToolsDetails : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["dbWorkload"] = args ? args.dbWorkload : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["disasterRecoveryType"] = args ? args.disasterRecoveryType : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["enableDeleteScheduledOperations"] = args ? args.enableDeleteScheduledOperations : undefined;
-            resourceInputs["encryptionKey"] = args ? args.encryptionKey : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inMemoryPercentage"] = args ? args.inMemoryPercentage : undefined;
-            resourceInputs["isAccessControlEnabled"] = args ? args.isAccessControlEnabled : undefined;
-            resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
-            resourceInputs["isAutoScalingForStorageEnabled"] = args ? args.isAutoScalingForStorageEnabled : undefined;
-            resourceInputs["isBackupRetentionLocked"] = args ? args.isBackupRetentionLocked : undefined;
-            resourceInputs["isDataGuardEnabled"] = args ? args.isDataGuardEnabled : undefined;
-            resourceInputs["isDedicated"] = args ? args.isDedicated : undefined;
-            resourceInputs["isDevTier"] = args ? args.isDevTier : undefined;
-            resourceInputs["isDisableDbVersionUpgradeSchedule"] = args ? args.isDisableDbVersionUpgradeSchedule : undefined;
-            resourceInputs["isDisconnectPeer"] = args ? args.isDisconnectPeer : undefined;
-            resourceInputs["isFreeTier"] = args ? args.isFreeTier : undefined;
-            resourceInputs["isLocalDataGuardEnabled"] = args ? args.isLocalDataGuardEnabled : undefined;
-            resourceInputs["isMtlsConnectionRequired"] = args ? args.isMtlsConnectionRequired : undefined;
-            resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = args ? args.isPreviewVersionWithServiceTermsAccepted : undefined;
-            resourceInputs["isRefreshableClone"] = args ? args.isRefreshableClone : undefined;
-            resourceInputs["isReplicateAutomaticBackups"] = args ? args.isReplicateAutomaticBackups : undefined;
-            resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = args ? args.isScheduleDbVersionUpgradeToEarliest : undefined;
-            resourceInputs["isShrinkOnly"] = args ? args.isShrinkOnly : undefined;
-            resourceInputs["keyVersionId"] = args ? args.keyVersionId : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = args ? args.localAdgAutoFailoverMaxDataLossLimit : undefined;
-            resourceInputs["longTermBackupSchedules"] = args ? args.longTermBackupSchedules : undefined;
-            resourceInputs["maxCpuCoreCount"] = args ? args.maxCpuCoreCount : undefined;
-            resourceInputs["ncharacterSet"] = args ? args.ncharacterSet : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
-            resourceInputs["openMode"] = args ? args.openMode : undefined;
-            resourceInputs["operationsInsightsStatus"] = args ? args.operationsInsightsStatus : undefined;
-            resourceInputs["peerDbId"] = args ? args.peerDbId : undefined;
-            resourceInputs["permissionLevel"] = args ? args.permissionLevel : undefined;
-            resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
-            resourceInputs["privateEndpointLabel"] = args ? args.privateEndpointLabel : undefined;
-            resourceInputs["refreshableMode"] = args ? args.refreshableMode : undefined;
-            resourceInputs["remoteDisasterRecoveryType"] = args ? args.remoteDisasterRecoveryType : undefined;
-            resourceInputs["resourcePoolLeaderId"] = args ? args.resourcePoolLeaderId : undefined;
-            resourceInputs["resourcePoolSummary"] = args ? args.resourcePoolSummary : undefined;
-            resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
-            resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
-            resourceInputs["secretId"] = args ? args.secretId : undefined;
-            resourceInputs["secretVersionNumber"] = args ? args.secretVersionNumber : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["shrinkAdbTrigger"] = args ? args.shrinkAdbTrigger : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourceId"] = args ? args.sourceId : undefined;
-            resourceInputs["standbyWhitelistedIps"] = args ? args.standbyWhitelistedIps : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
-            resourceInputs["switchoverTo"] = args ? args.switchoverTo : undefined;
-            resourceInputs["switchoverToRemotePeerId"] = args ? args.switchoverToRemotePeerId : undefined;
-            resourceInputs["timeOfAutoRefreshStart"] = args ? args.timeOfAutoRefreshStart : undefined;
-            resourceInputs["timeScheduledDbVersionUpgrade"] = args ? args.timeScheduledDbVersionUpgrade : undefined;
-            resourceInputs["timestamp"] = args ? args.timestamp : undefined;
-            resourceInputs["useLatestAvailableBackupTimeStamp"] = args ? args.useLatestAvailableBackupTimeStamp : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
-            resourceInputs["whitelistedIps"] = args ? args.whitelistedIps : undefined;
+            resourceInputs["arePrimaryWhitelistedIpsUsed"] = args?.arePrimaryWhitelistedIpsUsed;
+            resourceInputs["autoRefreshFrequencyInSeconds"] = args?.autoRefreshFrequencyInSeconds;
+            resourceInputs["autoRefreshPointLagInSeconds"] = args?.autoRefreshPointLagInSeconds;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["autonomousDatabaseBackupId"] = args?.autonomousDatabaseBackupId;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["autonomousMaintenanceScheduleType"] = args?.autonomousMaintenanceScheduleType;
+            resourceInputs["backupRetentionPeriodInDays"] = args?.backupRetentionPeriodInDays;
+            resourceInputs["byolComputeCountLimit"] = args?.byolComputeCountLimit;
+            resourceInputs["characterSet"] = args?.characterSet;
+            resourceInputs["cloneTableSpaceLists"] = args?.cloneTableSpaceLists;
+            resourceInputs["cloneType"] = args?.cloneType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["computeModel"] = args?.computeModel;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
+            resourceInputs["customerContacts"] = args?.customerContacts;
+            resourceInputs["dataSafeStatus"] = args?.dataSafeStatus;
+            resourceInputs["dataStorageSizeInGb"] = args?.dataStorageSizeInGb;
+            resourceInputs["dataStorageSizeInTbs"] = args?.dataStorageSizeInTbs;
+            resourceInputs["databaseEdition"] = args?.databaseEdition;
+            resourceInputs["databaseManagementStatus"] = args?.databaseManagementStatus;
+            resourceInputs["dbName"] = args?.dbName;
+            resourceInputs["dbToolsDetails"] = args?.dbToolsDetails;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["dbWorkload"] = args?.dbWorkload;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["disasterRecoveryType"] = args?.disasterRecoveryType;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["enableDeleteScheduledOperations"] = args?.enableDeleteScheduledOperations;
+            resourceInputs["encryptionKey"] = args?.encryptionKey;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inMemoryPercentage"] = args?.inMemoryPercentage;
+            resourceInputs["isAccessControlEnabled"] = args?.isAccessControlEnabled;
+            resourceInputs["isAutoScalingEnabled"] = args?.isAutoScalingEnabled;
+            resourceInputs["isAutoScalingForStorageEnabled"] = args?.isAutoScalingForStorageEnabled;
+            resourceInputs["isBackupRetentionLocked"] = args?.isBackupRetentionLocked;
+            resourceInputs["isDataGuardEnabled"] = args?.isDataGuardEnabled;
+            resourceInputs["isDedicated"] = args?.isDedicated;
+            resourceInputs["isDevTier"] = args?.isDevTier;
+            resourceInputs["isDisableDbVersionUpgradeSchedule"] = args?.isDisableDbVersionUpgradeSchedule;
+            resourceInputs["isDisconnectPeer"] = args?.isDisconnectPeer;
+            resourceInputs["isFreeTier"] = args?.isFreeTier;
+            resourceInputs["isLocalDataGuardEnabled"] = args?.isLocalDataGuardEnabled;
+            resourceInputs["isMtlsConnectionRequired"] = args?.isMtlsConnectionRequired;
+            resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = args?.isPreviewVersionWithServiceTermsAccepted;
+            resourceInputs["isRefreshableClone"] = args?.isRefreshableClone;
+            resourceInputs["isReplicateAutomaticBackups"] = args?.isReplicateAutomaticBackups;
+            resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = args?.isScheduleDbVersionUpgradeToEarliest;
+            resourceInputs["isShrinkOnly"] = args?.isShrinkOnly;
+            resourceInputs["keyVersionId"] = args?.keyVersionId;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = args?.localAdgAutoFailoverMaxDataLossLimit;
+            resourceInputs["longTermBackupSchedules"] = args?.longTermBackupSchedules;
+            resourceInputs["maxCpuCoreCount"] = args?.maxCpuCoreCount;
+            resourceInputs["ncharacterSet"] = args?.ncharacterSet;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["ocpuCount"] = args?.ocpuCount;
+            resourceInputs["openMode"] = args?.openMode;
+            resourceInputs["operationsInsightsStatus"] = args?.operationsInsightsStatus;
+            resourceInputs["peerDbId"] = args?.peerDbId;
+            resourceInputs["permissionLevel"] = args?.permissionLevel;
+            resourceInputs["privateEndpointIp"] = args?.privateEndpointIp;
+            resourceInputs["privateEndpointLabel"] = args?.privateEndpointLabel;
+            resourceInputs["refreshableMode"] = args?.refreshableMode;
+            resourceInputs["remoteDisasterRecoveryType"] = args?.remoteDisasterRecoveryType;
+            resourceInputs["resourcePoolLeaderId"] = args?.resourcePoolLeaderId;
+            resourceInputs["resourcePoolSummary"] = args?.resourcePoolSummary;
+            resourceInputs["rotateKeyTrigger"] = args?.rotateKeyTrigger;
+            resourceInputs["scheduledOperations"] = args?.scheduledOperations;
+            resourceInputs["secretId"] = args?.secretId;
+            resourceInputs["secretVersionNumber"] = args?.secretVersionNumber;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["shrinkAdbTrigger"] = args?.shrinkAdbTrigger;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceId"] = args?.sourceId;
+            resourceInputs["standbyWhitelistedIps"] = args?.standbyWhitelistedIps;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
+            resourceInputs["switchoverTo"] = args?.switchoverTo;
+            resourceInputs["switchoverToRemotePeerId"] = args?.switchoverToRemotePeerId;
+            resourceInputs["timeOfAutoRefreshStart"] = args?.timeOfAutoRefreshStart;
+            resourceInputs["timeScheduledDbVersionUpgrade"] = args?.timeScheduledDbVersionUpgrade;
+            resourceInputs["timestamp"] = args?.timestamp;
+            resourceInputs["useLatestAvailableBackupTimeStamp"] = args?.useLatestAvailableBackupTimeStamp;
+            resourceInputs["vaultId"] = args?.vaultId;
+            resourceInputs["whitelistedIps"] = args?.whitelistedIps;
             resourceInputs["actualUsedDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["allocatedStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["apexDetails"] = undefined /*out*/;

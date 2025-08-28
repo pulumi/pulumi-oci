@@ -35,27 +35,22 @@ class ProviderArgs:
                  user_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-               'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
-        :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-               consistency problems but it also introduced performance issues on destroy operations.
-        :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-               console. Required if auth is set to 'ApiKey', ignored otherwise.
-        :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-               set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
+               Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
+        :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
+               A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key_password: (Optional) The password used to secure the private key.
-        :param pulumi.Input[_builtins.str] private_key_path: (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-               auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] private_key_path: (Optional) The path to the user's PEM formatted private key.
+               A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[_builtins.str] region: (Required) The region for API connections (e.g. us-ashburn-1).
-        :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-               duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-               is set to true.
-        :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-               Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-        :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-               auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+               The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
+        :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         if auth is not None:
             pulumi.set(__self__, "auth", auth)
@@ -90,8 +85,7 @@ class ProviderArgs:
     @pulumi.getter
     def auth(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-        'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
@@ -115,8 +109,8 @@ class ProviderArgs:
     @pulumi.getter(name="disableAutoRetries")
     def disable_auto_retries(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-        consistency problems but it also introduced performance issues on destroy operations.
+        (Optional) Disable automatic retries for retriable errors.
+        Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
         """
         return pulumi.get(self, "disable_auto_retries")
 
@@ -128,8 +122,7 @@ class ProviderArgs:
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-        console. Required if auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "fingerprint")
 
@@ -150,8 +143,8 @@ class ProviderArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-        set to 'ApiKey', ignored otherwise.
+        (Optional) A PEM formatted RSA private key for the user.
+        A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "private_key")
 
@@ -175,8 +168,8 @@ class ProviderArgs:
     @pulumi.getter(name="privateKeyPath")
     def private_key_path(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-        auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The path to the user's PEM formatted private key.
+        A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "private_key_path")
 
@@ -212,9 +205,8 @@ class ProviderArgs:
     @pulumi.getter(name="retryDurationSeconds")
     def retry_duration_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-        duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-        is set to true.
+        (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+        The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         """
         return pulumi.get(self, "retry_duration_seconds")
 
@@ -226,8 +218,7 @@ class ProviderArgs:
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-        Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -248,8 +239,7 @@ class ProviderArgs:
     @pulumi.getter(name="userOcid")
     def user_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-        auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "user_ocid")
 
@@ -287,27 +277,22 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-               'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
-        :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-               consistency problems but it also introduced performance issues on destroy operations.
-        :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-               console. Required if auth is set to 'ApiKey', ignored otherwise.
-        :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-               set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
+               Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
+        :param pulumi.Input[_builtins.str] fingerprint: (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] private_key: (Optional) A PEM formatted RSA private key for the user.
+               A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.str] private_key_password: (Optional) The password used to secure the private key.
-        :param pulumi.Input[_builtins.str] private_key_path: (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-               auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] private_key_path: (Optional) The path to the user's PEM formatted private key.
+               A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         :param pulumi.Input[_builtins.bool] realm_specific_service_endpoint_template_enabled: (Optional) flags to enable realm specific service endpoint.
         :param pulumi.Input[_builtins.str] region: (Required) The region for API connections (e.g. us-ashburn-1).
-        :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-               duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-               is set to true.
-        :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-               Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-        :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-               auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+               The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
+        :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         ...
     @overload
@@ -385,8 +370,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def auth(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-        'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
@@ -402,8 +386,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def fingerprint(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-        console. Required if auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "fingerprint")
 
@@ -411,8 +394,8 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-        set to 'ApiKey', ignored otherwise.
+        (Optional) A PEM formatted RSA private key for the user.
+        A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "private_key")
 
@@ -428,8 +411,8 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="privateKeyPath")
     def private_key_path(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-        auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The path to the user's PEM formatted private key.
+        A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "private_key_path")
 
@@ -445,8 +428,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-        Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "tenancy_ocid")
 
@@ -459,8 +441,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="userOcid")
     def user_ocid(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-        auth is set to 'ApiKey', ignored otherwise.
+        (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "user_ocid")
 

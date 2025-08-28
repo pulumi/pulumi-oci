@@ -93,64 +93,64 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
     /**
      * An optional description of your choice for the rule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      */
-    public readonly destination!: pulumi.Output<string>;
+    declare public readonly destination: pulumi.Output<string>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      */
-    public readonly destinationType!: pulumi.Output<string>;
+    declare public readonly destinationType: pulumi.Output<string>;
     /**
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      */
-    public readonly direction!: pulumi.Output<string>;
+    declare public readonly direction: pulumi.Output<string>;
     /**
      * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      */
-    public readonly icmpOptions!: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions | undefined>;
+    declare public readonly icmpOptions: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleIcmpOptions | undefined>;
     /**
      * Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      */
-    public /*out*/ readonly isValid!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isValid: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */
-    public readonly networkSecurityGroupId!: pulumi.Output<string>;
+    declare public readonly networkSecurityGroupId: pulumi.Output<string>;
     /**
      * The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      */
-    public readonly source!: pulumi.Output<string | undefined>;
+    declare public readonly source: pulumi.Output<string | undefined>;
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
      * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
      * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      */
-    public readonly sourceType!: pulumi.Output<string>;
+    declare public readonly sourceType: pulumi.Output<string>;
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      */
-    public readonly stateless!: pulumi.Output<boolean>;
+    declare public readonly stateless: pulumi.Output<boolean>;
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      */
-    public readonly tcpOptions!: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions | undefined>;
+    declare public readonly tcpOptions: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleTcpOptions | undefined>;
     /**
      * The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      */
-    public readonly udpOptions!: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions | undefined>;
+    declare public readonly udpOptions: pulumi.Output<outputs.Core.NetworkSecurityGroupSecurityRuleUdpOptions | undefined>;
 
     /**
      * Create a NetworkSecurityGroupSecurityRule resource with the given unique name, arguments, and options.
@@ -165,43 +165,43 @@ export class NetworkSecurityGroupSecurityRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkSecurityGroupSecurityRuleState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["destination"] = state ? state.destination : undefined;
-            resourceInputs["destinationType"] = state ? state.destinationType : undefined;
-            resourceInputs["direction"] = state ? state.direction : undefined;
-            resourceInputs["icmpOptions"] = state ? state.icmpOptions : undefined;
-            resourceInputs["isValid"] = state ? state.isValid : undefined;
-            resourceInputs["networkSecurityGroupId"] = state ? state.networkSecurityGroupId : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["stateless"] = state ? state.stateless : undefined;
-            resourceInputs["tcpOptions"] = state ? state.tcpOptions : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["udpOptions"] = state ? state.udpOptions : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["destination"] = state?.destination;
+            resourceInputs["destinationType"] = state?.destinationType;
+            resourceInputs["direction"] = state?.direction;
+            resourceInputs["icmpOptions"] = state?.icmpOptions;
+            resourceInputs["isValid"] = state?.isValid;
+            resourceInputs["networkSecurityGroupId"] = state?.networkSecurityGroupId;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["stateless"] = state?.stateless;
+            resourceInputs["tcpOptions"] = state?.tcpOptions;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["udpOptions"] = state?.udpOptions;
         } else {
             const args = argsOrState as NetworkSecurityGroupSecurityRuleArgs | undefined;
-            if ((!args || args.direction === undefined) && !opts.urn) {
+            if (args?.direction === undefined && !opts.urn) {
                 throw new Error("Missing required property 'direction'");
             }
-            if ((!args || args.networkSecurityGroupId === undefined) && !opts.urn) {
+            if (args?.networkSecurityGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkSecurityGroupId'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["destination"] = args ? args.destination : undefined;
-            resourceInputs["destinationType"] = args ? args.destinationType : undefined;
-            resourceInputs["direction"] = args ? args.direction : undefined;
-            resourceInputs["icmpOptions"] = args ? args.icmpOptions : undefined;
-            resourceInputs["networkSecurityGroupId"] = args ? args.networkSecurityGroupId : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
-            resourceInputs["stateless"] = args ? args.stateless : undefined;
-            resourceInputs["tcpOptions"] = args ? args.tcpOptions : undefined;
-            resourceInputs["udpOptions"] = args ? args.udpOptions : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["destination"] = args?.destination;
+            resourceInputs["destinationType"] = args?.destinationType;
+            resourceInputs["direction"] = args?.direction;
+            resourceInputs["icmpOptions"] = args?.icmpOptions;
+            resourceInputs["networkSecurityGroupId"] = args?.networkSecurityGroupId;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceType"] = args?.sourceType;
+            resourceInputs["stateless"] = args?.stateless;
+            resourceInputs["tcpOptions"] = args?.tcpOptions;
+            resourceInputs["udpOptions"] = args?.udpOptions;
             resourceInputs["isValid"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

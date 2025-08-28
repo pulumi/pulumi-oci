@@ -118,15 +118,15 @@ export class Vcn extends pulumi.CustomResource {
     /**
      * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
-    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly byoipv6cidrBlocks: pulumi.Output<string[]>;
     /**
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
-    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VcnByoipv6cidrDetail[]>;
+    declare public readonly byoipv6cidrDetails: pulumi.Output<outputs.Core.VcnByoipv6cidrDetail[]>;
     /**
      * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
      */
-    public readonly cidrBlock!: pulumi.Output<string>;
+    declare public readonly cidrBlock: pulumi.Output<string>;
     /**
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
@@ -134,31 +134,31 @@ export class Vcn extends pulumi.CustomResource {
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
-    public readonly cidrBlocks!: pulumi.Output<string[]>;
+    declare public readonly cidrBlocks: pulumi.Output<string[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      */
-    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultDhcpOptionsId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      */
-    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultRouteTableId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      */
-    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultSecurityListId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -167,15 +167,15 @@ export class Vcn extends pulumi.CustomResource {
      *
      * Example: `vcn1`
      */
-    public readonly dnsLabel!: pulumi.Output<string>;
+    declare public readonly dnsLabel: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
-    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly ipv6cidrBlocks: pulumi.Output<string[]>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
@@ -184,34 +184,34 @@ export class Vcn extends pulumi.CustomResource {
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
-    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
+    declare public readonly ipv6privateCidrBlocks: pulumi.Output<string[]>;
     /**
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      */
-    public readonly isIpv6enabled!: pulumi.Output<boolean>;
+    declare public readonly isIpv6enabled: pulumi.Output<boolean>;
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      */
-    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
+    declare public readonly isOracleGuaAllocationEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The VCN's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
      */
-    public /*out*/ readonly vcnDomainName!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcnDomainName: pulumi.Output<string>;
 
     /**
      * Create a Vcn resource with the given unique name, arguments, and options.
@@ -226,43 +226,43 @@ export class Vcn extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VcnState | undefined;
-            resourceInputs["byoipv6cidrBlocks"] = state ? state.byoipv6cidrBlocks : undefined;
-            resourceInputs["byoipv6cidrDetails"] = state ? state.byoipv6cidrDetails : undefined;
-            resourceInputs["cidrBlock"] = state ? state.cidrBlock : undefined;
-            resourceInputs["cidrBlocks"] = state ? state.cidrBlocks : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["defaultDhcpOptionsId"] = state ? state.defaultDhcpOptionsId : undefined;
-            resourceInputs["defaultRouteTableId"] = state ? state.defaultRouteTableId : undefined;
-            resourceInputs["defaultSecurityListId"] = state ? state.defaultSecurityListId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsLabel"] = state ? state.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipv6cidrBlocks"] = state ? state.ipv6cidrBlocks : undefined;
-            resourceInputs["ipv6privateCidrBlocks"] = state ? state.ipv6privateCidrBlocks : undefined;
-            resourceInputs["isIpv6enabled"] = state ? state.isIpv6enabled : undefined;
-            resourceInputs["isOracleGuaAllocationEnabled"] = state ? state.isOracleGuaAllocationEnabled : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnDomainName"] = state ? state.vcnDomainName : undefined;
+            resourceInputs["byoipv6cidrBlocks"] = state?.byoipv6cidrBlocks;
+            resourceInputs["byoipv6cidrDetails"] = state?.byoipv6cidrDetails;
+            resourceInputs["cidrBlock"] = state?.cidrBlock;
+            resourceInputs["cidrBlocks"] = state?.cidrBlocks;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["defaultDhcpOptionsId"] = state?.defaultDhcpOptionsId;
+            resourceInputs["defaultRouteTableId"] = state?.defaultRouteTableId;
+            resourceInputs["defaultSecurityListId"] = state?.defaultSecurityListId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsLabel"] = state?.dnsLabel;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipv6cidrBlocks"] = state?.ipv6cidrBlocks;
+            resourceInputs["ipv6privateCidrBlocks"] = state?.ipv6privateCidrBlocks;
+            resourceInputs["isIpv6enabled"] = state?.isIpv6enabled;
+            resourceInputs["isOracleGuaAllocationEnabled"] = state?.isOracleGuaAllocationEnabled;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnDomainName"] = state?.vcnDomainName;
         } else {
             const args = argsOrState as VcnArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["byoipv6cidrDetails"] = args ? args.byoipv6cidrDetails : undefined;
-            resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
-            resourceInputs["cidrBlocks"] = args ? args.cidrBlocks : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsLabel"] = args ? args.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipv6privateCidrBlocks"] = args ? args.ipv6privateCidrBlocks : undefined;
-            resourceInputs["isIpv6enabled"] = args ? args.isIpv6enabled : undefined;
-            resourceInputs["isOracleGuaAllocationEnabled"] = args ? args.isOracleGuaAllocationEnabled : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
+            resourceInputs["byoipv6cidrDetails"] = args?.byoipv6cidrDetails;
+            resourceInputs["cidrBlock"] = args?.cidrBlock;
+            resourceInputs["cidrBlocks"] = args?.cidrBlocks;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsLabel"] = args?.dnsLabel;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipv6privateCidrBlocks"] = args?.ipv6privateCidrBlocks;
+            resourceInputs["isIpv6enabled"] = args?.isIpv6enabled;
+            resourceInputs["isOracleGuaAllocationEnabled"] = args?.isOracleGuaAllocationEnabled;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["byoipv6cidrBlocks"] = undefined /*out*/;
             resourceInputs["defaultDhcpOptionsId"] = undefined /*out*/;
             resourceInputs["defaultRouteTableId"] = undefined /*out*/;

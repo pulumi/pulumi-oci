@@ -40,27 +40,27 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
     /**
      * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
      */
-    public readonly accessType!: pulumi.Output<string | undefined>;
+    declare public readonly accessType: pulumi.Output<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
      * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
      */
-    public readonly duration!: pulumi.Output<number | undefined>;
+    declare public readonly duration: pulumi.Output<number | undefined>;
     /**
      * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public readonly secretId!: pulumi.Output<string | undefined>;
+    declare public readonly secretId: pulumi.Output<string | undefined>;
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      */
-    public readonly secretVersionNumber!: pulumi.Output<number | undefined>;
+    declare public readonly secretVersionNumber: pulumi.Output<number | undefined>;
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
      *
@@ -68,7 +68,7 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeSaasAdminUserEnabled!: pulumi.Output<string>;
+    declare public readonly timeSaasAdminUserEnabled: pulumi.Output<string>;
 
     /**
      * Create a AutonomousDatabaseSaasAdminUser resource with the given unique name, arguments, and options.
@@ -83,25 +83,25 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseSaasAdminUserState | undefined;
-            resourceInputs["accessType"] = state ? state.accessType : undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["duration"] = state ? state.duration : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["secretVersionNumber"] = state ? state.secretVersionNumber : undefined;
-            resourceInputs["timeSaasAdminUserEnabled"] = state ? state.timeSaasAdminUserEnabled : undefined;
+            resourceInputs["accessType"] = state?.accessType;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["duration"] = state?.duration;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["secretVersionNumber"] = state?.secretVersionNumber;
+            resourceInputs["timeSaasAdminUserEnabled"] = state?.timeSaasAdminUserEnabled;
         } else {
             const args = argsOrState as AutonomousDatabaseSaasAdminUserArgs | undefined;
-            if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            resourceInputs["accessType"] = args ? args.accessType : undefined;
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["duration"] = args ? args.duration : undefined;
+            resourceInputs["accessType"] = args?.accessType;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["duration"] = args?.duration;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["secretId"] = args ? args.secretId : undefined;
-            resourceInputs["secretVersionNumber"] = args ? args.secretVersionNumber : undefined;
-            resourceInputs["timeSaasAdminUserEnabled"] = args ? args.timeSaasAdminUserEnabled : undefined;
+            resourceInputs["secretId"] = args?.secretId;
+            resourceInputs["secretVersionNumber"] = args?.secretVersionNumber;
+            resourceInputs["timeSaasAdminUserEnabled"] = args?.timeSaasAdminUserEnabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

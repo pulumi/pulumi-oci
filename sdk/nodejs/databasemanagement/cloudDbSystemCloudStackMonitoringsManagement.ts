@@ -55,7 +55,7 @@ export class CloudDbSystemCloudStackMonitoringsManagement extends pulumi.CustomR
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      */
-    public readonly cloudDbSystemId!: pulumi.Output<string>;
+    declare public readonly cloudDbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -63,15 +63,15 @@ export class CloudDbSystemCloudStackMonitoringsManagement extends pulumi.CustomR
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableCloudStackMonitoring!: pulumi.Output<boolean>;
+    declare public readonly enableCloudStackMonitoring: pulumi.Output<boolean>;
     /**
      * The status of the associated service.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    public readonly metadata!: pulumi.Output<string>;
+    declare public readonly metadata: pulumi.Output<string>;
 
     /**
      * Create a CloudDbSystemCloudStackMonitoringsManagement resource with the given unique name, arguments, and options.
@@ -86,22 +86,22 @@ export class CloudDbSystemCloudStackMonitoringsManagement extends pulumi.CustomR
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudDbSystemCloudStackMonitoringsManagementState | undefined;
-            resourceInputs["cloudDbSystemId"] = state ? state.cloudDbSystemId : undefined;
-            resourceInputs["enableCloudStackMonitoring"] = state ? state.enableCloudStackMonitoring : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["cloudDbSystemId"] = state?.cloudDbSystemId;
+            resourceInputs["enableCloudStackMonitoring"] = state?.enableCloudStackMonitoring;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["metadata"] = state?.metadata;
         } else {
             const args = argsOrState as CloudDbSystemCloudStackMonitoringsManagementArgs | undefined;
-            if ((!args || args.cloudDbSystemId === undefined) && !opts.urn) {
+            if (args?.cloudDbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudDbSystemId'");
             }
-            if ((!args || args.enableCloudStackMonitoring === undefined) && !opts.urn) {
+            if (args?.enableCloudStackMonitoring === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableCloudStackMonitoring'");
             }
-            resourceInputs["cloudDbSystemId"] = args ? args.cloudDbSystemId : undefined;
-            resourceInputs["enableCloudStackMonitoring"] = args ? args.enableCloudStackMonitoring : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["cloudDbSystemId"] = args?.cloudDbSystemId;
+            resourceInputs["enableCloudStackMonitoring"] = args?.enableCloudStackMonitoring;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["metadata"] = args?.metadata;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudDbSystemCloudStackMonitoringsManagement.__pulumiType, name, resourceInputs, opts);

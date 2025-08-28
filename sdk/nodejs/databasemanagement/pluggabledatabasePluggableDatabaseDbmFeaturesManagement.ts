@@ -46,17 +46,17 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enablePluggableDatabaseDbmFeature!: pulumi.Output<boolean>;
-    public readonly feature!: pulumi.Output<string | undefined>;
+    declare public readonly enablePluggableDatabaseDbmFeature: pulumi.Output<boolean>;
+    declare public readonly feature: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
-    public readonly modifyPluggableDatabaseDbmFeature!: pulumi.Output<boolean | undefined>;
+    declare public readonly featureDetails: pulumi.Output<outputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    declare public readonly modifyPluggableDatabaseDbmFeature: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */
-    public readonly pluggableDatabaseId!: pulumi.Output<string>;
+    declare public readonly pluggableDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a PluggabledatabasePluggableDatabaseDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -71,24 +71,24 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PluggabledatabasePluggableDatabaseDbmFeaturesManagementState | undefined;
-            resourceInputs["enablePluggableDatabaseDbmFeature"] = state ? state.enablePluggableDatabaseDbmFeature : undefined;
-            resourceInputs["feature"] = state ? state.feature : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
-            resourceInputs["modifyPluggableDatabaseDbmFeature"] = state ? state.modifyPluggableDatabaseDbmFeature : undefined;
-            resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
+            resourceInputs["enablePluggableDatabaseDbmFeature"] = state?.enablePluggableDatabaseDbmFeature;
+            resourceInputs["feature"] = state?.feature;
+            resourceInputs["featureDetails"] = state?.featureDetails;
+            resourceInputs["modifyPluggableDatabaseDbmFeature"] = state?.modifyPluggableDatabaseDbmFeature;
+            resourceInputs["pluggableDatabaseId"] = state?.pluggableDatabaseId;
         } else {
             const args = argsOrState as PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs | undefined;
-            if ((!args || args.enablePluggableDatabaseDbmFeature === undefined) && !opts.urn) {
+            if (args?.enablePluggableDatabaseDbmFeature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enablePluggableDatabaseDbmFeature'");
             }
-            if ((!args || args.pluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.pluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pluggableDatabaseId'");
             }
-            resourceInputs["enablePluggableDatabaseDbmFeature"] = args ? args.enablePluggableDatabaseDbmFeature : undefined;
-            resourceInputs["feature"] = args ? args.feature : undefined;
-            resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
-            resourceInputs["modifyPluggableDatabaseDbmFeature"] = args ? args.modifyPluggableDatabaseDbmFeature : undefined;
-            resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
+            resourceInputs["enablePluggableDatabaseDbmFeature"] = args?.enablePluggableDatabaseDbmFeature;
+            resourceInputs["feature"] = args?.feature;
+            resourceInputs["featureDetails"] = args?.featureDetails;
+            resourceInputs["modifyPluggableDatabaseDbmFeature"] = args?.modifyPluggableDatabaseDbmFeature;
+            resourceInputs["pluggableDatabaseId"] = args?.pluggableDatabaseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PluggabledatabasePluggableDatabaseDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);

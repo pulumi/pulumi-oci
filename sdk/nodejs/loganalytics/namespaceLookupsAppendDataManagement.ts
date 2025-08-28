@@ -37,23 +37,23 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
         return obj['__pulumiType'] === NamespaceLookupsAppendDataManagement.__pulumiType;
     }
 
-    public readonly appendLookupFile!: pulumi.Output<string>;
+    declare public readonly appendLookupFile: pulumi.Output<string>;
     /**
      * The character encoding of the uploaded file.
      */
-    public readonly charEncoding!: pulumi.Output<string>;
+    declare public readonly charEncoding: pulumi.Output<string>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      */
-    public readonly expect!: pulumi.Output<string>;
+    declare public readonly expect: pulumi.Output<string>;
     /**
      * is force
      */
-    public readonly isForce!: pulumi.Output<boolean>;
+    declare public readonly isForce: pulumi.Output<boolean>;
     /**
      * The name of the lookup to operate on.
      */
-    public readonly lookupName!: pulumi.Output<string>;
+    declare public readonly lookupName: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -61,7 +61,7 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a NamespaceLookupsAppendDataManagement resource with the given unique name, arguments, and options.
@@ -76,29 +76,29 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceLookupsAppendDataManagementState | undefined;
-            resourceInputs["appendLookupFile"] = state ? state.appendLookupFile : undefined;
-            resourceInputs["charEncoding"] = state ? state.charEncoding : undefined;
-            resourceInputs["expect"] = state ? state.expect : undefined;
-            resourceInputs["isForce"] = state ? state.isForce : undefined;
-            resourceInputs["lookupName"] = state ? state.lookupName : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["appendLookupFile"] = state?.appendLookupFile;
+            resourceInputs["charEncoding"] = state?.charEncoding;
+            resourceInputs["expect"] = state?.expect;
+            resourceInputs["isForce"] = state?.isForce;
+            resourceInputs["lookupName"] = state?.lookupName;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceLookupsAppendDataManagementArgs | undefined;
-            if ((!args || args.appendLookupFile === undefined) && !opts.urn) {
+            if (args?.appendLookupFile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'appendLookupFile'");
             }
-            if ((!args || args.lookupName === undefined) && !opts.urn) {
+            if (args?.lookupName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lookupName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["appendLookupFile"] = args ? args.appendLookupFile : undefined;
-            resourceInputs["charEncoding"] = args ? args.charEncoding : undefined;
-            resourceInputs["expect"] = args ? args.expect : undefined;
-            resourceInputs["isForce"] = args ? args.isForce : undefined;
-            resourceInputs["lookupName"] = args ? args.lookupName : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["appendLookupFile"] = args?.appendLookupFile;
+            resourceInputs["charEncoding"] = args?.charEncoding;
+            resourceInputs["expect"] = args?.expect;
+            resourceInputs["isForce"] = args?.isForce;
+            resourceInputs["lookupName"] = args?.lookupName;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NamespaceLookupsAppendDataManagement.__pulumiType, name, resourceInputs, opts);

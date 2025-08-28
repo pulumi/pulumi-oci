@@ -104,39 +104,39 @@ export class RemediationRecipe extends pulumi.CustomResource {
     /**
      * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
-    public readonly detectConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeDetectConfiguration>;
+    declare public readonly detectConfiguration: pulumi.Output<outputs.Adm.RemediationRecipeDetectConfiguration>;
     /**
      * (Updatable) The name of the remediation recipe.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
      */
-    public readonly isRunTriggeredOnKbChange!: pulumi.Output<boolean>;
+    declare public readonly isRunTriggeredOnKbChange: pulumi.Output<boolean>;
     /**
      * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
-    public readonly knowledgeBaseId!: pulumi.Output<string>;
+    declare public readonly knowledgeBaseId: pulumi.Output<string>;
     /**
      * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.Adm.RemediationRecipeNetworkConfiguration>;
     /**
      * (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
      */
-    public readonly scmConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeScmConfiguration>;
+    declare public readonly scmConfiguration: pulumi.Output<outputs.Adm.RemediationRecipeScmConfiguration>;
     /**
      * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -144,23 +144,23 @@ export class RemediationRecipe extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      */
-    public readonly verifyConfiguration!: pulumi.Output<outputs.Adm.RemediationRecipeVerifyConfiguration>;
+    declare public readonly verifyConfiguration: pulumi.Output<outputs.Adm.RemediationRecipeVerifyConfiguration>;
 
     /**
      * Create a RemediationRecipe resource with the given unique name, arguments, and options.
@@ -175,54 +175,54 @@ export class RemediationRecipe extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RemediationRecipeState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["detectConfiguration"] = state ? state.detectConfiguration : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isRunTriggeredOnKbChange"] = state ? state.isRunTriggeredOnKbChange : undefined;
-            resourceInputs["knowledgeBaseId"] = state ? state.knowledgeBaseId : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["scmConfiguration"] = state ? state.scmConfiguration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["verifyConfiguration"] = state ? state.verifyConfiguration : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detectConfiguration"] = state?.detectConfiguration;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isRunTriggeredOnKbChange"] = state?.isRunTriggeredOnKbChange;
+            resourceInputs["knowledgeBaseId"] = state?.knowledgeBaseId;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["scmConfiguration"] = state?.scmConfiguration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["verifyConfiguration"] = state?.verifyConfiguration;
         } else {
             const args = argsOrState as RemediationRecipeArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.detectConfiguration === undefined) && !opts.urn) {
+            if (args?.detectConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'detectConfiguration'");
             }
-            if ((!args || args.isRunTriggeredOnKbChange === undefined) && !opts.urn) {
+            if (args?.isRunTriggeredOnKbChange === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isRunTriggeredOnKbChange'");
             }
-            if ((!args || args.knowledgeBaseId === undefined) && !opts.urn) {
+            if (args?.knowledgeBaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'knowledgeBaseId'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            if ((!args || args.scmConfiguration === undefined) && !opts.urn) {
+            if (args?.scmConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scmConfiguration'");
             }
-            if ((!args || args.verifyConfiguration === undefined) && !opts.urn) {
+            if (args?.verifyConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'verifyConfiguration'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["detectConfiguration"] = args ? args.detectConfiguration : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isRunTriggeredOnKbChange"] = args ? args.isRunTriggeredOnKbChange : undefined;
-            resourceInputs["knowledgeBaseId"] = args ? args.knowledgeBaseId : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["scmConfiguration"] = args ? args.scmConfiguration : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["verifyConfiguration"] = args ? args.verifyConfiguration : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["detectConfiguration"] = args?.detectConfiguration;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isRunTriggeredOnKbChange"] = args?.isRunTriggeredOnKbChange;
+            resourceInputs["knowledgeBaseId"] = args?.knowledgeBaseId;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["scmConfiguration"] = args?.scmConfiguration;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["verifyConfiguration"] = args?.verifyConfiguration;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

@@ -82,51 +82,51 @@ export class TargetDatabasePeerTargetDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
-    public readonly databaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseDatabaseDetails>;
+    declare public readonly databaseDetails: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseDatabaseDetails>;
     /**
      * Unique name of the database associated to the peer target database.
      */
-    public /*out*/ readonly databaseUniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseUniqueName: pulumi.Output<string>;
     /**
      * The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
      */
-    public readonly dataguardAssociationId!: pulumi.Output<string>;
+    declare public readonly dataguardAssociationId: pulumi.Output<string>;
     /**
      * (Updatable) The description of the peer target database in Data Safe.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The secondary key assigned for the peer target database in Data Safe.
      */
-    public /*out*/ readonly key!: pulumi.Output<number>;
+    declare public /*out*/ readonly key: pulumi.Output<number>;
     /**
      * Details about the current state of the peer target database in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Role of the database associated to the peer target database.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
      * The current state of the peer target database in Data Safe.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the Data Safe target database.
      */
-    public readonly targetDatabaseId!: pulumi.Output<string>;
+    declare public readonly targetDatabaseId: pulumi.Output<string>;
     /**
      * The date and time of the peer target database registration in Data Safe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    public readonly tlsConfig!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig>;
+    declare public readonly tlsConfig: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig>;
 
     /**
      * Create a TargetDatabasePeerTargetDatabase resource with the given unique name, arguments, and options.
@@ -141,32 +141,32 @@ export class TargetDatabasePeerTargetDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TargetDatabasePeerTargetDatabaseState | undefined;
-            resourceInputs["databaseDetails"] = state ? state.databaseDetails : undefined;
-            resourceInputs["databaseUniqueName"] = state ? state.databaseUniqueName : undefined;
-            resourceInputs["dataguardAssociationId"] = state ? state.dataguardAssociationId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetDatabaseId"] = state ? state.targetDatabaseId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["tlsConfig"] = state ? state.tlsConfig : undefined;
+            resourceInputs["databaseDetails"] = state?.databaseDetails;
+            resourceInputs["databaseUniqueName"] = state?.databaseUniqueName;
+            resourceInputs["dataguardAssociationId"] = state?.dataguardAssociationId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetDatabaseId"] = state?.targetDatabaseId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["tlsConfig"] = state?.tlsConfig;
         } else {
             const args = argsOrState as TargetDatabasePeerTargetDatabaseArgs | undefined;
-            if ((!args || args.databaseDetails === undefined) && !opts.urn) {
+            if (args?.databaseDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseDetails'");
             }
-            if ((!args || args.targetDatabaseId === undefined) && !opts.urn) {
+            if (args?.targetDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetDatabaseId'");
             }
-            resourceInputs["databaseDetails"] = args ? args.databaseDetails : undefined;
-            resourceInputs["dataguardAssociationId"] = args ? args.dataguardAssociationId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["targetDatabaseId"] = args ? args.targetDatabaseId : undefined;
-            resourceInputs["tlsConfig"] = args ? args.tlsConfig : undefined;
+            resourceInputs["databaseDetails"] = args?.databaseDetails;
+            resourceInputs["dataguardAssociationId"] = args?.dataguardAssociationId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["targetDatabaseId"] = args?.targetDatabaseId;
+            resourceInputs["tlsConfig"] = args?.tlsConfig;
             resourceInputs["databaseUniqueName"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

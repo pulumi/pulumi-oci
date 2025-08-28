@@ -59,89 +59,89 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
     /**
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      */
-    public /*out*/ readonly appDefinedChildColumnKeys!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly appDefinedChildColumnKeys: pulumi.Output<string[]>;
     /**
      * The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      */
-    public /*out*/ readonly appName!: pulumi.Output<string>;
+    declare public /*out*/ readonly appName: pulumi.Output<string>;
     /**
      * The name of the sensitive column.
      */
-    public /*out*/ readonly columnName!: pulumi.Output<string>;
+    declare public /*out*/ readonly columnName: pulumi.Output<string>;
     /**
      * The data type of the sensitive column.
      */
-    public /*out*/ readonly dataType!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataType: pulumi.Output<string>;
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
-    public /*out*/ readonly dbDefinedChildColumnKeys!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly dbDefinedChildColumnKeys: pulumi.Output<string[]>;
     /**
      * The OCID of the discovery job.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    public readonly discoveryJobId!: pulumi.Output<string>;
+    declare public readonly discoveryJobId: pulumi.Output<string>;
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    public /*out*/ readonly discoveryType!: pulumi.Output<string>;
+    declare public /*out*/ readonly discoveryType: pulumi.Output<string>;
     /**
      * The estimated number of data values the column has in the associated database.
      */
-    public /*out*/ readonly estimatedDataValueCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly estimatedDataValueCount: pulumi.Output<string>;
     /**
      * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      */
-    public /*out*/ readonly isResultApplied!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isResultApplied: pulumi.Output<boolean>;
     /**
      * The unique key that identifies the discovery result.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      */
-    public /*out*/ readonly modifiedAttributes!: pulumi.Output<outputs.DataSafe.DiscoveryJobsResultModifiedAttribute[]>;
+    declare public /*out*/ readonly modifiedAttributes: pulumi.Output<outputs.DataSafe.DiscoveryJobsResultModifiedAttribute[]>;
     /**
      * The database object that contains the sensitive column.
      */
-    public /*out*/ readonly object!: pulumi.Output<string>;
+    declare public /*out*/ readonly object: pulumi.Output<string>;
     /**
      * The type of the database object that contains the sensitive column.
      */
-    public /*out*/ readonly objectType!: pulumi.Output<string>;
+    declare public /*out*/ readonly objectType: pulumi.Output<string>;
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      */
-    public /*out*/ readonly parentColumnKeys!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly parentColumnKeys: pulumi.Output<string[]>;
     /**
      * Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      */
-    public /*out*/ readonly plannedAction!: pulumi.Output<string>;
+    declare public /*out*/ readonly plannedAction: pulumi.Output<string>;
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    public /*out*/ readonly relationType!: pulumi.Output<string>;
+    declare public /*out*/ readonly relationType: pulumi.Output<string>;
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      */
-    public /*out*/ readonly sampleDataValues!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly sampleDataValues: pulumi.Output<string[]>;
     /**
      * The database schema that contains the sensitive column.
      */
-    public /*out*/ readonly schemaName!: pulumi.Output<string>;
+    declare public /*out*/ readonly schemaName: pulumi.Output<string>;
     /**
      * The unique key that identifies the sensitive column represented by the discovery result.
      */
-    public /*out*/ readonly sensitiveColumnkey!: pulumi.Output<string>;
+    declare public /*out*/ readonly sensitiveColumnkey: pulumi.Output<string>;
     /**
      * The OCID of the sensitive type associated with the sensitive column.
      */
-    public /*out*/ readonly sensitiveTypeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sensitiveTypeId: pulumi.Output<string>;
 
     /**
      * Create a DiscoveryJobsResult resource with the given unique name, arguments, and options.
@@ -156,32 +156,32 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiscoveryJobsResultState | undefined;
-            resourceInputs["appDefinedChildColumnKeys"] = state ? state.appDefinedChildColumnKeys : undefined;
-            resourceInputs["appName"] = state ? state.appName : undefined;
-            resourceInputs["columnName"] = state ? state.columnName : undefined;
-            resourceInputs["dataType"] = state ? state.dataType : undefined;
-            resourceInputs["dbDefinedChildColumnKeys"] = state ? state.dbDefinedChildColumnKeys : undefined;
-            resourceInputs["discoveryJobId"] = state ? state.discoveryJobId : undefined;
-            resourceInputs["discoveryType"] = state ? state.discoveryType : undefined;
-            resourceInputs["estimatedDataValueCount"] = state ? state.estimatedDataValueCount : undefined;
-            resourceInputs["isResultApplied"] = state ? state.isResultApplied : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["modifiedAttributes"] = state ? state.modifiedAttributes : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["objectType"] = state ? state.objectType : undefined;
-            resourceInputs["parentColumnKeys"] = state ? state.parentColumnKeys : undefined;
-            resourceInputs["plannedAction"] = state ? state.plannedAction : undefined;
-            resourceInputs["relationType"] = state ? state.relationType : undefined;
-            resourceInputs["sampleDataValues"] = state ? state.sampleDataValues : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sensitiveColumnkey"] = state ? state.sensitiveColumnkey : undefined;
-            resourceInputs["sensitiveTypeId"] = state ? state.sensitiveTypeId : undefined;
+            resourceInputs["appDefinedChildColumnKeys"] = state?.appDefinedChildColumnKeys;
+            resourceInputs["appName"] = state?.appName;
+            resourceInputs["columnName"] = state?.columnName;
+            resourceInputs["dataType"] = state?.dataType;
+            resourceInputs["dbDefinedChildColumnKeys"] = state?.dbDefinedChildColumnKeys;
+            resourceInputs["discoveryJobId"] = state?.discoveryJobId;
+            resourceInputs["discoveryType"] = state?.discoveryType;
+            resourceInputs["estimatedDataValueCount"] = state?.estimatedDataValueCount;
+            resourceInputs["isResultApplied"] = state?.isResultApplied;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["modifiedAttributes"] = state?.modifiedAttributes;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["objectType"] = state?.objectType;
+            resourceInputs["parentColumnKeys"] = state?.parentColumnKeys;
+            resourceInputs["plannedAction"] = state?.plannedAction;
+            resourceInputs["relationType"] = state?.relationType;
+            resourceInputs["sampleDataValues"] = state?.sampleDataValues;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sensitiveColumnkey"] = state?.sensitiveColumnkey;
+            resourceInputs["sensitiveTypeId"] = state?.sensitiveTypeId;
         } else {
             const args = argsOrState as DiscoveryJobsResultArgs | undefined;
-            if ((!args || args.discoveryJobId === undefined) && !opts.urn) {
+            if (args?.discoveryJobId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'discoveryJobId'");
             }
-            resourceInputs["discoveryJobId"] = args ? args.discoveryJobId : undefined;
+            resourceInputs["discoveryJobId"] = args?.discoveryJobId;
             resourceInputs["appDefinedChildColumnKeys"] = undefined /*out*/;
             resourceInputs["appName"] = undefined /*out*/;
             resourceInputs["columnName"] = undefined /*out*/;

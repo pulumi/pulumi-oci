@@ -60,15 +60,15 @@ export class SubscriptionMapping extends pulumi.CustomResource {
     /**
      * OCID of the compartment. Always a tenancy OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Denotes if the subscription is explicity assigned to the root compartment or tenancy.
      */
-    public /*out*/ readonly isExplicitlyAssigned!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isExplicitlyAssigned: pulumi.Output<boolean>;
     /**
      * Lifecycle state of the subscriptionMapping.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * OCID of Subscription.
      *
@@ -76,19 +76,19 @@ export class SubscriptionMapping extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * Date-time when subscription mapping was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Date-time when subscription mapping was terminated.
      */
-    public /*out*/ readonly timeTerminated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeTerminated: pulumi.Output<string>;
     /**
      * Date-time when subscription mapping was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SubscriptionMapping resource with the given unique name, arguments, and options.
@@ -103,23 +103,23 @@ export class SubscriptionMapping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubscriptionMappingState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isExplicitlyAssigned"] = state ? state.isExplicitlyAssigned : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeTerminated"] = state ? state.timeTerminated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isExplicitlyAssigned"] = state?.isExplicitlyAssigned;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeTerminated"] = state?.timeTerminated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SubscriptionMappingArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.subscriptionId === undefined) && !opts.urn) {
+            if (args?.subscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscriptionId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["isExplicitlyAssigned"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

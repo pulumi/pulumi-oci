@@ -63,15 +63,15 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly destinationResourceId!: pulumi.Output<string | undefined>;
+    declare public readonly destinationResourceId: pulumi.Output<string | undefined>;
     /**
      * List of member resources.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesListMemberItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesListMemberItem[]>;
     /**
      * The field which determines the depth of hierarchy while searching for members.
      */
-    public readonly limitLevel!: pulumi.Output<number | undefined>;
+    declare public readonly limitLevel: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
      *
@@ -79,7 +79,7 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly monitoredResourceId!: pulumi.Output<string>;
+    declare public readonly monitoredResourceId: pulumi.Output<string>;
 
     /**
      * Create a MonitoredResourcesListMember resource with the given unique name, arguments, and options.
@@ -94,18 +94,18 @@ export class MonitoredResourcesListMember extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourcesListMemberState | undefined;
-            resourceInputs["destinationResourceId"] = state ? state.destinationResourceId : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["limitLevel"] = state ? state.limitLevel : undefined;
-            resourceInputs["monitoredResourceId"] = state ? state.monitoredResourceId : undefined;
+            resourceInputs["destinationResourceId"] = state?.destinationResourceId;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["limitLevel"] = state?.limitLevel;
+            resourceInputs["monitoredResourceId"] = state?.monitoredResourceId;
         } else {
             const args = argsOrState as MonitoredResourcesListMemberArgs | undefined;
-            if ((!args || args.monitoredResourceId === undefined) && !opts.urn) {
+            if (args?.monitoredResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoredResourceId'");
             }
-            resourceInputs["destinationResourceId"] = args ? args.destinationResourceId : undefined;
-            resourceInputs["limitLevel"] = args ? args.limitLevel : undefined;
-            resourceInputs["monitoredResourceId"] = args ? args.monitoredResourceId : undefined;
+            resourceInputs["destinationResourceId"] = args?.destinationResourceId;
+            resourceInputs["limitLevel"] = args?.limitLevel;
+            resourceInputs["monitoredResourceId"] = args?.monitoredResourceId;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

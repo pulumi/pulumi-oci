@@ -54,15 +54,15 @@ export class ArtifactByPath extends pulumi.CustomResource {
         return obj['__pulumiType'] === ArtifactByPath.__pulumiType;
     }
 
-    public /*out*/ readonly artifactId!: pulumi.Output<string>;
+    declare public /*out*/ readonly artifactId: pulumi.Output<string>;
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      */
-    public readonly artifactPath!: pulumi.Output<string>;
+    declare public readonly artifactPath: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
      *
@@ -70,47 +70,47 @@ export class ArtifactByPath extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly content!: pulumi.Output<string | undefined>;
+    declare public readonly content: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
-    public readonly repositoryId!: pulumi.Output<string>;
+    declare public readonly repositoryId: pulumi.Output<string>;
     /**
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      */
-    public /*out*/ readonly sha256!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha256: pulumi.Output<string>;
     /**
      * The size of the artifact in bytes.
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInBytes: pulumi.Output<string>;
     /**
      * A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
      */
-    public readonly source!: pulumi.Output<string | undefined>;
+    declare public readonly source: pulumi.Output<string | undefined>;
     /**
      * The current state of the artifact.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
 
     /**
      * Create a ArtifactByPath resource with the given unique name, arguments, and options.
@@ -125,36 +125,36 @@ export class ArtifactByPath extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ArtifactByPathState | undefined;
-            resourceInputs["artifactId"] = state ? state.artifactId : undefined;
-            resourceInputs["artifactPath"] = state ? state.artifactPath : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
-            resourceInputs["sha256"] = state ? state.sha256 : undefined;
-            resourceInputs["sizeInBytes"] = state ? state.sizeInBytes : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["artifactId"] = state?.artifactId;
+            resourceInputs["artifactPath"] = state?.artifactPath;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["repositoryId"] = state?.repositoryId;
+            resourceInputs["sha256"] = state?.sha256;
+            resourceInputs["sizeInBytes"] = state?.sizeInBytes;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ArtifactByPathArgs | undefined;
-            if ((!args || args.artifactPath === undefined) && !opts.urn) {
+            if (args?.artifactPath === undefined && !opts.urn) {
                 throw new Error("Missing required property 'artifactPath'");
             }
-            if ((!args || args.repositoryId === undefined) && !opts.urn) {
+            if (args?.repositoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryId'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["artifactPath"] = args ? args.artifactPath : undefined;
-            resourceInputs["content"] = args ? args.content : undefined;
-            resourceInputs["repositoryId"] = args ? args.repositoryId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["artifactPath"] = args?.artifactPath;
+            resourceInputs["content"] = args?.content;
+            resourceInputs["repositoryId"] = args?.repositoryId;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["version"] = args?.version;
             resourceInputs["artifactId"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;

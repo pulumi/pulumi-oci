@@ -93,143 +93,143 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly activatedStorageCount: pulumi.Output<number>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly additionalStorageCount: pulumi.Output<number>;
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    public /*out*/ readonly availableStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      */
-    public readonly clusterPlacementGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The number of compute servers for the cloud Exadata infrastructure.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * The compute model of the Exadata infrastructure.
      */
-    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
      * The total number of CPU cores allocated.
      */
-    public /*out*/ readonly cpuCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuCount: pulumi.Output<number>;
     /**
      * (Updatable) Customer contacts.
      */
-    public readonly customerContacts!: pulumi.Output<outputs.Database.CloudExadataInfrastructureCustomerContact[]>;
+    declare public readonly customerContacts: pulumi.Output<outputs.Database.CloudExadataInfrastructureCustomerContact[]>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    public readonly databaseServerType!: pulumi.Output<string>;
+    declare public readonly databaseServerType: pulumi.Output<string>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbServerVersion: pulumi.Output<string>;
     /**
      * Details of the file system configuration of the Exadata infrastructure.
      */
-    public /*out*/ readonly definedFileSystemConfigurations!: pulumi.Output<outputs.Database.CloudExadataInfrastructureDefinedFileSystemConfiguration[]>;
+    declare public /*out*/ readonly definedFileSystemConfigurations: pulumi.Output<outputs.Database.CloudExadataInfrastructureDefinedFileSystemConfiguration[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If true, the infrastructure is using granular maintenance scheduling preference.
      */
-    public /*out*/ readonly isSchedulingPolicyAssociated!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSchedulingPolicyAssociated: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindow!: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    declare public readonly maintenanceWindow: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
     /**
      * The total number of CPU cores available.
      */
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxCpuCount: pulumi.Output<number>;
     /**
      * The total available DATA disk group size.
      */
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDataStorageInTbs: pulumi.Output<number>;
     /**
      * The total local node storage available in GBs.
      */
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDbNodeStorageInGbs: pulumi.Output<number>;
     /**
      * The total memory available in GBs.
      */
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxMemoryInGbs: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly monthlyDbServerVersion: pulumi.Output<string>;
     /**
      * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly monthlyStorageServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly monthlyStorageServerVersion: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
     /**
      * The shape of the cloud Exadata infrastructure resource.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      */
-    public readonly storageCount!: pulumi.Output<number>;
+    declare public readonly storageCount: pulumi.Output<number>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    public readonly storageServerType!: pulumi.Output<string>;
+    declare public readonly storageServerType: pulumi.Output<string>;
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageServerVersion: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      *
@@ -237,19 +237,19 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    public /*out*/ readonly totalStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalStorageSizeInGbs: pulumi.Output<number>;
 
     /**
      * Create a CloudExadataInfrastructure resource with the given unique name, arguments, and options.
@@ -264,73 +264,73 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudExadataInfrastructureState | undefined;
-            resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
-            resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["availableStorageSizeInGbs"] = state ? state.availableStorageSizeInGbs : undefined;
-            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuCount"] = state ? state.cpuCount : undefined;
-            resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["databaseServerType"] = state ? state.databaseServerType : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
-            resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isSchedulingPolicyAssociated"] = state ? state.isSchedulingPolicyAssociated : undefined;
-            resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
-            resourceInputs["maxCpuCount"] = state ? state.maxCpuCount : undefined;
-            resourceInputs["maxDataStorageInTbs"] = state ? state.maxDataStorageInTbs : undefined;
-            resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
-            resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
-            resourceInputs["monthlyStorageServerVersion"] = state ? state.monthlyStorageServerVersion : undefined;
-            resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageCount"] = state ? state.storageCount : undefined;
-            resourceInputs["storageServerType"] = state ? state.storageServerType : undefined;
-            resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
+            resourceInputs["activatedStorageCount"] = state?.activatedStorageCount;
+            resourceInputs["additionalStorageCount"] = state?.additionalStorageCount;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["availableStorageSizeInGbs"] = state?.availableStorageSizeInGbs;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuCount"] = state?.cpuCount;
+            resourceInputs["customerContacts"] = state?.customerContacts;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["databaseServerType"] = state?.databaseServerType;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServerVersion"] = state?.dbServerVersion;
+            resourceInputs["definedFileSystemConfigurations"] = state?.definedFileSystemConfigurations;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
+            resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
+            resourceInputs["maxCpuCount"] = state?.maxCpuCount;
+            resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
+            resourceInputs["maxDbNodeStorageInGbs"] = state?.maxDbNodeStorageInGbs;
+            resourceInputs["maxMemoryInGbs"] = state?.maxMemoryInGbs;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["monthlyDbServerVersion"] = state?.monthlyDbServerVersion;
+            resourceInputs["monthlyStorageServerVersion"] = state?.monthlyStorageServerVersion;
+            resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageCount"] = state?.storageCount;
+            resourceInputs["storageServerType"] = state?.storageServerType;
+            resourceInputs["storageServerVersion"] = state?.storageServerVersion;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["totalStorageSizeInGbs"] = state?.totalStorageSizeInGbs;
         } else {
             const args = argsOrState as CloudExadataInfrastructureArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
-            resourceInputs["databaseServerType"] = args ? args.databaseServerType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["storageCount"] = args ? args.storageCount : undefined;
-            resourceInputs["storageServerType"] = args ? args.storageServerType : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["customerContacts"] = args?.customerContacts;
+            resourceInputs["databaseServerType"] = args?.databaseServerType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["storageCount"] = args?.storageCount;
+            resourceInputs["storageServerType"] = args?.storageServerType;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalStorageCount"] = undefined /*out*/;
             resourceInputs["availableStorageSizeInGbs"] = undefined /*out*/;

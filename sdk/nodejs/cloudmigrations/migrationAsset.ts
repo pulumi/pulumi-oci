@@ -48,48 +48,48 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * Availability domain
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * List of migration assets that depend on the asset.
      */
-    public /*out*/ readonly dependedOnBies!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly dependedOnBies: pulumi.Output<string[]>;
     /**
      * (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * OCID of an asset for an inventory.
      */
-    public readonly inventoryAssetId!: pulumi.Output<string>;
+    declare public readonly inventoryAssetId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly migrationAssetDependsOns!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    declare public readonly migrationAssetDependsOns: pulumi.Output<string[]>;
     /**
      * OCID of the associated migration.
      */
-    public readonly migrationId!: pulumi.Output<string>;
+    declare public readonly migrationId: pulumi.Output<string>;
     /**
      * List of notifications
      */
-    public /*out*/ readonly notifications!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly notifications: pulumi.Output<string[]>;
     /**
      * The parent snapshot of the migration asset to be used by the replication task.
      */
-    public /*out*/ readonly parentSnapshot!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentSnapshot: pulumi.Output<string>;
     /**
      * Replication compartment identifier
      */
-    public readonly replicationCompartmentId!: pulumi.Output<string>;
+    declare public readonly replicationCompartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Replication schedule identifier
      */
-    public readonly replicationScheduleId!: pulumi.Output<string>;
+    declare public readonly replicationScheduleId: pulumi.Output<string>;
     /**
      * Name of snapshot bucket
      *
@@ -97,35 +97,35 @@ export class MigrationAsset extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly snapShotBucketName!: pulumi.Output<string>;
+    declare public readonly snapShotBucketName: pulumi.Output<string>;
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly snapshots!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly snapshots: pulumi.Output<{[key: string]: string}>;
     /**
      * OCID that is referenced to an asset for an inventory.
      */
-    public /*out*/ readonly sourceAssetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceAssetId: pulumi.Output<string>;
     /**
      * The current state of the migration asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Tenancy identifier
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * The time when the migration asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the migration asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The type of asset referenced for inventory.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a MigrationAsset resource with the given unique name, arguments, and options.
@@ -140,51 +140,51 @@ export class MigrationAsset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MigrationAssetState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dependedOnBies"] = state ? state.dependedOnBies : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["inventoryAssetId"] = state ? state.inventoryAssetId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrationAssetDependsOns"] = state ? state.migrationAssetDependsOns : undefined;
-            resourceInputs["migrationId"] = state ? state.migrationId : undefined;
-            resourceInputs["notifications"] = state ? state.notifications : undefined;
-            resourceInputs["parentSnapshot"] = state ? state.parentSnapshot : undefined;
-            resourceInputs["replicationCompartmentId"] = state ? state.replicationCompartmentId : undefined;
-            resourceInputs["replicationScheduleId"] = state ? state.replicationScheduleId : undefined;
-            resourceInputs["snapShotBucketName"] = state ? state.snapShotBucketName : undefined;
-            resourceInputs["snapshots"] = state ? state.snapshots : undefined;
-            resourceInputs["sourceAssetId"] = state ? state.sourceAssetId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dependedOnBies"] = state?.dependedOnBies;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["inventoryAssetId"] = state?.inventoryAssetId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrationAssetDependsOns"] = state?.migrationAssetDependsOns;
+            resourceInputs["migrationId"] = state?.migrationId;
+            resourceInputs["notifications"] = state?.notifications;
+            resourceInputs["parentSnapshot"] = state?.parentSnapshot;
+            resourceInputs["replicationCompartmentId"] = state?.replicationCompartmentId;
+            resourceInputs["replicationScheduleId"] = state?.replicationScheduleId;
+            resourceInputs["snapShotBucketName"] = state?.snapShotBucketName;
+            resourceInputs["snapshots"] = state?.snapshots;
+            resourceInputs["sourceAssetId"] = state?.sourceAssetId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as MigrationAssetArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.inventoryAssetId === undefined) && !opts.urn) {
+            if (args?.inventoryAssetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'inventoryAssetId'");
             }
-            if ((!args || args.migrationId === undefined) && !opts.urn) {
+            if (args?.migrationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'migrationId'");
             }
-            if ((!args || args.replicationCompartmentId === undefined) && !opts.urn) {
+            if (args?.replicationCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'replicationCompartmentId'");
             }
-            if ((!args || args.snapShotBucketName === undefined) && !opts.urn) {
+            if (args?.snapShotBucketName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'snapShotBucketName'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["inventoryAssetId"] = args ? args.inventoryAssetId : undefined;
-            resourceInputs["migrationAssetDependsOns"] = args ? args.migrationAssetDependsOns : undefined;
-            resourceInputs["migrationId"] = args ? args.migrationId : undefined;
-            resourceInputs["replicationCompartmentId"] = args ? args.replicationCompartmentId : undefined;
-            resourceInputs["replicationScheduleId"] = args ? args.replicationScheduleId : undefined;
-            resourceInputs["snapShotBucketName"] = args ? args.snapShotBucketName : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["inventoryAssetId"] = args?.inventoryAssetId;
+            resourceInputs["migrationAssetDependsOns"] = args?.migrationAssetDependsOns;
+            resourceInputs["migrationId"] = args?.migrationId;
+            resourceInputs["replicationCompartmentId"] = args?.replicationCompartmentId;
+            resourceInputs["replicationScheduleId"] = args?.replicationScheduleId;
+            resourceInputs["snapShotBucketName"] = args?.snapShotBucketName;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dependedOnBies"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

@@ -74,52 +74,52 @@ export class WorkspaceProject extends pulumi.CustomResource {
     /**
      * (Updatable) A user defined description for the project.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify project.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly keyMap: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceProjectMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceProjectMetadata[]>;
     /**
      * The type of the object.
      */
-    public /*out*/ readonly modelType!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelType: pulumi.Output<string>;
     /**
      * (Updatable) The model version of an object.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly objectVersion: pulumi.Output<number>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceProjectParentRef[]>;
-    public readonly projectKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentReves: pulumi.Output<outputs.DataIntegration.WorkspaceProjectParentRef[]>;
+    declare public readonly projectKey: pulumi.Output<string>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceProjectRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceProjectRegistryMetadata>;
     /**
      * The workspace ID.
      *
@@ -127,7 +127,7 @@ export class WorkspaceProject extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceProject resource with the given unique name, arguments, and options.
@@ -142,37 +142,37 @@ export class WorkspaceProject extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceProjectState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["keyMap"] = state ? state.keyMap : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["parentReves"] = state ? state.parentReves : undefined;
-            resourceInputs["projectKey"] = state ? state.projectKey : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["keyMap"] = state?.keyMap;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["parentReves"] = state?.parentReves;
+            resourceInputs["projectKey"] = state?.projectKey;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceProjectArgs | undefined;
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["projectKey"] = args ? args.projectKey : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["projectKey"] = args?.projectKey;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["keyMap"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["modelType"] = undefined /*out*/;

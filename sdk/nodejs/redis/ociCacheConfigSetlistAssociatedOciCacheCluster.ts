@@ -55,7 +55,7 @@ export class OciCacheConfigSetlistAssociatedOciCacheCluster extends pulumi.Custo
     /**
      * List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.Redis.OciCacheConfigSetlistAssociatedOciCacheClusterItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.Redis.OciCacheConfigSetlistAssociatedOciCacheClusterItem[]>;
     /**
      * Unique Oracle Cloud Infrastructure Cache Config Set identifier.
      *
@@ -63,7 +63,7 @@ export class OciCacheConfigSetlistAssociatedOciCacheCluster extends pulumi.Custo
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly ociCacheConfigSetId!: pulumi.Output<string>;
+    declare public readonly ociCacheConfigSetId: pulumi.Output<string>;
 
     /**
      * Create a OciCacheConfigSetlistAssociatedOciCacheCluster resource with the given unique name, arguments, and options.
@@ -78,14 +78,14 @@ export class OciCacheConfigSetlistAssociatedOciCacheCluster extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OciCacheConfigSetlistAssociatedOciCacheClusterState | undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["ociCacheConfigSetId"] = state ? state.ociCacheConfigSetId : undefined;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["ociCacheConfigSetId"] = state?.ociCacheConfigSetId;
         } else {
             const args = argsOrState as OciCacheConfigSetlistAssociatedOciCacheClusterArgs | undefined;
-            if ((!args || args.ociCacheConfigSetId === undefined) && !opts.urn) {
+            if (args?.ociCacheConfigSetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ociCacheConfigSetId'");
             }
-            resourceInputs["ociCacheConfigSetId"] = args ? args.ociCacheConfigSetId : undefined;
+            resourceInputs["ociCacheConfigSetId"] = args?.ociCacheConfigSetId;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

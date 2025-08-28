@@ -75,75 +75,75 @@ export class BootVolumeBackup extends pulumi.CustomResource {
     /**
      * The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
      */
-    public readonly bootVolumeId!: pulumi.Output<string>;
+    declare public readonly bootVolumeId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the boot volume backup.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      */
-    public /*out*/ readonly expirationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly expirationTime: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The image OCID used to create the boot volume the backup is taken from.
      */
-    public /*out*/ readonly imageId!: pulumi.Output<string>;
+    declare public /*out*/ readonly imageId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The size of the boot volume, in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInGbs: pulumi.Output<string>;
     /**
      * The OCID of the source boot volume backup.
      */
-    public /*out*/ readonly sourceBootVolumeBackupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceBootVolumeBackupId: pulumi.Output<string>;
     /**
      * Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.BootVolumeBackupSourceDetails | undefined>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Core.BootVolumeBackupSourceDetails | undefined>;
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceType: pulumi.Output<string>;
     /**
      * The current state of a boot volume backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRequestReceived: pulumi.Output<string>;
     /**
      * The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueSizeInGbs: pulumi.Output<string>;
 
     /**
      * Create a BootVolumeBackup resource with the given unique name, arguments, and options.
@@ -158,34 +158,34 @@ export class BootVolumeBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BootVolumeBackupState | undefined;
-            resourceInputs["bootVolumeId"] = state ? state.bootVolumeId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["expirationTime"] = state ? state.expirationTime : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageId"] = state ? state.imageId : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["sizeInGbs"] = state ? state.sizeInGbs : undefined;
-            resourceInputs["sourceBootVolumeBackupId"] = state ? state.sourceBootVolumeBackupId : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeRequestReceived"] = state ? state.timeRequestReceived : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["uniqueSizeInGbs"] = state ? state.uniqueSizeInGbs : undefined;
+            resourceInputs["bootVolumeId"] = state?.bootVolumeId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["expirationTime"] = state?.expirationTime;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageId"] = state?.imageId;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["sizeInGbs"] = state?.sizeInGbs;
+            resourceInputs["sourceBootVolumeBackupId"] = state?.sourceBootVolumeBackupId;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeRequestReceived"] = state?.timeRequestReceived;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["uniqueSizeInGbs"] = state?.uniqueSizeInGbs;
         } else {
             const args = argsOrState as BootVolumeBackupArgs | undefined;
-            resourceInputs["bootVolumeId"] = args ? args.bootVolumeId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["bootVolumeId"] = args?.bootVolumeId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["type"] = args?.type;
             resourceInputs["expirationTime"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;

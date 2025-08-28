@@ -50,51 +50,51 @@ export class UnifiedAgentConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that the resource belongs to.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * State of unified agent service configuration.
      */
-    public /*out*/ readonly configurationState!: pulumi.Output<string>;
+    declare public /*out*/ readonly configurationState: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description for this resource.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Groups using the configuration.
      */
-    public readonly groupAssociation!: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationGroupAssociation>;
+    declare public readonly groupAssociation: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationGroupAssociation>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Top level Unified Agent service configuration object.
      */
-    public readonly serviceConfiguration!: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationServiceConfiguration>;
+    declare public readonly serviceConfiguration: pulumi.Output<outputs.Logging.UnifiedAgentConfigurationServiceConfiguration>;
     /**
      * The pipeline state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Time the resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the resource was last modified.
      */
-    public /*out*/ readonly timeLastModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastModified: pulumi.Output<string>;
 
     /**
      * Create a UnifiedAgentConfiguration resource with the given unique name, arguments, and options.
@@ -109,43 +109,43 @@ export class UnifiedAgentConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnifiedAgentConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurationState"] = state ? state.configurationState : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["groupAssociation"] = state ? state.groupAssociation : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["serviceConfiguration"] = state ? state.serviceConfiguration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastModified"] = state ? state.timeLastModified : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurationState"] = state?.configurationState;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["groupAssociation"] = state?.groupAssociation;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["serviceConfiguration"] = state?.serviceConfiguration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastModified"] = state?.timeLastModified;
         } else {
             const args = argsOrState as UnifiedAgentConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.isEnabled === undefined) && !opts.urn) {
+            if (args?.isEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
             }
-            if ((!args || args.serviceConfiguration === undefined) && !opts.urn) {
+            if (args?.serviceConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceConfiguration'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["groupAssociation"] = args ? args.groupAssociation : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["serviceConfiguration"] = args ? args.serviceConfiguration : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["groupAssociation"] = args?.groupAssociation;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["serviceConfiguration"] = args?.serviceConfiguration;
             resourceInputs["configurationState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

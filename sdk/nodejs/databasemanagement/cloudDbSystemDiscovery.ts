@@ -52,68 +52,68 @@ export class CloudDbSystemDiscovery extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
      */
-    public readonly agentId!: pulumi.Output<string>;
-    public /*out*/ readonly cloudDbSystemDiscoveryId!: pulumi.Output<string>;
+    declare public readonly agentId: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudDbSystemDiscoveryId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
-    public readonly dbaasParentInfrastructureId!: pulumi.Output<string>;
+    declare public readonly dbaasParentInfrastructureId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The deployment type of cloud dbsystem.
      */
-    public readonly deploymentType!: pulumi.Output<string>;
+    declare public readonly deploymentType: pulumi.Output<string>;
     /**
      * The list of DB system components that were found in the DB system discovery.
      */
-    public /*out*/ readonly discoveredComponents!: pulumi.Output<outputs.DatabaseManagement.CloudDbSystemDiscoveryDiscoveredComponent[]>;
+    declare public /*out*/ readonly discoveredComponents: pulumi.Output<outputs.DatabaseManagement.CloudDbSystemDiscoveryDiscoveredComponent[]>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    declare public /*out*/ readonly gridHome: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.DatabaseManagement.CloudDbSystemDiscoveryPatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.DatabaseManagement.CloudDbSystemDiscoveryPatchOperation[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      */
-    public /*out*/ readonly resourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the cloud DB system discovery resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cloud DB system discovery was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the cloud DB system discovery was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a CloudDbSystemDiscovery resource with the given unique name, arguments, and options.
@@ -128,45 +128,45 @@ export class CloudDbSystemDiscovery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudDbSystemDiscoveryState | undefined;
-            resourceInputs["agentId"] = state ? state.agentId : undefined;
-            resourceInputs["cloudDbSystemDiscoveryId"] = state ? state.cloudDbSystemDiscoveryId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbaasParentInfrastructureId"] = state ? state.dbaasParentInfrastructureId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["discoveredComponents"] = state ? state.discoveredComponents : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gridHome"] = state ? state.gridHome : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["agentId"] = state?.agentId;
+            resourceInputs["cloudDbSystemDiscoveryId"] = state?.cloudDbSystemDiscoveryId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbaasParentInfrastructureId"] = state?.dbaasParentInfrastructureId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["discoveredComponents"] = state?.discoveredComponents;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gridHome"] = state?.gridHome;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as CloudDbSystemDiscoveryArgs | undefined;
-            if ((!args || args.agentId === undefined) && !opts.urn) {
+            if (args?.agentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbaasParentInfrastructureId === undefined) && !opts.urn) {
+            if (args?.dbaasParentInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbaasParentInfrastructureId'");
             }
-            if ((!args || args.deploymentType === undefined) && !opts.urn) {
+            if (args?.deploymentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deploymentType'");
             }
-            resourceInputs["agentId"] = args ? args.agentId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbaasParentInfrastructureId"] = args ? args.dbaasParentInfrastructureId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
+            resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbaasParentInfrastructureId"] = args?.dbaasParentInfrastructureId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deploymentType"] = args?.deploymentType;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["patchOperations"] = args?.patchOperations;
             resourceInputs["cloudDbSystemDiscoveryId"] = undefined /*out*/;
             resourceInputs["discoveredComponents"] = undefined /*out*/;
             resourceInputs["gridHome"] = undefined /*out*/;

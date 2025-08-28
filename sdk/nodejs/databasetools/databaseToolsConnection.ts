@@ -50,87 +50,87 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      */
-    public readonly advancedProperties!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly advancedProperties: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    declare public readonly connectionString: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
-    public readonly keyStores!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionKeyStore[]>;
+    declare public readonly keyStores: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionKeyStore[]>;
     /**
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionLock[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
-    public readonly privateEndpointId!: pulumi.Output<string>;
+    declare public readonly privateEndpointId: pulumi.Output<string>;
     /**
      * (Updatable) The proxy client information.
      */
-    public readonly proxyClient!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
+    declare public readonly proxyClient: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
     /**
      * (Updatable) The related resource
      */
-    public readonly relatedResource!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    declare public readonly relatedResource: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
     /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      */
-    public readonly runtimeSupport!: pulumi.Output<string>;
+    declare public readonly runtimeSupport: pulumi.Output<string>;
     /**
      * The current state of the Database Tools connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The DatabaseToolsConnection type.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * (Updatable) The database user name.
      */
-    public readonly userName!: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string>;
     /**
      * (Updatable) The user password.
      */
-    public readonly userPassword!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    declare public readonly userPassword: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
 
     /**
      * Create a DatabaseToolsConnection resource with the given unique name, arguments, and options.
@@ -145,60 +145,60 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseToolsConnectionState | undefined;
-            resourceInputs["advancedProperties"] = state ? state.advancedProperties : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["keyStores"] = state ? state.keyStores : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["privateEndpointId"] = state ? state.privateEndpointId : undefined;
-            resourceInputs["proxyClient"] = state ? state.proxyClient : undefined;
-            resourceInputs["relatedResource"] = state ? state.relatedResource : undefined;
-            resourceInputs["runtimeSupport"] = state ? state.runtimeSupport : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
-            resourceInputs["userPassword"] = state ? state.userPassword : undefined;
+            resourceInputs["advancedProperties"] = state?.advancedProperties;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["keyStores"] = state?.keyStores;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["privateEndpointId"] = state?.privateEndpointId;
+            resourceInputs["proxyClient"] = state?.proxyClient;
+            resourceInputs["relatedResource"] = state?.relatedResource;
+            resourceInputs["runtimeSupport"] = state?.runtimeSupport;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["userName"] = state?.userName;
+            resourceInputs["userPassword"] = state?.userPassword;
         } else {
             const args = argsOrState as DatabaseToolsConnectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.userName === undefined) && !opts.urn) {
+            if (args?.userName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
-            if ((!args || args.userPassword === undefined) && !opts.urn) {
+            if (args?.userPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userPassword'");
             }
-            resourceInputs["advancedProperties"] = args ? args.advancedProperties : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionString"] = args ? args.connectionString : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["keyStores"] = args ? args.keyStores : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["privateEndpointId"] = args ? args.privateEndpointId : undefined;
-            resourceInputs["proxyClient"] = args ? args.proxyClient : undefined;
-            resourceInputs["relatedResource"] = args ? args.relatedResource : undefined;
-            resourceInputs["runtimeSupport"] = args ? args.runtimeSupport : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["userName"] = args ? args.userName : undefined;
-            resourceInputs["userPassword"] = args ? args.userPassword : undefined;
+            resourceInputs["advancedProperties"] = args?.advancedProperties;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionString"] = args?.connectionString;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["keyStores"] = args?.keyStores;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["privateEndpointId"] = args?.privateEndpointId;
+            resourceInputs["proxyClient"] = args?.proxyClient;
+            resourceInputs["relatedResource"] = args?.relatedResource;
+            resourceInputs["runtimeSupport"] = args?.runtimeSupport;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["userName"] = args?.userName;
+            resourceInputs["userPassword"] = args?.userPassword;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

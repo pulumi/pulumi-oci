@@ -72,55 +72,55 @@ export class LicenseRecord extends pulumi.CustomResource {
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) License record name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      */
-    public readonly expirationDate!: pulumi.Output<string>;
+    declare public readonly expirationDate: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Specifies if the license record term is perpertual.
      */
-    public readonly isPerpetual!: pulumi.Output<boolean>;
+    declare public readonly isPerpetual: pulumi.Output<boolean>;
     /**
      * (Updatable) Specifies if the license count is unlimited.
      */
-    public readonly isUnlimited!: pulumi.Output<boolean>;
+    declare public readonly isUnlimited: pulumi.Output<boolean>;
     /**
      * (Updatable) The number of license units added by a user in a license record. Default 1
      */
-    public readonly licenseCount!: pulumi.Output<number>;
+    declare public readonly licenseCount: pulumi.Output<number>;
     /**
      * The product license unit.
      */
-    public /*out*/ readonly licenseUnit!: pulumi.Output<string>;
+    declare public /*out*/ readonly licenseUnit: pulumi.Output<string>;
     /**
      * (Updatable) The license record product ID.
      */
-    public readonly productId!: pulumi.Output<string>;
+    declare public readonly productId: pulumi.Output<string>;
     /**
      * The product license name with which the license record is associated.
      */
-    public /*out*/ readonly productLicense!: pulumi.Output<string>;
+    declare public /*out*/ readonly productLicense: pulumi.Output<string>;
     /**
      * Unique product license identifier.
      */
-    public readonly productLicenseId!: pulumi.Output<string>;
+    declare public readonly productLicenseId: pulumi.Output<string>;
     /**
      * The current license record state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
      *
@@ -128,19 +128,19 @@ export class LicenseRecord extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly supportEndDate!: pulumi.Output<string>;
+    declare public readonly supportEndDate: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a LicenseRecord resource with the given unique name, arguments, and options.
@@ -155,47 +155,47 @@ export class LicenseRecord extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LicenseRecordState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["expirationDate"] = state ? state.expirationDate : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isPerpetual"] = state ? state.isPerpetual : undefined;
-            resourceInputs["isUnlimited"] = state ? state.isUnlimited : undefined;
-            resourceInputs["licenseCount"] = state ? state.licenseCount : undefined;
-            resourceInputs["licenseUnit"] = state ? state.licenseUnit : undefined;
-            resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["productLicense"] = state ? state.productLicense : undefined;
-            resourceInputs["productLicenseId"] = state ? state.productLicenseId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["supportEndDate"] = state ? state.supportEndDate : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["expirationDate"] = state?.expirationDate;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isPerpetual"] = state?.isPerpetual;
+            resourceInputs["isUnlimited"] = state?.isUnlimited;
+            resourceInputs["licenseCount"] = state?.licenseCount;
+            resourceInputs["licenseUnit"] = state?.licenseUnit;
+            resourceInputs["productId"] = state?.productId;
+            resourceInputs["productLicense"] = state?.productLicense;
+            resourceInputs["productLicenseId"] = state?.productLicenseId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["supportEndDate"] = state?.supportEndDate;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as LicenseRecordArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.isPerpetual === undefined) && !opts.urn) {
+            if (args?.isPerpetual === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isPerpetual'");
             }
-            if ((!args || args.isUnlimited === undefined) && !opts.urn) {
+            if (args?.isUnlimited === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isUnlimited'");
             }
-            if ((!args || args.productLicenseId === undefined) && !opts.urn) {
+            if (args?.productLicenseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'productLicenseId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["expirationDate"] = args ? args.expirationDate : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isPerpetual"] = args ? args.isPerpetual : undefined;
-            resourceInputs["isUnlimited"] = args ? args.isUnlimited : undefined;
-            resourceInputs["licenseCount"] = args ? args.licenseCount : undefined;
-            resourceInputs["productId"] = args ? args.productId : undefined;
-            resourceInputs["productLicenseId"] = args ? args.productLicenseId : undefined;
-            resourceInputs["supportEndDate"] = args ? args.supportEndDate : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["expirationDate"] = args?.expirationDate;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isPerpetual"] = args?.isPerpetual;
+            resourceInputs["isUnlimited"] = args?.isUnlimited;
+            resourceInputs["licenseCount"] = args?.licenseCount;
+            resourceInputs["productId"] = args?.productId;
+            resourceInputs["productLicenseId"] = args?.productLicenseId;
+            resourceInputs["supportEndDate"] = args?.supportEndDate;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["licenseUnit"] = undefined /*out*/;
             resourceInputs["productLicense"] = undefined /*out*/;

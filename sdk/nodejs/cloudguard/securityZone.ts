@@ -69,33 +69,33 @@ export class SecurityZone extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment for the security zone
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The security zone's description
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The security zone's display name
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of inherited compartments
      */
-    public /*out*/ readonly inheritedByCompartments!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly inheritedByCompartments: pulumi.Output<string[]>;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
@@ -103,23 +103,23 @@ export class SecurityZone extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityZoneRecipeId!: pulumi.Output<string>;
+    declare public readonly securityZoneRecipeId: pulumi.Output<string>;
     /**
      * The OCID of the target associated with the security zone
      */
-    public /*out*/ readonly securityZoneTargetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly securityZoneTargetId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the security zone
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the security zone was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the security zone was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SecurityZone resource with the given unique name, arguments, and options.
@@ -134,35 +134,35 @@ export class SecurityZone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityZoneState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inheritedByCompartments"] = state ? state.inheritedByCompartments : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["securityZoneRecipeId"] = state ? state.securityZoneRecipeId : undefined;
-            resourceInputs["securityZoneTargetId"] = state ? state.securityZoneTargetId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inheritedByCompartments"] = state?.inheritedByCompartments;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["securityZoneRecipeId"] = state?.securityZoneRecipeId;
+            resourceInputs["securityZoneTargetId"] = state?.securityZoneTargetId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SecurityZoneArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.securityZoneRecipeId === undefined) && !opts.urn) {
+            if (args?.securityZoneRecipeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityZoneRecipeId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["securityZoneRecipeId"] = args ? args.securityZoneRecipeId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["securityZoneRecipeId"] = args?.securityZoneRecipeId;
             resourceInputs["inheritedByCompartments"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["securityZoneTargetId"] = undefined /*out*/;

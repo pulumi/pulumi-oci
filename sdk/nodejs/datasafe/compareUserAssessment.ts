@@ -61,7 +61,7 @@ export class CompareUserAssessment extends pulumi.CustomResource {
     /**
      * The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
      */
-    public readonly comparisonUserAssessmentId!: pulumi.Output<string>;
+    declare public readonly comparisonUserAssessmentId: pulumi.Output<string>;
     /**
      * The OCID of the user assessment.
      *
@@ -69,7 +69,7 @@ export class CompareUserAssessment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userAssessmentId!: pulumi.Output<string>;
+    declare public readonly userAssessmentId: pulumi.Output<string>;
 
     /**
      * Create a CompareUserAssessment resource with the given unique name, arguments, and options.
@@ -84,18 +84,18 @@ export class CompareUserAssessment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CompareUserAssessmentState | undefined;
-            resourceInputs["comparisonUserAssessmentId"] = state ? state.comparisonUserAssessmentId : undefined;
-            resourceInputs["userAssessmentId"] = state ? state.userAssessmentId : undefined;
+            resourceInputs["comparisonUserAssessmentId"] = state?.comparisonUserAssessmentId;
+            resourceInputs["userAssessmentId"] = state?.userAssessmentId;
         } else {
             const args = argsOrState as CompareUserAssessmentArgs | undefined;
-            if ((!args || args.comparisonUserAssessmentId === undefined) && !opts.urn) {
+            if (args?.comparisonUserAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'comparisonUserAssessmentId'");
             }
-            if ((!args || args.userAssessmentId === undefined) && !opts.urn) {
+            if (args?.userAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userAssessmentId'");
             }
-            resourceInputs["comparisonUserAssessmentId"] = args ? args.comparisonUserAssessmentId : undefined;
-            resourceInputs["userAssessmentId"] = args ? args.userAssessmentId : undefined;
+            resourceInputs["comparisonUserAssessmentId"] = args?.comparisonUserAssessmentId;
+            resourceInputs["userAssessmentId"] = args?.userAssessmentId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CompareUserAssessment.__pulumiType, name, resourceInputs, opts);

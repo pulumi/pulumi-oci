@@ -57,18 +57,18 @@ export class NamespaceStorageArchivalConfig extends pulumi.CustomResource {
     /**
      * (Updatable) This is the configuration for data archiving in object storage
      */
-    public readonly archivingConfiguration!: pulumi.Output<outputs.LogAnalytics.NamespaceStorageArchivalConfigArchivingConfiguration>;
+    declare public readonly archivingConfiguration: pulumi.Output<outputs.LogAnalytics.NamespaceStorageArchivalConfigArchivingConfiguration>;
     /**
      * This indicates if old data can be archived for a tenancy
      */
-    public /*out*/ readonly isArchivingEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isArchivingEnabled: pulumi.Output<boolean>;
     /**
      * The Logging Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a NamespaceStorageArchivalConfig resource with the given unique name, arguments, and options.
@@ -83,19 +83,19 @@ export class NamespaceStorageArchivalConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceStorageArchivalConfigState | undefined;
-            resourceInputs["archivingConfiguration"] = state ? state.archivingConfiguration : undefined;
-            resourceInputs["isArchivingEnabled"] = state ? state.isArchivingEnabled : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["archivingConfiguration"] = state?.archivingConfiguration;
+            resourceInputs["isArchivingEnabled"] = state?.isArchivingEnabled;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceStorageArchivalConfigArgs | undefined;
-            if ((!args || args.archivingConfiguration === undefined) && !opts.urn) {
+            if (args?.archivingConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'archivingConfiguration'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["archivingConfiguration"] = args ? args.archivingConfiguration : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["archivingConfiguration"] = args?.archivingConfiguration;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["isArchivingEnabled"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

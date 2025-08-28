@@ -88,29 +88,29 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
     /**
      * The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capacity reservation.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      *
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      */
-    public readonly instanceReservationConfigs!: pulumi.Output<outputs.Core.ComputeCapacityReservationInstanceReservationConfig[]>;
+    declare public readonly instanceReservationConfigs: pulumi.Output<outputs.Core.ComputeCapacityReservationInstanceReservationConfig[]>;
     /**
      * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
      *
@@ -118,27 +118,27 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isDefaultReservation!: pulumi.Output<boolean>;
+    declare public readonly isDefaultReservation: pulumi.Output<boolean>;
     /**
      * The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      */
-    public /*out*/ readonly reservedInstanceCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly reservedInstanceCount: pulumi.Output<string>;
     /**
      * The current state of the compute capacity reservation.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
      */
-    public /*out*/ readonly usedInstanceCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly usedInstanceCount: pulumi.Output<string>;
 
     /**
      * Create a ComputeCapacityReservation resource with the given unique name, arguments, and options.
@@ -153,36 +153,36 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ComputeCapacityReservationState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["instanceReservationConfigs"] = state ? state.instanceReservationConfigs : undefined;
-            resourceInputs["isDefaultReservation"] = state ? state.isDefaultReservation : undefined;
-            resourceInputs["reservedInstanceCount"] = state ? state.reservedInstanceCount : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["usedInstanceCount"] = state ? state.usedInstanceCount : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["instanceReservationConfigs"] = state?.instanceReservationConfigs;
+            resourceInputs["isDefaultReservation"] = state?.isDefaultReservation;
+            resourceInputs["reservedInstanceCount"] = state?.reservedInstanceCount;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["usedInstanceCount"] = state?.usedInstanceCount;
         } else {
             const args = argsOrState as ComputeCapacityReservationArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.instanceReservationConfigs === undefined) && !opts.urn) {
+            if (args?.instanceReservationConfigs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceReservationConfigs'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instanceReservationConfigs"] = args ? args.instanceReservationConfigs : undefined;
-            resourceInputs["isDefaultReservation"] = args ? args.isDefaultReservation : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instanceReservationConfigs"] = args?.instanceReservationConfigs;
+            resourceInputs["isDefaultReservation"] = args?.isDefaultReservation;
             resourceInputs["reservedInstanceCount"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

@@ -68,35 +68,35 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
     /**
      * Association type filter to search associated resources.
      */
-    public readonly associationType!: pulumi.Output<string | undefined>;
+    declare public readonly associationType: pulumi.Output<string | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly destinationResourceId!: pulumi.Output<string | undefined>;
+    declare public readonly destinationResourceId: pulumi.Output<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    public readonly destinationResourceName!: pulumi.Output<string | undefined>;
+    declare public readonly destinationResourceName: pulumi.Output<string | undefined>;
     /**
      * Source Monitored Resource Type.
      */
-    public readonly destinationResourceType!: pulumi.Output<string | undefined>;
+    declare public readonly destinationResourceType: pulumi.Output<string | undefined>;
     /**
      * List of Monitored Resource Associations.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchAssociationItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchAssociationItem[]>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly sourceResourceId!: pulumi.Output<string | undefined>;
+    declare public readonly sourceResourceId: pulumi.Output<string | undefined>;
     /**
      * Source Monitored Resource Name.
      */
-    public readonly sourceResourceName!: pulumi.Output<string | undefined>;
+    declare public readonly sourceResourceName: pulumi.Output<string | undefined>;
     /**
      * Source Monitored Resource Type. 
      *
@@ -104,7 +104,7 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceResourceType!: pulumi.Output<string | undefined>;
+    declare public readonly sourceResourceType: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredResourcesSearchAssociation resource with the given unique name, arguments, and options.
@@ -119,28 +119,28 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourcesSearchAssociationState | undefined;
-            resourceInputs["associationType"] = state ? state.associationType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["destinationResourceId"] = state ? state.destinationResourceId : undefined;
-            resourceInputs["destinationResourceName"] = state ? state.destinationResourceName : undefined;
-            resourceInputs["destinationResourceType"] = state ? state.destinationResourceType : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["sourceResourceId"] = state ? state.sourceResourceId : undefined;
-            resourceInputs["sourceResourceName"] = state ? state.sourceResourceName : undefined;
-            resourceInputs["sourceResourceType"] = state ? state.sourceResourceType : undefined;
+            resourceInputs["associationType"] = state?.associationType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["destinationResourceId"] = state?.destinationResourceId;
+            resourceInputs["destinationResourceName"] = state?.destinationResourceName;
+            resourceInputs["destinationResourceType"] = state?.destinationResourceType;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["sourceResourceId"] = state?.sourceResourceId;
+            resourceInputs["sourceResourceName"] = state?.sourceResourceName;
+            resourceInputs["sourceResourceType"] = state?.sourceResourceType;
         } else {
             const args = argsOrState as MonitoredResourcesSearchAssociationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["associationType"] = args ? args.associationType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["destinationResourceId"] = args ? args.destinationResourceId : undefined;
-            resourceInputs["destinationResourceName"] = args ? args.destinationResourceName : undefined;
-            resourceInputs["destinationResourceType"] = args ? args.destinationResourceType : undefined;
-            resourceInputs["sourceResourceId"] = args ? args.sourceResourceId : undefined;
-            resourceInputs["sourceResourceName"] = args ? args.sourceResourceName : undefined;
-            resourceInputs["sourceResourceType"] = args ? args.sourceResourceType : undefined;
+            resourceInputs["associationType"] = args?.associationType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["destinationResourceId"] = args?.destinationResourceId;
+            resourceInputs["destinationResourceName"] = args?.destinationResourceName;
+            resourceInputs["destinationResourceType"] = args?.destinationResourceType;
+            resourceInputs["sourceResourceId"] = args?.sourceResourceId;
+            resourceInputs["sourceResourceName"] = args?.sourceResourceName;
+            resourceInputs["sourceResourceType"] = args?.sourceResourceType;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

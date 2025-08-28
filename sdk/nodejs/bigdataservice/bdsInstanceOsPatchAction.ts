@@ -68,13 +68,13 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
      * * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
-    public readonly isDryRun!: pulumi.Output<boolean | undefined>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
+    declare public readonly isDryRun: pulumi.Output<boolean | undefined>;
     /**
      * The version of the OS patch to be installed.
      *
@@ -82,11 +82,11 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly osPatchVersion!: pulumi.Output<string>;
+    declare public readonly osPatchVersion: pulumi.Output<string>;
     /**
      * Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
      */
-    public readonly patchingConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
+    declare public readonly patchingConfigs: pulumi.Output<outputs.BigDataService.BdsInstanceOsPatchActionPatchingConfigs>;
 
     /**
      * Create a BdsInstanceOsPatchAction resource with the given unique name, arguments, and options.
@@ -101,27 +101,27 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceOsPatchActionState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["isDryRun"] = state ? state.isDryRun : undefined;
-            resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
-            resourceInputs["patchingConfigs"] = state ? state.patchingConfigs : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["isDryRun"] = state?.isDryRun;
+            resourceInputs["osPatchVersion"] = state?.osPatchVersion;
+            resourceInputs["patchingConfigs"] = state?.patchingConfigs;
         } else {
             const args = argsOrState as BdsInstanceOsPatchActionArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.osPatchVersion === undefined) && !opts.urn) {
+            if (args?.osPatchVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osPatchVersion'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["isDryRun"] = args ? args.isDryRun : undefined;
-            resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
-            resourceInputs["patchingConfigs"] = args ? args.patchingConfigs : undefined;
+            resourceInputs["isDryRun"] = args?.isDryRun;
+            resourceInputs["osPatchVersion"] = args?.osPatchVersion;
+            resourceInputs["patchingConfigs"] = args?.patchingConfigs;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };

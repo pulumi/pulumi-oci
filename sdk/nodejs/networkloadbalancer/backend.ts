@@ -68,39 +68,39 @@ export class Backend extends pulumi.CustomResource {
     /**
      * The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
      */
-    public readonly backendSetName!: pulumi.Output<string>;
+    declare public readonly backendSetName: pulumi.Output<string>;
     /**
      * The IP address of the backend server. Example: `10.0.0.3`
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
      */
-    public readonly isBackup!: pulumi.Output<boolean>;
+    declare public readonly isBackup: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
      */
-    public readonly isDrain!: pulumi.Output<boolean>;
+    declare public readonly isDrain: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    public readonly isOffline!: pulumi.Output<boolean>;
+    declare public readonly isOffline: pulumi.Output<boolean>;
     /**
      * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    public readonly networkLoadBalancerId!: pulumi.Output<string>;
+    declare public readonly networkLoadBalancerId: pulumi.Output<string>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3` 
      *
@@ -108,7 +108,7 @@ export class Backend extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly weight!: pulumi.Output<number>;
+    declare public readonly weight: pulumi.Output<number>;
 
     /**
      * Create a Backend resource with the given unique name, arguments, and options.
@@ -123,37 +123,37 @@ export class Backend extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackendState | undefined;
-            resourceInputs["backendSetName"] = state ? state.backendSetName : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["isBackup"] = state ? state.isBackup : undefined;
-            resourceInputs["isDrain"] = state ? state.isDrain : undefined;
-            resourceInputs["isOffline"] = state ? state.isOffline : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["weight"] = state ? state.weight : undefined;
+            resourceInputs["backendSetName"] = state?.backendSetName;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["isBackup"] = state?.isBackup;
+            resourceInputs["isDrain"] = state?.isDrain;
+            resourceInputs["isOffline"] = state?.isOffline;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkLoadBalancerId"] = state?.networkLoadBalancerId;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["weight"] = state?.weight;
         } else {
             const args = argsOrState as BackendArgs | undefined;
-            if ((!args || args.backendSetName === undefined) && !opts.urn) {
+            if (args?.backendSetName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backendSetName'");
             }
-            if ((!args || args.networkLoadBalancerId === undefined) && !opts.urn) {
+            if (args?.networkLoadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkLoadBalancerId'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            resourceInputs["backendSetName"] = args ? args.backendSetName : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["isBackup"] = args ? args.isBackup : undefined;
-            resourceInputs["isDrain"] = args ? args.isDrain : undefined;
-            resourceInputs["isOffline"] = args ? args.isOffline : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["weight"] = args ? args.weight : undefined;
+            resourceInputs["backendSetName"] = args?.backendSetName;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["isBackup"] = args?.isBackup;
+            resourceInputs["isDrain"] = args?.isDrain;
+            resourceInputs["isOffline"] = args?.isOffline;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkLoadBalancerId"] = args?.networkLoadBalancerId;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["weight"] = args?.weight;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Backend.__pulumiType, name, resourceInputs, opts);

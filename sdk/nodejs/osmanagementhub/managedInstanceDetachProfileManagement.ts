@@ -62,7 +62,7 @@ export class ManagedInstanceDetachProfileManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly managedInstanceId!: pulumi.Output<string>;
+    declare public readonly managedInstanceId: pulumi.Output<string>;
 
     /**
      * Create a ManagedInstanceDetachProfileManagement resource with the given unique name, arguments, and options.
@@ -77,13 +77,13 @@ export class ManagedInstanceDetachProfileManagement extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceDetachProfileManagementState | undefined;
-            resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
+            resourceInputs["managedInstanceId"] = state?.managedInstanceId;
         } else {
             const args = argsOrState as ManagedInstanceDetachProfileManagementArgs | undefined;
-            if ((!args || args.managedInstanceId === undefined) && !opts.urn) {
+            if (args?.managedInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceId'");
             }
-            resourceInputs["managedInstanceId"] = args ? args.managedInstanceId : undefined;
+            resourceInputs["managedInstanceId"] = args?.managedInstanceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceDetachProfileManagement.__pulumiType, name, resourceInputs, opts);

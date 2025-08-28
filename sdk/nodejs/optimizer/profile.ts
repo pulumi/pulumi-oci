@@ -87,52 +87,52 @@ export class Profile extends pulumi.CustomResource {
     /**
      * (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      */
-    public readonly aggregationIntervalInDays!: pulumi.Output<number>;
+    declare public readonly aggregationIntervalInDays: pulumi.Output<number>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Text describing the profile. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A list of configuration levels for each recommendation.
      */
-    public readonly levelsConfiguration!: pulumi.Output<outputs.Optimizer.ProfileLevelsConfiguration>;
+    declare public readonly levelsConfiguration: pulumi.Output<outputs.Optimizer.ProfileLevelsConfiguration>;
     /**
      * (Updatable) The name assigned to the profile. Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The profile's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */
-    public readonly targetCompartments!: pulumi.Output<outputs.Optimizer.ProfileTargetCompartments>;
+    declare public readonly targetCompartments: pulumi.Output<outputs.Optimizer.ProfileTargetCompartments>;
     /**
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      */
-    public readonly targetTags!: pulumi.Output<outputs.Optimizer.ProfileTargetTags>;
+    declare public readonly targetTags: pulumi.Output<outputs.Optimizer.ProfileTargetTags>;
     /**
      * The date and time the profile was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the profile was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Profile resource with the given unique name, arguments, and options.
@@ -147,39 +147,39 @@ export class Profile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileState | undefined;
-            resourceInputs["aggregationIntervalInDays"] = state ? state.aggregationIntervalInDays : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["levelsConfiguration"] = state ? state.levelsConfiguration : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetCompartments"] = state ? state.targetCompartments : undefined;
-            resourceInputs["targetTags"] = state ? state.targetTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["aggregationIntervalInDays"] = state?.aggregationIntervalInDays;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["levelsConfiguration"] = state?.levelsConfiguration;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetCompartments"] = state?.targetCompartments;
+            resourceInputs["targetTags"] = state?.targetTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ProfileArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.levelsConfiguration === undefined) && !opts.urn) {
+            if (args?.levelsConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'levelsConfiguration'");
             }
-            resourceInputs["aggregationIntervalInDays"] = args ? args.aggregationIntervalInDays : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["levelsConfiguration"] = args ? args.levelsConfiguration : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["targetCompartments"] = args ? args.targetCompartments : undefined;
-            resourceInputs["targetTags"] = args ? args.targetTags : undefined;
+            resourceInputs["aggregationIntervalInDays"] = args?.aggregationIntervalInDays;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["levelsConfiguration"] = args?.levelsConfiguration;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["targetCompartments"] = args?.targetCompartments;
+            resourceInputs["targetTags"] = args?.targetTags;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

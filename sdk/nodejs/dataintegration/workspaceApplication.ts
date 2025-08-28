@@ -88,99 +88,99 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * The source application version of the application.
      */
-    public /*out*/ readonly applicationVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly applicationVersion: pulumi.Output<number>;
     /**
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A list of dependent objects in this patch.
      */
-    public /*out*/ readonly dependentObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata[]>;
+    declare public /*out*/ readonly dependentObjectMetadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata[]>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * (Updatable) Currently not used on application creation. Reserved for future.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly keyMap: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationMetadata[]>;
     /**
      * (Updatable) The type of the application.
      */
-    public readonly modelType!: pulumi.Output<string>;
+    declare public readonly modelType: pulumi.Output<string>;
     /**
      * (Updatable) The object's model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * The object version.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly objectVersion: pulumi.Output<number>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationParentRef[]>;
+    declare public /*out*/ readonly parentReves: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationParentRef[]>;
     /**
      * A list of objects that are published or unpublished in this patch.
      */
-    public /*out*/ readonly publishedObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata[]>;
+    declare public /*out*/ readonly publishedObjectMetadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata[]>;
     /**
      * Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationRegistryMetadata>;
     /**
      * The information about the application.
      */
-    public readonly sourceApplicationInfo!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo>;
+    declare public readonly sourceApplicationInfo: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo>;
     /**
      * (Updatable) The current state of the workspace.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timePatched!: pulumi.Output<string>;
+    declare public /*out*/ readonly timePatched: pulumi.Output<string>;
     /**
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The workspace ID.
      *
@@ -188,7 +188,7 @@ export class WorkspaceApplication extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceApplication resource with the given unique name, arguments, and options.
@@ -203,56 +203,56 @@ export class WorkspaceApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceApplicationState | undefined;
-            resourceInputs["applicationVersion"] = state ? state.applicationVersion : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dependentObjectMetadatas"] = state ? state.dependentObjectMetadatas : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["keyMap"] = state ? state.keyMap : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["parentReves"] = state ? state.parentReves : undefined;
-            resourceInputs["publishedObjectMetadatas"] = state ? state.publishedObjectMetadatas : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["sourceApplicationInfo"] = state ? state.sourceApplicationInfo : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timePatched"] = state ? state.timePatched : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["applicationVersion"] = state?.applicationVersion;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dependentObjectMetadatas"] = state?.dependentObjectMetadatas;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["keyMap"] = state?.keyMap;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["parentReves"] = state?.parentReves;
+            resourceInputs["publishedObjectMetadatas"] = state?.publishedObjectMetadatas;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["sourceApplicationInfo"] = state?.sourceApplicationInfo;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timePatched"] = state?.timePatched;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceApplicationArgs | undefined;
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.modelType === undefined) && !opts.urn) {
+            if (args?.modelType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelType'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelType"] = args ? args.modelType : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["sourceApplicationInfo"] = args ? args.sourceApplicationInfo : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelType"] = args?.modelType;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["sourceApplicationInfo"] = args?.sourceApplicationInfo;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["applicationVersion"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dependentObjectMetadatas"] = undefined /*out*/;

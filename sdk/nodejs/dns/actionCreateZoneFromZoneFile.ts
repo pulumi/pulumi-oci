@@ -66,65 +66,65 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
     /**
      * The OCID of the compartment the resource belongs to.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The zone file contents.
      */
-    public readonly createZoneFromZoneFileDetails!: pulumi.Output<string>;
+    declare public readonly createZoneFromZoneFileDetails: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly dnssecConfigs!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig[]>;
-    public /*out*/ readonly dnssecState!: pulumi.Output<string>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly dnssecConfigs: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileDnssecConfig[]>;
+    declare public /*out*/ readonly dnssecState: pulumi.Output<string>;
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    public /*out*/ readonly externalDownstreams!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream[]>;
+    declare public /*out*/ readonly externalDownstreams: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalDownstream[]>;
     /**
      * External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    public /*out*/ readonly externalMasters!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalMaster[]>;
+    declare public /*out*/ readonly externalMasters: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileExternalMaster[]>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isProtected: pulumi.Output<boolean>;
     /**
      * The name of the zone.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * The authoritative nameservers for the zone.
      */
-    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileNameserver[]>;
+    declare public /*out*/ readonly nameservers: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileNameserver[]>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    public /*out*/ readonly serial!: pulumi.Output<string>;
+    declare public /*out*/ readonly serial: pulumi.Output<string>;
     /**
      * The current state of the zone resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The OCID of the view the resource is associated with.
      *
@@ -132,15 +132,15 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly viewId!: pulumi.Output<string>;
+    declare public readonly viewId: pulumi.Output<string>;
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer[]>;
+    declare public /*out*/ readonly zoneTransferServers: pulumi.Output<outputs.Dns.ActionCreateZoneFromZoneFileZoneTransferServer[]>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      */
-    public /*out*/ readonly zoneType!: pulumi.Output<string>;
+    declare public /*out*/ readonly zoneType: pulumi.Output<string>;
 
     /**
      * Create a ActionCreateZoneFromZoneFile resource with the given unique name, arguments, and options.
@@ -155,38 +155,38 @@ export class ActionCreateZoneFromZoneFile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ActionCreateZoneFromZoneFileState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createZoneFromZoneFileDetails"] = state ? state.createZoneFromZoneFileDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dnssecConfigs"] = state ? state.dnssecConfigs : undefined;
-            resourceInputs["dnssecState"] = state ? state.dnssecState : undefined;
-            resourceInputs["externalDownstreams"] = state ? state.externalDownstreams : undefined;
-            resourceInputs["externalMasters"] = state ? state.externalMasters : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isProtected"] = state ? state.isProtected : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nameservers"] = state ? state.nameservers : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["serial"] = state ? state.serial : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["viewId"] = state ? state.viewId : undefined;
-            resourceInputs["zoneTransferServers"] = state ? state.zoneTransferServers : undefined;
-            resourceInputs["zoneType"] = state ? state.zoneType : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createZoneFromZoneFileDetails"] = state?.createZoneFromZoneFileDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dnssecConfigs"] = state?.dnssecConfigs;
+            resourceInputs["dnssecState"] = state?.dnssecState;
+            resourceInputs["externalDownstreams"] = state?.externalDownstreams;
+            resourceInputs["externalMasters"] = state?.externalMasters;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isProtected"] = state?.isProtected;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nameservers"] = state?.nameservers;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["serial"] = state?.serial;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["viewId"] = state?.viewId;
+            resourceInputs["zoneTransferServers"] = state?.zoneTransferServers;
+            resourceInputs["zoneType"] = state?.zoneType;
         } else {
             const args = argsOrState as ActionCreateZoneFromZoneFileArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.createZoneFromZoneFileDetails === undefined) && !opts.urn) {
+            if (args?.createZoneFromZoneFileDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'createZoneFromZoneFileDetails'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["createZoneFromZoneFileDetails"] = args ? args.createZoneFromZoneFileDetails : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["viewId"] = args ? args.viewId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["createZoneFromZoneFileDetails"] = args?.createZoneFromZoneFileDetails;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["viewId"] = args?.viewId;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["dnssecConfigs"] = undefined /*out*/;
             resourceInputs["dnssecState"] = undefined /*out*/;

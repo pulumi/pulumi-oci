@@ -64,29 +64,29 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this Mapped Secret belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) OCID for the Vault Secret to be used.
      */
-    public readonly vaultSecretId!: pulumi.Output<string>;
+    declare public readonly vaultSecretId: pulumi.Output<string>;
     /**
      * (Updatable) Version number of the secret to be used.
      *
@@ -94,7 +94,7 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly versionNumber!: pulumi.Output<number>;
+    declare public readonly versionNumber: pulumi.Output<number>;
 
     /**
      * Create a NetworkFirewallPolicyMappedSecret resource with the given unique name, arguments, and options.
@@ -109,36 +109,36 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyMappedSecretState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vaultSecretId"] = state ? state.vaultSecretId : undefined;
-            resourceInputs["versionNumber"] = state ? state.versionNumber : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vaultSecretId"] = state?.vaultSecretId;
+            resourceInputs["versionNumber"] = state?.versionNumber;
         } else {
             const args = argsOrState as NetworkFirewallPolicyMappedSecretArgs | undefined;
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.vaultSecretId === undefined) && !opts.urn) {
+            if (args?.vaultSecretId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vaultSecretId'");
             }
-            if ((!args || args.versionNumber === undefined) && !opts.urn) {
+            if (args?.versionNumber === undefined && !opts.urn) {
                 throw new Error("Missing required property 'versionNumber'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["vaultSecretId"] = args ? args.vaultSecretId : undefined;
-            resourceInputs["versionNumber"] = args ? args.versionNumber : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["vaultSecretId"] = args?.vaultSecretId;
+            resourceInputs["versionNumber"] = args?.versionNumber;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -72,7 +72,7 @@ export class ExternalMySqlDatabaseConnector extends pulumi.CustomResource {
     /**
      * Oracle Cloud Infrastructure Services associated with this connector.
      */
-    public /*out*/ readonly associatedServices!: pulumi.Output<string>;
+    declare public /*out*/ readonly associatedServices: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
      *
@@ -80,87 +80,87 @@ export class ExternalMySqlDatabaseConnector extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly checkConnectionStatusTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly checkConnectionStatusTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) OCID of compartment for the External MySQL Database.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Connection Status
      */
-    public /*out*/ readonly connectionStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectionStatus: pulumi.Output<string>;
     /**
      * (Updatable) Create Details of external database connector.
      */
-    public readonly connectorDetails!: pulumi.Output<outputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails>;
+    declare public readonly connectorDetails: pulumi.Output<outputs.DatabaseManagement.ExternalMySqlDatabaseConnectorConnectorDetails>;
     /**
      * Connector Type.
      */
-    public /*out*/ readonly connectorType!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectorType: pulumi.Output<string>;
     /**
      * Credential type used to connect to database.
      */
-    public /*out*/ readonly credentialType!: pulumi.Output<string>;
+    declare public /*out*/ readonly credentialType: pulumi.Output<string>;
     /**
      * OCID of MySQL Database resource
      */
-    public /*out*/ readonly externalDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDatabaseId: pulumi.Output<string>;
     /**
      * Host name for Connector.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostName: pulumi.Output<string>;
     /**
      * Parameter indicating whether database connection needs to be tested.
      */
-    public readonly isTestConnectionParam!: pulumi.Output<boolean>;
+    declare public readonly isTestConnectionParam: pulumi.Output<boolean>;
     /**
      * Agent Id of the MACS agent.
      */
-    public /*out*/ readonly macsAgentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly macsAgentId: pulumi.Output<string>;
     /**
      * External MySQL Database Connector Name.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Network Protocol.
      */
-    public /*out*/ readonly networkProtocol!: pulumi.Output<string>;
+    declare public /*out*/ readonly networkProtocol: pulumi.Output<string>;
     /**
      * Connector port.
      */
-    public /*out*/ readonly port!: pulumi.Output<number>;
+    declare public /*out*/ readonly port: pulumi.Output<number>;
     /**
      * Name of MySQL Database.
      */
-    public /*out*/ readonly sourceDatabase!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceDatabase: pulumi.Output<string>;
     /**
      * Type of MySQL Database.
      */
-    public /*out*/ readonly sourceDatabaseType!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceDatabaseType: pulumi.Output<string>;
     /**
      * OCID of the SSL secret, if TCPS with SSL is used to connect to database.
      */
-    public /*out*/ readonly sslSecretId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sslSecretId: pulumi.Output<string>;
     /**
      * Name of the SSL secret, if TCPS with SSL is used to connect to database.
      */
-    public /*out*/ readonly sslSecretName!: pulumi.Output<string>;
+    declare public /*out*/ readonly sslSecretName: pulumi.Output<string>;
     /**
      * Indicates lifecycle  state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Time when connection status was last updated.
      */
-    public /*out*/ readonly timeConnectionStatusUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeConnectionStatusUpdated: pulumi.Output<string>;
     /**
      * Connector creation time.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Connector update time.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ExternalMySqlDatabaseConnector resource with the given unique name, arguments, and options.
@@ -175,43 +175,43 @@ export class ExternalMySqlDatabaseConnector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalMySqlDatabaseConnectorState | undefined;
-            resourceInputs["associatedServices"] = state ? state.associatedServices : undefined;
-            resourceInputs["checkConnectionStatusTrigger"] = state ? state.checkConnectionStatusTrigger : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionStatus"] = state ? state.connectionStatus : undefined;
-            resourceInputs["connectorDetails"] = state ? state.connectorDetails : undefined;
-            resourceInputs["connectorType"] = state ? state.connectorType : undefined;
-            resourceInputs["credentialType"] = state ? state.credentialType : undefined;
-            resourceInputs["externalDatabaseId"] = state ? state.externalDatabaseId : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["isTestConnectionParam"] = state ? state.isTestConnectionParam : undefined;
-            resourceInputs["macsAgentId"] = state ? state.macsAgentId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkProtocol"] = state ? state.networkProtocol : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["sourceDatabase"] = state ? state.sourceDatabase : undefined;
-            resourceInputs["sourceDatabaseType"] = state ? state.sourceDatabaseType : undefined;
-            resourceInputs["sslSecretId"] = state ? state.sslSecretId : undefined;
-            resourceInputs["sslSecretName"] = state ? state.sslSecretName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeConnectionStatusUpdated"] = state ? state.timeConnectionStatusUpdated : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["associatedServices"] = state?.associatedServices;
+            resourceInputs["checkConnectionStatusTrigger"] = state?.checkConnectionStatusTrigger;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionStatus"] = state?.connectionStatus;
+            resourceInputs["connectorDetails"] = state?.connectorDetails;
+            resourceInputs["connectorType"] = state?.connectorType;
+            resourceInputs["credentialType"] = state?.credentialType;
+            resourceInputs["externalDatabaseId"] = state?.externalDatabaseId;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["isTestConnectionParam"] = state?.isTestConnectionParam;
+            resourceInputs["macsAgentId"] = state?.macsAgentId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkProtocol"] = state?.networkProtocol;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["sourceDatabase"] = state?.sourceDatabase;
+            resourceInputs["sourceDatabaseType"] = state?.sourceDatabaseType;
+            resourceInputs["sslSecretId"] = state?.sslSecretId;
+            resourceInputs["sslSecretName"] = state?.sslSecretName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeConnectionStatusUpdated"] = state?.timeConnectionStatusUpdated;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ExternalMySqlDatabaseConnectorArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.connectorDetails === undefined) && !opts.urn) {
+            if (args?.connectorDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectorDetails'");
             }
-            if ((!args || args.isTestConnectionParam === undefined) && !opts.urn) {
+            if (args?.isTestConnectionParam === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isTestConnectionParam'");
             }
-            resourceInputs["checkConnectionStatusTrigger"] = args ? args.checkConnectionStatusTrigger : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectorDetails"] = args ? args.connectorDetails : undefined;
-            resourceInputs["isTestConnectionParam"] = args ? args.isTestConnectionParam : undefined;
+            resourceInputs["checkConnectionStatusTrigger"] = args?.checkConnectionStatusTrigger;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectorDetails"] = args?.connectorDetails;
+            resourceInputs["isTestConnectionParam"] = args?.isTestConnectionParam;
             resourceInputs["associatedServices"] = undefined /*out*/;
             resourceInputs["connectionStatus"] = undefined /*out*/;
             resourceInputs["connectorType"] = undefined /*out*/;

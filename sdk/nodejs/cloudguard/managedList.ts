@@ -48,49 +48,49 @@ export class ManagedList extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Managed list display name.
      *
      * Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Provider of the managed list feed
      */
-    public /*out*/ readonly feedProvider!: pulumi.Output<string>;
+    declare public /*out*/ readonly feedProvider: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Is this list editable?
      */
-    public /*out*/ readonly isEditable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isEditable: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecyleDetails: pulumi.Output<string>;
     /**
      * (Updatable) List of items in the managed list
      */
-    public readonly listItems!: pulumi.Output<string[]>;
+    declare public readonly listItems: pulumi.Output<string[]>;
     /**
      * Type of information stored in the list
      */
-    public readonly listType!: pulumi.Output<string>;
+    declare public readonly listType: pulumi.Output<string>;
     /**
      * OCID of the source managed list
      *
@@ -98,23 +98,23 @@ export class ManagedList extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceManagedListId!: pulumi.Output<string>;
+    declare public readonly sourceManagedListId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the managed list was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the managed list was last updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ManagedList resource with the given unique name, arguments, and options.
@@ -129,37 +129,37 @@ export class ManagedList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedListState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["feedProvider"] = state ? state.feedProvider : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEditable"] = state ? state.isEditable : undefined;
-            resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
-            resourceInputs["listItems"] = state ? state.listItems : undefined;
-            resourceInputs["listType"] = state ? state.listType : undefined;
-            resourceInputs["sourceManagedListId"] = state ? state.sourceManagedListId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["feedProvider"] = state?.feedProvider;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEditable"] = state?.isEditable;
+            resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
+            resourceInputs["listItems"] = state?.listItems;
+            resourceInputs["listType"] = state?.listType;
+            resourceInputs["sourceManagedListId"] = state?.sourceManagedListId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ManagedListArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["listItems"] = args ? args.listItems : undefined;
-            resourceInputs["listType"] = args ? args.listType : undefined;
-            resourceInputs["sourceManagedListId"] = args ? args.sourceManagedListId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["listItems"] = args?.listItems;
+            resourceInputs["listType"] = args?.listType;
+            resourceInputs["sourceManagedListId"] = args?.sourceManagedListId;
             resourceInputs["feedProvider"] = undefined /*out*/;
             resourceInputs["isEditable"] = undefined /*out*/;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;

@@ -186,107 +186,107 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) Monitor availability configuration details.
      */
-    public readonly availabilityConfiguration!: pulumi.Output<outputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    declare public readonly availabilityConfiguration: pulumi.Output<outputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
     /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
-    public readonly batchIntervalInSeconds!: pulumi.Output<number>;
+    declare public readonly batchIntervalInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Details of monitor configuration.
      */
-    public readonly configuration!: pulumi.Output<outputs.ApmSynthetics.ConfigConfiguration>;
+    declare public readonly configuration: pulumi.Output<outputs.ApmSynthetics.ConfigConfiguration>;
     /**
      * Content type of the script.
      */
-    public /*out*/ readonly contentType!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentType: pulumi.Output<string>;
     /**
      * Name of the user that created the monitor.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) If enabled, domain name will resolve to an IPv6 address.
      */
-    public readonly isIpv6!: pulumi.Output<boolean>;
+    declare public readonly isIpv6: pulumi.Output<boolean>;
     /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      */
-    public readonly isRunNow!: pulumi.Output<boolean>;
+    declare public readonly isRunNow: pulumi.Output<boolean>;
     /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
-    public readonly isRunOnce!: pulumi.Output<boolean>;
+    declare public readonly isRunOnce: pulumi.Output<boolean>;
     /**
      * Name of the user that recently updated the monitor.
      */
-    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedBy: pulumi.Output<string>;
     /**
      * (Updatable) Details required to schedule maintenance window.
      */
-    public readonly maintenanceWindowSchedule!: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
+    declare public readonly maintenanceWindowSchedule: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
      * Type of monitor.
      */
-    public readonly monitorType!: pulumi.Output<string>;
+    declare public readonly monitorType: pulumi.Output<string>;
     /**
      * (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
-    public readonly repeatIntervalInSeconds!: pulumi.Output<number>;
+    declare public readonly repeatIntervalInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
-    public readonly schedulingPolicy!: pulumi.Output<string>;
+    declare public readonly schedulingPolicy: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    public readonly scriptId!: pulumi.Output<string>;
+    declare public readonly scriptId: pulumi.Output<string>;
     /**
      * Name of the script.
      */
-    public readonly scriptName!: pulumi.Output<string>;
+    declare public readonly scriptName: pulumi.Output<string>;
     /**
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
      */
-    public readonly scriptParameters!: pulumi.Output<outputs.ApmSynthetics.ConfigScriptParameter[]>;
+    declare public readonly scriptParameters: pulumi.Output<outputs.ApmSynthetics.ConfigScriptParameter[]>;
     /**
      * (Updatable) Enables or disables the monitor.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      */
-    public readonly target!: pulumi.Output<string>;
+    declare public readonly target: pulumi.Output<string>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * Number of vantage points where monitor is running.
      */
-    public /*out*/ readonly vantagePointCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly vantagePointCount: pulumi.Output<number>;
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
      *
@@ -294,7 +294,7 @@ export class Config extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vantagePoints!: pulumi.Output<outputs.ApmSynthetics.ConfigVantagePoint[]>;
+    declare public readonly vantagePoints: pulumi.Output<outputs.ApmSynthetics.ConfigVantagePoint[]>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -309,71 +309,71 @@ export class Config extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["availabilityConfiguration"] = state ? state.availabilityConfiguration : undefined;
-            resourceInputs["batchIntervalInSeconds"] = state ? state.batchIntervalInSeconds : undefined;
-            resourceInputs["configuration"] = state ? state.configuration : undefined;
-            resourceInputs["contentType"] = state ? state.contentType : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isIpv6"] = state ? state.isIpv6 : undefined;
-            resourceInputs["isRunNow"] = state ? state.isRunNow : undefined;
-            resourceInputs["isRunOnce"] = state ? state.isRunOnce : undefined;
-            resourceInputs["lastUpdatedBy"] = state ? state.lastUpdatedBy : undefined;
-            resourceInputs["maintenanceWindowSchedule"] = state ? state.maintenanceWindowSchedule : undefined;
-            resourceInputs["monitorType"] = state ? state.monitorType : undefined;
-            resourceInputs["repeatIntervalInSeconds"] = state ? state.repeatIntervalInSeconds : undefined;
-            resourceInputs["schedulingPolicy"] = state ? state.schedulingPolicy : undefined;
-            resourceInputs["scriptId"] = state ? state.scriptId : undefined;
-            resourceInputs["scriptName"] = state ? state.scriptName : undefined;
-            resourceInputs["scriptParameters"] = state ? state.scriptParameters : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["target"] = state ? state.target : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["vantagePointCount"] = state ? state.vantagePointCount : undefined;
-            resourceInputs["vantagePoints"] = state ? state.vantagePoints : undefined;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["availabilityConfiguration"] = state?.availabilityConfiguration;
+            resourceInputs["batchIntervalInSeconds"] = state?.batchIntervalInSeconds;
+            resourceInputs["configuration"] = state?.configuration;
+            resourceInputs["contentType"] = state?.contentType;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isIpv6"] = state?.isIpv6;
+            resourceInputs["isRunNow"] = state?.isRunNow;
+            resourceInputs["isRunOnce"] = state?.isRunOnce;
+            resourceInputs["lastUpdatedBy"] = state?.lastUpdatedBy;
+            resourceInputs["maintenanceWindowSchedule"] = state?.maintenanceWindowSchedule;
+            resourceInputs["monitorType"] = state?.monitorType;
+            resourceInputs["repeatIntervalInSeconds"] = state?.repeatIntervalInSeconds;
+            resourceInputs["schedulingPolicy"] = state?.schedulingPolicy;
+            resourceInputs["scriptId"] = state?.scriptId;
+            resourceInputs["scriptName"] = state?.scriptName;
+            resourceInputs["scriptParameters"] = state?.scriptParameters;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["target"] = state?.target;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["vantagePointCount"] = state?.vantagePointCount;
+            resourceInputs["vantagePoints"] = state?.vantagePoints;
         } else {
             const args = argsOrState as ConfigArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.monitorType === undefined) && !opts.urn) {
+            if (args?.monitorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitorType'");
             }
-            if ((!args || args.repeatIntervalInSeconds === undefined) && !opts.urn) {
+            if (args?.repeatIntervalInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repeatIntervalInSeconds'");
             }
-            if ((!args || args.vantagePoints === undefined) && !opts.urn) {
+            if (args?.vantagePoints === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vantagePoints'");
             }
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["availabilityConfiguration"] = args ? args.availabilityConfiguration : undefined;
-            resourceInputs["batchIntervalInSeconds"] = args ? args.batchIntervalInSeconds : undefined;
-            resourceInputs["configuration"] = args ? args.configuration : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isIpv6"] = args ? args.isIpv6 : undefined;
-            resourceInputs["isRunNow"] = args ? args.isRunNow : undefined;
-            resourceInputs["isRunOnce"] = args ? args.isRunOnce : undefined;
-            resourceInputs["maintenanceWindowSchedule"] = args ? args.maintenanceWindowSchedule : undefined;
-            resourceInputs["monitorType"] = args ? args.monitorType : undefined;
-            resourceInputs["repeatIntervalInSeconds"] = args ? args.repeatIntervalInSeconds : undefined;
-            resourceInputs["schedulingPolicy"] = args ? args.schedulingPolicy : undefined;
-            resourceInputs["scriptId"] = args ? args.scriptId : undefined;
-            resourceInputs["scriptName"] = args ? args.scriptName : undefined;
-            resourceInputs["scriptParameters"] = args ? args.scriptParameters : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["target"] = args ? args.target : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["vantagePoints"] = args ? args.vantagePoints : undefined;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["availabilityConfiguration"] = args?.availabilityConfiguration;
+            resourceInputs["batchIntervalInSeconds"] = args?.batchIntervalInSeconds;
+            resourceInputs["configuration"] = args?.configuration;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isIpv6"] = args?.isIpv6;
+            resourceInputs["isRunNow"] = args?.isRunNow;
+            resourceInputs["isRunOnce"] = args?.isRunOnce;
+            resourceInputs["maintenanceWindowSchedule"] = args?.maintenanceWindowSchedule;
+            resourceInputs["monitorType"] = args?.monitorType;
+            resourceInputs["repeatIntervalInSeconds"] = args?.repeatIntervalInSeconds;
+            resourceInputs["schedulingPolicy"] = args?.schedulingPolicy;
+            resourceInputs["scriptId"] = args?.scriptId;
+            resourceInputs["scriptName"] = args?.scriptName;
+            resourceInputs["scriptParameters"] = args?.scriptParameters;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["target"] = args?.target;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["vantagePoints"] = args?.vantagePoints;
             resourceInputs["contentType"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lastUpdatedBy"] = undefined /*out*/;

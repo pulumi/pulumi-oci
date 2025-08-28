@@ -68,39 +68,39 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
-    public readonly defaultBackendSetName!: pulumi.Output<string>;
+    declare public readonly defaultBackendSetName: pulumi.Output<string>;
     /**
      * (Updatable) IP version associated with the listener.
      */
-    public readonly ipVersion!: pulumi.Output<string>;
+    declare public readonly ipVersion: pulumi.Output<string>;
     /**
      * (Updatable) Property to enable/disable PPv2 feature for this listener.
      */
-    public readonly isPpv2enabled!: pulumi.Output<boolean>;
+    declare public readonly isPpv2enabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
      */
-    public readonly l3ipIdleTimeout!: pulumi.Output<number>;
+    declare public readonly l3ipIdleTimeout: pulumi.Output<number>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    public readonly networkLoadBalancerId!: pulumi.Output<string>;
+    declare public readonly networkLoadBalancerId: pulumi.Output<string>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
      */
-    public readonly tcpIdleTimeout!: pulumi.Output<number>;
+    declare public readonly tcpIdleTimeout: pulumi.Output<number>;
     /**
      * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
      *
@@ -108,7 +108,7 @@ export class Listener extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly udpIdleTimeout!: pulumi.Output<number>;
+    declare public readonly udpIdleTimeout: pulumi.Output<number>;
 
     /**
      * Create a Listener resource with the given unique name, arguments, and options.
@@ -123,40 +123,40 @@ export class Listener extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ListenerState | undefined;
-            resourceInputs["defaultBackendSetName"] = state ? state.defaultBackendSetName : undefined;
-            resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
-            resourceInputs["isPpv2enabled"] = state ? state.isPpv2enabled : undefined;
-            resourceInputs["l3ipIdleTimeout"] = state ? state.l3ipIdleTimeout : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["tcpIdleTimeout"] = state ? state.tcpIdleTimeout : undefined;
-            resourceInputs["udpIdleTimeout"] = state ? state.udpIdleTimeout : undefined;
+            resourceInputs["defaultBackendSetName"] = state?.defaultBackendSetName;
+            resourceInputs["ipVersion"] = state?.ipVersion;
+            resourceInputs["isPpv2enabled"] = state?.isPpv2enabled;
+            resourceInputs["l3ipIdleTimeout"] = state?.l3ipIdleTimeout;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkLoadBalancerId"] = state?.networkLoadBalancerId;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["tcpIdleTimeout"] = state?.tcpIdleTimeout;
+            resourceInputs["udpIdleTimeout"] = state?.udpIdleTimeout;
         } else {
             const args = argsOrState as ListenerArgs | undefined;
-            if ((!args || args.defaultBackendSetName === undefined) && !opts.urn) {
+            if (args?.defaultBackendSetName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultBackendSetName'");
             }
-            if ((!args || args.networkLoadBalancerId === undefined) && !opts.urn) {
+            if (args?.networkLoadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkLoadBalancerId'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            resourceInputs["defaultBackendSetName"] = args ? args.defaultBackendSetName : undefined;
-            resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
-            resourceInputs["isPpv2enabled"] = args ? args.isPpv2enabled : undefined;
-            resourceInputs["l3ipIdleTimeout"] = args ? args.l3ipIdleTimeout : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["tcpIdleTimeout"] = args ? args.tcpIdleTimeout : undefined;
-            resourceInputs["udpIdleTimeout"] = args ? args.udpIdleTimeout : undefined;
+            resourceInputs["defaultBackendSetName"] = args?.defaultBackendSetName;
+            resourceInputs["ipVersion"] = args?.ipVersion;
+            resourceInputs["isPpv2enabled"] = args?.isPpv2enabled;
+            resourceInputs["l3ipIdleTimeout"] = args?.l3ipIdleTimeout;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkLoadBalancerId"] = args?.networkLoadBalancerId;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["tcpIdleTimeout"] = args?.tcpIdleTimeout;
+            resourceInputs["udpIdleTimeout"] = args?.udpIdleTimeout;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Listener.__pulumiType, name, resourceInputs, opts);

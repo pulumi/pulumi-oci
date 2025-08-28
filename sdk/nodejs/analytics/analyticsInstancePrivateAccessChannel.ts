@@ -75,39 +75,39 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
     /**
      * The OCID of the AnalyticsInstance.
      */
-    public readonly analyticsInstanceId!: pulumi.Output<string>;
+    declare public readonly analyticsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) Display Name of the Private Access Channel.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      */
-    public /*out*/ readonly egressSourceIpAddresses!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly egressSourceIpAddresses: pulumi.Output<string[]>;
     /**
      * IP Address of the Private Access channel.
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipAddress: pulumi.Output<string>;
     /**
      * Private Access Channel unique identifier key.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[]>;
+    declare public readonly networkSecurityGroupIds: pulumi.Output<string[]>;
     /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
-    public readonly privateSourceDnsZones!: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone[]>;
+    declare public readonly privateSourceDnsZones: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone[]>;
     /**
      * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      */
-    public readonly privateSourceScanHosts!: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[]>;
+    declare public readonly privateSourceScanHosts: pulumi.Output<outputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[]>;
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * (Updatable) OCID of the customer VCN peered with private access channel. 
      *
@@ -115,7 +115,7 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a AnalyticsInstancePrivateAccessChannel resource with the given unique name, arguments, and options.
@@ -130,40 +130,40 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnalyticsInstancePrivateAccessChannelState | undefined;
-            resourceInputs["analyticsInstanceId"] = state ? state.analyticsInstanceId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["egressSourceIpAddresses"] = state ? state.egressSourceIpAddresses : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
-            resourceInputs["privateSourceDnsZones"] = state ? state.privateSourceDnsZones : undefined;
-            resourceInputs["privateSourceScanHosts"] = state ? state.privateSourceScanHosts : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["analyticsInstanceId"] = state?.analyticsInstanceId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["egressSourceIpAddresses"] = state?.egressSourceIpAddresses;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["privateSourceDnsZones"] = state?.privateSourceDnsZones;
+            resourceInputs["privateSourceScanHosts"] = state?.privateSourceScanHosts;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as AnalyticsInstancePrivateAccessChannelArgs | undefined;
-            if ((!args || args.analyticsInstanceId === undefined) && !opts.urn) {
+            if (args?.analyticsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'analyticsInstanceId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.privateSourceDnsZones === undefined) && !opts.urn) {
+            if (args?.privateSourceDnsZones === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateSourceDnsZones'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["analyticsInstanceId"] = args ? args.analyticsInstanceId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
-            resourceInputs["privateSourceDnsZones"] = args ? args.privateSourceDnsZones : undefined;
-            resourceInputs["privateSourceScanHosts"] = args ? args.privateSourceScanHosts : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["analyticsInstanceId"] = args?.analyticsInstanceId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["privateSourceDnsZones"] = args?.privateSourceDnsZones;
+            resourceInputs["privateSourceScanHosts"] = args?.privateSourceScanHosts;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["egressSourceIpAddresses"] = undefined /*out*/;
             resourceInputs["ipAddress"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;

@@ -50,55 +50,55 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[]>;
+    declare public readonly alternateCustomEndpoints: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[]>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    declare public readonly consumptionModel: pulumi.Output<string>;
     /**
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      */
-    public readonly customEndpoint!: pulumi.Output<outputs.VisualBuilder.VbInstanceCustomEndpoint>;
+    declare public readonly customEndpoint: pulumi.Output<outputs.VisualBuilder.VbInstanceCustomEndpoint>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Vb Instance Identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
-    public readonly idcsOpenId!: pulumi.Output<string | undefined>;
+    declare public readonly idcsOpenId: pulumi.Output<string | undefined>;
     /**
      * The Vb Instance URL.
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceUrl: pulumi.Output<string>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
+    declare public readonly isVisualBuilderEnabled: pulumi.Output<boolean>;
     /**
      * The NAT gateway IP address for the VB management VCN
      */
-    public /*out*/ readonly managementNatGatewayIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementNatGatewayIp: pulumi.Output<string>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
-    public /*out*/ readonly managementVcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementVcnId: pulumi.Output<string>;
     /**
      * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
      */
-    public readonly networkEndpointDetails!: pulumi.Output<outputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
+    declare public readonly networkEndpointDetails: pulumi.Output<outputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
     /**
      * (Updatable) The number of Nodes
      *
@@ -106,35 +106,35 @@ export class VbInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly nodeCount!: pulumi.Output<number>;
+    declare public readonly nodeCount: pulumi.Output<number>;
     /**
      * The NAT gateway IP address for the VB service VCN
      */
-    public /*out*/ readonly serviceNatGatewayIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceNatGatewayIp: pulumi.Output<string>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      */
-    public /*out*/ readonly serviceVcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceVcnId: pulumi.Output<string>;
     /**
      * The current state of the vb instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateMessage: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a VbInstance resource with the given unique name, arguments, and options.
@@ -149,49 +149,49 @@ export class VbInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VbInstanceState | undefined;
-            resourceInputs["alternateCustomEndpoints"] = state ? state.alternateCustomEndpoints : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
-            resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsOpenId"] = state ? state.idcsOpenId : undefined;
-            resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
-            resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
-            resourceInputs["managementNatGatewayIp"] = state ? state.managementNatGatewayIp : undefined;
-            resourceInputs["managementVcnId"] = state ? state.managementVcnId : undefined;
-            resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["serviceNatGatewayIp"] = state ? state.serviceNatGatewayIp : undefined;
-            resourceInputs["serviceVcnId"] = state ? state.serviceVcnId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["alternateCustomEndpoints"] = state?.alternateCustomEndpoints;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["consumptionModel"] = state?.consumptionModel;
+            resourceInputs["customEndpoint"] = state?.customEndpoint;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["idcsOpenId"] = state?.idcsOpenId;
+            resourceInputs["instanceUrl"] = state?.instanceUrl;
+            resourceInputs["isVisualBuilderEnabled"] = state?.isVisualBuilderEnabled;
+            resourceInputs["managementNatGatewayIp"] = state?.managementNatGatewayIp;
+            resourceInputs["managementVcnId"] = state?.managementVcnId;
+            resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["serviceNatGatewayIp"] = state?.serviceNatGatewayIp;
+            resourceInputs["serviceVcnId"] = state?.serviceVcnId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateMessage"] = state?.stateMessage;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as VbInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.nodeCount === undefined) && !opts.urn) {
+            if (args?.nodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeCount'");
             }
-            resourceInputs["alternateCustomEndpoints"] = args ? args.alternateCustomEndpoints : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = args ? args.consumptionModel : undefined;
-            resourceInputs["customEndpoint"] = args ? args.customEndpoint : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["alternateCustomEndpoints"] = args?.alternateCustomEndpoints;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["consumptionModel"] = args?.consumptionModel;
+            resourceInputs["customEndpoint"] = args?.customEndpoint;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["idcsOpenId"] = args?.idcsOpenId ? pulumi.secret(args.idcsOpenId) : undefined;
-            resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
-            resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
-            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
+            resourceInputs["isVisualBuilderEnabled"] = args?.isVisualBuilderEnabled;
+            resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
+            resourceInputs["nodeCount"] = args?.nodeCount;
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["managementNatGatewayIp"] = undefined /*out*/;
             resourceInputs["managementVcnId"] = undefined /*out*/;

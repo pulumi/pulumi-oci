@@ -120,83 +120,83 @@ export class ModelGroup extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The type of the model group create operation.
      */
-    public readonly createType!: pulumi.Output<string>;
+    declare public readonly createType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the modelGroup.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A short description of the modelGroup.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the lifecycle state of the model group.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * List of member models (inferenceKey & modelId) to be associated with the model group.
      */
-    public readonly memberModelEntries!: pulumi.Output<outputs.DataScience.ModelGroupMemberModelEntries>;
+    declare public readonly memberModelEntries: pulumi.Output<outputs.DataScience.ModelGroupMemberModelEntries>;
     /**
      * Model Group clone source details.
      */
-    public readonly modelGroupCloneSourceDetails!: pulumi.Output<outputs.DataScience.ModelGroupModelGroupCloneSourceDetails>;
+    declare public readonly modelGroupCloneSourceDetails: pulumi.Output<outputs.DataScience.ModelGroupModelGroupCloneSourceDetails>;
     /**
      * The model group details.
      */
-    public readonly modelGroupDetails!: pulumi.Output<outputs.DataScience.ModelGroupModelGroupDetails>;
+    declare public readonly modelGroupDetails: pulumi.Output<outputs.DataScience.ModelGroupModelGroupDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
      */
-    public readonly modelGroupVersionHistoryId!: pulumi.Output<string>;
+    declare public readonly modelGroupVersionHistoryId: pulumi.Output<string>;
     /**
      * The name of the model group version history to which the model group is associated.
      */
-    public /*out*/ readonly modelGroupVersionHistoryName!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelGroupVersionHistoryName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group used for the clone operation.
      */
-    public /*out*/ readonly sourceModelGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceModelGroupId: pulumi.Output<string>;
     /**
      * The state of the modelGroup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Unique identifier assigned to each version of the model group. It would be auto-incremented number generated by service.
      */
-    public /*out*/ readonly versionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly versionId: pulumi.Output<string>;
     /**
      * (Updatable) An additional description of the lifecycle state of the model group.
      *
@@ -204,7 +204,7 @@ export class ModelGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly versionLabel!: pulumi.Output<string>;
+    declare public readonly versionLabel: pulumi.Output<string>;
 
     /**
      * Create a ModelGroup resource with the given unique name, arguments, and options.
@@ -219,50 +219,50 @@ export class ModelGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelGroupState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createType"] = state ? state.createType : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["memberModelEntries"] = state ? state.memberModelEntries : undefined;
-            resourceInputs["modelGroupCloneSourceDetails"] = state ? state.modelGroupCloneSourceDetails : undefined;
-            resourceInputs["modelGroupDetails"] = state ? state.modelGroupDetails : undefined;
-            resourceInputs["modelGroupVersionHistoryId"] = state ? state.modelGroupVersionHistoryId : undefined;
-            resourceInputs["modelGroupVersionHistoryName"] = state ? state.modelGroupVersionHistoryName : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["sourceModelGroupId"] = state ? state.sourceModelGroupId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["versionId"] = state ? state.versionId : undefined;
-            resourceInputs["versionLabel"] = state ? state.versionLabel : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createType"] = state?.createType;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["memberModelEntries"] = state?.memberModelEntries;
+            resourceInputs["modelGroupCloneSourceDetails"] = state?.modelGroupCloneSourceDetails;
+            resourceInputs["modelGroupDetails"] = state?.modelGroupDetails;
+            resourceInputs["modelGroupVersionHistoryId"] = state?.modelGroupVersionHistoryId;
+            resourceInputs["modelGroupVersionHistoryName"] = state?.modelGroupVersionHistoryName;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["sourceModelGroupId"] = state?.sourceModelGroupId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["versionId"] = state?.versionId;
+            resourceInputs["versionLabel"] = state?.versionLabel;
         } else {
             const args = argsOrState as ModelGroupArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.createType === undefined) && !opts.urn) {
+            if (args?.createType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'createType'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["createType"] = args ? args.createType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["memberModelEntries"] = args ? args.memberModelEntries : undefined;
-            resourceInputs["modelGroupCloneSourceDetails"] = args ? args.modelGroupCloneSourceDetails : undefined;
-            resourceInputs["modelGroupDetails"] = args ? args.modelGroupDetails : undefined;
-            resourceInputs["modelGroupVersionHistoryId"] = args ? args.modelGroupVersionHistoryId : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["versionLabel"] = args ? args.versionLabel : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["createType"] = args?.createType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["memberModelEntries"] = args?.memberModelEntries;
+            resourceInputs["modelGroupCloneSourceDetails"] = args?.modelGroupCloneSourceDetails;
+            resourceInputs["modelGroupDetails"] = args?.modelGroupDetails;
+            resourceInputs["modelGroupVersionHistoryId"] = args?.modelGroupVersionHistoryId;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["versionLabel"] = args?.versionLabel;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["modelGroupVersionHistoryName"] = undefined /*out*/;

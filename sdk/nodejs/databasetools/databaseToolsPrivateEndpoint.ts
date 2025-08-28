@@ -79,63 +79,63 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * A list of additional FQDNs that can be also be used for the private endpoint.
      */
-    public /*out*/ readonly additionalFqdns!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly additionalFqdns: pulumi.Output<string[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A description of the Database Tools private endpoint.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Then FQDN to use for the private endpoint.
      */
-    public /*out*/ readonly endpointFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly endpointFqdn: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
      */
-    public readonly endpointServiceId!: pulumi.Output<string>;
+    declare public readonly endpointServiceId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointLock[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * The private IP address that represents the access point for the associated endpoint service.
      */
-    public readonly privateEndpointIp!: pulumi.Output<string>;
+    declare public readonly privateEndpointIp: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
      */
-    public /*out*/ readonly privateEndpointVnicId!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpointVnicId: pulumi.Output<string>;
     /**
      * Reverse connection configuration details of the private endpoint.
      */
-    public /*out*/ readonly reverseConnectionConfigurations!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[]>;
+    declare public /*out*/ readonly reverseConnectionConfigurations: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointReverseConnectionConfiguration[]>;
     /**
      * The current state of the Database Tools private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      *
@@ -143,23 +143,23 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      */
-    public /*out*/ readonly vcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a DatabaseToolsPrivateEndpoint resource with the given unique name, arguments, and options.
@@ -174,50 +174,50 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseToolsPrivateEndpointState | undefined;
-            resourceInputs["additionalFqdns"] = state ? state.additionalFqdns : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endpointFqdn"] = state ? state.endpointFqdn : undefined;
-            resourceInputs["endpointServiceId"] = state ? state.endpointServiceId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
-            resourceInputs["privateEndpointVnicId"] = state ? state.privateEndpointVnicId : undefined;
-            resourceInputs["reverseConnectionConfigurations"] = state ? state.reverseConnectionConfigurations : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["additionalFqdns"] = state?.additionalFqdns;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endpointFqdn"] = state?.endpointFqdn;
+            resourceInputs["endpointServiceId"] = state?.endpointServiceId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
+            resourceInputs["privateEndpointVnicId"] = state?.privateEndpointVnicId;
+            resourceInputs["reverseConnectionConfigurations"] = state?.reverseConnectionConfigurations;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as DatabaseToolsPrivateEndpointArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.endpointServiceId === undefined) && !opts.urn) {
+            if (args?.endpointServiceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'endpointServiceId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["endpointServiceId"] = args ? args.endpointServiceId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["endpointServiceId"] = args?.endpointServiceId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["privateEndpointIp"] = args?.privateEndpointIp;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["additionalFqdns"] = undefined /*out*/;
             resourceInputs["endpointFqdn"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

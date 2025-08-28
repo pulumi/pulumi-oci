@@ -64,7 +64,7 @@ export class SoftwareSourceRemovePackagesManagement extends pulumi.CustomResourc
     /**
      * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      */
-    public readonly packages!: pulumi.Output<string[]>;
+    declare public readonly packages: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -72,7 +72,7 @@ export class SoftwareSourceRemovePackagesManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSourceId!: pulumi.Output<string>;
+    declare public readonly softwareSourceId: pulumi.Output<string>;
 
     /**
      * Create a SoftwareSourceRemovePackagesManagement resource with the given unique name, arguments, and options.
@@ -87,18 +87,18 @@ export class SoftwareSourceRemovePackagesManagement extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceRemovePackagesManagementState | undefined;
-            resourceInputs["packages"] = state ? state.packages : undefined;
-            resourceInputs["softwareSourceId"] = state ? state.softwareSourceId : undefined;
+            resourceInputs["packages"] = state?.packages;
+            resourceInputs["softwareSourceId"] = state?.softwareSourceId;
         } else {
             const args = argsOrState as SoftwareSourceRemovePackagesManagementArgs | undefined;
-            if ((!args || args.packages === undefined) && !opts.urn) {
+            if (args?.packages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packages'");
             }
-            if ((!args || args.softwareSourceId === undefined) && !opts.urn) {
+            if (args?.softwareSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceId'");
             }
-            resourceInputs["packages"] = args ? args.packages : undefined;
-            resourceInputs["softwareSourceId"] = args ? args.softwareSourceId : undefined;
+            resourceInputs["packages"] = args?.packages;
+            resourceInputs["softwareSourceId"] = args?.softwareSourceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SoftwareSourceRemovePackagesManagement.__pulumiType, name, resourceInputs, opts);

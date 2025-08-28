@@ -58,11 +58,11 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
     /**
      * Name of the Object Storage bucket.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * Flag that specifies if this configuration is enabled or not.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -70,15 +70,15 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The time when this record is created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsUnprocessedDataBucketManagement resource with the given unique name, arguments, and options.
@@ -93,22 +93,22 @@ export class LogAnalyticsUnprocessedDataBucketManagement extends pulumi.CustomRe
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsUnprocessedDataBucketManagementState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as LogAnalyticsUnprocessedDataBucketManagementArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }

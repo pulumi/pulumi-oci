@@ -72,51 +72,51 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * Total count of audit events to be retrieved from the archive for the specified date range.
      */
-    public /*out*/ readonly auditEventCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly auditEventCount: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the archival retrieval.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the archive retrieval.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * End month of the archive retrieval, in the format defined by RFC3339.
      */
-    public readonly endDate!: pulumi.Output<string>;
+    declare public readonly endDate: pulumi.Output<string>;
     /**
      * The Error details of a failed archive retrieval.
      */
-    public /*out*/ readonly errorInfo!: pulumi.Output<string>;
+    declare public /*out*/ readonly errorInfo: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the current state of the archive retrieval.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Start month of the archive retrieval, in the format defined by RFC3339.
      */
-    public readonly startDate!: pulumi.Output<string>;
+    declare public readonly startDate: pulumi.Output<string>;
     /**
      * The current state of the archive retrieval.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target associated with the archive retrieval.
      *
@@ -124,19 +124,19 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCompleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCompleted: pulumi.Output<string>;
     /**
      * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      */
-    public /*out*/ readonly timeOfExpiry!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfExpiry: pulumi.Output<string>;
     /**
      * The date time when archive retrieval was requested, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeRequested!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRequested: pulumi.Output<string>;
 
     /**
      * Create a AuditArchiveRetrieval resource with the given unique name, arguments, and options.
@@ -151,44 +151,44 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditArchiveRetrievalState | undefined;
-            resourceInputs["auditEventCount"] = state ? state.auditEventCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endDate"] = state ? state.endDate : undefined;
-            resourceInputs["errorInfo"] = state ? state.errorInfo : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["startDate"] = state ? state.startDate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCompleted"] = state ? state.timeCompleted : undefined;
-            resourceInputs["timeOfExpiry"] = state ? state.timeOfExpiry : undefined;
-            resourceInputs["timeRequested"] = state ? state.timeRequested : undefined;
+            resourceInputs["auditEventCount"] = state?.auditEventCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endDate"] = state?.endDate;
+            resourceInputs["errorInfo"] = state?.errorInfo;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["startDate"] = state?.startDate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCompleted"] = state?.timeCompleted;
+            resourceInputs["timeOfExpiry"] = state?.timeOfExpiry;
+            resourceInputs["timeRequested"] = state?.timeRequested;
         } else {
             const args = argsOrState as AuditArchiveRetrievalArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.endDate === undefined) && !opts.urn) {
+            if (args?.endDate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'endDate'");
             }
-            if ((!args || args.startDate === undefined) && !opts.urn) {
+            if (args?.startDate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'startDate'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["endDate"] = args ? args.endDate : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["startDate"] = args ? args.startDate : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["endDate"] = args?.endDate;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["startDate"] = args?.startDate;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["auditEventCount"] = undefined /*out*/;
             resourceInputs["errorInfo"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

@@ -51,50 +51,50 @@ export class Schedule extends pulumi.CustomResource {
      * (Updatable) This is the action that will be executed by the schedule.
      * <<<<<<< ours
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) This is the description of the schedule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      * >>>>>>> theirs
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * This is the status of the last work request.
      */
-    public /*out*/ readonly lastRunStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastRunStatus: pulumi.Output<string>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
      *
      * >>>>>>> theirs
      */
-    public readonly recurrenceDetails!: pulumi.Output<string>;
+    declare public readonly recurrenceDetails: pulumi.Output<string>;
     /**
      * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
      */
-    public readonly recurrenceType!: pulumi.Output<string>;
+    declare public readonly recurrenceType: pulumi.Output<string>;
     /**
      * (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
      */
-    public readonly resourceFilters!: pulumi.Output<outputs.ResourceScheduler.ScheduleResourceFilter[]>;
+    declare public readonly resourceFilters: pulumi.Output<outputs.ResourceScheduler.ScheduleResourceFilter[]>;
     /**
      * (Updatable) This is the list of resources to which the scheduled operation is applied.
      */
-    public readonly resources!: pulumi.Output<outputs.ResourceScheduler.ScheduleResource[]>;
+    declare public readonly resources: pulumi.Output<outputs.ResourceScheduler.ScheduleResource[]>;
     /**
      * (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -102,35 +102,35 @@ export class Schedule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    public readonly timeEnds!: pulumi.Output<string>;
+    declare public readonly timeEnds: pulumi.Output<string>;
     /**
      * This is the date and time the schedule runs last time, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeLastRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastRun: pulumi.Output<string>;
     /**
      * This is the date and time the schedule run the next time, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeNextRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNextRun: pulumi.Output<string>;
     /**
      * (Updatable) This is the date and time the schedule starts, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
      */
-    public readonly timeStarts!: pulumi.Output<string>;
+    declare public readonly timeStarts: pulumi.Output<string>;
     /**
      * This is the date and time the schedule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Schedule resource with the given unique name, arguments, and options.
@@ -145,52 +145,52 @@ export class Schedule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastRunStatus"] = state ? state.lastRunStatus : undefined;
-            resourceInputs["recurrenceDetails"] = state ? state.recurrenceDetails : undefined;
-            resourceInputs["recurrenceType"] = state ? state.recurrenceType : undefined;
-            resourceInputs["resourceFilters"] = state ? state.resourceFilters : undefined;
-            resourceInputs["resources"] = state ? state.resources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeEnds"] = state ? state.timeEnds : undefined;
-            resourceInputs["timeLastRun"] = state ? state.timeLastRun : undefined;
-            resourceInputs["timeNextRun"] = state ? state.timeNextRun : undefined;
-            resourceInputs["timeStarts"] = state ? state.timeStarts : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastRunStatus"] = state?.lastRunStatus;
+            resourceInputs["recurrenceDetails"] = state?.recurrenceDetails;
+            resourceInputs["recurrenceType"] = state?.recurrenceType;
+            resourceInputs["resourceFilters"] = state?.resourceFilters;
+            resourceInputs["resources"] = state?.resources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeEnds"] = state?.timeEnds;
+            resourceInputs["timeLastRun"] = state?.timeLastRun;
+            resourceInputs["timeNextRun"] = state?.timeNextRun;
+            resourceInputs["timeStarts"] = state?.timeStarts;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ScheduleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.recurrenceDetails === undefined) && !opts.urn) {
+            if (args?.recurrenceDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recurrenceDetails'");
             }
-            if ((!args || args.recurrenceType === undefined) && !opts.urn) {
+            if (args?.recurrenceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recurrenceType'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["recurrenceDetails"] = args ? args.recurrenceDetails : undefined;
-            resourceInputs["recurrenceType"] = args ? args.recurrenceType : undefined;
-            resourceInputs["resourceFilters"] = args ? args.resourceFilters : undefined;
-            resourceInputs["resources"] = args ? args.resources : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["timeEnds"] = args ? args.timeEnds : undefined;
-            resourceInputs["timeStarts"] = args ? args.timeStarts : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["recurrenceDetails"] = args?.recurrenceDetails;
+            resourceInputs["recurrenceType"] = args?.recurrenceType;
+            resourceInputs["resourceFilters"] = args?.resourceFilters;
+            resourceInputs["resources"] = args?.resources;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["timeEnds"] = args?.timeEnds;
+            resourceInputs["timeStarts"] = args?.timeStarts;
             resourceInputs["lastRunStatus"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

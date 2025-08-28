@@ -89,31 +89,31 @@ export class ManagedInstanceGroupManageModuleStreamsManagement extends pulumi.Cu
     /**
      * The set of module streams to disable.
      */
-    public readonly disables!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable[]>;
+    declare public readonly disables: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable[]>;
     /**
      * The set of module streams to enable.
      */
-    public readonly enables!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable[]>;
+    declare public readonly enables: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable[]>;
     /**
      * The set of module stream profiles to install.
      */
-    public readonly installs!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall[]>;
+    declare public readonly installs: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall[]>;
     /**
      * Indicates if this operation is a dry run or if the operation should be committed.  If set to true, the result of the operation will be evaluated but not committed.  If set to false, the operation is committed to the managed instance(s).  The default is false.
      */
-    public readonly isDryRun!: pulumi.Output<boolean>;
+    declare public readonly isDryRun: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The set of module stream profiles to remove.
      */
-    public readonly removes!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove[]>;
+    declare public readonly removes: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupManageModuleStreamsManagement resource with the given unique name, arguments, and options.
@@ -128,25 +128,25 @@ export class ManagedInstanceGroupManageModuleStreamsManagement extends pulumi.Cu
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupManageModuleStreamsManagementState | undefined;
-            resourceInputs["disables"] = state ? state.disables : undefined;
-            resourceInputs["enables"] = state ? state.enables : undefined;
-            resourceInputs["installs"] = state ? state.installs : undefined;
-            resourceInputs["isDryRun"] = state ? state.isDryRun : undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["removes"] = state ? state.removes : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["disables"] = state?.disables;
+            resourceInputs["enables"] = state?.enables;
+            resourceInputs["installs"] = state?.installs;
+            resourceInputs["isDryRun"] = state?.isDryRun;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["removes"] = state?.removes;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupManageModuleStreamsManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            resourceInputs["disables"] = args ? args.disables : undefined;
-            resourceInputs["enables"] = args ? args.enables : undefined;
-            resourceInputs["installs"] = args ? args.installs : undefined;
-            resourceInputs["isDryRun"] = args ? args.isDryRun : undefined;
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["removes"] = args ? args.removes : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["disables"] = args?.disables;
+            resourceInputs["enables"] = args?.enables;
+            resourceInputs["installs"] = args?.installs;
+            resourceInputs["isDryRun"] = args?.isDryRun;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["removes"] = args?.removes;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupManageModuleStreamsManagement.__pulumiType, name, resourceInputs, opts);

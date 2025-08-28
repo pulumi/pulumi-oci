@@ -70,59 +70,59 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * An authorized principal.
      */
-    public /*out*/ readonly createdBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadTokenCreatedBy[]>;
+    declare public /*out*/ readonly createdBies: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadTokenCreatedBy[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User provided description of the JavaDownloadToken.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) User provided display name of the JavaDownloadToken.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The token default attribute.
      */
-    public readonly isDefault!: pulumi.Output<boolean>;
+    declare public readonly isDefault: pulumi.Output<boolean>;
     /**
      * The Java version associated with the token.
      */
-    public readonly javaVersion!: pulumi.Output<string>;
+    declare public readonly javaVersion: pulumi.Output<string>;
     /**
      * An authorized principal.
      */
-    public /*out*/ readonly lastUpdatedBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadTokenLastUpdatedBy[]>;
+    declare public /*out*/ readonly lastUpdatedBies: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadTokenLastUpdatedBy[]>;
     /**
      * (Updatable) The license type(s) associated with the JavaDownloadToken.
      */
-    public readonly licenseTypes!: pulumi.Output<string[]>;
+    declare public readonly licenseTypes: pulumi.Output<string[]>;
     /**
      * Possible lifecycle substates.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current state of the JavaDownloadToken.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Expiry time of the token.
      *
@@ -130,19 +130,19 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeExpires!: pulumi.Output<string>;
+    declare public readonly timeExpires: pulumi.Output<string>;
     /**
      * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeLastUsed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastUsed: pulumi.Output<string>;
     /**
      * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Uniquely generated value for the JavaDownloadToken.
      */
-    public /*out*/ readonly value!: pulumi.Output<string>;
+    declare public /*out*/ readonly value: pulumi.Output<string>;
 
     /**
      * Create a JavaDownloadsJavaDownloadToken resource with the given unique name, arguments, and options.
@@ -157,53 +157,53 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JavaDownloadsJavaDownloadTokenState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBies"] = state ? state.createdBies : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isDefault"] = state ? state.isDefault : undefined;
-            resourceInputs["javaVersion"] = state ? state.javaVersion : undefined;
-            resourceInputs["lastUpdatedBies"] = state ? state.lastUpdatedBies : undefined;
-            resourceInputs["licenseTypes"] = state ? state.licenseTypes : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeExpires"] = state ? state.timeExpires : undefined;
-            resourceInputs["timeLastUsed"] = state ? state.timeLastUsed : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBies"] = state?.createdBies;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isDefault"] = state?.isDefault;
+            resourceInputs["javaVersion"] = state?.javaVersion;
+            resourceInputs["lastUpdatedBies"] = state?.lastUpdatedBies;
+            resourceInputs["licenseTypes"] = state?.licenseTypes;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeExpires"] = state?.timeExpires;
+            resourceInputs["timeLastUsed"] = state?.timeLastUsed;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as JavaDownloadsJavaDownloadTokenArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.javaVersion === undefined) && !opts.urn) {
+            if (args?.javaVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'javaVersion'");
             }
-            if ((!args || args.licenseTypes === undefined) && !opts.urn) {
+            if (args?.licenseTypes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseTypes'");
             }
-            if ((!args || args.timeExpires === undefined) && !opts.urn) {
+            if (args?.timeExpires === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeExpires'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isDefault"] = args ? args.isDefault : undefined;
-            resourceInputs["javaVersion"] = args ? args.javaVersion : undefined;
-            resourceInputs["licenseTypes"] = args ? args.licenseTypes : undefined;
-            resourceInputs["timeExpires"] = args ? args.timeExpires : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isDefault"] = args?.isDefault;
+            resourceInputs["javaVersion"] = args?.javaVersion;
+            resourceInputs["licenseTypes"] = args?.licenseTypes;
+            resourceInputs["timeExpires"] = args?.timeExpires;
             resourceInputs["createdBies"] = undefined /*out*/;
             resourceInputs["lastUpdatedBies"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

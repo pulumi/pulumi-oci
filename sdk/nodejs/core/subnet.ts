@@ -113,7 +113,7 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
      *
@@ -121,23 +121,23 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `10.0.1.0/24`
      */
-    public readonly cidrBlock!: pulumi.Output<string>;
+    declare public readonly cidrBlock: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
      */
-    public readonly dhcpOptionsId!: pulumi.Output<string>;
+    declare public readonly dhcpOptionsId: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
      *
@@ -147,11 +147,11 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `subnet123`
      */
-    public readonly dnsLabel!: pulumi.Output<string>;
+    declare public readonly dnsLabel: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
      *
@@ -159,18 +159,18 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `2001:0db8:0123:1111::/64`
      */
-    public readonly ipv6cidrBlock!: pulumi.Output<string>;
+    declare public readonly ipv6cidrBlock: pulumi.Output<string>;
     /**
      * (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
      * * The prefixes must be valid.
      * * Multiple prefixes must not overlap each other or the on-premises network prefix.
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      */
-    public readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
+    declare public readonly ipv6cidrBlocks: pulumi.Output<string[]>;
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
      */
-    public /*out*/ readonly ipv6virtualRouterIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipv6virtualRouterIp: pulumi.Output<string>;
     /**
      * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
      *
@@ -180,7 +180,7 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly prohibitInternetIngress!: pulumi.Output<boolean>;
+    declare public readonly prohibitInternetIngress: pulumi.Output<boolean>;
     /**
      * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
      *
@@ -188,27 +188,27 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly prohibitPublicIpOnVnic!: pulumi.Output<boolean>;
+    declare public readonly prohibitPublicIpOnVnic: pulumi.Output<boolean>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    declare public readonly routeTableId: pulumi.Output<string>;
     /**
      * (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
      */
-    public readonly securityListIds!: pulumi.Output<string[]>;
+    declare public readonly securityListIds: pulumi.Output<string[]>;
     /**
      * The subnet's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
      */
-    public /*out*/ readonly subnetDomainName!: pulumi.Output<string>;
+    declare public /*out*/ readonly subnetDomainName: pulumi.Output<string>;
     /**
      * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
      *
@@ -216,15 +216,15 @@ export class Subnet extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
     /**
      * The IP address of the virtual router.  Example: `10.0.14.1`
      */
-    public /*out*/ readonly virtualRouterIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly virtualRouterIp: pulumi.Output<string>;
     /**
      * The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
      */
-    public /*out*/ readonly virtualRouterMac!: pulumi.Output<string>;
+    declare public /*out*/ readonly virtualRouterMac: pulumi.Output<string>;
 
     /**
      * Create a Subnet resource with the given unique name, arguments, and options.
@@ -239,53 +239,53 @@ export class Subnet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubnetState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["cidrBlock"] = state ? state.cidrBlock : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dhcpOptionsId"] = state ? state.dhcpOptionsId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsLabel"] = state ? state.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipv6cidrBlock"] = state ? state.ipv6cidrBlock : undefined;
-            resourceInputs["ipv6cidrBlocks"] = state ? state.ipv6cidrBlocks : undefined;
-            resourceInputs["ipv6virtualRouterIp"] = state ? state.ipv6virtualRouterIp : undefined;
-            resourceInputs["prohibitInternetIngress"] = state ? state.prohibitInternetIngress : undefined;
-            resourceInputs["prohibitPublicIpOnVnic"] = state ? state.prohibitPublicIpOnVnic : undefined;
-            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
-            resourceInputs["securityListIds"] = state ? state.securityListIds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetDomainName"] = state ? state.subnetDomainName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
-            resourceInputs["virtualRouterIp"] = state ? state.virtualRouterIp : undefined;
-            resourceInputs["virtualRouterMac"] = state ? state.virtualRouterMac : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["cidrBlock"] = state?.cidrBlock;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dhcpOptionsId"] = state?.dhcpOptionsId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsLabel"] = state?.dnsLabel;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipv6cidrBlock"] = state?.ipv6cidrBlock;
+            resourceInputs["ipv6cidrBlocks"] = state?.ipv6cidrBlocks;
+            resourceInputs["ipv6virtualRouterIp"] = state?.ipv6virtualRouterIp;
+            resourceInputs["prohibitInternetIngress"] = state?.prohibitInternetIngress;
+            resourceInputs["prohibitPublicIpOnVnic"] = state?.prohibitPublicIpOnVnic;
+            resourceInputs["routeTableId"] = state?.routeTableId;
+            resourceInputs["securityListIds"] = state?.securityListIds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetDomainName"] = state?.subnetDomainName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
+            resourceInputs["virtualRouterIp"] = state?.virtualRouterIp;
+            resourceInputs["virtualRouterMac"] = state?.virtualRouterMac;
         } else {
             const args = argsOrState as SubnetArgs | undefined;
-            if ((!args || args.cidrBlock === undefined) && !opts.urn) {
+            if (args?.cidrBlock === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cidrBlock'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["dhcpOptionsId"] = args ? args.dhcpOptionsId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsLabel"] = args ? args.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipv6cidrBlock"] = args ? args.ipv6cidrBlock : undefined;
-            resourceInputs["ipv6cidrBlocks"] = args ? args.ipv6cidrBlocks : undefined;
-            resourceInputs["prohibitInternetIngress"] = args ? args.prohibitInternetIngress : undefined;
-            resourceInputs["prohibitPublicIpOnVnic"] = args ? args.prohibitPublicIpOnVnic : undefined;
-            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
-            resourceInputs["securityListIds"] = args ? args.securityListIds : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["cidrBlock"] = args?.cidrBlock;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["dhcpOptionsId"] = args?.dhcpOptionsId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsLabel"] = args?.dnsLabel;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipv6cidrBlock"] = args?.ipv6cidrBlock;
+            resourceInputs["ipv6cidrBlocks"] = args?.ipv6cidrBlocks;
+            resourceInputs["prohibitInternetIngress"] = args?.prohibitInternetIngress;
+            resourceInputs["prohibitPublicIpOnVnic"] = args?.prohibitPublicIpOnVnic;
+            resourceInputs["routeTableId"] = args?.routeTableId;
+            resourceInputs["securityListIds"] = args?.securityListIds;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["ipv6virtualRouterIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["subnetDomainName"] = undefined /*out*/;

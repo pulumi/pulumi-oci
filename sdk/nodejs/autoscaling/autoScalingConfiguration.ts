@@ -115,49 +115,49 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      *
      * Each instance pool can have one autoscaling configuration.
      */
-    public readonly autoScalingResources!: pulumi.Output<outputs.Autoscaling.AutoScalingConfigurationAutoScalingResources>;
+    declare public readonly autoScalingResources: pulumi.Output<outputs.Autoscaling.AutoScalingConfigurationAutoScalingResources>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
      *
      * For schedule-based autoscaling policies, this value is not used.
      */
-    public readonly coolDownInSeconds!: pulumi.Output<number>;
+    declare public readonly coolDownInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether the autoscaling configuration is enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The maximum number of resources to scale out to.
      */
-    public /*out*/ readonly maxResourceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxResourceCount: pulumi.Output<number>;
     /**
      * The minimum number of resources to scale in to.
      */
-    public /*out*/ readonly minResourceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly minResourceCount: pulumi.Output<number>;
     /**
      * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      */
-    public readonly policies!: pulumi.Output<outputs.Autoscaling.AutoScalingConfigurationPolicy[]>;
+    declare public readonly policies: pulumi.Output<outputs.Autoscaling.AutoScalingConfigurationPolicy[]>;
     /**
      * The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a AutoScalingConfiguration resource with the given unique name, arguments, and options.
@@ -172,36 +172,36 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutoScalingConfigurationState | undefined;
-            resourceInputs["autoScalingResources"] = state ? state.autoScalingResources : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["coolDownInSeconds"] = state ? state.coolDownInSeconds : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["maxResourceCount"] = state ? state.maxResourceCount : undefined;
-            resourceInputs["minResourceCount"] = state ? state.minResourceCount : undefined;
-            resourceInputs["policies"] = state ? state.policies : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["autoScalingResources"] = state?.autoScalingResources;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["coolDownInSeconds"] = state?.coolDownInSeconds;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["maxResourceCount"] = state?.maxResourceCount;
+            resourceInputs["minResourceCount"] = state?.minResourceCount;
+            resourceInputs["policies"] = state?.policies;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as AutoScalingConfigurationArgs | undefined;
-            if ((!args || args.autoScalingResources === undefined) && !opts.urn) {
+            if (args?.autoScalingResources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autoScalingResources'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.policies === undefined) && !opts.urn) {
+            if (args?.policies === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policies'");
             }
-            resourceInputs["autoScalingResources"] = args ? args.autoScalingResources : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["coolDownInSeconds"] = args ? args.coolDownInSeconds : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["policies"] = args ? args.policies : undefined;
+            resourceInputs["autoScalingResources"] = args?.autoScalingResources;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["coolDownInSeconds"] = args?.coolDownInSeconds;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["policies"] = args?.policies;
             resourceInputs["maxResourceCount"] = undefined /*out*/;
             resourceInputs["minResourceCount"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

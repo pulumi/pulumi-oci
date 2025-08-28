@@ -63,35 +63,35 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    declare public readonly agentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The error message indicating the reason for connection failure or `null` if the connection was successful.
      */
-    public /*out*/ readonly connectionFailureMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectionFailureMessage: pulumi.Output<string>;
     /**
      * The connection details required to connect to an external DB system component.
      */
-    public readonly connectionInfos!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfo[]>;
+    declare public readonly connectionInfos: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemConnectorConnectionInfo[]>;
     /**
      * The status of connectivity to the external DB system component.
      */
-    public /*out*/ readonly connectionStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectionStatus: pulumi.Output<string>;
     /**
      * (Updatable) The type of connector.
      */
-    public readonly connectorType!: pulumi.Output<string>;
+    declare public readonly connectorType: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the external connector. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      *
@@ -99,35 +99,35 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current lifecycle state of the external DB system connector.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
      */
-    public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeConnectionStatusLastUpdated: pulumi.Output<string>;
     /**
      * The date and time the external DB system connector was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the external DB system connector was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ExternalDbSystemConnector resource with the given unique name, arguments, and options.
@@ -142,37 +142,37 @@ export class ExternalDbSystemConnector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalDbSystemConnectorState | undefined;
-            resourceInputs["agentId"] = state ? state.agentId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionFailureMessage"] = state ? state.connectionFailureMessage : undefined;
-            resourceInputs["connectionInfos"] = state ? state.connectionInfos : undefined;
-            resourceInputs["connectionStatus"] = state ? state.connectionStatus : undefined;
-            resourceInputs["connectorType"] = state ? state.connectorType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeConnectionStatusLastUpdated"] = state ? state.timeConnectionStatusLastUpdated : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["agentId"] = state?.agentId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionFailureMessage"] = state?.connectionFailureMessage;
+            resourceInputs["connectionInfos"] = state?.connectionInfos;
+            resourceInputs["connectionStatus"] = state?.connectionStatus;
+            resourceInputs["connectorType"] = state?.connectorType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeConnectionStatusLastUpdated"] = state?.timeConnectionStatusLastUpdated;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ExternalDbSystemConnectorArgs | undefined;
-            if ((!args || args.connectorType === undefined) && !opts.urn) {
+            if (args?.connectorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectorType'");
             }
-            if ((!args || args.externalDbSystemId === undefined) && !opts.urn) {
+            if (args?.externalDbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDbSystemId'");
             }
-            resourceInputs["agentId"] = args ? args.agentId : undefined;
-            resourceInputs["connectionInfos"] = args ? args.connectionInfos : undefined;
-            resourceInputs["connectorType"] = args ? args.connectorType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalDbSystemId"] = args ? args.externalDbSystemId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["connectionInfos"] = args?.connectionInfos;
+            resourceInputs["connectorType"] = args?.connectorType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalDbSystemId"] = args?.externalDbSystemId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionFailureMessage"] = undefined /*out*/;
             resourceInputs["connectionStatus"] = undefined /*out*/;

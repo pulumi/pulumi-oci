@@ -91,63 +91,63 @@ export class FsuCollection extends pulumi.CustomResource {
     /**
      * Active Exadata Fleet Update Cycle resource for this Collection. Object would be null if there is no active Cycle.
      */
-    public /*out*/ readonly activeFsuCycles!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle[]>;
+    declare public /*out*/ readonly activeFsuCycles: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle[]>;
     /**
      * (Updatable) Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Exadata Fleet Update Collection Identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
      */
-    public readonly fleetDiscovery!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
+    declare public readonly fleetDiscovery: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
      */
-    public /*out*/ readonly lastCompletedFsuCycleId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastCompletedFsuCycleId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Exadata service type for the target resource members.
      */
-    public readonly serviceType!: pulumi.Output<string>;
+    declare public readonly serviceType: pulumi.Output<string>;
     /**
      * Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
      */
-    public readonly sourceMajorVersion!: pulumi.Output<string>;
+    declare public readonly sourceMajorVersion: pulumi.Output<string>;
     /**
      * The current state of the Exadata Fleet Update Collection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Number of targets that are members of this Collection.
      */
-    public /*out*/ readonly targetCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly targetCount: pulumi.Output<number>;
     /**
      * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. 
      *
@@ -155,7 +155,7 @@ export class FsuCollection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a FsuCollection resource with the given unique name, arguments, and options.
@@ -170,44 +170,44 @@ export class FsuCollection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FsuCollectionState | undefined;
-            resourceInputs["activeFsuCycles"] = state ? state.activeFsuCycles : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fleetDiscovery"] = state ? state.fleetDiscovery : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastCompletedFsuCycleId"] = state ? state.lastCompletedFsuCycleId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["serviceType"] = state ? state.serviceType : undefined;
-            resourceInputs["sourceMajorVersion"] = state ? state.sourceMajorVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetCount"] = state ? state.targetCount : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["activeFsuCycles"] = state?.activeFsuCycles;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fleetDiscovery"] = state?.fleetDiscovery;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastCompletedFsuCycleId"] = state?.lastCompletedFsuCycleId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["serviceType"] = state?.serviceType;
+            resourceInputs["sourceMajorVersion"] = state?.sourceMajorVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetCount"] = state?.targetCount;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as FsuCollectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.serviceType === undefined) && !opts.urn) {
+            if (args?.serviceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceType'");
             }
-            if ((!args || args.sourceMajorVersion === undefined) && !opts.urn) {
+            if (args?.sourceMajorVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceMajorVersion'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["fleetDiscovery"] = args ? args.fleetDiscovery : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["serviceType"] = args ? args.serviceType : undefined;
-            resourceInputs["sourceMajorVersion"] = args ? args.sourceMajorVersion : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["fleetDiscovery"] = args?.fleetDiscovery;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["serviceType"] = args?.serviceType;
+            resourceInputs["sourceMajorVersion"] = args?.sourceMajorVersion;
+            resourceInputs["type"] = args?.type;
             resourceInputs["activeFsuCycles"] = undefined /*out*/;
             resourceInputs["lastCompletedFsuCycleId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

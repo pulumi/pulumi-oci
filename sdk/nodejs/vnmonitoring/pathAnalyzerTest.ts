@@ -101,55 +101,55 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly destinationEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestDestinationEndpoint>;
+    declare public readonly destinationEndpoint: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestDestinationEndpoint>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
      */
-    public readonly protocol!: pulumi.Output<number>;
+    declare public readonly protocol: pulumi.Output<number>;
     /**
      * (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestProtocolParameters>;
+    declare public readonly protocolParameters: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestProtocolParameters>;
     /**
      * (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestQueryOptions>;
+    declare public readonly queryOptions: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestQueryOptions>;
     /**
      * (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly sourceEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestSourceEndpoint>;
+    declare public readonly sourceEndpoint: pulumi.Output<outputs.VnMonitoring.PathAnalyzerTestSourceEndpoint>;
     /**
      * The current state of the `PathAnalyzerTest` resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a PathAnalyzerTest resource with the given unique name, arguments, and options.
@@ -164,42 +164,42 @@ export class PathAnalyzerTest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PathAnalyzerTestState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["destinationEndpoint"] = state ? state.destinationEndpoint : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["protocolParameters"] = state ? state.protocolParameters : undefined;
-            resourceInputs["queryOptions"] = state ? state.queryOptions : undefined;
-            resourceInputs["sourceEndpoint"] = state ? state.sourceEndpoint : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["destinationEndpoint"] = state?.destinationEndpoint;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["protocolParameters"] = state?.protocolParameters;
+            resourceInputs["queryOptions"] = state?.queryOptions;
+            resourceInputs["sourceEndpoint"] = state?.sourceEndpoint;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as PathAnalyzerTestArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.destinationEndpoint === undefined) && !opts.urn) {
+            if (args?.destinationEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationEndpoint'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            if ((!args || args.sourceEndpoint === undefined) && !opts.urn) {
+            if (args?.sourceEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceEndpoint'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["destinationEndpoint"] = args ? args.destinationEndpoint : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["protocolParameters"] = args ? args.protocolParameters : undefined;
-            resourceInputs["queryOptions"] = args ? args.queryOptions : undefined;
-            resourceInputs["sourceEndpoint"] = args ? args.sourceEndpoint : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["destinationEndpoint"] = args?.destinationEndpoint;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["protocolParameters"] = args?.protocolParameters;
+            resourceInputs["queryOptions"] = args?.queryOptions;
+            resourceInputs["sourceEndpoint"] = args?.sourceEndpoint;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

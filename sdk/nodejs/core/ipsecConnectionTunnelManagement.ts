@@ -81,46 +81,46 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     /**
      * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
      */
-    public /*out*/ readonly associatedVirtualCircuits!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly associatedVirtualCircuits: pulumi.Output<string[]>;
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
-    public readonly bgpSessionInfo!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>;
+    declare public readonly bgpSessionInfo: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
      */
-    public /*out*/ readonly cpeIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly cpeIp: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly dpdConfigs!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementDpdConfig[] | undefined>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly dpdConfigs: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementDpdConfig[] | undefined>;
     /**
      * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      */
-    public /*out*/ readonly dpdMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly dpdMode: pulumi.Output<string>;
     /**
      * DPD timeout in seconds.
      */
-    public /*out*/ readonly dpdTimeoutInSec!: pulumi.Output<number>;
+    declare public /*out*/ readonly dpdTimeoutInSec: pulumi.Output<number>;
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      */
-    public readonly encryptionDomainConfig!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig>;
+    declare public readonly encryptionDomainConfig: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig>;
     /**
      * Internet Key Exchange protocol version.
      */
-    public readonly ikeVersion!: pulumi.Output<string>;
+    declare public readonly ikeVersion: pulumi.Output<string>;
     /**
      * The OCID of the IPSec connection.
      */
-    public readonly ipsecId!: pulumi.Output<string>;
+    declare public readonly ipsecId: pulumi.Output<string>;
     /**
      * By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
      *
@@ -128,55 +128,55 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
      *
      * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
      */
-    public readonly natTranslationEnabled!: pulumi.Output<string>;
+    declare public readonly natTranslationEnabled: pulumi.Output<string>;
     /**
      * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
      */
-    public readonly oracleCanInitiate!: pulumi.Output<string>;
+    declare public readonly oracleCanInitiate: pulumi.Output<string>;
     /**
      * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */
-    public readonly phaseOneDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails>;
+    declare public readonly phaseOneDetails: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails>;
     /**
      * Configuration details for IPSec phase two configuration parameters.
      *
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      */
-    public readonly phaseTwoDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails>;
+    declare public readonly phaseTwoDetails: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails>;
     /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      */
-    public readonly routing!: pulumi.Output<string>;
+    declare public readonly routing: pulumi.Output<string>;
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      */
-    public readonly sharedSecret!: pulumi.Output<string>;
+    declare public readonly sharedSecret: pulumi.Output<string>;
     /**
      * The IPSec connection's tunnel's lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The tunnel's current state.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStatusUpdated: pulumi.Output<string>;
     /**
      * The OCID of the IPSec connection's tunnel.
      */
-    public readonly tunnelId!: pulumi.Output<string>;
+    declare public readonly tunnelId: pulumi.Output<string>;
     /**
      * The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
      */
-    public /*out*/ readonly vpnIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly vpnIp: pulumi.Output<string>;
 
     /**
      * Create a IpsecConnectionTunnelManagement resource with the given unique name, arguments, and options.
@@ -191,50 +191,50 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IpsecConnectionTunnelManagementState | undefined;
-            resourceInputs["associatedVirtualCircuits"] = state ? state.associatedVirtualCircuits : undefined;
-            resourceInputs["bgpSessionInfo"] = state ? state.bgpSessionInfo : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["cpeIp"] = state ? state.cpeIp : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dpdConfigs"] = state ? state.dpdConfigs : undefined;
-            resourceInputs["dpdMode"] = state ? state.dpdMode : undefined;
-            resourceInputs["dpdTimeoutInSec"] = state ? state.dpdTimeoutInSec : undefined;
-            resourceInputs["encryptionDomainConfig"] = state ? state.encryptionDomainConfig : undefined;
-            resourceInputs["ikeVersion"] = state ? state.ikeVersion : undefined;
-            resourceInputs["ipsecId"] = state ? state.ipsecId : undefined;
-            resourceInputs["natTranslationEnabled"] = state ? state.natTranslationEnabled : undefined;
-            resourceInputs["oracleCanInitiate"] = state ? state.oracleCanInitiate : undefined;
-            resourceInputs["phaseOneDetails"] = state ? state.phaseOneDetails : undefined;
-            resourceInputs["phaseTwoDetails"] = state ? state.phaseTwoDetails : undefined;
-            resourceInputs["routing"] = state ? state.routing : undefined;
-            resourceInputs["sharedSecret"] = state ? state.sharedSecret : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeStatusUpdated"] = state ? state.timeStatusUpdated : undefined;
-            resourceInputs["tunnelId"] = state ? state.tunnelId : undefined;
-            resourceInputs["vpnIp"] = state ? state.vpnIp : undefined;
+            resourceInputs["associatedVirtualCircuits"] = state?.associatedVirtualCircuits;
+            resourceInputs["bgpSessionInfo"] = state?.bgpSessionInfo;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["cpeIp"] = state?.cpeIp;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dpdConfigs"] = state?.dpdConfigs;
+            resourceInputs["dpdMode"] = state?.dpdMode;
+            resourceInputs["dpdTimeoutInSec"] = state?.dpdTimeoutInSec;
+            resourceInputs["encryptionDomainConfig"] = state?.encryptionDomainConfig;
+            resourceInputs["ikeVersion"] = state?.ikeVersion;
+            resourceInputs["ipsecId"] = state?.ipsecId;
+            resourceInputs["natTranslationEnabled"] = state?.natTranslationEnabled;
+            resourceInputs["oracleCanInitiate"] = state?.oracleCanInitiate;
+            resourceInputs["phaseOneDetails"] = state?.phaseOneDetails;
+            resourceInputs["phaseTwoDetails"] = state?.phaseTwoDetails;
+            resourceInputs["routing"] = state?.routing;
+            resourceInputs["sharedSecret"] = state?.sharedSecret;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeStatusUpdated"] = state?.timeStatusUpdated;
+            resourceInputs["tunnelId"] = state?.tunnelId;
+            resourceInputs["vpnIp"] = state?.vpnIp;
         } else {
             const args = argsOrState as IpsecConnectionTunnelManagementArgs | undefined;
-            if ((!args || args.ipsecId === undefined) && !opts.urn) {
+            if (args?.ipsecId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipsecId'");
             }
-            if ((!args || args.tunnelId === undefined) && !opts.urn) {
+            if (args?.tunnelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tunnelId'");
             }
-            resourceInputs["bgpSessionInfo"] = args ? args.bgpSessionInfo : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dpdConfigs"] = args ? args.dpdConfigs : undefined;
-            resourceInputs["encryptionDomainConfig"] = args ? args.encryptionDomainConfig : undefined;
-            resourceInputs["ikeVersion"] = args ? args.ikeVersion : undefined;
-            resourceInputs["ipsecId"] = args ? args.ipsecId : undefined;
-            resourceInputs["natTranslationEnabled"] = args ? args.natTranslationEnabled : undefined;
-            resourceInputs["oracleCanInitiate"] = args ? args.oracleCanInitiate : undefined;
-            resourceInputs["phaseOneDetails"] = args ? args.phaseOneDetails : undefined;
-            resourceInputs["phaseTwoDetails"] = args ? args.phaseTwoDetails : undefined;
-            resourceInputs["routing"] = args ? args.routing : undefined;
+            resourceInputs["bgpSessionInfo"] = args?.bgpSessionInfo;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dpdConfigs"] = args?.dpdConfigs;
+            resourceInputs["encryptionDomainConfig"] = args?.encryptionDomainConfig;
+            resourceInputs["ikeVersion"] = args?.ikeVersion;
+            resourceInputs["ipsecId"] = args?.ipsecId;
+            resourceInputs["natTranslationEnabled"] = args?.natTranslationEnabled;
+            resourceInputs["oracleCanInitiate"] = args?.oracleCanInitiate;
+            resourceInputs["phaseOneDetails"] = args?.phaseOneDetails;
+            resourceInputs["phaseTwoDetails"] = args?.phaseTwoDetails;
+            resourceInputs["routing"] = args?.routing;
             resourceInputs["sharedSecret"] = args?.sharedSecret ? pulumi.secret(args.sharedSecret) : undefined;
-            resourceInputs["tunnelId"] = args ? args.tunnelId : undefined;
+            resourceInputs["tunnelId"] = args?.tunnelId;
             resourceInputs["associatedVirtualCircuits"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["cpeIp"] = undefined /*out*/;

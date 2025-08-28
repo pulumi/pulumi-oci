@@ -73,36 +73,36 @@ export class Certificate extends pulumi.CustomResource {
      *
      * The example below shows an intermediate certificate appended to a leaf certificate.
      */
-    public readonly certificateData!: pulumi.Output<string>;
+    declare public readonly certificateData: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      */
-    public /*out*/ readonly extensions!: pulumi.Output<outputs.Waas.CertificateExtension[]>;
+    declare public /*out*/ readonly extensions: pulumi.Output<outputs.Waas.CertificateExtension[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Set to `true` if the SSL certificate is self-signed.
      */
-    public readonly isTrustVerificationDisabled!: pulumi.Output<boolean>;
-    public /*out*/ readonly issuedBy!: pulumi.Output<string>;
+    declare public readonly isTrustVerificationDisabled: pulumi.Output<boolean>;
+    declare public /*out*/ readonly issuedBy: pulumi.Output<string>;
     /**
      * The issuer of the certificate.
      */
-    public /*out*/ readonly issuerNames!: pulumi.Output<outputs.Waas.CertificateIssuerName[]>;
+    declare public /*out*/ readonly issuerNames: pulumi.Output<outputs.Waas.CertificateIssuerName[]>;
     /**
      * The private key of the SSL certificate.
      *
@@ -110,43 +110,43 @@ export class Certificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly privateKeyData!: pulumi.Output<string>;
+    declare public readonly privateKeyData: pulumi.Output<string>;
     /**
      * Information about the public key and the algorithm used by the public key.
      */
-    public /*out*/ readonly publicKeyInfos!: pulumi.Output<outputs.Waas.CertificatePublicKeyInfo[]>;
+    declare public /*out*/ readonly publicKeyInfos: pulumi.Output<outputs.Waas.CertificatePublicKeyInfo[]>;
     /**
      * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      */
-    public /*out*/ readonly serialNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly serialNumber: pulumi.Output<string>;
     /**
      * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      */
-    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string>;
+    declare public /*out*/ readonly signatureAlgorithm: pulumi.Output<string>;
     /**
      * The current lifecycle state of the SSL certificate.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The entity to be secured by the certificate.
      */
-    public /*out*/ readonly subjectNames!: pulumi.Output<outputs.Waas.CertificateSubjectName[]>;
+    declare public /*out*/ readonly subjectNames: pulumi.Output<outputs.Waas.CertificateSubjectName[]>;
     /**
      * The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeNotValidAfter!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNotValidAfter: pulumi.Output<string>;
     /**
      * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeNotValidBefore!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNotValidBefore: pulumi.Output<string>;
     /**
      * The version of the encoded certificate.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.
@@ -161,42 +161,42 @@ export class Certificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CertificateState | undefined;
-            resourceInputs["certificateData"] = state ? state.certificateData : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["extensions"] = state ? state.extensions : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isTrustVerificationDisabled"] = state ? state.isTrustVerificationDisabled : undefined;
-            resourceInputs["issuedBy"] = state ? state.issuedBy : undefined;
-            resourceInputs["issuerNames"] = state ? state.issuerNames : undefined;
-            resourceInputs["privateKeyData"] = state ? state.privateKeyData : undefined;
-            resourceInputs["publicKeyInfos"] = state ? state.publicKeyInfos : undefined;
-            resourceInputs["serialNumber"] = state ? state.serialNumber : undefined;
-            resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subjectNames"] = state ? state.subjectNames : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeNotValidAfter"] = state ? state.timeNotValidAfter : undefined;
-            resourceInputs["timeNotValidBefore"] = state ? state.timeNotValidBefore : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["certificateData"] = state?.certificateData;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["extensions"] = state?.extensions;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isTrustVerificationDisabled"] = state?.isTrustVerificationDisabled;
+            resourceInputs["issuedBy"] = state?.issuedBy;
+            resourceInputs["issuerNames"] = state?.issuerNames;
+            resourceInputs["privateKeyData"] = state?.privateKeyData;
+            resourceInputs["publicKeyInfos"] = state?.publicKeyInfos;
+            resourceInputs["serialNumber"] = state?.serialNumber;
+            resourceInputs["signatureAlgorithm"] = state?.signatureAlgorithm;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subjectNames"] = state?.subjectNames;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeNotValidAfter"] = state?.timeNotValidAfter;
+            resourceInputs["timeNotValidBefore"] = state?.timeNotValidBefore;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as CertificateArgs | undefined;
-            if ((!args || args.certificateData === undefined) && !opts.urn) {
+            if (args?.certificateData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateData'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.privateKeyData === undefined) && !opts.urn) {
+            if (args?.privateKeyData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateKeyData'");
             }
-            resourceInputs["certificateData"] = args ? args.certificateData : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isTrustVerificationDisabled"] = args ? args.isTrustVerificationDisabled : undefined;
+            resourceInputs["certificateData"] = args?.certificateData;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isTrustVerificationDisabled"] = args?.isTrustVerificationDisabled;
             resourceInputs["privateKeyData"] = args?.privateKeyData ? pulumi.secret(args.privateKeyData) : undefined;
             resourceInputs["extensions"] = undefined /*out*/;
             resourceInputs["issuedBy"] = undefined /*out*/;

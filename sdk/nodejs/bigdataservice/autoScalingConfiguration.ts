@@ -96,27 +96,27 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Whether the autoscale configuration is enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      */
-    public readonly nodeType!: pulumi.Output<string>;
+    declare public readonly nodeType: pulumi.Output<string>;
     /**
      * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    public readonly policy!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicy>;
+    declare public readonly policy: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicy>;
     /**
      * (Updatable) Policy definition for the autoscale configuration.
      *
@@ -130,19 +130,19 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      *
      * An autoscaling configuration can have one of above supported policies.
      */
-    public readonly policyDetails!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
+    declare public readonly policyDetails: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
     /**
      * The state of the autoscale configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AutoScalingConfiguration resource with the given unique name, arguments, and options.
@@ -157,37 +157,37 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutoScalingConfigurationState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["nodeType"] = state ? state.nodeType : undefined;
-            resourceInputs["policy"] = state ? state.policy : undefined;
-            resourceInputs["policyDetails"] = state ? state.policyDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["nodeType"] = state?.nodeType;
+            resourceInputs["policy"] = state?.policy;
+            resourceInputs["policyDetails"] = state?.policyDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AutoScalingConfigurationArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.isEnabled === undefined) && !opts.urn) {
+            if (args?.isEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
             }
-            if ((!args || args.nodeType === undefined) && !opts.urn) {
+            if (args?.nodeType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeType'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["nodeType"] = args ? args.nodeType : undefined;
-            resourceInputs["policy"] = args ? args.policy : undefined;
-            resourceInputs["policyDetails"] = args ? args.policyDetails : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["nodeType"] = args?.nodeType;
+            resourceInputs["policy"] = args?.policy;
+            resourceInputs["policyDetails"] = args?.policyDetails;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

@@ -159,63 +159,63 @@ export class ContainerInstance extends pulumi.CustomResource {
     /**
      * The availability domain where the container instance runs.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The compartment OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The number of containers on the container instance.
      */
-    public /*out*/ readonly containerCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly containerCount: pulumi.Output<number>;
     /**
      * Container restart policy
      */
-    public readonly containerRestartPolicy!: pulumi.Output<string>;
+    declare public readonly containerRestartPolicy: pulumi.Output<string>;
     /**
      * The containers to create on this container instance.
      */
-    public readonly containers!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceContainer[]>;
+    declare public readonly containers: pulumi.Output<outputs.ContainerEngine.ContainerInstanceContainer[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      */
-    public readonly dnsConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceDnsConfig>;
+    declare public readonly dnsConfig: pulumi.Output<outputs.ContainerEngine.ContainerInstanceDnsConfig>;
     /**
      * The fault domain where the container instance runs.
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    declare public readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
-    public readonly gracefulShutdownTimeoutInSeconds!: pulumi.Output<string>;
+    declare public readonly gracefulShutdownTimeoutInSeconds: pulumi.Output<string>;
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      */
-    public readonly imagePullSecrets!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceImagePullSecret[]>;
+    declare public readonly imagePullSecrets: pulumi.Output<outputs.ContainerEngine.ContainerInstanceImagePullSecret[]>;
     /**
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The size and amount of resources available to the container instance.
      */
-    public readonly shapeConfig!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceShapeConfig>;
+    declare public readonly shapeConfig: pulumi.Output<outputs.ContainerEngine.ContainerInstanceShapeConfig>;
     /**
      * (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -223,33 +223,33 @@ export class ContainerInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The networks available to containers on this container instance.
      */
-    public readonly vnics!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVnic[]>;
+    declare public readonly vnics: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVnic[]>;
     /**
      * The number of volumes that are attached to the container instance.
      */
-    public /*out*/ readonly volumeCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly volumeCount: pulumi.Output<number>;
     /**
      * A volume is a directory with data that is accessible across multiple containers in a container instance.
      *
      * You can attach up to 32 volumes to single container instance.
      */
-    public readonly volumes!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVolume[]>;
+    declare public readonly volumes: pulumi.Output<outputs.ContainerEngine.ContainerInstanceVolume[]>;
 
     /**
      * Create a ContainerInstance resource with the given unique name, arguments, and options.
@@ -264,64 +264,64 @@ export class ContainerInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ContainerInstanceState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["containerCount"] = state ? state.containerCount : undefined;
-            resourceInputs["containerRestartPolicy"] = state ? state.containerRestartPolicy : undefined;
-            resourceInputs["containers"] = state ? state.containers : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsConfig"] = state ? state.dnsConfig : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gracefulShutdownTimeoutInSeconds"] = state ? state.gracefulShutdownTimeoutInSeconds : undefined;
-            resourceInputs["imagePullSecrets"] = state ? state.imagePullSecrets : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["shapeConfig"] = state ? state.shapeConfig : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vnics"] = state ? state.vnics : undefined;
-            resourceInputs["volumeCount"] = state ? state.volumeCount : undefined;
-            resourceInputs["volumes"] = state ? state.volumes : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["containerCount"] = state?.containerCount;
+            resourceInputs["containerRestartPolicy"] = state?.containerRestartPolicy;
+            resourceInputs["containers"] = state?.containers;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsConfig"] = state?.dnsConfig;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gracefulShutdownTimeoutInSeconds"] = state?.gracefulShutdownTimeoutInSeconds;
+            resourceInputs["imagePullSecrets"] = state?.imagePullSecrets;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["shapeConfig"] = state?.shapeConfig;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vnics"] = state?.vnics;
+            resourceInputs["volumeCount"] = state?.volumeCount;
+            resourceInputs["volumes"] = state?.volumes;
         } else {
             const args = argsOrState as ContainerInstanceArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.containers === undefined) && !opts.urn) {
+            if (args?.containers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'containers'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.shapeConfig === undefined) && !opts.urn) {
+            if (args?.shapeConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeConfig'");
             }
-            if ((!args || args.vnics === undefined) && !opts.urn) {
+            if (args?.vnics === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vnics'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["containerRestartPolicy"] = args ? args.containerRestartPolicy : undefined;
-            resourceInputs["containers"] = args ? args.containers : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsConfig"] = args ? args.dnsConfig : undefined;
-            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gracefulShutdownTimeoutInSeconds"] = args ? args.gracefulShutdownTimeoutInSeconds : undefined;
-            resourceInputs["imagePullSecrets"] = args ? args.imagePullSecrets : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["vnics"] = args ? args.vnics : undefined;
-            resourceInputs["volumes"] = args ? args.volumes : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["containerRestartPolicy"] = args?.containerRestartPolicy;
+            resourceInputs["containers"] = args?.containers;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsConfig"] = args?.dnsConfig;
+            resourceInputs["faultDomain"] = args?.faultDomain;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gracefulShutdownTimeoutInSeconds"] = args?.gracefulShutdownTimeoutInSeconds;
+            resourceInputs["imagePullSecrets"] = args?.imagePullSecrets;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["shapeConfig"] = args?.shapeConfig;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["vnics"] = args?.vnics;
+            resourceInputs["volumes"] = args?.volumes;
             resourceInputs["containerCount"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

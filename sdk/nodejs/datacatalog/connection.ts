@@ -66,56 +66,56 @@ export class Connection extends pulumi.CustomResource {
     /**
      * Unique catalog identifier.
      */
-    public readonly catalogId!: pulumi.Output<string>;
+    declare public readonly catalogId: pulumi.Output<string>;
     /**
      * OCID of the user who created the connection.
      */
-    public /*out*/ readonly createdById!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdById: pulumi.Output<string>;
     /**
      * Unique data asset key.
      */
-    public readonly dataAssetKey!: pulumi.Output<string>;
+    declare public readonly dataAssetKey: pulumi.Output<string>;
     /**
      * (Updatable) A description of the connection.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    public readonly encProperties!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly encProperties: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Unique external key of this object from the source system.
      */
-    public /*out*/ readonly externalKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalKey: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
-    public readonly isDefault!: pulumi.Output<boolean>;
+    declare public readonly isDefault: pulumi.Output<boolean>;
     /**
      * Unique connection key that is immutable.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
-    public readonly properties!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
+    declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStatusUpdated: pulumi.Output<string>;
     /**
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *
@@ -123,15 +123,15 @@ export class Connection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly typeKey!: pulumi.Output<string>;
+    declare public readonly typeKey: pulumi.Output<string>;
     /**
      * OCID of the user who modified the connection.
      */
-    public /*out*/ readonly updatedById!: pulumi.Output<string>;
+    declare public /*out*/ readonly updatedById: pulumi.Output<string>;
     /**
      * URI to the connection instance in the API.
      */
-    public /*out*/ readonly uri!: pulumi.Output<string>;
+    declare public /*out*/ readonly uri: pulumi.Output<string>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.
@@ -146,48 +146,48 @@ export class Connection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionState | undefined;
-            resourceInputs["catalogId"] = state ? state.catalogId : undefined;
-            resourceInputs["createdById"] = state ? state.createdById : undefined;
-            resourceInputs["dataAssetKey"] = state ? state.dataAssetKey : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encProperties"] = state ? state.encProperties : undefined;
-            resourceInputs["externalKey"] = state ? state.externalKey : undefined;
-            resourceInputs["isDefault"] = state ? state.isDefault : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeStatusUpdated"] = state ? state.timeStatusUpdated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["typeKey"] = state ? state.typeKey : undefined;
-            resourceInputs["updatedById"] = state ? state.updatedById : undefined;
-            resourceInputs["uri"] = state ? state.uri : undefined;
+            resourceInputs["catalogId"] = state?.catalogId;
+            resourceInputs["createdById"] = state?.createdById;
+            resourceInputs["dataAssetKey"] = state?.dataAssetKey;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encProperties"] = state?.encProperties;
+            resourceInputs["externalKey"] = state?.externalKey;
+            resourceInputs["isDefault"] = state?.isDefault;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeStatusUpdated"] = state?.timeStatusUpdated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["typeKey"] = state?.typeKey;
+            resourceInputs["updatedById"] = state?.updatedById;
+            resourceInputs["uri"] = state?.uri;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
-            if ((!args || args.catalogId === undefined) && !opts.urn) {
+            if (args?.catalogId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'catalogId'");
             }
-            if ((!args || args.dataAssetKey === undefined) && !opts.urn) {
+            if (args?.dataAssetKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataAssetKey'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.properties === undefined) && !opts.urn) {
+            if (args?.properties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'properties'");
             }
-            if ((!args || args.typeKey === undefined) && !opts.urn) {
+            if (args?.typeKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'typeKey'");
             }
-            resourceInputs["catalogId"] = args ? args.catalogId : undefined;
-            resourceInputs["dataAssetKey"] = args ? args.dataAssetKey : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["catalogId"] = args?.catalogId;
+            resourceInputs["dataAssetKey"] = args?.dataAssetKey;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
             resourceInputs["encProperties"] = args?.encProperties ? pulumi.secret(args.encProperties) : undefined;
-            resourceInputs["isDefault"] = args ? args.isDefault : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["typeKey"] = args ? args.typeKey : undefined;
+            resourceInputs["isDefault"] = args?.isDefault;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["typeKey"] = args?.typeKey;
             resourceInputs["createdById"] = undefined /*out*/;
             resourceInputs["externalKey"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;

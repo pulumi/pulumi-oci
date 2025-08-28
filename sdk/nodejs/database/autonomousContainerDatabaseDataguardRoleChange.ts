@@ -32,10 +32,10 @@ export class AutonomousContainerDatabaseDataguardRoleChange extends pulumi.Custo
         return obj['__pulumiType'] === AutonomousContainerDatabaseDataguardRoleChange.__pulumiType;
     }
 
-    public readonly autonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
-    public readonly connectionStringsType!: pulumi.Output<string | undefined>;
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseDataguardAssociationId: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
+    declare public readonly connectionStringsType: pulumi.Output<string | undefined>;
+    declare public readonly role: pulumi.Output<string>;
 
     /**
      * Create a AutonomousContainerDatabaseDataguardRoleChange resource with the given unique name, arguments, and options.
@@ -50,25 +50,25 @@ export class AutonomousContainerDatabaseDataguardRoleChange extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseDataguardRoleChangeState | undefined;
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state ? state.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["connectionStringsType"] = state ? state.connectionStringsType : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = state?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["connectionStringsType"] = state?.connectionStringsType;
+            resourceInputs["role"] = state?.role;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseDataguardRoleChangeArgs | undefined;
-            if ((!args || args.autonomousContainerDatabaseDataguardAssociationId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseDataguardAssociationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseDataguardAssociationId'");
             }
-            if ((!args || args.autonomousContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseId'");
             }
-            if ((!args || args.role === undefined) && !opts.urn) {
+            if (args?.role === undefined && !opts.urn) {
                 throw new Error("Missing required property 'role'");
             }
-            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args ? args.autonomousContainerDatabaseDataguardAssociationId : undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["connectionStringsType"] = args ? args.connectionStringsType : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
+            resourceInputs["autonomousContainerDatabaseDataguardAssociationId"] = args?.autonomousContainerDatabaseDataguardAssociationId;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["connectionStringsType"] = args?.connectionStringsType;
+            resourceInputs["role"] = args?.role;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousContainerDatabaseDataguardRoleChange.__pulumiType, name, resourceInputs, opts);

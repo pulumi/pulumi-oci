@@ -66,47 +66,47 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
     /**
      * The character set of the external database.
      */
-    public /*out*/ readonly characterSet!: pulumi.Output<string>;
+    declare public /*out*/ readonly characterSet: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The Oracle Database configuration
      */
-    public /*out*/ readonly databaseConfiguration!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseConfiguration: pulumi.Output<string>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseEdition: pulumi.Output<string>;
     /**
      * The configuration of the Database Management service.
      */
-    public /*out*/ readonly databaseManagementConfigs!: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseDatabaseManagementConfig[]>;
+    declare public /*out*/ readonly databaseManagementConfigs: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseDatabaseManagementConfig[]>;
     /**
      * The Oracle Database version.
      */
-    public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseVersion: pulumi.Output<string>;
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      */
-    public /*out*/ readonly dbId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbId: pulumi.Output<string>;
     /**
      * The database packs licensed for the external Oracle Database.
      */
-    public /*out*/ readonly dbPacks!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbPacks: pulumi.Output<string>;
     /**
      * The `DB_UNIQUE_NAME` of the external database.
      */
-    public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbUniqueName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      *
@@ -114,39 +114,39 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The national character of the external database.
      */
-    public /*out*/ readonly ncharacterSet!: pulumi.Output<string>;
+    declare public /*out*/ readonly ncharacterSet: pulumi.Output<string>;
     /**
      * The configuration of Operations Insights for the external database
      */
-    public /*out*/ readonly operationsInsightsConfigs!: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig[]>;
+    declare public /*out*/ readonly operationsInsightsConfigs: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseOperationsInsightsConfig[]>;
     /**
      * The configuration of Stack Monitoring for the external database.
      */
-    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig[]>;
+    declare public /*out*/ readonly stackMonitoringConfigs: pulumi.Output<outputs.Database.ExternalNonContainerDatabaseStackMonitoringConfig[]>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
 
     /**
      * Create a ExternalNonContainerDatabase resource with the given unique name, arguments, and options.
@@ -161,38 +161,38 @@ export class ExternalNonContainerDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalNonContainerDatabaseState | undefined;
-            resourceInputs["characterSet"] = state ? state.characterSet : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseConfiguration"] = state ? state.databaseConfiguration : undefined;
-            resourceInputs["databaseEdition"] = state ? state.databaseEdition : undefined;
-            resourceInputs["databaseManagementConfigs"] = state ? state.databaseManagementConfigs : undefined;
-            resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
-            resourceInputs["dbId"] = state ? state.dbId : undefined;
-            resourceInputs["dbPacks"] = state ? state.dbPacks : undefined;
-            resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
-            resourceInputs["operationsInsightsConfigs"] = state ? state.operationsInsightsConfigs : undefined;
-            resourceInputs["stackMonitoringConfigs"] = state ? state.stackMonitoringConfigs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
+            resourceInputs["characterSet"] = state?.characterSet;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseConfiguration"] = state?.databaseConfiguration;
+            resourceInputs["databaseEdition"] = state?.databaseEdition;
+            resourceInputs["databaseManagementConfigs"] = state?.databaseManagementConfigs;
+            resourceInputs["databaseVersion"] = state?.databaseVersion;
+            resourceInputs["dbId"] = state?.dbId;
+            resourceInputs["dbPacks"] = state?.dbPacks;
+            resourceInputs["dbUniqueName"] = state?.dbUniqueName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["ncharacterSet"] = state?.ncharacterSet;
+            resourceInputs["operationsInsightsConfigs"] = state?.operationsInsightsConfigs;
+            resourceInputs["stackMonitoringConfigs"] = state?.stackMonitoringConfigs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
         } else {
             const args = argsOrState as ExternalNonContainerDatabaseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["characterSet"] = undefined /*out*/;
             resourceInputs["databaseConfiguration"] = undefined /*out*/;
             resourceInputs["databaseEdition"] = undefined /*out*/;

@@ -65,30 +65,30 @@ export class Onboarding extends pulumi.CustomResource {
     /**
      * Summary of the Fleet Application Management Onboard Policy.
      */
-    public /*out*/ readonly appliedPolicies!: pulumi.Output<outputs.FleetAppsManagement.OnboardingAppliedPolicy[]>;
+    declare public /*out*/ readonly appliedPolicies: pulumi.Output<outputs.FleetAppsManagement.OnboardingAppliedPolicy[]>;
     /**
      * Tenancy OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Provide discovery frequency.
      */
-    public /*out*/ readonly discoveryFrequency!: pulumi.Output<string>;
+    declare public /*out*/ readonly discoveryFrequency: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A value determining if the cost tracking tag is enabled or not. Allow
      * Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
-    public readonly isCostTrackingTagEnabled!: pulumi.Output<boolean>;
+    declare public readonly isCostTrackingTagEnabled: pulumi.Output<boolean>;
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
@@ -97,32 +97,32 @@ export class Onboarding extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
      * new property values
      */
-    public readonly isFamsTagEnabled!: pulumi.Output<boolean>;
+    declare public readonly isFamsTagEnabled: pulumi.Output<boolean>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * The current state of the Onboarding.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of Fleet Application Management that the tenant is onboarded to.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a Onboarding resource with the given unique name, arguments, and options.
@@ -137,27 +137,27 @@ export class Onboarding extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OnboardingState | undefined;
-            resourceInputs["appliedPolicies"] = state ? state.appliedPolicies : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["discoveryFrequency"] = state ? state.discoveryFrequency : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCostTrackingTagEnabled"] = state ? state.isCostTrackingTagEnabled : undefined;
-            resourceInputs["isFamsTagEnabled"] = state ? state.isFamsTagEnabled : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["appliedPolicies"] = state?.appliedPolicies;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryFrequency"] = state?.discoveryFrequency;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCostTrackingTagEnabled"] = state?.isCostTrackingTagEnabled;
+            resourceInputs["isFamsTagEnabled"] = state?.isFamsTagEnabled;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as OnboardingArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isCostTrackingTagEnabled"] = args ? args.isCostTrackingTagEnabled : undefined;
-            resourceInputs["isFamsTagEnabled"] = args ? args.isFamsTagEnabled : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isCostTrackingTagEnabled"] = args?.isCostTrackingTagEnabled;
+            resourceInputs["isFamsTagEnabled"] = args?.isFamsTagEnabled;
             resourceInputs["appliedPolicies"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["discoveryFrequency"] = undefined /*out*/;

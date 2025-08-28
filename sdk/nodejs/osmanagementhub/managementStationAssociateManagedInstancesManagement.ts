@@ -66,15 +66,15 @@ export class ManagementStationAssociateManagedInstancesManagement extends pulumi
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
      */
-    public readonly managedInstances!: pulumi.Output<string[]>;
+    declare public readonly managedInstances: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagementStationAssociateManagedInstancesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagementStationAssociateManagedInstancesManagement resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class ManagementStationAssociateManagedInstancesManagement extends pulumi
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationAssociateManagedInstancesManagementState | undefined;
-            resourceInputs["managedInstances"] = state ? state.managedInstances : undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstances"] = state?.managedInstances;
+            resourceInputs["managementStationId"] = state?.managementStationId;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagementStationAssociateManagedInstancesManagementArgs | undefined;
-            if ((!args || args.managedInstances === undefined) && !opts.urn) {
+            if (args?.managedInstances === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstances'");
             }
-            if ((!args || args.managementStationId === undefined) && !opts.urn) {
+            if (args?.managementStationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementStationId'");
             }
-            resourceInputs["managedInstances"] = args ? args.managedInstances : undefined;
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstances"] = args?.managedInstances;
+            resourceInputs["managementStationId"] = args?.managementStationId;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementStationAssociateManagedInstancesManagement.__pulumiType, name, resourceInputs, opts);

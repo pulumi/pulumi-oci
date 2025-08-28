@@ -97,111 +97,111 @@ export class ReportDefinition extends pulumi.CustomResource {
     /**
      * Specifies the name of the category that this report belongs to.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      */
-    public readonly columnFilters!: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnFilter[]>;
+    declare public readonly columnFilters: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnFilter[]>;
     /**
      * (Updatable) An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      */
-    public readonly columnInfos!: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnInfo[]>;
+    declare public readonly columnInfos: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnInfo[]>;
     /**
      * (Updatable) An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      */
-    public readonly columnSortings!: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnSorting[]>;
+    declare public readonly columnSortings: pulumi.Output<outputs.DataSafe.ReportDefinitionColumnSorting[]>;
     /**
      * (Updatable) The OCID of the compartment containing the report definition.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
-    public /*out*/ readonly complianceStandards!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly complianceStandards: pulumi.Output<string[]>;
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
-    public /*out*/ readonly dataSource!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataSource: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the report definition.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the name of the report definition.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Specifies the order in which the summary must be displayed.
      */
-    public /*out*/ readonly displayOrder!: pulumi.Output<number>;
+    declare public /*out*/ readonly displayOrder: pulumi.Output<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
-    public /*out*/ readonly isSeeded!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSeeded: pulumi.Output<boolean>;
     /**
      * Details about the current state of the report definition in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the parent report definition.
      */
-    public readonly parentId!: pulumi.Output<string>;
+    declare public readonly parentId: pulumi.Output<string>;
     /**
      * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
-    public /*out*/ readonly recordTimeSpan!: pulumi.Output<string>;
+    declare public /*out*/ readonly recordTimeSpan: pulumi.Output<string>;
     /**
      * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
-    public /*out*/ readonly schedule!: pulumi.Output<string>;
+    declare public /*out*/ readonly schedule: pulumi.Output<string>;
     /**
      * The OCID of the compartment in which the scheduled resource will be created.
      */
-    public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledReportCompartmentId: pulumi.Output<string>;
     /**
      * Specifies the format of the report ( either .xls or .pdf or .json)
      */
-    public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledReportMimeType: pulumi.Output<string>;
     /**
      * The name of the report to be scheduled.
      */
-    public /*out*/ readonly scheduledReportName!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledReportName: pulumi.Output<string>;
     /**
      * Specifies the limit on the number of rows in the report.
      */
-    public /*out*/ readonly scheduledReportRowLimit!: pulumi.Output<number>;
+    declare public /*out*/ readonly scheduledReportRowLimit: pulumi.Output<number>;
     /**
      * Additional scim filters used to get the specific summary.
      */
-    public /*out*/ readonly scimFilter!: pulumi.Output<string>;
+    declare public /*out*/ readonly scimFilter: pulumi.Output<string>;
     /**
      * The current state of the report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      */
-    public readonly summaries!: pulumi.Output<outputs.DataSafe.ReportDefinitionSummary[]>;
+    declare public readonly summaries: pulumi.Output<outputs.DataSafe.ReportDefinitionSummary[]>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies the date and time the report definition was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the report definition was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ReportDefinition resource with the given unique name, arguments, and options.
@@ -216,66 +216,66 @@ export class ReportDefinition extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ReportDefinitionState | undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["columnFilters"] = state ? state.columnFilters : undefined;
-            resourceInputs["columnInfos"] = state ? state.columnInfos : undefined;
-            resourceInputs["columnSortings"] = state ? state.columnSortings : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["complianceStandards"] = state ? state.complianceStandards : undefined;
-            resourceInputs["dataSource"] = state ? state.dataSource : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["displayOrder"] = state ? state.displayOrder : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isSeeded"] = state ? state.isSeeded : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["parentId"] = state ? state.parentId : undefined;
-            resourceInputs["recordTimeSpan"] = state ? state.recordTimeSpan : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
-            resourceInputs["scheduledReportCompartmentId"] = state ? state.scheduledReportCompartmentId : undefined;
-            resourceInputs["scheduledReportMimeType"] = state ? state.scheduledReportMimeType : undefined;
-            resourceInputs["scheduledReportName"] = state ? state.scheduledReportName : undefined;
-            resourceInputs["scheduledReportRowLimit"] = state ? state.scheduledReportRowLimit : undefined;
-            resourceInputs["scimFilter"] = state ? state.scimFilter : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["summaries"] = state ? state.summaries : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["columnFilters"] = state?.columnFilters;
+            resourceInputs["columnInfos"] = state?.columnInfos;
+            resourceInputs["columnSortings"] = state?.columnSortings;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["complianceStandards"] = state?.complianceStandards;
+            resourceInputs["dataSource"] = state?.dataSource;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["displayOrder"] = state?.displayOrder;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSeeded"] = state?.isSeeded;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["parentId"] = state?.parentId;
+            resourceInputs["recordTimeSpan"] = state?.recordTimeSpan;
+            resourceInputs["schedule"] = state?.schedule;
+            resourceInputs["scheduledReportCompartmentId"] = state?.scheduledReportCompartmentId;
+            resourceInputs["scheduledReportMimeType"] = state?.scheduledReportMimeType;
+            resourceInputs["scheduledReportName"] = state?.scheduledReportName;
+            resourceInputs["scheduledReportRowLimit"] = state?.scheduledReportRowLimit;
+            resourceInputs["scimFilter"] = state?.scimFilter;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["summaries"] = state?.summaries;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ReportDefinitionArgs | undefined;
-            if ((!args || args.columnFilters === undefined) && !opts.urn) {
+            if (args?.columnFilters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'columnFilters'");
             }
-            if ((!args || args.columnInfos === undefined) && !opts.urn) {
+            if (args?.columnInfos === undefined && !opts.urn) {
                 throw new Error("Missing required property 'columnInfos'");
             }
-            if ((!args || args.columnSortings === undefined) && !opts.urn) {
+            if (args?.columnSortings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'columnSortings'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.parentId === undefined) && !opts.urn) {
+            if (args?.parentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parentId'");
             }
-            if ((!args || args.summaries === undefined) && !opts.urn) {
+            if (args?.summaries === undefined && !opts.urn) {
                 throw new Error("Missing required property 'summaries'");
             }
-            resourceInputs["columnFilters"] = args ? args.columnFilters : undefined;
-            resourceInputs["columnInfos"] = args ? args.columnInfos : undefined;
-            resourceInputs["columnSortings"] = args ? args.columnSortings : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["parentId"] = args ? args.parentId : undefined;
-            resourceInputs["summaries"] = args ? args.summaries : undefined;
+            resourceInputs["columnFilters"] = args?.columnFilters;
+            resourceInputs["columnInfos"] = args?.columnInfos;
+            resourceInputs["columnSortings"] = args?.columnSortings;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["parentId"] = args?.parentId;
+            resourceInputs["summaries"] = args?.summaries;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["complianceStandards"] = undefined /*out*/;
             resourceInputs["dataSource"] = undefined /*out*/;

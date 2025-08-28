@@ -76,75 +76,75 @@ export class RedisCluster extends pulumi.CustomResource {
     /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
-    public readonly clusterMode!: pulumi.Output<string>;
+    declare public readonly clusterMode: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The collection of  cluster nodes.
      */
-    public /*out*/ readonly nodeCollections!: pulumi.Output<outputs.Redis.RedisClusterNodeCollection[]>;
+    declare public /*out*/ readonly nodeCollections: pulumi.Output<outputs.Redis.RedisClusterNodeCollection[]>;
     /**
      * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
-    public readonly nodeCount!: pulumi.Output<number>;
+    declare public readonly nodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
-    public readonly nodeMemoryInGbs!: pulumi.Output<number>;
+    declare public readonly nodeMemoryInGbs: pulumi.Output<number>;
     /**
      * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
      */
-    public readonly ociCacheConfigSetId!: pulumi.Output<string>;
+    declare public readonly ociCacheConfigSetId: pulumi.Output<string>;
     /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */
-    public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly primaryEndpointIpAddress: pulumi.Output<string>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
-    public /*out*/ readonly primaryFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly primaryFqdn: pulumi.Output<string>;
     /**
      * The private IP address of the API endpoint for the cluster's replica nodes.
      */
-    public /*out*/ readonly replicasEndpointIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicasEndpointIpAddress: pulumi.Output<string>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
-    public /*out*/ readonly replicasFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicasFqdn: pulumi.Output<string>;
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */
-    public readonly shardCount!: pulumi.Output<number>;
+    declare public readonly shardCount: pulumi.Output<number>;
     /**
      * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
-    public readonly softwareVersion!: pulumi.Output<string>;
+    declare public readonly softwareVersion: pulumi.Output<string>;
     /**
      * The current state of the cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      *
@@ -152,19 +152,19 @@ export class RedisCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a RedisCluster resource with the given unique name, arguments, and options.
@@ -179,60 +179,60 @@ export class RedisCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterState | undefined;
-            resourceInputs["clusterMode"] = state ? state.clusterMode : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["nodeCollections"] = state ? state.nodeCollections : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["nodeMemoryInGbs"] = state ? state.nodeMemoryInGbs : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["ociCacheConfigSetId"] = state ? state.ociCacheConfigSetId : undefined;
-            resourceInputs["primaryEndpointIpAddress"] = state ? state.primaryEndpointIpAddress : undefined;
-            resourceInputs["primaryFqdn"] = state ? state.primaryFqdn : undefined;
-            resourceInputs["replicasEndpointIpAddress"] = state ? state.replicasEndpointIpAddress : undefined;
-            resourceInputs["replicasFqdn"] = state ? state.replicasFqdn : undefined;
-            resourceInputs["shardCount"] = state ? state.shardCount : undefined;
-            resourceInputs["softwareVersion"] = state ? state.softwareVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["clusterMode"] = state?.clusterMode;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["nodeCollections"] = state?.nodeCollections;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["nodeMemoryInGbs"] = state?.nodeMemoryInGbs;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["ociCacheConfigSetId"] = state?.ociCacheConfigSetId;
+            resourceInputs["primaryEndpointIpAddress"] = state?.primaryEndpointIpAddress;
+            resourceInputs["primaryFqdn"] = state?.primaryFqdn;
+            resourceInputs["replicasEndpointIpAddress"] = state?.replicasEndpointIpAddress;
+            resourceInputs["replicasFqdn"] = state?.replicasFqdn;
+            resourceInputs["shardCount"] = state?.shardCount;
+            resourceInputs["softwareVersion"] = state?.softwareVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as RedisClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.nodeCount === undefined) && !opts.urn) {
+            if (args?.nodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeCount'");
             }
-            if ((!args || args.nodeMemoryInGbs === undefined) && !opts.urn) {
+            if (args?.nodeMemoryInGbs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeMemoryInGbs'");
             }
-            if ((!args || args.softwareVersion === undefined) && !opts.urn) {
+            if (args?.softwareVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareVersion'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["clusterMode"] = args ? args.clusterMode : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
-            resourceInputs["nodeMemoryInGbs"] = args ? args.nodeMemoryInGbs : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["ociCacheConfigSetId"] = args ? args.ociCacheConfigSetId : undefined;
-            resourceInputs["shardCount"] = args ? args.shardCount : undefined;
-            resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["clusterMode"] = args?.clusterMode;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["nodeCount"] = args?.nodeCount;
+            resourceInputs["nodeMemoryInGbs"] = args?.nodeMemoryInGbs;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["ociCacheConfigSetId"] = args?.ociCacheConfigSetId;
+            resourceInputs["shardCount"] = args?.shardCount;
+            resourceInputs["softwareVersion"] = args?.softwareVersion;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nodeCollections"] = undefined /*out*/;
             resourceInputs["primaryEndpointIpAddress"] = undefined /*out*/;

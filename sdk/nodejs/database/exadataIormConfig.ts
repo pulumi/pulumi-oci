@@ -69,15 +69,15 @@ export class ExadataIormConfig extends pulumi.CustomResource {
     /**
      * (Updatable) Array of IORM Setting for all the database in this Exadata DB System
      */
-    public readonly dbPlans!: pulumi.Output<outputs.Database.ExadataIormConfigDbPlan[]>;
+    declare public readonly dbPlans: pulumi.Output<outputs.Database.ExadataIormConfigDbPlan[]>;
     /**
      * (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Value for the IORM objective Default is "Auto" 
      *
@@ -85,11 +85,11 @@ export class ExadataIormConfig extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly objective!: pulumi.Output<string>;
+    declare public readonly objective: pulumi.Output<string>;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a ExadataIormConfig resource with the given unique name, arguments, and options.
@@ -104,22 +104,22 @@ export class ExadataIormConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataIormConfigState | undefined;
-            resourceInputs["dbPlans"] = state ? state.dbPlans : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["objective"] = state ? state.objective : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["dbPlans"] = state?.dbPlans;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["objective"] = state?.objective;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as ExadataIormConfigArgs | undefined;
-            if ((!args || args.dbPlans === undefined) && !opts.urn) {
+            if (args?.dbPlans === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbPlans'");
             }
-            if ((!args || args.dbSystemId === undefined) && !opts.urn) {
+            if (args?.dbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbSystemId'");
             }
-            resourceInputs["dbPlans"] = args ? args.dbPlans : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["objective"] = args ? args.objective : undefined;
+            resourceInputs["dbPlans"] = args?.dbPlans;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["objective"] = args?.objective;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

@@ -72,57 +72,57 @@ export class Ipv6 extends pulumi.CustomResource {
     /**
      * Length of cidr range. Optional field to specify flexible cidr.
      */
-    public readonly cidrPrefixLength!: pulumi.Output<number>;
+    declare public readonly cidrPrefixLength: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The subnet is the one that contains the VNIC you specify in `vnicId`.  Example: `2001:DB8::`
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
      */
-    public /*out*/ readonly ipState!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipState: pulumi.Output<string>;
     /**
      * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      */
-    public readonly ipv6subnetCidr!: pulumi.Output<string>;
+    declare public readonly ipv6subnetCidr: pulumi.Output<string>;
     /**
      * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
      * * Ephemeral
      * * Reserved
      */
-    public readonly lifetime!: pulumi.Output<string>;
+    declare public readonly lifetime: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
-    public readonly routeTableId!: pulumi.Output<string | undefined>;
+    declare public readonly routeTableId: pulumi.Output<string | undefined>;
     /**
      * The IPv6's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet from which the IPv6 is to be drawn. The IP address, *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet. 
      *
@@ -130,7 +130,7 @@ export class Ipv6 extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vnicId!: pulumi.Output<string | undefined>;
+    declare public readonly vnicId: pulumi.Output<string | undefined>;
 
     /**
      * Create a Ipv6 resource with the given unique name, arguments, and options.
@@ -145,32 +145,32 @@ export class Ipv6 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as Ipv6State | undefined;
-            resourceInputs["cidrPrefixLength"] = state ? state.cidrPrefixLength : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["ipState"] = state ? state.ipState : undefined;
-            resourceInputs["ipv6subnetCidr"] = state ? state.ipv6subnetCidr : undefined;
-            resourceInputs["lifetime"] = state ? state.lifetime : undefined;
-            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vnicId"] = state ? state.vnicId : undefined;
+            resourceInputs["cidrPrefixLength"] = state?.cidrPrefixLength;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["ipState"] = state?.ipState;
+            resourceInputs["ipv6subnetCidr"] = state?.ipv6subnetCidr;
+            resourceInputs["lifetime"] = state?.lifetime;
+            resourceInputs["routeTableId"] = state?.routeTableId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vnicId"] = state?.vnicId;
         } else {
             const args = argsOrState as Ipv6Args | undefined;
-            resourceInputs["cidrPrefixLength"] = args ? args.cidrPrefixLength : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["ipv6subnetCidr"] = args ? args.ipv6subnetCidr : undefined;
-            resourceInputs["lifetime"] = args ? args.lifetime : undefined;
-            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["vnicId"] = args ? args.vnicId : undefined;
+            resourceInputs["cidrPrefixLength"] = args?.cidrPrefixLength;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["ipv6subnetCidr"] = args?.ipv6subnetCidr;
+            resourceInputs["lifetime"] = args?.lifetime;
+            resourceInputs["routeTableId"] = args?.routeTableId;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["vnicId"] = args?.vnicId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["ipState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

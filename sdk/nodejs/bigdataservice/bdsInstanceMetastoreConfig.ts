@@ -68,47 +68,47 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly activateTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly activateTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
      */
-    public readonly bdsApiKeyId!: pulumi.Output<string>;
+    declare public readonly bdsApiKeyId: pulumi.Output<string>;
     /**
      * (Updatable) Base-64 encoded passphrase of the BDS Api Key.
      */
-    public readonly bdsApiKeyPassphrase!: pulumi.Output<string>;
+    declare public readonly bdsApiKeyPassphrase: pulumi.Output<string>;
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the metastore configuration
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the Data Catalog metastore.
      */
-    public readonly metastoreId!: pulumi.Output<string>;
+    declare public readonly metastoreId: pulumi.Output<string>;
     /**
      * The type of the metastore in the metastore configuration.
      */
-    public /*out*/ readonly metastoreType!: pulumi.Output<string>;
+    declare public /*out*/ readonly metastoreType: pulumi.Output<string>;
     /**
      * the lifecycle state of the metastore configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceMetastoreConfig resource with the given unique name, arguments, and options.
@@ -123,41 +123,41 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceMetastoreConfigState | undefined;
-            resourceInputs["activateTrigger"] = state ? state.activateTrigger : undefined;
-            resourceInputs["bdsApiKeyId"] = state ? state.bdsApiKeyId : undefined;
-            resourceInputs["bdsApiKeyPassphrase"] = state ? state.bdsApiKeyPassphrase : undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["metastoreId"] = state ? state.metastoreId : undefined;
-            resourceInputs["metastoreType"] = state ? state.metastoreType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["activateTrigger"] = state?.activateTrigger;
+            resourceInputs["bdsApiKeyId"] = state?.bdsApiKeyId;
+            resourceInputs["bdsApiKeyPassphrase"] = state?.bdsApiKeyPassphrase;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["metastoreId"] = state?.metastoreId;
+            resourceInputs["metastoreType"] = state?.metastoreType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BdsInstanceMetastoreConfigArgs | undefined;
-            if ((!args || args.bdsApiKeyId === undefined) && !opts.urn) {
+            if (args?.bdsApiKeyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsApiKeyId'");
             }
-            if ((!args || args.bdsApiKeyPassphrase === undefined) && !opts.urn) {
+            if (args?.bdsApiKeyPassphrase === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsApiKeyPassphrase'");
             }
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.metastoreId === undefined) && !opts.urn) {
+            if (args?.metastoreId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metastoreId'");
             }
-            resourceInputs["activateTrigger"] = args ? args.activateTrigger : undefined;
-            resourceInputs["bdsApiKeyId"] = args ? args.bdsApiKeyId : undefined;
+            resourceInputs["activateTrigger"] = args?.activateTrigger;
+            resourceInputs["bdsApiKeyId"] = args?.bdsApiKeyId;
             resourceInputs["bdsApiKeyPassphrase"] = args?.bdsApiKeyPassphrase ? pulumi.secret(args.bdsApiKeyPassphrase) : undefined;
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["metastoreId"] = args ? args.metastoreId : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["metastoreId"] = args?.metastoreId;
             resourceInputs["metastoreType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

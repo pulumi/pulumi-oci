@@ -85,23 +85,23 @@ export class Listener extends pulumi.CustomResource {
     /**
      * (Updatable) Configuration details for the connection between the client and backend servers.
      */
-    public readonly connectionConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerConnectionConfiguration>;
+    declare public readonly connectionConfiguration: pulumi.Output<outputs.LoadBalancer.ListenerConnectionConfiguration>;
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
-    public readonly defaultBackendSetName!: pulumi.Output<string>;
+    declare public readonly defaultBackendSetName: pulumi.Output<string>;
     /**
      * (Updatable) An array of hostname resource names.
      */
-    public readonly hostnameNames!: pulumi.Output<string[]>;
+    declare public readonly hostnameNames: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Deprecated. Please use `routingPolicies` instead.
      *
@@ -109,30 +109,30 @@ export class Listener extends pulumi.CustomResource {
      *
      * Example: `examplePathRouteSet`
      */
-    public readonly pathRouteSetName!: pulumi.Output<string | undefined>;
+    declare public readonly pathRouteSetName: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
      */
-    public readonly routingPolicyName!: pulumi.Output<string | undefined>;
+    declare public readonly routingPolicyName: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
      */
-    public readonly ruleSetNames!: pulumi.Output<string[]>;
+    declare public readonly ruleSetNames: pulumi.Output<string[]>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly sslConfiguration!: pulumi.Output<outputs.LoadBalancer.ListenerSslConfiguration | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly sslConfiguration: pulumi.Output<outputs.LoadBalancer.ListenerSslConfiguration | undefined>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a Listener resource with the given unique name, arguments, and options.
@@ -147,43 +147,43 @@ export class Listener extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ListenerState | undefined;
-            resourceInputs["connectionConfiguration"] = state ? state.connectionConfiguration : undefined;
-            resourceInputs["defaultBackendSetName"] = state ? state.defaultBackendSetName : undefined;
-            resourceInputs["hostnameNames"] = state ? state.hostnameNames : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["pathRouteSetName"] = state ? state.pathRouteSetName : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["routingPolicyName"] = state ? state.routingPolicyName : undefined;
-            resourceInputs["ruleSetNames"] = state ? state.ruleSetNames : undefined;
-            resourceInputs["sslConfiguration"] = state ? state.sslConfiguration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["connectionConfiguration"] = state?.connectionConfiguration;
+            resourceInputs["defaultBackendSetName"] = state?.defaultBackendSetName;
+            resourceInputs["hostnameNames"] = state?.hostnameNames;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["pathRouteSetName"] = state?.pathRouteSetName;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["routingPolicyName"] = state?.routingPolicyName;
+            resourceInputs["ruleSetNames"] = state?.ruleSetNames;
+            resourceInputs["sslConfiguration"] = state?.sslConfiguration;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as ListenerArgs | undefined;
-            if ((!args || args.defaultBackendSetName === undefined) && !opts.urn) {
+            if (args?.defaultBackendSetName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultBackendSetName'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            resourceInputs["connectionConfiguration"] = args ? args.connectionConfiguration : undefined;
-            resourceInputs["defaultBackendSetName"] = args ? args.defaultBackendSetName : undefined;
-            resourceInputs["hostnameNames"] = args ? args.hostnameNames : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["pathRouteSetName"] = args ? args.pathRouteSetName : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["routingPolicyName"] = args ? args.routingPolicyName : undefined;
-            resourceInputs["ruleSetNames"] = args ? args.ruleSetNames : undefined;
-            resourceInputs["sslConfiguration"] = args ? args.sslConfiguration : undefined;
+            resourceInputs["connectionConfiguration"] = args?.connectionConfiguration;
+            resourceInputs["defaultBackendSetName"] = args?.defaultBackendSetName;
+            resourceInputs["hostnameNames"] = args?.hostnameNames;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["pathRouteSetName"] = args?.pathRouteSetName;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["routingPolicyName"] = args?.routingPolicyName;
+            resourceInputs["ruleSetNames"] = args?.ruleSetNames;
+            resourceInputs["sslConfiguration"] = args?.sslConfiguration;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

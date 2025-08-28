@@ -48,51 +48,51 @@ export class DbNode extends pulumi.CustomResource {
     /**
      * Additional information about the planned maintenance.
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      */
-    public /*out*/ readonly backupIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupIpId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
      */
-    public /*out*/ readonly backupIpv6id!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupIpv6id: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      */
-    public /*out*/ readonly backupVnic2id!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupVnic2id: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      */
-    public /*out*/ readonly backupVnicId!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupVnicId: pulumi.Output<string>;
     /**
      * The number of CPU cores enabled on the Db node.
      */
-    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly dbNodeId!: pulumi.Output<string>;
+    declare public readonly dbNodeId: pulumi.Output<string>;
     /**
      * The allocated local node storage in GBs on the Db node.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      */
-    public /*out*/ readonly dbServerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbServerId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the Fault Domain the instance is contained in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -100,67 +100,67 @@ export class DbNode extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv4 address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IPv4 address needed to make a database connection.
      */
-    public /*out*/ readonly hostIpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostIpId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
      */
-    public /*out*/ readonly hostIpv6id!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostIpv6id: pulumi.Output<string>;
     /**
      * The host name for the database node.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
      * Information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The type of database node maintenance.
      */
-    public /*out*/ readonly maintenanceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceType: pulumi.Output<string>;
     /**
      * The allocated memory in GBs on the Db node.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      */
-    public /*out*/ readonly softwareStorageSizeInGb!: pulumi.Output<number>;
+    declare public /*out*/ readonly softwareStorageSizeInGb: pulumi.Output<number>;
     /**
      * The current state of the database node.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the database node was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * End date and time of maintenance window.
      */
-    public /*out*/ readonly timeMaintenanceWindowEnd!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaintenanceWindowEnd: pulumi.Output<string>;
     /**
      * Start date and time of maintenance window.
      */
-    public /*out*/ readonly timeMaintenanceWindowStart!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaintenanceWindowStart: pulumi.Output<string>;
     /**
      * The total number of CPU cores reserved on the Db node.
      */
-    public /*out*/ readonly totalCpuCoreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalCpuCoreCount: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */
-    public /*out*/ readonly vnic2id!: pulumi.Output<string>;
+    declare public /*out*/ readonly vnic2id: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      */
-    public /*out*/ readonly vnicId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vnicId: pulumi.Output<string>;
 
     /**
      * Create a DbNode resource with the given unique name, arguments, and options.
@@ -175,42 +175,42 @@ export class DbNode extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbNodeState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["backupIpId"] = state ? state.backupIpId : undefined;
-            resourceInputs["backupIpv6id"] = state ? state.backupIpv6id : undefined;
-            resourceInputs["backupVnic2id"] = state ? state.backupVnic2id : undefined;
-            resourceInputs["backupVnicId"] = state ? state.backupVnicId : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["dbNodeId"] = state ? state.dbNodeId : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServerId"] = state ? state.dbServerId : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostIpId"] = state ? state.hostIpId : undefined;
-            resourceInputs["hostIpv6id"] = state ? state.hostIpv6id : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceType"] = state ? state.maintenanceType : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["softwareStorageSizeInGb"] = state ? state.softwareStorageSizeInGb : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeMaintenanceWindowEnd"] = state ? state.timeMaintenanceWindowEnd : undefined;
-            resourceInputs["timeMaintenanceWindowStart"] = state ? state.timeMaintenanceWindowStart : undefined;
-            resourceInputs["totalCpuCoreCount"] = state ? state.totalCpuCoreCount : undefined;
-            resourceInputs["vnic2id"] = state ? state.vnic2id : undefined;
-            resourceInputs["vnicId"] = state ? state.vnicId : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["backupIpId"] = state?.backupIpId;
+            resourceInputs["backupIpv6id"] = state?.backupIpv6id;
+            resourceInputs["backupVnic2id"] = state?.backupVnic2id;
+            resourceInputs["backupVnicId"] = state?.backupVnicId;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["dbNodeId"] = state?.dbNodeId;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServerId"] = state?.dbServerId;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostIpId"] = state?.hostIpId;
+            resourceInputs["hostIpv6id"] = state?.hostIpv6id;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceType"] = state?.maintenanceType;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["softwareStorageSizeInGb"] = state?.softwareStorageSizeInGb;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeMaintenanceWindowEnd"] = state?.timeMaintenanceWindowEnd;
+            resourceInputs["timeMaintenanceWindowStart"] = state?.timeMaintenanceWindowStart;
+            resourceInputs["totalCpuCoreCount"] = state?.totalCpuCoreCount;
+            resourceInputs["vnic2id"] = state?.vnic2id;
+            resourceInputs["vnicId"] = state?.vnicId;
         } else {
             const args = argsOrState as DbNodeArgs | undefined;
-            if ((!args || args.dbNodeId === undefined) && !opts.urn) {
+            if (args?.dbNodeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbNodeId'");
             }
-            resourceInputs["dbNodeId"] = args ? args.dbNodeId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["dbNodeId"] = args?.dbNodeId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["backupIpId"] = undefined /*out*/;
             resourceInputs["backupIpv6id"] = undefined /*out*/;

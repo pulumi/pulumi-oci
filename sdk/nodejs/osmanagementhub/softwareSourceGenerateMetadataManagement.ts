@@ -61,7 +61,7 @@ export class SoftwareSourceGenerateMetadataManagement extends pulumi.CustomResou
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSourceId!: pulumi.Output<string>;
+    declare public readonly softwareSourceId: pulumi.Output<string>;
 
     /**
      * Create a SoftwareSourceGenerateMetadataManagement resource with the given unique name, arguments, and options.
@@ -76,13 +76,13 @@ export class SoftwareSourceGenerateMetadataManagement extends pulumi.CustomResou
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceGenerateMetadataManagementState | undefined;
-            resourceInputs["softwareSourceId"] = state ? state.softwareSourceId : undefined;
+            resourceInputs["softwareSourceId"] = state?.softwareSourceId;
         } else {
             const args = argsOrState as SoftwareSourceGenerateMetadataManagementArgs | undefined;
-            if ((!args || args.softwareSourceId === undefined) && !opts.urn) {
+            if (args?.softwareSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceId'");
             }
-            resourceInputs["softwareSourceId"] = args ? args.softwareSourceId : undefined;
+            resourceInputs["softwareSourceId"] = args?.softwareSourceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SoftwareSourceGenerateMetadataManagement.__pulumiType, name, resourceInputs, opts);

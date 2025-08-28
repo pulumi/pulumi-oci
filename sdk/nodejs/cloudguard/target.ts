@@ -99,77 +99,77 @@ export class Target extends pulumi.CustomResource {
     /**
      * Compartment OCID where the resource is created
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The target description.
      *
      * Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Display name for the target.
      *
      * Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of inherited compartments
      */
-    public /*out*/ readonly inheritedByCompartments!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly inheritedByCompartments: pulumi.Output<string[]>;
     /**
      * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecyleDetails: pulumi.Output<string>;
     /**
      * Total number of recipes attached to target
      */
-    public /*out*/ readonly recipeCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly recipeCount: pulumi.Output<number>;
     /**
      * (Updatable) The enablement state of the detector rule
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details specific to the target type.
      */
-    public /*out*/ readonly targetDetails!: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[]>;
+    declare public /*out*/ readonly targetDetails: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[]>;
     /**
      * (Updatable) List of detector recipes to attach to target
      */
-    public readonly targetDetectorRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetDetectorRecipe[]>;
+    declare public readonly targetDetectorRecipes: pulumi.Output<outputs.CloudGuard.TargetTargetDetectorRecipe[]>;
     /**
      * Resource ID which the target uses to monitor
      */
-    public readonly targetResourceId!: pulumi.Output<string>;
+    declare public readonly targetResourceId: pulumi.Output<string>;
     /**
      * Type of resource that target support (COMPARTMENT/FACLOUD)
      */
-    public readonly targetResourceType!: pulumi.Output<string>;
+    declare public readonly targetResourceType: pulumi.Output<string>;
     /**
      * (Updatable) List of responder recipes to attach to target
      */
-    public readonly targetResponderRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetResponderRecipe[]>;
+    declare public readonly targetResponderRecipes: pulumi.Output<outputs.CloudGuard.TargetTargetResponderRecipe[]>;
     /**
      * The date and time the target was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the target was last updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Target resource with the given unique name, arguments, and options.
@@ -184,47 +184,47 @@ export class Target extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TargetState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inheritedByCompartments"] = state ? state.inheritedByCompartments : undefined;
-            resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
-            resourceInputs["recipeCount"] = state ? state.recipeCount : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetDetails"] = state ? state.targetDetails : undefined;
-            resourceInputs["targetDetectorRecipes"] = state ? state.targetDetectorRecipes : undefined;
-            resourceInputs["targetResourceId"] = state ? state.targetResourceId : undefined;
-            resourceInputs["targetResourceType"] = state ? state.targetResourceType : undefined;
-            resourceInputs["targetResponderRecipes"] = state ? state.targetResponderRecipes : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inheritedByCompartments"] = state?.inheritedByCompartments;
+            resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
+            resourceInputs["recipeCount"] = state?.recipeCount;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetDetails"] = state?.targetDetails;
+            resourceInputs["targetDetectorRecipes"] = state?.targetDetectorRecipes;
+            resourceInputs["targetResourceId"] = state?.targetResourceId;
+            resourceInputs["targetResourceType"] = state?.targetResourceType;
+            resourceInputs["targetResponderRecipes"] = state?.targetResponderRecipes;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as TargetArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.targetResourceId === undefined) && !opts.urn) {
+            if (args?.targetResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetResourceId'");
             }
-            if ((!args || args.targetResourceType === undefined) && !opts.urn) {
+            if (args?.targetResourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetResourceType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["targetDetectorRecipes"] = args ? args.targetDetectorRecipes : undefined;
-            resourceInputs["targetResourceId"] = args ? args.targetResourceId : undefined;
-            resourceInputs["targetResourceType"] = args ? args.targetResourceType : undefined;
-            resourceInputs["targetResponderRecipes"] = args ? args.targetResponderRecipes : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["targetDetectorRecipes"] = args?.targetDetectorRecipes;
+            resourceInputs["targetResourceId"] = args?.targetResourceId;
+            resourceInputs["targetResourceType"] = args?.targetResourceType;
+            resourceInputs["targetResponderRecipes"] = args?.targetResponderRecipes;
             resourceInputs["inheritedByCompartments"] = undefined /*out*/;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["recipeCount"] = undefined /*out*/;

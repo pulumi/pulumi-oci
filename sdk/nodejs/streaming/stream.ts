@@ -71,39 +71,39 @@ export class Stream extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Any additional details about the current state of the stream.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
      */
-    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly messagesEndpoint: pulumi.Output<string>;
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The number of partitions in the stream.
      */
-    public readonly partitions!: pulumi.Output<number>;
+    declare public readonly partitions: pulumi.Output<number>;
     /**
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      */
-    public readonly retentionInHours!: pulumi.Output<number>;
+    declare public readonly retentionInHours: pulumi.Output<number>;
     /**
      * The current state of the stream.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
      *
@@ -111,11 +111,11 @@ export class Stream extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly streamPoolId!: pulumi.Output<string>;
+    declare public readonly streamPoolId: pulumi.Output<string>;
     /**
      * The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Stream resource with the given unique name, arguments, and options.
@@ -130,29 +130,29 @@ export class Stream extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StreamState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["messagesEndpoint"] = state ? state.messagesEndpoint : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["partitions"] = state ? state.partitions : undefined;
-            resourceInputs["retentionInHours"] = state ? state.retentionInHours : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["streamPoolId"] = state ? state.streamPoolId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["messagesEndpoint"] = state?.messagesEndpoint;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["partitions"] = state?.partitions;
+            resourceInputs["retentionInHours"] = state?.retentionInHours;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["streamPoolId"] = state?.streamPoolId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as StreamArgs | undefined;
-            if ((!args || args.partitions === undefined) && !opts.urn) {
+            if (args?.partitions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'partitions'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["partitions"] = args ? args.partitions : undefined;
-            resourceInputs["retentionInHours"] = args ? args.retentionInHours : undefined;
-            resourceInputs["streamPoolId"] = args ? args.streamPoolId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["partitions"] = args?.partitions;
+            resourceInputs["retentionInHours"] = args?.retentionInHours;
+            resourceInputs["streamPoolId"] = args?.streamPoolId;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["messagesEndpoint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

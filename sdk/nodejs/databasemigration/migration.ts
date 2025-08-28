@@ -181,107 +181,107 @@ export class Migration extends pulumi.CustomResource {
     /**
      * (Updatable) List of Migration Parameter objects.
      */
-    public readonly advancedParameters!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvancedParameter[]>;
+    declare public readonly advancedParameters: pulumi.Output<outputs.DatabaseMigration.MigrationAdvancedParameter[]>;
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
-    public readonly advisorSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings>;
+    declare public readonly advisorSettings: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
-    public readonly bulkIncludeExcludeData!: pulumi.Output<string>;
+    declare public readonly bulkIncludeExcludeData: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Optional additional properties for data transfer.
      */
-    public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    declare public readonly dataTransferMediumDetails: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
     /**
      * (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      */
-    public readonly databaseCombination!: pulumi.Output<string>;
+    declare public readonly databaseCombination: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    public readonly excludeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationExcludeObject[]>;
+    declare public readonly excludeObjects: pulumi.Output<outputs.DatabaseMigration.MigrationExcludeObject[]>;
     /**
      * The OCID of the resource being referenced.
      */
-    public /*out*/ readonly executingJobId!: pulumi.Output<string>;
+    declare public /*out*/ readonly executingJobId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Optional settings for Oracle GoldenGate processes
      */
-    public readonly ggsDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationGgsDetails>;
+    declare public readonly ggsDetails: pulumi.Output<outputs.DatabaseMigration.MigrationGgsDetails>;
     /**
      * (Updatable) Details about Oracle GoldenGate Microservices.
      */
-    public readonly hubDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationHubDetails>;
+    declare public readonly hubDetails: pulumi.Output<outputs.DatabaseMigration.MigrationHubDetails>;
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    public readonly includeObjects!: pulumi.Output<outputs.DatabaseMigration.MigrationIncludeObject[]>;
+    declare public readonly includeObjects: pulumi.Output<outputs.DatabaseMigration.MigrationIncludeObject[]>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
-    public readonly initialLoadSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationInitialLoadSettings>;
+    declare public readonly initialLoadSettings: pulumi.Output<outputs.DatabaseMigration.MigrationInitialLoadSettings>;
     /**
      * Additional status related to the execution and current state of the Migration.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    public readonly sourceContainerDatabaseConnectionId!: pulumi.Output<string>;
+    declare public readonly sourceContainerDatabaseConnectionId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    public readonly sourceDatabaseConnectionId!: pulumi.Output<string>;
+    declare public readonly sourceDatabaseConnectionId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    public readonly sourceStandbyDatabaseConnectionId!: pulumi.Output<string | undefined>;
+    declare public readonly sourceStandbyDatabaseConnectionId: pulumi.Output<string | undefined>;
     /**
      * The current state of the Migration resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    public readonly targetDatabaseConnectionId!: pulumi.Output<string>;
+    declare public readonly targetDatabaseConnectionId: pulumi.Output<string>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeLastMigration!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastMigration: pulumi.Output<string>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
      *
@@ -289,11 +289,11 @@ export class Migration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * You can optionally pause a migration after a job phase. This property allows you to optionally specify the phase after which you can pause the migration.
      */
-    public /*out*/ readonly waitAfter!: pulumi.Output<string>;
+    declare public /*out*/ readonly waitAfter: pulumi.Output<string>;
 
     /**
      * Create a Migration resource with the given unique name, arguments, and options.
@@ -308,71 +308,71 @@ export class Migration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MigrationState | undefined;
-            resourceInputs["advancedParameters"] = state ? state.advancedParameters : undefined;
-            resourceInputs["advisorSettings"] = state ? state.advisorSettings : undefined;
-            resourceInputs["bulkIncludeExcludeData"] = state ? state.bulkIncludeExcludeData : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataTransferMediumDetails"] = state ? state.dataTransferMediumDetails : undefined;
-            resourceInputs["databaseCombination"] = state ? state.databaseCombination : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["excludeObjects"] = state ? state.excludeObjects : undefined;
-            resourceInputs["executingJobId"] = state ? state.executingJobId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ggsDetails"] = state ? state.ggsDetails : undefined;
-            resourceInputs["hubDetails"] = state ? state.hubDetails : undefined;
-            resourceInputs["includeObjects"] = state ? state.includeObjects : undefined;
-            resourceInputs["initialLoadSettings"] = state ? state.initialLoadSettings : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["sourceContainerDatabaseConnectionId"] = state ? state.sourceContainerDatabaseConnectionId : undefined;
-            resourceInputs["sourceDatabaseConnectionId"] = state ? state.sourceDatabaseConnectionId : undefined;
-            resourceInputs["sourceStandbyDatabaseConnectionId"] = state ? state.sourceStandbyDatabaseConnectionId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetDatabaseConnectionId"] = state ? state.targetDatabaseConnectionId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastMigration"] = state ? state.timeLastMigration : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["waitAfter"] = state ? state.waitAfter : undefined;
+            resourceInputs["advancedParameters"] = state?.advancedParameters;
+            resourceInputs["advisorSettings"] = state?.advisorSettings;
+            resourceInputs["bulkIncludeExcludeData"] = state?.bulkIncludeExcludeData;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataTransferMediumDetails"] = state?.dataTransferMediumDetails;
+            resourceInputs["databaseCombination"] = state?.databaseCombination;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["excludeObjects"] = state?.excludeObjects;
+            resourceInputs["executingJobId"] = state?.executingJobId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ggsDetails"] = state?.ggsDetails;
+            resourceInputs["hubDetails"] = state?.hubDetails;
+            resourceInputs["includeObjects"] = state?.includeObjects;
+            resourceInputs["initialLoadSettings"] = state?.initialLoadSettings;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["sourceContainerDatabaseConnectionId"] = state?.sourceContainerDatabaseConnectionId;
+            resourceInputs["sourceDatabaseConnectionId"] = state?.sourceDatabaseConnectionId;
+            resourceInputs["sourceStandbyDatabaseConnectionId"] = state?.sourceStandbyDatabaseConnectionId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetDatabaseConnectionId"] = state?.targetDatabaseConnectionId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastMigration"] = state?.timeLastMigration;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["waitAfter"] = state?.waitAfter;
         } else {
             const args = argsOrState as MigrationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.databaseCombination === undefined) && !opts.urn) {
+            if (args?.databaseCombination === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseCombination'");
             }
-            if ((!args || args.sourceDatabaseConnectionId === undefined) && !opts.urn) {
+            if (args?.sourceDatabaseConnectionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceDatabaseConnectionId'");
             }
-            if ((!args || args.targetDatabaseConnectionId === undefined) && !opts.urn) {
+            if (args?.targetDatabaseConnectionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetDatabaseConnectionId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["advancedParameters"] = args ? args.advancedParameters : undefined;
-            resourceInputs["advisorSettings"] = args ? args.advisorSettings : undefined;
-            resourceInputs["bulkIncludeExcludeData"] = args ? args.bulkIncludeExcludeData : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataTransferMediumDetails"] = args ? args.dataTransferMediumDetails : undefined;
-            resourceInputs["databaseCombination"] = args ? args.databaseCombination : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["excludeObjects"] = args ? args.excludeObjects : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ggsDetails"] = args ? args.ggsDetails : undefined;
-            resourceInputs["hubDetails"] = args ? args.hubDetails : undefined;
-            resourceInputs["includeObjects"] = args ? args.includeObjects : undefined;
-            resourceInputs["initialLoadSettings"] = args ? args.initialLoadSettings : undefined;
-            resourceInputs["sourceContainerDatabaseConnectionId"] = args ? args.sourceContainerDatabaseConnectionId : undefined;
-            resourceInputs["sourceDatabaseConnectionId"] = args ? args.sourceDatabaseConnectionId : undefined;
-            resourceInputs["sourceStandbyDatabaseConnectionId"] = args ? args.sourceStandbyDatabaseConnectionId : undefined;
-            resourceInputs["targetDatabaseConnectionId"] = args ? args.targetDatabaseConnectionId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["advancedParameters"] = args?.advancedParameters;
+            resourceInputs["advisorSettings"] = args?.advisorSettings;
+            resourceInputs["bulkIncludeExcludeData"] = args?.bulkIncludeExcludeData;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataTransferMediumDetails"] = args?.dataTransferMediumDetails;
+            resourceInputs["databaseCombination"] = args?.databaseCombination;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["excludeObjects"] = args?.excludeObjects;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ggsDetails"] = args?.ggsDetails;
+            resourceInputs["hubDetails"] = args?.hubDetails;
+            resourceInputs["includeObjects"] = args?.includeObjects;
+            resourceInputs["initialLoadSettings"] = args?.initialLoadSettings;
+            resourceInputs["sourceContainerDatabaseConnectionId"] = args?.sourceContainerDatabaseConnectionId;
+            resourceInputs["sourceDatabaseConnectionId"] = args?.sourceDatabaseConnectionId;
+            resourceInputs["sourceStandbyDatabaseConnectionId"] = args?.sourceStandbyDatabaseConnectionId;
+            resourceInputs["targetDatabaseConnectionId"] = args?.targetDatabaseConnectionId;
+            resourceInputs["type"] = args?.type;
             resourceInputs["executingJobId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

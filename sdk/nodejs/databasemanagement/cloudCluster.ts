@@ -50,39 +50,39 @@ export class CloudCluster extends pulumi.CustomResource {
     /**
      * The additional details of the cloud cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
      */
-    public readonly cloudClusterId!: pulumi.Output<string>;
+    declare public readonly cloudClusterId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    public readonly cloudConnectorId!: pulumi.Output<string>;
+    declare public readonly cloudConnectorId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the cluster is a part of.
      */
-    public /*out*/ readonly cloudDbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudDbSystemId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of the cloud cluster.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
      */
-    public /*out*/ readonly dbaasId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbaasId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the cloud cluster. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -90,55 +90,55 @@ export class CloudCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    declare public /*out*/ readonly gridHome: pulumi.Output<string>;
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      */
-    public /*out*/ readonly isFlexCluster!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isFlexCluster: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The list of network address configurations of the cloud cluster.
      */
-    public /*out*/ readonly networkConfigurations!: pulumi.Output<outputs.DatabaseManagement.CloudClusterNetworkConfiguration[]>;
+    declare public /*out*/ readonly networkConfigurations: pulumi.Output<outputs.DatabaseManagement.CloudClusterNetworkConfiguration[]>;
     /**
      * The location of the Oracle Cluster Registry (OCR).
      */
-    public /*out*/ readonly ocrFileLocation!: pulumi.Output<string>;
+    declare public /*out*/ readonly ocrFileLocation: pulumi.Output<string>;
     /**
      * The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
      */
-    public /*out*/ readonly scanConfigurations!: pulumi.Output<outputs.DatabaseManagement.CloudClusterScanConfiguration[]>;
+    declare public /*out*/ readonly scanConfigurations: pulumi.Output<outputs.DatabaseManagement.CloudClusterScanConfiguration[]>;
     /**
      * The current lifecycle state of the cloud cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cloud cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the cloud cluster was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The cluster version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The list of Virtual IP (VIP) configurations of the cloud cluster.
      */
-    public /*out*/ readonly vipConfigurations!: pulumi.Output<outputs.DatabaseManagement.CloudClusterVipConfiguration[]>;
+    declare public /*out*/ readonly vipConfigurations: pulumi.Output<outputs.DatabaseManagement.CloudClusterVipConfiguration[]>;
 
     /**
      * Create a CloudCluster resource with the given unique name, arguments, and options.
@@ -153,37 +153,37 @@ export class CloudCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudClusterState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["cloudClusterId"] = state ? state.cloudClusterId : undefined;
-            resourceInputs["cloudConnectorId"] = state ? state.cloudConnectorId : undefined;
-            resourceInputs["cloudDbSystemId"] = state ? state.cloudDbSystemId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentName"] = state ? state.componentName : undefined;
-            resourceInputs["dbaasId"] = state ? state.dbaasId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gridHome"] = state ? state.gridHome : undefined;
-            resourceInputs["isFlexCluster"] = state ? state.isFlexCluster : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["networkConfigurations"] = state ? state.networkConfigurations : undefined;
-            resourceInputs["ocrFileLocation"] = state ? state.ocrFileLocation : undefined;
-            resourceInputs["scanConfigurations"] = state ? state.scanConfigurations : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["vipConfigurations"] = state ? state.vipConfigurations : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["cloudClusterId"] = state?.cloudClusterId;
+            resourceInputs["cloudConnectorId"] = state?.cloudConnectorId;
+            resourceInputs["cloudDbSystemId"] = state?.cloudDbSystemId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentName"] = state?.componentName;
+            resourceInputs["dbaasId"] = state?.dbaasId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gridHome"] = state?.gridHome;
+            resourceInputs["isFlexCluster"] = state?.isFlexCluster;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["networkConfigurations"] = state?.networkConfigurations;
+            resourceInputs["ocrFileLocation"] = state?.ocrFileLocation;
+            resourceInputs["scanConfigurations"] = state?.scanConfigurations;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["vipConfigurations"] = state?.vipConfigurations;
         } else {
             const args = argsOrState as CloudClusterArgs | undefined;
-            if ((!args || args.cloudClusterId === undefined) && !opts.urn) {
+            if (args?.cloudClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudClusterId'");
             }
-            resourceInputs["cloudClusterId"] = args ? args.cloudClusterId : undefined;
-            resourceInputs["cloudConnectorId"] = args ? args.cloudConnectorId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["cloudClusterId"] = args?.cloudClusterId;
+            resourceInputs["cloudConnectorId"] = args?.cloudConnectorId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["cloudDbSystemId"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;

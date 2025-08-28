@@ -34,42 +34,42 @@ export class ExadataInfrastructureStorage extends pulumi.CustomResource {
         return obj['__pulumiType'] === ExadataInfrastructureStorage.__pulumiType;
     }
 
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
-    public readonly activationFile!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
-    public readonly adminNetworkCidr!: pulumi.Output<string>;
-    public readonly cloudControlPlaneServer1!: pulumi.Output<string>;
-    public readonly cloudControlPlaneServer2!: pulumi.Output<string>;
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly computeCount!: pulumi.Output<number>;
-    public readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureStorageContact[] | undefined>;
-    public readonly corporateProxy!: pulumi.Output<string>;
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
-    public /*out*/ readonly csiNumber!: pulumi.Output<string>;
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly dnsServers!: pulumi.Output<string[]>;
-    public readonly exadataInfrastructureId!: pulumi.Output<string | undefined>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly gateway!: pulumi.Output<string>;
-    public readonly infiniBandNetworkCidr!: pulumi.Output<string>;
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public /*out*/ readonly maintenanceSloStatus!: pulumi.Output<string>;
-    public readonly maintenanceWindow!: pulumi.Output<outputs.Database.ExadataInfrastructureStorageMaintenanceWindow>;
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
-    public readonly netmask!: pulumi.Output<string>;
-    public readonly ntpServers!: pulumi.Output<string[]>;
-    public readonly shape!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public readonly storageCount!: pulumi.Output<number>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly activatedStorageCount: pulumi.Output<number>;
+    declare public readonly activationFile: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly additionalStorageCount: pulumi.Output<number>;
+    declare public readonly adminNetworkCidr: pulumi.Output<string>;
+    declare public readonly cloudControlPlaneServer1: pulumi.Output<string>;
+    declare public readonly cloudControlPlaneServer2: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly computeCount: pulumi.Output<number>;
+    declare public readonly contacts: pulumi.Output<outputs.Database.ExadataInfrastructureStorageContact[] | undefined>;
+    declare public readonly corporateProxy: pulumi.Output<string>;
+    declare public /*out*/ readonly cpusEnabled: pulumi.Output<number>;
+    declare public /*out*/ readonly csiNumber: pulumi.Output<string>;
+    declare public /*out*/ readonly dataStorageSizeInTbs: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly dnsServers: pulumi.Output<string[]>;
+    declare public readonly exadataInfrastructureId: pulumi.Output<string | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly gateway: pulumi.Output<string>;
+    declare public readonly infiniBandNetworkCidr: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceSloStatus: pulumi.Output<string>;
+    declare public readonly maintenanceWindow: pulumi.Output<outputs.Database.ExadataInfrastructureStorageMaintenanceWindow>;
+    declare public /*out*/ readonly maxCpuCount: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDataStorageInTbs: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDbNodeStorageInGbs: pulumi.Output<number>;
+    declare public /*out*/ readonly maxMemoryInGbs: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
+    declare public readonly netmask: pulumi.Output<string>;
+    declare public readonly ntpServers: pulumi.Output<string[]>;
+    declare public readonly shape: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public readonly storageCount: pulumi.Output<number>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
 
     /**
      * Create a ExadataInfrastructureStorage resource with the given unique name, arguments, and options.
@@ -84,101 +84,101 @@ export class ExadataInfrastructureStorage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataInfrastructureStorageState | undefined;
-            resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
-            resourceInputs["activationFile"] = state ? state.activationFile : undefined;
-            resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
-            resourceInputs["adminNetworkCidr"] = state ? state.adminNetworkCidr : undefined;
-            resourceInputs["cloudControlPlaneServer1"] = state ? state.cloudControlPlaneServer1 : undefined;
-            resourceInputs["cloudControlPlaneServer2"] = state ? state.cloudControlPlaneServer2 : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["contacts"] = state ? state.contacts : undefined;
-            resourceInputs["corporateProxy"] = state ? state.corporateProxy : undefined;
-            resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
-            resourceInputs["csiNumber"] = state ? state.csiNumber : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gateway"] = state ? state.gateway : undefined;
-            resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceSloStatus"] = state ? state.maintenanceSloStatus : undefined;
-            resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
-            resourceInputs["maxCpuCount"] = state ? state.maxCpuCount : undefined;
-            resourceInputs["maxDataStorageInTbs"] = state ? state.maxDataStorageInTbs : undefined;
-            resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
-            resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["netmask"] = state ? state.netmask : undefined;
-            resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageCount"] = state ? state.storageCount : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
+            resourceInputs["activatedStorageCount"] = state?.activatedStorageCount;
+            resourceInputs["activationFile"] = state?.activationFile;
+            resourceInputs["additionalStorageCount"] = state?.additionalStorageCount;
+            resourceInputs["adminNetworkCidr"] = state?.adminNetworkCidr;
+            resourceInputs["cloudControlPlaneServer1"] = state?.cloudControlPlaneServer1;
+            resourceInputs["cloudControlPlaneServer2"] = state?.cloudControlPlaneServer2;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["contacts"] = state?.contacts;
+            resourceInputs["corporateProxy"] = state?.corporateProxy;
+            resourceInputs["cpusEnabled"] = state?.cpusEnabled;
+            resourceInputs["csiNumber"] = state?.csiNumber;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsServers"] = state?.dnsServers;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gateway"] = state?.gateway;
+            resourceInputs["infiniBandNetworkCidr"] = state?.infiniBandNetworkCidr;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceSloStatus"] = state?.maintenanceSloStatus;
+            resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
+            resourceInputs["maxCpuCount"] = state?.maxCpuCount;
+            resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
+            resourceInputs["maxDbNodeStorageInGbs"] = state?.maxDbNodeStorageInGbs;
+            resourceInputs["maxMemoryInGbs"] = state?.maxMemoryInGbs;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["netmask"] = state?.netmask;
+            resourceInputs["ntpServers"] = state?.ntpServers;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageCount"] = state?.storageCount;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
         } else {
             const args = argsOrState as ExadataInfrastructureStorageArgs | undefined;
-            if ((!args || args.adminNetworkCidr === undefined) && !opts.urn) {
+            if (args?.adminNetworkCidr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adminNetworkCidr'");
             }
-            if ((!args || args.cloudControlPlaneServer1 === undefined) && !opts.urn) {
+            if (args?.cloudControlPlaneServer1 === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudControlPlaneServer1'");
             }
-            if ((!args || args.cloudControlPlaneServer2 === undefined) && !opts.urn) {
+            if (args?.cloudControlPlaneServer2 === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudControlPlaneServer2'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.dnsServers === undefined) && !opts.urn) {
+            if (args?.dnsServers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dnsServers'");
             }
-            if ((!args || args.gateway === undefined) && !opts.urn) {
+            if (args?.gateway === undefined && !opts.urn) {
                 throw new Error("Missing required property 'gateway'");
             }
-            if ((!args || args.infiniBandNetworkCidr === undefined) && !opts.urn) {
+            if (args?.infiniBandNetworkCidr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'infiniBandNetworkCidr'");
             }
-            if ((!args || args.netmask === undefined) && !opts.urn) {
+            if (args?.netmask === undefined && !opts.urn) {
                 throw new Error("Missing required property 'netmask'");
             }
-            if ((!args || args.ntpServers === undefined) && !opts.urn) {
+            if (args?.ntpServers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ntpServers'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.timeZone === undefined) && !opts.urn) {
+            if (args?.timeZone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeZone'");
             }
-            resourceInputs["activationFile"] = args ? args.activationFile : undefined;
-            resourceInputs["adminNetworkCidr"] = args ? args.adminNetworkCidr : undefined;
-            resourceInputs["cloudControlPlaneServer1"] = args ? args.cloudControlPlaneServer1 : undefined;
-            resourceInputs["cloudControlPlaneServer2"] = args ? args.cloudControlPlaneServer2 : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["contacts"] = args ? args.contacts : undefined;
-            resourceInputs["corporateProxy"] = args ? args.corporateProxy : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsServers"] = args ? args.dnsServers : undefined;
-            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gateway"] = args ? args.gateway : undefined;
-            resourceInputs["infiniBandNetworkCidr"] = args ? args.infiniBandNetworkCidr : undefined;
-            resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
-            resourceInputs["netmask"] = args ? args.netmask : undefined;
-            resourceInputs["ntpServers"] = args ? args.ntpServers : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["storageCount"] = args ? args.storageCount : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["activationFile"] = args?.activationFile;
+            resourceInputs["adminNetworkCidr"] = args?.adminNetworkCidr;
+            resourceInputs["cloudControlPlaneServer1"] = args?.cloudControlPlaneServer1;
+            resourceInputs["cloudControlPlaneServer2"] = args?.cloudControlPlaneServer2;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["contacts"] = args?.contacts;
+            resourceInputs["corporateProxy"] = args?.corporateProxy;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsServers"] = args?.dnsServers;
+            resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gateway"] = args?.gateway;
+            resourceInputs["infiniBandNetworkCidr"] = args?.infiniBandNetworkCidr;
+            resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
+            resourceInputs["netmask"] = args?.netmask;
+            resourceInputs["ntpServers"] = args?.ntpServers;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["storageCount"] = args?.storageCount;
+            resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalStorageCount"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;

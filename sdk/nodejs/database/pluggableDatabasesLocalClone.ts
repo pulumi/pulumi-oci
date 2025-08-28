@@ -62,75 +62,75 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    public readonly clonedPdbName!: pulumi.Output<string>;
+    declare public readonly clonedPdbName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabasesLocalCloneConnectionString[]>;
+    declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.Database.PluggableDatabasesLocalCloneConnectionString[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    public /*out*/ readonly containerDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly containerDatabaseId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRestricted: pulumi.Output<boolean>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    public /*out*/ readonly openMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly openMode: pulumi.Output<string>;
     /**
      * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */
-    public readonly pdbAdminPassword!: pulumi.Output<string>;
+    declare public readonly pdbAdminPassword: pulumi.Output<string>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    public /*out*/ readonly pdbName!: pulumi.Output<string>;
+    declare public /*out*/ readonly pdbName: pulumi.Output<string>;
     /**
      * Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
      */
-    public /*out*/ readonly pdbNodeLevelDetails!: pulumi.Output<outputs.Database.PluggableDatabasesLocalClonePdbNodeLevelDetail[]>;
+    declare public /*out*/ readonly pdbNodeLevelDetails: pulumi.Output<outputs.Database.PluggableDatabasesLocalClonePdbNodeLevelDetail[]>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly pluggableDatabaseId!: pulumi.Output<string>;
+    declare public readonly pluggableDatabaseId: pulumi.Output<string>;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig[]>;
+    declare public /*out*/ readonly pluggableDatabaseManagementConfigs: pulumi.Output<outputs.Database.PluggableDatabasesLocalClonePluggableDatabaseManagementConfig[]>;
     /**
      * Pluggable Database Refreshable Clone Configuration.
      */
-    public /*out*/ readonly refreshableCloneConfigs!: pulumi.Output<outputs.Database.PluggableDatabasesLocalCloneRefreshableCloneConfig[]>;
+    declare public /*out*/ readonly refreshableCloneConfigs: pulumi.Output<outputs.Database.PluggableDatabasesLocalCloneRefreshableCloneConfig[]>;
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
-    public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean>;
+    declare public readonly shouldPdbAdminAccountBeLocked: pulumi.Output<boolean>;
     /**
      * The current state of the pluggable database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The existing TDE wallet password of the target CDB.
      *
@@ -138,11 +138,11 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetTdeWalletPassword!: pulumi.Output<string>;
+    declare public readonly targetTdeWalletPassword: pulumi.Output<string>;
     /**
      * The date and time the pluggable database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a PluggableDatabasesLocalClone resource with the given unique name, arguments, and options.
@@ -157,38 +157,38 @@ export class PluggableDatabasesLocalClone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PluggableDatabasesLocalCloneState | undefined;
-            resourceInputs["clonedPdbName"] = state ? state.clonedPdbName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
-            resourceInputs["containerDatabaseId"] = state ? state.containerDatabaseId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isRestricted"] = state ? state.isRestricted : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["openMode"] = state ? state.openMode : undefined;
-            resourceInputs["pdbAdminPassword"] = state ? state.pdbAdminPassword : undefined;
-            resourceInputs["pdbName"] = state ? state.pdbName : undefined;
-            resourceInputs["pdbNodeLevelDetails"] = state ? state.pdbNodeLevelDetails : undefined;
-            resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
-            resourceInputs["pluggableDatabaseManagementConfigs"] = state ? state.pluggableDatabaseManagementConfigs : undefined;
-            resourceInputs["refreshableCloneConfigs"] = state ? state.refreshableCloneConfigs : undefined;
-            resourceInputs["shouldPdbAdminAccountBeLocked"] = state ? state.shouldPdbAdminAccountBeLocked : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetTdeWalletPassword"] = state ? state.targetTdeWalletPassword : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["clonedPdbName"] = state?.clonedPdbName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionStrings"] = state?.connectionStrings;
+            resourceInputs["containerDatabaseId"] = state?.containerDatabaseId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isRestricted"] = state?.isRestricted;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["openMode"] = state?.openMode;
+            resourceInputs["pdbAdminPassword"] = state?.pdbAdminPassword;
+            resourceInputs["pdbName"] = state?.pdbName;
+            resourceInputs["pdbNodeLevelDetails"] = state?.pdbNodeLevelDetails;
+            resourceInputs["pluggableDatabaseId"] = state?.pluggableDatabaseId;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = state?.pluggableDatabaseManagementConfigs;
+            resourceInputs["refreshableCloneConfigs"] = state?.refreshableCloneConfigs;
+            resourceInputs["shouldPdbAdminAccountBeLocked"] = state?.shouldPdbAdminAccountBeLocked;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetTdeWalletPassword"] = state?.targetTdeWalletPassword;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as PluggableDatabasesLocalCloneArgs | undefined;
-            if ((!args || args.clonedPdbName === undefined) && !opts.urn) {
+            if (args?.clonedPdbName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clonedPdbName'");
             }
-            if ((!args || args.pluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.pluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pluggableDatabaseId'");
             }
-            resourceInputs["clonedPdbName"] = args ? args.clonedPdbName : undefined;
+            resourceInputs["clonedPdbName"] = args?.clonedPdbName;
             resourceInputs["pdbAdminPassword"] = args?.pdbAdminPassword ? pulumi.secret(args.pdbAdminPassword) : undefined;
-            resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
-            resourceInputs["shouldPdbAdminAccountBeLocked"] = args ? args.shouldPdbAdminAccountBeLocked : undefined;
+            resourceInputs["pluggableDatabaseId"] = args?.pluggableDatabaseId;
+            resourceInputs["shouldPdbAdminAccountBeLocked"] = args?.shouldPdbAdminAccountBeLocked;
             resourceInputs["targetTdeWalletPassword"] = args?.targetTdeWalletPassword ? pulumi.secret(args.targetTdeWalletPassword) : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;

@@ -46,16 +46,16 @@ export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableExternalPluggableDbmFeature!: pulumi.Output<boolean>;
+    declare public readonly enableExternalPluggableDbmFeature: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external pluggable database.
      */
-    public readonly externalPluggableDatabaseId!: pulumi.Output<string>;
-    public readonly feature!: pulumi.Output<string | undefined>;
+    declare public readonly externalPluggableDatabaseId: pulumi.Output<string>;
+    declare public readonly feature: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails>;
+    declare public readonly featureDetails: pulumi.Output<outputs.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails>;
 
     /**
      * Create a ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -70,22 +70,22 @@ export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement ext
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState | undefined;
-            resourceInputs["enableExternalPluggableDbmFeature"] = state ? state.enableExternalPluggableDbmFeature : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = state ? state.externalPluggableDatabaseId : undefined;
-            resourceInputs["feature"] = state ? state.feature : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["enableExternalPluggableDbmFeature"] = state?.enableExternalPluggableDbmFeature;
+            resourceInputs["externalPluggableDatabaseId"] = state?.externalPluggableDatabaseId;
+            resourceInputs["feature"] = state?.feature;
+            resourceInputs["featureDetails"] = state?.featureDetails;
         } else {
             const args = argsOrState as ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs | undefined;
-            if ((!args || args.enableExternalPluggableDbmFeature === undefined) && !opts.urn) {
+            if (args?.enableExternalPluggableDbmFeature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableExternalPluggableDbmFeature'");
             }
-            if ((!args || args.externalPluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalPluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalPluggableDatabaseId'");
             }
-            resourceInputs["enableExternalPluggableDbmFeature"] = args ? args.enableExternalPluggableDbmFeature : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = args ? args.externalPluggableDatabaseId : undefined;
-            resourceInputs["feature"] = args ? args.feature : undefined;
-            resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["enableExternalPluggableDbmFeature"] = args?.enableExternalPluggableDbmFeature;
+            resourceInputs["externalPluggableDatabaseId"] = args?.externalPluggableDatabaseId;
+            resourceInputs["feature"] = args?.feature;
+            resourceInputs["featureDetails"] = args?.featureDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);

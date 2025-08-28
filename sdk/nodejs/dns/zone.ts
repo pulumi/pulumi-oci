@@ -81,17 +81,17 @@ export class Zone extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment containing the zone.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * DNSSEC configuration data.
      */
-    public /*out*/ readonly dnssecConfigs!: pulumi.Output<outputs.Dns.ZoneDnssecConfig[]>;
+    declare public /*out*/ readonly dnssecConfigs: pulumi.Output<outputs.Dns.ZoneDnssecConfig[]>;
     /**
      * (Updatable) The state of DNSSEC on the zone.
      *
@@ -107,66 +107,66 @@ export class Zone extends pulumi.CustomResource {
      *
      * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      */
-    public readonly dnssecState!: pulumi.Output<string>;
+    declare public readonly dnssecState: pulumi.Output<string>;
     /**
      * (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      */
-    public readonly externalDownstreams!: pulumi.Output<outputs.Dns.ZoneExternalDownstream[]>;
+    declare public readonly externalDownstreams: pulumi.Output<outputs.Dns.ZoneExternalDownstream[]>;
     /**
      * (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      */
-    public readonly externalMasters!: pulumi.Output<outputs.Dns.ZoneExternalMaster[]>;
+    declare public readonly externalMasters: pulumi.Output<outputs.Dns.ZoneExternalMaster[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isProtected: pulumi.Output<boolean>;
     /**
      * The name of the zone.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The authoritative nameservers for the zone.
      */
-    public /*out*/ readonly nameservers!: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
+    declare public /*out*/ readonly nameservers: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope. 
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current serial of the zone. As seen in the zone's SOA record.
      */
-    public /*out*/ readonly serial!: pulumi.Output<number>;
+    declare public /*out*/ readonly serial: pulumi.Output<number>;
     /**
      * The current state of the zone resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
      */
-    public readonly viewId!: pulumi.Output<string | undefined>;
+    declare public readonly viewId: pulumi.Output<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      */
-    public /*out*/ readonly zoneTransferServers!: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
+    declare public /*out*/ readonly zoneTransferServers: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
      *
@@ -174,7 +174,7 @@ export class Zone extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly zoneType!: pulumi.Output<string>;
+    declare public readonly zoneType: pulumi.Output<string>;
 
     /**
      * Create a Zone resource with the given unique name, arguments, and options.
@@ -189,43 +189,43 @@ export class Zone extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ZoneState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dnssecConfigs"] = state ? state.dnssecConfigs : undefined;
-            resourceInputs["dnssecState"] = state ? state.dnssecState : undefined;
-            resourceInputs["externalDownstreams"] = state ? state.externalDownstreams : undefined;
-            resourceInputs["externalMasters"] = state ? state.externalMasters : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isProtected"] = state ? state.isProtected : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nameservers"] = state ? state.nameservers : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["serial"] = state ? state.serial : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["viewId"] = state ? state.viewId : undefined;
-            resourceInputs["zoneTransferServers"] = state ? state.zoneTransferServers : undefined;
-            resourceInputs["zoneType"] = state ? state.zoneType : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dnssecConfigs"] = state?.dnssecConfigs;
+            resourceInputs["dnssecState"] = state?.dnssecState;
+            resourceInputs["externalDownstreams"] = state?.externalDownstreams;
+            resourceInputs["externalMasters"] = state?.externalMasters;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isProtected"] = state?.isProtected;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nameservers"] = state?.nameservers;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["serial"] = state?.serial;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["viewId"] = state?.viewId;
+            resourceInputs["zoneTransferServers"] = state?.zoneTransferServers;
+            resourceInputs["zoneType"] = state?.zoneType;
         } else {
             const args = argsOrState as ZoneArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.zoneType === undefined) && !opts.urn) {
+            if (args?.zoneType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zoneType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["dnssecState"] = args ? args.dnssecState : undefined;
-            resourceInputs["externalDownstreams"] = args ? args.externalDownstreams : undefined;
-            resourceInputs["externalMasters"] = args ? args.externalMasters : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["viewId"] = args ? args.viewId : undefined;
-            resourceInputs["zoneType"] = args ? args.zoneType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["dnssecState"] = args?.dnssecState;
+            resourceInputs["externalDownstreams"] = args?.externalDownstreams;
+            resourceInputs["externalMasters"] = args?.externalMasters;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["viewId"] = args?.viewId;
+            resourceInputs["zoneType"] = args?.zoneType;
             resourceInputs["dnssecConfigs"] = undefined /*out*/;
             resourceInputs["isProtected"] = undefined /*out*/;
             resourceInputs["nameservers"] = undefined /*out*/;

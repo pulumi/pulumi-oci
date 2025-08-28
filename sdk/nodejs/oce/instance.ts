@@ -79,103 +79,103 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) a list of add-on features for the ocm instance
      */
-    public readonly addOnFeatures!: pulumi.Output<string[]>;
+    declare public readonly addOnFeatures: pulumi.Output<string[]>;
     /**
      * Admin Email for Notification
      */
-    public readonly adminEmail!: pulumi.Output<string>;
+    declare public readonly adminEmail: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) OceInstance description
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) disaster recovery paired ragion name
      */
-    public readonly drRegion!: pulumi.Output<string>;
+    declare public readonly drRegion: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique GUID identifier that is immutable on creation
      */
-    public /*out*/ readonly guid!: pulumi.Output<string>;
+    declare public /*out*/ readonly guid: pulumi.Output<string>;
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      */
-    public readonly idcsAccessToken!: pulumi.Output<string>;
+    declare public readonly idcsAccessToken: pulumi.Output<string>;
     /**
      * IDCS Tenancy Identifier
      */
-    public /*out*/ readonly idcsTenancy!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsTenancy: pulumi.Output<string>;
     /**
      * Flag indicating whether the instance access is private or public
      */
-    public readonly instanceAccessType!: pulumi.Output<string>;
+    declare public readonly instanceAccessType: pulumi.Output<string>;
     /**
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      */
-    public readonly instanceLicenseType!: pulumi.Output<string>;
+    declare public readonly instanceLicenseType: pulumi.Output<string>;
     /**
      * (Updatable) Instance type based on its usage
      */
-    public readonly instanceUsageType!: pulumi.Output<string>;
+    declare public readonly instanceUsageType: pulumi.Output<string>;
     /**
      * Details of the current state of the instance lifecycle
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * OceInstance Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Object Storage Namespace of Tenancy
      */
-    public readonly objectStorageNamespace!: pulumi.Output<string>;
+    declare public readonly objectStorageNamespace: pulumi.Output<string>;
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    public /*out*/ readonly service!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly service: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the instance lifecycle.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateMessage: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Tenancy Identifier
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    declare public readonly tenancyId: pulumi.Output<string>;
     /**
      * Tenancy Name
      */
-    public readonly tenancyName!: pulumi.Output<string>;
+    declare public readonly tenancyName: pulumi.Output<string>;
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      */
-    public readonly upgradeSchedule!: pulumi.Output<string>;
+    declare public readonly upgradeSchedule: pulumi.Output<string>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
@@ -183,7 +183,7 @@ export class Instance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly wafPrimaryDomain!: pulumi.Output<string>;
+    declare public readonly wafPrimaryDomain: pulumi.Output<string>;
 
     /**
      * Create a Instance resource with the given unique name, arguments, and options.
@@ -198,69 +198,69 @@ export class Instance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstanceState | undefined;
-            resourceInputs["addOnFeatures"] = state ? state.addOnFeatures : undefined;
-            resourceInputs["adminEmail"] = state ? state.adminEmail : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["drRegion"] = state ? state.drRegion : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["guid"] = state ? state.guid : undefined;
-            resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
-            resourceInputs["idcsTenancy"] = state ? state.idcsTenancy : undefined;
-            resourceInputs["instanceAccessType"] = state ? state.instanceAccessType : undefined;
-            resourceInputs["instanceLicenseType"] = state ? state.instanceLicenseType : undefined;
-            resourceInputs["instanceUsageType"] = state ? state.instanceUsageType : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectStorageNamespace"] = state ? state.objectStorageNamespace : undefined;
-            resourceInputs["service"] = state ? state.service : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["tenancyName"] = state ? state.tenancyName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upgradeSchedule"] = state ? state.upgradeSchedule : undefined;
-            resourceInputs["wafPrimaryDomain"] = state ? state.wafPrimaryDomain : undefined;
+            resourceInputs["addOnFeatures"] = state?.addOnFeatures;
+            resourceInputs["adminEmail"] = state?.adminEmail;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["drRegion"] = state?.drRegion;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["guid"] = state?.guid;
+            resourceInputs["idcsAccessToken"] = state?.idcsAccessToken;
+            resourceInputs["idcsTenancy"] = state?.idcsTenancy;
+            resourceInputs["instanceAccessType"] = state?.instanceAccessType;
+            resourceInputs["instanceLicenseType"] = state?.instanceLicenseType;
+            resourceInputs["instanceUsageType"] = state?.instanceUsageType;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectStorageNamespace"] = state?.objectStorageNamespace;
+            resourceInputs["service"] = state?.service;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateMessage"] = state?.stateMessage;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["tenancyName"] = state?.tenancyName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upgradeSchedule"] = state?.upgradeSchedule;
+            resourceInputs["wafPrimaryDomain"] = state?.wafPrimaryDomain;
         } else {
             const args = argsOrState as InstanceArgs | undefined;
-            if ((!args || args.adminEmail === undefined) && !opts.urn) {
+            if (args?.adminEmail === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adminEmail'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.idcsAccessToken === undefined) && !opts.urn) {
+            if (args?.idcsAccessToken === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsAccessToken'");
             }
-            if ((!args || args.objectStorageNamespace === undefined) && !opts.urn) {
+            if (args?.objectStorageNamespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'objectStorageNamespace'");
             }
-            if ((!args || args.tenancyId === undefined) && !opts.urn) {
+            if (args?.tenancyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenancyId'");
             }
-            if ((!args || args.tenancyName === undefined) && !opts.urn) {
+            if (args?.tenancyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenancyName'");
             }
-            resourceInputs["addOnFeatures"] = args ? args.addOnFeatures : undefined;
-            resourceInputs["adminEmail"] = args ? args.adminEmail : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["drRegion"] = args ? args.drRegion : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["addOnFeatures"] = args?.addOnFeatures;
+            resourceInputs["adminEmail"] = args?.adminEmail;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["drRegion"] = args?.drRegion;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
-            resourceInputs["instanceAccessType"] = args ? args.instanceAccessType : undefined;
-            resourceInputs["instanceLicenseType"] = args ? args.instanceLicenseType : undefined;
-            resourceInputs["instanceUsageType"] = args ? args.instanceUsageType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectStorageNamespace"] = args ? args.objectStorageNamespace : undefined;
-            resourceInputs["tenancyId"] = args ? args.tenancyId : undefined;
-            resourceInputs["tenancyName"] = args ? args.tenancyName : undefined;
-            resourceInputs["upgradeSchedule"] = args ? args.upgradeSchedule : undefined;
-            resourceInputs["wafPrimaryDomain"] = args ? args.wafPrimaryDomain : undefined;
+            resourceInputs["instanceAccessType"] = args?.instanceAccessType;
+            resourceInputs["instanceLicenseType"] = args?.instanceLicenseType;
+            resourceInputs["instanceUsageType"] = args?.instanceUsageType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectStorageNamespace"] = args?.objectStorageNamespace;
+            resourceInputs["tenancyId"] = args?.tenancyId;
+            resourceInputs["tenancyName"] = args?.tenancyName;
+            resourceInputs["upgradeSchedule"] = args?.upgradeSchedule;
+            resourceInputs["wafPrimaryDomain"] = args?.wafPrimaryDomain;
             resourceInputs["guid"] = undefined /*out*/;
             resourceInputs["idcsTenancy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

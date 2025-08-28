@@ -19,16 +19,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Import(name="auth")
     private @Nullable Output<String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Optional<Output<String>> auth() {
@@ -51,16 +49,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-     * consistency problems but it also introduced performance issues on destroy operations.
+     * (Optional) Disable automatic retries for retriable errors.
+     * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
      * 
      */
     @Import(name="disableAutoRetries", json=true)
     private @Nullable Output<Boolean> disableAutoRetries;
 
     /**
-     * @return (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-     * consistency problems but it also introduced performance issues on destroy operations.
+     * @return (Optional) Disable automatic retries for retriable errors.
+     * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
      * 
      */
     public Optional<Output<Boolean>> disableAutoRetries() {
@@ -68,16 +66,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Import(name="fingerprint")
     private @Nullable Output<String> fingerprint;
 
     /**
-     * @return (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Optional<Output<String>> fingerprint() {
@@ -92,16 +88,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-     * set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) A PEM formatted RSA private key for the user.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-     * set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) A PEM formatted RSA private key for the user.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -124,16 +120,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The path to the user&#39;s PEM formatted private key.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Import(name="privateKeyPath")
     private @Nullable Output<String> privateKeyPath;
 
     /**
-     * @return (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The path to the user&#39;s PEM formatted private key.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Optional<Output<String>> privateKeyPath() {
@@ -171,18 +167,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-     * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-     * is set to true.
+     * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+     * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
      * 
      */
     @Import(name="retryDurationSeconds", json=true)
     private @Nullable Output<Integer> retryDurationSeconds;
 
     /**
-     * @return (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-     * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-     * is set to true.
+     * @return (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+     * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
      * 
      */
     public Optional<Output<Integer>> retryDurationSeconds() {
@@ -190,16 +184,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Import(name="tenancyOcid")
     private @Nullable Output<String> tenancyOcid;
 
     /**
-     * @return (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Optional<Output<String>> tenancyOcid() {
@@ -214,16 +206,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Import(name="userOcid")
     private @Nullable Output<String> userOcid;
 
     /**
-     * @return (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Optional<Output<String>> userOcid() {
@@ -268,8 +258,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-         * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 
@@ -280,8 +269,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-         * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 
@@ -312,8 +300,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param disableAutoRetries (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-         * consistency problems but it also introduced performance issues on destroy operations.
+         * @param disableAutoRetries (Optional) Disable automatic retries for retriable errors.
+         * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
          * 
          * @return builder
          * 
@@ -324,8 +312,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param disableAutoRetries (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-         * consistency problems but it also introduced performance issues on destroy operations.
+         * @param disableAutoRetries (Optional) Disable automatic retries for retriable errors.
+         * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
          * 
          * @return builder
          * 
@@ -335,8 +323,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fingerprint (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-         * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param fingerprint (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -347,8 +334,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fingerprint (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-         * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param fingerprint (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -371,8 +357,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-         * set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param privateKey (Optional) A PEM formatted RSA private key for the user.
+         * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -383,8 +369,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-         * set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param privateKey (Optional) A PEM formatted RSA private key for the user.
+         * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -415,8 +401,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyPath (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-         * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param privateKeyPath (Optional) The path to the user&#39;s PEM formatted private key.
+         * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -427,8 +413,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKeyPath (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-         * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param privateKeyPath (Optional) The path to the user&#39;s PEM formatted private key.
+         * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -480,9 +466,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retryDurationSeconds (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-         * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-         * is set to true.
+         * @param retryDurationSeconds (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+         * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
          * 
          * @return builder
          * 
@@ -493,9 +478,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retryDurationSeconds (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-         * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-         * is set to true.
+         * @param retryDurationSeconds (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+         * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
          * 
          * @return builder
          * 
@@ -505,8 +489,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tenancyOcid (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-         * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param tenancyOcid (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -517,8 +500,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tenancyOcid (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-         * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param tenancyOcid (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -537,8 +519,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userOcid (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-         * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param userOcid (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 
@@ -549,8 +530,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userOcid (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-         * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+         * @param userOcid (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
          * 

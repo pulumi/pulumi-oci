@@ -132,83 +132,83 @@ export class TargetAsset extends pulumi.CustomResource {
     /**
      * (Updatable) Performance of the block volumes.
      */
-    public readonly blockVolumesPerformance!: pulumi.Output<number>;
+    declare public readonly blockVolumesPerformance: pulumi.Output<number>;
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Messages about the compatibility issues.
      */
-    public /*out*/ readonly compatibilityMessages!: pulumi.Output<outputs.CloudMigrations.TargetAssetCompatibilityMessage[]>;
+    declare public /*out*/ readonly compatibilityMessages: pulumi.Output<outputs.CloudMigrations.TargetAssetCompatibilityMessage[]>;
     /**
      * Created resource identifier
      */
-    public /*out*/ readonly createdResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdResourceId: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Cost estimation description
      */
-    public /*out*/ readonly estimatedCosts!: pulumi.Output<outputs.CloudMigrations.TargetAssetEstimatedCost[]>;
+    declare public /*out*/ readonly estimatedCosts: pulumi.Output<outputs.CloudMigrations.TargetAssetEstimatedCost[]>;
     /**
      * (Updatable) A boolean indicating whether the asset should be migrated.
      */
-    public readonly isExcludedFromExecution!: pulumi.Output<boolean>;
+    declare public readonly isExcludedFromExecution: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Description of the migration asset.
      */
-    public /*out*/ readonly migrationAssets!: pulumi.Output<outputs.CloudMigrations.TargetAssetMigrationAsset[]>;
+    declare public /*out*/ readonly migrationAssets: pulumi.Output<outputs.CloudMigrations.TargetAssetMigrationAsset[]>;
     /**
      * OCID of the associated migration plan.
      */
-    public readonly migrationPlanId!: pulumi.Output<string>;
+    declare public readonly migrationPlanId: pulumi.Output<string>;
     /**
      * (Updatable) Microsoft license for the VM configuration.
      */
-    public readonly msLicense!: pulumi.Output<string>;
+    declare public readonly msLicense: pulumi.Output<string>;
     /**
      * (Updatable) Preferred VM shape type that you provide.
      */
-    public readonly preferredShapeType!: pulumi.Output<string>;
+    declare public readonly preferredShapeType: pulumi.Output<string>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    public /*out*/ readonly recommendedSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[]>;
+    declare public /*out*/ readonly recommendedSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetRecommendedSpec[]>;
     /**
      * The current state of the target asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    public /*out*/ readonly testSpecs!: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[]>;
+    declare public /*out*/ readonly testSpecs: pulumi.Output<outputs.CloudMigrations.TargetAssetTestSpec[]>;
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeAssessed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAssessed: pulumi.Output<string>;
     /**
      * The time when the target asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The type of target asset.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      */
-    public readonly userSpec!: pulumi.Output<outputs.CloudMigrations.TargetAssetUserSpec>;
+    declare public readonly userSpec: pulumi.Output<outputs.CloudMigrations.TargetAssetUserSpec>;
 
     /**
      * Create a TargetAsset resource with the given unique name, arguments, and options.
@@ -223,50 +223,50 @@ export class TargetAsset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TargetAssetState | undefined;
-            resourceInputs["blockVolumesPerformance"] = state ? state.blockVolumesPerformance : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compatibilityMessages"] = state ? state.compatibilityMessages : undefined;
-            resourceInputs["createdResourceId"] = state ? state.createdResourceId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedCosts"] = state ? state.estimatedCosts : undefined;
-            resourceInputs["isExcludedFromExecution"] = state ? state.isExcludedFromExecution : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrationAssets"] = state ? state.migrationAssets : undefined;
-            resourceInputs["migrationPlanId"] = state ? state.migrationPlanId : undefined;
-            resourceInputs["msLicense"] = state ? state.msLicense : undefined;
-            resourceInputs["preferredShapeType"] = state ? state.preferredShapeType : undefined;
-            resourceInputs["recommendedSpecs"] = state ? state.recommendedSpecs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["testSpecs"] = state ? state.testSpecs : undefined;
-            resourceInputs["timeAssessed"] = state ? state.timeAssessed : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["userSpec"] = state ? state.userSpec : undefined;
+            resourceInputs["blockVolumesPerformance"] = state?.blockVolumesPerformance;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compatibilityMessages"] = state?.compatibilityMessages;
+            resourceInputs["createdResourceId"] = state?.createdResourceId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedCosts"] = state?.estimatedCosts;
+            resourceInputs["isExcludedFromExecution"] = state?.isExcludedFromExecution;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrationAssets"] = state?.migrationAssets;
+            resourceInputs["migrationPlanId"] = state?.migrationPlanId;
+            resourceInputs["msLicense"] = state?.msLicense;
+            resourceInputs["preferredShapeType"] = state?.preferredShapeType;
+            resourceInputs["recommendedSpecs"] = state?.recommendedSpecs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["testSpecs"] = state?.testSpecs;
+            resourceInputs["timeAssessed"] = state?.timeAssessed;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["userSpec"] = state?.userSpec;
         } else {
             const args = argsOrState as TargetAssetArgs | undefined;
-            if ((!args || args.isExcludedFromExecution === undefined) && !opts.urn) {
+            if (args?.isExcludedFromExecution === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isExcludedFromExecution'");
             }
-            if ((!args || args.migrationPlanId === undefined) && !opts.urn) {
+            if (args?.migrationPlanId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'migrationPlanId'");
             }
-            if ((!args || args.preferredShapeType === undefined) && !opts.urn) {
+            if (args?.preferredShapeType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'preferredShapeType'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.userSpec === undefined) && !opts.urn) {
+            if (args?.userSpec === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userSpec'");
             }
-            resourceInputs["blockVolumesPerformance"] = args ? args.blockVolumesPerformance : undefined;
-            resourceInputs["isExcludedFromExecution"] = args ? args.isExcludedFromExecution : undefined;
-            resourceInputs["migrationPlanId"] = args ? args.migrationPlanId : undefined;
-            resourceInputs["msLicense"] = args ? args.msLicense : undefined;
-            resourceInputs["preferredShapeType"] = args ? args.preferredShapeType : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["userSpec"] = args ? args.userSpec : undefined;
+            resourceInputs["blockVolumesPerformance"] = args?.blockVolumesPerformance;
+            resourceInputs["isExcludedFromExecution"] = args?.isExcludedFromExecution;
+            resourceInputs["migrationPlanId"] = args?.migrationPlanId;
+            resourceInputs["msLicense"] = args?.msLicense;
+            resourceInputs["preferredShapeType"] = args?.preferredShapeType;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["userSpec"] = args?.userSpec;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["compatibilityMessages"] = undefined /*out*/;
             resourceInputs["createdResourceId"] = undefined /*out*/;

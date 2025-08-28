@@ -103,115 +103,115 @@ export class FsuCycle extends pulumi.CustomResource {
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    public readonly applyActionSchedule!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule>;
+    declare public readonly applyActionSchedule: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule>;
     /**
      * (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
      */
-    public readonly batchingStrategy!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
+    declare public readonly batchingStrategy: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     /**
      * Type of Exadata Fleet Update collection being upgraded.
      */
-    public /*out*/ readonly collectionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly collectionType: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
      */
-    public readonly diagnosticsCollection!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
+    declare public readonly diagnosticsCollection: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
     /**
      * (Updatable) Exadata Fleet Update Cycle display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * OCID identifier for the Action that is currently in execution, if applicable.
      */
-    public /*out*/ readonly executingFsuActionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly executingFsuActionId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
      */
-    public readonly fsuCollectionId!: pulumi.Output<string>;
+    declare public readonly fsuCollectionId: pulumi.Output<string>;
     /**
      * (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
      */
-    public readonly goalVersionDetails!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
+    declare public readonly goalVersionDetails: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
     /**
      * (Updatable) List of patch IDs to ignore.
      */
-    public readonly isIgnoreMissingPatches!: pulumi.Output<string[]>;
+    declare public readonly isIgnoreMissingPatches: pulumi.Output<string[]>;
     /**
      * (Updatable) Ignore all patches between the source and target homes during patching.
      */
-    public readonly isIgnorePatches!: pulumi.Output<boolean>;
+    declare public readonly isIgnorePatches: pulumi.Output<boolean>;
     /**
      * (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
      */
-    public readonly isKeepPlacement!: pulumi.Output<boolean>;
+    declare public readonly isKeepPlacement: pulumi.Output<boolean>;
     /**
      * The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
      */
-    public /*out*/ readonly lastCompletedAction!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastCompletedAction: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
      */
-    public /*out*/ readonly lastCompletedActionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastCompletedActionId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Service drain timeout specified in seconds.
      */
-    public readonly maxDrainTimeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly maxDrainTimeoutInSeconds: pulumi.Output<number>;
     /**
      * In this array all the possible actions will be listed. The first element is the suggested Action.
      */
-    public /*out*/ readonly nextActionToExecutes!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute[]>;
+    declare public /*out*/ readonly nextActionToExecutes: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute[]>;
     /**
      * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
      */
-    public /*out*/ readonly rollbackCycleState!: pulumi.Output<string>;
+    declare public /*out*/ readonly rollbackCycleState: pulumi.Output<string>;
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    public readonly stageActionSchedule!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
+    declare public readonly stageActionSchedule: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
     /**
      * The current state of the Exadata Fleet Update Cycle.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Exadata Fleet Update Cycle was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Exadata Fleet Update Cycle was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) Details of supported upgrade options for DB or GI collection.
      */
-    public readonly upgradeDetails!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
+    declare public readonly upgradeDetails: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
 
     /**
      * Create a FsuCycle resource with the given unique name, arguments, and options.
@@ -226,64 +226,64 @@ export class FsuCycle extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FsuCycleState | undefined;
-            resourceInputs["applyActionSchedule"] = state ? state.applyActionSchedule : undefined;
-            resourceInputs["batchingStrategy"] = state ? state.batchingStrategy : undefined;
-            resourceInputs["collectionType"] = state ? state.collectionType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["diagnosticsCollection"] = state ? state.diagnosticsCollection : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["executingFsuActionId"] = state ? state.executingFsuActionId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["fsuCollectionId"] = state ? state.fsuCollectionId : undefined;
-            resourceInputs["goalVersionDetails"] = state ? state.goalVersionDetails : undefined;
-            resourceInputs["isIgnoreMissingPatches"] = state ? state.isIgnoreMissingPatches : undefined;
-            resourceInputs["isIgnorePatches"] = state ? state.isIgnorePatches : undefined;
-            resourceInputs["isKeepPlacement"] = state ? state.isKeepPlacement : undefined;
-            resourceInputs["lastCompletedAction"] = state ? state.lastCompletedAction : undefined;
-            resourceInputs["lastCompletedActionId"] = state ? state.lastCompletedActionId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maxDrainTimeoutInSeconds"] = state ? state.maxDrainTimeoutInSeconds : undefined;
-            resourceInputs["nextActionToExecutes"] = state ? state.nextActionToExecutes : undefined;
-            resourceInputs["rollbackCycleState"] = state ? state.rollbackCycleState : undefined;
-            resourceInputs["stageActionSchedule"] = state ? state.stageActionSchedule : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["upgradeDetails"] = state ? state.upgradeDetails : undefined;
+            resourceInputs["applyActionSchedule"] = state?.applyActionSchedule;
+            resourceInputs["batchingStrategy"] = state?.batchingStrategy;
+            resourceInputs["collectionType"] = state?.collectionType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["diagnosticsCollection"] = state?.diagnosticsCollection;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["executingFsuActionId"] = state?.executingFsuActionId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["fsuCollectionId"] = state?.fsuCollectionId;
+            resourceInputs["goalVersionDetails"] = state?.goalVersionDetails;
+            resourceInputs["isIgnoreMissingPatches"] = state?.isIgnoreMissingPatches;
+            resourceInputs["isIgnorePatches"] = state?.isIgnorePatches;
+            resourceInputs["isKeepPlacement"] = state?.isKeepPlacement;
+            resourceInputs["lastCompletedAction"] = state?.lastCompletedAction;
+            resourceInputs["lastCompletedActionId"] = state?.lastCompletedActionId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maxDrainTimeoutInSeconds"] = state?.maxDrainTimeoutInSeconds;
+            resourceInputs["nextActionToExecutes"] = state?.nextActionToExecutes;
+            resourceInputs["rollbackCycleState"] = state?.rollbackCycleState;
+            resourceInputs["stageActionSchedule"] = state?.stageActionSchedule;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["upgradeDetails"] = state?.upgradeDetails;
         } else {
             const args = argsOrState as FsuCycleArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.fsuCollectionId === undefined) && !opts.urn) {
+            if (args?.fsuCollectionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fsuCollectionId'");
             }
-            if ((!args || args.goalVersionDetails === undefined) && !opts.urn) {
+            if (args?.goalVersionDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'goalVersionDetails'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["applyActionSchedule"] = args ? args.applyActionSchedule : undefined;
-            resourceInputs["batchingStrategy"] = args ? args.batchingStrategy : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["diagnosticsCollection"] = args ? args.diagnosticsCollection : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["fsuCollectionId"] = args ? args.fsuCollectionId : undefined;
-            resourceInputs["goalVersionDetails"] = args ? args.goalVersionDetails : undefined;
-            resourceInputs["isIgnoreMissingPatches"] = args ? args.isIgnoreMissingPatches : undefined;
-            resourceInputs["isIgnorePatches"] = args ? args.isIgnorePatches : undefined;
-            resourceInputs["isKeepPlacement"] = args ? args.isKeepPlacement : undefined;
-            resourceInputs["maxDrainTimeoutInSeconds"] = args ? args.maxDrainTimeoutInSeconds : undefined;
-            resourceInputs["stageActionSchedule"] = args ? args.stageActionSchedule : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["upgradeDetails"] = args ? args.upgradeDetails : undefined;
+            resourceInputs["applyActionSchedule"] = args?.applyActionSchedule;
+            resourceInputs["batchingStrategy"] = args?.batchingStrategy;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["diagnosticsCollection"] = args?.diagnosticsCollection;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["fsuCollectionId"] = args?.fsuCollectionId;
+            resourceInputs["goalVersionDetails"] = args?.goalVersionDetails;
+            resourceInputs["isIgnoreMissingPatches"] = args?.isIgnoreMissingPatches;
+            resourceInputs["isIgnorePatches"] = args?.isIgnorePatches;
+            resourceInputs["isKeepPlacement"] = args?.isKeepPlacement;
+            resourceInputs["maxDrainTimeoutInSeconds"] = args?.maxDrainTimeoutInSeconds;
+            resourceInputs["stageActionSchedule"] = args?.stageActionSchedule;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["upgradeDetails"] = args?.upgradeDetails;
             resourceInputs["collectionType"] = undefined /*out*/;
             resourceInputs["executingFsuActionId"] = undefined /*out*/;
             resourceInputs["lastCompletedAction"] = undefined /*out*/;

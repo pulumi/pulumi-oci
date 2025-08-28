@@ -109,47 +109,47 @@ export class MetricExtension extends pulumi.CustomResource {
     /**
      * Type of possible collection methods.
      */
-    public /*out*/ readonly collectionMethod!: pulumi.Output<string>;
+    declare public /*out*/ readonly collectionMethod: pulumi.Output<string>;
     /**
      * (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      */
-    public readonly collectionRecurrences!: pulumi.Output<string>;
+    declare public readonly collectionRecurrences: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Created by user
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Description of the metric extension.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Metric Extension display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * List of resource details objects having resourceIds on which this metric extension is enabled.
      */
-    public /*out*/ readonly enabledOnResources!: pulumi.Output<outputs.StackMonitoring.MetricExtensionEnabledOnResource[]>;
+    declare public /*out*/ readonly enabledOnResources: pulumi.Output<outputs.StackMonitoring.MetricExtensionEnabledOnResource[]>;
     /**
      * Count of resources on which this metric extension is enabled.
      */
-    public /*out*/ readonly enabledOnResourcesCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly enabledOnResourcesCount: pulumi.Output<number>;
     /**
      * Last updated by user
      */
-    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedBy: pulumi.Output<string>;
     /**
      * (Updatable) List of metrics which are part of this metric extension
      */
-    public readonly metricLists!: pulumi.Output<outputs.StackMonitoring.MetricExtensionMetricList[]>;
+    declare public readonly metricLists: pulumi.Output<outputs.StackMonitoring.MetricExtensionMetricList[]>;
     /**
      * Metric Extension Resource name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
      *
@@ -157,39 +157,39 @@ export class MetricExtension extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publishTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly publishTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Collection method and query properties details of metric extension
      */
-    public readonly queryProperties!: pulumi.Output<outputs.StackMonitoring.MetricExtensionQueryProperties>;
+    declare public readonly queryProperties: pulumi.Output<outputs.StackMonitoring.MetricExtensionQueryProperties>;
     /**
      * Resource type to which Metric Extension applies
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The URI path that the user can do a GET on to access the metric extension metadata
      */
-    public /*out*/ readonly resourceUri!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceUri: pulumi.Output<string>;
     /**
      * The current lifecycle state of the metric extension
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MetricExtension resource with the given unique name, arguments, and options.
@@ -204,55 +204,55 @@ export class MetricExtension extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricExtensionState | undefined;
-            resourceInputs["collectionMethod"] = state ? state.collectionMethod : undefined;
-            resourceInputs["collectionRecurrences"] = state ? state.collectionRecurrences : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enabledOnResources"] = state ? state.enabledOnResources : undefined;
-            resourceInputs["enabledOnResourcesCount"] = state ? state.enabledOnResourcesCount : undefined;
-            resourceInputs["lastUpdatedBy"] = state ? state.lastUpdatedBy : undefined;
-            resourceInputs["metricLists"] = state ? state.metricLists : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["publishTrigger"] = state ? state.publishTrigger : undefined;
-            resourceInputs["queryProperties"] = state ? state.queryProperties : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["resourceUri"] = state ? state.resourceUri : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["collectionMethod"] = state?.collectionMethod;
+            resourceInputs["collectionRecurrences"] = state?.collectionRecurrences;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enabledOnResources"] = state?.enabledOnResources;
+            resourceInputs["enabledOnResourcesCount"] = state?.enabledOnResourcesCount;
+            resourceInputs["lastUpdatedBy"] = state?.lastUpdatedBy;
+            resourceInputs["metricLists"] = state?.metricLists;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["publishTrigger"] = state?.publishTrigger;
+            resourceInputs["queryProperties"] = state?.queryProperties;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["resourceUri"] = state?.resourceUri;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MetricExtensionArgs | undefined;
-            if ((!args || args.collectionRecurrences === undefined) && !opts.urn) {
+            if (args?.collectionRecurrences === undefined && !opts.urn) {
                 throw new Error("Missing required property 'collectionRecurrences'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.metricLists === undefined) && !opts.urn) {
+            if (args?.metricLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricLists'");
             }
-            if ((!args || args.queryProperties === undefined) && !opts.urn) {
+            if (args?.queryProperties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'queryProperties'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["collectionRecurrences"] = args ? args.collectionRecurrences : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["metricLists"] = args ? args.metricLists : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["publishTrigger"] = args ? args.publishTrigger : undefined;
-            resourceInputs["queryProperties"] = args ? args.queryProperties : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["collectionRecurrences"] = args?.collectionRecurrences;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["metricLists"] = args?.metricLists;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["publishTrigger"] = args?.publishTrigger;
+            resourceInputs["queryProperties"] = args?.queryProperties;
+            resourceInputs["resourceType"] = args?.resourceType;
             resourceInputs["collectionMethod"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["enabledOnResources"] = undefined /*out*/;

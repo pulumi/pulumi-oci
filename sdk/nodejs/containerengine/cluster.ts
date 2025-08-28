@@ -136,75 +136,75 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * Available Kubernetes versions to which the clusters masters may be upgraded.
      */
-    public /*out*/ readonly availableKubernetesUpgrades!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly availableKubernetesUpgrades: pulumi.Output<string[]>;
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      */
-    public readonly clusterPodNetworkOptions!: pulumi.Output<outputs.ContainerEngine.ClusterClusterPodNetworkOption[]>;
+    declare public readonly clusterPodNetworkOptions: pulumi.Output<outputs.ContainerEngine.ClusterClusterPodNetworkOption[]>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The network configuration for access to the Cluster control plane.
      */
-    public readonly endpointConfig!: pulumi.Output<outputs.ContainerEngine.ClusterEndpointConfig | undefined>;
+    declare public readonly endpointConfig: pulumi.Output<outputs.ContainerEngine.ClusterEndpointConfig | undefined>;
     /**
      * Endpoints served up by the cluster masters.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.ContainerEngine.ClusterEndpoint[]>;
+    declare public /*out*/ readonly endpoints: pulumi.Output<outputs.ContainerEngine.ClusterEndpoint[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      */
-    public readonly imagePolicyConfig!: pulumi.Output<outputs.ContainerEngine.ClusterImagePolicyConfig>;
+    declare public readonly imagePolicyConfig: pulumi.Output<outputs.ContainerEngine.ClusterImagePolicyConfig>;
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * (Updatable) The version of Kubernetes to install into the cluster masters.
      */
-    public readonly kubernetesVersion!: pulumi.Output<string>;
+    declare public readonly kubernetesVersion: pulumi.Output<string>;
     /**
      * Details about the state of the cluster masters.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Metadata about the cluster.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.ContainerEngine.ClusterMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.ContainerEngine.ClusterMetadata[]>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The cluster-specific OpenID Connect Discovery endpoint
      */
-    public /*out*/ readonly openIdConnectDiscoveryEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly openIdConnectDiscoveryEndpoint: pulumi.Output<string>;
     /**
      * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
      */
-    public /*out*/ readonly openIdConnectDiscoveryKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly openIdConnectDiscoveryKey: pulumi.Output<string>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */
-    public readonly options!: pulumi.Output<outputs.ContainerEngine.ClusterOptions>;
+    declare public readonly options: pulumi.Output<outputs.ContainerEngine.ClusterOptions>;
     /**
      * The state of the cluster masters.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Type of cluster
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *
@@ -212,7 +212,7 @@ export class Cluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a Cluster resource with the given unique name, arguments, and options.
@@ -227,48 +227,48 @@ export class Cluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
-            resourceInputs["availableKubernetesUpgrades"] = state ? state.availableKubernetesUpgrades : undefined;
-            resourceInputs["clusterPodNetworkOptions"] = state ? state.clusterPodNetworkOptions : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["endpointConfig"] = state ? state.endpointConfig : undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imagePolicyConfig"] = state ? state.imagePolicyConfig : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kubernetesVersion"] = state ? state.kubernetesVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["openIdConnectDiscoveryEndpoint"] = state ? state.openIdConnectDiscoveryEndpoint : undefined;
-            resourceInputs["openIdConnectDiscoveryKey"] = state ? state.openIdConnectDiscoveryKey : undefined;
-            resourceInputs["options"] = state ? state.options : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["availableKubernetesUpgrades"] = state?.availableKubernetesUpgrades;
+            resourceInputs["clusterPodNetworkOptions"] = state?.clusterPodNetworkOptions;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["endpointConfig"] = state?.endpointConfig;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imagePolicyConfig"] = state?.imagePolicyConfig;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kubernetesVersion"] = state?.kubernetesVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["openIdConnectDiscoveryEndpoint"] = state?.openIdConnectDiscoveryEndpoint;
+            resourceInputs["openIdConnectDiscoveryKey"] = state?.openIdConnectDiscoveryKey;
+            resourceInputs["options"] = state?.options;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as ClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.kubernetesVersion === undefined) && !opts.urn) {
+            if (args?.kubernetesVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kubernetesVersion'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["clusterPodNetworkOptions"] = args ? args.clusterPodNetworkOptions : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["endpointConfig"] = args ? args.endpointConfig : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["imagePolicyConfig"] = args ? args.imagePolicyConfig : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["kubernetesVersion"] = args ? args.kubernetesVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["options"] = args ? args.options : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["clusterPodNetworkOptions"] = args?.clusterPodNetworkOptions;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["endpointConfig"] = args?.endpointConfig;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["imagePolicyConfig"] = args?.imagePolicyConfig;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["kubernetesVersion"] = args?.kubernetesVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["options"] = args?.options;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["availableKubernetesUpgrades"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

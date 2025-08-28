@@ -109,15 +109,15 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * Example: `300`
      */
-    public readonly backendMaxConnections!: pulumi.Output<number>;
+    declare public readonly backendMaxConnections: pulumi.Output<number>;
     /**
      * (Updatable)
      */
-    public /*out*/ readonly backends!: pulumi.Output<outputs.LoadBalancer.BackendSetBackend[]>;
+    declare public /*out*/ readonly backends: pulumi.Output<outputs.LoadBalancer.BackendSetBackend[]>;
     /**
      * (Updatable) The health check policy's configuration details.
      */
-    public readonly healthChecker!: pulumi.Output<outputs.LoadBalancer.BackendSetHealthChecker>;
+    declare public readonly healthChecker: pulumi.Output<outputs.LoadBalancer.BackendSetHealthChecker>;
     /**
      * (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
      *
@@ -135,11 +135,11 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly lbCookieSessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration>;
+    declare public readonly lbCookieSessionPersistenceConfiguration: pulumi.Output<outputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      *
@@ -147,11 +147,11 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * Example: `exampleBackendSet`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      */
-    public readonly policy!: pulumi.Output<string>;
+    declare public readonly policy: pulumi.Output<string>;
     /**
      * (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
      *
@@ -167,14 +167,14 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly sessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetSessionPersistenceConfiguration>;
+    declare public readonly sessionPersistenceConfiguration: pulumi.Output<outputs.LoadBalancer.BackendSetSessionPersistenceConfiguration>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly sslConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetSslConfiguration | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly sslConfiguration: pulumi.Output<outputs.LoadBalancer.BackendSetSslConfiguration | undefined>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a BackendSet resource with the given unique name, arguments, and options.
@@ -189,35 +189,35 @@ export class BackendSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackendSetState | undefined;
-            resourceInputs["backendMaxConnections"] = state ? state.backendMaxConnections : undefined;
-            resourceInputs["backends"] = state ? state.backends : undefined;
-            resourceInputs["healthChecker"] = state ? state.healthChecker : undefined;
-            resourceInputs["lbCookieSessionPersistenceConfiguration"] = state ? state.lbCookieSessionPersistenceConfiguration : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["policy"] = state ? state.policy : undefined;
-            resourceInputs["sessionPersistenceConfiguration"] = state ? state.sessionPersistenceConfiguration : undefined;
-            resourceInputs["sslConfiguration"] = state ? state.sslConfiguration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["backendMaxConnections"] = state?.backendMaxConnections;
+            resourceInputs["backends"] = state?.backends;
+            resourceInputs["healthChecker"] = state?.healthChecker;
+            resourceInputs["lbCookieSessionPersistenceConfiguration"] = state?.lbCookieSessionPersistenceConfiguration;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["policy"] = state?.policy;
+            resourceInputs["sessionPersistenceConfiguration"] = state?.sessionPersistenceConfiguration;
+            resourceInputs["sslConfiguration"] = state?.sslConfiguration;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as BackendSetArgs | undefined;
-            if ((!args || args.healthChecker === undefined) && !opts.urn) {
+            if (args?.healthChecker === undefined && !opts.urn) {
                 throw new Error("Missing required property 'healthChecker'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.policy === undefined) && !opts.urn) {
+            if (args?.policy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policy'");
             }
-            resourceInputs["backendMaxConnections"] = args ? args.backendMaxConnections : undefined;
-            resourceInputs["healthChecker"] = args ? args.healthChecker : undefined;
-            resourceInputs["lbCookieSessionPersistenceConfiguration"] = args ? args.lbCookieSessionPersistenceConfiguration : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["policy"] = args ? args.policy : undefined;
-            resourceInputs["sessionPersistenceConfiguration"] = args ? args.sessionPersistenceConfiguration : undefined;
-            resourceInputs["sslConfiguration"] = args ? args.sslConfiguration : undefined;
+            resourceInputs["backendMaxConnections"] = args?.backendMaxConnections;
+            resourceInputs["healthChecker"] = args?.healthChecker;
+            resourceInputs["lbCookieSessionPersistenceConfiguration"] = args?.lbCookieSessionPersistenceConfiguration;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["policy"] = args?.policy;
+            resourceInputs["sessionPersistenceConfiguration"] = args?.sessionPersistenceConfiguration;
+            resourceInputs["sslConfiguration"] = args?.sslConfiguration;
             resourceInputs["backends"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

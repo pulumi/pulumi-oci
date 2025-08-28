@@ -107,23 +107,23 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
      */
-    public readonly alarmSummary!: pulumi.Output<string>;
+    declare public readonly alarmSummary: pulumi.Output<string>;
     /**
      * (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      */
-    public readonly body!: pulumi.Output<string>;
+    declare public readonly body: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
      */
-    public readonly destinations!: pulumi.Output<string[]>;
+    declare public readonly destinations: pulumi.Output<string[]>;
     /**
      * (Updatable) A user-friendly name for the alarm. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -131,56 +131,56 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example: `High CPU Utilization`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
      */
-    public readonly evaluationSlackDuration!: pulumi.Output<string>;
+    declare public readonly evaluationSlackDuration: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether the alarm is enabled.  Example: `true`
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
      */
-    public readonly isNotificationsPerMetricDimensionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isNotificationsPerMetricDimensionEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
      * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
      * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
      * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      */
-    public readonly messageFormat!: pulumi.Output<string>;
+    declare public readonly messageFormat: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      */
-    public readonly metricCompartmentId!: pulumi.Output<string>;
+    declare public readonly metricCompartmentId: pulumi.Output<string>;
     /**
      * (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      */
-    public readonly metricCompartmentIdInSubtree!: pulumi.Output<boolean>;
+    declare public readonly metricCompartmentIdInSubtree: pulumi.Output<boolean>;
     /**
      * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
      */
-    public readonly notificationTitle!: pulumi.Output<string>;
+    declare public readonly notificationTitle: pulumi.Output<string>;
     /**
      * (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
      */
-    public readonly notificationVersion!: pulumi.Output<string>;
+    declare public readonly notificationVersion: pulumi.Output<string>;
     /**
      * (Updatable) A set of overrides that control evaluations of the alarm. 
      *
      * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
      */
-    public readonly overrides!: pulumi.Output<outputs.Monitoring.AlarmOverride[]>;
+    declare public readonly overrides: pulumi.Output<outputs.Monitoring.AlarmOverride[]>;
     /**
      * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
      *
@@ -192,7 +192,7 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example: `PT5M`
      */
-    public readonly pendingDuration!: pulumi.Output<string>;
+    declare public readonly pendingDuration: pulumi.Output<string>;
     /**
      * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
@@ -214,7 +214,7 @@ export class Alarm extends pulumi.CustomResource {
      *
      * ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
      */
-    public readonly query!: pulumi.Output<string>;
+    declare public readonly query: pulumi.Output<string>;
     /**
      * (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
      *
@@ -222,39 +222,39 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example: `PT2H`
      */
-    public readonly repeatNotificationDuration!: pulumi.Output<string>;
+    declare public readonly repeatNotificationDuration: pulumi.Output<string>;
     /**
      * (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
      */
-    public readonly resolution!: pulumi.Output<string>;
+    declare public readonly resolution: pulumi.Output<string>;
     /**
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      */
-    public readonly resourceGroup!: pulumi.Output<string>;
+    declare public readonly resourceGroup: pulumi.Output<string>;
     /**
      * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      */
-    public readonly ruleName!: pulumi.Output<string>;
+    declare public readonly ruleName: pulumi.Output<string>;
     /**
      * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */
-    public readonly severity!: pulumi.Output<string>;
+    declare public readonly severity: pulumi.Output<string>;
     /**
      * The current lifecycle state of the alarm.  Example: `DELETED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The configuration details for suppressing an alarm.
      */
-    public readonly suppression!: pulumi.Output<outputs.Monitoring.AlarmSuppression>;
+    declare public readonly suppression: pulumi.Output<outputs.Monitoring.AlarmSuppression>;
     /**
      * The date and time the alarm was created. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2023-02-03T01:02:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Alarm resource with the given unique name, arguments, and options.
@@ -269,85 +269,85 @@ export class Alarm extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlarmState | undefined;
-            resourceInputs["alarmSummary"] = state ? state.alarmSummary : undefined;
-            resourceInputs["body"] = state ? state.body : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["destinations"] = state ? state.destinations : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["evaluationSlackDuration"] = state ? state.evaluationSlackDuration : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = state ? state.isNotificationsPerMetricDimensionEnabled : undefined;
-            resourceInputs["messageFormat"] = state ? state.messageFormat : undefined;
-            resourceInputs["metricCompartmentId"] = state ? state.metricCompartmentId : undefined;
-            resourceInputs["metricCompartmentIdInSubtree"] = state ? state.metricCompartmentIdInSubtree : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["notificationTitle"] = state ? state.notificationTitle : undefined;
-            resourceInputs["notificationVersion"] = state ? state.notificationVersion : undefined;
-            resourceInputs["overrides"] = state ? state.overrides : undefined;
-            resourceInputs["pendingDuration"] = state ? state.pendingDuration : undefined;
-            resourceInputs["query"] = state ? state.query : undefined;
-            resourceInputs["repeatNotificationDuration"] = state ? state.repeatNotificationDuration : undefined;
-            resourceInputs["resolution"] = state ? state.resolution : undefined;
-            resourceInputs["resourceGroup"] = state ? state.resourceGroup : undefined;
-            resourceInputs["ruleName"] = state ? state.ruleName : undefined;
-            resourceInputs["severity"] = state ? state.severity : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["suppression"] = state ? state.suppression : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["alarmSummary"] = state?.alarmSummary;
+            resourceInputs["body"] = state?.body;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["destinations"] = state?.destinations;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["evaluationSlackDuration"] = state?.evaluationSlackDuration;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = state?.isNotificationsPerMetricDimensionEnabled;
+            resourceInputs["messageFormat"] = state?.messageFormat;
+            resourceInputs["metricCompartmentId"] = state?.metricCompartmentId;
+            resourceInputs["metricCompartmentIdInSubtree"] = state?.metricCompartmentIdInSubtree;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["notificationTitle"] = state?.notificationTitle;
+            resourceInputs["notificationVersion"] = state?.notificationVersion;
+            resourceInputs["overrides"] = state?.overrides;
+            resourceInputs["pendingDuration"] = state?.pendingDuration;
+            resourceInputs["query"] = state?.query;
+            resourceInputs["repeatNotificationDuration"] = state?.repeatNotificationDuration;
+            resourceInputs["resolution"] = state?.resolution;
+            resourceInputs["resourceGroup"] = state?.resourceGroup;
+            resourceInputs["ruleName"] = state?.ruleName;
+            resourceInputs["severity"] = state?.severity;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["suppression"] = state?.suppression;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AlarmArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.destinations === undefined) && !opts.urn) {
+            if (args?.destinations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinations'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.isEnabled === undefined) && !opts.urn) {
+            if (args?.isEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
             }
-            if ((!args || args.metricCompartmentId === undefined) && !opts.urn) {
+            if (args?.metricCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricCompartmentId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.query === undefined) && !opts.urn) {
+            if (args?.query === undefined && !opts.urn) {
                 throw new Error("Missing required property 'query'");
             }
-            if ((!args || args.severity === undefined) && !opts.urn) {
+            if (args?.severity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'severity'");
             }
-            resourceInputs["alarmSummary"] = args ? args.alarmSummary : undefined;
-            resourceInputs["body"] = args ? args.body : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["destinations"] = args ? args.destinations : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["evaluationSlackDuration"] = args ? args.evaluationSlackDuration : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = args ? args.isNotificationsPerMetricDimensionEnabled : undefined;
-            resourceInputs["messageFormat"] = args ? args.messageFormat : undefined;
-            resourceInputs["metricCompartmentId"] = args ? args.metricCompartmentId : undefined;
-            resourceInputs["metricCompartmentIdInSubtree"] = args ? args.metricCompartmentIdInSubtree : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["notificationTitle"] = args ? args.notificationTitle : undefined;
-            resourceInputs["notificationVersion"] = args ? args.notificationVersion : undefined;
-            resourceInputs["overrides"] = args ? args.overrides : undefined;
-            resourceInputs["pendingDuration"] = args ? args.pendingDuration : undefined;
-            resourceInputs["query"] = args ? args.query : undefined;
-            resourceInputs["repeatNotificationDuration"] = args ? args.repeatNotificationDuration : undefined;
-            resourceInputs["resolution"] = args ? args.resolution : undefined;
-            resourceInputs["resourceGroup"] = args ? args.resourceGroup : undefined;
-            resourceInputs["ruleName"] = args ? args.ruleName : undefined;
-            resourceInputs["severity"] = args ? args.severity : undefined;
-            resourceInputs["suppression"] = args ? args.suppression : undefined;
+            resourceInputs["alarmSummary"] = args?.alarmSummary;
+            resourceInputs["body"] = args?.body;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["destinations"] = args?.destinations;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["evaluationSlackDuration"] = args?.evaluationSlackDuration;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["isNotificationsPerMetricDimensionEnabled"] = args?.isNotificationsPerMetricDimensionEnabled;
+            resourceInputs["messageFormat"] = args?.messageFormat;
+            resourceInputs["metricCompartmentId"] = args?.metricCompartmentId;
+            resourceInputs["metricCompartmentIdInSubtree"] = args?.metricCompartmentIdInSubtree;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["notificationTitle"] = args?.notificationTitle;
+            resourceInputs["notificationVersion"] = args?.notificationVersion;
+            resourceInputs["overrides"] = args?.overrides;
+            resourceInputs["pendingDuration"] = args?.pendingDuration;
+            resourceInputs["query"] = args?.query;
+            resourceInputs["repeatNotificationDuration"] = args?.repeatNotificationDuration;
+            resourceInputs["resolution"] = args?.resolution;
+            resourceInputs["resourceGroup"] = args?.resourceGroup;
+            resourceInputs["ruleName"] = args?.ruleName;
+            resourceInputs["severity"] = args?.severity;
+            resourceInputs["suppression"] = args?.suppression;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

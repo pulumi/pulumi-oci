@@ -76,35 +76,35 @@ export class DedicatedVantagePoint extends pulumi.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
-    public readonly dvpStackDetails!: pulumi.Output<outputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
+    declare public readonly dvpStackDetails: pulumi.Output<outputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    public /*out*/ readonly monitorStatusCountMaps!: pulumi.Output<outputs.ApmSynthetics.DedicatedVantagePointMonitorStatusCountMap[]>;
+    declare public /*out*/ readonly monitorStatusCountMaps: pulumi.Output<outputs.ApmSynthetics.DedicatedVantagePointMonitorStatusCountMap[]>;
     /**
      * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Name of the region.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * (Updatable) Status of the dedicated vantage point.
      *
@@ -112,15 +112,15 @@ export class DedicatedVantagePoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DedicatedVantagePoint resource with the given unique name, arguments, and options.
@@ -135,38 +135,38 @@ export class DedicatedVantagePoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DedicatedVantagePointState | undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dvpStackDetails"] = state ? state.dvpStackDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["monitorStatusCountMaps"] = state ? state.monitorStatusCountMaps : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dvpStackDetails"] = state?.dvpStackDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["monitorStatusCountMaps"] = state?.monitorStatusCountMaps;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DedicatedVantagePointArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.dvpStackDetails === undefined) && !opts.urn) {
+            if (args?.dvpStackDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dvpStackDetails'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dvpStackDetails"] = args ? args.dvpStackDetails : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dvpStackDetails"] = args?.dvpStackDetails;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["status"] = args?.status;
             resourceInputs["monitorStatusCountMaps"] = undefined /*out*/;
             resourceInputs["name"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

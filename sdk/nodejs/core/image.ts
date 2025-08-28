@@ -133,27 +133,27 @@ export class Image extends pulumi.CustomResource {
     /**
      * Oracle Cloud Agent features supported on the image.
      */
-    public /*out*/ readonly agentFeatures!: pulumi.Output<outputs.Core.ImageAgentFeature[]>;
+    declare public /*out*/ readonly agentFeatures: pulumi.Output<outputs.Core.ImageAgentFeature[]>;
     /**
      * The OCID of the image originally used to launch the instance.
      */
-    public /*out*/ readonly baseImageId!: pulumi.Output<string>;
+    declare public /*out*/ readonly baseImageId: pulumi.Output<string>;
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      */
-    public /*out*/ readonly billableSizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly billableSizeInGbs: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment you want the image to be created in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      */
-    public /*out*/ readonly createImageAllowed!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly createImageAllowed: pulumi.Output<boolean>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -161,16 +161,16 @@ export class Image extends pulumi.CustomResource {
      *
      * Example: `My Oracle Linux image`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly imageSourceDetails!: pulumi.Output<outputs.Core.ImageImageSourceDetails | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly imageSourceDetails: pulumi.Output<outputs.Core.ImageImageSourceDetails | undefined>;
     /**
      * The OCID of the instance you want to use as the basis for the image.
      */
-    public readonly instanceId!: pulumi.Output<string | undefined>;
+    declare public readonly instanceId: pulumi.Output<string | undefined>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -182,35 +182,35 @@ export class Image extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly launchMode!: pulumi.Output<string>;
+    declare public readonly launchMode: pulumi.Output<string>;
     /**
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    public /*out*/ readonly launchOptions!: pulumi.Output<outputs.Core.ImageLaunchOption[]>;
+    declare public /*out*/ readonly launchOptions: pulumi.Output<outputs.Core.ImageLaunchOption[]>;
     /**
      * The listing type of the image. The default value is "NONE".
      */
-    public /*out*/ readonly listingType!: pulumi.Output<string>;
+    declare public /*out*/ readonly listingType: pulumi.Output<string>;
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */
-    public /*out*/ readonly operatingSystem!: pulumi.Output<string>;
+    declare public /*out*/ readonly operatingSystem: pulumi.Output<string>;
     /**
      * The image's operating system version.  Example: `7.2`
      */
-    public /*out*/ readonly operatingSystemVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly operatingSystemVersion: pulumi.Output<string>;
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInMbs: pulumi.Output<string>;
     /**
      * The current state of the image.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Image resource with the given unique name, arguments, and options.
@@ -225,36 +225,36 @@ export class Image extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImageState | undefined;
-            resourceInputs["agentFeatures"] = state ? state.agentFeatures : undefined;
-            resourceInputs["baseImageId"] = state ? state.baseImageId : undefined;
-            resourceInputs["billableSizeInGbs"] = state ? state.billableSizeInGbs : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createImageAllowed"] = state ? state.createImageAllowed : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageSourceDetails"] = state ? state.imageSourceDetails : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["launchMode"] = state ? state.launchMode : undefined;
-            resourceInputs["launchOptions"] = state ? state.launchOptions : undefined;
-            resourceInputs["listingType"] = state ? state.listingType : undefined;
-            resourceInputs["operatingSystem"] = state ? state.operatingSystem : undefined;
-            resourceInputs["operatingSystemVersion"] = state ? state.operatingSystemVersion : undefined;
-            resourceInputs["sizeInMbs"] = state ? state.sizeInMbs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["agentFeatures"] = state?.agentFeatures;
+            resourceInputs["baseImageId"] = state?.baseImageId;
+            resourceInputs["billableSizeInGbs"] = state?.billableSizeInGbs;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createImageAllowed"] = state?.createImageAllowed;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageSourceDetails"] = state?.imageSourceDetails;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["launchMode"] = state?.launchMode;
+            resourceInputs["launchOptions"] = state?.launchOptions;
+            resourceInputs["listingType"] = state?.listingType;
+            resourceInputs["operatingSystem"] = state?.operatingSystem;
+            resourceInputs["operatingSystemVersion"] = state?.operatingSystemVersion;
+            resourceInputs["sizeInMbs"] = state?.sizeInMbs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ImageArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["imageSourceDetails"] = args ? args.imageSourceDetails : undefined;
-            resourceInputs["instanceId"] = args ? args.instanceId : undefined;
-            resourceInputs["launchMode"] = args ? args.launchMode : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["imageSourceDetails"] = args?.imageSourceDetails;
+            resourceInputs["instanceId"] = args?.instanceId;
+            resourceInputs["launchMode"] = args?.launchMode;
             resourceInputs["agentFeatures"] = undefined /*out*/;
             resourceInputs["baseImageId"] = undefined /*out*/;
             resourceInputs["billableSizeInGbs"] = undefined /*out*/;

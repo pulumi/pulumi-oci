@@ -94,43 +94,43 @@ export class SteeringPolicy extends pulumi.CustomResource {
     /**
      * The set of all answers that can potentially issue from the steering policy.
      */
-    public readonly answers!: pulumi.Output<outputs.Dns.SteeringPolicyAnswer[]>;
+    declare public readonly answers: pulumi.Output<outputs.Dns.SteeringPolicyAnswer[]>;
     /**
      * (Updatable) The OCID of the compartment containing the steering policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      */
-    public readonly healthCheckMonitorId!: pulumi.Output<string>;
+    declare public readonly healthCheckMonitorId: pulumi.Output<string>;
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      *
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      */
-    public readonly rules!: pulumi.Output<outputs.Dns.SteeringPolicyRule[]>;
+    declare public readonly rules: pulumi.Output<outputs.Dns.SteeringPolicyRule[]>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      *
@@ -148,11 +148,11 @@ export class SteeringPolicy extends pulumi.CustomResource {
      * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
      * * `CUSTOM` - Allows a customized configuration of rules.
      */
-    public readonly template!: pulumi.Output<string>;
+    declare public readonly template: pulumi.Output<string>;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
      *
@@ -160,7 +160,7 @@ export class SteeringPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly ttl!: pulumi.Output<number>;
+    declare public readonly ttl: pulumi.Output<number>;
 
     /**
      * Create a SteeringPolicy resource with the given unique name, arguments, and options.
@@ -175,38 +175,38 @@ export class SteeringPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SteeringPolicyState | undefined;
-            resourceInputs["answers"] = state ? state.answers : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["healthCheckMonitorId"] = state ? state.healthCheckMonitorId : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["template"] = state ? state.template : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["ttl"] = state ? state.ttl : undefined;
+            resourceInputs["answers"] = state?.answers;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["healthCheckMonitorId"] = state?.healthCheckMonitorId;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["template"] = state?.template;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["ttl"] = state?.ttl;
         } else {
             const args = argsOrState as SteeringPolicyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.template === undefined) && !opts.urn) {
+            if (args?.template === undefined && !opts.urn) {
                 throw new Error("Missing required property 'template'");
             }
-            resourceInputs["answers"] = args ? args.answers : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["healthCheckMonitorId"] = args ? args.healthCheckMonitorId : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["template"] = args ? args.template : undefined;
-            resourceInputs["ttl"] = args ? args.ttl : undefined;
+            resourceInputs["answers"] = args?.answers;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["healthCheckMonitorId"] = args?.healthCheckMonitorId;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["template"] = args?.template;
+            resourceInputs["ttl"] = args?.ttl;
             resourceInputs["self"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

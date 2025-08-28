@@ -73,63 +73,63 @@ export class Bastion extends pulumi.CustomResource {
     /**
      * The type of bastion. Use `standard`.
      */
-    public readonly bastionType!: pulumi.Output<string>;
+    declare public readonly bastionType: pulumi.Output<string>;
     /**
      * (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      */
-    public readonly clientCidrBlockAllowLists!: pulumi.Output<string[]>;
+    declare public readonly clientCidrBlockAllowLists: pulumi.Output<string[]>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      */
-    public readonly dnsProxyStatus!: pulumi.Output<string>;
+    declare public readonly dnsProxyStatus: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      */
-    public readonly maxSessionTtlInSeconds!: pulumi.Output<number>;
+    declare public readonly maxSessionTtlInSeconds: pulumi.Output<number>;
     /**
      * The maximum number of active sessions allowed on the bastion.
      */
-    public /*out*/ readonly maxSessionsAllowed!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxSessionsAllowed: pulumi.Output<number>;
     /**
      * The name of the bastion, which can't be changed after creation.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
-    public readonly phoneBookEntry!: pulumi.Output<string>;
+    declare public readonly phoneBookEntry: pulumi.Output<string>;
     /**
      * The private IP address of the created private endpoint.
      */
-    public /*out*/ readonly privateEndpointIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpointIpAddress: pulumi.Output<string>;
     /**
      * The current state of the bastion.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */
-    public readonly staticJumpHostIpAddresses!: pulumi.Output<string[]>;
+    declare public readonly staticJumpHostIpAddresses: pulumi.Output<string[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      *
@@ -137,19 +137,19 @@ export class Bastion extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetSubnetId!: pulumi.Output<string>;
+    declare public readonly targetSubnetId: pulumi.Output<string>;
     /**
      * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      */
-    public /*out*/ readonly targetVcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetVcnId: pulumi.Output<string>;
     /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Bastion resource with the given unique name, arguments, and options.
@@ -164,47 +164,47 @@ export class Bastion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BastionState | undefined;
-            resourceInputs["bastionType"] = state ? state.bastionType : undefined;
-            resourceInputs["clientCidrBlockAllowLists"] = state ? state.clientCidrBlockAllowLists : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dnsProxyStatus"] = state ? state.dnsProxyStatus : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maxSessionTtlInSeconds"] = state ? state.maxSessionTtlInSeconds : undefined;
-            resourceInputs["maxSessionsAllowed"] = state ? state.maxSessionsAllowed : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["phoneBookEntry"] = state ? state.phoneBookEntry : undefined;
-            resourceInputs["privateEndpointIpAddress"] = state ? state.privateEndpointIpAddress : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["staticJumpHostIpAddresses"] = state ? state.staticJumpHostIpAddresses : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetSubnetId"] = state ? state.targetSubnetId : undefined;
-            resourceInputs["targetVcnId"] = state ? state.targetVcnId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bastionType"] = state?.bastionType;
+            resourceInputs["clientCidrBlockAllowLists"] = state?.clientCidrBlockAllowLists;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dnsProxyStatus"] = state?.dnsProxyStatus;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maxSessionTtlInSeconds"] = state?.maxSessionTtlInSeconds;
+            resourceInputs["maxSessionsAllowed"] = state?.maxSessionsAllowed;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["phoneBookEntry"] = state?.phoneBookEntry;
+            resourceInputs["privateEndpointIpAddress"] = state?.privateEndpointIpAddress;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["staticJumpHostIpAddresses"] = state?.staticJumpHostIpAddresses;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetSubnetId"] = state?.targetSubnetId;
+            resourceInputs["targetVcnId"] = state?.targetVcnId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BastionArgs | undefined;
-            if ((!args || args.bastionType === undefined) && !opts.urn) {
+            if (args?.bastionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bastionType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.targetSubnetId === undefined) && !opts.urn) {
+            if (args?.targetSubnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetSubnetId'");
             }
-            resourceInputs["bastionType"] = args ? args.bastionType : undefined;
-            resourceInputs["clientCidrBlockAllowLists"] = args ? args.clientCidrBlockAllowLists : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["dnsProxyStatus"] = args ? args.dnsProxyStatus : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["maxSessionTtlInSeconds"] = args ? args.maxSessionTtlInSeconds : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["phoneBookEntry"] = args ? args.phoneBookEntry : undefined;
-            resourceInputs["staticJumpHostIpAddresses"] = args ? args.staticJumpHostIpAddresses : undefined;
-            resourceInputs["targetSubnetId"] = args ? args.targetSubnetId : undefined;
+            resourceInputs["bastionType"] = args?.bastionType;
+            resourceInputs["clientCidrBlockAllowLists"] = args?.clientCidrBlockAllowLists;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["dnsProxyStatus"] = args?.dnsProxyStatus;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["maxSessionTtlInSeconds"] = args?.maxSessionTtlInSeconds;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["phoneBookEntry"] = args?.phoneBookEntry;
+            resourceInputs["staticJumpHostIpAddresses"] = args?.staticJumpHostIpAddresses;
+            resourceInputs["targetSubnetId"] = args?.targetSubnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maxSessionsAllowed"] = undefined /*out*/;
             resourceInputs["privateEndpointIpAddress"] = undefined /*out*/;

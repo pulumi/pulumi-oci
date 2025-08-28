@@ -48,67 +48,67 @@ export class HostInsight extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment Identifier of host
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      */
-    public readonly computeId!: pulumi.Output<string>;
+    declare public readonly computeId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    public readonly enterpriseManagerBridgeId!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerBridgeId: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityDisplayName: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerEntityIdentifier: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Name
      */
-    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityName: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Type
      */
-    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityType: pulumi.Output<string>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerIdentifier: pulumi.Output<string>;
     /**
      * (Updatable) Source of the host entity.
      */
-    public readonly entitySource!: pulumi.Output<string>;
+    declare public readonly entitySource: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    public readonly exadataInsightId!: pulumi.Output<string>;
+    declare public readonly exadataInsightId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the host. The name does not have to be unique.
      */
-    public /*out*/ readonly hostDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostDisplayName: pulumi.Output<string>;
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostName: pulumi.Output<string>;
     /**
      * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
-    public /*out*/ readonly hostType!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostType: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      *
@@ -116,40 +116,40 @@ export class HostInsight extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    declare public readonly managementAgentId: pulumi.Output<string>;
     /**
      * Platform name.
      */
-    public /*out*/ readonly platformName!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformName: pulumi.Output<string>;
     /**
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
-    public /*out*/ readonly platformType!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformType: pulumi.Output<string>;
     /**
      * Platform version.
      */
-    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
-    public /*out*/ readonly processorCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly platformVersion: pulumi.Output<string>;
+    declare public /*out*/ readonly processorCount: pulumi.Output<number>;
     /**
      * The current state of the host.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a HostInsight resource with the given unique name, arguments, and options.
@@ -164,51 +164,51 @@ export class HostInsight extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HostInsightState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeId"] = state ? state.computeId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["enterpriseManagerBridgeId"] = state ? state.enterpriseManagerBridgeId : undefined;
-            resourceInputs["enterpriseManagerEntityDisplayName"] = state ? state.enterpriseManagerEntityDisplayName : undefined;
-            resourceInputs["enterpriseManagerEntityIdentifier"] = state ? state.enterpriseManagerEntityIdentifier : undefined;
-            resourceInputs["enterpriseManagerEntityName"] = state ? state.enterpriseManagerEntityName : undefined;
-            resourceInputs["enterpriseManagerEntityType"] = state ? state.enterpriseManagerEntityType : undefined;
-            resourceInputs["enterpriseManagerIdentifier"] = state ? state.enterpriseManagerIdentifier : undefined;
-            resourceInputs["entitySource"] = state ? state.entitySource : undefined;
-            resourceInputs["exadataInsightId"] = state ? state.exadataInsightId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostDisplayName"] = state ? state.hostDisplayName : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["hostType"] = state ? state.hostType : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["platformName"] = state ? state.platformName : undefined;
-            resourceInputs["platformType"] = state ? state.platformType : undefined;
-            resourceInputs["platformVersion"] = state ? state.platformVersion : undefined;
-            resourceInputs["processorCount"] = state ? state.processorCount : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeId"] = state?.computeId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["enterpriseManagerBridgeId"] = state?.enterpriseManagerBridgeId;
+            resourceInputs["enterpriseManagerEntityDisplayName"] = state?.enterpriseManagerEntityDisplayName;
+            resourceInputs["enterpriseManagerEntityIdentifier"] = state?.enterpriseManagerEntityIdentifier;
+            resourceInputs["enterpriseManagerEntityName"] = state?.enterpriseManagerEntityName;
+            resourceInputs["enterpriseManagerEntityType"] = state?.enterpriseManagerEntityType;
+            resourceInputs["enterpriseManagerIdentifier"] = state?.enterpriseManagerIdentifier;
+            resourceInputs["entitySource"] = state?.entitySource;
+            resourceInputs["exadataInsightId"] = state?.exadataInsightId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostDisplayName"] = state?.hostDisplayName;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["hostType"] = state?.hostType;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["platformName"] = state?.platformName;
+            resourceInputs["platformType"] = state?.platformType;
+            resourceInputs["platformVersion"] = state?.platformVersion;
+            resourceInputs["processorCount"] = state?.processorCount;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as HostInsightArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.entitySource === undefined) && !opts.urn) {
+            if (args?.entitySource === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entitySource'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeId"] = args ? args.computeId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["enterpriseManagerBridgeId"] = args ? args.enterpriseManagerBridgeId : undefined;
-            resourceInputs["enterpriseManagerEntityIdentifier"] = args ? args.enterpriseManagerEntityIdentifier : undefined;
-            resourceInputs["enterpriseManagerIdentifier"] = args ? args.enterpriseManagerIdentifier : undefined;
-            resourceInputs["entitySource"] = args ? args.entitySource : undefined;
-            resourceInputs["exadataInsightId"] = args ? args.exadataInsightId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeId"] = args?.computeId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["enterpriseManagerBridgeId"] = args?.enterpriseManagerBridgeId;
+            resourceInputs["enterpriseManagerEntityIdentifier"] = args?.enterpriseManagerEntityIdentifier;
+            resourceInputs["enterpriseManagerIdentifier"] = args?.enterpriseManagerIdentifier;
+            resourceInputs["entitySource"] = args?.entitySource;
+            resourceInputs["exadataInsightId"] = args?.exadataInsightId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["status"] = args?.status;
             resourceInputs["enterpriseManagerEntityDisplayName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;

@@ -102,49 +102,49 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      */
-    public /*out*/ readonly actualSize!: pulumi.Output<number>;
+    declare public /*out*/ readonly actualSize: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      */
-    public readonly instanceConfigurationId!: pulumi.Output<string>;
+    declare public readonly instanceConfigurationId: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
      */
-    public readonly instanceDisplayNameFormatter!: pulumi.Output<string>;
+    declare public readonly instanceDisplayNameFormatter: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
      */
-    public readonly instanceHostnameFormatter!: pulumi.Output<string>;
+    declare public readonly instanceHostnameFormatter: pulumi.Output<string>;
     /**
      * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      */
-    public readonly loadBalancers!: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
+    declare public readonly loadBalancers: pulumi.Output<outputs.Core.InstancePoolLoadBalancer[]>;
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
      * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
      */
-    public readonly placementConfigurations!: pulumi.Output<outputs.Core.InstancePoolPlacementConfiguration[]>;
+    declare public readonly placementConfigurations: pulumi.Output<outputs.Core.InstancePoolPlacementConfiguration[]>;
     /**
      * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
      */
-    public readonly size!: pulumi.Output<number>;
+    declare public readonly size: pulumi.Output<number>;
     /**
      * (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
      *
@@ -152,11 +152,11 @@ export class InstancePool extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a InstancePool resource with the given unique name, arguments, and options.
@@ -171,44 +171,44 @@ export class InstancePool extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstancePoolState | undefined;
-            resourceInputs["actualSize"] = state ? state.actualSize : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["instanceConfigurationId"] = state ? state.instanceConfigurationId : undefined;
-            resourceInputs["instanceDisplayNameFormatter"] = state ? state.instanceDisplayNameFormatter : undefined;
-            resourceInputs["instanceHostnameFormatter"] = state ? state.instanceHostnameFormatter : undefined;
-            resourceInputs["loadBalancers"] = state ? state.loadBalancers : undefined;
-            resourceInputs["placementConfigurations"] = state ? state.placementConfigurations : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["actualSize"] = state?.actualSize;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
+            resourceInputs["instanceDisplayNameFormatter"] = state?.instanceDisplayNameFormatter;
+            resourceInputs["instanceHostnameFormatter"] = state?.instanceHostnameFormatter;
+            resourceInputs["loadBalancers"] = state?.loadBalancers;
+            resourceInputs["placementConfigurations"] = state?.placementConfigurations;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as InstancePoolArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.instanceConfigurationId === undefined) && !opts.urn) {
+            if (args?.instanceConfigurationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceConfigurationId'");
             }
-            if ((!args || args.placementConfigurations === undefined) && !opts.urn) {
+            if (args?.placementConfigurations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'placementConfigurations'");
             }
-            if ((!args || args.size === undefined) && !opts.urn) {
+            if (args?.size === undefined && !opts.urn) {
                 throw new Error("Missing required property 'size'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instanceConfigurationId"] = args ? args.instanceConfigurationId : undefined;
-            resourceInputs["instanceDisplayNameFormatter"] = args ? args.instanceDisplayNameFormatter : undefined;
-            resourceInputs["instanceHostnameFormatter"] = args ? args.instanceHostnameFormatter : undefined;
-            resourceInputs["loadBalancers"] = args ? args.loadBalancers : undefined;
-            resourceInputs["placementConfigurations"] = args ? args.placementConfigurations : undefined;
-            resourceInputs["size"] = args ? args.size : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instanceConfigurationId"] = args?.instanceConfigurationId;
+            resourceInputs["instanceDisplayNameFormatter"] = args?.instanceDisplayNameFormatter;
+            resourceInputs["instanceHostnameFormatter"] = args?.instanceHostnameFormatter;
+            resourceInputs["loadBalancers"] = args?.loadBalancers;
+            resourceInputs["placementConfigurations"] = args?.placementConfigurations;
+            resourceInputs["size"] = args?.size;
+            resourceInputs["state"] = args?.state;
             resourceInputs["actualSize"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

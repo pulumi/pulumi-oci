@@ -60,7 +60,7 @@ export class ProfileAttachManagedInstanceGroupManagement extends pulumi.CustomRe
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will be associated with.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      *
@@ -68,7 +68,7 @@ export class ProfileAttachManagedInstanceGroupManagement extends pulumi.CustomRe
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
 
     /**
      * Create a ProfileAttachManagedInstanceGroupManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ProfileAttachManagedInstanceGroupManagement extends pulumi.CustomRe
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileAttachManagedInstanceGroupManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["profileId"] = state?.profileId;
         } else {
             const args = argsOrState as ProfileAttachManagedInstanceGroupManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["profileId"] = args?.profileId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProfileAttachManagedInstanceGroupManagement.__pulumiType, name, resourceInputs, opts);

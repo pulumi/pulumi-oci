@@ -68,15 +68,15 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
     /**
      * The list of new user to be added to the list of user that can redeem rewards.
      */
-    public readonly items!: pulumi.Output<outputs.UsageProxy.SubscriptionRedeemableUserItem[]>;
+    declare public readonly items: pulumi.Output<outputs.UsageProxy.SubscriptionRedeemableUserItem[]>;
     /**
      * The subscription ID for which rewards information is requested for.
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * The OCID of the tenancy.
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    declare public readonly tenancyId: pulumi.Output<string>;
     /**
      * The user ID of the person to send a copy of an email.
      *
@@ -84,7 +84,7 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a SubscriptionRedeemableUser resource with the given unique name, arguments, and options.
@@ -99,25 +99,25 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubscriptionRedeemableUserState | undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as SubscriptionRedeemableUserArgs | undefined;
-            if ((!args || args.items === undefined) && !opts.urn) {
+            if (args?.items === undefined && !opts.urn) {
                 throw new Error("Missing required property 'items'");
             }
-            if ((!args || args.subscriptionId === undefined) && !opts.urn) {
+            if (args?.subscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscriptionId'");
             }
-            if ((!args || args.tenancyId === undefined) && !opts.urn) {
+            if (args?.tenancyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenancyId'");
             }
-            resourceInputs["items"] = args ? args.items : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
-            resourceInputs["tenancyId"] = args ? args.tenancyId : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["items"] = args?.items;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
+            resourceInputs["tenancyId"] = args?.tenancyId;
+            resourceInputs["userId"] = args?.userId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SubscriptionRedeemableUser.__pulumiType, name, resourceInputs, opts);

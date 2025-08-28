@@ -72,87 +72,87 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
     /**
      * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
-    public readonly allowedClientIps!: pulumi.Output<string[]>;
+    declare public readonly allowedClientIps: pulumi.Output<string[]>;
     /**
      * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
-    public readonly allowedClientOsUsernames!: pulumi.Output<string[]>;
+    declare public readonly allowedClientOsUsernames: pulumi.Output<string[]>;
     /**
      * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
-    public readonly allowedClientPrograms!: pulumi.Output<string[]>;
+    declare public readonly allowedClientPrograms: pulumi.Output<string[]>;
     /**
      * (Updatable) The OCID of the compartment containing the SQL collection.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The database user name.
      */
-    public readonly dbUserName!: pulumi.Output<string>;
+    declare public readonly dbUserName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the SQL Firewall policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
-    public readonly enforcementScope!: pulumi.Output<string>;
+    declare public readonly enforcementScope: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the current state of the SQL firewall policy in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the security policy corresponding to the SQL firewall policy.
      */
-    public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly securityPolicyId: pulumi.Output<string>;
     /**
      * The OCID of the SQL firewall policy resource.
      */
-    public readonly sqlFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly sqlFirewallPolicyId: pulumi.Output<string>;
     /**
      * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    public /*out*/ readonly sqlLevel!: pulumi.Output<string>;
+    declare public /*out*/ readonly sqlLevel: pulumi.Output<string>;
     /**
      * The current state of the SQL firewall policy.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique target identifier.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The time that the SQL firewall policy was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
      */
-    public readonly violationAction!: pulumi.Output<string>;
+    declare public readonly violationAction: pulumi.Output<string>;
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
      *
@@ -160,7 +160,7 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly violationAudit!: pulumi.Output<string>;
+    declare public readonly violationAudit: pulumi.Output<string>;
 
     /**
      * Create a SqlFirewallPolicyManagement resource with the given unique name, arguments, and options.
@@ -175,46 +175,46 @@ export class SqlFirewallPolicyManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SqlFirewallPolicyManagementState | undefined;
-            resourceInputs["allowedClientIps"] = state ? state.allowedClientIps : undefined;
-            resourceInputs["allowedClientOsUsernames"] = state ? state.allowedClientOsUsernames : undefined;
-            resourceInputs["allowedClientPrograms"] = state ? state.allowedClientPrograms : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbUserName"] = state ? state.dbUserName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enforcementScope"] = state ? state.enforcementScope : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["sqlFirewallPolicyId"] = state ? state.sqlFirewallPolicyId : undefined;
-            resourceInputs["sqlLevel"] = state ? state.sqlLevel : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["violationAction"] = state ? state.violationAction : undefined;
-            resourceInputs["violationAudit"] = state ? state.violationAudit : undefined;
+            resourceInputs["allowedClientIps"] = state?.allowedClientIps;
+            resourceInputs["allowedClientOsUsernames"] = state?.allowedClientOsUsernames;
+            resourceInputs["allowedClientPrograms"] = state?.allowedClientPrograms;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbUserName"] = state?.dbUserName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enforcementScope"] = state?.enforcementScope;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["sqlFirewallPolicyId"] = state?.sqlFirewallPolicyId;
+            resourceInputs["sqlLevel"] = state?.sqlLevel;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["violationAction"] = state?.violationAction;
+            resourceInputs["violationAudit"] = state?.violationAudit;
         } else {
             const args = argsOrState as SqlFirewallPolicyManagementArgs | undefined;
-            resourceInputs["allowedClientIps"] = args ? args.allowedClientIps : undefined;
-            resourceInputs["allowedClientOsUsernames"] = args ? args.allowedClientOsUsernames : undefined;
-            resourceInputs["allowedClientPrograms"] = args ? args.allowedClientPrograms : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbUserName"] = args ? args.dbUserName : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["enforcementScope"] = args ? args.enforcementScope : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["sqlFirewallPolicyId"] = args ? args.sqlFirewallPolicyId : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["violationAction"] = args ? args.violationAction : undefined;
-            resourceInputs["violationAudit"] = args ? args.violationAudit : undefined;
+            resourceInputs["allowedClientIps"] = args?.allowedClientIps;
+            resourceInputs["allowedClientOsUsernames"] = args?.allowedClientOsUsernames;
+            resourceInputs["allowedClientPrograms"] = args?.allowedClientPrograms;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbUserName"] = args?.dbUserName;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["enforcementScope"] = args?.enforcementScope;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["sqlFirewallPolicyId"] = args?.sqlFirewallPolicyId;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["violationAction"] = args?.violationAction;
+            resourceInputs["violationAudit"] = args?.violationAudit;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["securityPolicyId"] = undefined /*out*/;
             resourceInputs["sqlLevel"] = undefined /*out*/;

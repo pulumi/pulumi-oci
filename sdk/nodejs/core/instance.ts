@@ -98,53 +98,53 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
      */
-    public readonly agentConfig!: pulumi.Output<outputs.Core.InstanceAgentConfig>;
-    public readonly async!: pulumi.Output<boolean | undefined>;
+    declare public readonly agentConfig: pulumi.Output<outputs.Core.InstanceAgentConfig>;
+    declare public readonly async: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
-    public readonly availabilityConfig!: pulumi.Output<outputs.Core.InstanceAvailabilityConfig>;
+    declare public readonly availabilityConfig: pulumi.Output<outputs.Core.InstanceAvailabilityConfig>;
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      */
-    public /*out*/ readonly bootVolumeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly bootVolumeId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
      * The OCID of the cluster placement group of the instance.
      */
-    public readonly clusterPlacementGroupId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      */
-    public readonly computeClusterId!: pulumi.Output<string>;
+    declare public readonly computeClusterId: pulumi.Output<string>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    public readonly createVnicDetails!: pulumi.Output<outputs.Core.InstanceCreateVnicDetails>;
+    declare public readonly createVnicDetails: pulumi.Output<outputs.Core.InstanceCreateVnicDetails>;
     /**
      * (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      */
-    public readonly dedicatedVmHostId!: pulumi.Output<string>;
+    declare public readonly dedicatedVmHostId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly extendedMetadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly extendedMetadata: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      *
@@ -154,31 +154,31 @@ export class Instance extends pulumi.CustomResource {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    declare public readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      *
      * @deprecated The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    declare public readonly hostnameLabel: pulumi.Output<string>;
     /**
      * Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
      *
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
-    public readonly image!: pulumi.Output<string>;
+    declare public readonly image: pulumi.Output<string>;
     /**
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      */
-    public readonly instanceConfigurationId!: pulumi.Output<string>;
+    declare public readonly instanceConfigurationId: pulumi.Output<string>;
     /**
      * (Updatable) Optional mutable instance options
      */
-    public readonly instanceOptions!: pulumi.Output<outputs.Core.InstanceInstanceOptions>;
+    declare public readonly instanceOptions: pulumi.Output<outputs.Core.InstanceInstanceOptions>;
     /**
      * This is an advanced option.
      *
@@ -194,15 +194,15 @@ export class Instance extends pulumi.CustomResource {
      *
      * For more information about iPXE, see http://ipxe.org.
      */
-    public readonly ipxeScript!: pulumi.Output<string>;
+    declare public readonly ipxeScript: pulumi.Output<string>;
     /**
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      */
-    public /*out*/ readonly isCrossNumaNode!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCrossNumaNode: pulumi.Output<boolean>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      */
-    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean>;
+    declare public readonly isPvEncryptionInTransitEnabled: pulumi.Output<boolean>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -210,21 +210,21 @@ export class Instance extends pulumi.CustomResource {
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      */
-    public /*out*/ readonly launchMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly launchMode: pulumi.Output<string>;
     /**
      * (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    public readonly launchOptions!: pulumi.Output<outputs.Core.InstanceLaunchOptions>;
+    declare public readonly launchOptions: pulumi.Output<outputs.Core.InstanceLaunchOptions>;
     /**
      * Volume attachments to create as part of the launch instance operation.
      *
      * **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `oci.Core.VolumeAttachment`. To update volume details, user should use `oci.Core.Volume`
      */
-    public readonly launchVolumeAttachments!: pulumi.Output<outputs.Core.InstanceLaunchVolumeAttachment[]>;
+    declare public readonly launchVolumeAttachments: pulumi.Output<outputs.Core.InstanceLaunchVolumeAttachment[]>;
     /**
      * (Updatable) List of licensing configurations associated with target launch values.
      */
-    public readonly licensingConfigs!: pulumi.Output<outputs.Core.InstanceLicensingConfigs>;
+    declare public readonly licensingConfigs: pulumi.Output<outputs.Core.InstanceLicensingConfigs>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
@@ -260,11 +260,11 @@ export class Instance extends pulumi.CustomResource {
      *
      * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
      */
-    public readonly placementConstraintDetails!: pulumi.Output<outputs.Core.InstancePlacementConstraintDetails>;
+    declare public readonly placementConstraintDetails: pulumi.Output<outputs.Core.InstancePlacementConstraintDetails>;
     /**
      * (Updatable) The platform configuration requested for the instance.
      *
@@ -277,42 +277,42 @@ export class Instance extends pulumi.CustomResource {
      *
      * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      */
-    public readonly platformConfig!: pulumi.Output<outputs.Core.InstancePlatformConfig>;
+    declare public readonly platformConfig: pulumi.Output<outputs.Core.InstancePlatformConfig>;
     /**
      * Configuration options for preemptible instances.
      */
-    public readonly preemptibleInstanceConfig!: pulumi.Output<outputs.Core.InstancePreemptibleInstanceConfig>;
+    declare public readonly preemptibleInstanceConfig: pulumi.Output<outputs.Core.InstancePreemptibleInstanceConfig>;
     /**
      * (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
-    public readonly preserveBootVolume!: pulumi.Output<boolean | undefined>;
-    public readonly preserveDataVolumesCreatedAtLaunch!: pulumi.Output<boolean | undefined>;
+    declare public readonly preserveBootVolume: pulumi.Output<boolean | undefined>;
+    declare public readonly preserveDataVolumesCreatedAtLaunch: pulumi.Output<boolean | undefined>;
     /**
      * The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      */
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
      * The public IP address of instance VNIC (if enabled).
      */
-    public /*out*/ readonly publicIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicIp: pulumi.Output<string>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    public /*out*/ readonly region!: pulumi.Output<string>;
+    declare public /*out*/ readonly region: pulumi.Output<string>;
     /**
      * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The lifecycle state of the `securityAttributes`
      */
-    public /*out*/ readonly securityAttributesState!: pulumi.Output<string>;
+    declare public /*out*/ readonly securityAttributesState: pulumi.Output<string>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * (Updatable) The shape configuration requested for the instance.
      *
@@ -320,37 +320,37 @@ export class Instance extends pulumi.CustomResource {
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      */
-    public readonly shapeConfig!: pulumi.Output<outputs.Core.InstanceShapeConfig>;
+    declare public readonly shapeConfig: pulumi.Output<outputs.Core.InstanceShapeConfig>;
     /**
      * (Updatable)
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.InstanceSourceDetails>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Core.InstanceSourceDetails>;
     /**
      * (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
      *
      * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeMaintenanceRebootDue!: pulumi.Output<string>;
-    public readonly updateOperationConstraint!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly timeMaintenanceRebootDue: pulumi.Output<string>;
+    declare public readonly updateOperationConstraint: pulumi.Output<string | undefined>;
 
     /**
      * Create a Instance resource with the given unique name, arguments, and options.
@@ -365,98 +365,98 @@ export class Instance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstanceState | undefined;
-            resourceInputs["agentConfig"] = state ? state.agentConfig : undefined;
-            resourceInputs["async"] = state ? state.async : undefined;
-            resourceInputs["availabilityConfig"] = state ? state.availabilityConfig : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["bootVolumeId"] = state ? state.bootVolumeId : undefined;
-            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
-            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeClusterId"] = state ? state.computeClusterId : undefined;
-            resourceInputs["createVnicDetails"] = state ? state.createVnicDetails : undefined;
-            resourceInputs["dedicatedVmHostId"] = state ? state.dedicatedVmHostId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["extendedMetadata"] = state ? state.extendedMetadata : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
-            resourceInputs["image"] = state ? state.image : undefined;
-            resourceInputs["instanceConfigurationId"] = state ? state.instanceConfigurationId : undefined;
-            resourceInputs["instanceOptions"] = state ? state.instanceOptions : undefined;
-            resourceInputs["ipxeScript"] = state ? state.ipxeScript : undefined;
-            resourceInputs["isCrossNumaNode"] = state ? state.isCrossNumaNode : undefined;
-            resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
-            resourceInputs["launchMode"] = state ? state.launchMode : undefined;
-            resourceInputs["launchOptions"] = state ? state.launchOptions : undefined;
-            resourceInputs["launchVolumeAttachments"] = state ? state.launchVolumeAttachments : undefined;
-            resourceInputs["licensingConfigs"] = state ? state.licensingConfigs : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["placementConstraintDetails"] = state ? state.placementConstraintDetails : undefined;
-            resourceInputs["platformConfig"] = state ? state.platformConfig : undefined;
-            resourceInputs["preemptibleInstanceConfig"] = state ? state.preemptibleInstanceConfig : undefined;
-            resourceInputs["preserveBootVolume"] = state ? state.preserveBootVolume : undefined;
-            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = state ? state.preserveDataVolumesCreatedAtLaunch : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["publicIp"] = state ? state.publicIp : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["securityAttributesState"] = state ? state.securityAttributesState : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["shapeConfig"] = state ? state.shapeConfig : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeMaintenanceRebootDue"] = state ? state.timeMaintenanceRebootDue : undefined;
-            resourceInputs["updateOperationConstraint"] = state ? state.updateOperationConstraint : undefined;
+            resourceInputs["agentConfig"] = state?.agentConfig;
+            resourceInputs["async"] = state?.async;
+            resourceInputs["availabilityConfig"] = state?.availabilityConfig;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["bootVolumeId"] = state?.bootVolumeId;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeClusterId"] = state?.computeClusterId;
+            resourceInputs["createVnicDetails"] = state?.createVnicDetails;
+            resourceInputs["dedicatedVmHostId"] = state?.dedicatedVmHostId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["extendedMetadata"] = state?.extendedMetadata;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostnameLabel"] = state?.hostnameLabel;
+            resourceInputs["image"] = state?.image;
+            resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
+            resourceInputs["instanceOptions"] = state?.instanceOptions;
+            resourceInputs["ipxeScript"] = state?.ipxeScript;
+            resourceInputs["isCrossNumaNode"] = state?.isCrossNumaNode;
+            resourceInputs["isPvEncryptionInTransitEnabled"] = state?.isPvEncryptionInTransitEnabled;
+            resourceInputs["launchMode"] = state?.launchMode;
+            resourceInputs["launchOptions"] = state?.launchOptions;
+            resourceInputs["launchVolumeAttachments"] = state?.launchVolumeAttachments;
+            resourceInputs["licensingConfigs"] = state?.licensingConfigs;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["placementConstraintDetails"] = state?.placementConstraintDetails;
+            resourceInputs["platformConfig"] = state?.platformConfig;
+            resourceInputs["preemptibleInstanceConfig"] = state?.preemptibleInstanceConfig;
+            resourceInputs["preserveBootVolume"] = state?.preserveBootVolume;
+            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = state?.preserveDataVolumesCreatedAtLaunch;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["publicIp"] = state?.publicIp;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["securityAttributesState"] = state?.securityAttributesState;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["shapeConfig"] = state?.shapeConfig;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeMaintenanceRebootDue"] = state?.timeMaintenanceRebootDue;
+            resourceInputs["updateOperationConstraint"] = state?.updateOperationConstraint;
         } else {
             const args = argsOrState as InstanceArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["agentConfig"] = args ? args.agentConfig : undefined;
-            resourceInputs["async"] = args ? args.async : undefined;
-            resourceInputs["availabilityConfig"] = args ? args.availabilityConfig : undefined;
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
-            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeClusterId"] = args ? args.computeClusterId : undefined;
-            resourceInputs["createVnicDetails"] = args ? args.createVnicDetails : undefined;
-            resourceInputs["dedicatedVmHostId"] = args ? args.dedicatedVmHostId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["extendedMetadata"] = args ? args.extendedMetadata : undefined;
-            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
-            resourceInputs["image"] = args ? args.image : undefined;
-            resourceInputs["instanceConfigurationId"] = args ? args.instanceConfigurationId : undefined;
-            resourceInputs["instanceOptions"] = args ? args.instanceOptions : undefined;
-            resourceInputs["ipxeScript"] = args ? args.ipxeScript : undefined;
-            resourceInputs["isPvEncryptionInTransitEnabled"] = args ? args.isPvEncryptionInTransitEnabled : undefined;
-            resourceInputs["launchOptions"] = args ? args.launchOptions : undefined;
-            resourceInputs["launchVolumeAttachments"] = args ? args.launchVolumeAttachments : undefined;
-            resourceInputs["licensingConfigs"] = args ? args.licensingConfigs : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["placementConstraintDetails"] = args ? args.placementConstraintDetails : undefined;
-            resourceInputs["platformConfig"] = args ? args.platformConfig : undefined;
-            resourceInputs["preemptibleInstanceConfig"] = args ? args.preemptibleInstanceConfig : undefined;
-            resourceInputs["preserveBootVolume"] = args ? args.preserveBootVolume : undefined;
-            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = args ? args.preserveDataVolumesCreatedAtLaunch : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["shapeConfig"] = args ? args.shapeConfig : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["updateOperationConstraint"] = args ? args.updateOperationConstraint : undefined;
+            resourceInputs["agentConfig"] = args?.agentConfig;
+            resourceInputs["async"] = args?.async;
+            resourceInputs["availabilityConfig"] = args?.availabilityConfig;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["capacityReservationId"] = args?.capacityReservationId;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeClusterId"] = args?.computeClusterId;
+            resourceInputs["createVnicDetails"] = args?.createVnicDetails;
+            resourceInputs["dedicatedVmHostId"] = args?.dedicatedVmHostId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["extendedMetadata"] = args?.extendedMetadata;
+            resourceInputs["faultDomain"] = args?.faultDomain;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostnameLabel"] = args?.hostnameLabel;
+            resourceInputs["image"] = args?.image;
+            resourceInputs["instanceConfigurationId"] = args?.instanceConfigurationId;
+            resourceInputs["instanceOptions"] = args?.instanceOptions;
+            resourceInputs["ipxeScript"] = args?.ipxeScript;
+            resourceInputs["isPvEncryptionInTransitEnabled"] = args?.isPvEncryptionInTransitEnabled;
+            resourceInputs["launchOptions"] = args?.launchOptions;
+            resourceInputs["launchVolumeAttachments"] = args?.launchVolumeAttachments;
+            resourceInputs["licensingConfigs"] = args?.licensingConfigs;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["placementConstraintDetails"] = args?.placementConstraintDetails;
+            resourceInputs["platformConfig"] = args?.platformConfig;
+            resourceInputs["preemptibleInstanceConfig"] = args?.preemptibleInstanceConfig;
+            resourceInputs["preserveBootVolume"] = args?.preserveBootVolume;
+            resourceInputs["preserveDataVolumesCreatedAtLaunch"] = args?.preserveDataVolumesCreatedAtLaunch;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["shapeConfig"] = args?.shapeConfig;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["updateOperationConstraint"] = args?.updateOperationConstraint;
             resourceInputs["bootVolumeId"] = undefined /*out*/;
             resourceInputs["isCrossNumaNode"] = undefined /*out*/;
             resourceInputs["launchMode"] = undefined /*out*/;

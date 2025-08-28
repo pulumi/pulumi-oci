@@ -70,39 +70,39 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
     /**
      * (Updatable) Azure Storage Account Name.
      */
-    public readonly azureStorageAccountName!: pulumi.Output<string>;
+    declare public readonly azureStorageAccountName: pulumi.Output<string>;
     /**
      * (Updatable) Azure Storage Container Name.
      */
-    public readonly azureStorageContainerName!: pulumi.Output<string>;
+    declare public readonly azureStorageContainerName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Display name of Oracle DB Azure Blob Container.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
      */
-    public /*out*/ readonly lastModification!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastModification: pulumi.Output<string>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * (Updatable) Private endpoint DNS Alias.
      */
-    public readonly privateEndpointDnsAlias!: pulumi.Output<string>;
+    declare public readonly privateEndpointDnsAlias: pulumi.Output<string>;
     /**
      * (Updatable) Private endpoint IP.
      *
@@ -110,23 +110,23 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly privateEndpointIpAddress!: pulumi.Output<string>;
+    declare public readonly privateEndpointIpAddress: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DbmulticloudOracleDbAzureBlobContainer resource with the given unique name, arguments, and options.
@@ -141,42 +141,42 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbmulticloudOracleDbAzureBlobContainerState | undefined;
-            resourceInputs["azureStorageAccountName"] = state ? state.azureStorageAccountName : undefined;
-            resourceInputs["azureStorageContainerName"] = state ? state.azureStorageContainerName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastModification"] = state ? state.lastModification : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["privateEndpointDnsAlias"] = state ? state.privateEndpointDnsAlias : undefined;
-            resourceInputs["privateEndpointIpAddress"] = state ? state.privateEndpointIpAddress : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["azureStorageAccountName"] = state?.azureStorageAccountName;
+            resourceInputs["azureStorageContainerName"] = state?.azureStorageContainerName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastModification"] = state?.lastModification;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["privateEndpointDnsAlias"] = state?.privateEndpointDnsAlias;
+            resourceInputs["privateEndpointIpAddress"] = state?.privateEndpointIpAddress;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DbmulticloudOracleDbAzureBlobContainerArgs | undefined;
-            if ((!args || args.azureStorageAccountName === undefined) && !opts.urn) {
+            if (args?.azureStorageAccountName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'azureStorageAccountName'");
             }
-            if ((!args || args.azureStorageContainerName === undefined) && !opts.urn) {
+            if (args?.azureStorageContainerName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'azureStorageContainerName'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["azureStorageAccountName"] = args ? args.azureStorageAccountName : undefined;
-            resourceInputs["azureStorageContainerName"] = args ? args.azureStorageContainerName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["privateEndpointDnsAlias"] = args ? args.privateEndpointDnsAlias : undefined;
-            resourceInputs["privateEndpointIpAddress"] = args ? args.privateEndpointIpAddress : undefined;
+            resourceInputs["azureStorageAccountName"] = args?.azureStorageAccountName;
+            resourceInputs["azureStorageContainerName"] = args?.azureStorageContainerName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["privateEndpointDnsAlias"] = args?.privateEndpointDnsAlias;
+            resourceInputs["privateEndpointIpAddress"] = args?.privateEndpointIpAddress;
             resourceInputs["lastModification"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

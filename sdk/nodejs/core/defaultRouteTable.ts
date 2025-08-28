@@ -34,14 +34,14 @@ export class DefaultRouteTable extends pulumi.CustomResource {
         return obj['__pulumiType'] === DefaultRouteTable.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly manageDefaultResourceId!: pulumi.Output<string>;
-    public readonly routeRules!: pulumi.Output<outputs.Core.DefaultRouteTableRouteRule[] | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly manageDefaultResourceId: pulumi.Output<string>;
+    declare public readonly routeRules: pulumi.Output<outputs.Core.DefaultRouteTableRouteRule[] | undefined>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a DefaultRouteTable resource with the given unique name, arguments, and options.
@@ -56,25 +56,25 @@ export class DefaultRouteTable extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DefaultRouteTableState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["manageDefaultResourceId"] = state ? state.manageDefaultResourceId : undefined;
-            resourceInputs["routeRules"] = state ? state.routeRules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["manageDefaultResourceId"] = state?.manageDefaultResourceId;
+            resourceInputs["routeRules"] = state?.routeRules;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as DefaultRouteTableArgs | undefined;
-            if ((!args || args.manageDefaultResourceId === undefined) && !opts.urn) {
+            if (args?.manageDefaultResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'manageDefaultResourceId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["manageDefaultResourceId"] = args ? args.manageDefaultResourceId : undefined;
-            resourceInputs["routeRules"] = args ? args.routeRules : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["manageDefaultResourceId"] = args?.manageDefaultResourceId;
+            resourceInputs["routeRules"] = args?.routeRules;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

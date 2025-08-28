@@ -66,15 +66,15 @@ export class LifecycleStageRebootManagement extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    declare public readonly lifecycleStageId: pulumi.Output<string>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
      */
-    public readonly rebootTimeoutInMins!: pulumi.Output<number>;
+    declare public readonly rebootTimeoutInMins: pulumi.Output<number>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails>;
 
     /**
      * Create a LifecycleStageRebootManagement resource with the given unique name, arguments, and options.
@@ -89,17 +89,17 @@ export class LifecycleStageRebootManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LifecycleStageRebootManagementState | undefined;
-            resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
-            resourceInputs["rebootTimeoutInMins"] = state ? state.rebootTimeoutInMins : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["lifecycleStageId"] = state?.lifecycleStageId;
+            resourceInputs["rebootTimeoutInMins"] = state?.rebootTimeoutInMins;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as LifecycleStageRebootManagementArgs | undefined;
-            if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
+            if (args?.lifecycleStageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
-            resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
-            resourceInputs["rebootTimeoutInMins"] = args ? args.rebootTimeoutInMins : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["lifecycleStageId"] = args?.lifecycleStageId;
+            resourceInputs["rebootTimeoutInMins"] = args?.rebootTimeoutInMins;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LifecycleStageRebootManagement.__pulumiType, name, resourceInputs, opts);

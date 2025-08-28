@@ -40,19 +40,19 @@ export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource 
     /**
      * The character encoding of the uploaded file.
      */
-    public readonly charEncoding!: pulumi.Output<string>;
+    declare public readonly charEncoding: pulumi.Output<string>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      */
-    public readonly expect!: pulumi.Output<string>;
+    declare public readonly expect: pulumi.Output<string>;
     /**
      * is force
      */
-    public readonly isForce!: pulumi.Output<boolean>;
+    declare public readonly isForce: pulumi.Output<boolean>;
     /**
      * The name of the lookup to operate on.
      */
-    public readonly lookupName!: pulumi.Output<string>;
+    declare public readonly lookupName: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -60,8 +60,8 @@ export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
-    public readonly updateLookupFile!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
+    declare public readonly updateLookupFile: pulumi.Output<string>;
 
     /**
      * Create a NamespaceLookupsUpdateDataManagement resource with the given unique name, arguments, and options.
@@ -76,29 +76,29 @@ export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceLookupsUpdateDataManagementState | undefined;
-            resourceInputs["charEncoding"] = state ? state.charEncoding : undefined;
-            resourceInputs["expect"] = state ? state.expect : undefined;
-            resourceInputs["isForce"] = state ? state.isForce : undefined;
-            resourceInputs["lookupName"] = state ? state.lookupName : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["updateLookupFile"] = state ? state.updateLookupFile : undefined;
+            resourceInputs["charEncoding"] = state?.charEncoding;
+            resourceInputs["expect"] = state?.expect;
+            resourceInputs["isForce"] = state?.isForce;
+            resourceInputs["lookupName"] = state?.lookupName;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["updateLookupFile"] = state?.updateLookupFile;
         } else {
             const args = argsOrState as NamespaceLookupsUpdateDataManagementArgs | undefined;
-            if ((!args || args.lookupName === undefined) && !opts.urn) {
+            if (args?.lookupName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lookupName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.updateLookupFile === undefined) && !opts.urn) {
+            if (args?.updateLookupFile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'updateLookupFile'");
             }
-            resourceInputs["charEncoding"] = args ? args.charEncoding : undefined;
-            resourceInputs["expect"] = args ? args.expect : undefined;
-            resourceInputs["isForce"] = args ? args.isForce : undefined;
-            resourceInputs["lookupName"] = args ? args.lookupName : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["updateLookupFile"] = args ? args.updateLookupFile : undefined;
+            resourceInputs["charEncoding"] = args?.charEncoding;
+            resourceInputs["expect"] = args?.expect;
+            resourceInputs["isForce"] = args?.isForce;
+            resourceInputs["lookupName"] = args?.lookupName;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["updateLookupFile"] = args?.updateLookupFile;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NamespaceLookupsUpdateDataManagement.__pulumiType, name, resourceInputs, opts);

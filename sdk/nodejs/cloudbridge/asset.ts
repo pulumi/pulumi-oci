@@ -162,71 +162,71 @@ export class Asset extends pulumi.CustomResource {
     /**
      * (Updatable) List of asset source OCID.
      */
-    public readonly assetSourceIds!: pulumi.Output<string[]>;
+    declare public readonly assetSourceIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The type of asset.
      */
-    public readonly assetType!: pulumi.Output<string>;
+    declare public readonly assetType: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that the asset belongs to.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Compute related properties.
      */
-    public readonly compute!: pulumi.Output<outputs.CloudBridge.AssetCompute>;
+    declare public readonly compute: pulumi.Output<outputs.CloudBridge.AssetCompute>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Asset display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The key of the asset from the external environment.
      */
-    public readonly externalAssetKey!: pulumi.Output<string>;
+    declare public readonly externalAssetKey: pulumi.Output<string>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Inventory ID to which an asset belongs.
      */
-    public readonly inventoryId!: pulumi.Output<string>;
+    declare public readonly inventoryId: pulumi.Output<string>;
     /**
      * The source key to which the asset belongs.
      */
-    public readonly sourceKey!: pulumi.Output<string>;
+    declare public readonly sourceKey: pulumi.Output<string>;
     /**
      * The current state of the asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Virtual machine related properties.
      */
-    public readonly vm!: pulumi.Output<outputs.CloudBridge.AssetVm>;
+    declare public readonly vm: pulumi.Output<outputs.CloudBridge.AssetVm>;
     /**
      * (Updatable) VMware vCenter related properties.
      */
-    public readonly vmwareVcenter!: pulumi.Output<outputs.CloudBridge.AssetVmwareVcenter>;
+    declare public readonly vmwareVcenter: pulumi.Output<outputs.CloudBridge.AssetVmwareVcenter>;
     /**
      * (Updatable) VMware virtual machine related properties.
      */
-    public readonly vmwareVm!: pulumi.Output<outputs.CloudBridge.AssetVmwareVm>;
+    declare public readonly vmwareVm: pulumi.Output<outputs.CloudBridge.AssetVmwareVm>;
 
     /**
      * Create a Asset resource with the given unique name, arguments, and options.
@@ -241,53 +241,53 @@ export class Asset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AssetState | undefined;
-            resourceInputs["assetSourceIds"] = state ? state.assetSourceIds : undefined;
-            resourceInputs["assetType"] = state ? state.assetType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compute"] = state ? state.compute : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalAssetKey"] = state ? state.externalAssetKey : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inventoryId"] = state ? state.inventoryId : undefined;
-            resourceInputs["sourceKey"] = state ? state.sourceKey : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vm"] = state ? state.vm : undefined;
-            resourceInputs["vmwareVcenter"] = state ? state.vmwareVcenter : undefined;
-            resourceInputs["vmwareVm"] = state ? state.vmwareVm : undefined;
+            resourceInputs["assetSourceIds"] = state?.assetSourceIds;
+            resourceInputs["assetType"] = state?.assetType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compute"] = state?.compute;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalAssetKey"] = state?.externalAssetKey;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inventoryId"] = state?.inventoryId;
+            resourceInputs["sourceKey"] = state?.sourceKey;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vm"] = state?.vm;
+            resourceInputs["vmwareVcenter"] = state?.vmwareVcenter;
+            resourceInputs["vmwareVm"] = state?.vmwareVm;
         } else {
             const args = argsOrState as AssetArgs | undefined;
-            if ((!args || args.assetType === undefined) && !opts.urn) {
+            if (args?.assetType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'assetType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.externalAssetKey === undefined) && !opts.urn) {
+            if (args?.externalAssetKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalAssetKey'");
             }
-            if ((!args || args.inventoryId === undefined) && !opts.urn) {
+            if (args?.inventoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'inventoryId'");
             }
-            if ((!args || args.sourceKey === undefined) && !opts.urn) {
+            if (args?.sourceKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceKey'");
             }
-            resourceInputs["assetSourceIds"] = args ? args.assetSourceIds : undefined;
-            resourceInputs["assetType"] = args ? args.assetType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["compute"] = args ? args.compute : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalAssetKey"] = args ? args.externalAssetKey : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inventoryId"] = args ? args.inventoryId : undefined;
-            resourceInputs["sourceKey"] = args ? args.sourceKey : undefined;
-            resourceInputs["vm"] = args ? args.vm : undefined;
-            resourceInputs["vmwareVcenter"] = args ? args.vmwareVcenter : undefined;
-            resourceInputs["vmwareVm"] = args ? args.vmwareVm : undefined;
+            resourceInputs["assetSourceIds"] = args?.assetSourceIds;
+            resourceInputs["assetType"] = args?.assetType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["compute"] = args?.compute;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalAssetKey"] = args?.externalAssetKey;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inventoryId"] = args?.inventoryId;
+            resourceInputs["sourceKey"] = args?.sourceKey;
+            resourceInputs["vm"] = args?.vm;
+            resourceInputs["vmwareVcenter"] = args?.vmwareVcenter;
+            resourceInputs["vmwareVm"] = args?.vmwareVm;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

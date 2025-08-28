@@ -52,166 +52,166 @@ export class Database extends pulumi.CustomResource {
     /**
      * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
      */
-    public readonly actionTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly actionTrigger: pulumi.Output<number | undefined>;
     /**
      * The character set for the database.
      */
-    public /*out*/ readonly characterSet!: pulumi.Output<string>;
+    declare public /*out*/ readonly characterSet: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The Connection strings used to connect to the Oracle Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.DatabaseConnectionString[]>;
+    declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.Database.DatabaseConnectionString[]>;
     /**
      * Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly dataGuardAction!: pulumi.Output<string | undefined>;
+    declare public readonly dataGuardAction: pulumi.Output<string | undefined>;
     /**
      * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
      */
-    public /*out*/ readonly dataGuardGroups!: pulumi.Output<outputs.Database.DatabaseDataGuardGroup[]>;
+    declare public /*out*/ readonly dataGuardGroups: pulumi.Output<outputs.Database.DatabaseDataGuardGroup[]>;
     /**
      * (Updatable) Details for creating a database.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly database!: pulumi.Output<outputs.Database.DatabaseDatabase>;
+    declare public readonly database: pulumi.Output<outputs.Database.DatabaseDatabase>;
     /**
      * The configuration of the Database Management service.
      */
-    public /*out*/ readonly databaseManagementConfigs!: pulumi.Output<outputs.Database.DatabaseDatabaseManagementConfig[]>;
+    declare public /*out*/ readonly databaseManagementConfigs: pulumi.Output<outputs.Database.DatabaseDatabaseManagementConfig[]>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public /*out*/ readonly databaseSoftwareImageId!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseSoftwareImageId: pulumi.Output<string>;
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    public /*out*/ readonly dbBackupConfigs!: pulumi.Output<outputs.Database.DatabaseDbBackupConfig[]>;
+    declare public /*out*/ readonly dbBackupConfigs: pulumi.Output<outputs.Database.DatabaseDbBackupConfig[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    public readonly dbHomeId!: pulumi.Output<string>;
+    declare public readonly dbHomeId: pulumi.Output<string>;
     /**
      * The database name.
      */
-    public /*out*/ readonly dbName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbSystemId: pulumi.Output<string>;
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      */
-    public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbUniqueName: pulumi.Output<string>;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      */
-    public /*out*/ readonly dbWorkload!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbWorkload: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * True if the database is a container database.
      */
-    public /*out*/ readonly isCdb!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCdb: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    public readonly keyStoreId!: pulumi.Output<string>;
+    declare public readonly keyStoreId: pulumi.Output<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreWalletName: pulumi.Output<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
      */
-    public readonly kmsKeyMigration!: pulumi.Output<boolean | undefined>;
+    declare public readonly kmsKeyMigration: pulumi.Output<boolean | undefined>;
     /**
      * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
      */
-    public readonly kmsKeyRotation!: pulumi.Output<number | undefined>;
+    declare public readonly kmsKeyRotation: pulumi.Output<number | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyVersionId: pulumi.Output<string | undefined>;
     /**
      * The duration when the latest database backup created.
      */
-    public /*out*/ readonly lastBackupDurationInSeconds!: pulumi.Output<number>;
+    declare public /*out*/ readonly lastBackupDurationInSeconds: pulumi.Output<number>;
     /**
      * The date and time when the latest database backup was created.
      */
-    public /*out*/ readonly lastBackupTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastBackupTimestamp: pulumi.Output<string>;
     /**
      * The date and time when the latest database backup failed.
      */
-    public /*out*/ readonly lastFailedBackupTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastFailedBackupTimestamp: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The national character set for the database.
      */
-    public /*out*/ readonly ncharacterSet!: pulumi.Output<string>;
+    declare public /*out*/ readonly ncharacterSet: pulumi.Output<string>;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */
-    public /*out*/ readonly pdbName!: pulumi.Output<string>;
+    declare public /*out*/ readonly pdbName: pulumi.Output<string>;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
-    public /*out*/ readonly sidPrefix!: pulumi.Output<string>;
+    declare public /*out*/ readonly sidPrefix: pulumi.Output<string>;
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      */
-    public /*out*/ readonly sourceDatabasePointInTimeRecoveryTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceDatabasePointInTimeRecoveryTimestamp: pulumi.Output<string>;
     /**
      * The current state of the database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    public /*out*/ readonly vmClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vmClusterId: pulumi.Output<string>;
 
     /**
      * Create a Database resource with the given unique name, arguments, and options.
@@ -226,68 +226,68 @@ export class Database extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseState | undefined;
-            resourceInputs["actionTrigger"] = state ? state.actionTrigger : undefined;
-            resourceInputs["characterSet"] = state ? state.characterSet : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
-            resourceInputs["dataGuardAction"] = state ? state.dataGuardAction : undefined;
-            resourceInputs["dataGuardGroups"] = state ? state.dataGuardGroups : undefined;
-            resourceInputs["database"] = state ? state.database : undefined;
-            resourceInputs["databaseManagementConfigs"] = state ? state.databaseManagementConfigs : undefined;
-            resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
-            resourceInputs["dbBackupConfigs"] = state ? state.dbBackupConfigs : undefined;
-            resourceInputs["dbHomeId"] = state ? state.dbHomeId : undefined;
-            resourceInputs["dbName"] = state ? state.dbName : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["dbWorkload"] = state ? state.dbWorkload : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCdb"] = state ? state.isCdb : undefined;
-            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
-            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyMigration"] = state ? state.kmsKeyMigration : undefined;
-            resourceInputs["kmsKeyRotation"] = state ? state.kmsKeyRotation : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["lastBackupDurationInSeconds"] = state ? state.lastBackupDurationInSeconds : undefined;
-            resourceInputs["lastBackupTimestamp"] = state ? state.lastBackupTimestamp : undefined;
-            resourceInputs["lastFailedBackupTimestamp"] = state ? state.lastFailedBackupTimestamp : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
-            resourceInputs["pdbName"] = state ? state.pdbName : undefined;
-            resourceInputs["sidPrefix"] = state ? state.sidPrefix : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceDatabasePointInTimeRecoveryTimestamp"] = state ? state.sourceDatabasePointInTimeRecoveryTimestamp : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
+            resourceInputs["actionTrigger"] = state?.actionTrigger;
+            resourceInputs["characterSet"] = state?.characterSet;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionStrings"] = state?.connectionStrings;
+            resourceInputs["dataGuardAction"] = state?.dataGuardAction;
+            resourceInputs["dataGuardGroups"] = state?.dataGuardGroups;
+            resourceInputs["database"] = state?.database;
+            resourceInputs["databaseManagementConfigs"] = state?.databaseManagementConfigs;
+            resourceInputs["databaseSoftwareImageId"] = state?.databaseSoftwareImageId;
+            resourceInputs["dbBackupConfigs"] = state?.dbBackupConfigs;
+            resourceInputs["dbHomeId"] = state?.dbHomeId;
+            resourceInputs["dbName"] = state?.dbName;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["dbUniqueName"] = state?.dbUniqueName;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["dbWorkload"] = state?.dbWorkload;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCdb"] = state?.isCdb;
+            resourceInputs["keyStoreId"] = state?.keyStoreId;
+            resourceInputs["keyStoreWalletName"] = state?.keyStoreWalletName;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyMigration"] = state?.kmsKeyMigration;
+            resourceInputs["kmsKeyRotation"] = state?.kmsKeyRotation;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["lastBackupDurationInSeconds"] = state?.lastBackupDurationInSeconds;
+            resourceInputs["lastBackupTimestamp"] = state?.lastBackupTimestamp;
+            resourceInputs["lastFailedBackupTimestamp"] = state?.lastFailedBackupTimestamp;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["ncharacterSet"] = state?.ncharacterSet;
+            resourceInputs["pdbName"] = state?.pdbName;
+            resourceInputs["sidPrefix"] = state?.sidPrefix;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceDatabasePointInTimeRecoveryTimestamp"] = state?.sourceDatabasePointInTimeRecoveryTimestamp;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["vmClusterId"] = state?.vmClusterId;
         } else {
             const args = argsOrState as DatabaseArgs | undefined;
-            if ((!args || args.database === undefined) && !opts.urn) {
+            if (args?.database === undefined && !opts.urn) {
                 throw new Error("Missing required property 'database'");
             }
-            if ((!args || args.dbHomeId === undefined) && !opts.urn) {
+            if (args?.dbHomeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbHomeId'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            resourceInputs["actionTrigger"] = args ? args.actionTrigger : undefined;
-            resourceInputs["dataGuardAction"] = args ? args.dataGuardAction : undefined;
-            resourceInputs["database"] = args ? args.database : undefined;
-            resourceInputs["dbHomeId"] = args ? args.dbHomeId : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["keyStoreId"] = args ? args.keyStoreId : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["kmsKeyMigration"] = args ? args.kmsKeyMigration : undefined;
-            resourceInputs["kmsKeyRotation"] = args ? args.kmsKeyRotation : undefined;
-            resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
+            resourceInputs["actionTrigger"] = args?.actionTrigger;
+            resourceInputs["dataGuardAction"] = args?.dataGuardAction;
+            resourceInputs["database"] = args?.database;
+            resourceInputs["dbHomeId"] = args?.dbHomeId;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["keyStoreId"] = args?.keyStoreId;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["kmsKeyMigration"] = args?.kmsKeyMigration;
+            resourceInputs["kmsKeyRotation"] = args?.kmsKeyRotation;
+            resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["characterSet"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;

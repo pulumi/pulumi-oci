@@ -63,19 +63,19 @@ export class OccCustomerGroupOccCustomer extends pulumi.CustomResource {
     /**
      * (Updatable) The description about the customer group.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name for the customer.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the customer group.
      */
-    public readonly occCustomerGroupId!: pulumi.Output<string>;
+    declare public readonly occCustomerGroupId: pulumi.Output<string>;
     /**
      * (Updatable) To determine whether the customer is enabled/disabled.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * The OCID of the tenancy belonging to the customer.
      *
@@ -83,7 +83,7 @@ export class OccCustomerGroupOccCustomer extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    declare public readonly tenancyId: pulumi.Output<string>;
 
     /**
      * Create a OccCustomerGroupOccCustomer resource with the given unique name, arguments, and options.
@@ -98,27 +98,27 @@ export class OccCustomerGroupOccCustomer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OccCustomerGroupOccCustomerState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["occCustomerGroupId"] = state ? state.occCustomerGroupId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["occCustomerGroupId"] = state?.occCustomerGroupId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tenancyId"] = state?.tenancyId;
         } else {
             const args = argsOrState as OccCustomerGroupOccCustomerArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.occCustomerGroupId === undefined) && !opts.urn) {
+            if (args?.occCustomerGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'occCustomerGroupId'");
             }
-            if ((!args || args.tenancyId === undefined) && !opts.urn) {
+            if (args?.tenancyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenancyId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["occCustomerGroupId"] = args ? args.occCustomerGroupId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["tenancyId"] = args ? args.tenancyId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["occCustomerGroupId"] = args?.occCustomerGroupId;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["tenancyId"] = args?.tenancyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OccCustomerGroupOccCustomer.__pulumiType, name, resourceInputs, opts);

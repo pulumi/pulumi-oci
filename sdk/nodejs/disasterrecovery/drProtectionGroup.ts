@@ -213,15 +213,15 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * The details for associating a DR protection group with a peer DR protection group.
      */
-    public readonly association!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupAssociation>;
+    declare public readonly association: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupAssociation>;
     /**
      * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
      *
@@ -229,59 +229,59 @@ export class DrProtectionGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly disassociateTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly disassociateTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the DR protection group's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifeCycleDetails: pulumi.Output<string>;
     /**
      * The current sub-state of the DR protection group.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubState: pulumi.Output<string>;
     /**
      * (Updatable) The details for creating an object storage log location for a DR protection group.
      */
-    public readonly logLocation!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupLogLocation>;
+    declare public readonly logLocation: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupLogLocation>;
     /**
      * (Updatable) A list of DR protection group members.
      */
-    public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[] | undefined>;
+    declare public readonly members: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[] | undefined>;
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerId: pulumi.Output<string>;
     /**
      * The region of the peer DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerRegion: pulumi.Output<string>;
     /**
      * The role of the DR protection group.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
      * The current state of the DR protection group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DrProtectionGroup resource with the given unique name, arguments, and options.
@@ -296,42 +296,42 @@ export class DrProtectionGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrProtectionGroupState | undefined;
-            resourceInputs["association"] = state ? state.association : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["disassociateTrigger"] = state ? state.disassociateTrigger : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifeCycleDetails"] = state ? state.lifeCycleDetails : undefined;
-            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
-            resourceInputs["logLocation"] = state ? state.logLocation : undefined;
-            resourceInputs["members"] = state ? state.members : undefined;
-            resourceInputs["peerId"] = state ? state.peerId : undefined;
-            resourceInputs["peerRegion"] = state ? state.peerRegion : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["association"] = state?.association;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["disassociateTrigger"] = state?.disassociateTrigger;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifeCycleDetails"] = state?.lifeCycleDetails;
+            resourceInputs["lifecycleSubState"] = state?.lifecycleSubState;
+            resourceInputs["logLocation"] = state?.logLocation;
+            resourceInputs["members"] = state?.members;
+            resourceInputs["peerId"] = state?.peerId;
+            resourceInputs["peerRegion"] = state?.peerRegion;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DrProtectionGroupArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.logLocation === undefined) && !opts.urn) {
+            if (args?.logLocation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'logLocation'");
             }
-            resourceInputs["association"] = args ? args.association : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["disassociateTrigger"] = args ? args.disassociateTrigger : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["logLocation"] = args ? args.logLocation : undefined;
-            resourceInputs["members"] = args ? args.members : undefined;
+            resourceInputs["association"] = args?.association;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["disassociateTrigger"] = args?.disassociateTrigger;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["logLocation"] = args?.logLocation;
+            resourceInputs["members"] = args?.members;
             resourceInputs["lifeCycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
             resourceInputs["peerId"] = undefined /*out*/;

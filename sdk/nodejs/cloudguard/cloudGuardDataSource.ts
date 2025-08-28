@@ -96,41 +96,41 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment OCID of the data source
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Details specific to the data source type.
      */
-    public readonly dataSourceDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
+    declare public readonly dataSourceDetails: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
     /**
      * Information about the detector recipe and rule attached
      */
-    public /*out*/ readonly dataSourceDetectorMappingInfos!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo[]>;
+    declare public /*out*/ readonly dataSourceDetectorMappingInfos: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo[]>;
     /**
      * Type of data source feed provider (LoggingQuery)
      */
-    public readonly dataSourceFeedProvider!: pulumi.Output<string>;
+    declare public readonly dataSourceFeedProvider: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Data source display name
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Information about the region and status of query replication
      */
-    public /*out*/ readonly regionStatusDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail[]>;
+    declare public /*out*/ readonly regionStatusDetails: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail[]>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Enablement status of data source.
      *
@@ -138,19 +138,19 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Data source was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the data source was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a CloudGuardDataSource resource with the given unique name, arguments, and options.
@@ -165,37 +165,37 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudGuardDataSourceState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataSourceDetails"] = state ? state.dataSourceDetails : undefined;
-            resourceInputs["dataSourceDetectorMappingInfos"] = state ? state.dataSourceDetectorMappingInfos : undefined;
-            resourceInputs["dataSourceFeedProvider"] = state ? state.dataSourceFeedProvider : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["regionStatusDetails"] = state ? state.regionStatusDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataSourceDetails"] = state?.dataSourceDetails;
+            resourceInputs["dataSourceDetectorMappingInfos"] = state?.dataSourceDetectorMappingInfos;
+            resourceInputs["dataSourceFeedProvider"] = state?.dataSourceFeedProvider;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["regionStatusDetails"] = state?.regionStatusDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as CloudGuardDataSourceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dataSourceFeedProvider === undefined) && !opts.urn) {
+            if (args?.dataSourceFeedProvider === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataSourceFeedProvider'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataSourceDetails"] = args ? args.dataSourceDetails : undefined;
-            resourceInputs["dataSourceFeedProvider"] = args ? args.dataSourceFeedProvider : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataSourceDetails"] = args?.dataSourceDetails;
+            resourceInputs["dataSourceFeedProvider"] = args?.dataSourceFeedProvider;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["status"] = args?.status;
             resourceInputs["dataSourceDetectorMappingInfos"] = undefined /*out*/;
             resourceInputs["regionStatusDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

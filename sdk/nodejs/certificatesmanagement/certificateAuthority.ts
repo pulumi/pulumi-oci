@@ -50,51 +50,51 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * (Updatable) The configuration details for creating a certificate authority (CA).
      */
-    public readonly certificateAuthorityConfig!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfig>;
+    declare public readonly certificateAuthorityConfig: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfig>;
     /**
      * (Updatable) A list of rules that control how the CA is used and managed.
      */
-    public readonly certificateAuthorityRules!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule[] | undefined>;
+    declare public readonly certificateAuthorityRules: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule[] | undefined>;
     /**
      * (Updatable) The details of the certificate revocation list (CRL).
      */
-    public readonly certificateRevocationListDetails!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails | undefined>;
+    declare public readonly certificateRevocationListDetails: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails | undefined>;
     /**
      * (Updatable) The compartment in which you want to create the CA.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The origin of the CA.
      */
-    public /*out*/ readonly configType!: pulumi.Output<string>;
+    declare public /*out*/ readonly configType: pulumi.Output<string>;
     /**
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      */
-    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCurrentVersion[]>;
+    declare public /*out*/ readonly currentVersions: pulumi.Output<outputs.CertificatesManagement.CertificateAuthorityCurrentVersion[]>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A brief description of the CA.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */
-    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
+    declare public /*out*/ readonly issuerCertificateAuthorityId: pulumi.Output<string>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * Additional information about the current CA lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
@@ -102,27 +102,27 @@ export class CertificateAuthority extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The algorithm used to sign public key certificates that the CA issues.
      */
-    public /*out*/ readonly signingAlgorithm!: pulumi.Output<string>;
+    declare public /*out*/ readonly signingAlgorithm: pulumi.Output<string>;
     /**
      * The current lifecycle state of the certificate authority.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateAuthoritySubject[]>;
+    declare public /*out*/ readonly subjects: pulumi.Output<outputs.CertificatesManagement.CertificateAuthoritySubject[]>;
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfDeletion: pulumi.Output<string>;
 
     /**
      * Create a CertificateAuthority resource with the given unique name, arguments, and options.
@@ -137,44 +137,44 @@ export class CertificateAuthority extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CertificateAuthorityState | undefined;
-            resourceInputs["certificateAuthorityConfig"] = state ? state.certificateAuthorityConfig : undefined;
-            resourceInputs["certificateAuthorityRules"] = state ? state.certificateAuthorityRules : undefined;
-            resourceInputs["certificateRevocationListDetails"] = state ? state.certificateRevocationListDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configType"] = state ? state.configType : undefined;
-            resourceInputs["currentVersions"] = state ? state.currentVersions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["issuerCertificateAuthorityId"] = state ? state.issuerCertificateAuthorityId : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["signingAlgorithm"] = state ? state.signingAlgorithm : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subjects"] = state ? state.subjects : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
+            resourceInputs["certificateAuthorityConfig"] = state?.certificateAuthorityConfig;
+            resourceInputs["certificateAuthorityRules"] = state?.certificateAuthorityRules;
+            resourceInputs["certificateRevocationListDetails"] = state?.certificateRevocationListDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configType"] = state?.configType;
+            resourceInputs["currentVersions"] = state?.currentVersions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["issuerCertificateAuthorityId"] = state?.issuerCertificateAuthorityId;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["signingAlgorithm"] = state?.signingAlgorithm;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subjects"] = state?.subjects;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
         } else {
             const args = argsOrState as CertificateAuthorityArgs | undefined;
-            if ((!args || args.certificateAuthorityConfig === undefined) && !opts.urn) {
+            if (args?.certificateAuthorityConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateAuthorityConfig'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.kmsKeyId === undefined) && !opts.urn) {
+            if (args?.kmsKeyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kmsKeyId'");
             }
-            resourceInputs["certificateAuthorityConfig"] = args ? args.certificateAuthorityConfig : undefined;
-            resourceInputs["certificateAuthorityRules"] = args ? args.certificateAuthorityRules : undefined;
-            resourceInputs["certificateRevocationListDetails"] = args ? args.certificateRevocationListDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["certificateAuthorityConfig"] = args?.certificateAuthorityConfig;
+            resourceInputs["certificateAuthorityRules"] = args?.certificateAuthorityRules;
+            resourceInputs["certificateRevocationListDetails"] = args?.certificateRevocationListDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["name"] = args?.name;
             resourceInputs["configType"] = undefined /*out*/;
             resourceInputs["currentVersions"] = undefined /*out*/;
             resourceInputs["issuerCertificateAuthorityId"] = undefined /*out*/;

@@ -71,31 +71,31 @@ export class AcceptedAgreement extends pulumi.CustomResource {
     /**
      * The agreement to accept.
      */
-    public readonly agreementId!: pulumi.Output<string>;
+    declare public readonly agreementId: pulumi.Output<string>;
     /**
      * The unique identifier for the compartment where the agreement will be accepted.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A display name for the accepted agreement.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The unique identifier for the listing associated with the agreement.
      */
-    public readonly listingId!: pulumi.Output<string>;
+    declare public readonly listingId: pulumi.Output<string>;
     /**
      * The package version associated with the agreement.
      */
-    public readonly packageVersion!: pulumi.Output<string>;
+    declare public readonly packageVersion: pulumi.Output<string>;
     /**
      * A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement). 
      *
@@ -103,11 +103,11 @@ export class AcceptedAgreement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly signature!: pulumi.Output<string>;
+    declare public readonly signature: pulumi.Output<string>;
     /**
      * The time the agreement was accepted.
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
 
     /**
      * Create a AcceptedAgreement resource with the given unique name, arguments, and options.
@@ -122,40 +122,40 @@ export class AcceptedAgreement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AcceptedAgreementState | undefined;
-            resourceInputs["agreementId"] = state ? state.agreementId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["listingId"] = state ? state.listingId : undefined;
-            resourceInputs["packageVersion"] = state ? state.packageVersion : undefined;
-            resourceInputs["signature"] = state ? state.signature : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
+            resourceInputs["agreementId"] = state?.agreementId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["listingId"] = state?.listingId;
+            resourceInputs["packageVersion"] = state?.packageVersion;
+            resourceInputs["signature"] = state?.signature;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
         } else {
             const args = argsOrState as AcceptedAgreementArgs | undefined;
-            if ((!args || args.agreementId === undefined) && !opts.urn) {
+            if (args?.agreementId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agreementId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.listingId === undefined) && !opts.urn) {
+            if (args?.listingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingId'");
             }
-            if ((!args || args.packageVersion === undefined) && !opts.urn) {
+            if (args?.packageVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageVersion'");
             }
-            if ((!args || args.signature === undefined) && !opts.urn) {
+            if (args?.signature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signature'");
             }
-            resourceInputs["agreementId"] = args ? args.agreementId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["listingId"] = args ? args.listingId : undefined;
-            resourceInputs["packageVersion"] = args ? args.packageVersion : undefined;
-            resourceInputs["signature"] = args ? args.signature : undefined;
+            resourceInputs["agreementId"] = args?.agreementId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["listingId"] = args?.listingId;
+            resourceInputs["packageVersion"] = args?.packageVersion;
+            resourceInputs["signature"] = args?.signature;
             resourceInputs["timeAccepted"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

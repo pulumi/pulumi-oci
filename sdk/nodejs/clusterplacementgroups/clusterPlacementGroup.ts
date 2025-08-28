@@ -82,47 +82,47 @@ export class ClusterPlacementGroup extends pulumi.CustomResource {
     /**
      * The availability domain where you want to create the cluster placement group.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * A list of resources that you can create in a cluster placement group.
      */
-    public readonly capabilities!: pulumi.Output<outputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities>;
+    declare public readonly capabilities: pulumi.Output<outputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities>;
     /**
      * ClusterPlacementGroup Identifier.
      */
-    public readonly clusterPlacementGroupType!: pulumi.Output<string>;
+    declare public readonly clusterPlacementGroupType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A description of the cluster placement group.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The friendly name of the cluster placement group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
      */
-    public readonly opcDryRun!: pulumi.Output<boolean>;
+    declare public readonly opcDryRun: pulumi.Output<boolean>;
     /**
      * Details that inform cluster placement group provisioning.
      */
-    public readonly placementInstruction!: pulumi.Output<outputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction>;
+    declare public readonly placementInstruction: pulumi.Output<outputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction>;
     /**
      * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -130,19 +130,19 @@ export class ClusterPlacementGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ClusterPlacementGroup resource with the given unique name, arguments, and options.
@@ -157,46 +157,46 @@ export class ClusterPlacementGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterPlacementGroupState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["capabilities"] = state ? state.capabilities : undefined;
-            resourceInputs["clusterPlacementGroupType"] = state ? state.clusterPlacementGroupType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
-            resourceInputs["placementInstruction"] = state ? state.placementInstruction : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["capabilities"] = state?.capabilities;
+            resourceInputs["clusterPlacementGroupType"] = state?.clusterPlacementGroupType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["opcDryRun"] = state?.opcDryRun;
+            resourceInputs["placementInstruction"] = state?.placementInstruction;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ClusterPlacementGroupArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.clusterPlacementGroupType === undefined) && !opts.urn) {
+            if (args?.clusterPlacementGroupType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterPlacementGroupType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["capabilities"] = args ? args.capabilities : undefined;
-            resourceInputs["clusterPlacementGroupType"] = args ? args.clusterPlacementGroupType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
-            resourceInputs["placementInstruction"] = args ? args.placementInstruction : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["capabilities"] = args?.capabilities;
+            resourceInputs["clusterPlacementGroupType"] = args?.clusterPlacementGroupType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["opcDryRun"] = args?.opcDryRun;
+            resourceInputs["placementInstruction"] = args?.placementInstruction;
+            resourceInputs["state"] = args?.state;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

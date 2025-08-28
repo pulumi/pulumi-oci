@@ -70,43 +70,43 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
     /**
      * (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
-    public readonly areCertificateExtensionsRestricted!: pulumi.Output<boolean>;
+    declare public readonly areCertificateExtensionsRestricted: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
-    public readonly isAutoIncludeAltName!: pulumi.Output<boolean>;
+    declare public readonly isAutoIncludeAltName: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is expired.
      */
-    public readonly isExpiredCertificateBlocked!: pulumi.Output<boolean>;
+    declare public readonly isExpiredCertificateBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      */
-    public readonly isOutOfCapacityBlocked!: pulumi.Output<boolean>;
+    declare public readonly isOutOfCapacityBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      */
-    public readonly isRevocationStatusTimeoutBlocked!: pulumi.Output<boolean>;
+    declare public readonly isRevocationStatusTimeoutBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      */
-    public readonly isUnknownRevocationStatusBlocked!: pulumi.Output<boolean>;
+    declare public readonly isUnknownRevocationStatusBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if SSL cipher suite is not supported.
      */
-    public readonly isUnsupportedCipherBlocked!: pulumi.Output<boolean>;
+    declare public readonly isUnsupportedCipherBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if SSL version is not supported.
      */
-    public readonly isUnsupportedVersionBlocked!: pulumi.Output<boolean>;
+    declare public readonly isUnsupportedVersionBlocked: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      */
-    public readonly isUntrustedIssuerBlocked!: pulumi.Output<boolean>;
+    declare public readonly isUntrustedIssuerBlocked: pulumi.Output<boolean>;
     /**
      * Name of the decryption profile.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      *
@@ -114,15 +114,15 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyDecryptionProfile resource with the given unique name, arguments, and options.
@@ -137,39 +137,39 @@ export class NetworkFirewallPolicyDecryptionProfile extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyDecryptionProfileState | undefined;
-            resourceInputs["areCertificateExtensionsRestricted"] = state ? state.areCertificateExtensionsRestricted : undefined;
-            resourceInputs["isAutoIncludeAltName"] = state ? state.isAutoIncludeAltName : undefined;
-            resourceInputs["isExpiredCertificateBlocked"] = state ? state.isExpiredCertificateBlocked : undefined;
-            resourceInputs["isOutOfCapacityBlocked"] = state ? state.isOutOfCapacityBlocked : undefined;
-            resourceInputs["isRevocationStatusTimeoutBlocked"] = state ? state.isRevocationStatusTimeoutBlocked : undefined;
-            resourceInputs["isUnknownRevocationStatusBlocked"] = state ? state.isUnknownRevocationStatusBlocked : undefined;
-            resourceInputs["isUnsupportedCipherBlocked"] = state ? state.isUnsupportedCipherBlocked : undefined;
-            resourceInputs["isUnsupportedVersionBlocked"] = state ? state.isUnsupportedVersionBlocked : undefined;
-            resourceInputs["isUntrustedIssuerBlocked"] = state ? state.isUntrustedIssuerBlocked : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["areCertificateExtensionsRestricted"] = state?.areCertificateExtensionsRestricted;
+            resourceInputs["isAutoIncludeAltName"] = state?.isAutoIncludeAltName;
+            resourceInputs["isExpiredCertificateBlocked"] = state?.isExpiredCertificateBlocked;
+            resourceInputs["isOutOfCapacityBlocked"] = state?.isOutOfCapacityBlocked;
+            resourceInputs["isRevocationStatusTimeoutBlocked"] = state?.isRevocationStatusTimeoutBlocked;
+            resourceInputs["isUnknownRevocationStatusBlocked"] = state?.isUnknownRevocationStatusBlocked;
+            resourceInputs["isUnsupportedCipherBlocked"] = state?.isUnsupportedCipherBlocked;
+            resourceInputs["isUnsupportedVersionBlocked"] = state?.isUnsupportedVersionBlocked;
+            resourceInputs["isUntrustedIssuerBlocked"] = state?.isUntrustedIssuerBlocked;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkFirewallPolicyDecryptionProfileArgs | undefined;
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["areCertificateExtensionsRestricted"] = args ? args.areCertificateExtensionsRestricted : undefined;
-            resourceInputs["isAutoIncludeAltName"] = args ? args.isAutoIncludeAltName : undefined;
-            resourceInputs["isExpiredCertificateBlocked"] = args ? args.isExpiredCertificateBlocked : undefined;
-            resourceInputs["isOutOfCapacityBlocked"] = args ? args.isOutOfCapacityBlocked : undefined;
-            resourceInputs["isRevocationStatusTimeoutBlocked"] = args ? args.isRevocationStatusTimeoutBlocked : undefined;
-            resourceInputs["isUnknownRevocationStatusBlocked"] = args ? args.isUnknownRevocationStatusBlocked : undefined;
-            resourceInputs["isUnsupportedCipherBlocked"] = args ? args.isUnsupportedCipherBlocked : undefined;
-            resourceInputs["isUnsupportedVersionBlocked"] = args ? args.isUnsupportedVersionBlocked : undefined;
-            resourceInputs["isUntrustedIssuerBlocked"] = args ? args.isUntrustedIssuerBlocked : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["areCertificateExtensionsRestricted"] = args?.areCertificateExtensionsRestricted;
+            resourceInputs["isAutoIncludeAltName"] = args?.isAutoIncludeAltName;
+            resourceInputs["isExpiredCertificateBlocked"] = args?.isExpiredCertificateBlocked;
+            resourceInputs["isOutOfCapacityBlocked"] = args?.isOutOfCapacityBlocked;
+            resourceInputs["isRevocationStatusTimeoutBlocked"] = args?.isRevocationStatusTimeoutBlocked;
+            resourceInputs["isUnknownRevocationStatusBlocked"] = args?.isUnknownRevocationStatusBlocked;
+            resourceInputs["isUnsupportedCipherBlocked"] = args?.isUnsupportedCipherBlocked;
+            resourceInputs["isUnsupportedVersionBlocked"] = args?.isUnsupportedVersionBlocked;
+            resourceInputs["isUntrustedIssuerBlocked"] = args?.isUntrustedIssuerBlocked;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["type"] = args?.type;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

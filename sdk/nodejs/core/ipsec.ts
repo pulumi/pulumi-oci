@@ -133,11 +133,11 @@ export class Ipsec extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
      */
-    public readonly cpeId!: pulumi.Output<string>;
+    declare public readonly cpeId: pulumi.Output<string>;
     /**
      * (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
      *
@@ -149,31 +149,31 @@ export class Ipsec extends pulumi.CustomResource {
      *
      * Example hostname: `cpe.example.com`
      */
-    public readonly cpeLocalIdentifier!: pulumi.Output<string>;
+    declare public readonly cpeLocalIdentifier: pulumi.Output<string>;
     /**
      * (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
      */
-    public readonly cpeLocalIdentifierType!: pulumi.Output<string>;
+    declare public readonly cpeLocalIdentifierType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    public readonly drgId!: pulumi.Output<string>;
+    declare public readonly drgId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The IPSec connection's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
      *
@@ -181,15 +181,15 @@ export class Ipsec extends pulumi.CustomResource {
      *
      * Example: `10.0.1.0/24`
      */
-    public readonly staticRoutes!: pulumi.Output<string[]>;
+    declare public readonly staticRoutes: pulumi.Output<string[]>;
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The transport type used for the IPSec connection.
      */
-    public /*out*/ readonly transportType!: pulumi.Output<string>;
+    declare public /*out*/ readonly transportType: pulumi.Output<string>;
     /**
      * (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      *
@@ -204,7 +204,7 @@ export class Ipsec extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly tunnelConfigurations!: pulumi.Output<outputs.Core.IpsecTunnelConfiguration[]>;
+    declare public readonly tunnelConfigurations: pulumi.Output<outputs.Core.IpsecTunnelConfiguration[]>;
 
     /**
      * Create a Ipsec resource with the given unique name, arguments, and options.
@@ -219,43 +219,43 @@ export class Ipsec extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IpsecState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["cpeId"] = state ? state.cpeId : undefined;
-            resourceInputs["cpeLocalIdentifier"] = state ? state.cpeLocalIdentifier : undefined;
-            resourceInputs["cpeLocalIdentifierType"] = state ? state.cpeLocalIdentifierType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drgId"] = state ? state.drgId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["staticRoutes"] = state ? state.staticRoutes : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["transportType"] = state ? state.transportType : undefined;
-            resourceInputs["tunnelConfigurations"] = state ? state.tunnelConfigurations : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["cpeId"] = state?.cpeId;
+            resourceInputs["cpeLocalIdentifier"] = state?.cpeLocalIdentifier;
+            resourceInputs["cpeLocalIdentifierType"] = state?.cpeLocalIdentifierType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["staticRoutes"] = state?.staticRoutes;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["transportType"] = state?.transportType;
+            resourceInputs["tunnelConfigurations"] = state?.tunnelConfigurations;
         } else {
             const args = argsOrState as IpsecArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.cpeId === undefined) && !opts.urn) {
+            if (args?.cpeId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpeId'");
             }
-            if ((!args || args.drgId === undefined) && !opts.urn) {
+            if (args?.drgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgId'");
             }
-            if ((!args || args.staticRoutes === undefined) && !opts.urn) {
+            if (args?.staticRoutes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'staticRoutes'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["cpeId"] = args ? args.cpeId : undefined;
-            resourceInputs["cpeLocalIdentifier"] = args ? args.cpeLocalIdentifier : undefined;
-            resourceInputs["cpeLocalIdentifierType"] = args ? args.cpeLocalIdentifierType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["drgId"] = args ? args.drgId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["staticRoutes"] = args ? args.staticRoutes : undefined;
-            resourceInputs["tunnelConfigurations"] = args ? args.tunnelConfigurations : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["cpeId"] = args?.cpeId;
+            resourceInputs["cpeLocalIdentifier"] = args?.cpeLocalIdentifier;
+            resourceInputs["cpeLocalIdentifierType"] = args?.cpeLocalIdentifierType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["staticRoutes"] = args?.staticRoutes;
+            resourceInputs["tunnelConfigurations"] = args?.tunnelConfigurations;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["transportType"] = undefined /*out*/;

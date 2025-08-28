@@ -77,76 +77,76 @@ export class ManagementAgentDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
      */
-    public readonly allowMetrics!: pulumi.Output<string>;
+    declare public readonly allowMetrics: pulumi.Output<string>;
     /**
      * Compartment owning this DataSource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
      */
-    public readonly connectionTimeout!: pulumi.Output<number>;
-    public /*out*/ readonly dataSourceKey!: pulumi.Output<string>;
+    declare public readonly connectionTimeout: pulumi.Output<number>;
+    declare public /*out*/ readonly dataSourceKey: pulumi.Output<string>;
     /**
      * If the Kubernetes cluster type is Daemon set then this will be set to true.
      */
-    public /*out*/ readonly isDaemonSet!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDaemonSet: pulumi.Output<boolean>;
     /**
      * Unique Management Agent identifier
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    declare public readonly managementAgentId: pulumi.Output<string>;
     /**
      * (Updatable) The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
      */
-    public readonly metricDimensions!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceMetricDimension[]>;
+    declare public readonly metricDimensions: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceMetricDimension[]>;
     /**
      * Unique name of the DataSource.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
      */
-    public readonly proxyUrl!: pulumi.Output<string>;
+    declare public readonly proxyUrl: pulumi.Output<string>;
     /**
      * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
      */
-    public /*out*/ readonly readDataLimit!: pulumi.Output<number>;
+    declare public /*out*/ readonly readDataLimit: pulumi.Output<number>;
     /**
      * (Updatable) Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
      */
-    public readonly readDataLimitInKilobytes!: pulumi.Output<number>;
+    declare public readonly readDataLimitInKilobytes: pulumi.Output<number>;
     /**
      * (Updatable) Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
      */
-    public readonly readTimeout!: pulumi.Output<number>;
+    declare public readonly readTimeout: pulumi.Output<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
      */
-    public readonly resourceGroup!: pulumi.Output<string>;
+    declare public readonly resourceGroup: pulumi.Output<string>;
     /**
      * (Updatable) Number in minutes. The scraping occurs at the specified interval.
      */
-    public readonly scheduleMins!: pulumi.Output<number>;
+    declare public readonly scheduleMins: pulumi.Output<number>;
     /**
      * State of the DataSource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the DataSource was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the DataSource data was last received. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
      *
@@ -154,7 +154,7 @@ export class ManagementAgentDataSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
 
     /**
      * Create a ManagementAgentDataSource resource with the given unique name, arguments, and options.
@@ -169,54 +169,54 @@ export class ManagementAgentDataSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementAgentDataSourceState | undefined;
-            resourceInputs["allowMetrics"] = state ? state.allowMetrics : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionTimeout"] = state ? state.connectionTimeout : undefined;
-            resourceInputs["dataSourceKey"] = state ? state.dataSourceKey : undefined;
-            resourceInputs["isDaemonSet"] = state ? state.isDaemonSet : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["metricDimensions"] = state ? state.metricDimensions : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["proxyUrl"] = state ? state.proxyUrl : undefined;
-            resourceInputs["readDataLimit"] = state ? state.readDataLimit : undefined;
-            resourceInputs["readDataLimitInKilobytes"] = state ? state.readDataLimitInKilobytes : undefined;
-            resourceInputs["readTimeout"] = state ? state.readTimeout : undefined;
-            resourceInputs["resourceGroup"] = state ? state.resourceGroup : undefined;
-            resourceInputs["scheduleMins"] = state ? state.scheduleMins : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["allowMetrics"] = state?.allowMetrics;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionTimeout"] = state?.connectionTimeout;
+            resourceInputs["dataSourceKey"] = state?.dataSourceKey;
+            resourceInputs["isDaemonSet"] = state?.isDaemonSet;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["metricDimensions"] = state?.metricDimensions;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["proxyUrl"] = state?.proxyUrl;
+            resourceInputs["readDataLimit"] = state?.readDataLimit;
+            resourceInputs["readDataLimitInKilobytes"] = state?.readDataLimitInKilobytes;
+            resourceInputs["readTimeout"] = state?.readTimeout;
+            resourceInputs["resourceGroup"] = state?.resourceGroup;
+            resourceInputs["scheduleMins"] = state?.scheduleMins;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as ManagementAgentDataSourceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.managementAgentId === undefined) && !opts.urn) {
+            if (args?.managementAgentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementAgentId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["allowMetrics"] = args ? args.allowMetrics : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionTimeout"] = args ? args.connectionTimeout : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["metricDimensions"] = args ? args.metricDimensions : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["proxyUrl"] = args ? args.proxyUrl : undefined;
-            resourceInputs["readDataLimitInKilobytes"] = args ? args.readDataLimitInKilobytes : undefined;
-            resourceInputs["readTimeout"] = args ? args.readTimeout : undefined;
-            resourceInputs["resourceGroup"] = args ? args.resourceGroup : undefined;
-            resourceInputs["scheduleMins"] = args ? args.scheduleMins : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["allowMetrics"] = args?.allowMetrics;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionTimeout"] = args?.connectionTimeout;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["metricDimensions"] = args?.metricDimensions;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["proxyUrl"] = args?.proxyUrl;
+            resourceInputs["readDataLimitInKilobytes"] = args?.readDataLimitInKilobytes;
+            resourceInputs["readTimeout"] = args?.readTimeout;
+            resourceInputs["resourceGroup"] = args?.resourceGroup;
+            resourceInputs["scheduleMins"] = args?.scheduleMins;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["url"] = args?.url;
             resourceInputs["dataSourceKey"] = undefined /*out*/;
             resourceInputs["isDaemonSet"] = undefined /*out*/;
             resourceInputs["readDataLimit"] = undefined /*out*/;

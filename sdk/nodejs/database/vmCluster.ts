@@ -103,134 +103,134 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * The name of the availability domain that the VM cluster is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
      */
-    public readonly cloudAutomationUpdateDetails!: pulumi.Output<outputs.Database.VmClusterCloudAutomationUpdateDetails>;
+    declare public readonly cloudAutomationUpdateDetails: pulumi.Output<outputs.Database.VmClusterCloudAutomationUpdateDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    public /*out*/ readonly computeModel!: pulumi.Output<string>;
-    public readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly computeModel: pulumi.Output<string>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpusEnabled: pulumi.Output<number>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions>;
+    declare public readonly dataCollectionOptions: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions>;
     /**
      * (Updatable) The data disk group size to be allocated in GBs.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
      */
-    public readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The local node storage to be allocated in GBs.
      */
-    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The list of Db server.
      */
-    public readonly dbServers!: pulumi.Output<string[]>;
+    declare public readonly dbServers: pulumi.Output<string[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the VM cluster. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      */
-    public readonly exascaleDbStorageVaultId!: pulumi.Output<string>;
+    declare public readonly exascaleDbStorageVaultId: pulumi.Output<string>;
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
-    public readonly fileSystemConfigurationDetails!: pulumi.Output<outputs.Database.VmClusterFileSystemConfigurationDetail[]>;
+    declare public readonly fileSystemConfigurationDetails: pulumi.Output<outputs.Database.VmClusterFileSystemConfigurationDetail[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      */
-    public readonly giVersion!: pulumi.Output<string>;
+    declare public readonly giVersion: pulumi.Output<string>;
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
-    public readonly isLocalBackupEnabled!: pulumi.Output<boolean>;
+    declare public readonly isLocalBackupEnabled: pulumi.Output<boolean>;
     /**
      * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      */
-    public readonly isSparseDiskgroupEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSparseDiskgroupEnabled: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastPatchHistoryEntryId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The memory to be allocated in GBs.
      */
-    public readonly memorySizeInGbs!: pulumi.Output<number>;
-    public readonly ocpuCount!: pulumi.Output<number>;
-    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    declare public readonly memorySizeInGbs: pulumi.Output<number>;
+    declare public readonly ocpuCount: pulumi.Output<number>;
+    declare public /*out*/ readonly ocpusEnabled: pulumi.Output<number>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
-    public readonly sshPublicKeys!: pulumi.Output<string[]>;
+    declare public readonly sshPublicKeys: pulumi.Output<string[]>;
     /**
      * The current state of the VM cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
      */
-    public /*out*/ readonly storageManagementType!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageManagementType: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Operating system version of the image.
      */
-    public readonly systemVersion!: pulumi.Output<string>;
+    declare public readonly systemVersion: pulumi.Output<string>;
     /**
      * The date and time that the VM cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
-    public readonly vmClusterNetworkId!: pulumi.Output<string>;
+    declare public readonly vmClusterNetworkId: pulumi.Output<string>;
     /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      *
@@ -238,7 +238,7 @@ export class VmCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vmClusterType!: pulumi.Output<string>;
+    declare public readonly vmClusterType: pulumi.Output<string>;
 
     /**
      * Create a VmCluster resource with the given unique name, arguments, and options.
@@ -253,90 +253,90 @@ export class VmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmClusterState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["cloudAutomationUpdateDetails"] = state ? state.cloudAutomationUpdateDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
-            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServers"] = state ? state.dbServers : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["exascaleDbStorageVaultId"] = state ? state.exascaleDbStorageVaultId : undefined;
-            resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["giVersion"] = state ? state.giVersion : undefined;
-            resourceInputs["isLocalBackupEnabled"] = state ? state.isLocalBackupEnabled : undefined;
-            resourceInputs["isSparseDiskgroupEnabled"] = state ? state.isSparseDiskgroupEnabled : undefined;
-            resourceInputs["lastPatchHistoryEntryId"] = state ? state.lastPatchHistoryEntryId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
-            resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageManagementType"] = state ? state.storageManagementType : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
-            resourceInputs["vmClusterType"] = state ? state.vmClusterType : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["cloudAutomationUpdateDetails"] = state?.cloudAutomationUpdateDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["cpusEnabled"] = state?.cpusEnabled;
+            resourceInputs["dataCollectionOptions"] = state?.dataCollectionOptions;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServers"] = state?.dbServers;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["exascaleDbStorageVaultId"] = state?.exascaleDbStorageVaultId;
+            resourceInputs["fileSystemConfigurationDetails"] = state?.fileSystemConfigurationDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["giVersion"] = state?.giVersion;
+            resourceInputs["isLocalBackupEnabled"] = state?.isLocalBackupEnabled;
+            resourceInputs["isSparseDiskgroupEnabled"] = state?.isSparseDiskgroupEnabled;
+            resourceInputs["lastPatchHistoryEntryId"] = state?.lastPatchHistoryEntryId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["ocpuCount"] = state?.ocpuCount;
+            resourceInputs["ocpusEnabled"] = state?.ocpusEnabled;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageManagementType"] = state?.storageManagementType;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["systemVersion"] = state?.systemVersion;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["vmClusterNetworkId"] = state?.vmClusterNetworkId;
+            resourceInputs["vmClusterType"] = state?.vmClusterType;
         } else {
             const args = argsOrState as VmClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.cpuCoreCount === undefined) && !opts.urn) {
+            if (args?.cpuCoreCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpuCoreCount'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.exadataInfrastructureId === undefined) && !opts.urn) {
+            if (args?.exadataInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exadataInfrastructureId'");
             }
-            if ((!args || args.giVersion === undefined) && !opts.urn) {
+            if (args?.giVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'giVersion'");
             }
-            if ((!args || args.sshPublicKeys === undefined) && !opts.urn) {
+            if (args?.sshPublicKeys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sshPublicKeys'");
             }
-            if ((!args || args.vmClusterNetworkId === undefined) && !opts.urn) {
+            if (args?.vmClusterNetworkId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmClusterNetworkId'");
             }
-            resourceInputs["cloudAutomationUpdateDetails"] = args ? args.cloudAutomationUpdateDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
-            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
-            resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = args ? args.dataStorageSizeInTbs : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = args ? args.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServers"] = args ? args.dbServers : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
-            resourceInputs["exascaleDbStorageVaultId"] = args ? args.exascaleDbStorageVaultId : undefined;
-            resourceInputs["fileSystemConfigurationDetails"] = args ? args.fileSystemConfigurationDetails : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["giVersion"] = args ? args.giVersion : undefined;
-            resourceInputs["isLocalBackupEnabled"] = args ? args.isLocalBackupEnabled : undefined;
-            resourceInputs["isSparseDiskgroupEnabled"] = args ? args.isSparseDiskgroupEnabled : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["memorySizeInGbs"] = args ? args.memorySizeInGbs : undefined;
-            resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
-            resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
-            resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
-            resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
-            resourceInputs["vmClusterType"] = args ? args.vmClusterType : undefined;
+            resourceInputs["cloudAutomationUpdateDetails"] = args?.cloudAutomationUpdateDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
+            resourceInputs["dataCollectionOptions"] = args?.dataCollectionOptions;
+            resourceInputs["dataStorageSizeInGb"] = args?.dataStorageSizeInGb;
+            resourceInputs["dataStorageSizeInTbs"] = args?.dataStorageSizeInTbs;
+            resourceInputs["dbNodeStorageSizeInGbs"] = args?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServers"] = args?.dbServers;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
+            resourceInputs["exascaleDbStorageVaultId"] = args?.exascaleDbStorageVaultId;
+            resourceInputs["fileSystemConfigurationDetails"] = args?.fileSystemConfigurationDetails;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["giVersion"] = args?.giVersion;
+            resourceInputs["isLocalBackupEnabled"] = args?.isLocalBackupEnabled;
+            resourceInputs["isSparseDiskgroupEnabled"] = args?.isSparseDiskgroupEnabled;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["memorySizeInGbs"] = args?.memorySizeInGbs;
+            resourceInputs["ocpuCount"] = args?.ocpuCount;
+            resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
+            resourceInputs["systemVersion"] = args?.systemVersion;
+            resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["vmClusterNetworkId"] = args?.vmClusterNetworkId;
+            resourceInputs["vmClusterType"] = args?.vmClusterType;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;

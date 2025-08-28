@@ -50,7 +50,7 @@ export class Job extends pulumi.CustomResource {
     /**
      * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
      */
-    public readonly artifactContentDisposition!: pulumi.Output<string | undefined>;
+    declare public readonly artifactContentDisposition: pulumi.Output<string | undefined>;
     /**
      * The content length of the body.
      *
@@ -58,82 +58,82 @@ export class Job extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly artifactContentLength!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
-    public /*out*/ readonly artifactLastModified!: pulumi.Output<string>;
+    declare public readonly artifactContentLength: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly artifactContentMd5: pulumi.Output<string>;
+    declare public /*out*/ readonly artifactLastModified: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Delete all related JobRuns upon deletion of the Job.
      */
-    public readonly deleteRelatedJobRuns!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteRelatedJobRuns: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A short description of the job.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly emptyArtifact!: pulumi.Output<boolean>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public /*out*/ readonly emptyArtifact: pulumi.Output<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
      */
-    public readonly jobArtifact!: pulumi.Output<string | undefined>;
+    declare public readonly jobArtifact: pulumi.Output<string | undefined>;
     /**
      * The job configuration details
      */
-    public readonly jobConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobConfigurationDetails>;
+    declare public readonly jobConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobConfigurationDetails>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    public readonly jobEnvironmentConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobEnvironmentConfigurationDetails | undefined>;
+    declare public readonly jobEnvironmentConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobEnvironmentConfigurationDetails | undefined>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
-    public readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobInfrastructureConfigurationDetails>;
+    declare public readonly jobInfrastructureConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobInfrastructureConfigurationDetails>;
     /**
      * Logging configuration for resource.
      */
-    public readonly jobLogConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails>;
+    declare public readonly jobLogConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails>;
     /**
      * The job node configuration details
      */
-    public readonly jobNodeConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobNodeConfigurationDetails>;
+    declare public readonly jobNodeConfigurationDetails: pulumi.Output<outputs.DataScience.JobJobNodeConfigurationDetails>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
-    public readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[]>;
+    declare public readonly jobStorageMountConfigurationDetailsLists: pulumi.Output<outputs.DataScience.JobJobStorageMountConfigurationDetailsList[]>;
     /**
      * The state of the job.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The state of the job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Job resource with the given unique name, arguments, and options.
@@ -148,53 +148,53 @@ export class Job extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JobState | undefined;
-            resourceInputs["artifactContentDisposition"] = state ? state.artifactContentDisposition : undefined;
-            resourceInputs["artifactContentLength"] = state ? state.artifactContentLength : undefined;
-            resourceInputs["artifactContentMd5"] = state ? state.artifactContentMd5 : undefined;
-            resourceInputs["artifactLastModified"] = state ? state.artifactLastModified : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deleteRelatedJobRuns"] = state ? state.deleteRelatedJobRuns : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["emptyArtifact"] = state ? state.emptyArtifact : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["jobArtifact"] = state ? state.jobArtifact : undefined;
-            resourceInputs["jobConfigurationDetails"] = state ? state.jobConfigurationDetails : undefined;
-            resourceInputs["jobEnvironmentConfigurationDetails"] = state ? state.jobEnvironmentConfigurationDetails : undefined;
-            resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
-            resourceInputs["jobLogConfigurationDetails"] = state ? state.jobLogConfigurationDetails : undefined;
-            resourceInputs["jobNodeConfigurationDetails"] = state ? state.jobNodeConfigurationDetails : undefined;
-            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["artifactContentDisposition"] = state?.artifactContentDisposition;
+            resourceInputs["artifactContentLength"] = state?.artifactContentLength;
+            resourceInputs["artifactContentMd5"] = state?.artifactContentMd5;
+            resourceInputs["artifactLastModified"] = state?.artifactLastModified;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deleteRelatedJobRuns"] = state?.deleteRelatedJobRuns;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["emptyArtifact"] = state?.emptyArtifact;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["jobArtifact"] = state?.jobArtifact;
+            resourceInputs["jobConfigurationDetails"] = state?.jobConfigurationDetails;
+            resourceInputs["jobEnvironmentConfigurationDetails"] = state?.jobEnvironmentConfigurationDetails;
+            resourceInputs["jobInfrastructureConfigurationDetails"] = state?.jobInfrastructureConfigurationDetails;
+            resourceInputs["jobLogConfigurationDetails"] = state?.jobLogConfigurationDetails;
+            resourceInputs["jobNodeConfigurationDetails"] = state?.jobNodeConfigurationDetails;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state?.jobStorageMountConfigurationDetailsLists;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as JobArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["artifactContentDisposition"] = args ? args.artifactContentDisposition : undefined;
-            resourceInputs["artifactContentLength"] = args ? args.artifactContentLength : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deleteRelatedJobRuns"] = args ? args.deleteRelatedJobRuns : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["jobArtifact"] = args ? args.jobArtifact : undefined;
-            resourceInputs["jobConfigurationDetails"] = args ? args.jobConfigurationDetails : undefined;
-            resourceInputs["jobEnvironmentConfigurationDetails"] = args ? args.jobEnvironmentConfigurationDetails : undefined;
-            resourceInputs["jobInfrastructureConfigurationDetails"] = args ? args.jobInfrastructureConfigurationDetails : undefined;
-            resourceInputs["jobLogConfigurationDetails"] = args ? args.jobLogConfigurationDetails : undefined;
-            resourceInputs["jobNodeConfigurationDetails"] = args ? args.jobNodeConfigurationDetails : undefined;
-            resourceInputs["jobStorageMountConfigurationDetailsLists"] = args ? args.jobStorageMountConfigurationDetailsLists : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["artifactContentDisposition"] = args?.artifactContentDisposition;
+            resourceInputs["artifactContentLength"] = args?.artifactContentLength;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deleteRelatedJobRuns"] = args?.deleteRelatedJobRuns;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["jobArtifact"] = args?.jobArtifact;
+            resourceInputs["jobConfigurationDetails"] = args?.jobConfigurationDetails;
+            resourceInputs["jobEnvironmentConfigurationDetails"] = args?.jobEnvironmentConfigurationDetails;
+            resourceInputs["jobInfrastructureConfigurationDetails"] = args?.jobInfrastructureConfigurationDetails;
+            resourceInputs["jobLogConfigurationDetails"] = args?.jobLogConfigurationDetails;
+            resourceInputs["jobNodeConfigurationDetails"] = args?.jobNodeConfigurationDetails;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = args?.jobStorageMountConfigurationDetailsLists;
+            resourceInputs["projectId"] = args?.projectId;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;

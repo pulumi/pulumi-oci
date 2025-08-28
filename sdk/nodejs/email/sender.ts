@@ -66,19 +66,19 @@ export class Sender extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the sender.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The email address of the sender.
      */
-    public readonly emailAddress!: pulumi.Output<string>;
+    declare public readonly emailAddress: pulumi.Output<string>;
     /**
      * The email domain used to assert responsibility for emails sent from this sender.
      */
-    public /*out*/ readonly emailDomainId!: pulumi.Output<string>;
+    declare public /*out*/ readonly emailDomainId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -86,23 +86,23 @@ export class Sender extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
-    public /*out*/ readonly isSpf!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSpf: pulumi.Output<boolean>;
     /**
      * The current status of the approved sender.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Sender resource with the given unique name, arguments, and options.
@@ -117,27 +117,27 @@ export class Sender extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SenderState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["emailAddress"] = state ? state.emailAddress : undefined;
-            resourceInputs["emailDomainId"] = state ? state.emailDomainId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isSpf"] = state ? state.isSpf : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["emailAddress"] = state?.emailAddress;
+            resourceInputs["emailDomainId"] = state?.emailDomainId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSpf"] = state?.isSpf;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as SenderArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.emailAddress === undefined) && !opts.urn) {
+            if (args?.emailAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'emailAddress'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["emailAddress"] = args ? args.emailAddress : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["emailAddress"] = args?.emailAddress;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["emailDomainId"] = undefined /*out*/;
             resourceInputs["isSpf"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

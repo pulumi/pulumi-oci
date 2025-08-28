@@ -78,71 +78,71 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) Property Details
      */
-    public readonly additionalConfigurations!: pulumi.Output<outputs.StackMonitoring.ConfigAdditionalConfigurations | undefined>;
+    declare public readonly additionalConfigurations: pulumi.Output<outputs.StackMonitoring.ConfigAdditionalConfigurations | undefined>;
     /**
      * (Updatable) Compartment in which the configuration is created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
      */
-    public readonly configType!: pulumi.Output<string>;
+    declare public readonly configType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the configuration.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
      */
-    public readonly dynamicGroups!: pulumi.Output<outputs.StackMonitoring.ConfigDynamicGroup[] | undefined>;
+    declare public readonly dynamicGroups: pulumi.Output<outputs.StackMonitoring.ConfigDynamicGroup[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) True if customer decides marks configuration as manually configured.
      */
-    public readonly isManuallyOnboarded!: pulumi.Output<boolean | undefined>;
+    declare public readonly isManuallyOnboarded: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) License edition.
      */
-    public readonly license!: pulumi.Output<string>;
+    declare public readonly license: pulumi.Output<string>;
     /**
      * (Updatable) List of policy names assigned for onboarding
      */
-    public readonly policyNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly policyNames: pulumi.Output<string[] | undefined>;
     /**
      * The type of resource to configure for automatic promotion.
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current state of the configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the configuration was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Config was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) List of user groups dedicated for Stack Monitoring.
      */
-    public readonly userGroups!: pulumi.Output<outputs.StackMonitoring.ConfigUserGroup[] | undefined>;
+    declare public readonly userGroups: pulumi.Output<outputs.StackMonitoring.ConfigUserGroup[] | undefined>;
     /**
      * (Updatable) Assigned version to given onboard configuration.
      *
@@ -150,7 +150,7 @@ export class Config extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly version!: pulumi.Output<string | undefined>;
+    declare public readonly version: pulumi.Output<string | undefined>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -165,46 +165,46 @@ export class Config extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
-            resourceInputs["additionalConfigurations"] = state ? state.additionalConfigurations : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configType"] = state ? state.configType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dynamicGroups"] = state ? state.dynamicGroups : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["isManuallyOnboarded"] = state ? state.isManuallyOnboarded : undefined;
-            resourceInputs["license"] = state ? state.license : undefined;
-            resourceInputs["policyNames"] = state ? state.policyNames : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["userGroups"] = state ? state.userGroups : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalConfigurations"] = state?.additionalConfigurations;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configType"] = state?.configType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dynamicGroups"] = state?.dynamicGroups;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["isManuallyOnboarded"] = state?.isManuallyOnboarded;
+            resourceInputs["license"] = state?.license;
+            resourceInputs["policyNames"] = state?.policyNames;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["userGroups"] = state?.userGroups;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ConfigArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.configType === undefined) && !opts.urn) {
+            if (args?.configType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configType'");
             }
-            resourceInputs["additionalConfigurations"] = args ? args.additionalConfigurations : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configType"] = args ? args.configType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dynamicGroups"] = args ? args.dynamicGroups : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["isManuallyOnboarded"] = args ? args.isManuallyOnboarded : undefined;
-            resourceInputs["license"] = args ? args.license : undefined;
-            resourceInputs["policyNames"] = args ? args.policyNames : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
-            resourceInputs["userGroups"] = args ? args.userGroups : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["additionalConfigurations"] = args?.additionalConfigurations;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configType"] = args?.configType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dynamicGroups"] = args?.dynamicGroups;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["isManuallyOnboarded"] = args?.isManuallyOnboarded;
+            resourceInputs["license"] = args?.license;
+            resourceInputs["policyNames"] = args?.policyNames;
+            resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["userGroups"] = args?.userGroups;
+            resourceInputs["version"] = args?.version;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

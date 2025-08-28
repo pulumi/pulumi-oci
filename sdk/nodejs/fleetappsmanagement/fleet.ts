@@ -50,87 +50,87 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * (Updatable) compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Credentials associated with the Fleet.
      */
-    public readonly credentials!: pulumi.Output<outputs.FleetAppsManagement.FleetCredential[]>;
+    declare public readonly credentials: pulumi.Output<outputs.FleetAppsManagement.FleetCredential[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Fleet Type
      */
-    public readonly details!: pulumi.Output<outputs.FleetAppsManagement.FleetDetails>;
+    declare public readonly details: pulumi.Output<outputs.FleetAppsManagement.FleetDetails>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
-    public readonly environmentType!: pulumi.Output<string>;
+    declare public readonly environmentType: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
-    public readonly isTargetAutoConfirm!: pulumi.Output<boolean>;
+    declare public readonly isTargetAutoConfirm: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Notification Preferences associated with the Fleet.
      */
-    public readonly notificationPreferences!: pulumi.Output<outputs.FleetAppsManagement.FleetNotificationPreference[]>;
+    declare public readonly notificationPreferences: pulumi.Output<outputs.FleetAppsManagement.FleetNotificationPreference[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
      */
-    public readonly parentFleetId!: pulumi.Output<string>;
+    declare public readonly parentFleetId: pulumi.Output<string>;
     /**
      * (Updatable) Products associated with the Fleet.
      */
-    public readonly products!: pulumi.Output<string[]>;
+    declare public readonly products: pulumi.Output<string[]>;
     /**
      * Properties associated with the Fleet.
      */
-    public readonly properties!: pulumi.Output<outputs.FleetAppsManagement.FleetProperty[]>;
+    declare public readonly properties: pulumi.Output<outputs.FleetAppsManagement.FleetProperty[]>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * (Updatable) Resource Selection Type
      */
-    public readonly resourceSelection!: pulumi.Output<outputs.FleetAppsManagement.FleetResourceSelection>;
+    declare public readonly resourceSelection: pulumi.Output<outputs.FleetAppsManagement.FleetResourceSelection>;
     /**
      * Resources associated with the Fleet if resourceSelectionType is MANUAL.
      */
-    public readonly resources!: pulumi.Output<outputs.FleetAppsManagement.FleetResource[]>;
+    declare public readonly resources: pulumi.Output<outputs.FleetAppsManagement.FleetResource[]>;
     /**
      * The lifecycle state of the Fleet.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Fleet resource with the given unique name, arguments, and options.
@@ -145,53 +145,53 @@ export class Fleet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["details"] = state ? state.details : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["environmentType"] = state ? state.environmentType : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isTargetAutoConfirm"] = state ? state.isTargetAutoConfirm : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["notificationPreferences"] = state ? state.notificationPreferences : undefined;
-            resourceInputs["parentFleetId"] = state ? state.parentFleetId : undefined;
-            resourceInputs["products"] = state ? state.products : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["resourceSelection"] = state ? state.resourceSelection : undefined;
-            resourceInputs["resources"] = state ? state.resources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["details"] = state?.details;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["environmentType"] = state?.environmentType;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isTargetAutoConfirm"] = state?.isTargetAutoConfirm;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["notificationPreferences"] = state?.notificationPreferences;
+            resourceInputs["parentFleetId"] = state?.parentFleetId;
+            resourceInputs["products"] = state?.products;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["resourceSelection"] = state?.resourceSelection;
+            resourceInputs["resources"] = state?.resources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FleetArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.resourceSelection === undefined) && !opts.urn) {
+            if (args?.resourceSelection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceSelection'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["details"] = args ? args.details : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["environmentType"] = args ? args.environmentType : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isTargetAutoConfirm"] = args ? args.isTargetAutoConfirm : undefined;
-            resourceInputs["notificationPreferences"] = args ? args.notificationPreferences : undefined;
-            resourceInputs["parentFleetId"] = args ? args.parentFleetId : undefined;
-            resourceInputs["products"] = args ? args.products : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["resourceSelection"] = args ? args.resourceSelection : undefined;
-            resourceInputs["resources"] = args ? args.resources : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["details"] = args?.details;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["environmentType"] = args?.environmentType;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isTargetAutoConfirm"] = args?.isTargetAutoConfirm;
+            resourceInputs["notificationPreferences"] = args?.notificationPreferences;
+            resourceInputs["parentFleetId"] = args?.parentFleetId;
+            resourceInputs["products"] = args?.products;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["resourceSelection"] = args?.resourceSelection;
+            resourceInputs["resources"] = args?.resources;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

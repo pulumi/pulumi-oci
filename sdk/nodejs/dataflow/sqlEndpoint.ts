@@ -53,71 +53,71 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) The identifier of the compartment used with the SQL Endpoint.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of CreateSQLEndpointDetails.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The SQL Endpoint name, which can be changed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The shape of the SQL Endpoint driver instance.
      */
-    public readonly driverShape!: pulumi.Output<string>;
+    declare public readonly driverShape: pulumi.Output<string>;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    public readonly driverShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointDriverShapeConfig>;
+    declare public readonly driverShapeConfig: pulumi.Output<outputs.DataFlow.SqlEndpointDriverShapeConfig>;
     /**
      * The shape of the SQL Endpoint worker instance.
      */
-    public readonly executorShape!: pulumi.Output<string>;
+    declare public readonly executorShape: pulumi.Output<string>;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    public readonly executorShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointExecutorShapeConfig>;
+    declare public readonly executorShapeConfig: pulumi.Output<outputs.DataFlow.SqlEndpointExecutorShapeConfig>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      */
-    public /*out*/ readonly jdbcEndpointUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly jdbcEndpointUrl: pulumi.Output<string>;
     /**
      * Oracle Cloud Infrastructure lake OCID
      */
-    public /*out*/ readonly lakeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lakeId: pulumi.Output<string>;
     /**
      * (Updatable) The maximum number of executors.
      */
-    public readonly maxExecutorCount!: pulumi.Output<number>;
+    declare public readonly maxExecutorCount: pulumi.Output<number>;
     /**
      * Metastore OCID
      */
-    public readonly metastoreId!: pulumi.Output<string>;
+    declare public readonly metastoreId: pulumi.Output<string>;
     /**
      * (Updatable) The minimum number of executors.
      */
-    public readonly minExecutorCount!: pulumi.Output<number>;
+    declare public readonly minExecutorCount: pulumi.Output<number>;
     /**
      * The network configuration of a SQL Endpoint.
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.DataFlow.SqlEndpointNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.DataFlow.SqlEndpointNetworkConfiguration>;
     /**
      * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    public readonly sparkAdvancedConfigurations!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly sparkAdvancedConfigurations: pulumi.Output<{[key: string]: string}>;
     /**
      * The version of the SQL Endpoint.
      */
-    public readonly sqlEndpointVersion!: pulumi.Output<string>;
+    declare public readonly sqlEndpointVersion: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -125,27 +125,27 @@ export class SqlEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateMessage: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      */
-    public /*out*/ readonly warehouseBucketUri!: pulumi.Output<string>;
+    declare public /*out*/ readonly warehouseBucketUri: pulumi.Output<string>;
 
     /**
      * Create a SqlEndpoint resource with the given unique name, arguments, and options.
@@ -160,74 +160,74 @@ export class SqlEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SqlEndpointState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["driverShape"] = state ? state.driverShape : undefined;
-            resourceInputs["driverShapeConfig"] = state ? state.driverShapeConfig : undefined;
-            resourceInputs["executorShape"] = state ? state.executorShape : undefined;
-            resourceInputs["executorShapeConfig"] = state ? state.executorShapeConfig : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["jdbcEndpointUrl"] = state ? state.jdbcEndpointUrl : undefined;
-            resourceInputs["lakeId"] = state ? state.lakeId : undefined;
-            resourceInputs["maxExecutorCount"] = state ? state.maxExecutorCount : undefined;
-            resourceInputs["metastoreId"] = state ? state.metastoreId : undefined;
-            resourceInputs["minExecutorCount"] = state ? state.minExecutorCount : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["sparkAdvancedConfigurations"] = state ? state.sparkAdvancedConfigurations : undefined;
-            resourceInputs["sqlEndpointVersion"] = state ? state.sqlEndpointVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["warehouseBucketUri"] = state ? state.warehouseBucketUri : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["driverShape"] = state?.driverShape;
+            resourceInputs["driverShapeConfig"] = state?.driverShapeConfig;
+            resourceInputs["executorShape"] = state?.executorShape;
+            resourceInputs["executorShapeConfig"] = state?.executorShapeConfig;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["jdbcEndpointUrl"] = state?.jdbcEndpointUrl;
+            resourceInputs["lakeId"] = state?.lakeId;
+            resourceInputs["maxExecutorCount"] = state?.maxExecutorCount;
+            resourceInputs["metastoreId"] = state?.metastoreId;
+            resourceInputs["minExecutorCount"] = state?.minExecutorCount;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["sparkAdvancedConfigurations"] = state?.sparkAdvancedConfigurations;
+            resourceInputs["sqlEndpointVersion"] = state?.sqlEndpointVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateMessage"] = state?.stateMessage;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["warehouseBucketUri"] = state?.warehouseBucketUri;
         } else {
             const args = argsOrState as SqlEndpointArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.driverShape === undefined) && !opts.urn) {
+            if (args?.driverShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'driverShape'");
             }
-            if ((!args || args.executorShape === undefined) && !opts.urn) {
+            if (args?.executorShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executorShape'");
             }
-            if ((!args || args.maxExecutorCount === undefined) && !opts.urn) {
+            if (args?.maxExecutorCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maxExecutorCount'");
             }
-            if ((!args || args.metastoreId === undefined) && !opts.urn) {
+            if (args?.metastoreId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metastoreId'");
             }
-            if ((!args || args.minExecutorCount === undefined) && !opts.urn) {
+            if (args?.minExecutorCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'minExecutorCount'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            if ((!args || args.sqlEndpointVersion === undefined) && !opts.urn) {
+            if (args?.sqlEndpointVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sqlEndpointVersion'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["driverShape"] = args ? args.driverShape : undefined;
-            resourceInputs["driverShapeConfig"] = args ? args.driverShapeConfig : undefined;
-            resourceInputs["executorShape"] = args ? args.executorShape : undefined;
-            resourceInputs["executorShapeConfig"] = args ? args.executorShapeConfig : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["maxExecutorCount"] = args ? args.maxExecutorCount : undefined;
-            resourceInputs["metastoreId"] = args ? args.metastoreId : undefined;
-            resourceInputs["minExecutorCount"] = args ? args.minExecutorCount : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["sparkAdvancedConfigurations"] = args ? args.sparkAdvancedConfigurations : undefined;
-            resourceInputs["sqlEndpointVersion"] = args ? args.sqlEndpointVersion : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["driverShape"] = args?.driverShape;
+            resourceInputs["driverShapeConfig"] = args?.driverShapeConfig;
+            resourceInputs["executorShape"] = args?.executorShape;
+            resourceInputs["executorShapeConfig"] = args?.executorShapeConfig;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["maxExecutorCount"] = args?.maxExecutorCount;
+            resourceInputs["metastoreId"] = args?.metastoreId;
+            resourceInputs["minExecutorCount"] = args?.minExecutorCount;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["sparkAdvancedConfigurations"] = args?.sparkAdvancedConfigurations;
+            resourceInputs["sqlEndpointVersion"] = args?.sqlEndpointVersion;
+            resourceInputs["state"] = args?.state;
             resourceInputs["jdbcEndpointUrl"] = undefined /*out*/;
             resourceInputs["lakeId"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;

@@ -78,69 +78,69 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A dictionary of HTTP request headers.
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    public readonly headers!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly headers: pulumi.Output<{[key: string]: string}>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    public /*out*/ readonly homeRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly homeRegion: pulumi.Output<string>;
     /**
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
      */
-    public readonly intervalInSeconds!: pulumi.Output<number>;
+    declare public readonly intervalInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The supported HTTP methods available for probes.
      */
-    public readonly method!: pulumi.Output<string>;
+    declare public readonly method: pulumi.Output<string>;
     /**
      * (Updatable) The optional URL path to probe, including query parameters.
      */
-    public readonly path!: pulumi.Output<string>;
+    declare public readonly path: pulumi.Output<string>;
     /**
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * (Updatable) The supported protocols available for HTTP probes.
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * A URL for fetching the probe results.
      */
-    public /*out*/ readonly resultsUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly resultsUrl: pulumi.Output<string>;
     /**
      * (Updatable) A list of targets (hostnames or IP addresses) of the probe.
      */
-    public readonly targets!: pulumi.Output<string[]>;
+    declare public readonly targets: pulumi.Output<string[]>;
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
      *
@@ -148,7 +148,7 @@ export class HttpMonitor extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vantagePointNames!: pulumi.Output<string[]>;
+    declare public readonly vantagePointNames: pulumi.Output<string[]>;
 
     /**
      * Create a HttpMonitor resource with the given unique name, arguments, and options.
@@ -163,54 +163,54 @@ export class HttpMonitor extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpMonitorState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["homeRegion"] = state ? state.homeRegion : undefined;
-            resourceInputs["intervalInSeconds"] = state ? state.intervalInSeconds : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["path"] = state ? state.path : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["resultsUrl"] = state ? state.resultsUrl : undefined;
-            resourceInputs["targets"] = state ? state.targets : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["vantagePointNames"] = state ? state.vantagePointNames : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["homeRegion"] = state?.homeRegion;
+            resourceInputs["intervalInSeconds"] = state?.intervalInSeconds;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["path"] = state?.path;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["resultsUrl"] = state?.resultsUrl;
+            resourceInputs["targets"] = state?.targets;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["vantagePointNames"] = state?.vantagePointNames;
         } else {
             const args = argsOrState as HttpMonitorArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.intervalInSeconds === undefined) && !opts.urn) {
+            if (args?.intervalInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'intervalInSeconds'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            if ((!args || args.targets === undefined) && !opts.urn) {
+            if (args?.targets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targets'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["intervalInSeconds"] = args ? args.intervalInSeconds : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["path"] = args ? args.path : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["targets"] = args ? args.targets : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["vantagePointNames"] = args ? args.vantagePointNames : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["intervalInSeconds"] = args?.intervalInSeconds;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["path"] = args?.path;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["targets"] = args?.targets;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["vantagePointNames"] = args?.vantagePointNames;
             resourceInputs["homeRegion"] = undefined /*out*/;
             resourceInputs["resultsUrl"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

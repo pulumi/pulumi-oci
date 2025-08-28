@@ -127,99 +127,99 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * The database system administrator username.
      */
-    public /*out*/ readonly adminUsername!: pulumi.Output<string>;
+    declare public /*out*/ readonly adminUsername: pulumi.Output<string>;
     /**
      * Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
      */
-    public readonly applyConfig!: pulumi.Output<string | undefined>;
+    declare public readonly applyConfig: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
      */
-    public readonly configId!: pulumi.Output<string>;
+    declare public readonly configId: pulumi.Output<string>;
     /**
      * Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
      */
-    public readonly credentials!: pulumi.Output<outputs.Psql.DbSystemCredentials | undefined>;
+    declare public readonly credentials: pulumi.Output<outputs.Psql.DbSystemCredentials | undefined>;
     /**
      * Version of database system software.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-provided description of a database system.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Count of database instances nodes to be created in the database system.
      */
-    public readonly instanceCount!: pulumi.Output<number>;
+    declare public readonly instanceCount: pulumi.Output<number>;
     /**
      * (Updatable) The total amount of memory available to each database instance node, in gigabytes.
      */
-    public readonly instanceMemorySizeInGbs!: pulumi.Output<number>;
+    declare public readonly instanceMemorySizeInGbs: pulumi.Output<number>;
     /**
      * (Updatable) The total number of OCPUs available to each database instance node.
      */
-    public readonly instanceOcpuCount!: pulumi.Output<number>;
+    declare public readonly instanceOcpuCount: pulumi.Output<number>;
     /**
      * The list of instances, or nodes, in the database system.
      */
-    public /*out*/ readonly instances!: pulumi.Output<outputs.Psql.DbSystemInstance[]>;
+    declare public /*out*/ readonly instances: pulumi.Output<outputs.Psql.DbSystemInstance[]>;
     /**
      * Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
      */
-    public readonly instancesDetails!: pulumi.Output<outputs.Psql.DbSystemInstancesDetail[]>;
+    declare public readonly instancesDetails: pulumi.Output<outputs.Psql.DbSystemInstancesDetail[]>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) PostgreSQL database system management policy update details.
      */
-    public readonly managementPolicy!: pulumi.Output<outputs.Psql.DbSystemManagementPolicy>;
+    declare public readonly managementPolicy: pulumi.Output<outputs.Psql.DbSystemManagementPolicy>;
     /**
      * (Updatable) Network details for the database system.
      */
-    public readonly networkDetails!: pulumi.Output<outputs.Psql.DbSystemNetworkDetails>;
+    declare public readonly networkDetails: pulumi.Output<outputs.Psql.DbSystemNetworkDetails>;
     /**
      * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      */
-    public readonly patchOperations!: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The source of the database system.
      */
-    public readonly source!: pulumi.Output<outputs.Psql.DbSystemSource>;
+    declare public readonly source: pulumi.Output<outputs.Psql.DbSystemSource>;
     /**
      * The current state of the database system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Storage details of the database system.
      */
-    public readonly storageDetails!: pulumi.Output<outputs.Psql.DbSystemStorageDetails>;
+    declare public readonly storageDetails: pulumi.Output<outputs.Psql.DbSystemStorageDetails>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Type of the database system.
      *
@@ -227,15 +227,15 @@ export class DbSystem extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemType!: pulumi.Output<string>;
+    declare public readonly systemType: pulumi.Output<string>;
     /**
      * The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DbSystem resource with the given unique name, arguments, and options.
@@ -250,73 +250,73 @@ export class DbSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbSystemState | undefined;
-            resourceInputs["adminUsername"] = state ? state.adminUsername : undefined;
-            resourceInputs["applyConfig"] = state ? state.applyConfig : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configId"] = state ? state.configId : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["instanceCount"] = state ? state.instanceCount : undefined;
-            resourceInputs["instanceMemorySizeInGbs"] = state ? state.instanceMemorySizeInGbs : undefined;
-            resourceInputs["instanceOcpuCount"] = state ? state.instanceOcpuCount : undefined;
-            resourceInputs["instances"] = state ? state.instances : undefined;
-            resourceInputs["instancesDetails"] = state ? state.instancesDetails : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["managementPolicy"] = state ? state.managementPolicy : undefined;
-            resourceInputs["networkDetails"] = state ? state.networkDetails : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageDetails"] = state ? state.storageDetails : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["systemType"] = state ? state.systemType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["adminUsername"] = state?.adminUsername;
+            resourceInputs["applyConfig"] = state?.applyConfig;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configId"] = state?.configId;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["instanceCount"] = state?.instanceCount;
+            resourceInputs["instanceMemorySizeInGbs"] = state?.instanceMemorySizeInGbs;
+            resourceInputs["instanceOcpuCount"] = state?.instanceOcpuCount;
+            resourceInputs["instances"] = state?.instances;
+            resourceInputs["instancesDetails"] = state?.instancesDetails;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managementPolicy"] = state?.managementPolicy;
+            resourceInputs["networkDetails"] = state?.networkDetails;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageDetails"] = state?.storageDetails;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["systemType"] = state?.systemType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DbSystemArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbVersion === undefined) && !opts.urn) {
+            if (args?.dbVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbVersion'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.networkDetails === undefined) && !opts.urn) {
+            if (args?.networkDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkDetails'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.storageDetails === undefined) && !opts.urn) {
+            if (args?.storageDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storageDetails'");
             }
-            resourceInputs["applyConfig"] = args ? args.applyConfig : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configId"] = args ? args.configId : undefined;
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instanceCount"] = args ? args.instanceCount : undefined;
-            resourceInputs["instanceMemorySizeInGbs"] = args ? args.instanceMemorySizeInGbs : undefined;
-            resourceInputs["instanceOcpuCount"] = args ? args.instanceOcpuCount : undefined;
-            resourceInputs["instancesDetails"] = args ? args.instancesDetails : undefined;
-            resourceInputs["managementPolicy"] = args ? args.managementPolicy : undefined;
-            resourceInputs["networkDetails"] = args ? args.networkDetails : undefined;
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["storageDetails"] = args ? args.storageDetails : undefined;
-            resourceInputs["systemType"] = args ? args.systemType : undefined;
+            resourceInputs["applyConfig"] = args?.applyConfig;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configId"] = args?.configId;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instanceCount"] = args?.instanceCount;
+            resourceInputs["instanceMemorySizeInGbs"] = args?.instanceMemorySizeInGbs;
+            resourceInputs["instanceOcpuCount"] = args?.instanceOcpuCount;
+            resourceInputs["instancesDetails"] = args?.instancesDetails;
+            resourceInputs["managementPolicy"] = args?.managementPolicy;
+            resourceInputs["networkDetails"] = args?.networkDetails;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["storageDetails"] = args?.storageDetails;
+            resourceInputs["systemType"] = args?.systemType;
             resourceInputs["adminUsername"] = undefined /*out*/;
             resourceInputs["instances"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

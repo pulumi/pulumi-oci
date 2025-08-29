@@ -22,13 +22,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// Indicates whether the backup destination is cross-region or local region.
+        /// Indicates whether the backup destination is cross-region or local.
         /// </summary>
         public readonly bool? IsRemote;
         /// <summary>
-        /// The name of the remote region where the remote automatic incremental backups will be stored.
-        /// 
-        /// For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        /// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         /// </summary>
         public readonly string? RemoteRegion;
         /// <summary>

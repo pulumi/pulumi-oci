@@ -50,6 +50,7 @@ import (
 //				DisplayName:            pulumi.StringRef(auditTrailDisplayName),
 //				State:                  pulumi.StringRef(auditTrailState),
 //				Status:                 pulumi.StringRef(auditTrailStatus),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -87,6 +88,8 @@ type GetAuditTrailsArgs struct {
 	State *string `pulumi:"state"`
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
 	Status *string `pulumi:"status"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -108,7 +111,8 @@ type GetAuditTrailsResult struct {
 	// The current state of the audit trail.
 	State *string `pulumi:"state"`
 	// The current sub-state of the audit trail.
-	Status *string `pulumi:"status"`
+	Status                *string `pulumi:"status"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the Data Safe target for which the audit trail is created.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -139,6 +143,8 @@ type GetAuditTrailsOutputArgs struct {
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
 	Status pulumi.StringPtrInput `pulumi:"status"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -206,6 +212,10 @@ func (o GetAuditTrailsResultOutput) State() pulumi.StringPtrOutput {
 // The current sub-state of the audit trail.
 func (o GetAuditTrailsResultOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditTrailsResult) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAuditTrailsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditTrailsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Safe target for which the audit trail is created.

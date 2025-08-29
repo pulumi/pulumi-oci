@@ -10,25 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all target-alert policy associations.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testTargetAlertPolicyAssociations = oci.DataSafe.getTargetAlertPolicyAssociations({
- *     compartmentId: compartmentId,
- *     accessLevel: targetAlertPolicyAssociationAccessLevel,
- *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree,
- *     state: targetAlertPolicyAssociationState,
- *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
- *     targetId: testTarget.id,
- *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
- *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
- * });
- * ```
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -129,25 +110,6 @@ export interface GetTargetAlertPolicyAssociationsResult {
  * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all target-alert policy associations.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testTargetAlertPolicyAssociations = oci.DataSafe.getTargetAlertPolicyAssociations({
- *     compartmentId: compartmentId,
- *     accessLevel: targetAlertPolicyAssociationAccessLevel,
- *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree,
- *     state: targetAlertPolicyAssociationState,
- *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
- *     targetId: testTarget.id,
- *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
- *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
- * });
- * ```
  */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

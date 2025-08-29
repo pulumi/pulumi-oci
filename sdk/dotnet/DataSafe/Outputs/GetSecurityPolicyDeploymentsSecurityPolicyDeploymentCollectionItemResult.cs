@@ -21,6 +21,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly int DeployTrigger;
         /// <summary>
         /// The description of the security policy deployment.
         /// </summary>
@@ -41,10 +42,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Details about the current state of the security policy deployment in Data Safe.
         /// </summary>
         public readonly string LifecycleDetails;
-        /// <summary>
-        /// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
-        /// </summary>
-        public readonly string SecurityPolicyDeploymentId;
+        public readonly int RefreshTrigger;
         /// <summary>
         /// An optional filter to return only resources that match the specified OCID of the security policy resource.
         /// </summary>
@@ -62,9 +60,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TargetId;
         /// <summary>
+        /// A optional filter to return only resources that belong to the specified target type.
+        /// </summary>
+        public readonly string TargetType;
+        /// <summary>
         /// The time that the security policy deployment was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The last date and time the security policy was deployed, in the format defined by RFC3339.
+        /// </summary>
+        public readonly string TimeDeployed;
         /// <summary>
         /// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
         /// </summary>
@@ -76,6 +82,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            int deployTrigger,
+
             string description,
 
             string displayName,
@@ -86,7 +94,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string lifecycleDetails,
 
-            string securityPolicyDeploymentId,
+            int refreshTrigger,
 
             string securityPolicyId,
 
@@ -96,23 +104,30 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string targetId,
 
+            string targetType,
+
             string timeCreated,
+
+            string timeDeployed,
 
             string timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DeployTrigger = deployTrigger;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
-            SecurityPolicyDeploymentId = securityPolicyDeploymentId;
+            RefreshTrigger = refreshTrigger;
             SecurityPolicyId = securityPolicyId;
             State = state;
             SystemTags = systemTags;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreated = timeCreated;
+            TimeDeployed = timeDeployed;
             TimeUpdated = timeUpdated;
         }
     }

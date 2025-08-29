@@ -27,7 +27,22 @@ class GetSecurityAssessmentResult:
     """
     A collection of values returned by getSecurityAssessment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_assessment_scheduled=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, link=None, schedule=None, schedule_security_assessment_id=None, security_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, target_version=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None):
+    def __init__(__self__, apply_template_trigger=None, base_security_assessment_id=None, baseline_assessment_id=None, checks=None, compare_to_template_baseline_trigger=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_assessment_scheduled=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, link=None, remove_template_trigger=None, schedule=None, schedule_security_assessment_id=None, security_assessment_id=None, state=None, statistics=None, system_tags=None, target_database_group_id=None, target_id=None, target_ids=None, target_type=None, target_version=None, template_assessment_id=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None):
+        if apply_template_trigger and not isinstance(apply_template_trigger, int):
+            raise TypeError("Expected argument 'apply_template_trigger' to be a int")
+        pulumi.set(__self__, "apply_template_trigger", apply_template_trigger)
+        if base_security_assessment_id and not isinstance(base_security_assessment_id, str):
+            raise TypeError("Expected argument 'base_security_assessment_id' to be a str")
+        pulumi.set(__self__, "base_security_assessment_id", base_security_assessment_id)
+        if baseline_assessment_id and not isinstance(baseline_assessment_id, str):
+            raise TypeError("Expected argument 'baseline_assessment_id' to be a str")
+        pulumi.set(__self__, "baseline_assessment_id", baseline_assessment_id)
+        if checks and not isinstance(checks, list):
+            raise TypeError("Expected argument 'checks' to be a list")
+        pulumi.set(__self__, "checks", checks)
+        if compare_to_template_baseline_trigger and not isinstance(compare_to_template_baseline_trigger, int):
+            raise TypeError("Expected argument 'compare_to_template_baseline_trigger' to be a int")
+        pulumi.set(__self__, "compare_to_template_baseline_trigger", compare_to_template_baseline_trigger)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,6 +85,9 @@ class GetSecurityAssessmentResult:
         if link and not isinstance(link, str):
             raise TypeError("Expected argument 'link' to be a str")
         pulumi.set(__self__, "link", link)
+        if remove_template_trigger and not isinstance(remove_template_trigger, int):
+            raise TypeError("Expected argument 'remove_template_trigger' to be a int")
+        pulumi.set(__self__, "remove_template_trigger", remove_template_trigger)
         if schedule and not isinstance(schedule, str):
             raise TypeError("Expected argument 'schedule' to be a str")
         pulumi.set(__self__, "schedule", schedule)
@@ -88,15 +106,24 @@ class GetSecurityAssessmentResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
         if target_ids and not isinstance(target_ids, list):
             raise TypeError("Expected argument 'target_ids' to be a list")
         pulumi.set(__self__, "target_ids", target_ids)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if target_version and not isinstance(target_version, str):
             raise TypeError("Expected argument 'target_version' to be a str")
         pulumi.set(__self__, "target_version", target_version)
+        if template_assessment_id and not isinstance(template_assessment_id, str):
+            raise TypeError("Expected argument 'template_assessment_id' to be a str")
+        pulumi.set(__self__, "template_assessment_id", template_assessment_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -112,6 +139,37 @@ class GetSecurityAssessmentResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="applyTemplateTrigger")
+    def apply_template_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "apply_template_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="baseSecurityAssessmentId")
+    def base_security_assessment_id(self) -> _builtins.str:
+        return pulumi.get(self, "base_security_assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="baselineAssessmentId")
+    def baseline_assessment_id(self) -> _builtins.str:
+        """
+        The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        """
+        return pulumi.get(self, "baseline_assessment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def checks(self) -> Sequence['outputs.GetSecurityAssessmentCheckResult']:
+        """
+        The security checks to be evaluated for type template.
+        """
+        return pulumi.get(self, "checks")
+
+    @_builtins.property
+    @pulumi.getter(name="compareToTemplateBaselineTrigger")
+    def compare_to_template_baseline_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "compare_to_template_baseline_trigger")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -226,6 +284,11 @@ class GetSecurityAssessmentResult:
         return pulumi.get(self, "link")
 
     @_builtins.property
+    @pulumi.getter(name="removeTemplateTrigger")
+    def remove_template_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "remove_template_trigger")
+
+    @_builtins.property
     @pulumi.getter
     def schedule(self) -> _builtins.str:
         """
@@ -271,6 +334,14 @@ class GetSecurityAssessmentResult:
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> _builtins.str:
+        """
+        The OCID of the target database group that the group assessment is created for.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         return pulumi.get(self, "target_id")
@@ -284,12 +355,28 @@ class GetSecurityAssessmentResult:
         return pulumi.get(self, "target_ids")
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        Indicates whether the security assessment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @_builtins.property
     @pulumi.getter(name="targetVersion")
     def target_version(self) -> _builtins.str:
         """
         The version of the target database.
         """
         return pulumi.get(self, "target_version")
+
+    @_builtins.property
+    @pulumi.getter(name="templateAssessmentId")
+    def template_assessment_id(self) -> _builtins.str:
+        """
+        The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+        """
+        return pulumi.get(self, "template_assessment_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -327,7 +414,7 @@ class GetSecurityAssessmentResult:
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of this security assessment. The possible types are:
+        The type of the security assessment. Possible values are:
         """
         return pulumi.get(self, "type")
 
@@ -338,6 +425,11 @@ class AwaitableGetSecurityAssessmentResult(GetSecurityAssessmentResult):
         if False:
             yield self
         return GetSecurityAssessmentResult(
+            apply_template_trigger=self.apply_template_trigger,
+            base_security_assessment_id=self.base_security_assessment_id,
+            baseline_assessment_id=self.baseline_assessment_id,
+            checks=self.checks,
+            compare_to_template_baseline_trigger=self.compare_to_template_baseline_trigger,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -352,15 +444,19 @@ class AwaitableGetSecurityAssessmentResult(GetSecurityAssessmentResult):
             last_compared_baseline_id=self.last_compared_baseline_id,
             lifecycle_details=self.lifecycle_details,
             link=self.link,
+            remove_template_trigger=self.remove_template_trigger,
             schedule=self.schedule,
             schedule_security_assessment_id=self.schedule_security_assessment_id,
             security_assessment_id=self.security_assessment_id,
             state=self.state,
             statistics=self.statistics,
             system_tags=self.system_tags,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
             target_ids=self.target_ids,
+            target_type=self.target_type,
             target_version=self.target_version,
+            template_assessment_id=self.template_assessment_id,
             time_created=self.time_created,
             time_last_assessed=self.time_last_assessed,
             time_updated=self.time_updated,
@@ -393,6 +489,11 @@ def get_security_assessment(security_assessment_id: Optional[_builtins.str] = No
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessment:getSecurityAssessment', __args__, opts=opts, typ=GetSecurityAssessmentResult).value
 
     return AwaitableGetSecurityAssessmentResult(
+        apply_template_trigger=pulumi.get(__ret__, 'apply_template_trigger'),
+        base_security_assessment_id=pulumi.get(__ret__, 'base_security_assessment_id'),
+        baseline_assessment_id=pulumi.get(__ret__, 'baseline_assessment_id'),
+        checks=pulumi.get(__ret__, 'checks'),
+        compare_to_template_baseline_trigger=pulumi.get(__ret__, 'compare_to_template_baseline_trigger'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -407,15 +508,19 @@ def get_security_assessment(security_assessment_id: Optional[_builtins.str] = No
         last_compared_baseline_id=pulumi.get(__ret__, 'last_compared_baseline_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         link=pulumi.get(__ret__, 'link'),
+        remove_template_trigger=pulumi.get(__ret__, 'remove_template_trigger'),
         schedule=pulumi.get(__ret__, 'schedule'),
         schedule_security_assessment_id=pulumi.get(__ret__, 'schedule_security_assessment_id'),
         security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
         state=pulumi.get(__ret__, 'state'),
         statistics=pulumi.get(__ret__, 'statistics'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         target_ids=pulumi.get(__ret__, 'target_ids'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         target_version=pulumi.get(__ret__, 'target_version'),
+        template_assessment_id=pulumi.get(__ret__, 'template_assessment_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_assessed=pulumi.get(__ret__, 'time_last_assessed'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
@@ -445,6 +550,11 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessment:getSecurityAssessment', __args__, opts=opts, typ=GetSecurityAssessmentResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentResult(
+        apply_template_trigger=pulumi.get(__response__, 'apply_template_trigger'),
+        base_security_assessment_id=pulumi.get(__response__, 'base_security_assessment_id'),
+        baseline_assessment_id=pulumi.get(__response__, 'baseline_assessment_id'),
+        checks=pulumi.get(__response__, 'checks'),
+        compare_to_template_baseline_trigger=pulumi.get(__response__, 'compare_to_template_baseline_trigger'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
@@ -459,15 +569,19 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
         last_compared_baseline_id=pulumi.get(__response__, 'last_compared_baseline_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         link=pulumi.get(__response__, 'link'),
+        remove_template_trigger=pulumi.get(__response__, 'remove_template_trigger'),
         schedule=pulumi.get(__response__, 'schedule'),
         schedule_security_assessment_id=pulumi.get(__response__, 'schedule_security_assessment_id'),
         security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
         state=pulumi.get(__response__, 'state'),
         statistics=pulumi.get(__response__, 'statistics'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
         target_ids=pulumi.get(__response__, 'target_ids'),
+        target_type=pulumi.get(__response__, 'target_type'),
         target_version=pulumi.get(__response__, 'target_version'),
+        template_assessment_id=pulumi.get(__response__, 'template_assessment_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_last_assessed=pulumi.get(__response__, 'time_last_assessed'),
         time_updated=pulumi.get(__response__, 'time_updated'),

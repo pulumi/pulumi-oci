@@ -34,6 +34,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        public readonly int ComputeCount;
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores enabled on the DB system.
         /// </summary>
         public readonly int CpuCoreCount;
@@ -244,6 +252,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            int computeCount,
+
+            string computeModel,
+
             int cpuCoreCount,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDataCollectionOptionResult> dataCollectionOptions,
@@ -357,6 +369,8 @@ namespace Pulumi.Oci.Database.Outputs
             BackupSubnetId = backupSubnetId;
             ClusterName = clusterName;
             CompartmentId = compartmentId;
+            ComputeCount = computeCount;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             DataCollectionOptions = dataCollectionOptions;
             DataStoragePercentage = dataStoragePercentage;

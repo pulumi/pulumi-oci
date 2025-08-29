@@ -34,6 +34,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string BackupVnicId;
         /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        public readonly int ComputeCount;
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        public readonly string ComputeModel;
+        /// <summary>
         /// The number of CPU cores enabled on the Db node.
         /// </summary>
         public readonly int CpuCoreCount;
@@ -139,6 +147,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string backupVnicId,
 
+            int computeCount,
+
+            string computeModel,
+
             int cpuCoreCount,
 
             string dbNodeId,
@@ -192,6 +204,8 @@ namespace Pulumi.Oci.Database.Outputs
             BackupIpv6id = backupIpv6id;
             BackupVnic2id = backupVnic2id;
             BackupVnicId = backupVnicId;
+            ComputeCount = computeCount;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             DbNodeId = dbNodeId;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;

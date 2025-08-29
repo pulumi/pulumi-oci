@@ -105,6 +105,11 @@ public final class GetUserAssessmentsUserAssessment {
      */
     private Map<String,String> systemTags;
     /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    private String targetDatabaseGroupId;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -114,6 +119,11 @@ public final class GetUserAssessmentsUserAssessment {
      * 
      */
     private List<String> targetIds;
+    /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    private String targetType;
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
@@ -268,6 +278,13 @@ public final class GetUserAssessmentsUserAssessment {
         return this.systemTags;
     }
     /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public String targetDatabaseGroupId() {
+        return this.targetDatabaseGroupId;
+    }
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -280,6 +297,13 @@ public final class GetUserAssessmentsUserAssessment {
      */
     public List<String> targetIds() {
         return this.targetIds;
+    }
+    /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
     }
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -344,8 +368,10 @@ public final class GetUserAssessmentsUserAssessment {
         private String state;
         private String statistics;
         private Map<String,String> systemTags;
+        private String targetDatabaseGroupId;
         private String targetId;
         private List<String> targetIds;
+        private String targetType;
         private String timeCreated;
         private String timeLastAssessed;
         private String timeUpdated;
@@ -372,8 +398,10 @@ public final class GetUserAssessmentsUserAssessment {
     	      this.state = defaults.state;
     	      this.statistics = defaults.statistics;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.targetIds = defaults.targetIds;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastAssessed = defaults.timeLastAssessed;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -532,6 +560,14 @@ public final class GetUserAssessmentsUserAssessment {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            if (targetDatabaseGroupId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsUserAssessment", "targetDatabaseGroupId");
+            }
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentsUserAssessment", "targetId");
@@ -549,6 +585,14 @@ public final class GetUserAssessmentsUserAssessment {
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
+        }
+        @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsUserAssessment", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
@@ -610,8 +654,10 @@ public final class GetUserAssessmentsUserAssessment {
             _resultValue.state = state;
             _resultValue.statistics = statistics;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.targetIds = targetIds;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastAssessed = timeLastAssessed;
             _resultValue.timeUpdated = timeUpdated;

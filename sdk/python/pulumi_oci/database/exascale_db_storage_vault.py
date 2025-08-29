@@ -226,6 +226,7 @@ class ExascaleDbStorageVaultArgs:
 class _ExascaleDbStorageVaultState:
     def __init__(__self__, *,
                  additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+                 attached_shape_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -246,6 +247,7 @@ class _ExascaleDbStorageVaultState:
         """
         Input properties used for looking up and filtering ExascaleDbStorageVault resources.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -270,6 +272,8 @@ class _ExascaleDbStorageVaultState:
         """
         if additional_flash_cache_in_percent is not None:
             pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if attached_shape_attributes is not None:
+            pulumi.set(__self__, "attached_shape_attributes", attached_shape_attributes)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if cluster_placement_group_id is not None:
@@ -316,6 +320,18 @@ class _ExascaleDbStorageVaultState:
     @additional_flash_cache_in_percent.setter
     def additional_flash_cache_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "additional_flash_cache_in_percent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attachedShapeAttributes")
+    def attached_shape_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "attached_shape_attributes")
+
+    @attached_shape_attributes.setter
+    def attached_shape_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "attached_shape_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -702,6 +718,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             __props__.__dict__["high_capacity_database_storage"] = high_capacity_database_storage
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["attached_shape_attributes"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -719,6 +736,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_flash_cache_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
+            attached_shape_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -744,6 +762,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -771,6 +790,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         __props__ = _ExascaleDbStorageVaultState.__new__(_ExascaleDbStorageVaultState)
 
         __props__.__dict__["additional_flash_cache_in_percent"] = additional_flash_cache_in_percent
+        __props__.__dict__["attached_shape_attributes"] = attached_shape_attributes
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
@@ -797,6 +817,14 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         """
         return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedShapeAttributes")
+    def attached_shape_attributes(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "attached_shape_attributes")
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")

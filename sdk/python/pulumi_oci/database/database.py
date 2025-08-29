@@ -267,6 +267,7 @@ class _DatabaseState:
                  source: Optional[pulumi.Input[_builtins.str]] = None,
                  source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_size_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseStorageSizeDetailArgs']]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -315,6 +316,7 @@ class _DatabaseState:
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[_builtins.str] state: The current state of the database.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseStorageSizeDetailArgs']]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the database was created.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -390,6 +392,8 @@ class _DatabaseState:
             pulumi.set(__self__, "source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_size_details is not None:
+            pulumi.set(__self__, "storage_size_details", storage_size_details)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -827,6 +831,18 @@ class _DatabaseState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseStorageSizeDetailArgs']]]]:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
+
+    @storage_size_details.setter
+    def storage_size_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseStorageSizeDetailArgs']]]]):
+        pulumi.set(self, "storage_size_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -1030,6 +1046,7 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["sid_prefix"] = None
             __props__.__dict__["source_database_point_in_time_recovery_timestamp"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["storage_size_details"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["vm_cluster_id"] = None
@@ -1078,6 +1095,7 @@ class Database(pulumi.CustomResource):
             source: Optional[pulumi.Input[_builtins.str]] = None,
             source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            storage_size_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             vault_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1131,6 +1149,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[_builtins.str] state: The current state of the database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict']]]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the database was created.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -1175,6 +1194,7 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["source"] = source
         __props__.__dict__["source_database_point_in_time_recovery_timestamp"] = source_database_point_in_time_recovery_timestamp
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_size_details"] = storage_size_details
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vault_id"] = vault_id
@@ -1467,6 +1487,14 @@ class Database(pulumi.CustomResource):
         The current state of the database.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> pulumi.Output[Sequence['outputs.DatabaseStorageSizeDetail']]:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

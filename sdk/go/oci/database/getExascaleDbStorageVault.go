@@ -60,6 +60,8 @@ type LookupExascaleDbStorageVaultArgs struct {
 type LookupExascaleDbStorageVaultResult struct {
 	// The size of additional Flash Cache in percentage of High Capacity database storage.
 	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
+	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+	AttachedShapeAttributes []string `pulumi:"attachedShapeAttributes"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
@@ -136,6 +138,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) ToLookupExascaleDbStorageVault
 // The size of additional Flash Cache in percentage of High Capacity database storage.
 func (o LookupExascaleDbStorageVaultResultOutput) AdditionalFlashCacheInPercent() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) int { return v.AdditionalFlashCacheInPercent }).(pulumi.IntOutput)
+}
+
+// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+func (o LookupExascaleDbStorageVaultResultOutput) AttachedShapeAttributes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) []string { return v.AttachedShapeAttributes }).(pulumi.StringArrayOutput)
 }
 
 // The name of the availability domain in which the Exadata Database Storage Vault is located.

@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlCollectionAnalyticGroupBy,
  *     state: sqlCollectionAnalyticState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeEnded: sqlCollectionAnalyticTimeEnded,
  *     timeStarted: sqlCollectionAnalyticTimeStarted,
@@ -51,6 +52,7 @@ export function getSqlCollectionAnalytics(args: GetSqlCollectionAnalyticsArgs, o
         "filters": args.filters,
         "groupBies": args.groupBies,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeEnded": args.timeEnded,
         "timeStarted": args.timeStarted,
@@ -82,6 +84,10 @@ export interface GetSqlCollectionAnalyticsArgs {
      * The current state of the SQL collection.
      */
     state?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -117,6 +123,7 @@ export interface GetSqlCollectionAnalyticsResult {
      * The current state of the SQL collection.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
@@ -154,6 +161,7 @@ export interface GetSqlCollectionAnalyticsResult {
  *     compartmentIdInSubtree: sqlCollectionAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlCollectionAnalyticGroupBy,
  *     state: sqlCollectionAnalyticState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeEnded: sqlCollectionAnalyticTimeEnded,
  *     timeStarted: sqlCollectionAnalyticTimeStarted,
@@ -169,6 +177,7 @@ export function getSqlCollectionAnalyticsOutput(args: GetSqlCollectionAnalyticsO
         "filters": args.filters,
         "groupBies": args.groupBies,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeEnded": args.timeEnded,
         "timeStarted": args.timeStarted,
@@ -200,6 +209,10 @@ export interface GetSqlCollectionAnalyticsOutputArgs {
      * The current state of the SQL collection.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

@@ -17,7 +17,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSecurityAssessmentFindingResult {
     private @Nullable String accessLevel;
+    private @Nullable String category;
     private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> containsReferences;
+    private @Nullable List<String> containsSeverities;
     private @Nullable List<String> fields;
     private @Nullable List<GetSecurityAssessmentFindingFilter> filters;
     private @Nullable String findingKey;
@@ -34,13 +37,23 @@ public final class GetSecurityAssessmentFindingResult {
     private @Nullable String severity;
     private @Nullable String state;
     private @Nullable String targetId;
+    private @Nullable List<String> targetIds;
 
     private GetSecurityAssessmentFindingResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
+    }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+    public List<String> containsReferences() {
+        return this.containsReferences == null ? List.of() : this.containsReferences;
+    }
+    public List<String> containsSeverities() {
+        return this.containsSeverities == null ? List.of() : this.containsSeverities;
     }
     public List<String> fields() {
         return this.fields == null ? List.of() : this.fields;
@@ -82,6 +95,9 @@ public final class GetSecurityAssessmentFindingResult {
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
     }
+    public List<String> targetIds() {
+        return this.targetIds == null ? List.of() : this.targetIds;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -93,7 +109,10 @@ public final class GetSecurityAssessmentFindingResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
+        private @Nullable String category;
         private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable List<String> containsReferences;
+        private @Nullable List<String> containsSeverities;
         private @Nullable List<String> fields;
         private @Nullable List<GetSecurityAssessmentFindingFilter> filters;
         private @Nullable String findingKey;
@@ -106,11 +125,15 @@ public final class GetSecurityAssessmentFindingResult {
         private @Nullable String severity;
         private @Nullable String state;
         private @Nullable String targetId;
+        private @Nullable List<String> targetIds;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
+    	      this.category = defaults.category;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
+    	      this.containsReferences = defaults.containsReferences;
+    	      this.containsSeverities = defaults.containsSeverities;
     	      this.fields = defaults.fields;
     	      this.filters = defaults.filters;
     	      this.findingKey = defaults.findingKey;
@@ -123,6 +146,7 @@ public final class GetSecurityAssessmentFindingResult {
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
     	      this.targetId = defaults.targetId;
+    	      this.targetIds = defaults.targetIds;
         }
 
         @CustomType.Setter
@@ -132,10 +156,34 @@ public final class GetSecurityAssessmentFindingResult {
             return this;
         }
         @CustomType.Setter
+        public Builder category(@Nullable String category) {
+
+            this.category = category;
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
 
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+        @CustomType.Setter
+        public Builder containsReferences(@Nullable List<String> containsReferences) {
+
+            this.containsReferences = containsReferences;
+            return this;
+        }
+        public Builder containsReferences(String... containsReferences) {
+            return containsReferences(List.of(containsReferences));
+        }
+        @CustomType.Setter
+        public Builder containsSeverities(@Nullable List<String> containsSeverities) {
+
+            this.containsSeverities = containsSeverities;
+            return this;
+        }
+        public Builder containsSeverities(String... containsSeverities) {
+            return containsSeverities(List.of(containsSeverities));
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
@@ -224,10 +272,22 @@ public final class GetSecurityAssessmentFindingResult {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetIds(@Nullable List<String> targetIds) {
+
+            this.targetIds = targetIds;
+            return this;
+        }
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
+        }
         public GetSecurityAssessmentFindingResult build() {
             final var _resultValue = new GetSecurityAssessmentFindingResult();
             _resultValue.accessLevel = accessLevel;
+            _resultValue.category = category;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.containsReferences = containsReferences;
+            _resultValue.containsSeverities = containsSeverities;
             _resultValue.fields = fields;
             _resultValue.filters = filters;
             _resultValue.findingKey = findingKey;
@@ -240,6 +300,7 @@ public final class GetSecurityAssessmentFindingResult {
             _resultValue.severity = severity;
             _resultValue.state = state;
             _resultValue.targetId = targetId;
+            _resultValue.targetIds = targetIds;
             return _resultValue;
         }
     }

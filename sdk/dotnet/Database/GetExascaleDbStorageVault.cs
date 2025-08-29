@@ -131,6 +131,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int AdditionalFlashCacheInPercent;
         /// <summary>
+        /// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        /// </summary>
+        public readonly ImmutableArray<string> AttachedShapeAttributes;
+        /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -208,6 +212,8 @@ namespace Pulumi.Oci.Database
         private GetExascaleDbStorageVaultResult(
             int additionalFlashCacheInPercent,
 
+            ImmutableArray<string> attachedShapeAttributes,
+
             string availabilityDomain,
 
             string clusterPlacementGroupId,
@@ -247,6 +253,7 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> vmClusterIds)
         {
             AdditionalFlashCacheInPercent = additionalFlashCacheInPercent;
+            AttachedShapeAttributes = attachedShapeAttributes;
             AvailabilityDomain = availabilityDomain;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;

@@ -102,6 +102,21 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
+     * An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+     * 
+     */
+    @Import(name="sensitiveTypeGroupId")
+    private @Nullable Output<String> sensitiveTypeGroupId;
+
+    /**
+     * @return An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+     * 
+     */
+    public Optional<Output<String>> sensitiveTypeGroupId() {
+        return Optional.ofNullable(this.sensitiveTypeGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific sensitive type OCID.
      * 
      */
@@ -114,6 +129,21 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
      */
     public Optional<Output<String>> sensitiveTypeId() {
         return Optional.ofNullable(this.sensitiveTypeId);
+    }
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
     }
 
     /**
@@ -140,7 +170,9 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
         this.groupBy = $.groupBy;
         this.isCommon = $.isCommon;
         this.sensitiveDataModelId = $.sensitiveDataModelId;
+        this.sensitiveTypeGroupId = $.sensitiveTypeGroupId;
         this.sensitiveTypeId = $.sensitiveTypeId;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -281,6 +313,27 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
+         * @param sensitiveTypeGroupId An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeGroupId(@Nullable Output<String> sensitiveTypeGroupId) {
+            $.sensitiveTypeGroupId = sensitiveTypeGroupId;
+            return this;
+        }
+
+        /**
+         * @param sensitiveTypeGroupId An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeGroupId(String sensitiveTypeGroupId) {
+            return sensitiveTypeGroupId(Output.of(sensitiveTypeGroupId));
+        }
+
+        /**
          * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
          * 
          * @return builder
@@ -299,6 +352,27 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
          */
         public Builder sensitiveTypeId(String sensitiveTypeId) {
             return sensitiveTypeId(Output.of(sensitiveTypeId));
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
         }
 
         /**

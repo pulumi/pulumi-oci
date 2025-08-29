@@ -62,6 +62,14 @@ export interface GetDbNodeResult {
      */
     readonly backupVnicId: string;
     /**
+     * The number of compute servers for the DB system.
+     */
+    readonly computeCount: number;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    readonly computeModel: string;
+    /**
      * The number of CPU cores enabled on the Db node.
      */
     readonly cpuCoreCount: number;

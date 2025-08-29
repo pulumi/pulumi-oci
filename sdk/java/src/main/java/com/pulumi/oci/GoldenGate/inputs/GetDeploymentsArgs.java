@@ -64,6 +64,21 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+     * 
+     */
+    @Import(name="deploymentType")
+    private @Nullable Output<String> deploymentType;
+
+    /**
+     * @return A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+     * 
+     */
+    public Optional<Output<String>> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
+    }
+
+    /**
      * A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
@@ -151,6 +166,7 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
         this.assignableConnectionId = $.assignableConnectionId;
         this.assignedConnectionId = $.assignedConnectionId;
         this.compartmentId = $.compartmentId;
+        this.deploymentType = $.deploymentType;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.fqdn = $.fqdn;
@@ -238,6 +254,27 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param deploymentType A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(@Nullable Output<String> deploymentType) {
+            $.deploymentType = deploymentType;
+            return this;
+        }
+
+        /**
+         * @param deploymentType A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(String deploymentType) {
+            return deploymentType(Output.of(deploymentType));
         }
 
         /**

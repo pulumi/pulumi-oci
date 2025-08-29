@@ -12,8 +12,6 @@ namespace Pulumi.Oci.GenerativeAi
     /// <summary>
     /// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
     /// 
-    /// **CreateKnowledgeBase**
-    /// 
     /// Creates a knowledge base.
     /// 
     /// ## Example Usage
@@ -126,12 +124,16 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) **IndexConfig**
-        /// 
-        /// The index configuration of Knowledge bases.
+        /// (Updatable) The index configuration of Knowledge bases.
         /// </summary>
         [Output("indexConfig")]
         public Output<Outputs.AgentKnowledgeBaseIndexConfig> IndexConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// Statistics for Default Knowledge Base.
+        /// </summary>
+        [Output("knowledgeBaseStatistics")]
+        public Output<ImmutableArray<Outputs.AgentKnowledgeBaseKnowledgeBaseStatistic>> KnowledgeBaseStatistics { get; private set; } = null!;
 
         /// <summary>
         /// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -252,9 +254,7 @@ namespace Pulumi.Oci.GenerativeAi
         }
 
         /// <summary>
-        /// (Updatable) **IndexConfig**
-        /// 
-        /// The index configuration of Knowledge bases.
+        /// (Updatable) The index configuration of Knowledge bases.
         /// </summary>
         [Input("indexConfig", required: true)]
         public Input<Inputs.AgentKnowledgeBaseIndexConfigArgs> IndexConfig { get; set; } = null!;
@@ -310,12 +310,22 @@ namespace Pulumi.Oci.GenerativeAi
         }
 
         /// <summary>
-        /// (Updatable) **IndexConfig**
-        /// 
-        /// The index configuration of Knowledge bases.
+        /// (Updatable) The index configuration of Knowledge bases.
         /// </summary>
         [Input("indexConfig")]
         public Input<Inputs.AgentKnowledgeBaseIndexConfigGetArgs>? IndexConfig { get; set; }
+
+        [Input("knowledgeBaseStatistics")]
+        private InputList<Inputs.AgentKnowledgeBaseKnowledgeBaseStatisticGetArgs>? _knowledgeBaseStatistics;
+
+        /// <summary>
+        /// Statistics for Default Knowledge Base.
+        /// </summary>
+        public InputList<Inputs.AgentKnowledgeBaseKnowledgeBaseStatisticGetArgs> KnowledgeBaseStatistics
+        {
+            get => _knowledgeBaseStatistics ?? (_knowledgeBaseStatistics = new InputList<Inputs.AgentKnowledgeBaseKnowledgeBaseStatisticGetArgs>());
+            set => _knowledgeBaseStatistics = value;
+        }
 
         /// <summary>
         /// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

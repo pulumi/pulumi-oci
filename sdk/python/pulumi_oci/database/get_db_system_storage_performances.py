@@ -28,7 +28,10 @@ class GetDbSystemStoragePerformancesResult:
     """
     A collection of values returned by getDbSystemStoragePerformances.
     """
-    def __init__(__self__, database_edition=None, db_system_storage_performances=None, filters=None, id=None, shape_type=None, storage_management=None):
+    def __init__(__self__, compartment_id=None, database_edition=None, db_system_storage_performances=None, filters=None, id=None, shape_type=None, storage_management=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if database_edition and not isinstance(database_edition, str):
             raise TypeError("Expected argument 'database_edition' to be a str")
         pulumi.set(__self__, "database_edition", database_edition)
@@ -47,6 +50,11 @@ class GetDbSystemStoragePerformancesResult:
         if storage_management and not isinstance(storage_management, str):
             raise TypeError("Expected argument 'storage_management' to be a str")
         pulumi.set(__self__, "storage_management", storage_management)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="databaseEdition")
@@ -94,6 +102,7 @@ class AwaitableGetDbSystemStoragePerformancesResult(GetDbSystemStoragePerformanc
         if False:
             yield self
         return GetDbSystemStoragePerformancesResult(
+            compartment_id=self.compartment_id,
             database_edition=self.database_edition,
             db_system_storage_performances=self.db_system_storage_performances,
             filters=self.filters,
@@ -102,7 +111,8 @@ class AwaitableGetDbSystemStoragePerformancesResult(GetDbSystemStoragePerformanc
             storage_management=self.storage_management)
 
 
-def get_db_system_storage_performances(database_edition: Optional[_builtins.str] = None,
+def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] = None,
+                                       database_edition: Optional[_builtins.str] = None,
                                        filters: Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]] = None,
                                        shape_type: Optional[_builtins.str] = None,
                                        storage_management: Optional[_builtins.str] = None,
@@ -113,6 +123,7 @@ def get_db_system_storage_performances(database_edition: Optional[_builtins.str]
     Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
 
 
+    :param _builtins.str compartment_id: Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str database_edition: Optional. Filters the performance results by database edition. Valid values are:
            * STANDARD_EDITION
            * ENTERPRISE_EDITION
@@ -125,6 +136,7 @@ def get_db_system_storage_performances(database_edition: Optional[_builtins.str]
            * LVM specifies logical volume manager, sometimes called logical disk manager.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['databaseEdition'] = database_edition
     __args__['filters'] = filters
     __args__['shapeType'] = shape_type
@@ -133,13 +145,15 @@ def get_db_system_storage_performances(database_edition: Optional[_builtins.str]
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances', __args__, opts=opts, typ=GetDbSystemStoragePerformancesResult).value
 
     return AwaitableGetDbSystemStoragePerformancesResult(
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         database_edition=pulumi.get(__ret__, 'database_edition'),
         db_system_storage_performances=pulumi.get(__ret__, 'db_system_storage_performances'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         shape_type=pulumi.get(__ret__, 'shape_type'),
         storage_management=pulumi.get(__ret__, 'storage_management'))
-def get_db_system_storage_performances_output(database_edition: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_system_storage_performances_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                              database_edition: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemStoragePerformancesFilterArgs', 'GetDbSystemStoragePerformancesFilterArgsDict']]]]] = None,
                                               shape_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                               storage_management: Optional[pulumi.Input[_builtins.str]] = None,
@@ -150,6 +164,7 @@ def get_db_system_storage_performances_output(database_edition: Optional[pulumi.
     Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
 
 
+    :param _builtins.str compartment_id: Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str database_edition: Optional. Filters the performance results by database edition. Valid values are:
            * STANDARD_EDITION
            * ENTERPRISE_EDITION
@@ -162,6 +177,7 @@ def get_db_system_storage_performances_output(database_edition: Optional[pulumi.
            * LVM specifies logical volume manager, sometimes called logical disk manager.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['databaseEdition'] = database_edition
     __args__['filters'] = filters
     __args__['shapeType'] = shape_type
@@ -169,6 +185,7 @@ def get_db_system_storage_performances_output(database_edition: Optional[pulumi.
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances', __args__, opts=opts, typ=GetDbSystemStoragePerformancesResult)
     return __ret__.apply(lambda __response__: GetDbSystemStoragePerformancesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         database_edition=pulumi.get(__response__, 'database_edition'),
         db_system_storage_performances=pulumi.get(__response__, 'db_system_storage_performances'),
         filters=pulumi.get(__response__, 'filters'),

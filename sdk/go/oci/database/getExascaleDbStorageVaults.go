@@ -30,11 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetExascaleDbStorageVaults(ctx, &database.GetExascaleDbStorageVaultsArgs{
-//				CompartmentId:           compartmentId,
-//				ClusterPlacementGroupId: pulumi.StringRef(testClusterPlacementGroup.Id),
-//				DisplayName:             pulumi.StringRef(exascaleDbStorageVaultDisplayName),
-//				ExadataInfrastructureId: pulumi.StringRef(testExadataInfrastructure.Id),
-//				State:                   pulumi.StringRef(exascaleDbStorageVaultState),
+//				CompartmentId:                      compartmentId,
+//				AttachedShapeAttributes:            pulumi.StringRef(exascaleDbStorageVaultAttachedShapeAttributes),
+//				AttachedShapeAttributesNotEqualTo:  pulumi.StringRef(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo),
+//				ClusterPlacementGroupId:            pulumi.StringRef(testClusterPlacementGroup.Id),
+//				DisplayName:                        pulumi.StringRef(exascaleDbStorageVaultDisplayName),
+//				ExadataInfrastructureId:            pulumi.StringRef(testExadataInfrastructure.Id),
+//				State:                              pulumi.StringRef(exascaleDbStorageVaultState),
+//				VmClusterCountGreaterThanOrEqualTo: pulumi.IntRef(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo),
+//				VmClusterCountLessThanOrEqualTo:    pulumi.IntRef(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,6 +60,10 @@ func GetExascaleDbStorageVaults(ctx *pulumi.Context, args *GetExascaleDbStorageV
 
 // A collection of arguments for invoking getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsArgs struct {
+	// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+	AttachedShapeAttributes *string `pulumi:"attachedShapeAttributes"`
+	// A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+	AttachedShapeAttributesNotEqualTo *string `pulumi:"attachedShapeAttributesNotEqualTo"`
 	// A filter to return only resources that match the given cluster placement group ID exactly.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -67,10 +75,17 @@ type GetExascaleDbStorageVaultsArgs struct {
 	Filters                 []GetExascaleDbStorageVaultsFilter `pulumi:"filters"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
+	// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+	VmClusterCountGreaterThanOrEqualTo *int `pulumi:"vmClusterCountGreaterThanOrEqualTo"`
+	// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+	VmClusterCountLessThanOrEqualTo *int `pulumi:"vmClusterCountLessThanOrEqualTo"`
 }
 
 // A collection of values returned by getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsResult struct {
+	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+	AttachedShapeAttributes           *string `pulumi:"attachedShapeAttributes"`
+	AttachedShapeAttributesNotEqualTo *string `pulumi:"attachedShapeAttributesNotEqualTo"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -85,7 +100,9 @@ type GetExascaleDbStorageVaultsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The current state of the Exadata Database Storage Vault.
-	State *string `pulumi:"state"`
+	State                              *string `pulumi:"state"`
+	VmClusterCountGreaterThanOrEqualTo *int    `pulumi:"vmClusterCountGreaterThanOrEqualTo"`
+	VmClusterCountLessThanOrEqualTo    *int    `pulumi:"vmClusterCountLessThanOrEqualTo"`
 }
 
 func GetExascaleDbStorageVaultsOutput(ctx *pulumi.Context, args GetExascaleDbStorageVaultsOutputArgs, opts ...pulumi.InvokeOption) GetExascaleDbStorageVaultsResultOutput {
@@ -99,6 +116,10 @@ func GetExascaleDbStorageVaultsOutput(ctx *pulumi.Context, args GetExascaleDbSto
 
 // A collection of arguments for invoking getExascaleDbStorageVaults.
 type GetExascaleDbStorageVaultsOutputArgs struct {
+	// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+	AttachedShapeAttributes pulumi.StringPtrInput `pulumi:"attachedShapeAttributes"`
+	// A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+	AttachedShapeAttributesNotEqualTo pulumi.StringPtrInput `pulumi:"attachedShapeAttributesNotEqualTo"`
 	// A filter to return only resources that match the given cluster placement group ID exactly.
 	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -110,6 +131,10 @@ type GetExascaleDbStorageVaultsOutputArgs struct {
 	Filters                 GetExascaleDbStorageVaultsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+	VmClusterCountGreaterThanOrEqualTo pulumi.IntPtrInput `pulumi:"vmClusterCountGreaterThanOrEqualTo"`
+	// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+	VmClusterCountLessThanOrEqualTo pulumi.IntPtrInput `pulumi:"vmClusterCountLessThanOrEqualTo"`
 }
 
 func (GetExascaleDbStorageVaultsOutputArgs) ElementType() reflect.Type {
@@ -129,6 +154,15 @@ func (o GetExascaleDbStorageVaultsResultOutput) ToGetExascaleDbStorageVaultsResu
 
 func (o GetExascaleDbStorageVaultsResultOutput) ToGetExascaleDbStorageVaultsResultOutputWithContext(ctx context.Context) GetExascaleDbStorageVaultsResultOutput {
 	return o
+}
+
+// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+func (o GetExascaleDbStorageVaultsResultOutput) AttachedShapeAttributes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.AttachedShapeAttributes }).(pulumi.StringPtrOutput)
+}
+
+func (o GetExascaleDbStorageVaultsResultOutput) AttachedShapeAttributesNotEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.AttachedShapeAttributesNotEqualTo }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
@@ -170,6 +204,14 @@ func (o GetExascaleDbStorageVaultsResultOutput) Id() pulumi.StringOutput {
 // The current state of the Exadata Database Storage Vault.
 func (o GetExascaleDbStorageVaultsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetExascaleDbStorageVaultsResultOutput) VmClusterCountGreaterThanOrEqualTo() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *int { return v.VmClusterCountGreaterThanOrEqualTo }).(pulumi.IntPtrOutput)
+}
+
+func (o GetExascaleDbStorageVaultsResultOutput) VmClusterCountLessThanOrEqualTo() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *int { return v.VmClusterCountLessThanOrEqualTo }).(pulumi.IntPtrOutput)
 }
 
 func init() {

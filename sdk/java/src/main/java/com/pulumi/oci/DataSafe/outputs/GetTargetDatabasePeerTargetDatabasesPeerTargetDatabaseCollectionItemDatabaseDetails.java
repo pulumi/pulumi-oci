@@ -48,6 +48,11 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
      */
     private Integer listenerPort;
     /**
+     * @return The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    private String pluggableDatabaseId;
+    /**
      * @return The service name of the database registered as target database.
      * 
      */
@@ -109,6 +114,13 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
         return this.listenerPort;
     }
     /**
+     * @return The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    public String pluggableDatabaseId() {
+        return this.pluggableDatabaseId;
+    }
+    /**
      * @return The service name of the database registered as target database.
      * 
      */
@@ -139,6 +151,7 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
         private String instanceId;
         private List<String> ipAddresses;
         private Integer listenerPort;
+        private String pluggableDatabaseId;
         private String serviceName;
         private String vmClusterId;
         public Builder() {}
@@ -151,6 +164,7 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
     	      this.instanceId = defaults.instanceId;
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.listenerPort = defaults.listenerPort;
+    	      this.pluggableDatabaseId = defaults.pluggableDatabaseId;
     	      this.serviceName = defaults.serviceName;
     	      this.vmClusterId = defaults.vmClusterId;
         }
@@ -215,6 +229,14 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabaseId(String pluggableDatabaseId) {
+            if (pluggableDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails", "pluggableDatabaseId");
+            }
+            this.pluggableDatabaseId = pluggableDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             if (serviceName == null) {
               throw new MissingRequiredPropertyException("GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemDatabaseDetails", "serviceName");
@@ -239,6 +261,7 @@ public final class GetTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollect
             _resultValue.instanceId = instanceId;
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.listenerPort = listenerPort;
+            _resultValue.pluggableDatabaseId = pluggableDatabaseId;
             _resultValue.serviceName = serviceName;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;

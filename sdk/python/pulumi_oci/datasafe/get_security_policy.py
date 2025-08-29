@@ -26,7 +26,7 @@ class GetSecurityPolicyResult:
     """
     A collection of values returned by getSecurityPolicy.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, security_policy_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, security_policy_id=None, security_policy_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,6 +51,9 @@ class GetSecurityPolicyResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
+        if security_policy_type and not isinstance(security_policy_type, str):
+            raise TypeError("Expected argument 'security_policy_type' to be a str")
+        pulumi.set(__self__, "security_policy_type", security_policy_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -126,6 +129,14 @@ class GetSecurityPolicyResult:
         return pulumi.get(self, "security_policy_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityPolicyType")
+    def security_policy_type(self) -> _builtins.str:
+        """
+        The type of the security policy.
+        """
+        return pulumi.get(self, "security_policy_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -172,6 +183,7 @@ class AwaitableGetSecurityPolicyResult(GetSecurityPolicyResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             security_policy_id=self.security_policy_id,
+            security_policy_type=self.security_policy_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -211,6 +223,7 @@ def get_security_policy(security_policy_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        security_policy_type=pulumi.get(__ret__, 'security_policy_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -247,6 +260,7 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[_builti
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
+        security_policy_type=pulumi.get(__response__, 'security_policy_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.NewAuditTrailManagement(ctx, "test_audit_trail_management", &datasafe.AuditTrailManagementArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				TargetId:      pulumi.Any(testTargetDatabase.Id),
+//				CompartmentId:                    pulumi.Any(compartmentId),
+//				TargetId:                         pulumi.Any(testTargetDatabase.Id),
+//				CanUpdateLastArchiveTimeOnTarget: pulumi.Any(auditTrailManagementCanUpdateLastArchiveTimeOnTarget),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -64,6 +65,8 @@ type AuditTrailManagement struct {
 	AuditCollectionStartTime pulumi.StringPtrOutput `pulumi:"auditCollectionStartTime"`
 	// The OCID of the  parent audit.
 	AuditProfileId pulumi.StringOutput `pulumi:"auditProfileId"`
+	// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget pulumi.BoolOutput `pulumi:"canUpdateLastArchiveTimeOnTarget"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -141,6 +144,8 @@ type auditTrailManagementState struct {
 	AuditCollectionStartTime *string `pulumi:"auditCollectionStartTime"`
 	// The OCID of the  parent audit.
 	AuditProfileId *string `pulumi:"auditProfileId"`
+	// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget *bool `pulumi:"canUpdateLastArchiveTimeOnTarget"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -189,6 +194,8 @@ type AuditTrailManagementState struct {
 	AuditCollectionStartTime pulumi.StringPtrInput
 	// The OCID of the  parent audit.
 	AuditProfileId pulumi.StringPtrInput
+	// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget pulumi.BoolPtrInput
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -239,6 +246,8 @@ type auditTrailManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AuditCollectionStartTime *string `pulumi:"auditCollectionStartTime"`
+	// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget *bool `pulumi:"canUpdateLastArchiveTimeOnTarget"`
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -272,6 +281,8 @@ type AuditTrailManagementArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AuditCollectionStartTime pulumi.StringPtrInput
+	// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget pulumi.BoolPtrInput
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -396,6 +407,11 @@ func (o AuditTrailManagementOutput) AuditCollectionStartTime() pulumi.StringPtrO
 // The OCID of the  parent audit.
 func (o AuditTrailManagementOutput) AuditProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringOutput { return v.AuditProfileId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+func (o AuditTrailManagementOutput) CanUpdateLastArchiveTimeOnTarget() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AuditTrailManagement) pulumi.BoolOutput { return v.CanUpdateLastArchiveTimeOnTarget }).(pulumi.BoolOutput)
 }
 
 // The OCID of the compartment that contains the target.

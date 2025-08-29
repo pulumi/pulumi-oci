@@ -23,6 +23,8 @@ import * as utilities from "../utilities";
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     deploymentStatus: securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
  *     securityPolicyEntryId: testSecurityPolicyEntry.id,
+ *     securityPolicyEntryType: securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType,
+ *     targetId: testTarget.id,
  * });
  * ```
  */
@@ -33,6 +35,8 @@ export function getSecurityPolicyDeploymentSecurityPolicyEntryStates(args: GetSe
         "filters": args.filters,
         "securityPolicyDeploymentId": args.securityPolicyDeploymentId,
         "securityPolicyEntryId": args.securityPolicyEntryId,
+        "securityPolicyEntryType": args.securityPolicyEntryType,
+        "targetId": args.targetId,
     }, opts);
 }
 
@@ -53,6 +57,14 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs {
      * An optional filter to return only resources that match the specified security policy entry OCID.
      */
     securityPolicyEntryId?: string;
+    /**
+     * The type of the security policy deployment.
+     */
+    securityPolicyEntryType?: string;
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     */
+    targetId?: string;
 }
 
 /**
@@ -80,6 +92,11 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * The list of security_policy_entry_state_collection.
      */
     readonly securityPolicyEntryStateCollections: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection[];
+    readonly securityPolicyEntryType?: string;
+    /**
+     * The OCID of the target on which the security policy is deployed.
+     */
+    readonly targetId?: string;
 }
 /**
  * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
@@ -98,6 +115,8 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     deploymentStatus: securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
  *     securityPolicyEntryId: testSecurityPolicyEntry.id,
+ *     securityPolicyEntryType: securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType,
+ *     targetId: testTarget.id,
  * });
  * ```
  */
@@ -108,6 +127,8 @@ export function getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput(args:
         "filters": args.filters,
         "securityPolicyDeploymentId": args.securityPolicyDeploymentId,
         "securityPolicyEntryId": args.securityPolicyEntryId,
+        "securityPolicyEntryType": args.securityPolicyEntryType,
+        "targetId": args.targetId,
     }, opts);
 }
 
@@ -128,4 +149,12 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs 
      * An optional filter to return only resources that match the specified security policy entry OCID.
      */
     securityPolicyEntryId?: pulumi.Input<string>;
+    /**
+     * The type of the security policy deployment.
+     */
+    securityPolicyEntryType?: pulumi.Input<string>;
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     */
+    targetId?: pulumi.Input<string>;
 }

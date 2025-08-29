@@ -146,6 +146,21 @@ public final class GetUserAssessmentsPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -158,6 +173,21 @@ public final class GetUserAssessmentsPlainArgs extends com.pulumi.resources.Invo
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable String targetType;
+
+    /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     /**
@@ -240,7 +270,9 @@ public final class GetUserAssessmentsPlainArgs extends com.pulumi.resources.Invo
         this.isScheduleAssessment = $.isScheduleAssessment;
         this.scheduleUserAssessmentId = $.scheduleUserAssessmentId;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
         this.triggeredBy = $.triggeredBy;
@@ -363,6 +395,17 @@ public final class GetUserAssessmentsPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * @param targetId A filter to return only items related to a specific target OCID.
          * 
          * @return builder
@@ -370,6 +413,17 @@ public final class GetUserAssessmentsPlainArgs extends com.pulumi.resources.Invo
          */
         public Builder targetId(@Nullable String targetId) {
             $.targetId = targetId;
+            return this;
+        }
+
+        /**
+         * @param targetType A filter to return only only target database resources or target database group resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable String targetType) {
+            $.targetType = targetType;
             return this;
         }
 

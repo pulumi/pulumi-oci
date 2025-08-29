@@ -22,7 +22,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// The name of the object (file) or prefix (folder).
+        /// The prefix of file object(s) or folder prefix.
         /// </summary>
         public readonly string Prefix;
 

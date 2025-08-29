@@ -32,6 +32,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         CompartmentId = compartmentId,
         ///         AssignableConnectionId = testConnection.Id,
         ///         AssignedConnectionId = testConnection.Id,
+        ///         DeploymentType = deploymentDeploymentType,
         ///         DisplayName = deploymentDisplayName,
         ///         Fqdn = deploymentFqdn,
         ///         LifecycleSubState = deploymentLifecycleSubState,
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         CompartmentId = compartmentId,
         ///         AssignableConnectionId = testConnection.Id,
         ///         AssignedConnectionId = testConnection.Id,
+        ///         DeploymentType = deploymentDeploymentType,
         ///         DisplayName = deploymentDisplayName,
         ///         Fqdn = deploymentFqdn,
         ///         LifecycleSubState = deploymentLifecycleSubState,
@@ -100,6 +102,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         CompartmentId = compartmentId,
         ///         AssignableConnectionId = testConnection.Id,
         ///         AssignedConnectionId = testConnection.Id,
+        ///         DeploymentType = deploymentDeploymentType,
         ///         DisplayName = deploymentDisplayName,
         ///         Fqdn = deploymentFqdn,
         ///         LifecycleSubState = deploymentLifecycleSubState,
@@ -134,6 +137,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// A filter that returns only the resources matching the specified 'deploymentType'.
+        /// </summary>
+        [Input("deploymentType")]
+        public string? DeploymentType { get; set; }
 
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
@@ -200,6 +209,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// A filter that returns only the resources matching the specified 'deploymentType'.
+        /// </summary>
+        [Input("deploymentType")]
+        public Input<string>? DeploymentType { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
         [Input("displayName")]
@@ -258,6 +273,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionResult> DeploymentCollections;
         /// <summary>
+        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        /// </summary>
+        public readonly string? DeploymentType;
+        /// <summary>
         /// An object's Display Name.
         /// </summary>
         public readonly string? DisplayName;
@@ -290,6 +309,8 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionResult> deploymentCollections,
 
+            string? deploymentType,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetDeploymentsFilterResult> filters,
@@ -308,6 +329,7 @@ namespace Pulumi.Oci.GoldenGate
             AssignedConnectionId = assignedConnectionId;
             CompartmentId = compartmentId;
             DeploymentCollections = deploymentCollections;
+            DeploymentType = deploymentType;
             DisplayName = displayName;
             Filters = filters;
             Fqdn = fqdn;

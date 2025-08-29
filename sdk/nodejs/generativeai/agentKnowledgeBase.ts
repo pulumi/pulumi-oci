@@ -9,8 +9,6 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **CreateKnowledgeBase**
- *
  * Creates a knowledge base.
  *
  * ## Example Usage
@@ -117,11 +115,13 @@ export class AgentKnowledgeBase extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) **IndexConfig**
-     *
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      */
     public readonly indexConfig!: pulumi.Output<outputs.GenerativeAi.AgentKnowledgeBaseIndexConfig>;
+    /**
+     * Statistics for Default Knowledge Base.
+     */
+    public /*out*/ readonly knowledgeBaseStatistics!: pulumi.Output<outputs.GenerativeAi.AgentKnowledgeBaseKnowledgeBaseStatistic[]>;
     /**
      * A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
@@ -162,6 +162,7 @@ export class AgentKnowledgeBase extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["indexConfig"] = state ? state.indexConfig : undefined;
+            resourceInputs["knowledgeBaseStatistics"] = state ? state.knowledgeBaseStatistics : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -181,6 +182,7 @@ export class AgentKnowledgeBase extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["indexConfig"] = args ? args.indexConfig : undefined;
+            resourceInputs["knowledgeBaseStatistics"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -217,11 +219,13 @@ export interface AgentKnowledgeBaseState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) **IndexConfig**
-     *
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      */
     indexConfig?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfig>;
+    /**
+     * Statistics for Default Knowledge Base.
+     */
+    knowledgeBaseStatistics?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseKnowledgeBaseStatistic>[]>;
     /**
      * A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
@@ -269,9 +273,7 @@ export interface AgentKnowledgeBaseArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) **IndexConfig**
-     *
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      */
     indexConfig: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfig>;
 }

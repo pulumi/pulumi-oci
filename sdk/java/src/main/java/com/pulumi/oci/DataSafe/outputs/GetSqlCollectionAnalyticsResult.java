@@ -36,6 +36,7 @@ public final class GetSqlCollectionAnalyticsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target corresponding to the security policy deployment.
      * 
@@ -81,6 +82,9 @@ public final class GetSqlCollectionAnalyticsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the target corresponding to the security policy deployment.
      * 
@@ -112,6 +116,7 @@ public final class GetSqlCollectionAnalyticsResult {
         private String id;
         private List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection> sqlCollectionAnalyticsCollections;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
@@ -126,6 +131,7 @@ public final class GetSqlCollectionAnalyticsResult {
     	      this.id = defaults.id;
     	      this.sqlCollectionAnalyticsCollections = defaults.sqlCollectionAnalyticsCollections;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.timeEnded = defaults.timeEnded;
     	      this.timeStarted = defaults.timeStarted;
@@ -195,6 +201,12 @@ public final class GetSqlCollectionAnalyticsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -222,6 +234,7 @@ public final class GetSqlCollectionAnalyticsResult {
             _resultValue.id = id;
             _resultValue.sqlCollectionAnalyticsCollections = sqlCollectionAnalyticsCollections;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.timeEnded = timeEnded;
             _resultValue.timeStarted = timeStarted;

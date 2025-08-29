@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Database
         ///         DbSystemShape = dbVersionDbSystemShape,
         ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
         ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         ShapeAttribute = dbVersionShapeAttribute,
         ///         StorageManagement = dbVersionStorageManagement,
         ///     });
         /// 
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.Database
         ///         DbSystemShape = dbVersionDbSystemShape,
         ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
         ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         ShapeAttribute = dbVersionShapeAttribute,
         ///         StorageManagement = dbVersionStorageManagement,
         ///     });
         /// 
@@ -95,6 +97,7 @@ namespace Pulumi.Oci.Database
         ///         DbSystemShape = dbVersionDbSystemShape,
         ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
         ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         ShapeAttribute = dbVersionShapeAttribute,
         ///         StorageManagement = dbVersionStorageManagement,
         ///     });
         /// 
@@ -145,6 +148,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isUpgradeSupported")]
         public bool? IsUpgradeSupported { get; set; }
+
+        /// <summary>
+        /// If provided and applicable, return the results based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public string? ShapeAttribute { get; set; }
 
         /// <summary>
         /// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
@@ -201,6 +210,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsUpgradeSupported { get; set; }
 
         /// <summary>
+        /// If provided and applicable, return the results based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public Input<string>? ShapeAttribute { get; set; }
+
+        /// <summary>
         /// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
         /// * ASM specifies Oracle Automatic Storage Management
         /// * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -235,6 +250,7 @@ namespace Pulumi.Oci.Database
         /// True if this version of the Oracle Database software is supported for Upgrade.
         /// </summary>
         public readonly bool? IsUpgradeSupported;
+        public readonly string? ShapeAttribute;
         public readonly string? StorageManagement;
 
         [OutputConstructor]
@@ -255,6 +271,8 @@ namespace Pulumi.Oci.Database
 
             bool? isUpgradeSupported,
 
+            string? shapeAttribute,
+
             string? storageManagement)
         {
             CompartmentId = compartmentId;
@@ -265,6 +283,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             IsDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             IsUpgradeSupported = isUpgradeSupported;
+            ShapeAttribute = shapeAttribute;
             StorageManagement = storageManagement;
         }
     }

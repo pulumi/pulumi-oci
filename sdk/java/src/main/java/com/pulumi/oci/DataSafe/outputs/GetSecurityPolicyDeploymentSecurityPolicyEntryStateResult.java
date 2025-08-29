@@ -18,10 +18,23 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
      */
     private String deploymentStatus;
     /**
+     * @return Details about the current deployment status.
+     * 
+     */
+    private String deploymentStatusDetails;
+    /**
      * @return Details specific to the security policy entry.
      * 
      */
     private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail> entryDetails;
+    /**
+     * @return The security policy entry type. Allowed values:
+     * * FIREWALL_POLICY - The SQL Firewall policy entry type.
+     * * AUDIT_POLICY - The audit policy entry type.
+     * * CONFIG - Config changes deployment.
+     * 
+     */
+    private String entryType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -38,6 +51,11 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
      */
     private String securityPolicyEntryId;
     private String securityPolicyEntryStateId;
+    /**
+     * @return The OCID of the target on which the security policy is deployed.
+     * 
+     */
+    private String targetId;
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult() {}
     /**
@@ -48,11 +66,28 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
         return this.deploymentStatus;
     }
     /**
+     * @return Details about the current deployment status.
+     * 
+     */
+    public String deploymentStatusDetails() {
+        return this.deploymentStatusDetails;
+    }
+    /**
      * @return Details specific to the security policy entry.
      * 
      */
     public List<GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail> entryDetails() {
         return this.entryDetails;
+    }
+    /**
+     * @return The security policy entry type. Allowed values:
+     * * FIREWALL_POLICY - The SQL Firewall policy entry type.
+     * * AUDIT_POLICY - The audit policy entry type.
+     * * CONFIG - Config changes deployment.
+     * 
+     */
+    public String entryType() {
+        return this.entryType;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -78,6 +113,13 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
     public String securityPolicyEntryStateId() {
         return this.securityPolicyEntryStateId;
     }
+    /**
+     * @return The OCID of the target on which the security policy is deployed.
+     * 
+     */
+    public String targetId() {
+        return this.targetId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -89,20 +131,26 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
     @CustomType.Builder
     public static final class Builder {
         private String deploymentStatus;
+        private String deploymentStatusDetails;
         private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail> entryDetails;
+        private String entryType;
         private String id;
         private String securityPolicyDeploymentId;
         private String securityPolicyEntryId;
         private String securityPolicyEntryStateId;
+        private String targetId;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentStatus = defaults.deploymentStatus;
+    	      this.deploymentStatusDetails = defaults.deploymentStatusDetails;
     	      this.entryDetails = defaults.entryDetails;
+    	      this.entryType = defaults.entryType;
     	      this.id = defaults.id;
     	      this.securityPolicyDeploymentId = defaults.securityPolicyDeploymentId;
     	      this.securityPolicyEntryId = defaults.securityPolicyEntryId;
     	      this.securityPolicyEntryStateId = defaults.securityPolicyEntryStateId;
+    	      this.targetId = defaults.targetId;
         }
 
         @CustomType.Setter
@@ -111,6 +159,14 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
               throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult", "deploymentStatus");
             }
             this.deploymentStatus = deploymentStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deploymentStatusDetails(String deploymentStatusDetails) {
+            if (deploymentStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult", "deploymentStatusDetails");
+            }
+            this.deploymentStatusDetails = deploymentStatusDetails;
             return this;
         }
         @CustomType.Setter
@@ -123,6 +179,14 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
         }
         public Builder entryDetails(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail... entryDetails) {
             return entryDetails(List.of(entryDetails));
+        }
+        @CustomType.Setter
+        public Builder entryType(String entryType) {
+            if (entryType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult", "entryType");
+            }
+            this.entryType = entryType;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -156,14 +220,25 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
             this.securityPolicyEntryStateId = securityPolicyEntryStateId;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetId(String targetId) {
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult", "targetId");
+            }
+            this.targetId = targetId;
+            return this;
+        }
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult build() {
             final var _resultValue = new GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult();
             _resultValue.deploymentStatus = deploymentStatus;
+            _resultValue.deploymentStatusDetails = deploymentStatusDetails;
             _resultValue.entryDetails = entryDetails;
+            _resultValue.entryType = entryType;
             _resultValue.id = id;
             _resultValue.securityPolicyDeploymentId = securityPolicyDeploymentId;
             _resultValue.securityPolicyEntryId = securityPolicyEntryId;
             _resultValue.securityPolicyEntryStateId = securityPolicyEntryStateId;
+            _resultValue.targetId = targetId;
             return _resultValue;
         }
     }

@@ -14,6 +14,14 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     public sealed class AgentToolToolConfig
     {
         /// <summary>
+        /// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+        /// </summary>
+        public readonly string? AgentEndpointId;
+        /// <summary>
+        /// (Updatable) The input location definition for Api schema.
+        /// </summary>
+        public readonly Outputs.AgentToolToolConfigApiSchema? ApiSchema;
+        /// <summary>
         /// (Updatable) The connection type for Databases.
         /// </summary>
         public readonly Outputs.AgentToolToolConfigDatabaseConnection? DatabaseConnection;
@@ -33,6 +41,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// (Updatable) Configuration to customize LLM.
         /// </summary>
         public readonly Outputs.AgentToolToolConfigGenerationLlmCustomization? GenerationLlmCustomization;
+        /// <summary>
+        /// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        /// </summary>
+        public readonly Outputs.AgentToolToolConfigHttpEndpointAuthConfig? HttpEndpointAuthConfig;
         /// <summary>
         /// (Updatable) The input location definition.
         /// </summary>
@@ -54,6 +66,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly bool? ShouldEnableSqlExecution;
         /// <summary>
+        /// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        /// </summary>
+        public readonly string? SubnetId;
+        /// <summary>
         /// (Updatable) The input location definition.
         /// </summary>
         public readonly Outputs.AgentToolToolConfigTableAndColumnDescription? TableAndColumnDescription;
@@ -71,6 +87,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
         [OutputConstructor]
         private AgentToolToolConfig(
+            string? agentEndpointId,
+
+            Outputs.AgentToolToolConfigApiSchema? apiSchema,
+
             Outputs.AgentToolToolConfigDatabaseConnection? databaseConnection,
 
             Outputs.AgentToolToolConfigDatabaseSchema? databaseSchema,
@@ -80,6 +100,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             Outputs.AgentToolToolConfigFunction? function,
 
             Outputs.AgentToolToolConfigGenerationLlmCustomization? generationLlmCustomization,
+
+            Outputs.AgentToolToolConfigHttpEndpointAuthConfig? httpEndpointAuthConfig,
 
             Outputs.AgentToolToolConfigIclExamples? iclExamples,
 
@@ -91,20 +113,26 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             bool? shouldEnableSqlExecution,
 
+            string? subnetId,
+
             Outputs.AgentToolToolConfigTableAndColumnDescription? tableAndColumnDescription,
 
             string toolConfigType)
         {
+            AgentEndpointId = agentEndpointId;
+            ApiSchema = apiSchema;
             DatabaseConnection = databaseConnection;
             DatabaseSchema = databaseSchema;
             Dialect = dialect;
             Function = function;
             GenerationLlmCustomization = generationLlmCustomization;
+            HttpEndpointAuthConfig = httpEndpointAuthConfig;
             IclExamples = iclExamples;
             KnowledgeBaseConfigs = knowledgeBaseConfigs;
             ModelSize = modelSize;
             ShouldEnableSelfCorrection = shouldEnableSelfCorrection;
             ShouldEnableSqlExecution = shouldEnableSqlExecution;
+            SubnetId = subnetId;
             TableAndColumnDescription = tableAndColumnDescription;
             ToolConfigType = toolConfigType;
         }

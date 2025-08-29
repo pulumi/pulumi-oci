@@ -104,15 +104,15 @@ public final class GetOnpremConnectorsPlainArgs extends com.pulumi.resources.Inv
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
-    @Import(name="onPremConnectorLifecycleState")
-    private @Nullable String onPremConnectorLifecycleState;
+    @Import(name="state")
+    private @Nullable String state;
 
     /**
      * @return A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
-    public Optional<String> onPremConnectorLifecycleState() {
-        return Optional.ofNullable(this.onPremConnectorLifecycleState);
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     private GetOnpremConnectorsPlainArgs() {}
@@ -124,7 +124,7 @@ public final class GetOnpremConnectorsPlainArgs extends com.pulumi.resources.Inv
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.onPremConnectorId = $.onPremConnectorId;
-        this.onPremConnectorLifecycleState = $.onPremConnectorLifecycleState;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -210,13 +210,13 @@ public final class GetOnpremConnectorsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param onPremConnectorLifecycleState A filter to return only on-premises connector resources that match the specified lifecycle state.
+         * @param state A filter to return only on-premises connector resources that match the specified lifecycle state.
          * 
          * @return builder
          * 
          */
-        public Builder onPremConnectorLifecycleState(@Nullable String onPremConnectorLifecycleState) {
-            $.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+        public Builder state(@Nullable String state) {
+            $.state = state;
             return this;
         }
 

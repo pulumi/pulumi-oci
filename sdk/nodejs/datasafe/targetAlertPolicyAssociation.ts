@@ -9,28 +9,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new target-alert policy association to track a alert policy applied on target.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testTargetAlertPolicyAssociation = new oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", {
- *     compartmentId: compartmentId,
- *     isEnabled: targetAlertPolicyAssociationIsEnabled,
- *     policyId: testPolicy.id,
- *     targetId: testTarget.id,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: targetAlertPolicyAssociationDescription,
- *     displayName: targetAlertPolicyAssociationDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -108,11 +86,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The OCID of the target.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target or target database group.
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
@@ -228,11 +202,7 @@ export interface TargetAlertPolicyAssociationState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The OCID of the target.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target or target database group.
      */
     targetId?: pulumi.Input<string>;
     /**
@@ -278,11 +248,7 @@ export interface TargetAlertPolicyAssociationArgs {
      */
     policyId: pulumi.Input<string>;
     /**
-     * The OCID of the target.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target or target database group.
      */
     targetId: pulumi.Input<string>;
 }

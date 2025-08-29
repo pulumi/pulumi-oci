@@ -30,6 +30,7 @@ public final class GetGiVersionsResult {
     private String id;
     private @Nullable String resourceId;
     private @Nullable String shape;
+    private @Nullable String shapeAttribute;
 
     private GetGiVersionsResult() {}
     public Optional<String> availabilityDomain() {
@@ -61,6 +62,9 @@ public final class GetGiVersionsResult {
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
+    public Optional<String> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -78,6 +82,7 @@ public final class GetGiVersionsResult {
         private String id;
         private @Nullable String resourceId;
         private @Nullable String shape;
+        private @Nullable String shapeAttribute;
         public Builder() {}
         public Builder(GetGiVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -88,6 +93,7 @@ public final class GetGiVersionsResult {
     	      this.id = defaults.id;
     	      this.resourceId = defaults.resourceId;
     	      this.shape = defaults.shape;
+    	      this.shapeAttribute = defaults.shapeAttribute;
         }
 
         @CustomType.Setter
@@ -144,6 +150,12 @@ public final class GetGiVersionsResult {
             this.shape = shape;
             return this;
         }
+        @CustomType.Setter
+        public Builder shapeAttribute(@Nullable String shapeAttribute) {
+
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
         public GetGiVersionsResult build() {
             final var _resultValue = new GetGiVersionsResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -153,6 +165,7 @@ public final class GetGiVersionsResult {
             _resultValue.id = id;
             _resultValue.resourceId = resourceId;
             _resultValue.shape = shape;
+            _resultValue.shapeAttribute = shapeAttribute;
             return _resultValue;
         }
     }

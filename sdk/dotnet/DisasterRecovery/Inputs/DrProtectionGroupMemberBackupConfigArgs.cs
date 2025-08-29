@@ -32,6 +32,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("backupSchedule")]
         public Input<string>? BackupSchedule { get; set; }
 
+        [Input("excludeNamespaces")]
+        private InputList<string>? _excludeNamespaces;
+
+        /// <summary>
+        /// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+        /// </summary>
+        public InputList<string> ExcludeNamespaces
+        {
+            get => _excludeNamespaces ?? (_excludeNamespaces = new InputList<string>());
+            set => _excludeNamespaces = value;
+        }
+
         /// <summary>
         /// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         /// </summary>
@@ -48,7 +60,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         private InputList<string>? _namespaces;
 
         /// <summary>
-        /// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        /// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         /// </summary>
         public InputList<string> Namespaces
         {

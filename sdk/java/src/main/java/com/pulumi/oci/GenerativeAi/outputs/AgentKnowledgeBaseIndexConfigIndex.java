@@ -18,9 +18,7 @@ public final class AgentKnowledgeBaseIndexConfigIndex {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) **IndexSchema**
-     * 
-     * The index schema details.
+     * @return (Updatable) The index schema details.
      * 
      */
     private @Nullable AgentKnowledgeBaseIndexConfigIndexSchema schema;
@@ -34,9 +32,7 @@ public final class AgentKnowledgeBaseIndexConfigIndex {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) **IndexSchema**
-     * 
-     * The index schema details.
+     * @return (Updatable) The index schema details.
      * 
      */
     public Optional<AgentKnowledgeBaseIndexConfigIndexSchema> schema() {

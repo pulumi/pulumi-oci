@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,14 +18,14 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
     public static final SecurityPolicyDeploymentManagementState Empty = new SecurityPolicyDeploymentManagementState();
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy deployment.
+     * @return (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -47,14 +48,29 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    @Import(name="deployTrigger")
+    private @Nullable Output<Integer> deployTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> deployTrigger() {
+        return Optional.ofNullable(this.deployTrigger);
+    }
+
+    /**
+     * (Updatable) The description of the security policy.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the security policy deployment.
+     * @return (Updatable) The description of the security policy.
      * 
      */
     public Optional<Output<String>> description() {
@@ -107,6 +123,27 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
+    }
+
+    /**
      * The OCID of the security policy corresponding to the security policy deployment.
      * 
      */
@@ -152,18 +189,33 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
     }
 
     /**
-     * Unique target identifier.
+     * The OCID of the target where the security policy is deployed.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return Unique target identifier.
+     * @return The OCID of the target where the security policy is deployed.
      * 
      */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     /**
@@ -179,6 +231,21 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
      */
     public Optional<Output<String>> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
+    }
+
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    @Import(name="timeDeployed")
+    private @Nullable Output<String> timeDeployed;
+
+    /**
+     * @return The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<Output<String>> timeDeployed() {
+        return Optional.ofNullable(this.timeDeployed);
     }
 
     /**
@@ -201,15 +268,19 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
     private SecurityPolicyDeploymentManagementState(SecurityPolicyDeploymentManagementState $) {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.deployTrigger = $.deployTrigger;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.refreshTrigger = $.refreshTrigger;
         this.securityPolicyId = $.securityPolicyId;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
         this.timeCreated = $.timeCreated;
+        this.timeDeployed = $.timeDeployed;
         this.timeUpdated = $.timeUpdated;
     }
 
@@ -232,7 +303,7 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy deployment.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the unified audit policy.
          * 
          * @return builder
          * 
@@ -243,7 +314,7 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy deployment.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the unified audit policy.
          * 
          * @return builder
          * 
@@ -274,7 +345,28 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) The description of the security policy deployment.
+         * @param deployTrigger (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployTrigger(@Nullable Output<Integer> deployTrigger) {
+            $.deployTrigger = deployTrigger;
+            return this;
+        }
+
+        /**
+         * @param deployTrigger (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployTrigger(Integer deployTrigger) {
+            return deployTrigger(Output.of(deployTrigger));
+        }
+
+        /**
+         * @param description (Updatable) The description of the security policy.
          * 
          * @return builder
          * 
@@ -285,7 +377,7 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) The description of the security policy deployment.
+         * @param description (Updatable) The description of the security policy.
          * 
          * @return builder
          * 
@@ -358,6 +450,33 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
+        }
+
+        /**
          * @param securityPolicyId The OCID of the security policy corresponding to the security policy deployment.
          * 
          * @return builder
@@ -421,7 +540,7 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId The OCID of the target where the security policy is deployed.
          * 
          * @return builder
          * 
@@ -432,13 +551,34 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId The OCID of the target where the security policy is deployed.
          * 
          * @return builder
          * 
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType Indicates whether the security policy deployment is for a target database or a target database group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType Indicates whether the security policy deployment is for a target database or a target database group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         /**
@@ -460,6 +600,27 @@ public final class SecurityPolicyDeploymentManagementState extends com.pulumi.re
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeDeployed The last date and time the security policy was deployed, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDeployed(@Nullable Output<String> timeDeployed) {
+            $.timeDeployed = timeDeployed;
+            return this;
+        }
+
+        /**
+         * @param timeDeployed The last date and time the security policy was deployed, in the format defined by RFC3339.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeDeployed(String timeDeployed) {
+            return timeDeployed(Output.of(timeDeployed));
         }
 
         /**

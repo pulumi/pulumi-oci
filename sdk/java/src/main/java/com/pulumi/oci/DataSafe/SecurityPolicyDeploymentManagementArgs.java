@@ -5,6 +5,8 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,18 +19,18 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
     public static final SecurityPolicyDeploymentManagementArgs Empty = new SecurityPolicyDeploymentManagementArgs();
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
-    @Import(name="compartmentId")
-    private @Nullable Output<String> compartmentId;
+    @Import(name="compartmentId", required=true)
+    private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy deployment.
+     * @return (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
-    public Optional<Output<String>> compartmentId() {
-        return Optional.ofNullable(this.compartmentId);
+    public Output<String> compartmentId() {
+        return this.compartmentId;
     }
 
     /**
@@ -47,14 +49,29 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    @Import(name="deployTrigger")
+    private @Nullable Output<Integer> deployTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> deployTrigger() {
+        return Optional.ofNullable(this.deployTrigger);
+    }
+
+    /**
+     * (Updatable) The description of the security policy.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the security policy deployment.
+     * @return (Updatable) The description of the security policy.
      * 
      */
     public Optional<Output<String>> description() {
@@ -92,18 +109,69 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
     }
 
     /**
-     * Unique target identifier.
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="targetId")
-    private @Nullable Output<String> targetId;
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
 
     /**
-     * @return Unique target identifier.
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> targetId() {
-        return Optional.ofNullable(this.targetId);
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
+    }
+
+    /**
+     * The OCID of the security policy corresponding to the security policy deployment.
+     * 
+     */
+    @Import(name="securityPolicyId", required=true)
+    private Output<String> securityPolicyId;
+
+    /**
+     * @return The OCID of the security policy corresponding to the security policy deployment.
+     * 
+     */
+    public Output<String> securityPolicyId() {
+        return this.securityPolicyId;
+    }
+
+    /**
+     * The OCID of the target where the security policy is deployed.
+     * 
+     */
+    @Import(name="targetId", required=true)
+    private Output<String> targetId;
+
+    /**
+     * @return The OCID of the target where the security policy is deployed.
+     * 
+     */
+    public Output<String> targetId() {
+        return this.targetId;
+    }
+
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    @Import(name="targetType", required=true)
+    private Output<String> targetType;
+
+    /**
+     * @return Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    public Output<String> targetType() {
+        return this.targetType;
     }
 
     private SecurityPolicyDeploymentManagementArgs() {}
@@ -111,10 +179,14 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
     private SecurityPolicyDeploymentManagementArgs(SecurityPolicyDeploymentManagementArgs $) {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.deployTrigger = $.deployTrigger;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.refreshTrigger = $.refreshTrigger;
+        this.securityPolicyId = $.securityPolicyId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -136,18 +208,18 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy deployment.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the unified audit policy.
          * 
          * @return builder
          * 
          */
-        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+        public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy deployment.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the unified audit policy.
          * 
          * @return builder
          * 
@@ -178,7 +250,28 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
         }
 
         /**
-         * @param description (Updatable) The description of the security policy deployment.
+         * @param deployTrigger (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployTrigger(@Nullable Output<Integer> deployTrigger) {
+            $.deployTrigger = deployTrigger;
+            return this;
+        }
+
+        /**
+         * @param deployTrigger (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployTrigger(Integer deployTrigger) {
+            return deployTrigger(Output.of(deployTrigger));
+        }
+
+        /**
+         * @param description (Updatable) The description of the security policy.
          * 
          * @return builder
          * 
@@ -189,7 +282,7 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
         }
 
         /**
-         * @param description (Updatable) The description of the security policy deployment.
+         * @param description (Updatable) The description of the security policy.
          * 
          * @return builder
          * 
@@ -241,18 +334,66 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder targetId(@Nullable Output<String> targetId) {
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
+        }
+
+        /**
+         * @param securityPolicyId The OCID of the security policy corresponding to the security policy deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyId(Output<String> securityPolicyId) {
+            $.securityPolicyId = securityPolicyId;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyId The OCID of the security policy corresponding to the security policy deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyId(String securityPolicyId) {
+            return securityPolicyId(Output.of(securityPolicyId));
+        }
+
+        /**
+         * @param targetId The OCID of the target where the security policy is deployed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(Output<String> targetId) {
             $.targetId = targetId;
             return this;
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId The OCID of the target where the security policy is deployed.
          * 
          * @return builder
          * 
@@ -261,7 +402,40 @@ public final class SecurityPolicyDeploymentManagementArgs extends com.pulumi.res
             return targetId(Output.of(targetId));
         }
 
+        /**
+         * @param targetType Indicates whether the security policy deployment is for a target database or a target database group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType Indicates whether the security policy deployment is for a target database or a target database group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
+        }
+
         public SecurityPolicyDeploymentManagementArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyDeploymentManagementArgs", "compartmentId");
+            }
+            if ($.securityPolicyId == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyDeploymentManagementArgs", "securityPolicyId");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyDeploymentManagementArgs", "targetId");
+            }
+            if ($.targetType == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyDeploymentManagementArgs", "targetType");
+            }
             return $;
         }
     }

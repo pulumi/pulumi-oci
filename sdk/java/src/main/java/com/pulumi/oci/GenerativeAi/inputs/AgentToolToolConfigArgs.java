@@ -6,10 +6,12 @@ package com.pulumi.oci.GenerativeAi.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigApiSchemaArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseConnectionArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseSchemaArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigFunctionArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigIclExamplesArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigKnowledgeBaseConfigArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigTableAndColumnDescriptionArgs;
@@ -24,6 +26,36 @@ import javax.annotation.Nullable;
 public final class AgentToolToolConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AgentToolToolConfigArgs Empty = new AgentToolToolConfigArgs();
+
+    /**
+     * (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    @Import(name="agentEndpointId")
+    private @Nullable Output<String> agentEndpointId;
+
+    /**
+     * @return (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    public Optional<Output<String>> agentEndpointId() {
+        return Optional.ofNullable(this.agentEndpointId);
+    }
+
+    /**
+     * (Updatable) The input location definition for Api schema.
+     * 
+     */
+    @Import(name="apiSchema")
+    private @Nullable Output<AgentToolToolConfigApiSchemaArgs> apiSchema;
+
+    /**
+     * @return (Updatable) The input location definition for Api schema.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigApiSchemaArgs>> apiSchema() {
+        return Optional.ofNullable(this.apiSchema);
+    }
 
     /**
      * (Updatable) The connection type for Databases.
@@ -98,6 +130,21 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<AgentToolToolConfigGenerationLlmCustomizationArgs>> generationLlmCustomization() {
         return Optional.ofNullable(this.generationLlmCustomization);
+    }
+
+    /**
+     * (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    @Import(name="httpEndpointAuthConfig")
+    private @Nullable Output<AgentToolToolConfigHttpEndpointAuthConfigArgs> httpEndpointAuthConfig;
+
+    /**
+     * @return (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    public Optional<Output<AgentToolToolConfigHttpEndpointAuthConfigArgs>> httpEndpointAuthConfig() {
+        return Optional.ofNullable(this.httpEndpointAuthConfig);
     }
 
     /**
@@ -176,6 +223,21 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
      * (Updatable) The input location definition.
      * 
      */
@@ -220,16 +282,20 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
     private AgentToolToolConfigArgs() {}
 
     private AgentToolToolConfigArgs(AgentToolToolConfigArgs $) {
+        this.agentEndpointId = $.agentEndpointId;
+        this.apiSchema = $.apiSchema;
         this.databaseConnection = $.databaseConnection;
         this.databaseSchema = $.databaseSchema;
         this.dialect = $.dialect;
         this.function = $.function;
         this.generationLlmCustomization = $.generationLlmCustomization;
+        this.httpEndpointAuthConfig = $.httpEndpointAuthConfig;
         this.iclExamples = $.iclExamples;
         this.knowledgeBaseConfigs = $.knowledgeBaseConfigs;
         this.modelSize = $.modelSize;
         this.shouldEnableSelfCorrection = $.shouldEnableSelfCorrection;
         this.shouldEnableSqlExecution = $.shouldEnableSqlExecution;
+        this.subnetId = $.subnetId;
         this.tableAndColumnDescription = $.tableAndColumnDescription;
         this.toolConfigType = $.toolConfigType;
     }
@@ -250,6 +316,48 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
 
         public Builder(AgentToolToolConfigArgs defaults) {
             $ = new AgentToolToolConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param agentEndpointId (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentEndpointId(@Nullable Output<String> agentEndpointId) {
+            $.agentEndpointId = agentEndpointId;
+            return this;
+        }
+
+        /**
+         * @param agentEndpointId (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentEndpointId(String agentEndpointId) {
+            return agentEndpointId(Output.of(agentEndpointId));
+        }
+
+        /**
+         * @param apiSchema (Updatable) The input location definition for Api schema.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder apiSchema(@Nullable Output<AgentToolToolConfigApiSchemaArgs> apiSchema) {
+            $.apiSchema = apiSchema;
+            return this;
+        }
+
+        /**
+         * @param apiSchema (Updatable) The input location definition for Api schema.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder apiSchema(AgentToolToolConfigApiSchemaArgs apiSchema) {
+            return apiSchema(Output.of(apiSchema));
         }
 
         /**
@@ -355,6 +463,27 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder generationLlmCustomization(AgentToolToolConfigGenerationLlmCustomizationArgs generationLlmCustomization) {
             return generationLlmCustomization(Output.of(generationLlmCustomization));
+        }
+
+        /**
+         * @param httpEndpointAuthConfig (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpEndpointAuthConfig(@Nullable Output<AgentToolToolConfigHttpEndpointAuthConfigArgs> httpEndpointAuthConfig) {
+            $.httpEndpointAuthConfig = httpEndpointAuthConfig;
+            return this;
+        }
+
+        /**
+         * @param httpEndpointAuthConfig (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder httpEndpointAuthConfig(AgentToolToolConfigHttpEndpointAuthConfigArgs httpEndpointAuthConfig) {
+            return httpEndpointAuthConfig(Output.of(httpEndpointAuthConfig));
         }
 
         /**
@@ -470,6 +599,27 @@ public final class AgentToolToolConfigArgs extends com.pulumi.resources.Resource
          */
         public Builder shouldEnableSqlExecution(Boolean shouldEnableSqlExecution) {
             return shouldEnableSqlExecution(Output.of(shouldEnableSqlExecution));
+        }
+
+        /**
+         * @param subnetId (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         /**

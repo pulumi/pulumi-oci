@@ -86,6 +86,36 @@ public final class GetMaskingAnalyticsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    @Import(name="sensitiveTypeId")
+    private @Nullable String sensitiveTypeId;
+
+    /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
+    }
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -108,6 +138,8 @@ public final class GetMaskingAnalyticsPlainArgs extends com.pulumi.resources.Inv
         this.filters = $.filters;
         this.groupBy = $.groupBy;
         this.maskingPolicyId = $.maskingPolicyId;
+        this.sensitiveTypeId = $.sensitiveTypeId;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -179,6 +211,28 @@ public final class GetMaskingAnalyticsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
             $.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        /**
+         * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            $.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 

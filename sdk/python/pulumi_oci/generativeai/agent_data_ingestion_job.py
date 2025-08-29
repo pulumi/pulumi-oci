@@ -133,11 +133,13 @@ class _AgentDataIngestionJobState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  data_ingestion_job_statistics: Optional[pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobStatisticArgs']]]] = None,
+                 data_ingestion_job_types: Optional[pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobTypeArgs']]]] = None,
                  data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 knowledge_base_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -147,6 +149,7 @@ class _AgentDataIngestionJobState:
         Input properties used for looking up and filtering AgentDataIngestionJob resources.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data ingestion job in.
         :param pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobStatisticArgs']]] data_ingestion_job_statistics: **DataIngestionJobStatistics**
+        :param pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobTypeArgs']]] data_ingestion_job_types: DataIngestionJob type.
         :param pulumi.Input[_builtins.str] data_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: A user-friendly description of the data ingestion job.
@@ -166,6 +169,8 @@ class _AgentDataIngestionJobState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if data_ingestion_job_statistics is not None:
             pulumi.set(__self__, "data_ingestion_job_statistics", data_ingestion_job_statistics)
+        if data_ingestion_job_types is not None:
+            pulumi.set(__self__, "data_ingestion_job_types", data_ingestion_job_types)
         if data_source_id is not None:
             pulumi.set(__self__, "data_source_id", data_source_id)
         if defined_tags is not None:
@@ -176,6 +181,8 @@ class _AgentDataIngestionJobState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if knowledge_base_id is not None:
+            pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
@@ -210,6 +217,18 @@ class _AgentDataIngestionJobState:
     @data_ingestion_job_statistics.setter
     def data_ingestion_job_statistics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobStatisticArgs']]]]):
         pulumi.set(self, "data_ingestion_job_statistics", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataIngestionJobTypes")
+    def data_ingestion_job_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobTypeArgs']]]]:
+        """
+        DataIngestionJob type.
+        """
+        return pulumi.get(self, "data_ingestion_job_types")
+
+    @data_ingestion_job_types.setter
+    def data_ingestion_job_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentDataIngestionJobDataIngestionJobTypeArgs']]]]):
+        pulumi.set(self, "data_ingestion_job_types", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
@@ -274,6 +293,15 @@ class _AgentDataIngestionJobState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "knowledge_base_id")
+
+    @knowledge_base_id.setter
+    def knowledge_base_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "knowledge_base_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -477,6 +505,8 @@ class AgentDataIngestionJob(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["data_ingestion_job_statistics"] = None
+            __props__.__dict__["data_ingestion_job_types"] = None
+            __props__.__dict__["knowledge_base_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -494,11 +524,13 @@ class AgentDataIngestionJob(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             data_ingestion_job_statistics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AgentDataIngestionJobDataIngestionJobStatisticArgs', 'AgentDataIngestionJobDataIngestionJobStatisticArgsDict']]]]] = None,
+            data_ingestion_job_types: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AgentDataIngestionJobDataIngestionJobTypeArgs', 'AgentDataIngestionJobDataIngestionJobTypeArgsDict']]]]] = None,
             data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            knowledge_base_id: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -513,6 +545,7 @@ class AgentDataIngestionJob(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data ingestion job in.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AgentDataIngestionJobDataIngestionJobStatisticArgs', 'AgentDataIngestionJobDataIngestionJobStatisticArgsDict']]]] data_ingestion_job_statistics: **DataIngestionJobStatistics**
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AgentDataIngestionJobDataIngestionJobTypeArgs', 'AgentDataIngestionJobDataIngestionJobTypeArgsDict']]]] data_ingestion_job_types: DataIngestionJob type.
         :param pulumi.Input[_builtins.str] data_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: A user-friendly description of the data ingestion job.
@@ -534,11 +567,13 @@ class AgentDataIngestionJob(pulumi.CustomResource):
 
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["data_ingestion_job_statistics"] = data_ingestion_job_statistics
+        __props__.__dict__["data_ingestion_job_types"] = data_ingestion_job_types
         __props__.__dict__["data_source_id"] = data_source_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["knowledge_base_id"] = knowledge_base_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -561,6 +596,14 @@ class AgentDataIngestionJob(pulumi.CustomResource):
         **DataIngestionJobStatistics**
         """
         return pulumi.get(self, "data_ingestion_job_statistics")
+
+    @_builtins.property
+    @pulumi.getter(name="dataIngestionJobTypes")
+    def data_ingestion_job_types(self) -> pulumi.Output[Sequence['outputs.AgentDataIngestionJobDataIngestionJobType']]:
+        """
+        DataIngestionJob type.
+        """
+        return pulumi.get(self, "data_ingestion_job_types")
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
@@ -605,6 +648,11 @@ class AgentDataIngestionJob(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "knowledge_base_id")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

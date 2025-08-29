@@ -16,17 +16,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAuditProfilesAuditProfileCollectionItem {
     /**
-     * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * @return Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     private String auditCollectedVolume;
     /**
-     * @return A optional filter to return only resources that match the specified id.
-     * 
-     */
-    private String auditProfileId;
-    /**
-     * @return Indicates the list of available audit trails on the target.
+     * @return Contains the list of available audit trails on the target database.
      * 
      */
     private List<GetAuditProfilesAuditProfileCollectionItemAuditTrail> auditTrails;
@@ -62,6 +57,11 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
      */
     private String id;
     /**
+     * @return Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    private Boolean isOverrideGlobalPaidUsage;
+    /**
      * @return A optional filter to return only resources that match the specified retention configured value.
      * 
      */
@@ -77,15 +77,30 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * @return Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     private Integer offlineMonths;
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * @return The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String offlineMonthsSource;
+    /**
+     * @return Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     private Integer onlineMonths;
+    /**
+     * @return The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String onlineMonthsSource;
+    /**
+     * @return The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String paidUsageSource;
     /**
      * @return A optional filter to return only resources that match the specified lifecycle state.
      * 
@@ -102,6 +117,11 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
      */
     private String targetId;
     /**
+     * @return A optional filter to return only resources that belong to the specified audit profile type.
+     * 
+     */
+    private String targetType;
+    /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
      * 
      */
@@ -114,21 +134,14 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
 
     private GetAuditProfilesAuditProfileCollectionItem() {}
     /**
-     * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * @return Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     public String auditCollectedVolume() {
         return this.auditCollectedVolume;
     }
     /**
-     * @return A optional filter to return only resources that match the specified id.
-     * 
-     */
-    public String auditProfileId() {
-        return this.auditProfileId;
-    }
-    /**
-     * @return Indicates the list of available audit trails on the target.
+     * @return Contains the list of available audit trails on the target database.
      * 
      */
     public List<GetAuditProfilesAuditProfileCollectionItemAuditTrail> auditTrails() {
@@ -180,6 +193,13 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
         return this.id;
     }
     /**
+     * @return Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    public Boolean isOverrideGlobalPaidUsage() {
+        return this.isOverrideGlobalPaidUsage;
+    }
+    /**
      * @return A optional filter to return only resources that match the specified retention configured value.
      * 
      */
@@ -201,18 +221,39 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * @return Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     public Integer offlineMonths() {
         return this.offlineMonths;
     }
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * @return The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String offlineMonthsSource() {
+        return this.offlineMonthsSource;
+    }
+    /**
+     * @return Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     public Integer onlineMonths() {
         return this.onlineMonths;
+    }
+    /**
+     * @return The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String onlineMonthsSource() {
+        return this.onlineMonthsSource;
+    }
+    /**
+     * @return The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String paidUsageSource() {
+        return this.paidUsageSource;
     }
     /**
      * @return A optional filter to return only resources that match the specified lifecycle state.
@@ -234,6 +275,13 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
      */
     public String targetId() {
         return this.targetId;
+    }
+    /**
+     * @return A optional filter to return only resources that belong to the specified audit profile type.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
     }
     /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
@@ -260,7 +308,6 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String auditCollectedVolume;
-        private String auditProfileId;
         private List<GetAuditProfilesAuditProfileCollectionItemAuditTrail> auditTrails;
         private Integer changeRetentionTrigger;
         private String compartmentId;
@@ -269,21 +316,25 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isOverrideGlobalPaidUsage;
         private Boolean isOverrideGlobalRetentionSetting;
         private Boolean isPaidUsageEnabled;
         private String lifecycleDetails;
         private Integer offlineMonths;
+        private String offlineMonthsSource;
         private Integer onlineMonths;
+        private String onlineMonthsSource;
+        private String paidUsageSource;
         private String state;
         private Map<String,String> systemTags;
         private String targetId;
+        private String targetType;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetAuditProfilesAuditProfileCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectedVolume = defaults.auditCollectedVolume;
-    	      this.auditProfileId = defaults.auditProfileId;
     	      this.auditTrails = defaults.auditTrails;
     	      this.changeRetentionTrigger = defaults.changeRetentionTrigger;
     	      this.compartmentId = defaults.compartmentId;
@@ -292,14 +343,19 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isOverrideGlobalPaidUsage = defaults.isOverrideGlobalPaidUsage;
     	      this.isOverrideGlobalRetentionSetting = defaults.isOverrideGlobalRetentionSetting;
     	      this.isPaidUsageEnabled = defaults.isPaidUsageEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.offlineMonths = defaults.offlineMonths;
+    	      this.offlineMonthsSource = defaults.offlineMonthsSource;
     	      this.onlineMonths = defaults.onlineMonths;
+    	      this.onlineMonthsSource = defaults.onlineMonthsSource;
+    	      this.paidUsageSource = defaults.paidUsageSource;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -310,14 +366,6 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
               throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "auditCollectedVolume");
             }
             this.auditCollectedVolume = auditCollectedVolume;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder auditProfileId(String auditProfileId) {
-            if (auditProfileId == null) {
-              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "auditProfileId");
-            }
-            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
@@ -388,6 +436,14 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isOverrideGlobalPaidUsage(Boolean isOverrideGlobalPaidUsage) {
+            if (isOverrideGlobalPaidUsage == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "isOverrideGlobalPaidUsage");
+            }
+            this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
             if (isOverrideGlobalRetentionSetting == null) {
               throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "isOverrideGlobalRetentionSetting");
@@ -420,11 +476,35 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder offlineMonthsSource(String offlineMonthsSource) {
+            if (offlineMonthsSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "offlineMonthsSource");
+            }
+            this.offlineMonthsSource = offlineMonthsSource;
+            return this;
+        }
+        @CustomType.Setter
         public Builder onlineMonths(Integer onlineMonths) {
             if (onlineMonths == null) {
               throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "onlineMonths");
             }
             this.onlineMonths = onlineMonths;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onlineMonthsSource(String onlineMonthsSource) {
+            if (onlineMonthsSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "onlineMonthsSource");
+            }
+            this.onlineMonthsSource = onlineMonthsSource;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder paidUsageSource(String paidUsageSource) {
+            if (paidUsageSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "paidUsageSource");
+            }
+            this.paidUsageSource = paidUsageSource;
             return this;
         }
         @CustomType.Setter
@@ -452,6 +532,14 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItem", "timeCreated");
@@ -470,7 +558,6 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
         public GetAuditProfilesAuditProfileCollectionItem build() {
             final var _resultValue = new GetAuditProfilesAuditProfileCollectionItem();
             _resultValue.auditCollectedVolume = auditCollectedVolume;
-            _resultValue.auditProfileId = auditProfileId;
             _resultValue.auditTrails = auditTrails;
             _resultValue.changeRetentionTrigger = changeRetentionTrigger;
             _resultValue.compartmentId = compartmentId;
@@ -479,14 +566,19 @@ public final class GetAuditProfilesAuditProfileCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
             _resultValue.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.offlineMonths = offlineMonths;
+            _resultValue.offlineMonthsSource = offlineMonthsSource;
             _resultValue.onlineMonths = onlineMonths;
+            _resultValue.onlineMonthsSource = onlineMonthsSource;
+            _resultValue.paidUsageSource = paidUsageSource;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -28,7 +28,7 @@ class GetDbVersionsResult:
     """
     A collection of values returned by getDbVersions.
     """
-    def __init__(__self__, compartment_id=None, db_system_id=None, db_system_shape=None, db_versions=None, filters=None, id=None, is_database_software_image_supported=None, is_upgrade_supported=None, storage_management=None):
+    def __init__(__self__, compartment_id=None, db_system_id=None, db_system_shape=None, db_versions=None, filters=None, id=None, is_database_software_image_supported=None, is_upgrade_supported=None, shape_attribute=None, storage_management=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,9 @@ class GetDbVersionsResult:
         if is_upgrade_supported and not isinstance(is_upgrade_supported, bool):
             raise TypeError("Expected argument 'is_upgrade_supported' to be a bool")
         pulumi.set(__self__, "is_upgrade_supported", is_upgrade_supported)
+        if shape_attribute and not isinstance(shape_attribute, str):
+            raise TypeError("Expected argument 'shape_attribute' to be a str")
+        pulumi.set(__self__, "shape_attribute", shape_attribute)
         if storage_management and not isinstance(storage_management, str):
             raise TypeError("Expected argument 'storage_management' to be a str")
         pulumi.set(__self__, "storage_management", storage_management)
@@ -107,6 +110,11 @@ class GetDbVersionsResult:
         return pulumi.get(self, "is_upgrade_supported")
 
     @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "shape_attribute")
+
+    @_builtins.property
     @pulumi.getter(name="storageManagement")
     def storage_management(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "storage_management")
@@ -126,6 +134,7 @@ class AwaitableGetDbVersionsResult(GetDbVersionsResult):
             id=self.id,
             is_database_software_image_supported=self.is_database_software_image_supported,
             is_upgrade_supported=self.is_upgrade_supported,
+            shape_attribute=self.shape_attribute,
             storage_management=self.storage_management)
 
 
@@ -135,6 +144,7 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
                     filters: Optional[Sequence[Union['GetDbVersionsFilterArgs', 'GetDbVersionsFilterArgsDict']]] = None,
                     is_database_software_image_supported: Optional[_builtins.bool] = None,
                     is_upgrade_supported: Optional[_builtins.bool] = None,
+                    shape_attribute: Optional[_builtins.str] = None,
                     storage_management: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbVersionsResult:
     """
@@ -153,6 +163,7 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
         db_system_shape=db_version_db_system_shape,
         is_database_software_image_supported=db_version_is_database_software_image_supported,
         is_upgrade_supported=db_version_is_upgrade_supported,
+        shape_attribute=db_version_shape_attribute,
         storage_management=db_version_storage_management)
     ```
 
@@ -162,6 +173,7 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
     :param _builtins.bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
     :param _builtins.bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
+    :param _builtins.str shape_attribute: If provided and applicable, return the results based on the shapeAttribute provided
     :param _builtins.str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
            * ASM specifies Oracle Automatic Storage Management
            * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -173,6 +185,7 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['isDatabaseSoftwareImageSupported'] = is_database_software_image_supported
     __args__['isUpgradeSupported'] = is_upgrade_supported
+    __args__['shapeAttribute'] = shape_attribute
     __args__['storageManagement'] = storage_management
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbVersions:getDbVersions', __args__, opts=opts, typ=GetDbVersionsResult).value
@@ -186,6 +199,7 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_database_software_image_supported=pulumi.get(__ret__, 'is_database_software_image_supported'),
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
+        shape_attribute=pulumi.get(__ret__, 'shape_attribute'),
         storage_management=pulumi.get(__ret__, 'storage_management'))
 def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                            db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -193,6 +207,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbVersionsFilterArgs', 'GetDbVersionsFilterArgsDict']]]]] = None,
                            is_database_software_image_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                            is_upgrade_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                           shape_attribute: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            storage_management: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbVersionsResult]:
     """
@@ -211,6 +226,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
         db_system_shape=db_version_db_system_shape,
         is_database_software_image_supported=db_version_is_database_software_image_supported,
         is_upgrade_supported=db_version_is_upgrade_supported,
+        shape_attribute=db_version_shape_attribute,
         storage_management=db_version_storage_management)
     ```
 
@@ -220,6 +236,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     :param _builtins.str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
     :param _builtins.bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
     :param _builtins.bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
+    :param _builtins.str shape_attribute: If provided and applicable, return the results based on the shapeAttribute provided
     :param _builtins.str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
            * ASM specifies Oracle Automatic Storage Management
            * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -231,6 +248,7 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     __args__['filters'] = filters
     __args__['isDatabaseSoftwareImageSupported'] = is_database_software_image_supported
     __args__['isUpgradeSupported'] = is_upgrade_supported
+    __args__['shapeAttribute'] = shape_attribute
     __args__['storageManagement'] = storage_management
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbVersions:getDbVersions', __args__, opts=opts, typ=GetDbVersionsResult)
@@ -243,4 +261,5 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
         id=pulumi.get(__response__, 'id'),
         is_database_software_image_supported=pulumi.get(__response__, 'is_database_software_image_supported'),
         is_upgrade_supported=pulumi.get(__response__, 'is_upgrade_supported'),
+        shape_attribute=pulumi.get(__response__, 'shape_attribute'),
         storage_management=pulumi.get(__response__, 'storage_management')))

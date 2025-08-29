@@ -176,6 +176,21 @@ public final class GetSensitiveColumnAnalyticsPlainArgs extends com.pulumi.resou
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -204,6 +219,7 @@ public final class GetSensitiveColumnAnalyticsPlainArgs extends com.pulumi.resou
         this.sensitiveDataModelId = $.sensitiveDataModelId;
         this.sensitiveTypeGroupId = $.sensitiveTypeGroupId;
         this.sensitiveTypeIds = $.sensitiveTypeIds;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -392,6 +408,17 @@ public final class GetSensitiveColumnAnalyticsPlainArgs extends com.pulumi.resou
          */
         public Builder sensitiveTypeIds(String... sensitiveTypeIds) {
             return sensitiveTypeIds(List.of(sensitiveTypeIds));
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
         }
 
         /**

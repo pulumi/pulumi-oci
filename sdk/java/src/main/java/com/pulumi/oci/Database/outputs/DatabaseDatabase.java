@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseStorageSizeDetails;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -143,6 +144,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String sourceTdeWalletPassword;
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    private @Nullable DatabaseDatabaseStorageSizeDetails storageSizeDetails;
     /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
@@ -342,6 +348,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.sourceTdeWalletPassword);
     }
     /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Optional<DatabaseDatabaseStorageSizeDetails> storageSizeDetails() {
+        return Optional.ofNullable(this.storageSizeDetails);
+    }
+    /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -403,6 +416,7 @@ public final class DatabaseDatabase {
         private @Nullable String sourceDatabaseId;
         private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
         private @Nullable String sourceTdeWalletPassword;
+        private @Nullable DatabaseDatabaseStorageSizeDetails storageSizeDetails;
         private @Nullable String tdeWalletPassword;
         private @Nullable String transportType;
         private @Nullable String vaultId;
@@ -433,6 +447,7 @@ public final class DatabaseDatabase {
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
+    	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
@@ -586,6 +601,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSizeDetails(@Nullable DatabaseDatabaseStorageSizeDetails storageSizeDetails) {
+
+            this.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
 
             this.tdeWalletPassword = tdeWalletPassword;
@@ -629,6 +650,7 @@ public final class DatabaseDatabase {
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;

@@ -44,6 +44,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> AuditTrailId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Output("canUpdateLastArchiveTimeOnTarget")]
+        public Output<bool> CanUpdateLastArchiveTimeOnTarget { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         [Output("compartmentId")]
@@ -231,6 +237,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("auditTrailId", required: true)]
         public Input<string> AuditTrailId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Input("canUpdateLastArchiveTimeOnTarget")]
+        public Input<bool>? CanUpdateLastArchiveTimeOnTarget { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -314,6 +326,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("auditTrailId")]
         public Input<string>? AuditTrailId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Input("canUpdateLastArchiveTimeOnTarget")]
+        public Input<bool>? CanUpdateLastArchiveTimeOnTarget { get; set; }
 
         /// <summary>
         /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.

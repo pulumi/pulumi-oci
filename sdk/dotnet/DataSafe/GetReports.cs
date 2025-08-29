@@ -31,6 +31,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentId = compartmentId,
         ///         AccessLevel = reportAccessLevel,
         ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DataSource = reportDataSource,
         ///         DisplayName = reportDisplayName,
         ///         MimeType = reportMimeType,
         ///         ReportDefinitionId = testReportDefinition.Id,
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentId = compartmentId,
         ///         AccessLevel = reportAccessLevel,
         ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DataSource = reportDataSource,
         ///         DisplayName = reportDisplayName,
         ///         MimeType = reportMimeType,
         ///         ReportDefinitionId = testReportDefinition.Id,
@@ -101,6 +103,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentId = compartmentId,
         ///         AccessLevel = reportAccessLevel,
         ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DataSource = reportDataSource,
         ///         DisplayName = reportDisplayName,
         ///         MimeType = reportMimeType,
         ///         ReportDefinitionId = testReportDefinition.Id,
@@ -137,6 +140,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
+
+        /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example  alerts, events.
+        /// </summary>
+        [Input("dataSource")]
+        public string? DataSource { get; set; }
 
         /// <summary>
         /// The name of the report definition to query.
@@ -219,6 +228,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example  alerts, events.
+        /// </summary>
+        [Input("dataSource")]
+        public Input<string>? DataSource { get; set; }
+
+        /// <summary>
         /// The name of the report definition to query.
         /// </summary>
         [Input("displayName")]
@@ -289,6 +304,10 @@ namespace Pulumi.Oci.DataSafe
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example alerts, events.
+        /// </summary>
+        public readonly string? DataSource;
+        /// <summary>
         /// Name of the report.
         /// </summary>
         public readonly string? DisplayName;
@@ -328,6 +347,8 @@ namespace Pulumi.Oci.DataSafe
 
             bool? compartmentIdInSubtree,
 
+            string? dataSource,
+
             string? displayName,
 
             ImmutableArray<Outputs.GetReportsFilterResult> filters,
@@ -351,6 +372,7 @@ namespace Pulumi.Oci.DataSafe
             AccessLevel = accessLevel;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            DataSource = dataSource;
             DisplayName = displayName;
             Filters = filters;
             Id = id;

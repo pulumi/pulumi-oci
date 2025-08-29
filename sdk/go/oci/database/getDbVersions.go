@@ -35,6 +35,7 @@ import (
 //				DbSystemShape:                    pulumi.StringRef(dbVersionDbSystemShape),
 //				IsDatabaseSoftwareImageSupported: pulumi.BoolRef(dbVersionIsDatabaseSoftwareImageSupported),
 //				IsUpgradeSupported:               pulumi.BoolRef(dbVersionIsUpgradeSupported),
+//				ShapeAttribute:                   pulumi.StringRef(dbVersionShapeAttribute),
 //				StorageManagement:                pulumi.StringRef(dbVersionStorageManagement),
 //			}, nil)
 //			if err != nil {
@@ -68,6 +69,8 @@ type GetDbVersionsArgs struct {
 	IsDatabaseSoftwareImageSupported *bool `pulumi:"isDatabaseSoftwareImageSupported"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported *bool `pulumi:"isUpgradeSupported"`
+	// If provided and applicable, return the results based on the shapeAttribute provided
+	ShapeAttribute *string `pulumi:"shapeAttribute"`
 	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
 	// * ASM specifies Oracle Automatic Storage Management
 	// * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -87,6 +90,7 @@ type GetDbVersionsResult struct {
 	IsDatabaseSoftwareImageSupported *bool  `pulumi:"isDatabaseSoftwareImageSupported"`
 	// True if this version of the Oracle Database software is supported for Upgrade.
 	IsUpgradeSupported *bool   `pulumi:"isUpgradeSupported"`
+	ShapeAttribute     *string `pulumi:"shapeAttribute"`
 	StorageManagement  *string `pulumi:"storageManagement"`
 }
 
@@ -112,6 +116,8 @@ type GetDbVersionsOutputArgs struct {
 	IsDatabaseSoftwareImageSupported pulumi.BoolPtrInput `pulumi:"isDatabaseSoftwareImageSupported"`
 	// If provided, filters the results to the set of database versions which are supported for Upgrade.
 	IsUpgradeSupported pulumi.BoolPtrInput `pulumi:"isUpgradeSupported"`
+	// If provided and applicable, return the results based on the shapeAttribute provided
+	ShapeAttribute pulumi.StringPtrInput `pulumi:"shapeAttribute"`
 	// The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
 	// * ASM specifies Oracle Automatic Storage Management
 	// * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -170,6 +176,10 @@ func (o GetDbVersionsResultOutput) IsDatabaseSoftwareImageSupported() pulumi.Boo
 // True if this version of the Oracle Database software is supported for Upgrade.
 func (o GetDbVersionsResultOutput) IsUpgradeSupported() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetDbVersionsResult) *bool { return v.IsUpgradeSupported }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbVersionsResultOutput) ShapeAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbVersionsResult) *string { return v.ShapeAttribute }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbVersionsResultOutput) StorageManagement() pulumi.StringPtrOutput {

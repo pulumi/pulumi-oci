@@ -10,7 +10,10 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
+        "category": args.category,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsReferences": args.containsReferences,
+        "containsSeverities": args.containsSeverities,
         "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
@@ -21,6 +24,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
         "severity": args.severity,
         "state": args.state,
         "targetId": args.targetId,
+        "targetIds": args.targetIds,
     }, opts);
 }
 
@@ -29,7 +33,10 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
  */
 export interface GetSecurityAssessmentFindingArgs {
     accessLevel?: string;
+    category?: string;
     compartmentIdInSubtree?: boolean;
+    containsReferences?: string[];
+    containsSeverities?: string[];
     fields?: string[];
     filters?: inputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     findingKey?: string;
@@ -40,6 +47,7 @@ export interface GetSecurityAssessmentFindingArgs {
     severity?: string;
     state?: string;
     targetId?: string;
+    targetIds?: string[];
 }
 
 /**
@@ -47,7 +55,10 @@ export interface GetSecurityAssessmentFindingArgs {
  */
 export interface GetSecurityAssessmentFindingResult {
     readonly accessLevel?: string;
+    readonly category?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly containsReferences?: string[];
+    readonly containsSeverities?: string[];
     readonly fields?: string[];
     readonly filters?: outputs.DataSafe.GetSecurityAssessmentFindingFilter[];
     readonly findingKey?: string;
@@ -63,12 +74,16 @@ export interface GetSecurityAssessmentFindingResult {
     readonly severity?: string;
     readonly state?: string;
     readonly targetId?: string;
+    readonly targetIds?: string[];
 }
 export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFindingOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentFindingResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
+        "category": args.category,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsReferences": args.containsReferences,
+        "containsSeverities": args.containsSeverities,
         "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
@@ -79,6 +94,7 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
         "severity": args.severity,
         "state": args.state,
         "targetId": args.targetId,
+        "targetIds": args.targetIds,
     }, opts);
 }
 
@@ -87,7 +103,10 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
  */
 export interface GetSecurityAssessmentFindingOutputArgs {
     accessLevel?: pulumi.Input<string>;
+    category?: pulumi.Input<string>;
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
     fields?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingFilterArgs>[]>;
     findingKey?: pulumi.Input<string>;
@@ -98,4 +117,5 @@ export interface GetSecurityAssessmentFindingOutputArgs {
     severity?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
     targetId?: pulumi.Input<string>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

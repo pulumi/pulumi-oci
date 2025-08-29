@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Security Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Updates the security policy.
+ * Creates a Data Safe security policy.
  * 
  * ## Example Usage
  * 
@@ -67,14 +67,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement")
 public class SecurityPolicyManagement extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy.
+     * @return (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     public Output<String> compartmentId() {
@@ -125,12 +125,18 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,String>> freeformTags() {
@@ -149,6 +155,20 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The type of the security policy.
+     * 
+     */
+    @Export(name="securityPolicyType", refs={String.class}, tree="[0]")
+    private Output<String> securityPolicyType;
+
+    /**
+     * @return The type of the security policy.
+     * 
+     */
+    public Output<String> securityPolicyType() {
+        return this.securityPolicyType;
     }
     /**
      * The current state of the security policy.
@@ -179,14 +199,14 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
         return this.systemTags;
     }
     /**
-     * Unique target identifier.
+     * Unique target identifier. If target id is not specified then new security policy will be created.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return Unique target identifier.
+     * @return Unique target identifier. If target id is not specified then new security policy will be created.
      * 
      */
     public Output<String> targetId() {
@@ -233,7 +253,7 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SecurityPolicyManagement(java.lang.String name, @Nullable SecurityPolicyManagementArgs args) {
+    public SecurityPolicyManagement(java.lang.String name, SecurityPolicyManagementArgs args) {
         this(name, args, null);
     }
     /**
@@ -242,7 +262,7 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SecurityPolicyManagement(java.lang.String name, @Nullable SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public SecurityPolicyManagement(java.lang.String name, SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
@@ -250,7 +270,7 @@ public class SecurityPolicyManagement extends com.pulumi.resources.CustomResourc
         super("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static SecurityPolicyManagementArgs makeArgs(@Nullable SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    private static SecurityPolicyManagementArgs makeArgs(SecurityPolicyManagementArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         if (options != null && options.getUrn().isPresent()) {
             return null;
         }

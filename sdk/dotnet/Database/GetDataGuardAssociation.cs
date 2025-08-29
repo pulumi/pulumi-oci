@@ -151,6 +151,8 @@ namespace Pulumi.Oci.Database
         public readonly string ApplyRate;
         public readonly string AvailabilityDomain;
         public readonly ImmutableArray<string> BackupNetworkNsgIds;
+        public readonly int ComputeCount;
+        public readonly string ComputeModel;
         public readonly int CpuCoreCount;
         public readonly bool CreateAsync;
         public readonly string CreationType;
@@ -248,6 +250,10 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> backupNetworkNsgIds,
 
+            int computeCount,
+
+            string computeModel,
+
             int cpuCoreCount,
 
             bool createAsync,
@@ -340,6 +346,8 @@ namespace Pulumi.Oci.Database
             ApplyRate = applyRate;
             AvailabilityDomain = availabilityDomain;
             BackupNetworkNsgIds = backupNetworkNsgIds;
+            ComputeCount = computeCount;
+            ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
             CreateAsync = createAsync;
             CreationType = creationType;

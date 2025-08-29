@@ -10,6 +10,7 @@ from .add_sdm_columns import *
 from .alert import *
 from .alert_policy import *
 from .alert_policy_rule import *
+from .attribute_set import *
 from .audit_archive_retrieval import *
 from .audit_policy import *
 from .audit_policy_management import *
@@ -35,6 +36,9 @@ from .get_alert_policy import *
 from .get_alert_policy_rule import *
 from .get_alert_policy_rules import *
 from .get_alerts import *
+from .get_attribute_set import *
+from .get_attribute_set_associated_resources import *
+from .get_attribute_sets import *
 from .get_audit_archive_retrieval import *
 from .get_audit_archive_retrievals import *
 from .get_audit_event import *
@@ -48,6 +52,7 @@ from .get_audit_profile_available_audit_volume import *
 from .get_audit_profile_available_audit_volumes import *
 from .get_audit_profile_collected_audit_volume import *
 from .get_audit_profile_collected_audit_volumes import *
+from .get_audit_profile_target_overrides import *
 from .get_audit_profiles import *
 from .get_audit_trail import *
 from .get_audit_trail_analytic import *
@@ -96,6 +101,7 @@ from .get_sdm_masking_policy_difference_difference_column import *
 from .get_sdm_masking_policy_difference_difference_columns import *
 from .get_sdm_masking_policy_differences import *
 from .get_security_assessment import *
+from .get_security_assessment_checks import *
 from .get_security_assessment_comparison import *
 from .get_security_assessment_finding import *
 from .get_security_assessment_finding_analytics import *
@@ -103,9 +109,14 @@ from .get_security_assessment_findings import *
 from .get_security_assessment_findings_change_audit_logs import *
 from .get_security_assessment_security_feature_analytics import *
 from .get_security_assessment_security_features import *
+from .get_security_assessment_template_analytics import *
+from .get_security_assessment_template_association_analytics import *
+from .get_security_assessment_template_baseline_comparison import *
 from .get_security_assessments import *
 from .get_security_policies import *
 from .get_security_policy import *
+from .get_security_policy_config import *
+from .get_security_policy_configs import *
 from .get_security_policy_deployment import *
 from .get_security_policy_deployment_security_policy_entry_state import *
 from .get_security_policy_deployment_security_policy_entry_states import *
@@ -149,6 +160,9 @@ from .get_sql_firewall_violations import *
 from .get_target_alert_policy_association import *
 from .get_target_alert_policy_associations import *
 from .get_target_database import *
+from .get_target_database_group import *
+from .get_target_database_group_group_member import *
+from .get_target_database_groups import *
 from .get_target_database_peer_target_database import *
 from .get_target_database_peer_target_databases import *
 from .get_target_database_role import *
@@ -157,6 +171,10 @@ from .get_target_databases import *
 from .get_target_databases_columns import *
 from .get_target_databases_schemas import *
 from .get_target_databases_tables import *
+from .get_unified_audit_policies import *
+from .get_unified_audit_policy import *
+from .get_unified_audit_policy_definition import *
+from .get_unified_audit_policy_definitions import *
 from .get_user_assessment import *
 from .get_user_assessment_comparison import *
 from .get_user_assessment_password_expiry_date_analytics import *
@@ -178,7 +196,10 @@ from .report import *
 from .report_definition import *
 from .sdm_masking_policy_difference import *
 from .security_assessment import *
+from .security_assessment_check import *
+from .security_assessment_finding import *
 from .security_policy import *
+from .security_policy_config import *
 from .security_policy_deployment import *
 from .security_policy_deployment_management import *
 from .security_policy_management import *
@@ -199,7 +220,10 @@ from .sql_firewall_policy import *
 from .sql_firewall_policy_management import *
 from .target_alert_policy_association import *
 from .target_database import *
+from .target_database_group import *
 from .target_database_peer_target_database import *
+from .unified_audit_policy import *
+from .unified_audit_policy_definition import *
 from .unset_security_assessment_baseline import *
 from .unset_security_assessment_baseline_management import *
 from .unset_user_assessment_baseline import *

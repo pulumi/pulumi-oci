@@ -5786,6 +5786,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
                  region: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
+                 time_last_synced: _builtins.str,
                  time_role_changed: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -5798,6 +5799,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         :param _builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
         :param _builtins.str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param _builtins.str time_last_synced: The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_role_changed: The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param _builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
@@ -5810,6 +5812,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_synced", time_last_synced)
         pulumi.set(__self__, "time_role_changed", time_role_changed)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -5884,6 +5887,14 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastSynced")
+    def time_last_synced(self) -> _builtins.str:
+        """
+        The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_synced")
 
     @_builtins.property
     @pulumi.getter(name="timeRoleChanged")
@@ -6697,6 +6708,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
                  backup_schedules: Sequence['outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult'],
+                 byol_cpu_core_count_limit: _builtins.int,
                  category: _builtins.str,
                  compartment_id: _builtins.str,
                  cpu_core_count: _builtins.int,
@@ -6715,6 +6727,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  id: _builtins.str,
                  ingress_ips: Sequence['outputs.GetDeploymentsDeploymentCollectionItemIngressIpResult'],
                  is_auto_scaling_enabled: _builtins.bool,
+                 is_byol_cpu_core_count_limit_enabled: _builtins.bool,
                  is_healthy: _builtins.bool,
                  is_latest_version: _builtins.bool,
                  is_lock_override: _builtins.bool,
@@ -6751,6 +6764,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         """
         :param _builtins.str availability_domain: The availability domain of a placement.
         :param Sequence['GetDeploymentsDeploymentCollectionItemBackupScheduleArgs'] backup_schedules: Defines the schedule of the deployment backup.
+        :param _builtins.int byol_cpu_core_count_limit: The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param _builtins.str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param _builtins.int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
@@ -6758,7 +6772,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs'] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
         :param _builtins.str deployment_role: The type of the deployment role.
-        :param _builtins.str deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        :param _builtins.str deployment_type: A filter that returns only the resources matching the specified 'deploymentType'.
         :param _builtins.str deployment_url: The URL of a resource.
         :param _builtins.str description: Metadata about this specific object.
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
@@ -6769,6 +6783,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param Sequence['GetDeploymentsDeploymentCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param _builtins.bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param _builtins.bool is_byol_cpu_core_count_limit_enabled: Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param _builtins.bool is_healthy: True if all of the aggregate resources are working correctly.
         :param _builtins.bool is_latest_version: Indicates if the resource is the the latest available version.
         :param _builtins.bool is_public: True if this object is publicly available.
@@ -6804,6 +6819,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_schedules", backup_schedules)
+        pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -6822,6 +6838,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ingress_ips", ingress_ips)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        pulumi.set(__self__, "is_byol_cpu_core_count_limit_enabled", is_byol_cpu_core_count_limit_enabled)
         pulumi.set(__self__, "is_healthy", is_healthy)
         pulumi.set(__self__, "is_latest_version", is_latest_version)
         pulumi.set(__self__, "is_lock_override", is_lock_override)
@@ -6871,6 +6888,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Defines the schedule of the deployment backup.
         """
         return pulumi.get(self, "backup_schedules")
+
+    @_builtins.property
+    @pulumi.getter(name="byolCpuCoreCountLimit")
+    def byol_cpu_core_count_limit(self) -> _builtins.int:
+        """
+        The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        """
+        return pulumi.get(self, "byol_cpu_core_count_limit")
 
     @_builtins.property
     @pulumi.getter
@@ -6932,7 +6957,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> _builtins.str:
         """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        A filter that returns only the resources matching the specified 'deploymentType'.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -7015,6 +7040,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isByolCpuCoreCountLimitEnabled")
+    def is_byol_cpu_core_count_limit_enabled(self) -> _builtins.bool:
+        """
+        Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        """
+        return pulumi.get(self, "is_byol_cpu_core_count_limit_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isHealthy")

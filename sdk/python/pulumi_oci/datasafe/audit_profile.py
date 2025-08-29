@@ -21,34 +21,44 @@ __all__ = ['AuditProfileArgs', 'AuditProfile']
 @pulumi.input_type
 class AuditProfileArgs:
     def __init__(__self__, *,
-                 audit_profile_id: pulumi.Input[_builtins.str],
+                 compartment_id: pulumi.Input[_builtins.str],
+                 target_id: pulumi.Input[_builtins.str],
+                 target_type: pulumi.Input[_builtins.str],
                  change_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_override_global_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_override_global_retention_setting: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 offline_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 online_months: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AuditProfile resource.
-        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the audit profile.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_override_global_paid_usage: (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         :param pulumi.Input[_builtins.bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
+        :param pulumi.Input[_builtins.int] offline_months: Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        :param pulumi.Input[_builtins.int] online_months: Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
         """
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_type", target_type)
         if change_retention_trigger is not None:
             pulumi.set(__self__, "change_retention_trigger", change_retention_trigger)
-        if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -57,20 +67,52 @@ class AuditProfileArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_override_global_paid_usage is not None:
+            pulumi.set(__self__, "is_override_global_paid_usage", is_override_global_paid_usage)
+        if is_override_global_retention_setting is not None:
+            pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
         if is_paid_usage_enabled is not None:
             pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
+        if offline_months is not None:
+            pulumi.set(__self__, "offline_months", offline_months)
+        if online_months is not None:
+            pulumi.set(__self__, "online_months", online_months)
 
     @_builtins.property
-    @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the audit.
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
-        return pulumi.get(self, "audit_profile_id")
+        return pulumi.get(self, "compartment_id")
 
-    @audit_profile_id.setter
-    def audit_profile_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "audit_profile_id", value)
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the target database or target database group for which the audit profile is created.
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The resource type that is represented by the audit profile.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="changeRetentionTrigger")
@@ -87,18 +129,6 @@ class AuditProfileArgs:
     @change_retention_trigger.setter
     def change_retention_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "change_retention_trigger", value)
-
-    @_builtins.property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the audit.
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -149,6 +179,30 @@ class AuditProfileArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOverrideGlobalPaidUsage")
+    def is_override_global_paid_usage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        """
+        return pulumi.get(self, "is_override_global_paid_usage")
+
+    @is_override_global_paid_usage.setter
+    def is_override_global_paid_usage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_override_global_paid_usage", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isOverrideGlobalRetentionSetting")
+    def is_override_global_retention_setting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
+        """
+        return pulumi.get(self, "is_override_global_retention_setting")
+
+    @is_override_global_retention_setting.setter
+    def is_override_global_retention_setting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_override_global_retention_setting", value)
+
+    @_builtins.property
     @pulumi.getter(name="isPaidUsageEnabled")
     def is_paid_usage_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -160,12 +214,35 @@ class AuditProfileArgs:
     def is_paid_usage_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_paid_usage_enabled", value)
 
+    @_builtins.property
+    @pulumi.getter(name="offlineMonths")
+    def offline_months(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        """
+        return pulumi.get(self, "offline_months")
+
+    @offline_months.setter
+    def offline_months(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "offline_months", value)
+
+    @_builtins.property
+    @pulumi.getter(name="onlineMonths")
+    def online_months(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        """
+        return pulumi.get(self, "online_months")
+
+    @online_months.setter
+    def online_months(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "online_months", value)
+
 
 @pulumi.input_type
 class _AuditProfileState:
     def __init__(__self__, *,
                  audit_collected_volume: Optional[pulumi.Input[_builtins.str]] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  audit_trails: Optional[pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]]] = None,
                  change_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -173,46 +250,53 @@ class _AuditProfileState:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_override_global_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_override_global_retention_setting: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  offline_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 offline_months_source: Optional[pulumi.Input[_builtins.str]] = None,
                  online_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 online_months_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 paid_usage_source: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuditProfile resources.
-        :param pulumi.Input[_builtins.str] audit_collected_volume: Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
-        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]] audit_trails: Indicates the list of available audit trails on the target.
+        :param pulumi.Input[_builtins.str] audit_collected_volume: Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        :param pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]] audit_trails: Contains the list of available audit trails on the target database.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        :param pulumi.Input[_builtins.bool] is_override_global_paid_usage: (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         :param pulumi.Input[_builtins.bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the audit profile in Data Safe.
-        :param pulumi.Input[_builtins.int] offline_months: Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
-        :param pulumi.Input[_builtins.int] online_months: Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        :param pulumi.Input[_builtins.int] offline_months: Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        :param pulumi.Input[_builtins.str] offline_months_source: The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        :param pulumi.Input[_builtins.int] online_months: Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        :param pulumi.Input[_builtins.str] online_months_source: The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        :param pulumi.Input[_builtins.str] paid_usage_source: The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
         :param pulumi.Input[_builtins.str] state: The current state of the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the Data Safe target for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the audit profile.
         :param pulumi.Input[_builtins.str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         """
         if audit_collected_volume is not None:
             pulumi.set(__self__, "audit_collected_volume", audit_collected_volume)
-        if audit_profile_id is not None:
-            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
         if audit_trails is not None:
             pulumi.set(__self__, "audit_trails", audit_trails)
         if change_retention_trigger is not None:
@@ -227,6 +311,8 @@ class _AuditProfileState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_override_global_paid_usage is not None:
+            pulumi.set(__self__, "is_override_global_paid_usage", is_override_global_paid_usage)
         if is_override_global_retention_setting is not None:
             pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
         if is_paid_usage_enabled is not None:
@@ -235,14 +321,22 @@ class _AuditProfileState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if offline_months is not None:
             pulumi.set(__self__, "offline_months", offline_months)
+        if offline_months_source is not None:
+            pulumi.set(__self__, "offline_months_source", offline_months_source)
         if online_months is not None:
             pulumi.set(__self__, "online_months", online_months)
+        if online_months_source is not None:
+            pulumi.set(__self__, "online_months_source", online_months_source)
+        if paid_usage_source is not None:
+            pulumi.set(__self__, "paid_usage_source", paid_usage_source)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -252,7 +346,7 @@ class _AuditProfileState:
     @pulumi.getter(name="auditCollectedVolume")
     def audit_collected_volume(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         """
         return pulumi.get(self, "audit_collected_volume")
 
@@ -261,22 +355,10 @@ class _AuditProfileState:
         pulumi.set(self, "audit_collected_volume", value)
 
     @_builtins.property
-    @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The OCID of the audit.
-        """
-        return pulumi.get(self, "audit_profile_id")
-
-    @audit_profile_id.setter
-    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "audit_profile_id", value)
-
-    @_builtins.property
     @pulumi.getter(name="auditTrails")
     def audit_trails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]]]:
         """
-        Indicates the list of available audit trails on the target.
+        Contains the list of available audit trails on the target database.
         """
         return pulumi.get(self, "audit_trails")
 
@@ -304,7 +386,7 @@ class _AuditProfileState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment that contains the audit.
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -361,10 +443,22 @@ class _AuditProfileState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOverrideGlobalPaidUsage")
+    def is_override_global_paid_usage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        """
+        return pulumi.get(self, "is_override_global_paid_usage")
+
+    @is_override_global_paid_usage.setter
+    def is_override_global_paid_usage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_override_global_paid_usage", value)
+
+    @_builtins.property
     @pulumi.getter(name="isOverrideGlobalRetentionSetting")
     def is_override_global_retention_setting(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         """
         return pulumi.get(self, "is_override_global_retention_setting")
 
@@ -400,7 +494,7 @@ class _AuditProfileState:
     @pulumi.getter(name="offlineMonths")
     def offline_months(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         """
         return pulumi.get(self, "offline_months")
 
@@ -409,16 +503,52 @@ class _AuditProfileState:
         pulumi.set(self, "offline_months", value)
 
     @_builtins.property
+    @pulumi.getter(name="offlineMonthsSource")
+    def offline_months_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "offline_months_source")
+
+    @offline_months_source.setter
+    def offline_months_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "offline_months_source", value)
+
+    @_builtins.property
     @pulumi.getter(name="onlineMonths")
     def online_months(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
         """
         return pulumi.get(self, "online_months")
 
     @online_months.setter
     def online_months(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "online_months", value)
+
+    @_builtins.property
+    @pulumi.getter(name="onlineMonthsSource")
+    def online_months_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "online_months_source")
+
+    @online_months_source.setter
+    def online_months_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "online_months_source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="paidUsageSource")
+    def paid_usage_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "paid_usage_source")
+
+    @paid_usage_source.setter
+    def paid_usage_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "paid_usage_source", value)
 
     @_builtins.property
     @pulumi.getter
@@ -448,13 +578,25 @@ class _AuditProfileState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
     def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "target_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The resource type that is represented by the audit profile.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -487,19 +629,50 @@ class AuditProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  change_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_override_global_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_override_global_retention_setting: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 offline_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 online_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Updates one or more attributes of the specified audit profile.
+        Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_audit_profile = oci.datasafe.AuditProfile("test_audit_profile",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
+            target_type=audit_profile_target_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=audit_profile_description,
+            display_name=audit_profile_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage,
+            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+            offline_months=audit_profile_offline_months,
+            online_months=audit_profile_online_months,
+            change_retention_trigger=retention_trigger,
+            is_override_global_retention_setting=True)
+        ```
 
         ## Import
 
@@ -511,18 +684,23 @@ class AuditProfile(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_override_global_paid_usage: (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         :param pulumi.Input[_builtins.bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
+        :param pulumi.Input[_builtins.int] offline_months: Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        :param pulumi.Input[_builtins.int] online_months: Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the audit profile.
         """
         ...
     @overload
@@ -533,7 +711,33 @@ class AuditProfile(pulumi.CustomResource):
         """
         This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Updates one or more attributes of the specified audit profile.
+        Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_audit_profile = oci.datasafe.AuditProfile("test_audit_profile",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
+            target_type=audit_profile_target_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=audit_profile_description,
+            display_name=audit_profile_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_override_global_paid_usage=audit_profile_is_override_global_paid_usage,
+            is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+            offline_months=audit_profile_offline_months,
+            online_months=audit_profile_online_months,
+            change_retention_trigger=retention_trigger,
+            is_override_global_retention_setting=True)
+        ```
 
         ## Import
 
@@ -558,14 +762,19 @@ class AuditProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  change_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_override_global_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_override_global_retention_setting: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 offline_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 online_months: Optional[pulumi.Input[_builtins.int]] = None,
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -575,25 +784,33 @@ class AuditProfile(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AuditProfileArgs.__new__(AuditProfileArgs)
 
-            if audit_profile_id is None and not opts.urn:
-                raise TypeError("Missing required property 'audit_profile_id'")
-            __props__.__dict__["audit_profile_id"] = audit_profile_id
             __props__.__dict__["change_retention_trigger"] = change_retention_trigger
+            if compartment_id is None and not opts.urn:
+                raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_override_global_paid_usage"] = is_override_global_paid_usage
+            __props__.__dict__["is_override_global_retention_setting"] = is_override_global_retention_setting
             __props__.__dict__["is_paid_usage_enabled"] = is_paid_usage_enabled
+            __props__.__dict__["offline_months"] = offline_months
+            __props__.__dict__["online_months"] = online_months
+            if target_id is None and not opts.urn:
+                raise TypeError("Missing required property 'target_id'")
+            __props__.__dict__["target_id"] = target_id
+            if target_type is None and not opts.urn:
+                raise TypeError("Missing required property 'target_type'")
+            __props__.__dict__["target_type"] = target_type
             __props__.__dict__["audit_collected_volume"] = None
             __props__.__dict__["audit_trails"] = None
-            __props__.__dict__["is_override_global_retention_setting"] = None
             __props__.__dict__["lifecycle_details"] = None
-            __props__.__dict__["offline_months"] = None
-            __props__.__dict__["online_months"] = None
+            __props__.__dict__["offline_months_source"] = None
+            __props__.__dict__["online_months_source"] = None
+            __props__.__dict__["paid_usage_source"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
-            __props__.__dict__["target_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(AuditProfile, __self__).__init__(
@@ -607,7 +824,6 @@ class AuditProfile(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             audit_collected_volume: Optional[pulumi.Input[_builtins.str]] = None,
-            audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
             audit_trails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]]] = None,
             change_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -615,14 +831,19 @@ class AuditProfile(pulumi.CustomResource):
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_override_global_paid_usage: Optional[pulumi.Input[_builtins.bool]] = None,
             is_override_global_retention_setting: Optional[pulumi.Input[_builtins.bool]] = None,
             is_paid_usage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             offline_months: Optional[pulumi.Input[_builtins.int]] = None,
+            offline_months_source: Optional[pulumi.Input[_builtins.str]] = None,
             online_months: Optional[pulumi.Input[_builtins.int]] = None,
+            online_months_source: Optional[pulumi.Input[_builtins.str]] = None,
+            paid_usage_source: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_id: Optional[pulumi.Input[_builtins.str]] = None,
+            target_type: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AuditProfile':
         """
@@ -632,27 +853,31 @@ class AuditProfile(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] audit_collected_volume: Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
-        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]] audit_trails: Indicates the list of available audit trails on the target.
+        :param pulumi.Input[_builtins.str] audit_collected_volume: Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuditProfileAuditTrailArgs', 'AuditProfileAuditTrailArgsDict']]]] audit_trails: Contains the list of available audit trails on the target database.
         :param pulumi.Input[_builtins.int] change_retention_trigger: (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        :param pulumi.Input[_builtins.bool] is_override_global_paid_usage: (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        :param pulumi.Input[_builtins.bool] is_override_global_retention_setting: Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         :param pulumi.Input[_builtins.bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the audit profile in Data Safe.
-        :param pulumi.Input[_builtins.int] offline_months: Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
-        :param pulumi.Input[_builtins.int] online_months: Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        :param pulumi.Input[_builtins.int] offline_months: Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        :param pulumi.Input[_builtins.str] offline_months_source: The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        :param pulumi.Input[_builtins.int] online_months: Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        :param pulumi.Input[_builtins.str] online_months_source: The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        :param pulumi.Input[_builtins.str] paid_usage_source: The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
         :param pulumi.Input[_builtins.str] state: The current state of the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the Data Safe target for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the audit profile.
         :param pulumi.Input[_builtins.str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         """
@@ -661,7 +886,6 @@ class AuditProfile(pulumi.CustomResource):
         __props__ = _AuditProfileState.__new__(_AuditProfileState)
 
         __props__.__dict__["audit_collected_volume"] = audit_collected_volume
-        __props__.__dict__["audit_profile_id"] = audit_profile_id
         __props__.__dict__["audit_trails"] = audit_trails
         __props__.__dict__["change_retention_trigger"] = change_retention_trigger
         __props__.__dict__["compartment_id"] = compartment_id
@@ -669,14 +893,19 @@ class AuditProfile(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_override_global_paid_usage"] = is_override_global_paid_usage
         __props__.__dict__["is_override_global_retention_setting"] = is_override_global_retention_setting
         __props__.__dict__["is_paid_usage_enabled"] = is_paid_usage_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["offline_months"] = offline_months
+        __props__.__dict__["offline_months_source"] = offline_months_source
         __props__.__dict__["online_months"] = online_months
+        __props__.__dict__["online_months_source"] = online_months_source
+        __props__.__dict__["paid_usage_source"] = paid_usage_source
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_id"] = target_id
+        __props__.__dict__["target_type"] = target_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return AuditProfile(resource_name, opts=opts, __props__=__props__)
@@ -685,23 +914,15 @@ class AuditProfile(pulumi.CustomResource):
     @pulumi.getter(name="auditCollectedVolume")
     def audit_collected_volume(self) -> pulumi.Output[_builtins.str]:
         """
-        Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         """
         return pulumi.get(self, "audit_collected_volume")
-
-    @_builtins.property
-    @pulumi.getter(name="auditProfileId")
-    def audit_profile_id(self) -> pulumi.Output[_builtins.str]:
-        """
-        The OCID of the audit.
-        """
-        return pulumi.get(self, "audit_profile_id")
 
     @_builtins.property
     @pulumi.getter(name="auditTrails")
     def audit_trails(self) -> pulumi.Output[Sequence['outputs.AuditProfileAuditTrail']]:
         """
-        Indicates the list of available audit trails on the target.
+        Contains the list of available audit trails on the target database.
         """
         return pulumi.get(self, "audit_trails")
 
@@ -721,7 +942,7 @@ class AuditProfile(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains the audit.
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -758,10 +979,18 @@ class AuditProfile(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="isOverrideGlobalPaidUsage")
+    def is_override_global_paid_usage(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        """
+        return pulumi.get(self, "is_override_global_paid_usage")
+
+    @_builtins.property
     @pulumi.getter(name="isOverrideGlobalRetentionSetting")
     def is_override_global_retention_setting(self) -> pulumi.Output[_builtins.bool]:
         """
-        Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         """
         return pulumi.get(self, "is_override_global_retention_setting")
 
@@ -785,17 +1014,41 @@ class AuditProfile(pulumi.CustomResource):
     @pulumi.getter(name="offlineMonths")
     def offline_months(self) -> pulumi.Output[_builtins.int]:
         """
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         """
         return pulumi.get(self, "offline_months")
+
+    @_builtins.property
+    @pulumi.getter(name="offlineMonthsSource")
+    def offline_months_source(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "offline_months_source")
 
     @_builtins.property
     @pulumi.getter(name="onlineMonths")
     def online_months(self) -> pulumi.Output[_builtins.int]:
         """
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
         """
         return pulumi.get(self, "online_months")
+
+    @_builtins.property
+    @pulumi.getter(name="onlineMonthsSource")
+    def online_months_source(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "online_months_source")
+
+    @_builtins.property
+    @pulumi.getter(name="paidUsageSource")
+    def paid_usage_source(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "paid_usage_source")
 
     @_builtins.property
     @pulumi.getter
@@ -817,9 +1070,17 @@ class AuditProfile(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The resource type that is represented by the audit profile.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

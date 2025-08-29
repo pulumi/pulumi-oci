@@ -155,6 +155,34 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * (Updatable) The number of compute servers for the DB system.
+     * 
+     */
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> computeCount;
+
+    /**
+     * @return (Updatable) The number of compute servers for the DB system.
+     * 
+     */
+    public Output<Integer> computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
+    }
+    /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -221,14 +249,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.dataStoragePercentage;
     }
     /**
-     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * @return (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      * 
      */
     public Output<Integer> dataStorageSizeInGb() {
@@ -571,14 +599,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.nextMaintenanceRunId;
     }
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
-     * @return The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * @return The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      * 
      */
     public Output<Integer> nodeCount() {

@@ -51,6 +51,7 @@ import (
 //				SecurityPolicyId:           pulumi.StringRef(testSecurityPolicy.Id),
 //				State:                      pulumi.StringRef(securityPolicyDeploymentState),
 //				TargetId:                   pulumi.StringRef(testTarget.Id),
+//				TargetType:                 pulumi.StringRef(securityPolicyDeploymentTargetType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -89,6 +90,8 @@ type GetSecurityPolicyDeploymentsArgs struct {
 	State *string `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified target type.
+	TargetType *string `pulumi:"targetType"`
 }
 
 // A collection of values returned by getSecurityPolicyDeployments.
@@ -109,8 +112,10 @@ type GetSecurityPolicyDeploymentsResult struct {
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// The current state of the security policy deployment.
 	State *string `pulumi:"state"`
-	// The OCID of the target where the security policy is deployed.
+	// The OCID of the target/target group where the security policy is deployed.
 	TargetId *string `pulumi:"targetId"`
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType *string `pulumi:"targetType"`
 }
 
 func GetSecurityPolicyDeploymentsOutput(ctx *pulumi.Context, args GetSecurityPolicyDeploymentsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyDeploymentsResultOutput {
@@ -141,6 +146,8 @@ type GetSecurityPolicyDeploymentsOutputArgs struct {
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified target type.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetSecurityPolicyDeploymentsOutputArgs) ElementType() reflect.Type {
@@ -210,9 +217,14 @@ func (o GetSecurityPolicyDeploymentsResultOutput) State() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the target where the security policy is deployed.
+// The OCID of the target/target group where the security policy is deployed.
 func (o GetSecurityPolicyDeploymentsResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the security policy deployment is for a target database or a target database group.
+func (o GetSecurityPolicyDeploymentsResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

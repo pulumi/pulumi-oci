@@ -14,6 +14,120 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// Creates a tool.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testTool = new Oci.GenerativeAi.AgentTool("test_tool", new()
+    ///     {
+    ///         AgentId = testAgent.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Description = toolDescription,
+    ///         ToolConfig = new Oci.GenerativeAi.Inputs.AgentToolToolConfigArgs
+    ///         {
+    ///             ToolConfigType = toolToolConfigToolConfigType,
+    ///             AgentEndpointId = testAgentEndpoint.Id,
+    ///             ApiSchema = new Oci.GenerativeAi.Inputs.AgentToolToolConfigApiSchemaArgs
+    ///             {
+    ///                 ApiSchemaInputLocationType = toolToolConfigApiSchemaApiSchemaInputLocationType,
+    ///                 Bucket = toolToolConfigApiSchemaBucket,
+    ///                 Content = toolToolConfigApiSchemaContent,
+    ///                 Namespace = toolToolConfigApiSchemaNamespace,
+    ///                 Object = toolToolConfigApiSchemaObject,
+    ///             },
+    ///             DatabaseConnection = new Oci.GenerativeAi.Inputs.AgentToolToolConfigDatabaseConnectionArgs
+    ///             {
+    ///                 ConnectionId = testConnection.Id,
+    ///                 ConnectionType = toolToolConfigDatabaseConnectionConnectionType,
+    ///             },
+    ///             DatabaseSchema = new Oci.GenerativeAi.Inputs.AgentToolToolConfigDatabaseSchemaArgs
+    ///             {
+    ///                 InputLocationType = toolToolConfigDatabaseSchemaInputLocationType,
+    ///                 Bucket = toolToolConfigDatabaseSchemaBucket,
+    ///                 Content = toolToolConfigDatabaseSchemaContent,
+    ///                 Namespace = toolToolConfigDatabaseSchemaNamespace,
+    ///                 Prefix = toolToolConfigDatabaseSchemaPrefix,
+    ///             },
+    ///             Dialect = toolToolConfigDialect,
+    ///             Function = new Oci.GenerativeAi.Inputs.AgentToolToolConfigFunctionArgs
+    ///             {
+    ///                 Description = toolToolConfigFunctionDescription,
+    ///                 Name = toolToolConfigFunctionName,
+    ///                 Parameters = toolToolConfigFunctionParameters,
+    ///             },
+    ///             GenerationLlmCustomization = new Oci.GenerativeAi.Inputs.AgentToolToolConfigGenerationLlmCustomizationArgs
+    ///             {
+    ///                 Instruction = toolToolConfigGenerationLlmCustomizationInstruction,
+    ///             },
+    ///             HttpEndpointAuthConfig = new Oci.GenerativeAi.Inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs
+    ///             {
+    ///                 HttpEndpointAuthSources = new[]
+    ///                 {
+    ///                     new Oci.GenerativeAi.Inputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs
+    ///                     {
+    ///                         HttpEndpointAuthScope = toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScope,
+    ///                         HttpEndpointAuthScopeConfig = new Oci.GenerativeAi.Inputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs
+    ///                         {
+    ///                             HttpEndpointAuthScopeConfigType = toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigHttpEndpointAuthScopeConfigType,
+    ///                             ClientId = testClient.Id,
+    ///                             IdcsUrl = toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigIdcsUrl,
+    ///                             KeyLocation = toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigKeyLocation,
+    ///                             KeyName = testKey.Name,
+    ///                             ScopeUrl = toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigScopeUrl,
+    ///                             VaultSecretId = testSecret.Id,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             IclExamples = new Oci.GenerativeAi.Inputs.AgentToolToolConfigIclExamplesArgs
+    ///             {
+    ///                 InputLocationType = toolToolConfigIclExamplesInputLocationType,
+    ///                 Bucket = toolToolConfigIclExamplesBucket,
+    ///                 Content = toolToolConfigIclExamplesContent,
+    ///                 Namespace = toolToolConfigIclExamplesNamespace,
+    ///                 Prefix = toolToolConfigIclExamplesPrefix,
+    ///             },
+    ///             KnowledgeBaseConfigs = new[]
+    ///             {
+    ///                 new Oci.GenerativeAi.Inputs.AgentToolToolConfigKnowledgeBaseConfigArgs
+    ///                 {
+    ///                     KnowledgeBaseId = testKnowledgeBase.Id,
+    ///                 },
+    ///             },
+    ///             ModelSize = toolToolConfigModelSize,
+    ///             ShouldEnableSelfCorrection = toolToolConfigShouldEnableSelfCorrection,
+    ///             ShouldEnableSqlExecution = toolToolConfigShouldEnableSqlExecution,
+    ///             SubnetId = testSubnet.Id,
+    ///             TableAndColumnDescription = new Oci.GenerativeAi.Inputs.AgentToolToolConfigTableAndColumnDescriptionArgs
+    ///             {
+    ///                 InputLocationType = toolToolConfigTableAndColumnDescriptionInputLocationType,
+    ///                 Bucket = toolToolConfigTableAndColumnDescriptionBucket,
+    ///                 Content = toolToolConfigTableAndColumnDescriptionContent,
+    ///                 Namespace = toolToolConfigTableAndColumnDescriptionNamespace,
+    ///                 Prefix = toolToolConfigTableAndColumnDescriptionPrefix,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = toolDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Metadata = toolMetadata,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Tools can be imported using the `id`, e.g.

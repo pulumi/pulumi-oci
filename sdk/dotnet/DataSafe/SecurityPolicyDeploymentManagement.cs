@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Updates the security policy deployment.
+    /// Creates a Data Safe security policy deployment in the Data Safe Console.
     /// 
     /// ## Example Usage
     /// 
@@ -27,7 +27,9 @@ namespace Pulumi.Oci.DataSafe
     ///     var testSecurityPolicyDeploymentManagement = new Oci.DataSafe.SecurityPolicyDeploymentManagement("test_security_policy_deployment_management", new()
     ///     {
     ///         CompartmentId = compartmentId,
-    ///         TargetId = testTargetDatabase.Id,
+    ///         SecurityPolicyId = testSecurityPolicy.Id,
+    ///         TargetId = testTarget.Id,
+    ///         TargetType = securityPolicyDeploymentManagementTargetType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -51,7 +53,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class SecurityPolicyDeploymentManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy deployment.
+        /// (Updatable) The OCID of the compartment in which to create the unified audit policy.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -63,7 +65,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the security policy deployment.
+        /// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        /// </summary>
+        [Output("deployTrigger")]
+        public Output<int?> DeployTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The description of the security policy.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -87,6 +95,16 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("refreshTrigger")]
+        public Output<int?> RefreshTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the security policy corresponding to the security policy deployment.
         /// </summary>
         [Output("securityPolicyId")]
@@ -105,16 +123,28 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Unique target identifier.
+        /// The OCID of the target where the security policy is deployed.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the security policy deployment is for a target database or a target database group.
+        /// </summary>
+        [Output("targetType")]
+        public Output<string> TargetType { get; private set; } = null!;
 
         /// <summary>
         /// The time that the security policy deployment was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The last date and time the security policy was deployed, in the format defined by RFC3339.
+        /// </summary>
+        [Output("timeDeployed")]
+        public Output<string> TimeDeployed { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
@@ -130,7 +160,7 @@ namespace Pulumi.Oci.DataSafe
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public SecurityPolicyDeploymentManagement(string name, SecurityPolicyDeploymentManagementArgs? args = null, CustomResourceOptions? options = null)
+        public SecurityPolicyDeploymentManagement(string name, SecurityPolicyDeploymentManagementArgs args, CustomResourceOptions? options = null)
             : base("oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement", name, args ?? new SecurityPolicyDeploymentManagementArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -169,10 +199,10 @@ namespace Pulumi.Oci.DataSafe
     public sealed class SecurityPolicyDeploymentManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy deployment.
+        /// (Updatable) The OCID of the compartment in which to create the unified audit policy.
         /// </summary>
-        [Input("compartmentId")]
-        public Input<string>? CompartmentId { get; set; }
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -187,7 +217,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the security policy deployment.
+        /// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        /// </summary>
+        [Input("deployTrigger")]
+        public Input<int>? DeployTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the security policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -211,10 +247,32 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Unique target identifier.
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("targetId")]
-        public Input<string>? TargetId { get; set; }
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        /// <summary>
+        /// The OCID of the security policy corresponding to the security policy deployment.
+        /// </summary>
+        [Input("securityPolicyId", required: true)]
+        public Input<string> SecurityPolicyId { get; set; } = null!;
+
+        /// <summary>
+        /// The OCID of the target where the security policy is deployed.
+        /// </summary>
+        [Input("targetId", required: true)]
+        public Input<string> TargetId { get; set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the security policy deployment is for a target database or a target database group.
+        /// </summary>
+        [Input("targetType", required: true)]
+        public Input<string> TargetType { get; set; } = null!;
 
         public SecurityPolicyDeploymentManagementArgs()
         {
@@ -225,7 +283,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class SecurityPolicyDeploymentManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy deployment.
+        /// (Updatable) The OCID of the compartment in which to create the unified audit policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -243,7 +301,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the security policy deployment.
+        /// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        /// </summary>
+        [Input("deployTrigger")]
+        public Input<int>? DeployTrigger { get; set; }
+
+        /// <summary>
+        /// (Updatable) The description of the security policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -273,6 +337,16 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        /// <summary>
         /// The OCID of the security policy corresponding to the security policy deployment.
         /// </summary>
         [Input("securityPolicyId")]
@@ -297,16 +371,28 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Unique target identifier.
+        /// The OCID of the target where the security policy is deployed.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// Indicates whether the security policy deployment is for a target database or a target database group.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         /// <summary>
         /// The time that the security policy deployment was created, in the format defined by RFC3339.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The last date and time the security policy was deployed, in the format defined by RFC3339.
+        /// </summary>
+        [Input("timeDeployed")]
+        public Input<string>? TimeDeployed { get; set; }
 
         /// <summary>
         /// The last date and time the security policy deployment was updated, in the format defined by RFC3339.

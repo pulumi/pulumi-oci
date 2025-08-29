@@ -14,8 +14,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     public sealed class AgentDataSourceDataSourceConfig
     {
         /// <summary>
-        /// (Updatable) The type of the tool. The allowed values are:
-        /// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        /// (Updatable) The type of the tool.
         /// </summary>
         public readonly string DataSourceConfigType;
         /// <summary>

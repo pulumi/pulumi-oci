@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AlertPolicy{}
 	case "oci:DataSafe/alertPolicyRule:AlertPolicyRule":
 		r = &AlertPolicyRule{}
+	case "oci:DataSafe/attributeSet:AttributeSet":
+		r = &AttributeSet{}
 	case "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval":
 		r = &AuditArchiveRetrieval{}
 	case "oci:DataSafe/auditPolicy:AuditPolicy":
@@ -89,8 +91,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SdmMaskingPolicyDifference{}
 	case "oci:DataSafe/securityAssessment:SecurityAssessment":
 		r = &SecurityAssessment{}
+	case "oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck":
+		r = &SecurityAssessmentCheck{}
+	case "oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding":
+		r = &SecurityAssessmentFinding{}
 	case "oci:DataSafe/securityPolicy:SecurityPolicy":
 		r = &SecurityPolicy{}
+	case "oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig":
+		r = &SecurityPolicyConfig{}
 	case "oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment":
 		r = &SecurityPolicyDeployment{}
 	case "oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement":
@@ -131,8 +139,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TargetAlertPolicyAssociation{}
 	case "oci:DataSafe/targetDatabase:TargetDatabase":
 		r = &TargetDatabase{}
+	case "oci:DataSafe/targetDatabaseGroup:TargetDatabaseGroup":
+		r = &TargetDatabaseGroup{}
 	case "oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase":
 		r = &TargetDatabasePeerTargetDatabase{}
+	case "oci:DataSafe/unifiedAuditPolicy:UnifiedAuditPolicy":
+		r = &UnifiedAuditPolicy{}
+	case "oci:DataSafe/unifiedAuditPolicyDefinition:UnifiedAuditPolicyDefinition":
+		r = &UnifiedAuditPolicyDefinition{}
 	case "oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline":
 		r = &UnsetSecurityAssessmentBaseline{}
 	case "oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement":
@@ -174,6 +188,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/alertPolicyRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/attributeSet",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -328,7 +347,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/securityAssessmentCheck",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/securityAssessmentFinding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/securityPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/securityPolicyConfig",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -433,7 +467,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/targetDatabaseGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/targetDatabasePeerTargetDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/unifiedAuditPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/unifiedAuditPolicyDefinition",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

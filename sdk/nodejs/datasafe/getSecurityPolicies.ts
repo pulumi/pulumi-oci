@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: securityPolicyCompartmentIdInSubtree,
  *     displayName: securityPolicyDisplayName,
  *     securityPolicyId: testSecurityPolicy.id,
+ *     securityPolicyType: securityPolicySecurityPolicyType,
  *     state: securityPolicyState,
  * });
  * ```
@@ -49,6 +50,7 @@ export function getSecurityPolicies(args: GetSecurityPoliciesArgs, opts?: pulumi
         "displayName": args.displayName,
         "filters": args.filters,
         "securityPolicyId": args.securityPolicyId,
+        "securityPolicyType": args.securityPolicyType,
         "state": args.state,
     }, opts);
 }
@@ -79,6 +81,10 @@ export interface GetSecurityPoliciesArgs {
      */
     securityPolicyId?: string;
     /**
+     * The type of the security policy.
+     */
+    securityPolicyType?: string;
+    /**
      * The current state of the security policy.
      */
     state?: string;
@@ -108,6 +114,10 @@ export interface GetSecurityPoliciesResult {
      */
     readonly securityPolicyCollections: outputs.DataSafe.GetSecurityPoliciesSecurityPolicyCollection[];
     readonly securityPolicyId?: string;
+    /**
+     * The type of the security policy.
+     */
+    readonly securityPolicyType?: string;
     /**
      * The current state of the security policy.
      */
@@ -143,6 +153,7 @@ export interface GetSecurityPoliciesResult {
  *     compartmentIdInSubtree: securityPolicyCompartmentIdInSubtree,
  *     displayName: securityPolicyDisplayName,
  *     securityPolicyId: testSecurityPolicy.id,
+ *     securityPolicyType: securityPolicySecurityPolicyType,
  *     state: securityPolicyState,
  * });
  * ```
@@ -156,6 +167,7 @@ export function getSecurityPoliciesOutput(args: GetSecurityPoliciesOutputArgs, o
         "displayName": args.displayName,
         "filters": args.filters,
         "securityPolicyId": args.securityPolicyId,
+        "securityPolicyType": args.securityPolicyType,
         "state": args.state,
     }, opts);
 }
@@ -185,6 +197,10 @@ export interface GetSecurityPoliciesOutputArgs {
      * An optional filter to return only resources that match the specified OCID of the security policy resource.
      */
     securityPolicyId?: pulumi.Input<string>;
+    /**
+     * The type of the security policy.
+     */
+    securityPolicyType?: pulumi.Input<string>;
     /**
      * The current state of the security policy.
      */

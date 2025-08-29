@@ -27,7 +27,7 @@ class GetAgentKnowledgeBaseResult:
     """
     A collection of values returned by getAgentKnowledgeBase.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, index_configs=None, knowledge_base_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, index_configs=None, knowledge_base_id=None, knowledge_base_statistics=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,9 @@ class GetAgentKnowledgeBaseResult:
         if knowledge_base_id and not isinstance(knowledge_base_id, str):
             raise TypeError("Expected argument 'knowledge_base_id' to be a str")
         pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+        if knowledge_base_statistics and not isinstance(knowledge_base_statistics, list):
+            raise TypeError("Expected argument 'knowledge_base_statistics' to be a list")
+        pulumi.set(__self__, "knowledge_base_statistics", knowledge_base_statistics)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -120,7 +123,7 @@ class GetAgentKnowledgeBaseResult:
     @pulumi.getter(name="indexConfigs")
     def index_configs(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigResult']:
         """
-        **IndexConfig**
+        The index configuration of Knowledge bases.
         """
         return pulumi.get(self, "index_configs")
 
@@ -128,6 +131,14 @@ class GetAgentKnowledgeBaseResult:
     @pulumi.getter(name="knowledgeBaseId")
     def knowledge_base_id(self) -> _builtins.str:
         return pulumi.get(self, "knowledge_base_id")
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseStatistics")
+    def knowledge_base_statistics(self) -> Sequence['outputs.GetAgentKnowledgeBaseKnowledgeBaseStatisticResult']:
+        """
+        Statistics for Default Knowledge Base.
+        """
+        return pulumi.get(self, "knowledge_base_statistics")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -184,6 +195,7 @@ class AwaitableGetAgentKnowledgeBaseResult(GetAgentKnowledgeBaseResult):
             id=self.id,
             index_configs=self.index_configs,
             knowledge_base_id=self.knowledge_base_id,
+            knowledge_base_statistics=self.knowledge_base_statistics,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
             system_tags=self.system_tags,
@@ -195,8 +207,6 @@ def get_agent_knowledge_base(knowledge_base_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentKnowledgeBaseResult:
     """
     This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **GetKnowledgeBase**
 
     Gets information about a knowledge base.
 
@@ -226,6 +236,7 @@ def get_agent_knowledge_base(knowledge_base_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         index_configs=pulumi.get(__ret__, 'index_configs'),
         knowledge_base_id=pulumi.get(__ret__, 'knowledge_base_id'),
+        knowledge_base_statistics=pulumi.get(__ret__, 'knowledge_base_statistics'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -235,8 +246,6 @@ def get_agent_knowledge_base_output(knowledge_base_id: Optional[pulumi.Input[_bu
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentKnowledgeBaseResult]:
     """
     This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **GetKnowledgeBase**
 
     Gets information about a knowledge base.
 
@@ -265,6 +274,7 @@ def get_agent_knowledge_base_output(knowledge_base_id: Optional[pulumi.Input[_bu
         id=pulumi.get(__response__, 'id'),
         index_configs=pulumi.get(__response__, 'index_configs'),
         knowledge_base_id=pulumi.get(__response__, 'knowledge_base_id'),
+        knowledge_base_statistics=pulumi.get(__response__, 'knowledge_base_statistics'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

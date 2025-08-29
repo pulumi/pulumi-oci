@@ -23,14 +23,12 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
      */
     private @Nullable String id;
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     private @Nullable Boolean isRemote;
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
-     * 
-     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     private @Nullable String remoteRegion;
@@ -56,16 +54,14 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     public Optional<Boolean> isRemote() {
         return Optional.ofNullable(this.isRemote);
     }
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
-     * 
-     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     public Optional<String> remoteRegion() {

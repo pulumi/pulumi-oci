@@ -42,6 +42,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly int? ListenerPort;
         /// <summary>
+        /// (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        /// </summary>
+        public readonly string? PluggableDatabaseId;
+        /// <summary>
         /// (Updatable) The service name of the database registered as target database.
         /// </summary>
         public readonly string? ServiceName;
@@ -66,6 +70,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             int? listenerPort,
 
+            string? pluggableDatabaseId,
+
             string? serviceName,
 
             string? vmClusterId)
@@ -77,6 +83,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             InstanceId = instanceId;
             IpAddresses = ipAddresses;
             ListenerPort = listenerPort;
+            PluggableDatabaseId = pluggableDatabaseId;
             ServiceName = serviceName;
             VmClusterId = vmClusterId;
         }

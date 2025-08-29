@@ -65,6 +65,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseStorageSizeDetailResult> StorageSizeDetails;
         public readonly string TdeWalletPassword;
         /// <summary>
         /// The date and time the Database Home was created.
@@ -125,6 +126,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
+            ImmutableArray<Outputs.GetDbHomesDbHomeDatabaseStorageSizeDetailResult> storageSizeDetails,
+
             string tdeWalletPassword,
 
             string timeCreated,
@@ -158,6 +161,7 @@ namespace Pulumi.Oci.Database.Outputs
             PluggableDatabases = pluggableDatabases;
             SidPrefix = sidPrefix;
             State = state;
+            StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;
             TimeCreated = timeCreated;
             TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;

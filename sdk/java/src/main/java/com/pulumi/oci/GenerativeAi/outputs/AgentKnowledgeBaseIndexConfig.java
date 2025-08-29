@@ -24,9 +24,7 @@ public final class AgentKnowledgeBaseIndexConfig {
      */
     private @Nullable String clusterId;
     /**
-     * @return (Updatable) **DatabaseConnection**
-     * 
-     * The connection type for Databases.
+     * @return (Updatable) The connection type for Databases.
      * 
      */
     private @Nullable AgentKnowledgeBaseIndexConfigDatabaseConnection databaseConnection;
@@ -36,10 +34,7 @@ public final class AgentKnowledgeBaseIndexConfig {
      */
     private @Nullable List<AgentKnowledgeBaseIndexConfigDatabaseFunction> databaseFunctions;
     /**
-     * @return (Updatable) The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * @return (Updatable) The type of index.
      * 
      */
     private String indexConfigType;
@@ -49,9 +44,7 @@ public final class AgentKnowledgeBaseIndexConfig {
      */
     private @Nullable List<AgentKnowledgeBaseIndexConfigIndex> indexes;
     /**
-     * @return (Updatable) **SecretDetail**
-     * 
-     * The details of configured security configuration on OpenSearch.
+     * @return (Updatable) The details of configured security configuration on OpenSearch.
      * 
      */
     private @Nullable AgentKnowledgeBaseIndexConfigSecretDetail secretDetail;
@@ -73,9 +66,7 @@ public final class AgentKnowledgeBaseIndexConfig {
         return Optional.ofNullable(this.clusterId);
     }
     /**
-     * @return (Updatable) **DatabaseConnection**
-     * 
-     * The connection type for Databases.
+     * @return (Updatable) The connection type for Databases.
      * 
      */
     public Optional<AgentKnowledgeBaseIndexConfigDatabaseConnection> databaseConnection() {
@@ -89,10 +80,7 @@ public final class AgentKnowledgeBaseIndexConfig {
         return this.databaseFunctions == null ? List.of() : this.databaseFunctions;
     }
     /**
-     * @return (Updatable) The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * @return (Updatable) The type of index.
      * 
      */
     public String indexConfigType() {
@@ -106,9 +94,7 @@ public final class AgentKnowledgeBaseIndexConfig {
         return this.indexes == null ? List.of() : this.indexes;
     }
     /**
-     * @return (Updatable) **SecretDetail**
-     * 
-     * The details of configured security configuration on OpenSearch.
+     * @return (Updatable) The details of configured security configuration on OpenSearch.
      * 
      */
     public Optional<AgentKnowledgeBaseIndexConfigSecretDetail> secretDetail() {

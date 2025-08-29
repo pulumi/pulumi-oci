@@ -69,6 +69,36 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs
         return Optional.ofNullable(this.securityPolicyEntryId);
     }
 
+    /**
+     * The type of the security policy deployment.
+     * 
+     */
+    @Import(name="securityPolicyEntryType")
+    private @Nullable String securityPolicyEntryType;
+
+    /**
+     * @return The type of the security policy deployment.
+     * 
+     */
+    public Optional<String> securityPolicyEntryType() {
+        return Optional.ofNullable(this.securityPolicyEntryType);
+    }
+
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     * 
+     */
+    @Import(name="targetId")
+    private @Nullable String targetId;
+
+    /**
+     * @return An optional filter to return only resources that match the specified target id.
+     * 
+     */
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
+
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs() {}
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs $) {
@@ -76,6 +106,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs
         this.filters = $.filters;
         this.securityPolicyDeploymentId = $.securityPolicyDeploymentId;
         this.securityPolicyEntryId = $.securityPolicyEntryId;
+        this.securityPolicyEntryType = $.securityPolicyEntryType;
+        this.targetId = $.targetId;
     }
 
     public static Builder builder() {
@@ -135,6 +167,28 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesPlainArgs
          */
         public Builder securityPolicyEntryId(@Nullable String securityPolicyEntryId) {
             $.securityPolicyEntryId = securityPolicyEntryId;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyEntryType The type of the security policy deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyEntryType(@Nullable String securityPolicyEntryType) {
+            $.securityPolicyEntryType = securityPolicyEntryType;
+            return this;
+        }
+
+        /**
+         * @param targetId An optional filter to return only resources that match the specified target id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(@Nullable String targetId) {
+            $.targetId = targetId;
             return this;
         }
 

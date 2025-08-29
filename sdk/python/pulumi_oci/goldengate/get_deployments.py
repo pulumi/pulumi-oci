@@ -28,7 +28,7 @@ class GetDeploymentsResult:
     """
     A collection of values returned by getDeployments.
     """
-    def __init__(__self__, assignable_connection_id=None, assigned_connection_id=None, compartment_id=None, deployment_collections=None, display_name=None, filters=None, fqdn=None, id=None, lifecycle_sub_state=None, state=None, supported_connection_type=None):
+    def __init__(__self__, assignable_connection_id=None, assigned_connection_id=None, compartment_id=None, deployment_collections=None, deployment_type=None, display_name=None, filters=None, fqdn=None, id=None, lifecycle_sub_state=None, state=None, supported_connection_type=None):
         if assignable_connection_id and not isinstance(assignable_connection_id, str):
             raise TypeError("Expected argument 'assignable_connection_id' to be a str")
         pulumi.set(__self__, "assignable_connection_id", assignable_connection_id)
@@ -41,6 +41,9 @@ class GetDeploymentsResult:
         if deployment_collections and not isinstance(deployment_collections, list):
             raise TypeError("Expected argument 'deployment_collections' to be a list")
         pulumi.set(__self__, "deployment_collections", deployment_collections)
+        if deployment_type and not isinstance(deployment_type, str):
+            raise TypeError("Expected argument 'deployment_type' to be a str")
+        pulumi.set(__self__, "deployment_type", deployment_type)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -88,6 +91,14 @@ class GetDeploymentsResult:
         The list of deployment_collection.
         """
         return pulumi.get(self, "deployment_collections")
+
+    @_builtins.property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[_builtins.str]:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -150,6 +161,7 @@ class AwaitableGetDeploymentsResult(GetDeploymentsResult):
             assigned_connection_id=self.assigned_connection_id,
             compartment_id=self.compartment_id,
             deployment_collections=self.deployment_collections,
+            deployment_type=self.deployment_type,
             display_name=self.display_name,
             filters=self.filters,
             fqdn=self.fqdn,
@@ -162,6 +174,7 @@ class AwaitableGetDeploymentsResult(GetDeploymentsResult):
 def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
                     assigned_connection_id: Optional[_builtins.str] = None,
                     compartment_id: Optional[_builtins.str] = None,
+                    deployment_type: Optional[_builtins.str] = None,
                     display_name: Optional[_builtins.str] = None,
                     filters: Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]] = None,
                     fqdn: Optional[_builtins.str] = None,
@@ -183,6 +196,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
     test_deployments = oci.GoldenGate.get_deployments(compartment_id=compartment_id,
         assignable_connection_id=test_connection["id"],
         assigned_connection_id=test_connection["id"],
+        deployment_type=deployment_deployment_type,
         display_name=deployment_display_name,
         fqdn=deployment_fqdn,
         lifecycle_sub_state=deployment_lifecycle_sub_state,
@@ -194,6 +208,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
     :param _builtins.str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.
     :param _builtins.str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+    :param _builtins.str deployment_type: A filter that returns only the resources matching the specified 'deploymentType'.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param _builtins.str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
@@ -204,6 +219,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
     __args__['assignableConnectionId'] = assignable_connection_id
     __args__['assignedConnectionId'] = assigned_connection_id
     __args__['compartmentId'] = compartment_id
+    __args__['deploymentType'] = deployment_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['fqdn'] = fqdn
@@ -218,6 +234,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
         assigned_connection_id=pulumi.get(__ret__, 'assigned_connection_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         deployment_collections=pulumi.get(__ret__, 'deployment_collections'),
+        deployment_type=pulumi.get(__ret__, 'deployment_type'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         fqdn=pulumi.get(__ret__, 'fqdn'),
@@ -228,6 +245,7 @@ def get_deployments(assignable_connection_id: Optional[_builtins.str] = None,
 def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            assigned_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                           deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
                            fqdn: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -249,6 +267,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     test_deployments = oci.GoldenGate.get_deployments(compartment_id=compartment_id,
         assignable_connection_id=test_connection["id"],
         assigned_connection_id=test_connection["id"],
+        deployment_type=deployment_deployment_type,
         display_name=deployment_display_name,
         fqdn=deployment_fqdn,
         lifecycle_sub_state=deployment_lifecycle_sub_state,
@@ -260,6 +279,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     :param _builtins.str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.
     :param _builtins.str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+    :param _builtins.str deployment_type: A filter that returns only the resources matching the specified 'deploymentType'.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param _builtins.str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
@@ -270,6 +290,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
     __args__['assignableConnectionId'] = assignable_connection_id
     __args__['assignedConnectionId'] = assigned_connection_id
     __args__['compartmentId'] = compartment_id
+    __args__['deploymentType'] = deployment_type
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['fqdn'] = fqdn
@@ -283,6 +304,7 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
         assigned_connection_id=pulumi.get(__response__, 'assigned_connection_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         deployment_collections=pulumi.get(__response__, 'deployment_collections'),
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         fqdn=pulumi.get(__response__, 'fqdn'),

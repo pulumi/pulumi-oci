@@ -50,6 +50,10 @@ export class Report extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     */
+    public /*out*/ readonly dataSource!: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
@@ -94,9 +98,17 @@ export class Report extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * Specifies the time at which the report was created.
+     */
+    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
      * Specifies the date and time the report was generated.
      */
     public /*out*/ readonly timeGenerated!: pulumi.Output<string>;
+    /**
+     * The date and time of the report update in Data Safe.
+     */
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
      * The type of the audit report.
      */
@@ -116,6 +128,7 @@ export class Report extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ReportState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["dataSource"] = state ? state.dataSource : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -126,7 +139,9 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["reportId"] = state ? state.reportId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeGenerated"] = state ? state.timeGenerated : undefined;
+            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
         } else {
             const args = argsOrState as ReportArgs | undefined;
@@ -137,6 +152,7 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["reportId"] = args ? args.reportId : undefined;
+            resourceInputs["dataSource"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -144,7 +160,9 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["reportDefinitionId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeGenerated"] = undefined /*out*/;
+            resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["type"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -160,6 +178,10 @@ export interface ReportState {
      * (Updatable) The OCID of the compartment containing the report.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     */
+    dataSource?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
@@ -205,9 +227,17 @@ export interface ReportState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * Specifies the time at which the report was created.
+     */
+    timeCreated?: pulumi.Input<string>;
+    /**
      * Specifies the date and time the report was generated.
      */
     timeGenerated?: pulumi.Input<string>;
+    /**
+     * The date and time of the report update in Data Safe.
+     */
+    timeUpdated?: pulumi.Input<string>;
     /**
      * The type of the audit report.
      */

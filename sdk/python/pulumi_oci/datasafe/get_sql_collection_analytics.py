@@ -28,7 +28,7 @@ class GetSqlCollectionAnalyticsResult:
     """
     A collection of values returned by getSqlCollectionAnalytics.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_bies=None, id=None, sql_collection_analytics_collections=None, state=None, target_id=None, time_ended=None, time_started=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_bies=None, id=None, sql_collection_analytics_collections=None, state=None, target_database_group_id=None, target_id=None, time_ended=None, time_started=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -53,6 +53,9 @@ class GetSqlCollectionAnalyticsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -113,6 +116,11 @@ class GetSqlCollectionAnalyticsResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -145,6 +153,7 @@ class AwaitableGetSqlCollectionAnalyticsResult(GetSqlCollectionAnalyticsResult):
             id=self.id,
             sql_collection_analytics_collections=self.sql_collection_analytics_collections,
             state=self.state,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
             time_ended=self.time_ended,
             time_started=self.time_started)
@@ -156,6 +165,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
                                  filters: Optional[Sequence[Union['GetSqlCollectionAnalyticsFilterArgs', 'GetSqlCollectionAnalyticsFilterArgsDict']]] = None,
                                  group_bies: Optional[Sequence[_builtins.str]] = None,
                                  state: Optional[_builtins.str] = None,
+                                 target_database_group_id: Optional[_builtins.str] = None,
                                  target_id: Optional[_builtins.str] = None,
                                  time_ended: Optional[_builtins.str] = None,
                                  time_started: Optional[_builtins.str] = None,
@@ -189,6 +199,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
         compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         time_ended=sql_collection_analytic_time_ended,
         time_started=sql_collection_analytic_time_started)
@@ -200,6 +211,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param Sequence[_builtins.str] group_bies: The group by parameter to summarize SQL collection aggregation.
     :param _builtins.str state: The current state of the SQL collection.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     :param _builtins.str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param _builtins.str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -211,6 +223,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['groupBies'] = group_bies
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
@@ -226,6 +239,7 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         sql_collection_analytics_collections=pulumi.get(__ret__, 'sql_collection_analytics_collections'),
         state=pulumi.get(__ret__, 'state'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
@@ -235,6 +249,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlCollectionAnalyticsFilterArgs', 'GetSqlCollectionAnalyticsFilterArgsDict']]]]] = None,
                                         group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                        target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                         target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                         time_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                         time_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -268,6 +283,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
         compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         time_ended=sql_collection_analytic_time_ended,
         time_started=sql_collection_analytic_time_started)
@@ -279,6 +295,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param Sequence[_builtins.str] group_bies: The group by parameter to summarize SQL collection aggregation.
     :param _builtins.str state: The current state of the SQL collection.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     :param _builtins.str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param _builtins.str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -290,6 +307,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['groupBies'] = group_bies
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     __args__['timeEnded'] = time_ended
     __args__['timeStarted'] = time_started
@@ -304,6 +322,7 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
         id=pulumi.get(__response__, 'id'),
         sql_collection_analytics_collections=pulumi.get(__response__, 'sql_collection_analytics_collections'),
         state=pulumi.get(__response__, 'state'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
         time_ended=pulumi.get(__response__, 'time_ended'),
         time_started=pulumi.get(__response__, 'time_started')))

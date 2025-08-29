@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,10 +45,15 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
      */
     private String id;
     /**
-     * @return **IndexConfig**
+     * @return The index configuration of Knowledge bases.
      * 
      */
     private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig> indexConfigs;
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic> knowledgeBaseStatistics;
     /**
      * @return A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -118,11 +124,18 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
         return this.id;
     }
     /**
-     * @return **IndexConfig**
+     * @return The index configuration of Knowledge bases.
      * 
      */
     public List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig> indexConfigs() {
         return this.indexConfigs;
+    }
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    public List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic> knowledgeBaseStatistics() {
+        return this.knowledgeBaseStatistics;
     }
     /**
      * @return A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -176,6 +189,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig> indexConfigs;
+        private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic> knowledgeBaseStatistics;
         private String lifecycleDetails;
         private String state;
         private Map<String,String> systemTags;
@@ -191,6 +205,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.indexConfigs = defaults.indexConfigs;
+    	      this.knowledgeBaseStatistics = defaults.knowledgeBaseStatistics;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -258,6 +273,17 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
             return indexConfigs(List.of(indexConfigs));
         }
         @CustomType.Setter
+        public Builder knowledgeBaseStatistics(List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic> knowledgeBaseStatistics) {
+            if (knowledgeBaseStatistics == null) {
+              throw new MissingRequiredPropertyException("GetAgentKnowledgeBasesKnowledgeBaseCollectionItem", "knowledgeBaseStatistics");
+            }
+            this.knowledgeBaseStatistics = knowledgeBaseStatistics;
+            return this;
+        }
+        public Builder knowledgeBaseStatistics(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic... knowledgeBaseStatistics) {
+            return knowledgeBaseStatistics(List.of(knowledgeBaseStatistics));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAgentKnowledgeBasesKnowledgeBaseCollectionItem", "lifecycleDetails");
@@ -306,6 +332,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.indexConfigs = indexConfigs;
+            _resultValue.knowledgeBaseStatistics = knowledgeBaseStatistics;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

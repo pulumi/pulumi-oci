@@ -85,6 +85,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string SourceDatabaseId;
         public readonly ImmutableArray<Outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult> SourceEncryptionKeyLocationDetails;
         public readonly string SourceTdeWalletPassword;
+        /// <summary>
+        /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseDatabaseStorageSizeDetailResult> StorageSizeDetails;
         public readonly string TdeWalletPassword;
         /// <summary>
         /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string sourceTdeWalletPassword,
 
+            ImmutableArray<Outputs.GetDatabaseDatabaseStorageSizeDetailResult> storageSizeDetails,
+
             string tdeWalletPassword,
 
             string transportType,
@@ -178,6 +184,7 @@ namespace Pulumi.Oci.Database.Outputs
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             SourceTdeWalletPassword = sourceTdeWalletPassword;
+            StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;
             TransportType = transportType;
             VaultId = vaultId;

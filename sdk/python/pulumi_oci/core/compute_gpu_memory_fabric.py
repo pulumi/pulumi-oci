@@ -115,6 +115,7 @@ class ComputeGpuMemoryFabricArgs:
 class _ComputeGpuMemoryFabricState:
     def __init__(__self__, *,
                  additional_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 available_host_count: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -132,6 +133,7 @@ class _ComputeGpuMemoryFabricState:
         """
         Input properties used for looking up and filtering ComputeGpuMemoryFabric resources.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
+        :param pulumi.Input[_builtins.str] available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -153,6 +155,8 @@ class _ComputeGpuMemoryFabricState:
         """
         if additional_data is not None:
             pulumi.set(__self__, "additional_data", additional_data)
+        if available_host_count is not None:
+            pulumi.set(__self__, "available_host_count", available_host_count)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_gpu_memory_fabric_id is not None:
@@ -193,6 +197,18 @@ class _ComputeGpuMemoryFabricState:
     @additional_data.setter
     def additional_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableHostCount")
+    def available_host_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "available_host_count")
+
+    @available_host_count.setter
+    def available_host_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "available_host_count", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -460,6 +476,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["additional_data"] = None
+            __props__.__dict__["available_host_count"] = None
             __props__.__dict__["compute_hpc_island_id"] = None
             __props__.__dict__["compute_local_block_id"] = None
             __props__.__dict__["compute_network_block_id"] = None
@@ -480,6 +497,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             additional_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            available_host_count: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -502,6 +520,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
+        :param pulumi.Input[_builtins.str] available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -526,6 +545,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         __props__ = _ComputeGpuMemoryFabricState.__new__(_ComputeGpuMemoryFabricState)
 
         __props__.__dict__["additional_data"] = additional_data
+        __props__.__dict__["available_host_count"] = available_host_count
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_gpu_memory_fabric_id"] = compute_gpu_memory_fabric_id
         __props__.__dict__["compute_hpc_island_id"] = compute_hpc_island_id
@@ -549,6 +569,14 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         """
         return pulumi.get(self, "additional_data")
+
+    @_builtins.property
+    @pulumi.getter(name="availableHostCount")
+    def available_host_count(self) -> pulumi.Output[_builtins.str]:
+        """
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "available_host_count")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

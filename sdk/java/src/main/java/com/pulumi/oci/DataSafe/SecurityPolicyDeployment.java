@@ -10,14 +10,58 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SecurityPolicyDeploymentArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityPolicyDeploymentState;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Updates the security policy deployment.
+ * Creates a Data Safe security policy deployment in the Data Safe Console.
+ * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.SecurityPolicyDeployment;
+ * import com.pulumi.oci.DataSafe.SecurityPolicyDeploymentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSecurityPolicyDeployment = new SecurityPolicyDeployment("testSecurityPolicyDeployment", SecurityPolicyDeploymentArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .securityPolicyId(testSecurityPolicy.id())
+ *             .targetId(testTarget.id())
+ *             .targetType(securityPolicyDeploymentTargetType)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(securityPolicyDeploymentDescription)
+ *             .displayName(securityPolicyDeploymentDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -31,14 +75,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment")
 public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy deployment.
+     * @return (Updatable) The OCID of the compartment in which to create the unified audit policy.
      * 
      */
     public Output<String> compartmentId() {
@@ -59,14 +103,28 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    @Export(name="deployTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> deployTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> deployTrigger() {
+        return Codegen.optional(this.deployTrigger);
+    }
+    /**
+     * (Updatable) The description of the security policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the security policy deployment.
+     * @return (Updatable) The description of the security policy.
      * 
      */
     public Output<String> description() {
@@ -115,24 +173,24 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
         return this.lifecycleDetails;
     }
     /**
-     * The OCID of the security policy deployment resource.
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="securityPolicyDeploymentId", refs={String.class}, tree="[0]")
-    private Output<String> securityPolicyDeploymentId;
+    @Export(name="refreshTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> refreshTrigger;
 
     /**
-     * @return The OCID of the security policy deployment resource.
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> securityPolicyDeploymentId() {
-        return this.securityPolicyDeploymentId;
+    public Output<Optional<Integer>> refreshTrigger() {
+        return Codegen.optional(this.refreshTrigger);
     }
     /**
      * The OCID of the security policy corresponding to the security policy deployment.
@@ -191,6 +249,20 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
         return this.targetId;
     }
     /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    @Export(name="targetType", refs={String.class}, tree="[0]")
+    private Output<String> targetType;
+
+    /**
+     * @return Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    public Output<String> targetType() {
+        return this.targetType;
+    }
+    /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      * 
      */
@@ -203,6 +275,20 @@ public class SecurityPolicyDeployment extends com.pulumi.resources.CustomResourc
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    @Export(name="timeDeployed", refs={String.class}, tree="[0]")
+    private Output<String> timeDeployed;
+
+    /**
+     * @return The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    public Output<String> timeDeployed() {
+        return this.timeDeployed;
     }
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.

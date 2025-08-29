@@ -70,6 +70,36 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs exte
         return Optional.ofNullable(this.securityPolicyEntryId);
     }
 
+    /**
+     * The type of the security policy deployment.
+     * 
+     */
+    @Import(name="securityPolicyEntryType")
+    private @Nullable Output<String> securityPolicyEntryType;
+
+    /**
+     * @return The type of the security policy deployment.
+     * 
+     */
+    public Optional<Output<String>> securityPolicyEntryType() {
+        return Optional.ofNullable(this.securityPolicyEntryType);
+    }
+
+    /**
+     * An optional filter to return only resources that match the specified target id.
+     * 
+     */
+    @Import(name="targetId")
+    private @Nullable Output<String> targetId;
+
+    /**
+     * @return An optional filter to return only resources that match the specified target id.
+     * 
+     */
+    public Optional<Output<String>> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
+
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs() {}
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs $) {
@@ -77,6 +107,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs exte
         this.filters = $.filters;
         this.securityPolicyDeploymentId = $.securityPolicyDeploymentId;
         this.securityPolicyEntryId = $.securityPolicyEntryId;
+        this.securityPolicyEntryType = $.securityPolicyEntryType;
+        this.targetId = $.targetId;
     }
 
     public static Builder builder() {
@@ -171,6 +203,48 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs exte
          */
         public Builder securityPolicyEntryId(String securityPolicyEntryId) {
             return securityPolicyEntryId(Output.of(securityPolicyEntryId));
+        }
+
+        /**
+         * @param securityPolicyEntryType The type of the security policy deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyEntryType(@Nullable Output<String> securityPolicyEntryType) {
+            $.securityPolicyEntryType = securityPolicyEntryType;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyEntryType The type of the security policy deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyEntryType(String securityPolicyEntryType) {
+            return securityPolicyEntryType(Output.of(securityPolicyEntryType));
+        }
+
+        /**
+         * @param targetId An optional filter to return only resources that match the specified target id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(@Nullable Output<String> targetId) {
+            $.targetId = targetId;
+            return this;
+        }
+
+        /**
+         * @param targetId An optional filter to return only resources that match the specified target id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(String targetId) {
+            return targetId(Output.of(targetId));
         }
 
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs build() {

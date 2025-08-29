@@ -105,15 +105,15 @@ public final class GetOnpremConnectorsArgs extends com.pulumi.resources.InvokeAr
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
-    @Import(name="onPremConnectorLifecycleState")
-    private @Nullable Output<String> onPremConnectorLifecycleState;
+    @Import(name="state")
+    private @Nullable Output<String> state;
 
     /**
      * @return A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
-    public Optional<Output<String>> onPremConnectorLifecycleState() {
-        return Optional.ofNullable(this.onPremConnectorLifecycleState);
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
     }
 
     private GetOnpremConnectorsArgs() {}
@@ -125,7 +125,7 @@ public final class GetOnpremConnectorsArgs extends com.pulumi.resources.InvokeAr
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.onPremConnectorId = $.onPremConnectorId;
-        this.onPremConnectorLifecycleState = $.onPremConnectorLifecycleState;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -265,24 +265,24 @@ public final class GetOnpremConnectorsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param onPremConnectorLifecycleState A filter to return only on-premises connector resources that match the specified lifecycle state.
+         * @param state A filter to return only on-premises connector resources that match the specified lifecycle state.
          * 
          * @return builder
          * 
          */
-        public Builder onPremConnectorLifecycleState(@Nullable Output<String> onPremConnectorLifecycleState) {
-            $.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
             return this;
         }
 
         /**
-         * @param onPremConnectorLifecycleState A filter to return only on-premises connector resources that match the specified lifecycle state.
+         * @param state A filter to return only on-premises connector resources that match the specified lifecycle state.
          * 
          * @return builder
          * 
          */
-        public Builder onPremConnectorLifecycleState(String onPremConnectorLifecycleState) {
-            return onPremConnectorLifecycleState(Output.of(onPremConnectorLifecycleState));
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public GetOnpremConnectorsArgs build() {

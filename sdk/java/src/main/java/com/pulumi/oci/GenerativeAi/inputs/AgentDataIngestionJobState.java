@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GenerativeAi.inputs.AgentDataIngestionJobDataIngestionJobStatisticArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentDataIngestionJobDataIngestionJobTypeArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +47,21 @@ public final class AgentDataIngestionJobState extends com.pulumi.resources.Resou
      */
     public Optional<Output<List<AgentDataIngestionJobDataIngestionJobStatisticArgs>>> dataIngestionJobStatistics() {
         return Optional.ofNullable(this.dataIngestionJobStatistics);
+    }
+
+    /**
+     * DataIngestionJob type.
+     * 
+     */
+    @Import(name="dataIngestionJobTypes")
+    private @Nullable Output<List<AgentDataIngestionJobDataIngestionJobTypeArgs>> dataIngestionJobTypes;
+
+    /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    public Optional<Output<List<AgentDataIngestionJobDataIngestionJobTypeArgs>>> dataIngestionJobTypes() {
+        return Optional.ofNullable(this.dataIngestionJobTypes);
     }
 
     /**
@@ -129,6 +145,13 @@ public final class AgentDataIngestionJobState extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="knowledgeBaseId")
+    private @Nullable Output<String> knowledgeBaseId;
+
+    public Optional<Output<String>> knowledgeBaseId() {
+        return Optional.ofNullable(this.knowledgeBaseId);
+    }
+
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -209,11 +232,13 @@ public final class AgentDataIngestionJobState extends com.pulumi.resources.Resou
     private AgentDataIngestionJobState(AgentDataIngestionJobState $) {
         this.compartmentId = $.compartmentId;
         this.dataIngestionJobStatistics = $.dataIngestionJobStatistics;
+        this.dataIngestionJobTypes = $.dataIngestionJobTypes;
         this.dataSourceId = $.dataSourceId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.knowledgeBaseId = $.knowledgeBaseId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -289,6 +314,37 @@ public final class AgentDataIngestionJobState extends com.pulumi.resources.Resou
          */
         public Builder dataIngestionJobStatistics(AgentDataIngestionJobDataIngestionJobStatisticArgs... dataIngestionJobStatistics) {
             return dataIngestionJobStatistics(List.of(dataIngestionJobStatistics));
+        }
+
+        /**
+         * @param dataIngestionJobTypes DataIngestionJob type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataIngestionJobTypes(@Nullable Output<List<AgentDataIngestionJobDataIngestionJobTypeArgs>> dataIngestionJobTypes) {
+            $.dataIngestionJobTypes = dataIngestionJobTypes;
+            return this;
+        }
+
+        /**
+         * @param dataIngestionJobTypes DataIngestionJob type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataIngestionJobTypes(List<AgentDataIngestionJobDataIngestionJobTypeArgs> dataIngestionJobTypes) {
+            return dataIngestionJobTypes(Output.of(dataIngestionJobTypes));
+        }
+
+        /**
+         * @param dataIngestionJobTypes DataIngestionJob type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataIngestionJobTypes(AgentDataIngestionJobDataIngestionJobTypeArgs... dataIngestionJobTypes) {
+            return dataIngestionJobTypes(List.of(dataIngestionJobTypes));
         }
 
         /**
@@ -400,6 +456,15 @@ public final class AgentDataIngestionJobState extends com.pulumi.resources.Resou
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder knowledgeBaseId(@Nullable Output<String> knowledgeBaseId) {
+            $.knowledgeBaseId = knowledgeBaseId;
+            return this;
+        }
+
+        public Builder knowledgeBaseId(String knowledgeBaseId) {
+            return knowledgeBaseId(Output.of(knowledgeBaseId));
         }
 
         /**

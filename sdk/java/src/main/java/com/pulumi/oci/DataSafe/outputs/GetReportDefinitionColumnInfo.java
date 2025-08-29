@@ -8,10 +8,16 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetReportDefinitionColumnInfo {
+    /**
+     * @return An array of operators that can be supported by column fieldName.
+     * 
+     */
+    private List<String> applicableOperators;
     /**
      * @return Specifies the data type of the column.
      * 
@@ -37,8 +43,20 @@ public final class GetReportDefinitionColumnInfo {
      * 
      */
     private Boolean isHidden;
+    /**
+     * @return Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    private Boolean isVirtual;
 
     private GetReportDefinitionColumnInfo() {}
+    /**
+     * @return An array of operators that can be supported by column fieldName.
+     * 
+     */
+    public List<String> applicableOperators() {
+        return this.applicableOperators;
+    }
     /**
      * @return Specifies the data type of the column.
      * 
@@ -74,6 +92,13 @@ public final class GetReportDefinitionColumnInfo {
     public Boolean isHidden() {
         return this.isHidden;
     }
+    /**
+     * @return Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    public Boolean isVirtual() {
+        return this.isVirtual;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -84,21 +109,36 @@ public final class GetReportDefinitionColumnInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> applicableOperators;
         private String dataType;
         private String displayName;
         private Integer displayOrder;
         private String fieldName;
         private Boolean isHidden;
+        private Boolean isVirtual;
         public Builder() {}
         public Builder(GetReportDefinitionColumnInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicableOperators = defaults.applicableOperators;
     	      this.dataType = defaults.dataType;
     	      this.displayName = defaults.displayName;
     	      this.displayOrder = defaults.displayOrder;
     	      this.fieldName = defaults.fieldName;
     	      this.isHidden = defaults.isHidden;
+    	      this.isVirtual = defaults.isVirtual;
         }
 
+        @CustomType.Setter
+        public Builder applicableOperators(List<String> applicableOperators) {
+            if (applicableOperators == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionColumnInfo", "applicableOperators");
+            }
+            this.applicableOperators = applicableOperators;
+            return this;
+        }
+        public Builder applicableOperators(String... applicableOperators) {
+            return applicableOperators(List.of(applicableOperators));
+        }
         @CustomType.Setter
         public Builder dataType(String dataType) {
             if (dataType == null) {
@@ -139,13 +179,23 @@ public final class GetReportDefinitionColumnInfo {
             this.isHidden = isHidden;
             return this;
         }
+        @CustomType.Setter
+        public Builder isVirtual(Boolean isVirtual) {
+            if (isVirtual == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionColumnInfo", "isVirtual");
+            }
+            this.isVirtual = isVirtual;
+            return this;
+        }
         public GetReportDefinitionColumnInfo build() {
             final var _resultValue = new GetReportDefinitionColumnInfo();
+            _resultValue.applicableOperators = applicableOperators;
             _resultValue.dataType = dataType;
             _resultValue.displayName = displayName;
             _resultValue.displayOrder = displayOrder;
             _resultValue.fieldName = fieldName;
             _resultValue.isHidden = isHidden;
+            _resultValue.isVirtual = isVirtual;
             return _resultValue;
         }
     }

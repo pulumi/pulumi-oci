@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
 //
-// List all the findings from all the targets in the specified compartment.
+// Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
 func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessmentFindingsArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentFindingsResult
@@ -28,8 +28,12 @@ func GetSecurityAssessmentFindings(ctx *pulumi.Context, args *GetSecurityAssessm
 type GetSecurityAssessmentFindingsArgs struct {
 	// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
+	// The category of the finding.
+	Category *string `pulumi:"category"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree *bool    `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     []string `pulumi:"containsReferences"`
+	ContainsSeverities     []string `pulumi:"containsSeverities"`
 	// Specifies a subset of fields to be returned in the response.
 	Fields  []string                              `pulumi:"fields"`
 	Filters []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
@@ -52,12 +56,18 @@ type GetSecurityAssessmentFindingsArgs struct {
 	State *string `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+	TargetIds []string `pulumi:"targetIds"`
 }
 
 // A collection of values returned by getSecurityAssessmentFindings.
 type GetSecurityAssessmentFindingsResult struct {
-	AccessLevel            *string                               `pulumi:"accessLevel"`
+	AccessLevel *string `pulumi:"accessLevel"`
+	// The category to which the finding belongs to.
+	Category               *string                               `pulumi:"category"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     []string                              `pulumi:"containsReferences"`
+	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
 	Fields                 []string                              `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
 	FindingKey             *string                               `pulumi:"findingKey"`
@@ -76,7 +86,8 @@ type GetSecurityAssessmentFindingsResult struct {
 	// The current state of the finding.
 	State *string `pulumi:"state"`
 	// The OCID of the target database.
-	TargetId *string `pulumi:"targetId"`
+	TargetId  *string  `pulumi:"targetId"`
+	TargetIds []string `pulumi:"targetIds"`
 }
 
 func GetSecurityAssessmentFindingsOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingsResultOutput {
@@ -92,8 +103,12 @@ func GetSecurityAssessmentFindingsOutput(ctx *pulumi.Context, args GetSecurityAs
 type GetSecurityAssessmentFindingsOutputArgs struct {
 	// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
+	// The category of the finding.
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput     `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     pulumi.StringArrayInput `pulumi:"containsReferences"`
+	ContainsSeverities     pulumi.StringArrayInput `pulumi:"containsSeverities"`
 	// Specifies a subset of fields to be returned in the response.
 	Fields  pulumi.StringArrayInput                       `pulumi:"fields"`
 	Filters GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
@@ -116,6 +131,8 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 }
 
 func (GetSecurityAssessmentFindingsOutputArgs) ElementType() reflect.Type {
@@ -141,8 +158,21 @@ func (o GetSecurityAssessmentFindingsResultOutput) AccessLevel() pulumi.StringPt
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
+// The category to which the finding belongs to.
+func (o GetSecurityAssessmentFindingsResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.Category }).(pulumi.StringPtrOutput)
+}
+
 func (o GetSecurityAssessmentFindingsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) ContainsReferences() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []string { return v.ContainsReferences }).(pulumi.StringArrayOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) ContainsSeverities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []string { return v.ContainsSeverities }).(pulumi.StringArrayOutput)
 }
 
 func (o GetSecurityAssessmentFindingsResultOutput) Fields() pulumi.StringArrayOutput {
@@ -198,6 +228,10 @@ func (o GetSecurityAssessmentFindingsResultOutput) State() pulumi.StringPtrOutpu
 // The OCID of the target database.
 func (o GetSecurityAssessmentFindingsResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
 func init() {

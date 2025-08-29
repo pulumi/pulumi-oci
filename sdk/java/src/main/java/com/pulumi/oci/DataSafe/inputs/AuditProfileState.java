@@ -21,14 +21,14 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     public static final AuditProfileState Empty = new AuditProfileState();
 
     /**
-     * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     @Import(name="auditCollectedVolume")
     private @Nullable Output<String> auditCollectedVolume;
 
     /**
-     * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * @return Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     public Optional<Output<String>> auditCollectedVolume() {
@@ -36,29 +36,14 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the audit.
-     * 
-     */
-    @Import(name="auditProfileId")
-    private @Nullable Output<String> auditProfileId;
-
-    /**
-     * @return The OCID of the audit.
-     * 
-     */
-    public Optional<Output<String>> auditProfileId() {
-        return Optional.ofNullable(this.auditProfileId);
-    }
-
-    /**
-     * Indicates the list of available audit trails on the target.
+     * Contains the list of available audit trails on the target database.
      * 
      */
     @Import(name="auditTrails")
     private @Nullable Output<List<AuditProfileAuditTrailArgs>> auditTrails;
 
     /**
-     * @return Indicates the list of available audit trails on the target.
+     * @return Contains the list of available audit trails on the target database.
      * 
      */
     public Optional<Output<List<AuditProfileAuditTrailArgs>>> auditTrails() {
@@ -87,14 +72,14 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment that contains the audit.
+     * (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains the audit.
+     * @return (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -162,14 +147,29 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    @Import(name="isOverrideGlobalPaidUsage")
+    private @Nullable Output<Boolean> isOverrideGlobalPaidUsage;
+
+    /**
+     * @return (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    public Optional<Output<Boolean>> isOverrideGlobalPaidUsage() {
+        return Optional.ofNullable(this.isOverrideGlobalPaidUsage);
+    }
+
+    /**
+     * Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     @Import(name="isOverrideGlobalRetentionSetting")
     private @Nullable Output<Boolean> isOverrideGlobalRetentionSetting;
 
     /**
-     * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * @return Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     public Optional<Output<Boolean>> isOverrideGlobalRetentionSetting() {
@@ -207,14 +207,14 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     @Import(name="offlineMonths")
     private @Nullable Output<Integer> offlineMonths;
 
     /**
-     * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * @return Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     public Optional<Output<Integer>> offlineMonths() {
@@ -222,18 +222,63 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    @Import(name="offlineMonthsSource")
+    private @Nullable Output<String> offlineMonthsSource;
+
+    /**
+     * @return The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public Optional<Output<String>> offlineMonthsSource() {
+        return Optional.ofNullable(this.offlineMonthsSource);
+    }
+
+    /**
+     * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      * 
      */
     @Import(name="onlineMonths")
     private @Nullable Output<Integer> onlineMonths;
 
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * @return Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      * 
      */
     public Optional<Output<Integer>> onlineMonths() {
         return Optional.ofNullable(this.onlineMonths);
+    }
+
+    /**
+     * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    @Import(name="onlineMonthsSource")
+    private @Nullable Output<String> onlineMonthsSource;
+
+    /**
+     * @return The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public Optional<Output<String>> onlineMonthsSource() {
+        return Optional.ofNullable(this.onlineMonthsSource);
+    }
+
+    /**
+     * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    @Import(name="paidUsageSource")
+    private @Nullable Output<String> paidUsageSource;
+
+    /**
+     * @return The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public Optional<Output<String>> paidUsageSource() {
+        return Optional.ofNullable(this.paidUsageSource);
     }
 
     /**
@@ -267,18 +312,33 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * The resource type that is represented by the audit profile.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return The resource type that is represented by the audit profile.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     /**
@@ -315,7 +375,6 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
 
     private AuditProfileState(AuditProfileState $) {
         this.auditCollectedVolume = $.auditCollectedVolume;
-        this.auditProfileId = $.auditProfileId;
         this.auditTrails = $.auditTrails;
         this.changeRetentionTrigger = $.changeRetentionTrigger;
         this.compartmentId = $.compartmentId;
@@ -323,14 +382,19 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isOverrideGlobalPaidUsage = $.isOverrideGlobalPaidUsage;
         this.isOverrideGlobalRetentionSetting = $.isOverrideGlobalRetentionSetting;
         this.isPaidUsageEnabled = $.isPaidUsageEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.offlineMonths = $.offlineMonths;
+        this.offlineMonthsSource = $.offlineMonthsSource;
         this.onlineMonths = $.onlineMonths;
+        this.onlineMonthsSource = $.onlineMonthsSource;
+        this.paidUsageSource = $.paidUsageSource;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -354,7 +418,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auditCollectedVolume Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+         * @param auditCollectedVolume Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
          * 
          * @return builder
          * 
@@ -365,7 +429,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auditCollectedVolume Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+         * @param auditCollectedVolume Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
          * 
          * @return builder
          * 
@@ -375,28 +439,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auditProfileId The OCID of the audit.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder auditProfileId(@Nullable Output<String> auditProfileId) {
-            $.auditProfileId = auditProfileId;
-            return this;
-        }
-
-        /**
-         * @param auditProfileId The OCID of the audit.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder auditProfileId(String auditProfileId) {
-            return auditProfileId(Output.of(auditProfileId));
-        }
-
-        /**
-         * @param auditTrails Indicates the list of available audit trails on the target.
+         * @param auditTrails Contains the list of available audit trails on the target database.
          * 
          * @return builder
          * 
@@ -407,7 +450,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auditTrails Indicates the list of available audit trails on the target.
+         * @param auditTrails Contains the list of available audit trails on the target database.
          * 
          * @return builder
          * 
@@ -417,7 +460,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auditTrails Indicates the list of available audit trails on the target.
+         * @param auditTrails Contains the list of available audit trails on the target database.
          * 
          * @return builder
          * 
@@ -454,7 +497,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the audit.
+         * @param compartmentId (Updatable) The OCID of the compartment where you want to create the audit profile.
          * 
          * @return builder
          * 
@@ -465,7 +508,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the audit.
+         * @param compartmentId (Updatable) The OCID of the compartment where you want to create the audit profile.
          * 
          * @return builder
          * 
@@ -559,7 +602,28 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isOverrideGlobalRetentionSetting Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+         * @param isOverrideGlobalPaidUsage (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOverrideGlobalPaidUsage(@Nullable Output<Boolean> isOverrideGlobalPaidUsage) {
+            $.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+            return this;
+        }
+
+        /**
+         * @param isOverrideGlobalPaidUsage (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOverrideGlobalPaidUsage(Boolean isOverrideGlobalPaidUsage) {
+            return isOverrideGlobalPaidUsage(Output.of(isOverrideGlobalPaidUsage));
+        }
+
+        /**
+         * @param isOverrideGlobalRetentionSetting Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
          * 
          * @return builder
          * 
@@ -570,7 +634,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isOverrideGlobalRetentionSetting Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+         * @param isOverrideGlobalRetentionSetting Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
          * 
          * @return builder
          * 
@@ -622,7 +686,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param offlineMonths Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         * @param offlineMonths Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
          * 
          * @return builder
          * 
@@ -633,7 +697,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param offlineMonths Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+         * @param offlineMonths Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
          * 
          * @return builder
          * 
@@ -643,7 +707,28 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param onlineMonths Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+         * @param offlineMonthsSource The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder offlineMonthsSource(@Nullable Output<String> offlineMonthsSource) {
+            $.offlineMonthsSource = offlineMonthsSource;
+            return this;
+        }
+
+        /**
+         * @param offlineMonthsSource The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder offlineMonthsSource(String offlineMonthsSource) {
+            return offlineMonthsSource(Output.of(offlineMonthsSource));
+        }
+
+        /**
+         * @param onlineMonths Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
          * 
          * @return builder
          * 
@@ -654,13 +739,55 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param onlineMonths Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+         * @param onlineMonths Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
          * 
          * @return builder
          * 
          */
         public Builder onlineMonths(Integer onlineMonths) {
             return onlineMonths(Output.of(onlineMonths));
+        }
+
+        /**
+         * @param onlineMonthsSource The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onlineMonthsSource(@Nullable Output<String> onlineMonthsSource) {
+            $.onlineMonthsSource = onlineMonthsSource;
+            return this;
+        }
+
+        /**
+         * @param onlineMonthsSource The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder onlineMonthsSource(String onlineMonthsSource) {
+            return onlineMonthsSource(Output.of(onlineMonthsSource));
+        }
+
+        /**
+         * @param paidUsageSource The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder paidUsageSource(@Nullable Output<String> paidUsageSource) {
+            $.paidUsageSource = paidUsageSource;
+            return this;
+        }
+
+        /**
+         * @param paidUsageSource The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder paidUsageSource(String paidUsageSource) {
+            return paidUsageSource(Output.of(paidUsageSource));
         }
 
         /**
@@ -706,7 +833,7 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetId The OCID of the Data Safe target for which the audit profile is created.
+         * @param targetId The OCID of the target database or target database group for which the audit profile is created.
          * 
          * @return builder
          * 
@@ -717,13 +844,34 @@ public final class AuditProfileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetId The OCID of the Data Safe target for which the audit profile is created.
+         * @param targetId The OCID of the target database or target database group for which the audit profile is created.
          * 
          * @return builder
          * 
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType The resource type that is represented by the audit profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType The resource type that is represented by the audit profile.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         /**

@@ -92,6 +92,7 @@ import javax.annotation.Nullable;
  *             .scanListenerPortTcp(exadbVmClusterScanListenerPortTcp)
  *             .scanListenerPortTcpSsl(exadbVmClusterScanListenerPortTcpSsl)
  *             .securityAttributes(exadbVmClusterSecurityAttributes)
+ *             .shapeAttribute(exadbVmClusterShapeAttribute)
  *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(exadbVmClusterSystemVersion)
  *             .timeZone(exadbVmClusterTimeZone)
@@ -575,6 +576,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> shape() {
         return this.shape;
+    }
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    @Export(name="shapeAttribute", refs={String.class}, tree="[0]")
+    private Output<String> shapeAttribute;
+
+    /**
+     * @return The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    public Output<String> shapeAttribute() {
+        return this.shapeAttribute;
     }
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.

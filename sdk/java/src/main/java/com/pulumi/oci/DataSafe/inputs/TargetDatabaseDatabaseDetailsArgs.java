@@ -124,6 +124,21 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
     }
 
     /**
+     * (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    @Import(name="pluggableDatabaseId")
+    private @Nullable Output<String> pluggableDatabaseId;
+
+    /**
+     * @return (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    public Optional<Output<String>> pluggableDatabaseId() {
+        return Optional.ofNullable(this.pluggableDatabaseId);
+    }
+
+    /**
      * (Updatable) The service name of the database registered as target database.
      * 
      */
@@ -163,6 +178,7 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         this.instanceId = $.instanceId;
         this.ipAddresses = $.ipAddresses;
         this.listenerPort = $.listenerPort;
+        this.pluggableDatabaseId = $.pluggableDatabaseId;
         this.serviceName = $.serviceName;
         this.vmClusterId = $.vmClusterId;
     }
@@ -340,6 +356,27 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
          */
         public Builder listenerPort(Integer listenerPort) {
             return listenerPort(Output.of(listenerPort));
+        }
+
+        /**
+         * @param pluggableDatabaseId (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabaseId(@Nullable Output<String> pluggableDatabaseId) {
+            $.pluggableDatabaseId = pluggableDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param pluggableDatabaseId (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pluggableDatabaseId(String pluggableDatabaseId) {
+            return pluggableDatabaseId(Output.of(pluggableDatabaseId));
         }
 
         /**

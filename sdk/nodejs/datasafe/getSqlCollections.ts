@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *     displayName: sqlCollectionDisplayName,
  *     sqlCollectionId: testSqlCollection.id,
  *     state: sqlCollectionState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeCreatedGreaterThanOrEqualTo: sqlCollectionTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: sqlCollectionTimeCreatedLessThan,
@@ -55,6 +56,7 @@ export function getSqlCollections(args: GetSqlCollectionsArgs, opts?: pulumi.Inv
         "filters": args.filters,
         "sqlCollectionId": args.sqlCollectionId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
@@ -94,6 +96,10 @@ export interface GetSqlCollectionsArgs {
      * The current state of the SQL collection.
      */
     state?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -144,6 +150,7 @@ export interface GetSqlCollectionsResult {
      * The current state of the SQL collection.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
@@ -183,6 +190,7 @@ export interface GetSqlCollectionsResult {
  *     displayName: sqlCollectionDisplayName,
  *     sqlCollectionId: testSqlCollection.id,
  *     state: sqlCollectionState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeCreatedGreaterThanOrEqualTo: sqlCollectionTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: sqlCollectionTimeCreatedLessThan,
@@ -200,6 +208,7 @@ export function getSqlCollectionsOutput(args: GetSqlCollectionsOutputArgs, opts?
         "filters": args.filters,
         "sqlCollectionId": args.sqlCollectionId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
@@ -239,6 +248,10 @@ export interface GetSqlCollectionsOutputArgs {
      * The current state of the SQL collection.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

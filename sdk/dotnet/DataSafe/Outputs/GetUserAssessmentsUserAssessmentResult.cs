@@ -86,6 +86,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        public readonly string TargetDatabaseGroupId;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
@@ -93,6 +97,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Array of database target OCIDs.
         /// </summary>
         public readonly ImmutableArray<string> TargetIds;
+        /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        public readonly string TargetType;
         /// <summary>
         /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
@@ -152,9 +160,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, string> systemTags,
 
+            string targetDatabaseGroupId,
+
             string targetId,
 
             ImmutableArray<string> targetIds,
+
+            string targetType,
 
             string timeCreated,
 
@@ -184,8 +196,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
             State = state;
             Statistics = statistics;
             SystemTags = systemTags;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TargetIds = targetIds;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;

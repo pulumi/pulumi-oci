@@ -57,7 +57,7 @@ public final class GetOnpremConnectorsOnPremConnector {
      */
     private String lifecycleDetails;
     /**
-     * @return The current state of the on-premises connector.
+     * @return A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
     private String state;
@@ -137,7 +137,7 @@ public final class GetOnpremConnectorsOnPremConnector {
         return this.lifecycleDetails;
     }
     /**
-     * @return The current state of the on-premises connector.
+     * @return A filter to return only on-premises connector resources that match the specified lifecycle state.
      * 
      */
     public String state() {

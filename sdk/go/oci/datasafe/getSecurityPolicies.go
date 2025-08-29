@@ -48,6 +48,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(securityPolicyCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(securityPolicyDisplayName),
 //				SecurityPolicyId:       pulumi.StringRef(testSecurityPolicy.Id),
+//				SecurityPolicyType:     pulumi.StringRef(securityPolicySecurityPolicyType),
 //				State:                  pulumi.StringRef(securityPolicyState),
 //			}, nil)
 //			if err != nil {
@@ -81,6 +82,8 @@ type GetSecurityPoliciesArgs struct {
 	Filters     []GetSecurityPoliciesFilter `pulumi:"filters"`
 	// An optional filter to return only resources that match the specified OCID of the security policy resource.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// The type of the security policy.
+	SecurityPolicyType *string `pulumi:"securityPolicyType"`
 	// The current state of the security policy.
 	State *string `pulumi:"state"`
 }
@@ -99,6 +102,8 @@ type GetSecurityPoliciesResult struct {
 	// The list of security_policy_collection.
 	SecurityPolicyCollections []GetSecurityPoliciesSecurityPolicyCollection `pulumi:"securityPolicyCollections"`
 	SecurityPolicyId          *string                                       `pulumi:"securityPolicyId"`
+	// The type of the security policy.
+	SecurityPolicyType *string `pulumi:"securityPolicyType"`
 	// The current state of the security policy.
 	State *string `pulumi:"state"`
 }
@@ -125,6 +130,8 @@ type GetSecurityPoliciesOutputArgs struct {
 	Filters     GetSecurityPoliciesFilterArrayInput `pulumi:"filters"`
 	// An optional filter to return only resources that match the specified OCID of the security policy resource.
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
+	// The type of the security policy.
+	SecurityPolicyType pulumi.StringPtrInput `pulumi:"securityPolicyType"`
 	// The current state of the security policy.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -184,6 +191,11 @@ func (o GetSecurityPoliciesResultOutput) SecurityPolicyCollections() GetSecurity
 
 func (o GetSecurityPoliciesResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
+}
+
+// The type of the security policy.
+func (o GetSecurityPoliciesResultOutput) SecurityPolicyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.SecurityPolicyType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the security policy.

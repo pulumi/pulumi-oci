@@ -133,6 +133,10 @@ namespace Pulumi.Oci.DataSafe
         public readonly string AuditProfileId;
         public readonly string AuditTrailId;
         /// <summary>
+        /// Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        public readonly bool CanUpdateLastArchiveTimeOnTarget;
+        /// <summary>
         /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         public readonly string CompartmentId;
@@ -230,6 +234,8 @@ namespace Pulumi.Oci.DataSafe
 
             string auditTrailId,
 
+            bool canUpdateLastArchiveTimeOnTarget,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -279,6 +285,7 @@ namespace Pulumi.Oci.DataSafe
             AuditCollectionStartTime = auditCollectionStartTime;
             AuditProfileId = auditProfileId;
             AuditTrailId = auditTrailId;
+            CanUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

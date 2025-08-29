@@ -14,6 +14,14 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     public sealed class GetAgentToolsToolCollectionItemToolConfigResult
     {
         /// <summary>
+        /// The AgentEndpoint OCID to be used as a tool in this agent.
+        /// </summary>
+        public readonly string AgentEndpointId;
+        /// <summary>
+        /// The input location definition for Api schema.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigApiSchemaResult> ApiSchemas;
+        /// <summary>
         /// The connection type for Databases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult> DatabaseConnections;
@@ -33,6 +41,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// Configuration to customize LLM.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult> GenerationLlmCustomizations;
+        /// <summary>
+        /// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult> HttpEndpointAuthConfigs;
         /// <summary>
         /// The input location definition.
         /// </summary>
@@ -54,6 +66,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly bool ShouldEnableSqlExecution;
         /// <summary>
+        /// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        /// </summary>
+        public readonly string SubnetId;
+        /// <summary>
         /// The input location definition.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult> TableAndColumnDescriptions;
@@ -67,6 +83,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
         [OutputConstructor]
         private GetAgentToolsToolCollectionItemToolConfigResult(
+            string agentEndpointId,
+
+            ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigApiSchemaResult> apiSchemas,
+
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult> databaseConnections,
 
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult> databaseSchemas,
@@ -76,6 +96,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigFunctionResult> functions,
 
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult> generationLlmCustomizations,
+
+            ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult> httpEndpointAuthConfigs,
 
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigIclExampleResult> iclExamples,
 
@@ -87,20 +109,26 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             bool shouldEnableSqlExecution,
 
+            string subnetId,
+
             ImmutableArray<Outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult> tableAndColumnDescriptions,
 
             string toolConfigType)
         {
+            AgentEndpointId = agentEndpointId;
+            ApiSchemas = apiSchemas;
             DatabaseConnections = databaseConnections;
             DatabaseSchemas = databaseSchemas;
             Dialect = dialect;
             Functions = functions;
             GenerationLlmCustomizations = generationLlmCustomizations;
+            HttpEndpointAuthConfigs = httpEndpointAuthConfigs;
             IclExamples = iclExamples;
             KnowledgeBaseConfigs = knowledgeBaseConfigs;
             ModelSize = modelSize;
             ShouldEnableSelfCorrection = shouldEnableSelfCorrection;
             ShouldEnableSqlExecution = shouldEnableSqlExecution;
+            SubnetId = subnetId;
             TableAndColumnDescriptions = tableAndColumnDescriptions;
             ToolConfigType = toolConfigType;
         }

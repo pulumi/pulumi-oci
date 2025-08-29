@@ -63,8 +63,15 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs struct {
 type GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult struct {
 	// The current deployment status of the security policy deployment and the security policy entry associated.
 	DeploymentStatus string `pulumi:"deploymentStatus"`
+	// Details about the current deployment status.
+	DeploymentStatusDetails string `pulumi:"deploymentStatusDetails"`
 	// Details specific to the security policy entry.
 	EntryDetails []GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail `pulumi:"entryDetails"`
+	// The security policy entry type. Allowed values:
+	// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+	// * AUDIT_POLICY - The audit policy entry type.
+	// * CONFIG - Config changes deployment.
+	EntryType string `pulumi:"entryType"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The OCID of the security policy deployment associated.
@@ -72,6 +79,8 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult struct {
 	// The OCID of the security policy entry type associated.
 	SecurityPolicyEntryId      string `pulumi:"securityPolicyEntryId"`
 	SecurityPolicyEntryStateId string `pulumi:"securityPolicyEntryStateId"`
+	// The OCID of the target on which the security policy is deployed.
+	TargetId string `pulumi:"targetId"`
 }
 
 func GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutput(ctx *pulumi.Context, args GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput {
@@ -115,11 +124,26 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) Deploym
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string { return v.DeploymentStatus }).(pulumi.StringOutput)
 }
 
+// Details about the current deployment status.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) DeploymentStatusDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string {
+		return v.DeploymentStatusDetails
+	}).(pulumi.StringOutput)
+}
+
 // Details specific to the security policy entry.
 func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) EntryDetails() GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput {
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) []GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail {
 		return v.EntryDetails
 	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailArrayOutput)
+}
+
+// The security policy entry type. Allowed values:
+// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+// * AUDIT_POLICY - The audit policy entry type.
+// * CONFIG - Config changes deployment.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) EntryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string { return v.EntryType }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -145,6 +169,11 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) Securit
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string {
 		return v.SecurityPolicyEntryStateId
 	}).(pulumi.StringOutput)
+}
+
+// The OCID of the target on which the security policy is deployed.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStateResultOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
 func init() {

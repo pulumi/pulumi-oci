@@ -14,8 +14,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **GetDataSource**
-        /// 
         /// Gets information about a data source.
         /// 
         /// 
@@ -43,8 +41,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **GetDataSource**
-        /// 
         /// Gets information about a data source.
         /// 
         /// 
@@ -71,8 +67,6 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-        /// 
-        /// **GetDataSource**
         /// 
         /// Gets information about a data source.
         /// 
@@ -137,7 +131,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// **DataSourceConfig**
+        /// The details of data source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentDataSourceDataSourceConfigResult> DataSourceConfigs;
         public readonly string DataSourceId;

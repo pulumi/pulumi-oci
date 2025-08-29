@@ -30,7 +30,9 @@ import * as utilities from "../utilities";
  *         displayOrder: reportDefinitionColumnInfoDisplayOrder,
  *         fieldName: reportDefinitionColumnInfoFieldName,
  *         isHidden: reportDefinitionColumnInfoIsHidden,
+ *         applicableOperators: reportDefinitionColumnInfoApplicableOperators,
  *         dataType: reportDefinitionColumnInfoDataType,
+ *         isVirtual: reportDefinitionColumnInfoIsVirtual,
  *     }],
  *     columnSortings: [{
  *         fieldName: reportDefinitionColumnSortingsFieldName,

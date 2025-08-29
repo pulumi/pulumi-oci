@@ -39,6 +39,21 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    @Import(name="canUpdateLastArchiveTimeOnTarget")
+    private @Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * @return (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Optional<Output<Boolean>> canUpdateLastArchiveTimeOnTarget() {
+        return Optional.ofNullable(this.canUpdateLastArchiveTimeOnTarget);
+    }
+
+    /**
      * The OCID of the compartment that contains the target.
      * 
      */
@@ -222,6 +237,7 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
 
     private AuditTrailManagementArgs(AuditTrailManagementArgs $) {
         this.auditCollectionStartTime = $.auditCollectionStartTime;
+        this.canUpdateLastArchiveTimeOnTarget = $.canUpdateLastArchiveTimeOnTarget;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -279,6 +295,27 @@ public final class AuditTrailManagementArgs extends com.pulumi.resources.Resourc
          */
         public Builder auditCollectionStartTime(String auditCollectionStartTime) {
             return auditCollectionStartTime(Output.of(auditCollectionStartTime));
+        }
+
+        /**
+         * @param canUpdateLastArchiveTimeOnTarget (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(@Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget) {
+            $.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            return this;
+        }
+
+        /**
+         * @param canUpdateLastArchiveTimeOnTarget (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            return canUpdateLastArchiveTimeOnTarget(Output.of(canUpdateLastArchiveTimeOnTarget));
         }
 
         /**

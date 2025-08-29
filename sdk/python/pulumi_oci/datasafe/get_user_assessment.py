@@ -27,7 +27,7 @@ class GetUserAssessmentResult:
     """
     A collection of values returned by getUserAssessment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_assessment_scheduled=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, schedule=None, schedule_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None, user_assessment_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_assessment_scheduled=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, schedule=None, schedule_assessment_id=None, state=None, statistics=None, system_tags=None, target_database_group_id=None, target_id=None, target_ids=None, target_type=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None, user_assessment_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -82,12 +82,18 @@ class GetUserAssessmentResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
         if target_ids and not isinstance(target_ids, list):
             raise TypeError("Expected argument 'target_ids' to be a list")
         pulumi.set(__self__, "target_ids", target_ids)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -252,6 +258,14 @@ class GetUserAssessmentResult:
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> _builtins.str:
+        """
+        The OCID of target database group.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         return pulumi.get(self, "target_id")
@@ -263,6 +277,14 @@ class GetUserAssessmentResult:
         Array of database target OCIDs.
         """
         return pulumi.get(self, "target_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        Indicates whether the user assessment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -334,8 +356,10 @@ class AwaitableGetUserAssessmentResult(GetUserAssessmentResult):
             state=self.state,
             statistics=self.statistics,
             system_tags=self.system_tags,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
             target_ids=self.target_ids,
+            target_type=self.target_type,
             time_created=self.time_created,
             time_last_assessed=self.time_last_assessed,
             time_updated=self.time_updated,
@@ -387,8 +411,10 @@ def get_user_assessment(user_assessment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         statistics=pulumi.get(__ret__, 'statistics'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         target_ids=pulumi.get(__ret__, 'target_ids'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_assessed=pulumi.get(__ret__, 'time_last_assessed'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
@@ -437,8 +463,10 @@ def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[_builti
         state=pulumi.get(__response__, 'state'),
         statistics=pulumi.get(__response__, 'statistics'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
         target_ids=pulumi.get(__response__, 'target_ids'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_last_assessed=pulumi.get(__response__, 'time_last_assessed'),
         time_updated=pulumi.get(__response__, 'time_updated'),

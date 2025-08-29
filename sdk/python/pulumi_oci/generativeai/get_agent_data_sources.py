@@ -129,8 +129,6 @@ def get_agent_data_sources(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-    **ListDataSources**
-
     Gets a list of data sources.
 
     ## Example Usage
@@ -176,8 +174,6 @@ def get_agent_data_sources_output(compartment_id: Optional[pulumi.Input[Optional
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataSourcesResult]:
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **ListDataSources**
 
     Gets a list of data sources.
 

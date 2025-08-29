@@ -28,7 +28,7 @@ class GetAuditPoliciesResult:
     """
     A collection of values returned by getAuditPolicies.
     """
-    def __init__(__self__, access_level=None, audit_policy_collections=None, audit_policy_id=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, state=None, target_id=None):
+    def __init__(__self__, access_level=None, audit_policy_collections=None, audit_policy_id=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, state=None, target_database_group_id=None, target_id=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -56,6 +56,9 @@ class GetAuditPoliciesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -121,6 +124,11 @@ class GetAuditPoliciesResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -144,6 +152,7 @@ class AwaitableGetAuditPoliciesResult(GetAuditPoliciesResult):
             filters=self.filters,
             id=self.id,
             state=self.state,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id)
 
 
@@ -154,6 +163,7 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
                        display_name: Optional[_builtins.str] = None,
                        filters: Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]] = None,
                        state: Optional[_builtins.str] = None,
+                       target_database_group_id: Optional[_builtins.str] = None,
                        target_id: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditPoliciesResult:
     """
@@ -187,6 +197,7 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
         compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
         display_name=audit_policy_display_name,
         state=audit_policy_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -197,6 +208,7 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str state: The current state of the audit policy.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -207,6 +219,7 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditPolicies:getAuditPolicies', __args__, opts=opts, typ=GetAuditPoliciesResult).value
@@ -221,6 +234,7 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               audit_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -229,6 +243,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]]]] = None,
                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                              target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditPoliciesResult]:
     """
@@ -262,6 +277,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
         compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
         display_name=audit_policy_display_name,
         state=audit_policy_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -272,6 +288,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str state: The current state of the audit policy.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -282,6 +299,7 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditPolicies:getAuditPolicies', __args__, opts=opts, typ=GetAuditPoliciesResult)
@@ -295,4 +313,5 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         state=pulumi.get(__response__, 'state'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id')))

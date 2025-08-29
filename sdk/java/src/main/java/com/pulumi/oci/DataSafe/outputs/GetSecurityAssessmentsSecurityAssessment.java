@@ -5,8 +5,10 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentCheck;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentStatistic;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +16,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecurityAssessmentsSecurityAssessment {
+    private Integer applyTemplateTrigger;
+    private String baseSecurityAssessmentId;
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    private String baselineAssessmentId;
+    /**
+     * @return The security checks to be evaluated for type template.
+     * 
+     */
+    private List<GetSecurityAssessmentsSecurityAssessmentCheck> checks;
+    private Integer compareToTemplateBaselineTrigger;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
@@ -84,6 +99,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      * 
      */
     private String link;
+    private Integer removeTemplateTrigger;
     /**
      * @return Schedule of the assessment that runs periodically in the specified format: - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
@@ -110,6 +126,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private Map<String,String> systemTags;
     /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    private String targetDatabaseGroupId;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -120,10 +141,20 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private List<String> targetIds;
     /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    private String targetType;
+    /**
      * @return The version of the target database.
      * 
      */
     private String targetVersion;
+    /**
+     * @return The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    private String templateAssessmentId;
     /**
      * @return The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
@@ -151,6 +182,29 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     private String type;
 
     private GetSecurityAssessmentsSecurityAssessment() {}
+    public Integer applyTemplateTrigger() {
+        return this.applyTemplateTrigger;
+    }
+    public String baseSecurityAssessmentId() {
+        return this.baseSecurityAssessmentId;
+    }
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    public String baselineAssessmentId() {
+        return this.baselineAssessmentId;
+    }
+    /**
+     * @return The security checks to be evaluated for type template.
+     * 
+     */
+    public List<GetSecurityAssessmentsSecurityAssessmentCheck> checks() {
+        return this.checks;
+    }
+    public Integer compareToTemplateBaselineTrigger() {
+        return this.compareToTemplateBaselineTrigger;
+    }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
@@ -249,6 +303,9 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     public String link() {
         return this.link;
     }
+    public Integer removeTemplateTrigger() {
+        return this.removeTemplateTrigger;
+    }
     /**
      * @return Schedule of the assessment that runs periodically in the specified format: - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
@@ -285,6 +342,13 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.systemTags;
     }
     /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public String targetDatabaseGroupId() {
+        return this.targetDatabaseGroupId;
+    }
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -299,11 +363,25 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.targetIds;
     }
     /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
+    }
+    /**
      * @return The version of the target database.
      * 
      */
     public String targetVersion() {
         return this.targetVersion;
+    }
+    /**
+     * @return The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    public String templateAssessmentId() {
+        return this.templateAssessmentId;
     }
     /**
      * @return The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -350,6 +428,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer applyTemplateTrigger;
+        private String baseSecurityAssessmentId;
+        private String baselineAssessmentId;
+        private List<GetSecurityAssessmentsSecurityAssessmentCheck> checks;
+        private Integer compareToTemplateBaselineTrigger;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -364,14 +447,18 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         private String lastComparedBaselineId;
         private String lifecycleDetails;
         private String link;
+        private Integer removeTemplateTrigger;
         private String schedule;
         private String scheduleSecurityAssessmentId;
         private String state;
         private List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics;
         private Map<String,String> systemTags;
+        private String targetDatabaseGroupId;
         private String targetId;
         private List<String> targetIds;
+        private String targetType;
         private String targetVersion;
+        private String templateAssessmentId;
         private String timeCreated;
         private String timeLastAssessed;
         private String timeUpdated;
@@ -380,6 +467,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         public Builder() {}
         public Builder(GetSecurityAssessmentsSecurityAssessment defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applyTemplateTrigger = defaults.applyTemplateTrigger;
+    	      this.baseSecurityAssessmentId = defaults.baseSecurityAssessmentId;
+    	      this.baselineAssessmentId = defaults.baselineAssessmentId;
+    	      this.checks = defaults.checks;
+    	      this.compareToTemplateBaselineTrigger = defaults.compareToTemplateBaselineTrigger;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -394,14 +486,18 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     	      this.lastComparedBaselineId = defaults.lastComparedBaselineId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.link = defaults.link;
+    	      this.removeTemplateTrigger = defaults.removeTemplateTrigger;
     	      this.schedule = defaults.schedule;
     	      this.scheduleSecurityAssessmentId = defaults.scheduleSecurityAssessmentId;
     	      this.state = defaults.state;
     	      this.statistics = defaults.statistics;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.targetIds = defaults.targetIds;
+    	      this.targetType = defaults.targetType;
     	      this.targetVersion = defaults.targetVersion;
+    	      this.templateAssessmentId = defaults.templateAssessmentId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastAssessed = defaults.timeLastAssessed;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -409,6 +505,49 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder applyTemplateTrigger(Integer applyTemplateTrigger) {
+            if (applyTemplateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "applyTemplateTrigger");
+            }
+            this.applyTemplateTrigger = applyTemplateTrigger;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder baseSecurityAssessmentId(String baseSecurityAssessmentId) {
+            if (baseSecurityAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "baseSecurityAssessmentId");
+            }
+            this.baseSecurityAssessmentId = baseSecurityAssessmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder baselineAssessmentId(String baselineAssessmentId) {
+            if (baselineAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "baselineAssessmentId");
+            }
+            this.baselineAssessmentId = baselineAssessmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder checks(List<GetSecurityAssessmentsSecurityAssessmentCheck> checks) {
+            if (checks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "checks");
+            }
+            this.checks = checks;
+            return this;
+        }
+        public Builder checks(GetSecurityAssessmentsSecurityAssessmentCheck... checks) {
+            return checks(List.of(checks));
+        }
+        @CustomType.Setter
+        public Builder compareToTemplateBaselineTrigger(Integer compareToTemplateBaselineTrigger) {
+            if (compareToTemplateBaselineTrigger == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "compareToTemplateBaselineTrigger");
+            }
+            this.compareToTemplateBaselineTrigger = compareToTemplateBaselineTrigger;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -528,6 +667,14 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             return this;
         }
         @CustomType.Setter
+        public Builder removeTemplateTrigger(Integer removeTemplateTrigger) {
+            if (removeTemplateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "removeTemplateTrigger");
+            }
+            this.removeTemplateTrigger = removeTemplateTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder schedule(String schedule) {
             if (schedule == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "schedule");
@@ -571,6 +718,14 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            if (targetDatabaseGroupId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetDatabaseGroupId");
+            }
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetId");
@@ -590,11 +745,27 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             return targetIds(List.of(targetIds));
         }
         @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
             if (targetVersion == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "targetVersion");
             }
             this.targetVersion = targetVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            if (templateAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessment", "templateAssessmentId");
+            }
+            this.templateAssessmentId = templateAssessmentId;
             return this;
         }
         @CustomType.Setter
@@ -639,6 +810,11 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         }
         public GetSecurityAssessmentsSecurityAssessment build() {
             final var _resultValue = new GetSecurityAssessmentsSecurityAssessment();
+            _resultValue.applyTemplateTrigger = applyTemplateTrigger;
+            _resultValue.baseSecurityAssessmentId = baseSecurityAssessmentId;
+            _resultValue.baselineAssessmentId = baselineAssessmentId;
+            _resultValue.checks = checks;
+            _resultValue.compareToTemplateBaselineTrigger = compareToTemplateBaselineTrigger;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
@@ -653,14 +829,18 @@ public final class GetSecurityAssessmentsSecurityAssessment {
             _resultValue.lastComparedBaselineId = lastComparedBaselineId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.link = link;
+            _resultValue.removeTemplateTrigger = removeTemplateTrigger;
             _resultValue.schedule = schedule;
             _resultValue.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
             _resultValue.state = state;
             _resultValue.statistics = statistics;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.targetIds = targetIds;
+            _resultValue.targetType = targetType;
             _resultValue.targetVersion = targetVersion;
+            _resultValue.templateAssessmentId = templateAssessmentId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastAssessed = timeLastAssessed;
             _resultValue.timeUpdated = timeUpdated;

@@ -76,6 +76,20 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
         return this.auditTrailId;
     }
     /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    @Export(name="canUpdateLastArchiveTimeOnTarget", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * @return (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Output<Boolean> canUpdateLastArchiveTimeOnTarget() {
+        return this.canUpdateLastArchiveTimeOnTarget;
+    }
+    /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */

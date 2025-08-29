@@ -14,10 +14,20 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult
     {
         /// <summary>
+        /// The status of Data Safe user exclusion in the audit policy.
+        /// </summary>
+        public readonly string DatasafeUserExclusionStatus;
+        /// <summary>
         /// The security policy entry type. Allowed values:
         /// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        /// * AUDIT_POLICY - The audit policy entry type.
+        /// * CONFIG - Config changes deployment.
         /// </summary>
         public readonly string EntryType;
+        /// <summary>
+        /// Specifies why exclusion of the Data Safe user did not succeed.
+        /// </summary>
+        public readonly string ExcludeDatasafeUserFailureMsg;
         /// <summary>
         /// The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
         /// </summary>
@@ -29,13 +39,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult(
+            string datasafeUserExclusionStatus,
+
             string entryType,
+
+            string excludeDatasafeUserFailureMsg,
 
             string timeGenerated,
 
             string timeStatusUpdated)
         {
+            DatasafeUserExclusionStatus = datasafeUserExclusionStatus;
             EntryType = entryType;
+            ExcludeDatasafeUserFailureMsg = excludeDatasafeUserFailureMsg;
             TimeGenerated = timeGenerated;
             TimeStatusUpdated = timeStatusUpdated;
         }

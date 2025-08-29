@@ -26,9 +26,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string? ScopeUrl;
         /// <summary>
-        /// (Updatable) The type of OpenID. The allowed values are:
-        /// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-        /// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        /// (Updatable) The type of OpenID.
         /// </summary>
         public readonly string Type;
         /// <summary>

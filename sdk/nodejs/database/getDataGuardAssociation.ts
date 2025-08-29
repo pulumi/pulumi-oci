@@ -59,6 +59,8 @@ export interface GetDataGuardAssociationResult {
     readonly applyRate: string;
     readonly availabilityDomain: string;
     readonly backupNetworkNsgIds: string[];
+    readonly computeCount: number;
+    readonly computeModel: string;
     readonly cpuCoreCount: number;
     readonly createAsync: boolean;
     readonly creationType: string;

@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.inputs.DatabaseDataGuardGroupArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseManagementConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDbBackupConfigArgs;
+import com.pulumi.oci.Database.inputs.DatabaseStorageSizeDetailArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -564,6 +565,21 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    @Import(name="storageSizeDetails")
+    private @Nullable Output<List<DatabaseStorageSizeDetailArgs>> storageSizeDetails;
+
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Optional<Output<List<DatabaseStorageSizeDetailArgs>>> storageSizeDetails() {
+        return Optional.ofNullable(this.storageSizeDetails);
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -661,6 +677,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         this.source = $.source;
         this.sourceDatabasePointInTimeRecoveryTimestamp = $.sourceDatabasePointInTimeRecoveryTimestamp;
         this.state = $.state;
+        this.storageSizeDetails = $.storageSizeDetails;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.vaultId = $.vaultId;
@@ -1472,6 +1489,37 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(@Nullable Output<List<DatabaseStorageSizeDetailArgs>> storageSizeDetails) {
+            $.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(List<DatabaseStorageSizeDetailArgs> storageSizeDetails) {
+            return storageSizeDetails(Output.of(storageSizeDetails));
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(DatabaseStorageSizeDetailArgs... storageSizeDetails) {
+            return storageSizeDetails(List.of(storageSizeDetails));
         }
 
         /**

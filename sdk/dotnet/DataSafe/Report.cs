@@ -32,6 +32,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example alerts, events.
+        /// </summary>
+        [Output("dataSource")]
+        public Output<string> DataSource { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
@@ -96,10 +102,22 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies the time at which the report was created.
+        /// </summary>
+        [Output("timeCreated")]
+        public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies the date and time the report was generated.
         /// </summary>
         [Output("timeGenerated")]
         public Output<string> TimeGenerated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time of the report update in Data Safe.
+        /// </summary>
+        [Output("timeUpdated")]
+        public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The type of the audit report.
@@ -207,6 +225,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example alerts, events.
+        /// </summary>
+        [Input("dataSource")]
+        public Input<string>? DataSource { get; set; }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 
@@ -290,10 +314,22 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// Specifies the time at which the report was created.
+        /// </summary>
+        [Input("timeCreated")]
+        public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
         /// Specifies the date and time the report was generated.
         /// </summary>
         [Input("timeGenerated")]
         public Input<string>? TimeGenerated { get; set; }
+
+        /// <summary>
+        /// The date and time of the report update in Data Safe.
+        /// </summary>
+        [Input("timeUpdated")]
+        public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
         /// The type of the audit report.

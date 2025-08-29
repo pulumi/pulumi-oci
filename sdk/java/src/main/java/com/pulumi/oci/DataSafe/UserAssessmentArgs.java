@@ -128,24 +128,39 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
     /**
-     * @return The OCID of the target database on which the user assessment is to be run.
+     * @return The OCID of the target database or target database group on which user assessment is to be run.
+     * 
+     */
+    public Output<String> targetId() {
+        return this.targetId;
+    }
+
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     private UserAssessmentArgs() {}
@@ -159,6 +174,7 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
         this.isAssessmentScheduled = $.isAssessmentScheduled;
         this.schedule = $.schedule;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -331,10 +347,7 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param targetId The OCID of the target database on which the user assessment is to be run.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target database or target database group on which user assessment is to be run.
          * 
          * @return builder
          * 
@@ -345,7 +358,17 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param targetId The OCID of the target database on which the user assessment is to be run.
+         * @param targetId The OCID of the target database or target database group on which user assessment is to be run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(String targetId) {
+            return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -353,8 +376,22 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder targetId(String targetId) {
-            return targetId(Output.of(targetId));
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         public UserAssessmentArgs build() {

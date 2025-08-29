@@ -11,9 +11,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-func GetSecurityAssessmentFinding(ctx *pulumi.Context, args *GetSecurityAssessmentFindingArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingResult, error) {
+func LookupSecurityAssessmentFinding(ctx *pulumi.Context, args *LookupSecurityAssessmentFindingArgs, opts ...pulumi.InvokeOption) (*LookupSecurityAssessmentFindingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetSecurityAssessmentFindingResult
+	var rv LookupSecurityAssessmentFindingResult
 	err := ctx.Invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -22,9 +22,12 @@ func GetSecurityAssessmentFinding(ctx *pulumi.Context, args *GetSecurityAssessme
 }
 
 // A collection of arguments for invoking getSecurityAssessmentFinding.
-type GetSecurityAssessmentFindingArgs struct {
+type LookupSecurityAssessmentFindingArgs struct {
 	AccessLevel            *string                              `pulumi:"accessLevel"`
+	Category               *string                              `pulumi:"category"`
 	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     []string                             `pulumi:"containsReferences"`
+	ContainsSeverities     []string                             `pulumi:"containsSeverities"`
 	Fields                 []string                             `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
 	FindingKey             *string                              `pulumi:"findingKey"`
@@ -35,40 +38,48 @@ type GetSecurityAssessmentFindingArgs struct {
 	Severity               *string                              `pulumi:"severity"`
 	State                  *string                              `pulumi:"state"`
 	TargetId               *string                              `pulumi:"targetId"`
+	TargetIds              []string                             `pulumi:"targetIds"`
 }
 
 // A collection of values returned by getSecurityAssessmentFinding.
-type GetSecurityAssessmentFindingResult struct {
+type LookupSecurityAssessmentFindingResult struct {
 	AccessLevel            *string                               `pulumi:"accessLevel"`
+	Category               *string                               `pulumi:"category"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     []string                              `pulumi:"containsReferences"`
+	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
 	Fields                 []string                              `pulumi:"fields"`
 	Filters                []GetSecurityAssessmentFindingFilter  `pulumi:"filters"`
 	FindingKey             *string                               `pulumi:"findingKey"`
 	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string  `pulumi:"id"`
-	IsTopFinding         *bool   `pulumi:"isTopFinding"`
-	References           *string `pulumi:"references"`
-	ScimQuery            *string `pulumi:"scimQuery"`
-	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
-	Severity             *string `pulumi:"severity"`
-	State                *string `pulumi:"state"`
-	TargetId             *string `pulumi:"targetId"`
+	Id                   string   `pulumi:"id"`
+	IsTopFinding         *bool    `pulumi:"isTopFinding"`
+	References           *string  `pulumi:"references"`
+	ScimQuery            *string  `pulumi:"scimQuery"`
+	SecurityAssessmentId string   `pulumi:"securityAssessmentId"`
+	Severity             *string  `pulumi:"severity"`
+	State                *string  `pulumi:"state"`
+	TargetId             *string  `pulumi:"targetId"`
+	TargetIds            []string `pulumi:"targetIds"`
 }
 
-func GetSecurityAssessmentFindingOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingResultOutput {
+func LookupSecurityAssessmentFindingOutput(ctx *pulumi.Context, args LookupSecurityAssessmentFindingOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityAssessmentFindingResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSecurityAssessmentFindingResultOutput, error) {
-			args := v.(GetSecurityAssessmentFindingArgs)
+		ApplyT(func(v interface{}) (LookupSecurityAssessmentFindingResultOutput, error) {
+			args := v.(LookupSecurityAssessmentFindingArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args, GetSecurityAssessmentFindingResultOutput{}, options).(GetSecurityAssessmentFindingResultOutput), nil
-		}).(GetSecurityAssessmentFindingResultOutput)
+			return ctx.InvokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args, LookupSecurityAssessmentFindingResultOutput{}, options).(LookupSecurityAssessmentFindingResultOutput), nil
+		}).(LookupSecurityAssessmentFindingResultOutput)
 }
 
 // A collection of arguments for invoking getSecurityAssessmentFinding.
-type GetSecurityAssessmentFindingOutputArgs struct {
+type LookupSecurityAssessmentFindingOutputArgs struct {
 	AccessLevel            pulumi.StringPtrInput                        `pulumi:"accessLevel"`
+	Category               pulumi.StringPtrInput                        `pulumi:"category"`
 	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
+	ContainsReferences     pulumi.StringArrayInput                      `pulumi:"containsReferences"`
+	ContainsSeverities     pulumi.StringArrayInput                      `pulumi:"containsSeverities"`
 	Fields                 pulumi.StringArrayInput                      `pulumi:"fields"`
 	Filters                GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
 	FindingKey             pulumi.StringPtrInput                        `pulumi:"findingKey"`
@@ -79,84 +90,101 @@ type GetSecurityAssessmentFindingOutputArgs struct {
 	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
 	State                  pulumi.StringPtrInput                        `pulumi:"state"`
 	TargetId               pulumi.StringPtrInput                        `pulumi:"targetId"`
+	TargetIds              pulumi.StringArrayInput                      `pulumi:"targetIds"`
 }
 
-func (GetSecurityAssessmentFindingOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetSecurityAssessmentFindingArgs)(nil)).Elem()
+func (LookupSecurityAssessmentFindingOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupSecurityAssessmentFindingArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getSecurityAssessmentFinding.
-type GetSecurityAssessmentFindingResultOutput struct{ *pulumi.OutputState }
+type LookupSecurityAssessmentFindingResultOutput struct{ *pulumi.OutputState }
 
-func (GetSecurityAssessmentFindingResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetSecurityAssessmentFindingResult)(nil)).Elem()
+func (LookupSecurityAssessmentFindingResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupSecurityAssessmentFindingResult)(nil)).Elem()
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) ToGetSecurityAssessmentFindingResultOutput() GetSecurityAssessmentFindingResultOutput {
+func (o LookupSecurityAssessmentFindingResultOutput) ToLookupSecurityAssessmentFindingResultOutput() LookupSecurityAssessmentFindingResultOutput {
 	return o
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) ToGetSecurityAssessmentFindingResultOutputWithContext(ctx context.Context) GetSecurityAssessmentFindingResultOutput {
+func (o LookupSecurityAssessmentFindingResultOutput) ToLookupSecurityAssessmentFindingResultOutputWithContext(ctx context.Context) LookupSecurityAssessmentFindingResultOutput {
 	return o
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) AccessLevel() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) AccessLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) Fields() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) Filters() GetSecurityAssessmentFindingFilterArrayOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) []GetSecurityAssessmentFindingFilter { return v.Filters }).(GetSecurityAssessmentFindingFilterArrayOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) ContainsReferences() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []string { return v.ContainsReferences }).(pulumi.StringArrayOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) FindingKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.FindingKey }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) ContainsSeverities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []string { return v.ContainsSeverities }).(pulumi.StringArrayOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) Findings() GetSecurityAssessmentFindingFindingArrayOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) []GetSecurityAssessmentFindingFinding { return v.Findings }).(GetSecurityAssessmentFindingFindingArrayOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) Fields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) Filters() GetSecurityAssessmentFindingFilterArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []GetSecurityAssessmentFindingFilter { return v.Filters }).(GetSecurityAssessmentFindingFilterArrayOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) FindingKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.FindingKey }).(pulumi.StringPtrOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) Findings() GetSecurityAssessmentFindingFindingArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []GetSecurityAssessmentFindingFinding { return v.Findings }).(GetSecurityAssessmentFindingFindingArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityAssessmentFindingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) IsTopFinding() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *bool { return v.IsTopFinding }).(pulumi.BoolPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) IsTopFinding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *bool { return v.IsTopFinding }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.References }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.References }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) ScimQuery() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.ScimQuery }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) ScimQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.ScimQuery }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) SecurityAssessmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) string { return v.SecurityAssessmentId }).(pulumi.StringOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) SecurityAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) string { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) Severity() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) State() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.State }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) TargetId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+func (o LookupSecurityAssessmentFindingResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetSecurityAssessmentFindingResultOutput{})
+	pulumi.RegisterOutputType(LookupSecurityAssessmentFindingResultOutput{})
 }

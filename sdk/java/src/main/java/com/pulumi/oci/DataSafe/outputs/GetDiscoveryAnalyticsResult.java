@@ -36,11 +36,13 @@ public final class GetDiscoveryAnalyticsResult {
      * 
      */
     private @Nullable String sensitiveDataModelId;
+    private @Nullable String sensitiveTypeGroupId;
     /**
      * @return The OCID of the sensitive type.
      * 
      */
     private @Nullable String sensitiveTypeId;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target database.
      * 
@@ -84,12 +86,18 @@ public final class GetDiscoveryAnalyticsResult {
     public Optional<String> sensitiveDataModelId() {
         return Optional.ofNullable(this.sensitiveDataModelId);
     }
+    public Optional<String> sensitiveTypeGroupId() {
+        return Optional.ofNullable(this.sensitiveTypeGroupId);
+    }
     /**
      * @return The OCID of the sensitive type.
      * 
      */
     public Optional<String> sensitiveTypeId() {
         return Optional.ofNullable(this.sensitiveTypeId);
+    }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
     }
     /**
      * @return The OCID of the target database.
@@ -116,7 +124,9 @@ public final class GetDiscoveryAnalyticsResult {
         private String id;
         private @Nullable Boolean isCommon;
         private @Nullable String sensitiveDataModelId;
+        private @Nullable String sensitiveTypeGroupId;
         private @Nullable String sensitiveTypeId;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetDiscoveryAnalyticsResult defaults) {
@@ -129,7 +139,9 @@ public final class GetDiscoveryAnalyticsResult {
     	      this.id = defaults.id;
     	      this.isCommon = defaults.isCommon;
     	      this.sensitiveDataModelId = defaults.sensitiveDataModelId;
+    	      this.sensitiveTypeGroupId = defaults.sensitiveTypeGroupId;
     	      this.sensitiveTypeId = defaults.sensitiveTypeId;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -194,9 +206,21 @@ public final class GetDiscoveryAnalyticsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sensitiveTypeGroupId(@Nullable String sensitiveTypeGroupId) {
+
+            this.sensitiveTypeGroupId = sensitiveTypeGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
 
             this.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
         @CustomType.Setter
@@ -215,7 +239,9 @@ public final class GetDiscoveryAnalyticsResult {
             _resultValue.id = id;
             _resultValue.isCommon = isCommon;
             _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeGroupId = sensitiveTypeGroupId;
             _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

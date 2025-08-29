@@ -56,6 +56,11 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     private String timeCreated;
     /**
+     * @return The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeLastSynced;
+    /**
      * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -131,6 +136,13 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         return this.timeCreated;
     }
     /**
+     * @return The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeLastSynced() {
+        return this.timeLastSynced;
+    }
+    /**
      * @return The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
@@ -163,6 +175,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         private String region;
         private String state;
         private String timeCreated;
+        private String timeLastSynced;
         private String timeRoleChanged;
         private String timeUpdated;
         public Builder() {}
@@ -177,6 +190,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
     	      this.region = defaults.region;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastSynced = defaults.timeLastSynced;
     	      this.timeRoleChanged = defaults.timeRoleChanged;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -254,6 +268,14 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastSynced(String timeLastSynced) {
+            if (timeLastSynced == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "timeLastSynced");
+            }
+            this.timeLastSynced = timeLastSynced;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeRoleChanged(String timeRoleChanged) {
             if (timeRoleChanged == null) {
               throw new MissingRequiredPropertyException("GetDeploymentPeersDeploymentPeerCollectionItem", "timeRoleChanged");
@@ -280,6 +302,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
             _resultValue.region = region;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSynced = timeLastSynced;
             _resultValue.timeRoleChanged = timeRoleChanged;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

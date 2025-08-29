@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs;
+import com.pulumi.oci.Database.inputs.DatabaseDatabaseStorageSizeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -394,6 +395,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    @Import(name="storageSizeDetails")
+    private @Nullable Output<DatabaseDatabaseStorageSizeDetailsArgs> storageSizeDetails;
+
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Optional<Output<DatabaseDatabaseStorageSizeDetailsArgs>> storageSizeDetails() {
+        return Optional.ofNullable(this.storageSizeDetails);
+    }
+
+    /**
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -479,6 +495,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.sourceDatabaseId = $.sourceDatabaseId;
         this.sourceEncryptionKeyLocationDetails = $.sourceEncryptionKeyLocationDetails;
         this.sourceTdeWalletPassword = $.sourceTdeWalletPassword;
+        this.storageSizeDetails = $.storageSizeDetails;
         this.tdeWalletPassword = $.tdeWalletPassword;
         this.transportType = $.transportType;
         this.vaultId = $.vaultId;
@@ -1026,6 +1043,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
             return sourceTdeWalletPassword(Output.of(sourceTdeWalletPassword));
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(@Nullable Output<DatabaseDatabaseStorageSizeDetailsArgs> storageSizeDetails) {
+            $.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(DatabaseDatabaseStorageSizeDetailsArgs storageSizeDetails) {
+            return storageSizeDetails(Output.of(storageSizeDetails));
         }
 
         /**

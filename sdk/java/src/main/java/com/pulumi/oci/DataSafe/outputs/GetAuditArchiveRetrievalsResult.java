@@ -45,6 +45,7 @@ public final class GetAuditArchiveRetrievalsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target associated with the archive retrieval.
      * 
@@ -104,6 +105,9 @@ public final class GetAuditArchiveRetrievalsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the target associated with the archive retrieval.
      * 
@@ -137,6 +141,7 @@ public final class GetAuditArchiveRetrievalsResult {
         private @Nullable List<GetAuditArchiveRetrievalsFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         private @Nullable String timeOfExpiry;
         public Builder() {}
@@ -151,6 +156,7 @@ public final class GetAuditArchiveRetrievalsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.timeOfExpiry = defaults.timeOfExpiry;
         }
@@ -222,6 +228,12 @@ public final class GetAuditArchiveRetrievalsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -244,6 +256,7 @@ public final class GetAuditArchiveRetrievalsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.timeOfExpiry = timeOfExpiry;
             return _resultValue;

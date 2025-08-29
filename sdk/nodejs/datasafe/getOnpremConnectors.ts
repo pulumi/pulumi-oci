@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
- *     onPremConnectorLifecycleState: onPremConnectorOnPremConnectorLifecycleState,
+ *     state: onPremConnectorState,
  * });
  * ```
  */
@@ -36,7 +36,7 @@ export function getOnpremConnectors(args: GetOnpremConnectorsArgs, opts?: pulumi
         "displayName": args.displayName,
         "filters": args.filters,
         "onPremConnectorId": args.onPremConnectorId,
-        "onPremConnectorLifecycleState": args.onPremConnectorLifecycleState,
+        "state": args.state,
     }, opts);
 }
 
@@ -68,7 +68,7 @@ export interface GetOnpremConnectorsArgs {
     /**
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      */
-    onPremConnectorLifecycleState?: string;
+    state?: string;
 }
 
 /**
@@ -91,11 +91,14 @@ export interface GetOnpremConnectorsResult {
      */
     readonly id: string;
     readonly onPremConnectorId?: string;
-    readonly onPremConnectorLifecycleState?: string;
     /**
      * The list of on_prem_connectors.
      */
     readonly onPremConnectors: outputs.DataSafe.GetOnpremConnectorsOnPremConnector[];
+    /**
+     * The current state of the on-premises connector.
+     */
+    readonly state?: string;
 }
 /**
  * This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
@@ -114,7 +117,7 @@ export interface GetOnpremConnectorsResult {
  *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
- *     onPremConnectorLifecycleState: onPremConnectorOnPremConnectorLifecycleState,
+ *     state: onPremConnectorState,
  * });
  * ```
  */
@@ -127,7 +130,7 @@ export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, o
         "displayName": args.displayName,
         "filters": args.filters,
         "onPremConnectorId": args.onPremConnectorId,
-        "onPremConnectorLifecycleState": args.onPremConnectorLifecycleState,
+        "state": args.state,
     }, opts);
 }
 
@@ -159,5 +162,5 @@ export interface GetOnpremConnectorsOutputArgs {
     /**
      * A filter to return only on-premises connector resources that match the specified lifecycle state.
      */
-    onPremConnectorLifecycleState?: pulumi.Input<string>;
+    state?: pulumi.Input<string>;
 }

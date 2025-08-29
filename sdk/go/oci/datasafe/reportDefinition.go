@@ -42,11 +42,13 @@ import (
 //				},
 //				ColumnInfos: datasafe.ReportDefinitionColumnInfoArray{
 //					&datasafe.ReportDefinitionColumnInfoArgs{
-//						DisplayName:  pulumi.Any(reportDefinitionColumnInfoDisplayName),
-//						DisplayOrder: pulumi.Any(reportDefinitionColumnInfoDisplayOrder),
-//						FieldName:    pulumi.Any(reportDefinitionColumnInfoFieldName),
-//						IsHidden:     pulumi.Any(reportDefinitionColumnInfoIsHidden),
-//						DataType:     pulumi.Any(reportDefinitionColumnInfoDataType),
+//						DisplayName:         pulumi.Any(reportDefinitionColumnInfoDisplayName),
+//						DisplayOrder:        pulumi.Any(reportDefinitionColumnInfoDisplayOrder),
+//						FieldName:           pulumi.Any(reportDefinitionColumnInfoFieldName),
+//						IsHidden:            pulumi.Any(reportDefinitionColumnInfoIsHidden),
+//						ApplicableOperators: pulumi.Any(reportDefinitionColumnInfoApplicableOperators),
+//						DataType:            pulumi.Any(reportDefinitionColumnInfoDataType),
+//						IsVirtual:           pulumi.Any(reportDefinitionColumnInfoIsVirtual),
 //					},
 //				},
 //				ColumnSortings: datasafe.ReportDefinitionColumnSortingArray{

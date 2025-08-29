@@ -18,58 +18,11 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
  * 
- * **CreateDataSource**
- * 
  * Creates a data source.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.GenerativeAi.AgentDataSource;
- * import com.pulumi.oci.GenerativeAi.AgentDataSourceArgs;
- * import com.pulumi.oci.GenerativeAi.inputs.AgentDataSourceDataSourceConfigArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDataSource = new AgentDataSource("testDataSource", AgentDataSourceArgs.builder()
- *             .compartmentId(compartmentId)
- *             .dataSourceConfig(AgentDataSourceDataSourceConfigArgs.builder()
- *                 .dataSourceConfigType(dataSourceDataSourceConfigDataSourceConfigType)
- *                 .objectStoragePrefixes(AgentDataSourceDataSourceConfigObjectStoragePrefixArgs.builder()
- *                     .bucket(dataSourceDataSourceConfigObjectStoragePrefixesBucket)
- *                     .namespace(dataSourceDataSourceConfigObjectStoragePrefixesNamespace)
- *                     .prefix(dataSourceDataSourceConfigObjectStoragePrefixesPrefix)
- *                     .build())
- *                 .build())
- *             .knowledgeBaseId(testKnowledgeBase.id())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(dataSourceDescription)
- *             .displayName(dataSourceDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .metadata(dataSourceMetadata)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -98,18 +51,14 @@ public class AgentDataSource extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) **DataSourceConfig**
-     * 
-     * The details of data source.
+     * (Updatable) The details of data source.
      * 
      */
     @Export(name="dataSourceConfig", refs={AgentDataSourceDataSourceConfig.class}, tree="[0]")
     private Output<AgentDataSourceDataSourceConfig> dataSourceConfig;
 
     /**
-     * @return (Updatable) **DataSourceConfig**
-     * 
-     * The details of data source.
+     * @return (Updatable) The details of data source.
      * 
      */
     public Output<AgentDataSourceDataSourceConfig> dataSourceConfig() {

@@ -50,6 +50,10 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
      */
     public /*out*/ readonly additionalData!: pulumi.Output<{[key: string]: string}>;
     /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     */
+    public /*out*/ readonly availableHostCount!: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -124,6 +128,7 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ComputeGpuMemoryFabricState | undefined;
             resourceInputs["additionalData"] = state ? state.additionalData : undefined;
+            resourceInputs["availableHostCount"] = state ? state.availableHostCount : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeGpuMemoryFabricId"] = state ? state.computeGpuMemoryFabricId : undefined;
             resourceInputs["computeHpcIslandId"] = state ? state.computeHpcIslandId : undefined;
@@ -149,6 +154,7 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["additionalData"] = undefined /*out*/;
+            resourceInputs["availableHostCount"] = undefined /*out*/;
             resourceInputs["computeHpcIslandId"] = undefined /*out*/;
             resourceInputs["computeLocalBlockId"] = undefined /*out*/;
             resourceInputs["computeNetworkBlockId"] = undefined /*out*/;
@@ -172,6 +178,10 @@ export interface ComputeGpuMemoryFabricState {
      * Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
      */
     additionalData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     */
+    availableHostCount?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */

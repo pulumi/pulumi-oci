@@ -32,9 +32,7 @@ class AgentDataSourceArgs:
         """
         The set of arguments for constructing a AgentDataSource resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
-        :param pulumi.Input['AgentDataSourceDataSourceConfigArgs'] data_source_config: (Updatable) **DataSourceConfig**
-               
-               The details of data source.
+        :param pulumi.Input['AgentDataSourceDataSourceConfigArgs'] data_source_config: (Updatable) The details of data source.
         :param pulumi.Input[_builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the data source.
@@ -76,9 +74,7 @@ class AgentDataSourceArgs:
     @pulumi.getter(name="dataSourceConfig")
     def data_source_config(self) -> pulumi.Input['AgentDataSourceDataSourceConfigArgs']:
         """
-        (Updatable) **DataSourceConfig**
-
-        The details of data source.
+        (Updatable) The details of data source.
         """
         return pulumi.get(self, "data_source_config")
 
@@ -182,9 +178,7 @@ class _AgentDataSourceState:
         """
         Input properties used for looking up and filtering AgentDataSource resources.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
-        :param pulumi.Input['AgentDataSourceDataSourceConfigArgs'] data_source_config: (Updatable) **DataSourceConfig**
-               
-               The details of data source.
+        :param pulumi.Input['AgentDataSourceDataSourceConfigArgs'] data_source_config: (Updatable) The details of data source.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the data source.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -244,9 +238,7 @@ class _AgentDataSourceState:
     @pulumi.getter(name="dataSourceConfig")
     def data_source_config(self) -> Optional[pulumi.Input['AgentDataSourceDataSourceConfigArgs']]:
         """
-        (Updatable) **DataSourceConfig**
-
-        The details of data source.
+        (Updatable) The details of data source.
         """
         return pulumi.get(self, "data_source_config")
 
@@ -409,37 +401,7 @@ class AgentDataSource(pulumi.CustomResource):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-        **CreateDataSource**
-
         Creates a data source.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_source = oci.generativeai.AgentDataSource("test_data_source",
-            compartment_id=compartment_id,
-            data_source_config={
-                "data_source_config_type": data_source_data_source_config_data_source_config_type,
-                "object_storage_prefixes": [{
-                    "bucket": data_source_data_source_config_object_storage_prefixes_bucket,
-                    "namespace": data_source_data_source_config_object_storage_prefixes_namespace,
-                    "prefix": data_source_data_source_config_object_storage_prefixes_prefix,
-                }],
-            },
-            knowledge_base_id=test_knowledge_base["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=data_source_description,
-            display_name=data_source_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            metadata=data_source_metadata)
-        ```
 
         ## Import
 
@@ -452,9 +414,7 @@ class AgentDataSource(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
-        :param pulumi.Input[Union['AgentDataSourceDataSourceConfigArgs', 'AgentDataSourceDataSourceConfigArgsDict']] data_source_config: (Updatable) **DataSourceConfig**
-               
-               The details of data source.
+        :param pulumi.Input[Union['AgentDataSourceDataSourceConfigArgs', 'AgentDataSourceDataSourceConfigArgsDict']] data_source_config: (Updatable) The details of data source.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the data source.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -475,37 +435,7 @@ class AgentDataSource(pulumi.CustomResource):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-        **CreateDataSource**
-
         Creates a data source.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_source = oci.generativeai.AgentDataSource("test_data_source",
-            compartment_id=compartment_id,
-            data_source_config={
-                "data_source_config_type": data_source_data_source_config_data_source_config_type,
-                "object_storage_prefixes": [{
-                    "bucket": data_source_data_source_config_object_storage_prefixes_bucket,
-                    "namespace": data_source_data_source_config_object_storage_prefixes_namespace,
-                    "prefix": data_source_data_source_config_object_storage_prefixes_prefix,
-                }],
-            },
-            knowledge_base_id=test_knowledge_base["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=data_source_description,
-            display_name=data_source_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            metadata=data_source_metadata)
-        ```
 
         ## Import
 
@@ -597,9 +527,7 @@ class AgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
-        :param pulumi.Input[Union['AgentDataSourceDataSourceConfigArgs', 'AgentDataSourceDataSourceConfigArgsDict']] data_source_config: (Updatable) **DataSourceConfig**
-               
-               The details of data source.
+        :param pulumi.Input[Union['AgentDataSourceDataSourceConfigArgs', 'AgentDataSourceDataSourceConfigArgsDict']] data_source_config: (Updatable) The details of data source.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the data source.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -647,9 +575,7 @@ class AgentDataSource(pulumi.CustomResource):
     @pulumi.getter(name="dataSourceConfig")
     def data_source_config(self) -> pulumi.Output['outputs.AgentDataSourceDataSourceConfig']:
         """
-        (Updatable) **DataSourceConfig**
-
-        The details of data source.
+        (Updatable) The details of data source.
         """
         return pulumi.get(self, "data_source_config")
 

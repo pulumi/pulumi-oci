@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ReportDefinitionColumnInfoArgs Empty = new ReportDefinitionColumnInfoArgs();
+
+    /**
+     * (Updatable) An array of operators that can be supported by column fieldName.
+     * 
+     */
+    @Import(name="applicableOperators")
+    private @Nullable Output<List<String>> applicableOperators;
+
+    /**
+     * @return (Updatable) An array of operators that can be supported by column fieldName.
+     * 
+     */
+    public Optional<Output<List<String>>> applicableOperators() {
+        return Optional.ofNullable(this.applicableOperators);
+    }
 
     /**
      * (Updatable) Specifies the data type of the column.
@@ -93,14 +109,31 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         return this.isHidden;
     }
 
+    /**
+     * (Updatable) Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    @Import(name="isVirtual")
+    private @Nullable Output<Boolean> isVirtual;
+
+    /**
+     * @return (Updatable) Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    public Optional<Output<Boolean>> isVirtual() {
+        return Optional.ofNullable(this.isVirtual);
+    }
+
     private ReportDefinitionColumnInfoArgs() {}
 
     private ReportDefinitionColumnInfoArgs(ReportDefinitionColumnInfoArgs $) {
+        this.applicableOperators = $.applicableOperators;
         this.dataType = $.dataType;
         this.displayName = $.displayName;
         this.displayOrder = $.displayOrder;
         this.fieldName = $.fieldName;
         this.isHidden = $.isHidden;
+        this.isVirtual = $.isVirtual;
     }
 
     public static Builder builder() {
@@ -119,6 +152,37 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
 
         public Builder(ReportDefinitionColumnInfoArgs defaults) {
             $ = new ReportDefinitionColumnInfoArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applicableOperators (Updatable) An array of operators that can be supported by column fieldName.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicableOperators(@Nullable Output<List<String>> applicableOperators) {
+            $.applicableOperators = applicableOperators;
+            return this;
+        }
+
+        /**
+         * @param applicableOperators (Updatable) An array of operators that can be supported by column fieldName.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicableOperators(List<String> applicableOperators) {
+            return applicableOperators(Output.of(applicableOperators));
+        }
+
+        /**
+         * @param applicableOperators (Updatable) An array of operators that can be supported by column fieldName.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicableOperators(String... applicableOperators) {
+            return applicableOperators(List.of(applicableOperators));
         }
 
         /**
@@ -224,6 +288,27 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
          */
         public Builder isHidden(Boolean isHidden) {
             return isHidden(Output.of(isHidden));
+        }
+
+        /**
+         * @param isVirtual (Updatable) Specifies if column is virtual and can only be used as column filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVirtual(@Nullable Output<Boolean> isVirtual) {
+            $.isVirtual = isVirtual;
+            return this;
+        }
+
+        /**
+         * @param isVirtual (Updatable) Specifies if column is virtual and can only be used as column filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVirtual(Boolean isVirtual) {
+            return isVirtual(Output.of(isVirtual));
         }
 
         public ReportDefinitionColumnInfoArgs build() {

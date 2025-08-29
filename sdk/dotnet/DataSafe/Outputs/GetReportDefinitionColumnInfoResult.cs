@@ -14,6 +14,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetReportDefinitionColumnInfoResult
     {
         /// <summary>
+        /// An array of operators that can be supported by column fieldName.
+        /// </summary>
+        public readonly ImmutableArray<string> ApplicableOperators;
+        /// <summary>
         /// Specifies the data type of the column.
         /// </summary>
         public readonly string DataType;
@@ -33,9 +37,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         /// </summary>
         public readonly bool IsHidden;
+        /// <summary>
+        /// Specifies if column is virtual and can only be used as column filter.
+        /// </summary>
+        public readonly bool IsVirtual;
 
         [OutputConstructor]
         private GetReportDefinitionColumnInfoResult(
+            ImmutableArray<string> applicableOperators,
+
             string dataType,
 
             string displayName,
@@ -44,13 +54,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string fieldName,
 
-            bool isHidden)
+            bool isHidden,
+
+            bool isVirtual)
         {
+            ApplicableOperators = applicableOperators;
             DataType = dataType;
             DisplayName = displayName;
             DisplayOrder = displayOrder;
             FieldName = fieldName;
             IsHidden = isHidden;
+            IsVirtual = isVirtual;
         }
     }
 }

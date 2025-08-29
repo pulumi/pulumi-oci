@@ -30,12 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetOnpremConnectors(ctx, &datasafe.GetOnpremConnectorsArgs{
-//				CompartmentId:                 compartmentId,
-//				AccessLevel:                   pulumi.StringRef(onPremConnectorAccessLevel),
-//				CompartmentIdInSubtree:        pulumi.BoolRef(onPremConnectorCompartmentIdInSubtree),
-//				DisplayName:                   pulumi.StringRef(onPremConnectorDisplayName),
-//				OnPremConnectorId:             pulumi.StringRef(testOnPremConnector.Id),
-//				OnPremConnectorLifecycleState: pulumi.StringRef(onPremConnectorOnPremConnectorLifecycleState),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(onPremConnectorAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(onPremConnectorCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(onPremConnectorDisplayName),
+//				OnPremConnectorId:      pulumi.StringRef(testOnPremConnector.Id),
+//				State:                  pulumi.StringRef(onPremConnectorState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -69,7 +69,7 @@ type GetOnpremConnectorsArgs struct {
 	// A filter to return only the on-premises connector that matches the specified id.
 	OnPremConnectorId *string `pulumi:"onPremConnectorId"`
 	// A filter to return only on-premises connector resources that match the specified lifecycle state.
-	OnPremConnectorLifecycleState *string `pulumi:"onPremConnectorLifecycleState"`
+	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getOnpremConnectors.
@@ -82,11 +82,12 @@ type GetOnpremConnectorsResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetOnpremConnectorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string  `pulumi:"id"`
-	OnPremConnectorId             *string `pulumi:"onPremConnectorId"`
-	OnPremConnectorLifecycleState *string `pulumi:"onPremConnectorLifecycleState"`
+	Id                string  `pulumi:"id"`
+	OnPremConnectorId *string `pulumi:"onPremConnectorId"`
 	// The list of on_prem_connectors.
 	OnPremConnectors []GetOnpremConnectorsOnPremConnector `pulumi:"onPremConnectors"`
+	// The current state of the on-premises connector.
+	State *string `pulumi:"state"`
 }
 
 func GetOnpremConnectorsOutput(ctx *pulumi.Context, args GetOnpremConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetOnpremConnectorsResultOutput {
@@ -112,7 +113,7 @@ type GetOnpremConnectorsOutputArgs struct {
 	// A filter to return only the on-premises connector that matches the specified id.
 	OnPremConnectorId pulumi.StringPtrInput `pulumi:"onPremConnectorId"`
 	// A filter to return only on-premises connector resources that match the specified lifecycle state.
-	OnPremConnectorLifecycleState pulumi.StringPtrInput `pulumi:"onPremConnectorLifecycleState"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetOnpremConnectorsOutputArgs) ElementType() reflect.Type {
@@ -165,13 +166,14 @@ func (o GetOnpremConnectorsResultOutput) OnPremConnectorId() pulumi.StringPtrOut
 	return o.ApplyT(func(v GetOnpremConnectorsResult) *string { return v.OnPremConnectorId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetOnpremConnectorsResultOutput) OnPremConnectorLifecycleState() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetOnpremConnectorsResult) *string { return v.OnPremConnectorLifecycleState }).(pulumi.StringPtrOutput)
-}
-
 // The list of on_prem_connectors.
 func (o GetOnpremConnectorsResultOutput) OnPremConnectors() GetOnpremConnectorsOnPremConnectorArrayOutput {
 	return o.ApplyT(func(v GetOnpremConnectorsResult) []GetOnpremConnectorsOnPremConnector { return v.OnPremConnectors }).(GetOnpremConnectorsOnPremConnectorArrayOutput)
+}
+
+// The current state of the on-premises connector.
+func (o GetOnpremConnectorsResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOnpremConnectorsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

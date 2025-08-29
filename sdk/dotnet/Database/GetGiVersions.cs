@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Database
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
         ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
+        ///         ShapeAttribute = giVersionShapeAttribute,
         ///     });
         /// 
         /// });
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.Database
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
         ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
+        ///         ShapeAttribute = giVersionShapeAttribute,
         ///     });
         /// 
         /// });
@@ -90,6 +92,7 @@ namespace Pulumi.Oci.Database
         ///         AvailabilityDomain = giVersionAvailabilityDomain,
         ///         ResourceId = testResource.Id,
         ///         Shape = giVersionShape,
+        ///         ShapeAttribute = giVersionShapeAttribute,
         ///     });
         /// 
         /// });
@@ -134,6 +137,12 @@ namespace Pulumi.Oci.Database
         [Input("shape")]
         public string? Shape { get; set; }
 
+        /// <summary>
+        /// If provided and applicable, return the results based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public string? ShapeAttribute { get; set; }
+
         public GetGiVersionsArgs()
         {
         }
@@ -174,6 +183,12 @@ namespace Pulumi.Oci.Database
         [Input("shape")]
         public Input<string>? Shape { get; set; }
 
+        /// <summary>
+        /// If provided and applicable, return the results based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public Input<string>? ShapeAttribute { get; set; }
+
         public GetGiVersionsInvokeArgs()
         {
         }
@@ -197,6 +212,7 @@ namespace Pulumi.Oci.Database
         public readonly string Id;
         public readonly string? ResourceId;
         public readonly string? Shape;
+        public readonly string? ShapeAttribute;
 
         [OutputConstructor]
         private GetGiVersionsResult(
@@ -212,7 +228,9 @@ namespace Pulumi.Oci.Database
 
             string? resourceId,
 
-            string? shape)
+            string? shape,
+
+            string? shapeAttribute)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
@@ -221,6 +239,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             ResourceId = resourceId;
             Shape = shape;
+            ShapeAttribute = shapeAttribute;
         }
     }
 }

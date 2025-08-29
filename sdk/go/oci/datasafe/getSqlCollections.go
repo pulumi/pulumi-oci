@@ -50,6 +50,7 @@ import (
 //				DisplayName:                     pulumi.StringRef(sqlCollectionDisplayName),
 //				SqlCollectionId:                 pulumi.StringRef(testSqlCollection.Id),
 //				State:                           pulumi.StringRef(sqlCollectionState),
+//				TargetDatabaseGroupId:           pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                        pulumi.StringRef(testTarget.Id),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(sqlCollectionTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(sqlCollectionTimeCreatedLessThan),
@@ -89,6 +90,8 @@ type GetSqlCollectionsArgs struct {
 	SqlCollectionId *string `pulumi:"sqlCollectionId"`
 	// The current state of the SQL collection.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -118,7 +121,8 @@ type GetSqlCollectionsResult struct {
 	SqlCollectionCollections []GetSqlCollectionsSqlCollectionCollection `pulumi:"sqlCollectionCollections"`
 	SqlCollectionId          *string                                    `pulumi:"sqlCollectionId"`
 	// The current state of the SQL collection.
-	State *string `pulumi:"state"`
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId                        *string `pulumi:"targetId"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -151,6 +155,8 @@ type GetSqlCollectionsOutputArgs struct {
 	SqlCollectionId pulumi.StringPtrInput `pulumi:"sqlCollectionId"`
 	// The current state of the SQL collection.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -228,6 +234,10 @@ func (o GetSqlCollectionsResultOutput) SqlCollectionId() pulumi.StringPtrOutput 
 // The current state of the SQL collection.
 func (o GetSqlCollectionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlCollectionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSqlCollectionsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target corresponding to the security policy deployment.

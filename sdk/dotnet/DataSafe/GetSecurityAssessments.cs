@@ -51,7 +51,10 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
         ///         ScheduleAssessmentId = testScheduleAssessment.Id,
         ///         State = securityAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityAssessmentTargetType,
+        ///         TemplateAssessmentId = testTemplateAssessment.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = securityAssessmentTriggeredBy,
@@ -104,7 +107,10 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
         ///         ScheduleAssessmentId = testScheduleAssessment.Id,
         ///         State = securityAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityAssessmentTargetType,
+        ///         TemplateAssessmentId = testTemplateAssessment.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = securityAssessmentTriggeredBy,
@@ -157,7 +163,10 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
         ///         ScheduleAssessmentId = testScheduleAssessment.Id,
         ///         State = securityAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityAssessmentTargetType,
+        ///         TemplateAssessmentId = testTemplateAssessment.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = securityAssessmentTriggeredBy,
@@ -231,10 +240,28 @@ namespace Pulumi.Oci.DataSafe
         public string? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public string? TargetId { get; set; }
+
+        /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
+
+        /// <summary>
+        /// The OCID of the security assessment of type TEMPLATE.
+        /// </summary>
+        [Input("templateAssessmentId")]
+        public string? TemplateAssessmentId { get; set; }
 
         /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -329,10 +356,28 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
+        /// <summary>
+        /// The OCID of the security assessment of type TEMPLATE.
+        /// </summary>
+        [Input("templateAssessmentId")]
+        public Input<string>? TemplateAssessmentId { get; set; }
 
         /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -401,7 +446,19 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the security assessment.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The OCID of the target database group that the group assessment is created for.
+        /// </summary>
+        public readonly string? TargetDatabaseGroupId;
         public readonly string? TargetId;
+        /// <summary>
+        /// Indicates whether the security assessment is for a target database or a target database group.
+        /// </summary>
+        public readonly string? TargetType;
+        /// <summary>
+        /// The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+        /// </summary>
+        public readonly string? TemplateAssessmentId;
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
         /// <summary>
@@ -409,7 +466,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? TriggeredBy;
         /// <summary>
-        /// The type of this security assessment. The possible types are:
+        /// The type of the security assessment. Possible values are:
         /// </summary>
         public readonly string? Type;
 
@@ -437,7 +494,13 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId,
+
+            string? targetType,
+
+            string? templateAssessmentId,
 
             string? timeCreatedGreaterThanOrEqualTo,
 
@@ -458,7 +521,10 @@ namespace Pulumi.Oci.DataSafe
             ScheduleAssessmentId = scheduleAssessmentId;
             SecurityAssessments = securityAssessments;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
+            TargetType = targetType;
+            TemplateAssessmentId = templateAssessmentId;
             TimeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             TimeCreatedLessThan = timeCreatedLessThan;
             TriggeredBy = triggeredBy;

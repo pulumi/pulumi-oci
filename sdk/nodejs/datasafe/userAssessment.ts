@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     },
  *     isAssessmentScheduled: userAssessmentIsAssessmentScheduled,
  *     schedule: userAssessmentSchedule,
+ *     targetType: userAssessmentTargetType,
  * });
  * ```
  *
@@ -142,17 +143,25 @@ export class UserAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The OCID of the target database on which the user assessment is to be run.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of target database group.
+     */
+    public /*out*/ readonly targetDatabaseGroupId!: pulumi.Output<string>;
+    /**
+     * The OCID of the target database or target database group on which user assessment is to be run.
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
      * Array of database target OCIDs.
      */
     public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly targetType!: pulumi.Output<string>;
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
@@ -204,8 +213,10 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["statistics"] = state ? state.statistics : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["targetDatabaseGroupId"] = state ? state.targetDatabaseGroupId : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["targetIds"] = state ? state.targetIds : undefined;
+            resourceInputs["targetType"] = state ? state.targetType : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeLastAssessed"] = state ? state.timeLastAssessed : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -227,6 +238,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["isAssessmentScheduled"] = args ? args.isAssessmentScheduled : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["targetType"] = args ? args.targetType : undefined;
             resourceInputs["ignoredAssessmentIds"] = undefined /*out*/;
             resourceInputs["ignoredTargets"] = undefined /*out*/;
             resourceInputs["isBaseline"] = undefined /*out*/;
@@ -237,6 +249,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["statistics"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["targetDatabaseGroupId"] = undefined /*out*/;
             resourceInputs["targetIds"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastAssessed"] = undefined /*out*/;
@@ -324,17 +337,25 @@ export interface UserAssessmentState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The OCID of the target database on which the user assessment is to be run.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of target database group.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
+    /**
+     * The OCID of the target database or target database group on which user assessment is to be run.
      */
     targetId?: pulumi.Input<string>;
     /**
      * Array of database target OCIDs.
      */
     targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    targetType?: pulumi.Input<string>;
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
@@ -392,11 +413,15 @@ export interface UserAssessmentArgs {
      */
     schedule?: pulumi.Input<string>;
     /**
-     * The OCID of the target database on which the user assessment is to be run.
+     * The OCID of the target database or target database group on which user assessment is to be run.
+     */
+    targetId: pulumi.Input<string>;
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetId: pulumi.Input<string>;
+    targetType?: pulumi.Input<string>;
 }

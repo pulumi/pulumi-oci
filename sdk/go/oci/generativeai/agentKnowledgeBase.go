@@ -14,8 +14,6 @@ import (
 
 // This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **CreateKnowledgeBase**
-//
 // Creates a knowledge base.
 //
 // ## Example Usage
@@ -104,10 +102,10 @@ type AgentKnowledgeBase struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) **IndexConfig**
-	//
-	// The index configuration of Knowledge bases.
+	// (Updatable) The index configuration of Knowledge bases.
 	IndexConfig AgentKnowledgeBaseIndexConfigOutput `pulumi:"indexConfig"`
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput `pulumi:"knowledgeBaseStatistics"`
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the knowledge base.
@@ -166,10 +164,10 @@ type agentKnowledgeBaseState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) **IndexConfig**
-	//
-	// The index configuration of Knowledge bases.
+	// (Updatable) The index configuration of Knowledge bases.
 	IndexConfig *AgentKnowledgeBaseIndexConfig `pulumi:"indexConfig"`
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics []AgentKnowledgeBaseKnowledgeBaseStatistic `pulumi:"knowledgeBaseStatistics"`
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the knowledge base.
@@ -193,10 +191,10 @@ type AgentKnowledgeBaseState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) **IndexConfig**
-	//
-	// The index configuration of Knowledge bases.
+	// (Updatable) The index configuration of Knowledge bases.
 	IndexConfig AgentKnowledgeBaseIndexConfigPtrInput
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics AgentKnowledgeBaseKnowledgeBaseStatisticArrayInput
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the knowledge base.
@@ -224,9 +222,7 @@ type agentKnowledgeBaseArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) **IndexConfig**
-	//
-	// The index configuration of Knowledge bases.
+	// (Updatable) The index configuration of Knowledge bases.
 	IndexConfig AgentKnowledgeBaseIndexConfig `pulumi:"indexConfig"`
 }
 
@@ -242,9 +238,7 @@ type AgentKnowledgeBaseArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) **IndexConfig**
-	//
-	// The index configuration of Knowledge bases.
+	// (Updatable) The index configuration of Knowledge bases.
 	IndexConfig AgentKnowledgeBaseIndexConfigInput
 }
 
@@ -360,11 +354,16 @@ func (o AgentKnowledgeBaseOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) **IndexConfig**
-//
-// The index configuration of Knowledge bases.
+// (Updatable) The index configuration of Knowledge bases.
 func (o AgentKnowledgeBaseOutput) IndexConfig() AgentKnowledgeBaseIndexConfigOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBase) AgentKnowledgeBaseIndexConfigOutput { return v.IndexConfig }).(AgentKnowledgeBaseIndexConfigOutput)
+}
+
+// Statistics for Default Knowledge Base.
+func (o AgentKnowledgeBaseOutput) KnowledgeBaseStatistics() AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o.ApplyT(func(v *AgentKnowledgeBase) AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+		return v.KnowledgeBaseStatistics
+	}).(AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput)
 }
 
 // A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

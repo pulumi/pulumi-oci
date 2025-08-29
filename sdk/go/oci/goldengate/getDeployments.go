@@ -33,6 +33,7 @@ import (
 //				CompartmentId:           compartmentId,
 //				AssignableConnectionId:  pulumi.StringRef(testConnection.Id),
 //				AssignedConnectionId:    pulumi.StringRef(testConnection.Id),
+//				DeploymentType:          pulumi.StringRef(deploymentDeploymentType),
 //				DisplayName:             pulumi.StringRef(deploymentDisplayName),
 //				Fqdn:                    pulumi.StringRef(deploymentFqdn),
 //				LifecycleSubState:       pulumi.StringRef(deploymentLifecycleSubState),
@@ -65,6 +66,8 @@ type GetDeploymentsArgs struct {
 	AssignedConnectionId *string `pulumi:"assignedConnectionId"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
+	// A filter that returns only the resources matching the specified 'deploymentType'.
+	DeploymentType *string `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetDeploymentsFilter `pulumi:"filters"`
@@ -86,6 +89,8 @@ type GetDeploymentsResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of deployment_collection.
 	DeploymentCollections []GetDeploymentsDeploymentCollection `pulumi:"deploymentCollections"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType *string `pulumi:"deploymentType"`
 	// An object's Display Name.
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetDeploymentsFilter `pulumi:"filters"`
@@ -117,6 +122,8 @@ type GetDeploymentsOutputArgs struct {
 	AssignedConnectionId pulumi.StringPtrInput `pulumi:"assignedConnectionId"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter that returns only the resources matching the specified 'deploymentType'.
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput          `pulumi:"displayName"`
 	Filters     GetDeploymentsFilterArrayInput `pulumi:"filters"`
@@ -165,6 +172,11 @@ func (o GetDeploymentsResultOutput) CompartmentId() pulumi.StringOutput {
 // The list of deployment_collection.
 func (o GetDeploymentsResultOutput) DeploymentCollections() GetDeploymentsDeploymentCollectionArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsResult) []GetDeploymentsDeploymentCollection { return v.DeploymentCollections }).(GetDeploymentsDeploymentCollectionArrayOutput)
+}
+
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+func (o GetDeploymentsResultOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentsResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // An object's Display Name.

@@ -18,6 +18,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
      */
     private String backupSchedule;
     /**
+     * @return A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * 
+     */
+    private List<String> excludeNamespaces;
+    /**
      * @return The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
      * 
      */
@@ -28,7 +33,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
      */
     private Integer maxNumberOfBackupsRetained;
     /**
-     * @return A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+     * @return A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
      * 
      */
     private List<String> namespaces;
@@ -47,6 +52,13 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
         return this.backupSchedule;
     }
     /**
+     * @return A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * 
+     */
+    public List<String> excludeNamespaces() {
+        return this.excludeNamespaces;
+    }
+    /**
      * @return The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
      * 
      */
@@ -61,7 +73,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
         return this.maxNumberOfBackupsRetained;
     }
     /**
-     * @return A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+     * @return A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
      * 
      */
     public List<String> namespaces() {
@@ -85,6 +97,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
     @CustomType.Builder
     public static final class Builder {
         private String backupSchedule;
+        private List<String> excludeNamespaces;
         private String imageReplicationVaultSecretId;
         private Integer maxNumberOfBackupsRetained;
         private List<String> namespaces;
@@ -93,6 +106,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
         public Builder(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupSchedule = defaults.backupSchedule;
+    	      this.excludeNamespaces = defaults.excludeNamespaces;
     	      this.imageReplicationVaultSecretId = defaults.imageReplicationVaultSecretId;
     	      this.maxNumberOfBackupsRetained = defaults.maxNumberOfBackupsRetained;
     	      this.namespaces = defaults.namespaces;
@@ -106,6 +120,17 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
             }
             this.backupSchedule = backupSchedule;
             return this;
+        }
+        @CustomType.Setter
+        public Builder excludeNamespaces(List<String> excludeNamespaces) {
+            if (excludeNamespaces == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig", "excludeNamespaces");
+            }
+            this.excludeNamespaces = excludeNamespaces;
+            return this;
+        }
+        public Builder excludeNamespaces(String... excludeNamespaces) {
+            return excludeNamespaces(List.of(excludeNamespaces));
         }
         @CustomType.Setter
         public Builder imageReplicationVaultSecretId(String imageReplicationVaultSecretId) {
@@ -145,6 +170,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig build() {
             final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig();
             _resultValue.backupSchedule = backupSchedule;
+            _resultValue.excludeNamespaces = excludeNamespaces;
             _resultValue.imageReplicationVaultSecretId = imageReplicationVaultSecretId;
             _resultValue.maxNumberOfBackupsRetained = maxNumberOfBackupsRetained;
             _resultValue.namespaces = namespaces;

@@ -38,6 +38,8 @@ __all__ = [
     'DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails',
     'DrProtectionGroupMemberBlockVolumeOperationMountDetails',
     'DrProtectionGroupMemberCommonDestinationKey',
+    'DrProtectionGroupMemberDbSystemAdminUserDetails',
+    'DrProtectionGroupMemberDbSystemReplicationUserDetails',
     'DrProtectionGroupMemberDestinationEncryptionKey',
     'DrProtectionGroupMemberExportMapping',
     'DrProtectionGroupMemberFileSystemOperation',
@@ -88,6 +90,8 @@ __all__ = [
     'GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult',
     'GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult',
     'GetDrProtectionGroupMemberCommonDestinationKeyResult',
+    'GetDrProtectionGroupMemberDbSystemAdminUserDetailResult',
+    'GetDrProtectionGroupMemberDbSystemReplicationUserDetailResult',
     'GetDrProtectionGroupMemberDestinationEncryptionKeyResult',
     'GetDrProtectionGroupMemberExportMappingResult',
     'GetDrProtectionGroupMemberFileSystemOperationResult',
@@ -116,6 +120,8 @@ __all__ = [
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetailResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult',
+    'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult',
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult',
@@ -1185,6 +1191,10 @@ class DrProtectionGroupMember(dict):
             suggest = "common_destination_key"
         elif key == "connectionStringType":
             suggest = "connection_string_type"
+        elif key == "dbSystemAdminUserDetails":
+            suggest = "db_system_admin_user_details"
+        elif key == "dbSystemReplicationUserDetails":
+            suggest = "db_system_replication_user_details"
         elif key == "destinationAvailabilityDomain":
             suggest = "destination_availability_domain"
         elif key == "destinationBackupPolicyId":
@@ -1207,6 +1217,10 @@ class DrProtectionGroupMember(dict):
             suggest = "export_mappings"
         elif key == "fileSystemOperations":
             suggest = "file_system_operations"
+        elif key == "gtidReconciliationTimeout":
+            suggest = "gtid_reconciliation_timeout"
+        elif key == "isContinueOnGtidReconciliationTimeout":
+            suggest = "is_continue_on_gtid_reconciliation_timeout"
         elif key == "isMovable":
             suggest = "is_movable"
         elif key == "isRetainFaultDomain":
@@ -1225,6 +1239,8 @@ class DrProtectionGroupMember(dict):
             suggest = "password_vault_secret_id"
         elif key == "peerClusterId":
             suggest = "peer_cluster_id"
+        elif key == "peerDbSystemId":
+            suggest = "peer_db_system_id"
         elif key == "sourceVolumeToDestinationEncryptionKeyMappings":
             suggest = "source_volume_to_destination_encryption_key_mappings"
         elif key == "vaultMappings":
@@ -1259,6 +1275,8 @@ class DrProtectionGroupMember(dict):
                  bucket: Optional[_builtins.str] = None,
                  common_destination_key: Optional['outputs.DrProtectionGroupMemberCommonDestinationKey'] = None,
                  connection_string_type: Optional[_builtins.str] = None,
+                 db_system_admin_user_details: Optional['outputs.DrProtectionGroupMemberDbSystemAdminUserDetails'] = None,
+                 db_system_replication_user_details: Optional['outputs.DrProtectionGroupMemberDbSystemReplicationUserDetails'] = None,
                  destination_availability_domain: Optional[_builtins.str] = None,
                  destination_backup_policy_id: Optional[_builtins.str] = None,
                  destination_capacity_reservation_id: Optional[_builtins.str] = None,
@@ -1270,6 +1288,8 @@ class DrProtectionGroupMember(dict):
                  destination_snapshot_policy_id: Optional[_builtins.str] = None,
                  export_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberExportMapping']] = None,
                  file_system_operations: Optional[Sequence['outputs.DrProtectionGroupMemberFileSystemOperation']] = None,
+                 gtid_reconciliation_timeout: Optional[_builtins.int] = None,
+                 is_continue_on_gtid_reconciliation_timeout: Optional[_builtins.bool] = None,
                  is_movable: Optional[_builtins.bool] = None,
                  is_retain_fault_domain: Optional[_builtins.bool] = None,
                  is_start_stop_enabled: Optional[_builtins.bool] = None,
@@ -1280,6 +1300,7 @@ class DrProtectionGroupMember(dict):
                  network_load_balancer_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberNetworkLoadBalancerMapping']] = None,
                  password_vault_secret_id: Optional[_builtins.str] = None,
                  peer_cluster_id: Optional[_builtins.str] = None,
+                 peer_db_system_id: Optional[_builtins.str] = None,
                  source_volume_to_destination_encryption_key_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping']] = None,
                  vault_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberVaultMapping']] = None,
                  virtual_node_pool_configs: Optional[Sequence['outputs.DrProtectionGroupMemberVirtualNodePoolConfig']] = None,
@@ -1297,6 +1318,8 @@ class DrProtectionGroupMember(dict):
         :param _builtins.str bucket: (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param 'DrProtectionGroupMemberCommonDestinationKeyArgs' common_destination_key: (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
         :param _builtins.str connection_string_type: (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param 'DrProtectionGroupMemberDbSystemAdminUserDetailsArgs' db_system_admin_user_details: (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+        :param 'DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs' db_system_replication_user_details: (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
         :param _builtins.str destination_availability_domain: (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         :param _builtins.str destination_backup_policy_id: (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param _builtins.str destination_capacity_reservation_id: (Updatable) The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -1308,6 +1331,8 @@ class DrProtectionGroupMember(dict):
         :param _builtins.str destination_snapshot_policy_id: (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['DrProtectionGroupMemberExportMappingArgs'] export_mappings: (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
         :param Sequence['DrProtectionGroupMemberFileSystemOperationArgs'] file_system_operations: (Updatable) A list of operations performed on file systems used by the compute instance.
+        :param _builtins.int gtid_reconciliation_timeout: (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        :param _builtins.bool is_continue_on_gtid_reconciliation_timeout: (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
         :param _builtins.bool is_movable: (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         :param _builtins.bool is_retain_fault_domain: (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         :param _builtins.bool is_start_stop_enabled: (Updatable) A flag indicating whether the non-movable compute instance should be started and stopped during DR operations. *Prechecks cannot be executed on stopped instances that are configured to be started.*
@@ -1318,6 +1343,7 @@ class DrProtectionGroupMember(dict):
         :param Sequence['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param _builtins.str password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param _builtins.str peer_cluster_id: (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
+        :param _builtins.str peer_db_system_id: (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
         :param Sequence['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
                
                If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -1348,6 +1374,10 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "common_destination_key", common_destination_key)
         if connection_string_type is not None:
             pulumi.set(__self__, "connection_string_type", connection_string_type)
+        if db_system_admin_user_details is not None:
+            pulumi.set(__self__, "db_system_admin_user_details", db_system_admin_user_details)
+        if db_system_replication_user_details is not None:
+            pulumi.set(__self__, "db_system_replication_user_details", db_system_replication_user_details)
         if destination_availability_domain is not None:
             pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         if destination_backup_policy_id is not None:
@@ -1370,6 +1400,10 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "export_mappings", export_mappings)
         if file_system_operations is not None:
             pulumi.set(__self__, "file_system_operations", file_system_operations)
+        if gtid_reconciliation_timeout is not None:
+            pulumi.set(__self__, "gtid_reconciliation_timeout", gtid_reconciliation_timeout)
+        if is_continue_on_gtid_reconciliation_timeout is not None:
+            pulumi.set(__self__, "is_continue_on_gtid_reconciliation_timeout", is_continue_on_gtid_reconciliation_timeout)
         if is_movable is not None:
             pulumi.set(__self__, "is_movable", is_movable)
         if is_retain_fault_domain is not None:
@@ -1390,6 +1424,8 @@ class DrProtectionGroupMember(dict):
             pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         if peer_cluster_id is not None:
             pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        if peer_db_system_id is not None:
+            pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
         if source_volume_to_destination_encryption_key_mappings is not None:
             pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         if vault_mappings is not None:
@@ -1490,6 +1526,22 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "connection_string_type")
 
     @_builtins.property
+    @pulumi.getter(name="dbSystemAdminUserDetails")
+    def db_system_admin_user_details(self) -> Optional['outputs.DrProtectionGroupMemberDbSystemAdminUserDetails']:
+        """
+        (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_admin_user_details")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemReplicationUserDetails")
+    def db_system_replication_user_details(self) -> Optional['outputs.DrProtectionGroupMemberDbSystemReplicationUserDetails']:
+        """
+        (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_replication_user_details")
+
+    @_builtins.property
     @pulumi.getter(name="destinationAvailabilityDomain")
     def destination_availability_domain(self) -> Optional[_builtins.str]:
         """
@@ -1578,6 +1630,22 @@ class DrProtectionGroupMember(dict):
         return pulumi.get(self, "file_system_operations")
 
     @_builtins.property
+    @pulumi.getter(name="gtidReconciliationTimeout")
+    def gtid_reconciliation_timeout(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        """
+        return pulumi.get(self, "gtid_reconciliation_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="isContinueOnGtidReconciliationTimeout")
+    def is_continue_on_gtid_reconciliation_timeout(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        """
+        return pulumi.get(self, "is_continue_on_gtid_reconciliation_timeout")
+
+    @_builtins.property
     @pulumi.getter(name="isMovable")
     def is_movable(self) -> Optional[_builtins.bool]:
         """
@@ -1656,6 +1724,14 @@ class DrProtectionGroupMember(dict):
         (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="peerDbSystemId")
+    def peer_db_system_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        """
+        return pulumi.get(self, "peer_db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
@@ -1773,6 +1849,8 @@ class DrProtectionGroupMemberBackupConfig(dict):
         suggest = None
         if key == "backupSchedule":
             suggest = "backup_schedule"
+        elif key == "excludeNamespaces":
+            suggest = "exclude_namespaces"
         elif key == "imageReplicationVaultSecretId":
             suggest = "image_replication_vault_secret_id"
         elif key == "maxNumberOfBackupsRetained":
@@ -1793,6 +1871,7 @@ class DrProtectionGroupMemberBackupConfig(dict):
 
     def __init__(__self__, *,
                  backup_schedule: Optional[_builtins.str] = None,
+                 exclude_namespaces: Optional[Sequence[_builtins.str]] = None,
                  image_replication_vault_secret_id: Optional[_builtins.str] = None,
                  max_number_of_backups_retained: Optional[_builtins.int] = None,
                  namespaces: Optional[Sequence[_builtins.str]] = None,
@@ -1813,13 +1892,16 @@ class DrProtectionGroupMemberBackupConfig(dict):
                Examples:  FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=1 > Run a backup every Monday and Wednesday at 10:00 AM. FREQ=WEEKLY;BYDAY=MO,WE;BYHOUR=10;INTERVAL=2 > Invalid configuration (Cannot specify an interval of 2).
                
                FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
+        :param Sequence[_builtins.str] exclude_namespaces: (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
         :param _builtins.str image_replication_vault_secret_id: (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         :param _builtins.int max_number_of_backups_retained: (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
-        :param Sequence[_builtins.str] namespaces: (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        :param Sequence[_builtins.str] namespaces: (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         :param _builtins.str replicate_images: (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
         """
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
+        if exclude_namespaces is not None:
+            pulumi.set(__self__, "exclude_namespaces", exclude_namespaces)
         if image_replication_vault_secret_id is not None:
             pulumi.set(__self__, "image_replication_vault_secret_id", image_replication_vault_secret_id)
         if max_number_of_backups_retained is not None:
@@ -1852,6 +1934,14 @@ class DrProtectionGroupMemberBackupConfig(dict):
         return pulumi.get(self, "backup_schedule")
 
     @_builtins.property
+    @pulumi.getter(name="excludeNamespaces")
+    def exclude_namespaces(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+        """
+        return pulumi.get(self, "exclude_namespaces")
+
+    @_builtins.property
     @pulumi.getter(name="imageReplicationVaultSecretId")
     def image_replication_vault_secret_id(self) -> Optional[_builtins.str]:
         """
@@ -1871,7 +1961,7 @@ class DrProtectionGroupMemberBackupConfig(dict):
     @pulumi.getter
     def namespaces(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         """
         return pulumi.get(self, "namespaces")
 
@@ -2228,6 +2318,102 @@ class DrProtectionGroupMemberCommonDestinationKey(dict):
         (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberDbSystemAdminUserDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordVaultSecretId":
+            suggest = "password_vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberDbSystemAdminUserDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberDbSystemAdminUserDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberDbSystemAdminUserDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password_vault_secret_id: Optional[_builtins.str] = None,
+                 username: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str password_vault_secret_id: (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        if password_vault_secret_id is not None:
+            pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class DrProtectionGroupMemberDbSystemReplicationUserDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordVaultSecretId":
+            suggest = "password_vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrProtectionGroupMemberDbSystemReplicationUserDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrProtectionGroupMemberDbSystemReplicationUserDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrProtectionGroupMemberDbSystemReplicationUserDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password_vault_secret_id: Optional[_builtins.str] = None,
+                 username: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str password_vault_secret_id: (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        if password_vault_secret_id is not None:
+            pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
 
 
 @pulumi.output_type
@@ -4954,6 +5140,8 @@ class GetDrProtectionGroupMemberResult(dict):
                  bucket: _builtins.str,
                  common_destination_keys: Sequence['outputs.GetDrProtectionGroupMemberCommonDestinationKeyResult'],
                  connection_string_type: _builtins.str,
+                 db_system_admin_user_details: Sequence['outputs.GetDrProtectionGroupMemberDbSystemAdminUserDetailResult'],
+                 db_system_replication_user_details: Sequence['outputs.GetDrProtectionGroupMemberDbSystemReplicationUserDetailResult'],
                  destination_availability_domain: _builtins.str,
                  destination_backup_policy_id: _builtins.str,
                  destination_capacity_reservation_id: _builtins.str,
@@ -4965,6 +5153,8 @@ class GetDrProtectionGroupMemberResult(dict):
                  destination_snapshot_policy_id: _builtins.str,
                  export_mappings: Sequence['outputs.GetDrProtectionGroupMemberExportMappingResult'],
                  file_system_operations: Sequence['outputs.GetDrProtectionGroupMemberFileSystemOperationResult'],
+                 gtid_reconciliation_timeout: _builtins.int,
+                 is_continue_on_gtid_reconciliation_timeout: _builtins.bool,
                  is_movable: _builtins.bool,
                  is_retain_fault_domain: _builtins.bool,
                  is_start_stop_enabled: _builtins.bool,
@@ -4977,6 +5167,7 @@ class GetDrProtectionGroupMemberResult(dict):
                  network_load_balancer_mappings: Sequence['outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMappingResult'],
                  password_vault_secret_id: _builtins.str,
                  peer_cluster_id: _builtins.str,
+                 peer_db_system_id: _builtins.str,
                  source_volume_to_destination_encryption_key_mappings: Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult'],
                  vault_mappings: Sequence['outputs.GetDrProtectionGroupMemberVaultMappingResult'],
                  virtual_node_pool_configs: Sequence['outputs.GetDrProtectionGroupMemberVirtualNodePoolConfigResult'],
@@ -4992,6 +5183,8 @@ class GetDrProtectionGroupMemberResult(dict):
         :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
         :param Sequence['GetDrProtectionGroupMemberCommonDestinationKeyArgs'] common_destination_keys: The OCID of a vault and customer-managed encryption key in the destination region.
         :param _builtins.str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param Sequence['GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs'] db_system_admin_user_details: The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+        :param Sequence['GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs'] db_system_replication_user_details: The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
         :param _builtins.str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param _builtins.str destination_backup_policy_id: The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param _builtins.str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -5003,6 +5196,8 @@ class GetDrProtectionGroupMemberResult(dict):
         :param _builtins.str destination_snapshot_policy_id: The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupMemberExportMappingArgs'] export_mappings: A list of mappings between the primary region file system export and destination region mount target.
         :param Sequence['GetDrProtectionGroupMemberFileSystemOperationArgs'] file_system_operations: Operations performed on a list of file systems used on the non-movable compute instance.
+        :param _builtins.int gtid_reconciliation_timeout: The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        :param _builtins.bool is_continue_on_gtid_reconciliation_timeout: A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
         :param _builtins.bool is_movable: A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         :param _builtins.bool is_retain_fault_domain: A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         :param _builtins.bool is_start_stop_enabled: A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
@@ -5015,6 +5210,7 @@ class GetDrProtectionGroupMemberResult(dict):
         :param Sequence['GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param _builtins.str peer_cluster_id: The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+        :param _builtins.str peer_db_system_id: The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         :param Sequence['GetDrProtectionGroupMemberVaultMappingArgs'] vault_mappings: The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param Sequence['GetDrProtectionGroupMemberVirtualNodePoolConfigArgs'] virtual_node_pool_configs: The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -5030,6 +5226,8 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "common_destination_keys", common_destination_keys)
         pulumi.set(__self__, "connection_string_type", connection_string_type)
+        pulumi.set(__self__, "db_system_admin_user_details", db_system_admin_user_details)
+        pulumi.set(__self__, "db_system_replication_user_details", db_system_replication_user_details)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         pulumi.set(__self__, "destination_backup_policy_id", destination_backup_policy_id)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
@@ -5041,6 +5239,8 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
         pulumi.set(__self__, "export_mappings", export_mappings)
         pulumi.set(__self__, "file_system_operations", file_system_operations)
+        pulumi.set(__self__, "gtid_reconciliation_timeout", gtid_reconciliation_timeout)
+        pulumi.set(__self__, "is_continue_on_gtid_reconciliation_timeout", is_continue_on_gtid_reconciliation_timeout)
         pulumi.set(__self__, "is_movable", is_movable)
         pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
@@ -5053,6 +5253,7 @@ class GetDrProtectionGroupMemberResult(dict):
         pulumi.set(__self__, "network_load_balancer_mappings", network_load_balancer_mappings)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
         pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         pulumi.set(__self__, "vault_mappings", vault_mappings)
         pulumi.set(__self__, "virtual_node_pool_configs", virtual_node_pool_configs)
@@ -5130,6 +5331,22 @@ class GetDrProtectionGroupMemberResult(dict):
         The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemAdminUserDetails")
+    def db_system_admin_user_details(self) -> Sequence['outputs.GetDrProtectionGroupMemberDbSystemAdminUserDetailResult']:
+        """
+        The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_admin_user_details")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemReplicationUserDetails")
+    def db_system_replication_user_details(self) -> Sequence['outputs.GetDrProtectionGroupMemberDbSystemReplicationUserDetailResult']:
+        """
+        The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_replication_user_details")
 
     @_builtins.property
     @pulumi.getter(name="destinationAvailabilityDomain")
@@ -5218,6 +5435,22 @@ class GetDrProtectionGroupMemberResult(dict):
         Operations performed on a list of file systems used on the non-movable compute instance.
         """
         return pulumi.get(self, "file_system_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="gtidReconciliationTimeout")
+    def gtid_reconciliation_timeout(self) -> _builtins.int:
+        """
+        The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        """
+        return pulumi.get(self, "gtid_reconciliation_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="isContinueOnGtidReconciliationTimeout")
+    def is_continue_on_gtid_reconciliation_timeout(self) -> _builtins.bool:
+        """
+        A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        """
+        return pulumi.get(self, "is_continue_on_gtid_reconciliation_timeout")
 
     @_builtins.property
     @pulumi.getter(name="isMovable")
@@ -5316,6 +5549,14 @@ class GetDrProtectionGroupMemberResult(dict):
         return pulumi.get(self, "peer_cluster_id")
 
     @_builtins.property
+    @pulumi.getter(name="peerDbSystemId")
+    def peer_db_system_id(self) -> _builtins.str:
+        """
+        The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        """
+        return pulumi.get(self, "peer_db_system_id")
+
+    @_builtins.property
     @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
     def source_volume_to_destination_encryption_key_mappings(self) -> Sequence['outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult']:
         """
@@ -5400,18 +5641,21 @@ class GetDrProtectionGroupMemberBackendSetMappingResult(dict):
 class GetDrProtectionGroupMemberBackupConfigResult(dict):
     def __init__(__self__, *,
                  backup_schedule: _builtins.str,
+                 exclude_namespaces: Sequence[_builtins.str],
                  image_replication_vault_secret_id: _builtins.str,
                  max_number_of_backups_retained: _builtins.int,
                  namespaces: Sequence[_builtins.str],
                  replicate_images: _builtins.str):
         """
         :param _builtins.str backup_schedule: The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+        :param Sequence[_builtins.str] exclude_namespaces: A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
         :param _builtins.str image_replication_vault_secret_id: The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         :param _builtins.int max_number_of_backups_retained: The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
-        :param Sequence[_builtins.str] namespaces: A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        :param Sequence[_builtins.str] namespaces: A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         :param _builtins.str replicate_images: Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
         """
         pulumi.set(__self__, "backup_schedule", backup_schedule)
+        pulumi.set(__self__, "exclude_namespaces", exclude_namespaces)
         pulumi.set(__self__, "image_replication_vault_secret_id", image_replication_vault_secret_id)
         pulumi.set(__self__, "max_number_of_backups_retained", max_number_of_backups_retained)
         pulumi.set(__self__, "namespaces", namespaces)
@@ -5424,6 +5668,14 @@ class GetDrProtectionGroupMemberBackupConfigResult(dict):
         The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
         """
         return pulumi.get(self, "backup_schedule")
+
+    @_builtins.property
+    @pulumi.getter(name="excludeNamespaces")
+    def exclude_namespaces(self) -> Sequence[_builtins.str]:
+        """
+        A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+        """
+        return pulumi.get(self, "exclude_namespaces")
 
     @_builtins.property
     @pulumi.getter(name="imageReplicationVaultSecretId")
@@ -5445,7 +5697,7 @@ class GetDrProtectionGroupMemberBackupConfigResult(dict):
     @pulumi.getter
     def namespaces(self) -> Sequence[_builtins.str]:
         """
-        A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         """
         return pulumi.get(self, "namespaces")
 
@@ -5677,6 +5929,64 @@ class GetDrProtectionGroupMemberCommonDestinationKeyResult(dict):
         The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberDbSystemAdminUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_vault_secret_id: _builtins.str,
+                 username: _builtins.str):
+        """
+        :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupMemberDbSystemReplicationUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_vault_secret_id: _builtins.str,
+                 username: _builtins.str):
+        """
+        :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
 
 
 @pulumi.output_type
@@ -6389,7 +6699,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
                  namespace: _builtins.str,
                  object: _builtins.str):
         """
-        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
         :param _builtins.str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param _builtins.str object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
@@ -6401,7 +6711,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The bucket name inside the object storage namespace.  Example: `bucket_name`
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -6434,6 +6744,8 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  bucket: _builtins.str,
                  common_destination_keys: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult'],
                  connection_string_type: _builtins.str,
+                 db_system_admin_user_details: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult'],
+                 db_system_replication_user_details: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult'],
                  destination_availability_domain: _builtins.str,
                  destination_backup_policy_id: _builtins.str,
                  destination_capacity_reservation_id: _builtins.str,
@@ -6445,6 +6757,8 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  destination_snapshot_policy_id: _builtins.str,
                  export_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult'],
                  file_system_operations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult'],
+                 gtid_reconciliation_timeout: _builtins.int,
+                 is_continue_on_gtid_reconciliation_timeout: _builtins.bool,
                  is_movable: _builtins.bool,
                  is_retain_fault_domain: _builtins.bool,
                  is_start_stop_enabled: _builtins.bool,
@@ -6457,6 +6771,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
                  network_load_balancer_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingResult'],
                  password_vault_secret_id: _builtins.str,
                  peer_cluster_id: _builtins.str,
+                 peer_db_system_id: _builtins.str,
                  source_volume_to_destination_encryption_key_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult'],
                  vault_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingResult'],
                  virtual_node_pool_configs: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigResult'],
@@ -6469,8 +6784,10 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs'] backup_locations: The details for object storage backup location of an OKE Cluster
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArgs'] block_volume_attach_and_mount_operations: The details of the block volume operations performed on the non-movable compute instance.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArgs'] block_volume_operations: Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
-        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
         :param _builtins.str connection_string_type: The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs'] db_system_admin_user_details: The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+        :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs'] db_system_replication_user_details: The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
         :param _builtins.str destination_availability_domain: The availability domain of the destination mount target. Example: `BBTh:region-AD`
         :param _builtins.str destination_backup_policy_id: The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
         :param _builtins.str destination_capacity_reservation_id: The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
@@ -6482,6 +6799,8 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param _builtins.str destination_snapshot_policy_id: The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs'] export_mappings: A list of mappings between the primary region file system export and destination region mount target.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs'] file_system_operations: Operations performed on a list of file systems used on the non-movable compute instance.
+        :param _builtins.int gtid_reconciliation_timeout: The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        :param _builtins.bool is_continue_on_gtid_reconciliation_timeout: A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
         :param _builtins.bool is_movable: A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         :param _builtins.bool is_retain_fault_domain: A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         :param _builtins.bool is_start_stop_enabled: A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
@@ -6494,6 +6813,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs'] network_load_balancer_mappings: The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param _builtins.str peer_cluster_id: The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
+        :param _builtins.str peer_db_system_id: The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs'] source_volume_to_destination_encryption_key_mappings: A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingArgs'] vault_mappings: The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoolConfigArgs'] virtual_node_pool_configs: The list of node pools with configurations for minimum and maximum node counts. This property applies to the OKE cluster member in both the primary and standby region.
@@ -6509,6 +6829,8 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "common_destination_keys", common_destination_keys)
         pulumi.set(__self__, "connection_string_type", connection_string_type)
+        pulumi.set(__self__, "db_system_admin_user_details", db_system_admin_user_details)
+        pulumi.set(__self__, "db_system_replication_user_details", db_system_replication_user_details)
         pulumi.set(__self__, "destination_availability_domain", destination_availability_domain)
         pulumi.set(__self__, "destination_backup_policy_id", destination_backup_policy_id)
         pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
@@ -6520,6 +6842,8 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
         pulumi.set(__self__, "export_mappings", export_mappings)
         pulumi.set(__self__, "file_system_operations", file_system_operations)
+        pulumi.set(__self__, "gtid_reconciliation_timeout", gtid_reconciliation_timeout)
+        pulumi.set(__self__, "is_continue_on_gtid_reconciliation_timeout", is_continue_on_gtid_reconciliation_timeout)
         pulumi.set(__self__, "is_movable", is_movable)
         pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
         pulumi.set(__self__, "is_start_stop_enabled", is_start_stop_enabled)
@@ -6532,6 +6856,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         pulumi.set(__self__, "network_load_balancer_mappings", network_load_balancer_mappings)
         pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
         pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
+        pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
         pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         pulumi.set(__self__, "vault_mappings", vault_mappings)
         pulumi.set(__self__, "virtual_node_pool_configs", virtual_node_pool_configs)
@@ -6590,7 +6915,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The bucket name inside the object storage namespace.  Example: `bucket_name`
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -6606,6 +6931,22 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         """
         return pulumi.get(self, "connection_string_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemAdminUserDetails")
+    def db_system_admin_user_details(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult']:
+        """
+        The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_admin_user_details")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemReplicationUserDetails")
+    def db_system_replication_user_details(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult']:
+        """
+        The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+        """
+        return pulumi.get(self, "db_system_replication_user_details")
 
     @_builtins.property
     @pulumi.getter(name="destinationAvailabilityDomain")
@@ -6694,6 +7035,22 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         Operations performed on a list of file systems used on the non-movable compute instance.
         """
         return pulumi.get(self, "file_system_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="gtidReconciliationTimeout")
+    def gtid_reconciliation_timeout(self) -> _builtins.int:
+        """
+        The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        """
+        return pulumi.get(self, "gtid_reconciliation_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="isContinueOnGtidReconciliationTimeout")
+    def is_continue_on_gtid_reconciliation_timeout(self) -> _builtins.bool:
+        """
+        A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        """
+        return pulumi.get(self, "is_continue_on_gtid_reconciliation_timeout")
 
     @_builtins.property
     @pulumi.getter(name="isMovable")
@@ -6792,6 +7149,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         return pulumi.get(self, "peer_cluster_id")
 
     @_builtins.property
+    @pulumi.getter(name="peerDbSystemId")
+    def peer_db_system_id(self) -> _builtins.str:
+        """
+        The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        """
+        return pulumi.get(self, "peer_db_system_id")
+
+    @_builtins.property
     @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
     def source_volume_to_destination_encryption_key_mappings(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult']:
         """
@@ -6876,18 +7241,21 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMappin
 class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigResult(dict):
     def __init__(__self__, *,
                  backup_schedule: _builtins.str,
+                 exclude_namespaces: Sequence[_builtins.str],
                  image_replication_vault_secret_id: _builtins.str,
                  max_number_of_backups_retained: _builtins.int,
                  namespaces: Sequence[_builtins.str],
                  replicate_images: _builtins.str):
         """
         :param _builtins.str backup_schedule: The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+        :param Sequence[_builtins.str] exclude_namespaces: A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
         :param _builtins.str image_replication_vault_secret_id: The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         :param _builtins.int max_number_of_backups_retained: The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
-        :param Sequence[_builtins.str] namespaces: A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        :param Sequence[_builtins.str] namespaces: A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         :param _builtins.str replicate_images: Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
         """
         pulumi.set(__self__, "backup_schedule", backup_schedule)
+        pulumi.set(__self__, "exclude_namespaces", exclude_namespaces)
         pulumi.set(__self__, "image_replication_vault_secret_id", image_replication_vault_secret_id)
         pulumi.set(__self__, "max_number_of_backups_retained", max_number_of_backups_retained)
         pulumi.set(__self__, "namespaces", namespaces)
@@ -6900,6 +7268,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigResu
         The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
         """
         return pulumi.get(self, "backup_schedule")
+
+    @_builtins.property
+    @pulumi.getter(name="excludeNamespaces")
+    def exclude_namespaces(self) -> Sequence[_builtins.str]:
+        """
+        A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+        """
+        return pulumi.get(self, "exclude_namespaces")
 
     @_builtins.property
     @pulumi.getter(name="imageReplicationVaultSecretId")
@@ -6921,7 +7297,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigResu
     @pulumi.getter
     def namespaces(self) -> Sequence[_builtins.str]:
         """
-        A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         """
         return pulumi.get(self, "namespaces")
 
@@ -6941,7 +7317,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationRe
                  namespace: _builtins.str,
                  object: _builtins.str):
         """
-        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `bucket_name`
+        :param _builtins.str bucket: The bucket name inside the object storage namespace.  Example: `operation_logs`
         :param _builtins.str namespace: The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param _builtins.str object: The object name inside the object storage bucket.  Example: `switchover_plan_executions`
         """
@@ -6953,7 +7329,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationRe
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The bucket name inside the object storage namespace.  Example: `bucket_name`
+        The bucket name inside the object storage namespace.  Example: `operation_logs`
         """
         return pulumi.get(self, "bucket")
 
@@ -7153,6 +7529,64 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinatio
         The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_vault_secret_id: _builtins.str,
+                 username: _builtins.str):
+        """
+        :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_vault_secret_id: _builtins.str,
+                 username: _builtins.str):
+        """
+        :param _builtins.str password_vault_secret_id: The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        :param _builtins.str username: The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordVaultSecretId")
+    def password_vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+        """
+        return pulumi.get(self, "password_vault_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        """
+        return pulumi.get(self, "username")
 
 
 @pulumi.output_type

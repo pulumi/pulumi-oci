@@ -48,6 +48,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlCollectionAnalyticCompartmentIdInSubtree),
 //				GroupBies:              sqlCollectionAnalyticGroupBy,
 //				State:                  pulumi.StringRef(sqlCollectionAnalyticState),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //				TimeEnded:              pulumi.StringRef(sqlCollectionAnalyticTimeEnded),
 //				TimeStarted:            pulumi.StringRef(sqlCollectionAnalyticTimeStarted),
@@ -83,6 +84,8 @@ type GetSqlCollectionAnalyticsArgs struct {
 	GroupBies []string `pulumi:"groupBies"`
 	// The current state of the SQL collection.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 	// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -103,7 +106,8 @@ type GetSqlCollectionAnalyticsResult struct {
 	// The list of sql_collection_analytics_collection.
 	SqlCollectionAnalyticsCollections []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection `pulumi:"sqlCollectionAnalyticsCollections"`
 	// The current state of the SQL collection.
-	State *string `pulumi:"state"`
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId    *string `pulumi:"targetId"`
 	TimeEnded   *string `pulumi:"timeEnded"`
@@ -132,6 +136,8 @@ type GetSqlCollectionAnalyticsOutputArgs struct {
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// The current state of the SQL collection.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -194,6 +200,10 @@ func (o GetSqlCollectionAnalyticsResultOutput) SqlCollectionAnalyticsCollections
 // The current state of the SQL collection.
 func (o GetSqlCollectionAnalyticsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlCollectionAnalyticsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSqlCollectionAnalyticsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target corresponding to the security policy deployment.

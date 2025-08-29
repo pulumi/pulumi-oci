@@ -146,6 +146,21 @@ public final class GetSecurityPolicyDeploymentsArgs extends com.pulumi.resources
         return Optional.ofNullable(this.targetId);
     }
 
+    /**
+     * A optional filter to return only resources that belong to the specified target type.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return A optional filter to return only resources that belong to the specified target type.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
     private GetSecurityPolicyDeploymentsArgs() {}
 
     private GetSecurityPolicyDeploymentsArgs(GetSecurityPolicyDeploymentsArgs $) {
@@ -158,6 +173,7 @@ public final class GetSecurityPolicyDeploymentsArgs extends com.pulumi.resources
         this.securityPolicyId = $.securityPolicyId;
         this.state = $.state;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -357,6 +373,27 @@ public final class GetSecurityPolicyDeploymentsArgs extends com.pulumi.resources
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified target type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified target type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         public GetSecurityPolicyDeploymentsArgs build() {

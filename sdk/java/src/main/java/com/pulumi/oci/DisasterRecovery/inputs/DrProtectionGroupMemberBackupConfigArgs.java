@@ -61,6 +61,21 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
     }
 
     /**
+     * (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * 
+     */
+    @Import(name="excludeNamespaces")
+    private @Nullable Output<List<String>> excludeNamespaces;
+
+    /**
+     * @return (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * 
+     */
+    public Optional<Output<List<String>>> excludeNamespaces() {
+        return Optional.ofNullable(this.excludeNamespaces);
+    }
+
+    /**
      * (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
      * 
      */
@@ -91,14 +106,14 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+     * (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
      * 
      */
     @Import(name="namespaces")
     private @Nullable Output<List<String>> namespaces;
 
     /**
-     * @return (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+     * @return (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
      * 
      */
     public Optional<Output<List<String>>> namespaces() {
@@ -124,6 +139,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
 
     private DrProtectionGroupMemberBackupConfigArgs(DrProtectionGroupMemberBackupConfigArgs $) {
         this.backupSchedule = $.backupSchedule;
+        this.excludeNamespaces = $.excludeNamespaces;
         this.imageReplicationVaultSecretId = $.imageReplicationVaultSecretId;
         this.maxNumberOfBackupsRetained = $.maxNumberOfBackupsRetained;
         this.namespaces = $.namespaces;
@@ -198,6 +214,37 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
+         * @param excludeNamespaces (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder excludeNamespaces(@Nullable Output<List<String>> excludeNamespaces) {
+            $.excludeNamespaces = excludeNamespaces;
+            return this;
+        }
+
+        /**
+         * @param excludeNamespaces (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder excludeNamespaces(List<String> excludeNamespaces) {
+            return excludeNamespaces(Output.of(excludeNamespaces));
+        }
+
+        /**
+         * @param excludeNamespaces (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder excludeNamespaces(String... excludeNamespaces) {
+            return excludeNamespaces(List.of(excludeNamespaces));
+        }
+
+        /**
          * @param imageReplicationVaultSecretId (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
          * 
          * @return builder
@@ -240,7 +287,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param namespaces (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+         * @param namespaces (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
          * 
          * @return builder
          * 
@@ -251,7 +298,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param namespaces (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+         * @param namespaces (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
          * 
          * @return builder
          * 
@@ -261,7 +308,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param namespaces (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
+         * @param namespaces (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: [&#34;default&#34;, &#34;pv-nginx&#34;]
          * 
          * @return builder
          * 

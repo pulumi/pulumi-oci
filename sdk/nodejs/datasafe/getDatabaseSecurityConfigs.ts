@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeCreatedGreaterThanOrEqualTo: databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: databaseSecurityConfigTimeCreatedLessThan,
@@ -53,6 +54,7 @@ export function getDatabaseSecurityConfigs(args: GetDatabaseSecurityConfigsArgs,
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
@@ -88,6 +90,10 @@ export interface GetDatabaseSecurityConfigsArgs {
      * The current state of the database security configuration.
      */
     state?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -134,6 +140,7 @@ export interface GetDatabaseSecurityConfigsResult {
      * The current state of the database security config.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The target OCID corresponding to the database security config.
      */
@@ -172,6 +179,7 @@ export interface GetDatabaseSecurityConfigsResult {
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeCreatedGreaterThanOrEqualTo: databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: databaseSecurityConfigTimeCreatedLessThan,
@@ -188,6 +196,7 @@ export function getDatabaseSecurityConfigsOutput(args: GetDatabaseSecurityConfig
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
@@ -223,6 +232,10 @@ export interface GetDatabaseSecurityConfigsOutputArgs {
      * The current state of the database security configuration.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

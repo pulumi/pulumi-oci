@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     dbSystemShape: dbVersionDbSystemShape,
  *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
  *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });
  * ```
@@ -36,6 +37,7 @@ export function getDbVersions(args: GetDbVersionsArgs, opts?: pulumi.InvokeOptio
         "filters": args.filters,
         "isDatabaseSoftwareImageSupported": args.isDatabaseSoftwareImageSupported,
         "isUpgradeSupported": args.isUpgradeSupported,
+        "shapeAttribute": args.shapeAttribute,
         "storageManagement": args.storageManagement,
     }, opts);
 }
@@ -66,6 +68,10 @@ export interface GetDbVersionsArgs {
      */
     isUpgradeSupported?: boolean;
     /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     */
+    shapeAttribute?: string;
+    /**
      * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
      * * ASM specifies Oracle Automatic Storage Management
      * * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -94,6 +100,7 @@ export interface GetDbVersionsResult {
      * True if this version of the Oracle Database software is supported for Upgrade.
      */
     readonly isUpgradeSupported?: boolean;
+    readonly shapeAttribute?: string;
     readonly storageManagement?: string;
 }
 /**
@@ -113,6 +120,7 @@ export interface GetDbVersionsResult {
  *     dbSystemShape: dbVersionDbSystemShape,
  *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
  *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     shapeAttribute: dbVersionShapeAttribute,
  *     storageManagement: dbVersionStorageManagement,
  * });
  * ```
@@ -126,6 +134,7 @@ export function getDbVersionsOutput(args: GetDbVersionsOutputArgs, opts?: pulumi
         "filters": args.filters,
         "isDatabaseSoftwareImageSupported": args.isDatabaseSoftwareImageSupported,
         "isUpgradeSupported": args.isUpgradeSupported,
+        "shapeAttribute": args.shapeAttribute,
         "storageManagement": args.storageManagement,
     }, opts);
 }
@@ -155,6 +164,10 @@ export interface GetDbVersionsOutputArgs {
      * If provided, filters the results to the set of database versions which are supported for Upgrade.
      */
     isUpgradeSupported?: pulumi.Input<boolean>;
+    /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     */
+    shapeAttribute?: pulumi.Input<string>;
     /**
      * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
      * * ASM specifies Oracle Automatic Storage Management

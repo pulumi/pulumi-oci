@@ -8,12 +8,18 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class ReportDefinitionColumnInfo {
+    /**
+     * @return (Updatable) An array of operators that can be supported by column fieldName.
+     * 
+     */
+    private @Nullable List<String> applicableOperators;
     /**
      * @return (Updatable) Specifies the data type of the column.
      * 
@@ -39,8 +45,20 @@ public final class ReportDefinitionColumnInfo {
      * 
      */
     private Boolean isHidden;
+    /**
+     * @return (Updatable) Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    private @Nullable Boolean isVirtual;
 
     private ReportDefinitionColumnInfo() {}
+    /**
+     * @return (Updatable) An array of operators that can be supported by column fieldName.
+     * 
+     */
+    public List<String> applicableOperators() {
+        return this.applicableOperators == null ? List.of() : this.applicableOperators;
+    }
     /**
      * @return (Updatable) Specifies the data type of the column.
      * 
@@ -76,6 +94,13 @@ public final class ReportDefinitionColumnInfo {
     public Boolean isHidden() {
         return this.isHidden;
     }
+    /**
+     * @return (Updatable) Specifies if column is virtual and can only be used as column filter.
+     * 
+     */
+    public Optional<Boolean> isVirtual() {
+        return Optional.ofNullable(this.isVirtual);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -86,21 +111,34 @@ public final class ReportDefinitionColumnInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> applicableOperators;
         private @Nullable String dataType;
         private String displayName;
         private Integer displayOrder;
         private String fieldName;
         private Boolean isHidden;
+        private @Nullable Boolean isVirtual;
         public Builder() {}
         public Builder(ReportDefinitionColumnInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicableOperators = defaults.applicableOperators;
     	      this.dataType = defaults.dataType;
     	      this.displayName = defaults.displayName;
     	      this.displayOrder = defaults.displayOrder;
     	      this.fieldName = defaults.fieldName;
     	      this.isHidden = defaults.isHidden;
+    	      this.isVirtual = defaults.isVirtual;
         }
 
+        @CustomType.Setter
+        public Builder applicableOperators(@Nullable List<String> applicableOperators) {
+
+            this.applicableOperators = applicableOperators;
+            return this;
+        }
+        public Builder applicableOperators(String... applicableOperators) {
+            return applicableOperators(List.of(applicableOperators));
+        }
         @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
 
@@ -139,13 +177,21 @@ public final class ReportDefinitionColumnInfo {
             this.isHidden = isHidden;
             return this;
         }
+        @CustomType.Setter
+        public Builder isVirtual(@Nullable Boolean isVirtual) {
+
+            this.isVirtual = isVirtual;
+            return this;
+        }
         public ReportDefinitionColumnInfo build() {
             final var _resultValue = new ReportDefinitionColumnInfo();
+            _resultValue.applicableOperators = applicableOperators;
             _resultValue.dataType = dataType;
             _resultValue.displayName = displayName;
             _resultValue.displayOrder = displayOrder;
             _resultValue.fieldName = fieldName;
             _resultValue.isHidden = isHidden;
+            _resultValue.isVirtual = isVirtual;
             return _resultValue;
         }
     }

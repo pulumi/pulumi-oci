@@ -14,40 +14,6 @@ import (
 // This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 //
 // Gets a list of all target-alert policy associations.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datasafe"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := datasafe.GetTargetAlertPolicyAssociations(ctx, &datasafe.GetTargetAlertPolicyAssociationsArgs{
-//				CompartmentId:                   compartmentId,
-//				AccessLevel:                     pulumi.StringRef(targetAlertPolicyAssociationAccessLevel),
-//				AlertPolicyId:                   pulumi.StringRef(testAlertPolicy.Id),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(targetAlertPolicyAssociationCompartmentIdInSubtree),
-//				State:                           pulumi.StringRef(targetAlertPolicyAssociationState),
-//				TargetAlertPolicyAssociationId:  pulumi.StringRef(testTargetAlertPolicyAssociation.Id),
-//				TargetId:                        pulumi.StringRef(testTarget.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo),
-//				TimeCreatedLessThan:             pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedLessThan),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetTargetAlertPolicyAssociations(ctx *pulumi.Context, args *GetTargetAlertPolicyAssociationsArgs, opts ...pulumi.InvokeOption) (*GetTargetAlertPolicyAssociationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetAlertPolicyAssociationsResult

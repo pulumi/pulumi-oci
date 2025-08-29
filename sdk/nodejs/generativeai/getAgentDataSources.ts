@@ -9,8 +9,6 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **ListDataSources**
- *
  * Gets a list of data sources.
  *
  * ## Example Usage
@@ -94,8 +92,6 @@ export interface GetAgentDataSourcesResult {
 }
 /**
  * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **ListDataSources**
  *
  * Gets a list of data sources.
  *

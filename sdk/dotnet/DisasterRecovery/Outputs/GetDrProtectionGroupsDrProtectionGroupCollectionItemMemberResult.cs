@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult> BlockVolumeOperations;
         /// <summary>
-        /// The bucket name inside the object storage namespace.  Example: `bucket_name`
+        /// The bucket name inside the object storage namespace.  Example: `operation_logs`
         /// </summary>
         public readonly string Bucket;
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyResult> CommonDestinationKeys;
@@ -46,6 +46,14 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
         /// </summary>
         public readonly string ConnectionStringType;
+        /// <summary>
+        /// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult> DbSystemAdminUserDetails;
+        /// <summary>
+        /// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult> DbSystemReplicationUserDetails;
         /// <summary>
         /// The availability domain of the destination mount target. Example: `BBTh:region-AD`
         /// </summary>
@@ -90,6 +98,14 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// Operations performed on a list of file systems used on the non-movable compute instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult> FileSystemOperations;
+        /// <summary>
+        /// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        /// </summary>
+        public readonly int GtidReconciliationTimeout;
+        /// <summary>
+        /// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        /// </summary>
+        public readonly bool IsContinueOnGtidReconciliationTimeout;
         /// <summary>
         /// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         /// </summary>
@@ -139,6 +155,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string PeerClusterId;
         /// <summary>
+        /// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        /// </summary>
+        public readonly string PeerDbSystemId;
+        /// <summary>
         /// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult> SourceVolumeToDestinationEncryptionKeyMappings;
@@ -179,6 +199,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string connectionStringType,
 
+            ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailResult> dbSystemAdminUserDetails,
+
+            ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailResult> dbSystemReplicationUserDetails,
+
             string destinationAvailabilityDomain,
 
             string destinationBackupPolicyId,
@@ -200,6 +224,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult> exportMappings,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult> fileSystemOperations,
+
+            int gtidReconciliationTimeout,
+
+            bool isContinueOnGtidReconciliationTimeout,
 
             bool isMovable,
 
@@ -225,6 +253,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string peerClusterId,
 
+            string peerDbSystemId,
+
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingResult> sourceVolumeToDestinationEncryptionKeyMappings,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVaultMappingResult> vaultMappings,
@@ -244,6 +274,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             Bucket = bucket;
             CommonDestinationKeys = commonDestinationKeys;
             ConnectionStringType = connectionStringType;
+            DbSystemAdminUserDetails = dbSystemAdminUserDetails;
+            DbSystemReplicationUserDetails = dbSystemReplicationUserDetails;
             DestinationAvailabilityDomain = destinationAvailabilityDomain;
             DestinationBackupPolicyId = destinationBackupPolicyId;
             DestinationCapacityReservationId = destinationCapacityReservationId;
@@ -255,6 +287,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DestinationSnapshotPolicyId = destinationSnapshotPolicyId;
             ExportMappings = exportMappings;
             FileSystemOperations = fileSystemOperations;
+            GtidReconciliationTimeout = gtidReconciliationTimeout;
+            IsContinueOnGtidReconciliationTimeout = isContinueOnGtidReconciliationTimeout;
             IsMovable = isMovable;
             IsRetainFaultDomain = isRetainFaultDomain;
             IsStartStopEnabled = isStartStopEnabled;
@@ -267,6 +301,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             NetworkLoadBalancerMappings = networkLoadBalancerMappings;
             PasswordVaultSecretId = passwordVaultSecretId;
             PeerClusterId = peerClusterId;
+            PeerDbSystemId = peerDbSystemId;
             SourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             VaultMappings = vaultMappings;
             VirtualNodePoolConfigs = virtualNodePoolConfigs;

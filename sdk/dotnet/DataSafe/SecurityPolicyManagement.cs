@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Security Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Updates the security policy.
+    /// Creates a Data Safe security policy.
     /// 
     /// ## Example Usage
     /// 
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class SecurityPolicyManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy.
+        /// (Updatable) The OCID of the compartment in which to create the security policy.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -75,7 +75,11 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -85,6 +89,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        [Output("securityPolicyType")]
+        public Output<string> SecurityPolicyType { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the security policy.
@@ -99,7 +109,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Unique target identifier.
+        /// Unique target identifier. If target id is not specified then new security policy will be created.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -124,7 +134,7 @@ namespace Pulumi.Oci.DataSafe
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public SecurityPolicyManagement(string name, SecurityPolicyManagementArgs? args = null, CustomResourceOptions? options = null)
+        public SecurityPolicyManagement(string name, SecurityPolicyManagementArgs args, CustomResourceOptions? options = null)
             : base("oci:DataSafe/securityPolicyManagement:SecurityPolicyManagement", name, args ?? new SecurityPolicyManagementArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -163,10 +173,10 @@ namespace Pulumi.Oci.DataSafe
     public sealed class SecurityPolicyManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy.
+        /// (Updatable) The OCID of the compartment in which to create the security policy.
         /// </summary>
-        [Input("compartmentId")]
-        public Input<string>? CompartmentId { get; set; }
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -196,7 +206,11 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -205,7 +219,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Unique target identifier.
+        /// Unique target identifier. If target id is not specified then new security policy will be created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -219,7 +233,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class SecurityPolicyManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the security policy.
+        /// (Updatable) The OCID of the compartment in which to create the security policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -252,7 +266,11 @@ namespace Pulumi.Oci.DataSafe
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -265,6 +283,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        [Input("securityPolicyType")]
+        public Input<string>? SecurityPolicyType { get; set; }
 
         /// <summary>
         /// The current state of the security policy.
@@ -285,7 +309,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Unique target identifier.
+        /// Unique target identifier. If target id is not specified then new security policy will be created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

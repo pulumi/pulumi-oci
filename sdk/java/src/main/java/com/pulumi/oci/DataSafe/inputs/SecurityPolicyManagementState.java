@@ -17,14 +17,14 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
     public static final SecurityPolicyManagementState Empty = new SecurityPolicyManagementState();
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy.
+     * @return (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -79,12 +79,18 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -104,6 +110,21 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * The type of the security policy.
+     * 
+     */
+    @Import(name="securityPolicyType")
+    private @Nullable Output<String> securityPolicyType;
+
+    /**
+     * @return The type of the security policy.
+     * 
+     */
+    public Optional<Output<String>> securityPolicyType() {
+        return Optional.ofNullable(this.securityPolicyType);
     }
 
     /**
@@ -137,14 +158,14 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
     }
 
     /**
-     * Unique target identifier.
+     * Unique target identifier. If target id is not specified then new security policy will be created.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return Unique target identifier.
+     * @return Unique target identifier. If target id is not specified then new security policy will be created.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -190,6 +211,7 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.securityPolicyType = $.securityPolicyType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.targetId = $.targetId;
@@ -216,7 +238,7 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the security policy.
          * 
          * @return builder
          * 
@@ -227,7 +249,7 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the security policy.
          * 
          * @return builder
          * 
@@ -302,6 +324,9 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -312,6 +337,9 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -339,6 +367,27 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param securityPolicyType The type of the security policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyType(@Nullable Output<String> securityPolicyType) {
+            $.securityPolicyType = securityPolicyType;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyType The type of the security policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyType(String securityPolicyType) {
+            return securityPolicyType(Output.of(securityPolicyType));
         }
 
         /**
@@ -384,7 +433,7 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId Unique target identifier. If target id is not specified then new security policy will be created.
          * 
          * @return builder
          * 
@@ -395,7 +444,7 @@ public final class SecurityPolicyManagementState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param targetId Unique target identifier.
+         * @param targetId Unique target identifier. If target id is not specified then new security policy will be created.
          * 
          * @return builder
          * 

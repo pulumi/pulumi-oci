@@ -67,6 +67,8 @@ type LookupDataGuardAssociationResult struct {
 	ApplyRate              string                                        `pulumi:"applyRate"`
 	AvailabilityDomain     string                                        `pulumi:"availabilityDomain"`
 	BackupNetworkNsgIds    []string                                      `pulumi:"backupNetworkNsgIds"`
+	ComputeCount           int                                           `pulumi:"computeCount"`
+	ComputeModel           string                                        `pulumi:"computeModel"`
 	CpuCoreCount           int                                           `pulumi:"cpuCoreCount"`
 	CreateAsync            bool                                          `pulumi:"createAsync"`
 	CreationType           string                                        `pulumi:"creationType"`
@@ -179,6 +181,14 @@ func (o LookupDataGuardAssociationResultOutput) AvailabilityDomain() pulumi.Stri
 
 func (o LookupDataGuardAssociationResultOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) int { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) CpuCoreCount() pulumi.IntOutput {

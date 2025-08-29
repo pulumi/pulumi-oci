@@ -116,6 +116,21 @@ public final class GetAuditArchiveRetrievalsPlainArgs extends com.pulumi.resourc
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * The OCID of the target associated with the archive retrieval.
      * 
      */
@@ -155,6 +170,7 @@ public final class GetAuditArchiveRetrievalsPlainArgs extends com.pulumi.resourc
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
         this.timeOfExpiry = $.timeOfExpiry;
     }
@@ -249,6 +265,17 @@ public final class GetAuditArchiveRetrievalsPlainArgs extends com.pulumi.resourc
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 

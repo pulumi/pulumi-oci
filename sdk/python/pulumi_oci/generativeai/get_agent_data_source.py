@@ -86,7 +86,7 @@ class GetAgentDataSourceResult:
     @pulumi.getter(name="dataSourceConfigs")
     def data_source_configs(self) -> Sequence['outputs.GetAgentDataSourceDataSourceConfigResult']:
         """
-        **DataSourceConfig**
+        The details of data source.
         """
         return pulumi.get(self, "data_source_configs")
 
@@ -220,8 +220,6 @@ def get_agent_data_source(data_source_id: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-    **GetDataSource**
-
     Gets information about a data source.
 
     ## Example Usage
@@ -261,8 +259,6 @@ def get_agent_data_source_output(data_source_id: Optional[pulumi.Input[_builtins
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataSourceResult]:
     """
     This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **GetDataSource**
 
     Gets information about a data source.
 

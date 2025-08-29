@@ -13,8 +13,6 @@ import (
 
 // This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **ListDataSources**
-//
 // Gets a list of data sources.
 //
 // ## Example Usage

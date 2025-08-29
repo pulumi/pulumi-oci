@@ -23,7 +23,7 @@ public final class AgentDataSourceDataSourceConfigObjectStoragePrefix {
      */
     private String namespace;
     /**
-     * @return (Updatable) The name of the object (file) or prefix (folder).
+     * @return (Updatable) The prefix of file object(s) or folder prefix.
      * 
      */
     private @Nullable String prefix;
@@ -44,7 +44,7 @@ public final class AgentDataSourceDataSourceConfigObjectStoragePrefix {
         return this.namespace;
     }
     /**
-     * @return (Updatable) The name of the object (file) or prefix (folder).
+     * @return (Updatable) The prefix of file object(s) or folder prefix.
      * 
      */
     public Optional<String> prefix() {

@@ -14,7 +14,49 @@ import (
 
 // This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Updates one or more attributes of the specified audit profile.
+// Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datasafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datasafe.NewAuditProfile(ctx, "test_audit_profile", &datasafe.AuditProfileArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTarget.Id),
+//				TargetType:    pulumi.Any(auditProfileTargetType),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(auditProfileDescription),
+//				DisplayName: pulumi.Any(auditProfileDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				IsOverrideGlobalPaidUsage:        pulumi.Any(auditProfileIsOverrideGlobalPaidUsage),
+//				IsPaidUsageEnabled:               pulumi.Any(auditProfileIsPaidUsageEnabled),
+//				OfflineMonths:                    pulumi.Any(auditProfileOfflineMonths),
+//				OnlineMonths:                     pulumi.Any(auditProfileOnlineMonths),
+//				ChangeRetentionTrigger:           pulumi.Any(retentionTrigger),
+//				IsOverrideGlobalRetentionSetting: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //
@@ -26,18 +68,16 @@ import (
 type AuditProfile struct {
 	pulumi.CustomResourceState
 
-	// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+	// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 	AuditCollectedVolume pulumi.StringOutput `pulumi:"auditCollectedVolume"`
-	// The OCID of the audit.
-	AuditProfileId pulumi.StringOutput `pulumi:"auditProfileId"`
-	// Indicates the list of available audit trails on the target.
+	// Contains the list of available audit trails on the target database.
 	AuditTrails AuditProfileAuditTrailArrayOutput `pulumi:"auditTrails"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrOutput `pulumi:"changeRetentionTrigger"`
-	// (Updatable) The OCID of the compartment that contains the audit.
+	// (Updatable) The OCID of the compartment where you want to create the audit profile.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -47,22 +87,32 @@ type AuditProfile struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+	// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+	IsOverrideGlobalPaidUsage pulumi.BoolOutput `pulumi:"isOverrideGlobalPaidUsage"`
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 	IsOverrideGlobalRetentionSetting pulumi.BoolOutput `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled pulumi.BoolOutput `pulumi:"isPaidUsageEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+	// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 	OfflineMonths pulumi.IntOutput `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+	// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OfflineMonthsSource pulumi.StringOutput `pulumi:"offlineMonthsSource"`
+	// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 	OnlineMonths pulumi.IntOutput `pulumi:"onlineMonths"`
+	// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OnlineMonthsSource pulumi.StringOutput `pulumi:"onlineMonthsSource"`
+	// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+	PaidUsageSource pulumi.StringOutput `pulumi:"paidUsageSource"`
 	// The current state of the audit profile.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The OCID of the Data Safe target for which the audit profile is created.
+	// The OCID of the target database or target database group for which the audit profile is created.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	// The resource type that is represented by the audit profile.
+	TargetType pulumi.StringOutput `pulumi:"targetType"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -76,8 +126,14 @@ func NewAuditProfile(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AuditProfileId == nil {
-		return nil, errors.New("invalid value for required argument 'AuditProfileId'")
+	if args.CompartmentId == nil {
+		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.TargetId == nil {
+		return nil, errors.New("invalid value for required argument 'TargetId'")
+	}
+	if args.TargetType == nil {
+		return nil, errors.New("invalid value for required argument 'TargetType'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AuditProfile
@@ -102,18 +158,16 @@ func GetAuditProfile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AuditProfile resources.
 type auditProfileState struct {
-	// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+	// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 	AuditCollectedVolume *string `pulumi:"auditCollectedVolume"`
-	// The OCID of the audit.
-	AuditProfileId *string `pulumi:"auditProfileId"`
-	// Indicates the list of available audit trails on the target.
+	// Contains the list of available audit trails on the target database.
 	AuditTrails []AuditProfileAuditTrail `pulumi:"auditTrails"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
-	// (Updatable) The OCID of the compartment that contains the audit.
+	// (Updatable) The OCID of the compartment where you want to create the audit profile.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -123,22 +177,32 @@ type auditProfileState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+	// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+	IsOverrideGlobalPaidUsage *bool `pulumi:"isOverrideGlobalPaidUsage"`
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled *bool `pulumi:"isPaidUsageEnabled"`
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+	// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 	OfflineMonths *int `pulumi:"offlineMonths"`
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+	// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OfflineMonthsSource *string `pulumi:"offlineMonthsSource"`
+	// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 	OnlineMonths *int `pulumi:"onlineMonths"`
+	// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OnlineMonthsSource *string `pulumi:"onlineMonthsSource"`
+	// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+	PaidUsageSource *string `pulumi:"paidUsageSource"`
 	// The current state of the audit profile.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The OCID of the Data Safe target for which the audit profile is created.
+	// The OCID of the target database or target database group for which the audit profile is created.
 	TargetId *string `pulumi:"targetId"`
+	// The resource type that is represented by the audit profile.
+	TargetType *string `pulumi:"targetType"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -146,18 +210,16 @@ type auditProfileState struct {
 }
 
 type AuditProfileState struct {
-	// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+	// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 	AuditCollectedVolume pulumi.StringPtrInput
-	// The OCID of the audit.
-	AuditProfileId pulumi.StringPtrInput
-	// Indicates the list of available audit trails on the target.
+	// Contains the list of available audit trails on the target database.
 	AuditTrails AuditProfileAuditTrailArrayInput
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrInput
-	// (Updatable) The OCID of the compartment that contains the audit.
+	// (Updatable) The OCID of the compartment where you want to create the audit profile.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -167,22 +229,32 @@ type AuditProfileState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+	// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+	IsOverrideGlobalPaidUsage pulumi.BoolPtrInput
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 	IsOverrideGlobalRetentionSetting pulumi.BoolPtrInput
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled pulumi.BoolPtrInput
 	// Details about the current state of the audit profile in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
-	// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+	// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 	OfflineMonths pulumi.IntPtrInput
-	// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+	// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OfflineMonthsSource pulumi.StringPtrInput
+	// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 	OnlineMonths pulumi.IntPtrInput
+	// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+	OnlineMonthsSource pulumi.StringPtrInput
+	// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+	PaidUsageSource pulumi.StringPtrInput
 	// The current state of the audit profile.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The OCID of the Data Safe target for which the audit profile is created.
+	// The OCID of the target database or target database group for which the audit profile is created.
 	TargetId pulumi.StringPtrInput
+	// The resource type that is represented by the audit profile.
+	TargetType pulumi.StringPtrInput
 	// The date and time the audit profile was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -194,15 +266,13 @@ func (AuditProfileState) ElementType() reflect.Type {
 }
 
 type auditProfileArgs struct {
-	// The OCID of the audit.
-	AuditProfileId string `pulumi:"auditProfileId"`
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger *int `pulumi:"changeRetentionTrigger"`
-	// (Updatable) The OCID of the compartment that contains the audit.
-	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The OCID of the compartment where you want to create the audit profile.
+	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
@@ -211,21 +281,31 @@ type auditProfileArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+	IsOverrideGlobalPaidUsage *bool `pulumi:"isOverrideGlobalPaidUsage"`
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
+	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled *bool `pulumi:"isPaidUsageEnabled"`
+	// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+	OfflineMonths *int `pulumi:"offlineMonths"`
+	// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+	OnlineMonths *int `pulumi:"onlineMonths"`
+	// The OCID of the target database or target database group for which the audit profile is created.
+	TargetId string `pulumi:"targetId"`
+	// The resource type that is represented by the audit profile.
+	TargetType string `pulumi:"targetType"`
 }
 
 // The set of arguments for constructing a AuditProfile resource.
 type AuditProfileArgs struct {
-	// The OCID of the audit.
-	AuditProfileId pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ChangeRetentionTrigger pulumi.IntPtrInput
-	// (Updatable) The OCID of the compartment that contains the audit.
-	CompartmentId pulumi.StringPtrInput
+	// (Updatable) The OCID of the compartment where you want to create the audit profile.
+	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
@@ -234,8 +314,20 @@ type AuditProfileArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+	IsOverrideGlobalPaidUsage pulumi.BoolPtrInput
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
+	IsOverrideGlobalRetentionSetting pulumi.BoolPtrInput
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled pulumi.BoolPtrInput
+	// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+	OfflineMonths pulumi.IntPtrInput
+	// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+	OnlineMonths pulumi.IntPtrInput
+	// The OCID of the target database or target database group for which the audit profile is created.
+	TargetId pulumi.StringInput
+	// The resource type that is represented by the audit profile.
+	TargetType pulumi.StringInput
 }
 
 func (AuditProfileArgs) ElementType() reflect.Type {
@@ -325,17 +417,12 @@ func (o AuditProfileOutput) ToAuditProfileOutputWithContext(ctx context.Context)
 	return o
 }
 
-// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 func (o AuditProfileOutput) AuditCollectedVolume() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.AuditCollectedVolume }).(pulumi.StringOutput)
 }
 
-// The OCID of the audit.
-func (o AuditProfileOutput) AuditProfileId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.AuditProfileId }).(pulumi.StringOutput)
-}
-
-// Indicates the list of available audit trails on the target.
+// Contains the list of available audit trails on the target database.
 func (o AuditProfileOutput) AuditTrails() AuditProfileAuditTrailArrayOutput {
 	return o.ApplyT(func(v *AuditProfile) AuditProfileAuditTrailArrayOutput { return v.AuditTrails }).(AuditProfileAuditTrailArrayOutput)
 }
@@ -348,7 +435,7 @@ func (o AuditProfileOutput) ChangeRetentionTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntPtrOutput { return v.ChangeRetentionTrigger }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The OCID of the compartment that contains the audit.
+// (Updatable) The OCID of the compartment where you want to create the audit profile.
 func (o AuditProfileOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -373,7 +460,12 @@ func (o AuditProfileOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+func (o AuditProfileOutput) IsOverrideGlobalPaidUsage() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.BoolOutput { return v.IsOverrideGlobalPaidUsage }).(pulumi.BoolOutput)
+}
+
+// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 func (o AuditProfileOutput) IsOverrideGlobalRetentionSetting() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.BoolOutput { return v.IsOverrideGlobalRetentionSetting }).(pulumi.BoolOutput)
 }
@@ -388,14 +480,29 @@ func (o AuditProfileOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 func (o AuditProfileOutput) OfflineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OfflineMonths }).(pulumi.IntOutput)
 }
 
-// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+func (o AuditProfileOutput) OfflineMonthsSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.OfflineMonthsSource }).(pulumi.StringOutput)
+}
+
+// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 func (o AuditProfileOutput) OnlineMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.IntOutput { return v.OnlineMonths }).(pulumi.IntOutput)
+}
+
+// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+func (o AuditProfileOutput) OnlineMonthsSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.OnlineMonthsSource }).(pulumi.StringOutput)
+}
+
+// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+func (o AuditProfileOutput) PaidUsageSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.PaidUsageSource }).(pulumi.StringOutput)
 }
 
 // The current state of the audit profile.
@@ -408,9 +515,14 @@ func (o AuditProfileOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the Data Safe target for which the audit profile is created.
+// The OCID of the target database or target database group for which the audit profile is created.
 func (o AuditProfileOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The resource type that is represented by the audit profile.
+func (o AuditProfileOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuditProfile) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // The date and time the audit profile was created, in the format defined by RFC3339.

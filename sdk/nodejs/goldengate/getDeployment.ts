@@ -52,6 +52,10 @@ export interface GetDeploymentResult {
      */
     readonly backupSchedules: outputs.GoldenGate.GetDeploymentBackupSchedule[];
     /**
+     * The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     */
+    readonly byolCpuCoreCountLimit: number;
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
     readonly category: string;
@@ -124,6 +128,10 @@ export interface GetDeploymentResult {
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     readonly isAutoScalingEnabled: boolean;
+    /**
+     * Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    readonly isByolCpuCoreCountLimitEnabled: boolean;
     /**
      * True if all of the aggregate resources are working correctly.
      */

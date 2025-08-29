@@ -27,6 +27,11 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
      * 
      */
     private String metricName;
+    /**
+     * @return The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeLastDiscovered;
 
     private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem() {}
     /**
@@ -50,6 +55,13 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
     public String metricName() {
         return this.metricName;
     }
+    /**
+     * @return The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeLastDiscovered() {
+        return this.timeLastDiscovered;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +75,14 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
         private String count;
         private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension> dimensions;
         private String metricName;
+        private String timeLastDiscovered;
         public Builder() {}
         public Builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
     	      this.metricName = defaults.metricName;
+    	      this.timeLastDiscovered = defaults.timeLastDiscovered;
         }
 
         @CustomType.Setter
@@ -98,11 +112,20 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
             this.metricName = metricName;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeLastDiscovered(String timeLastDiscovered) {
+            if (timeLastDiscovered == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem", "timeLastDiscovered");
+            }
+            this.timeLastDiscovered = timeLastDiscovered;
+            return this;
+        }
         public GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem build() {
             final var _resultValue = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem();
             _resultValue.count = count;
             _resultValue.dimensions = dimensions;
             _resultValue.metricName = metricName;
+            _resultValue.timeLastDiscovered = timeLastDiscovered;
             return _resultValue;
         }
     }

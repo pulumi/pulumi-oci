@@ -22,6 +22,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult> BackupSchedules;
         /// <summary>
+        /// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        /// </summary>
+        public readonly int ByolCpuCoreCountLimit;
+        /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
         public readonly string Category;
@@ -50,7 +54,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string DeploymentRole;
         /// <summary>
-        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        /// A filter that returns only the resources matching the specified 'deploymentType'.
         /// </summary>
         public readonly string DeploymentType;
         /// <summary>
@@ -93,6 +97,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
         public readonly bool IsAutoScalingEnabled;
+        /// <summary>
+        /// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        /// </summary>
+        public readonly bool IsByolCpuCoreCountLimitEnabled;
         /// <summary>
         /// True if all of the aggregate resources are working correctly.
         /// </summary>
@@ -229,6 +237,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemBackupScheduleResult> backupSchedules,
 
+            int byolCpuCoreCountLimit,
+
             string category,
 
             string compartmentId,
@@ -264,6 +274,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemIngressIpResult> ingressIps,
 
             bool isAutoScalingEnabled,
+
+            bool isByolCpuCoreCountLimitEnabled,
 
             bool isHealthy,
 
@@ -333,6 +345,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         {
             AvailabilityDomain = availabilityDomain;
             BackupSchedules = backupSchedules;
+            ByolCpuCoreCountLimit = byolCpuCoreCountLimit;
             Category = category;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
@@ -351,6 +364,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Id = id;
             IngressIps = ingressIps;
             IsAutoScalingEnabled = isAutoScalingEnabled;
+            IsByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
             IsHealthy = isHealthy;
             IsLatestVersion = isLatestVersion;
             IsLockOverride = isLockOverride;

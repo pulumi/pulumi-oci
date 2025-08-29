@@ -49,6 +49,7 @@ export interface GetSecurityPolicyDeploymentResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
+    readonly deployTrigger: number;
     /**
      * The description of the security policy deployment.
      */
@@ -69,6 +70,7 @@ export interface GetSecurityPolicyDeploymentResult {
      * Details about the current state of the security policy deployment in Data Safe.
      */
     readonly lifecycleDetails: string;
+    readonly refreshTrigger: number;
     readonly securityPolicyDeploymentId: string;
     /**
      * The OCID of the security policy corresponding to the security policy deployment.
@@ -83,13 +85,21 @@ export interface GetSecurityPolicyDeploymentResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The OCID of the target where the security policy is deployed.
+     * The OCID of the target/target group where the security policy is deployed.
      */
     readonly targetId: string;
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     */
+    readonly targetType: string;
     /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      */
     readonly timeCreated: string;
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     */
+    readonly timeDeployed: string;
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      */

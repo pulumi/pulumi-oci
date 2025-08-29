@@ -45,7 +45,9 @@ namespace Pulumi.Oci.DataSafe
     ///                 DisplayOrder = reportDefinitionColumnInfoDisplayOrder,
     ///                 FieldName = reportDefinitionColumnInfoFieldName,
     ///                 IsHidden = reportDefinitionColumnInfoIsHidden,
+    ///                 ApplicableOperators = reportDefinitionColumnInfoApplicableOperators,
     ///                 DataType = reportDefinitionColumnInfoDataType,
+    ///                 IsVirtual = reportDefinitionColumnInfoIsVirtual,
     ///             },
     ///         },
     ///         ColumnSortings = new[]

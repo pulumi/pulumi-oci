@@ -162,7 +162,7 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str]
     :param Sequence[_builtins.str] group_bies: The group by parameter to summarize the allowed SQL aggregation.
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
-           **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+           **Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -228,7 +228,7 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.
     :param Sequence[_builtins.str] group_bies: The group by parameter to summarize the allowed SQL aggregation.
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
-           **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+           **Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level

@@ -22,6 +22,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult> DataIngestionJobStatistics;
         /// <summary>
+        /// DataIngestionJob type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult> DataIngestionJobTypes;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
         /// </summary>
         public readonly string DataSourceId;
@@ -45,6 +49,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
         /// </summary>
         public readonly string Id;
+        public readonly string KnowledgeBaseId;
         /// <summary>
         /// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
@@ -72,6 +77,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             ImmutableArray<Outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult> dataIngestionJobStatistics,
 
+            ImmutableArray<Outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult> dataIngestionJobTypes,
+
             string dataSourceId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -83,6 +90,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
+
+            string knowledgeBaseId,
 
             string lifecycleDetails,
 
@@ -96,12 +105,14 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         {
             CompartmentId = compartmentId;
             DataIngestionJobStatistics = dataIngestionJobStatistics;
+            DataIngestionJobTypes = dataIngestionJobTypes;
             DataSourceId = dataSourceId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            KnowledgeBaseId = knowledgeBaseId;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SystemTags = systemTags;

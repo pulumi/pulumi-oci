@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testAuditTrailManagement = new oci.datasafe.AuditTrailManagement("test_audit_trail_management", {
  *     compartmentId: compartmentId,
  *     targetId: testTargetDatabase.id,
+ *     canUpdateLastArchiveTimeOnTarget: auditTrailManagementCanUpdateLastArchiveTimeOnTarget,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -74,6 +75,10 @@ export class AuditTrailManagement extends pulumi.CustomResource {
      * The OCID of the  parent audit.
      */
     public /*out*/ readonly auditProfileId!: pulumi.Output<string>;
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    public readonly canUpdateLastArchiveTimeOnTarget!: pulumi.Output<boolean>;
     /**
      * The OCID of the compartment that contains the target.
      */
@@ -166,6 +171,7 @@ export class AuditTrailManagement extends pulumi.CustomResource {
             const state = argsOrState as AuditTrailManagementState | undefined;
             resourceInputs["auditCollectionStartTime"] = state ? state.auditCollectionStartTime : undefined;
             resourceInputs["auditProfileId"] = state ? state.auditProfileId : undefined;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = state ? state.canUpdateLastArchiveTimeOnTarget : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -188,6 +194,7 @@ export class AuditTrailManagement extends pulumi.CustomResource {
         } else {
             const args = argsOrState as AuditTrailManagementArgs | undefined;
             resourceInputs["auditCollectionStartTime"] = args ? args.auditCollectionStartTime : undefined;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = args ? args.canUpdateLastArchiveTimeOnTarget : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -230,6 +237,10 @@ export interface AuditTrailManagementState {
      * The OCID of the  parent audit.
      */
     auditProfileId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
     /**
      * The OCID of the compartment that contains the target.
      */
@@ -320,6 +331,10 @@ export interface AuditTrailManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     auditCollectionStartTime?: pulumi.Input<string>;
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
     /**
      * The OCID of the compartment that contains the target.
      */

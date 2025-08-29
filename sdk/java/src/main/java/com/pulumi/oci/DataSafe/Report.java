@@ -45,6 +45,20 @@ public class Report extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    @Export(name="dataSource", refs={String.class}, tree="[0]")
+    private Output<String> dataSource;
+
+    /**
+     * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    public Output<String> dataSource() {
+        return this.dataSource;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -191,6 +205,20 @@ public class Report extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
+     * Specifies the time at which the report was created.
+     * 
+     */
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
+    private Output<String> timeCreated;
+
+    /**
+     * @return Specifies the time at which the report was created.
+     * 
+     */
+    public Output<String> timeCreated() {
+        return this.timeCreated;
+    }
+    /**
      * Specifies the date and time the report was generated.
      * 
      */
@@ -203,6 +231,20 @@ public class Report extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeGenerated() {
         return this.timeGenerated;
+    }
+    /**
+     * The date and time of the report update in Data Safe.
+     * 
+     */
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
+    private Output<String> timeUpdated;
+
+    /**
+     * @return The date and time of the report update in Data Safe.
+     * 
+     */
+    public Output<String> timeUpdated() {
+        return this.timeUpdated;
     }
     /**
      * The type of the audit report.

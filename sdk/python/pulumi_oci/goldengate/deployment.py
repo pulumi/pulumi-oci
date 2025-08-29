@@ -26,6 +26,7 @@ class DeploymentArgs:
                  subnet_id: pulumi.Input[_builtins.str],
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
+                 byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -36,6 +37,7 @@ class DeploymentArgs:
                  fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_byol_cpu_core_count_limit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_public: Optional[pulumi.Input[_builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -55,6 +57,7 @@ class DeploymentArgs:
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
@@ -65,6 +68,7 @@ class DeploymentArgs:
         :param pulumi.Input[_builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
@@ -83,6 +87,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
+        if byol_cpu_core_count_limit is not None:
+            pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if defined_tags is not None:
@@ -103,6 +109,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_auto_scaling_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        if is_byol_cpu_core_count_limit_enabled is not None:
+            pulumi.set(__self__, "is_byol_cpu_core_count_limit_enabled", is_byol_cpu_core_count_limit_enabled)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_public is not None:
@@ -187,6 +195,18 @@ class DeploymentArgs:
     @backup_schedule.setter
     def backup_schedule(self, value: Optional[pulumi.Input['DeploymentBackupScheduleArgs']]):
         pulumi.set(self, "backup_schedule", value)
+
+    @_builtins.property
+    @pulumi.getter(name="byolCpuCoreCountLimit")
+    def byol_cpu_core_count_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        """
+        return pulumi.get(self, "byol_cpu_core_count_limit")
+
+    @byol_cpu_core_count_limit.setter
+    def byol_cpu_core_count_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "byol_cpu_core_count_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -307,6 +327,18 @@ class DeploymentArgs:
     @is_auto_scaling_enabled.setter
     def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isByolCpuCoreCountLimitEnabled")
+    def is_byol_cpu_core_count_limit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        """
+        return pulumi.get(self, "is_byol_cpu_core_count_limit_enabled")
+
+    @is_byol_cpu_core_count_limit_enabled.setter
+    def is_byol_cpu_core_count_limit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_byol_cpu_core_count_limit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
@@ -452,6 +484,7 @@ class _DeploymentState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
+                 byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  category: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -469,6 +502,7 @@ class _DeploymentState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_byol_cpu_core_count_limit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_healthy: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_latest_version: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -506,6 +540,7 @@ class _DeploymentState:
         Input properties used for looking up and filtering Deployment resources.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -523,6 +558,7 @@ class _DeploymentState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[_builtins.bool] is_latest_version: Indicates if the resource is the the latest available version.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
@@ -559,6 +595,8 @@ class _DeploymentState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
+        if byol_cpu_core_count_limit is not None:
+            pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
         if category is not None:
             pulumi.set(__self__, "category", category)
         if compartment_id is not None:
@@ -593,6 +631,8 @@ class _DeploymentState:
             pulumi.set(__self__, "ingress_ips", ingress_ips)
         if is_auto_scaling_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        if is_byol_cpu_core_count_limit_enabled is not None:
+            pulumi.set(__self__, "is_byol_cpu_core_count_limit_enabled", is_byol_cpu_core_count_limit_enabled)
         if is_healthy is not None:
             pulumi.set(__self__, "is_healthy", is_healthy)
         if is_latest_version is not None:
@@ -683,6 +723,18 @@ class _DeploymentState:
     @backup_schedule.setter
     def backup_schedule(self, value: Optional[pulumi.Input['DeploymentBackupScheduleArgs']]):
         pulumi.set(self, "backup_schedule", value)
+
+    @_builtins.property
+    @pulumi.getter(name="byolCpuCoreCountLimit")
+    def byol_cpu_core_count_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        """
+        return pulumi.get(self, "byol_cpu_core_count_limit")
+
+    @byol_cpu_core_count_limit.setter
+    def byol_cpu_core_count_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "byol_cpu_core_count_limit", value)
 
     @_builtins.property
     @pulumi.getter
@@ -887,6 +939,18 @@ class _DeploymentState:
     @is_auto_scaling_enabled.setter
     def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isByolCpuCoreCountLimitEnabled")
+    def is_byol_cpu_core_count_limit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        """
+        return pulumi.get(self, "is_byol_cpu_core_count_limit_enabled")
+
+    @is_byol_cpu_core_count_limit_enabled.setter
+    def is_byol_cpu_core_count_limit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_byol_cpu_core_count_limit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHealthy")
@@ -1287,6 +1351,7 @@ class Deployment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+                 byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1299,6 +1364,7 @@ class Deployment(pulumi.CustomResource):
                  fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_byol_cpu_core_count_limit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_public: Optional[pulumi.Input[_builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1330,6 +1396,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1342,6 +1409,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] load_balancer_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
@@ -1390,6 +1458,7 @@ class Deployment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+                 byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1402,6 +1471,7 @@ class Deployment(pulumi.CustomResource):
                  fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_byol_cpu_core_count_limit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_public: Optional[pulumi.Input[_builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1426,6 +1496,7 @@ class Deployment(pulumi.CustomResource):
 
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_schedule"] = backup_schedule
+            __props__.__dict__["byol_cpu_core_count_limit"] = byol_cpu_core_count_limit
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1442,6 +1513,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["fqdn"] = fqdn
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
+            __props__.__dict__["is_byol_cpu_core_count_limit_enabled"] = is_byol_cpu_core_count_limit_enabled
             __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["is_public"] = is_public
             __props__.__dict__["license_model"] = license_model
@@ -1494,6 +1566,7 @@ class Deployment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
+            byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
             category: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1511,6 +1584,7 @@ class Deployment(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+            is_byol_cpu_core_count_limit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             is_healthy: Optional[pulumi.Input[_builtins.bool]] = None,
             is_latest_version: Optional[pulumi.Input[_builtins.bool]] = None,
             is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -1553,6 +1627,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
+        :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -1570,6 +1645,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentIngressIpArgs', 'DeploymentIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
+        :param pulumi.Input[_builtins.bool] is_byol_cpu_core_count_limit_enabled: (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
         :param pulumi.Input[_builtins.bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[_builtins.bool] is_latest_version: Indicates if the resource is the the latest available version.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) True if this object is publicly available.
@@ -1608,6 +1684,7 @@ class Deployment(pulumi.CustomResource):
 
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_schedule"] = backup_schedule
+        __props__.__dict__["byol_cpu_core_count_limit"] = byol_cpu_core_count_limit
         __props__.__dict__["category"] = category
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -1625,6 +1702,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ingress_ips"] = ingress_ips
         __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
+        __props__.__dict__["is_byol_cpu_core_count_limit_enabled"] = is_byol_cpu_core_count_limit_enabled
         __props__.__dict__["is_healthy"] = is_healthy
         __props__.__dict__["is_latest_version"] = is_latest_version
         __props__.__dict__["is_lock_override"] = is_lock_override
@@ -1675,6 +1753,14 @@ class Deployment(pulumi.CustomResource):
         (Updatable) Defines the backup schedule details for create operation.
         """
         return pulumi.get(self, "backup_schedule")
+
+    @_builtins.property
+    @pulumi.getter(name="byolCpuCoreCountLimit")
+    def byol_cpu_core_count_limit(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        """
+        return pulumi.get(self, "byol_cpu_core_count_limit")
 
     @_builtins.property
     @pulumi.getter
@@ -1811,6 +1897,14 @@ class Deployment(pulumi.CustomResource):
         (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isByolCpuCoreCountLimitEnabled")
+    def is_byol_cpu_core_count_limit_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        """
+        return pulumi.get(self, "is_byol_cpu_core_count_limit_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isHealthy")

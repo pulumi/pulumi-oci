@@ -65,6 +65,21 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     * 
+     */
+    @Import(name="dataSource")
+    private @Nullable Output<String> dataSource;
+
+    /**
+     * @return Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     * 
+     */
+    public Optional<Output<String>> dataSource() {
+        return Optional.ofNullable(this.dataSource);
+    }
+
+    /**
      * The name of the report definition to query.
      * 
      */
@@ -190,6 +205,7 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
         this.accessLevel = $.accessLevel;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.dataSource = $.dataSource;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.mimeType = $.mimeType;
@@ -279,6 +295,27 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        /**
+         * @param dataSource Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSource(@Nullable Output<String> dataSource) {
+            $.dataSource = dataSource;
+            return this;
+        }
+
+        /**
+         * @param dataSource Specifies the name of a resource that provides data for the report. For example  alerts, events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSource(String dataSource) {
+            return dataSource(Output.of(dataSource));
         }
 
         /**

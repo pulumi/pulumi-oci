@@ -46,6 +46,8 @@ import (
 //				TransportType:               pulumi.Any(dataGuardAssociationTransportType),
 //				AvailabilityDomain:          pulumi.Any(dataGuardAssociationAvailabilityDomain),
 //				BackupNetworkNsgIds:         pulumi.Any(dataGuardAssociationBackupNetworkNsgIds),
+//				ComputeCount:                pulumi.Any(dataGuardAssociationComputeCount),
+//				ComputeModel:                pulumi.Any(dataGuardAssociationComputeModel),
 //				CpuCoreCount:                pulumi.Any(dataGuardAssociationCpuCoreCount),
 //				DatabaseDefinedTags:         pulumi.Any(dataGuardAssociationDatabaseDefinedTags),
 //				DatabaseFreeformTags:        pulumi.Any(dataGuardAssociationDatabaseFreeformTags),
@@ -101,6 +103,10 @@ type DataGuardAssociation struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
+	// The number of compute servers for the DB system.
+	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntOutput     `pulumi:"cpuCoreCount"`
 	CreateAsync  pulumi.BoolPtrOutput `pulumi:"createAsync"`
@@ -282,6 +288,10 @@ type dataGuardAssociationState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	// The number of compute servers for the DB system.
+	ComputeCount *int `pulumi:"computeCount"`
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount *int  `pulumi:"cpuCoreCount"`
 	CreateAsync  *bool `pulumi:"createAsync"`
@@ -409,6 +419,10 @@ type DataGuardAssociationState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayInput
+	// The number of compute servers for the DB system.
+	ComputeCount pulumi.IntPtrInput
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntPtrInput
 	CreateAsync  pulumi.BoolPtrInput
@@ -536,6 +550,10 @@ type dataGuardAssociationArgs struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	// The number of compute servers for the DB system.
+	ComputeCount *int `pulumi:"computeCount"`
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount *int  `pulumi:"cpuCoreCount"`
 	CreateAsync  *bool `pulumi:"createAsync"`
@@ -646,6 +664,10 @@ type DataGuardAssociationArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds pulumi.StringArrayInput
+	// The number of compute servers for the DB system.
+	ComputeCount pulumi.IntPtrInput
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores available for AMD-based virtual machine DB systems.
 	CpuCoreCount pulumi.IntPtrInput
 	CreateAsync  pulumi.BoolPtrInput
@@ -855,6 +877,16 @@ func (o DataGuardAssociationOutput) AvailabilityDomain() pulumi.StringOutput {
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 func (o DataGuardAssociationOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringArrayOutput { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The number of compute servers for the DB system.
+func (o DataGuardAssociationOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+func (o DataGuardAssociationOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores available for AMD-based virtual machine DB systems.

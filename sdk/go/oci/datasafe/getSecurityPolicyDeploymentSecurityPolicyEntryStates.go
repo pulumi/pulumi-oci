@@ -35,6 +35,8 @@ import (
 //				SecurityPolicyDeploymentId: testSecurityPolicyDeployment.Id,
 //				DeploymentStatus:           pulumi.StringRef(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus),
 //				SecurityPolicyEntryId:      pulumi.StringRef(testSecurityPolicyEntry.Id),
+//				SecurityPolicyEntryType:    pulumi.StringRef(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType),
+//				TargetId:                   pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -63,6 +65,10 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs struct {
 	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
 	// An optional filter to return only resources that match the specified security policy entry OCID.
 	SecurityPolicyEntryId *string `pulumi:"securityPolicyEntryId"`
+	// The type of the security policy deployment.
+	SecurityPolicyEntryType *string `pulumi:"securityPolicyEntryType"`
+	// An optional filter to return only resources that match the specified target id.
+	TargetId *string `pulumi:"targetId"`
 }
 
 // A collection of values returned by getSecurityPolicyDeploymentSecurityPolicyEntryStates.
@@ -78,6 +84,9 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult struct {
 	SecurityPolicyEntryId *string `pulumi:"securityPolicyEntryId"`
 	// The list of security_policy_entry_state_collection.
 	SecurityPolicyEntryStateCollections []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection `pulumi:"securityPolicyEntryStateCollections"`
+	SecurityPolicyEntryType             *string                                                                                  `pulumi:"securityPolicyEntryType"`
+	// The OCID of the target on which the security policy is deployed.
+	TargetId *string `pulumi:"targetId"`
 }
 
 func GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput(ctx *pulumi.Context, args GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput {
@@ -98,6 +107,10 @@ type GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs struct {
 	SecurityPolicyDeploymentId pulumi.StringInput `pulumi:"securityPolicyDeploymentId"`
 	// An optional filter to return only resources that match the specified security policy entry OCID.
 	SecurityPolicyEntryId pulumi.StringPtrInput `pulumi:"securityPolicyEntryId"`
+	// The type of the security policy deployment.
+	SecurityPolicyEntryType pulumi.StringPtrInput `pulumi:"securityPolicyEntryType"`
+	// An optional filter to return only resources that match the specified target id.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
 
 func (GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs) ElementType() reflect.Type {
@@ -154,6 +167,17 @@ func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) Securi
 	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult) []GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection {
 		return v.SecurityPolicyEntryStateCollections
 	}).(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionArrayOutput)
+}
+
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) SecurityPolicyEntryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult) *string {
+		return v.SecurityPolicyEntryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the target on which the security policy is deployed.
+func (o GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

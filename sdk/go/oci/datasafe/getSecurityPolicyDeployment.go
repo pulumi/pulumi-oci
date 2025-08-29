@@ -61,7 +61,8 @@ type LookupSecurityPolicyDeploymentResult struct {
 	// The OCID of the compartment containing the security policy deployment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	DeployTrigger int               `pulumi:"deployTrigger"`
 	// The description of the security policy deployment.
 	Description string `pulumi:"description"`
 	// The display name of the security policy deployment.
@@ -72,6 +73,7 @@ type LookupSecurityPolicyDeploymentResult struct {
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy deployment in Data Safe.
 	LifecycleDetails           string `pulumi:"lifecycleDetails"`
+	RefreshTrigger             int    `pulumi:"refreshTrigger"`
 	SecurityPolicyDeploymentId string `pulumi:"securityPolicyDeploymentId"`
 	// The OCID of the security policy corresponding to the security policy deployment.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
@@ -79,10 +81,14 @@ type LookupSecurityPolicyDeploymentResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The OCID of the target where the security policy is deployed.
+	// The OCID of the target/target group where the security policy is deployed.
 	TargetId string `pulumi:"targetId"`
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType string `pulumi:"targetType"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the security policy was deployed, in the format defined by RFC3339.
+	TimeDeployed string `pulumi:"timeDeployed"`
 	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -131,6 +137,10 @@ func (o LookupSecurityPolicyDeploymentResultOutput) DefinedTags() pulumi.StringM
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+func (o LookupSecurityPolicyDeploymentResultOutput) DeployTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) int { return v.DeployTrigger }).(pulumi.IntOutput)
+}
+
 // The description of the security policy deployment.
 func (o LookupSecurityPolicyDeploymentResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.Description }).(pulumi.StringOutput)
@@ -156,6 +166,10 @@ func (o LookupSecurityPolicyDeploymentResultOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o LookupSecurityPolicyDeploymentResultOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
 func (o LookupSecurityPolicyDeploymentResultOutput) SecurityPolicyDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.SecurityPolicyDeploymentId }).(pulumi.StringOutput)
 }
@@ -175,14 +189,24 @@ func (o LookupSecurityPolicyDeploymentResultOutput) SystemTags() pulumi.StringMa
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the target where the security policy is deployed.
+// The OCID of the target/target group where the security policy is deployed.
 func (o LookupSecurityPolicyDeploymentResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// Indicates whether the security policy deployment is for a target database or a target database group.
+func (o LookupSecurityPolicyDeploymentResultOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // The time that the security policy deployment was created, in the format defined by RFC3339.
 func (o LookupSecurityPolicyDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy was deployed, in the format defined by RFC3339.
+func (o LookupSecurityPolicyDeploymentResultOutput) TimeDeployed() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) string { return v.TimeDeployed }).(pulumi.StringOutput)
 }
 
 // The last date and time the security policy deployment was updated, in the format defined by RFC3339.

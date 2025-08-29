@@ -32,11 +32,7 @@ class TargetAlertPolicyAssociationArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where the target-alert policy association is created.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         :param pulumi.Input[_builtins.str] policy_id: The OCID of the alert policy.
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target-alert policy association.
@@ -95,11 +91,7 @@ class TargetAlertPolicyAssociationArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the target.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target or target database group.
         """
         return pulumi.get(self, "target_id")
 
@@ -184,11 +176,7 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[_builtins.str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
         :param pulumi.Input[_builtins.str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -343,11 +331,7 @@ class _TargetAlertPolicyAssociationState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target or target database group.
         """
         return pulumi.get(self, "target_id")
 
@@ -400,27 +384,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         Creates a new target-alert policy association to track a alert policy applied on target.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
-            compartment_id=compartment_id,
-            is_enabled=target_alert_policy_association_is_enabled,
-            policy_id=test_policy["id"],
-            target_id=test_target["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=target_alert_policy_association_description,
-            display_name=target_alert_policy_association_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
         ## Import
 
         TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -438,11 +401,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         :param pulumi.Input[_builtins.str] policy_id: The OCID of the alert policy.
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
         """
         ...
     @overload
@@ -454,27 +413,6 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new target-alert policy association to track a alert policy applied on target.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
-            compartment_id=compartment_id,
-            is_enabled=target_alert_policy_association_is_enabled,
-            policy_id=test_policy["id"],
-            target_id=test_target["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=target_alert_policy_association_description,
-            display_name=target_alert_policy_association_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
 
         ## Import
 
@@ -577,11 +515,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
         :param pulumi.Input[_builtins.str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -688,11 +622,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the target.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target or target database group.
         """
         return pulumi.get(self, "target_id")
 

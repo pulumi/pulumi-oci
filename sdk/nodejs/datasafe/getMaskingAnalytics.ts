@@ -24,6 +24,8 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -36,6 +38,8 @@ export function getMaskingAnalytics(args: GetMaskingAnalyticsArgs, opts?: pulumi
         "filters": args.filters,
         "groupBy": args.groupBy,
         "maskingPolicyId": args.maskingPolicyId,
+        "sensitiveTypeId": args.sensitiveTypeId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -62,6 +66,14 @@ export interface GetMaskingAnalyticsArgs {
      */
     maskingPolicyId?: string;
     /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
+    sensitiveTypeId?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
@@ -85,6 +97,11 @@ export interface GetMaskingAnalyticsResult {
     readonly maskingAnalyticsCollections: outputs.DataSafe.GetMaskingAnalyticsMaskingAnalyticsCollection[];
     readonly maskingPolicyId?: string;
     /**
+     * The OCID of the sensitive type masked.
+     */
+    readonly sensitiveTypeId?: string;
+    readonly targetDatabaseGroupId?: string;
+    /**
      * The OCID of the target database.
      */
     readonly targetId?: string;
@@ -107,6 +124,8 @@ export interface GetMaskingAnalyticsResult {
  *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -119,6 +138,8 @@ export function getMaskingAnalyticsOutput(args: GetMaskingAnalyticsOutputArgs, o
         "filters": args.filters,
         "groupBy": args.groupBy,
         "maskingPolicyId": args.maskingPolicyId,
+        "sensitiveTypeId": args.sensitiveTypeId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -144,6 +165,14 @@ export interface GetMaskingAnalyticsOutputArgs {
      * A filter to return only the resources that match the specified masking policy OCID.
      */
     maskingPolicyId?: pulumi.Input<string>;
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
+    sensitiveTypeId?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

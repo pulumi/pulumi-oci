@@ -147,6 +147,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Shape;
         /// <summary>
+        /// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        /// </summary>
+        public readonly string ShapeAttribute;
+        /// <summary>
         /// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         public readonly ImmutableArray<string> SshPublicKeys;
@@ -255,6 +259,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string shape,
 
+            string shapeAttribute,
+
             ImmutableArray<string> sshPublicKeys,
 
             string state,
@@ -308,6 +314,7 @@ namespace Pulumi.Oci.Database.Outputs
             ScanListenerPortTcpSsl = scanListenerPortTcpSsl;
             SecurityAttributes = securityAttributes;
             Shape = shape;
+            ShapeAttribute = shapeAttribute;
             SshPublicKeys = sshPublicKeys;
             State = state;
             SubnetId = subnetId;

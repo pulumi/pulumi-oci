@@ -52,7 +52,10 @@ import (
 //				IsScheduleAssessment:            pulumi.BoolRef(securityAssessmentIsScheduleAssessment),
 //				ScheduleAssessmentId:            pulumi.StringRef(testScheduleAssessment.Id),
 //				State:                           pulumi.StringRef(securityAssessmentState),
+//				TargetDatabaseGroupId:           pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TargetType:                      pulumi.StringRef(securityAssessmentTargetType),
+//				TemplateAssessmentId:            pulumi.StringRef(testTemplateAssessment.Id),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(securityAssessmentTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(securityAssessmentTimeCreatedLessThan),
 //				TriggeredBy:                     pulumi.StringRef(securityAssessmentTriggeredBy),
@@ -95,8 +98,14 @@ type GetSecurityAssessmentsArgs struct {
 	ScheduleAssessmentId *string `pulumi:"scheduleAssessmentId"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// A filter to return only only target database resources or target database group resources.
+	TargetType *string `pulumi:"targetType"`
+	// The OCID of the security assessment of type TEMPLATE.
+	TemplateAssessmentId *string `pulumi:"templateAssessmentId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -129,13 +138,19 @@ type GetSecurityAssessmentsResult struct {
 	// The list of security_assessments.
 	SecurityAssessments []GetSecurityAssessmentsSecurityAssessment `pulumi:"securityAssessments"`
 	// The current state of the security assessment.
-	State                           *string `pulumi:"state"`
-	TargetId                        *string `pulumi:"targetId"`
+	State *string `pulumi:"state"`
+	// The OCID of the target database group that the group assessment is created for.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
+	TargetId              *string `pulumi:"targetId"`
+	// Indicates whether the security assessment is for a target database or a target database group.
+	TargetType *string `pulumi:"targetType"`
+	// The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+	TemplateAssessmentId            *string `pulumi:"templateAssessmentId"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
 	// Indicates whether the security assessment was created by system or by a user.
 	TriggeredBy *string `pulumi:"triggeredBy"`
-	// The type of this security assessment. The possible types are:
+	// The type of the security assessment. Possible values are:
 	Type *string `pulumi:"type"`
 }
 
@@ -167,8 +182,14 @@ type GetSecurityAssessmentsOutputArgs struct {
 	ScheduleAssessmentId pulumi.StringPtrInput `pulumi:"scheduleAssessmentId"`
 	// A filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// A filter to return only only target database resources or target database group resources.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
+	// The OCID of the security assessment of type TEMPLATE.
+	TemplateAssessmentId pulumi.StringPtrInput `pulumi:"templateAssessmentId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -254,8 +275,23 @@ func (o GetSecurityAssessmentsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
+// The OCID of the target database group that the group assessment is created for.
+func (o GetSecurityAssessmentsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
+}
+
 func (o GetSecurityAssessmentsResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the security assessment is for a target database or a target database group.
+func (o GetSecurityAssessmentsResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
+}
+
+// The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+func (o GetSecurityAssessmentsResultOutput) TemplateAssessmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.TemplateAssessmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentsResultOutput) TimeCreatedGreaterThanOrEqualTo() pulumi.StringPtrOutput {
@@ -271,7 +307,7 @@ func (o GetSecurityAssessmentsResultOutput) TriggeredBy() pulumi.StringPtrOutput
 	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.TriggeredBy }).(pulumi.StringPtrOutput)
 }
 
-// The type of this security assessment. The possible types are:
+// The type of the security assessment. Possible values are:
 func (o GetSecurityAssessmentsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

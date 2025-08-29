@@ -17,6 +17,11 @@ public final class GetReportsReportCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     * 
+     */
+    private String dataSource;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -68,10 +73,20 @@ public final class GetReportsReportCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
+     * @return Specifies the time at which the report was created.
+     * 
+     */
+    private String timeCreated;
+    /**
      * @return Specifies the date and time the report was generated.
      * 
      */
     private String timeGenerated;
+    /**
+     * @return The date and time of the report update in Data Safe.
+     * 
+     */
+    private String timeUpdated;
     /**
      * @return An optional filter to return only resources that match the specified type.
      * 
@@ -85,6 +100,13 @@ public final class GetReportsReportCollectionItem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     * 
+     */
+    public String dataSource() {
+        return this.dataSource;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -160,11 +182,25 @@ public final class GetReportsReportCollectionItem {
         return this.systemTags;
     }
     /**
+     * @return Specifies the time at which the report was created.
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
+    }
+    /**
      * @return Specifies the date and time the report was generated.
      * 
      */
     public String timeGenerated() {
         return this.timeGenerated;
+    }
+    /**
+     * @return The date and time of the report update in Data Safe.
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
     }
     /**
      * @return An optional filter to return only resources that match the specified type.
@@ -184,6 +220,7 @@ public final class GetReportsReportCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String dataSource;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -195,12 +232,15 @@ public final class GetReportsReportCollectionItem {
         private String reportId;
         private String state;
         private Map<String,String> systemTags;
+        private String timeCreated;
         private String timeGenerated;
+        private String timeUpdated;
         private String type;
         public Builder() {}
         public Builder(GetReportsReportCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dataSource = defaults.dataSource;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -212,7 +252,9 @@ public final class GetReportsReportCollectionItem {
     	      this.reportId = defaults.reportId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.timeCreated = defaults.timeCreated;
     	      this.timeGenerated = defaults.timeGenerated;
+    	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
         }
 
@@ -222,6 +264,14 @@ public final class GetReportsReportCollectionItem {
               throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dataSource(String dataSource) {
+            if (dataSource == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "dataSource");
+            }
+            this.dataSource = dataSource;
             return this;
         }
         @CustomType.Setter
@@ -313,11 +363,27 @@ public final class GetReportsReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeGenerated(String timeGenerated) {
             if (timeGenerated == null) {
               throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "timeGenerated");
             }
             this.timeGenerated = timeGenerated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
@@ -331,6 +397,7 @@ public final class GetReportsReportCollectionItem {
         public GetReportsReportCollectionItem build() {
             final var _resultValue = new GetReportsReportCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSource = dataSource;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
@@ -342,7 +409,9 @@ public final class GetReportsReportCollectionItem {
             _resultValue.reportId = reportId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
             _resultValue.timeGenerated = timeGenerated;
+            _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;
             return _resultValue;
         }

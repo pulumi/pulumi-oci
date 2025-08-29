@@ -35,6 +35,8 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = maskingAnalyticCompartmentIdInSubtree,
         ///         GroupBy = maskingAnalyticGroupBy,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -68,6 +70,8 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = maskingAnalyticCompartmentIdInSubtree,
         ///         GroupBy = maskingAnalyticGroupBy,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -101,6 +105,8 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = maskingAnalyticCompartmentIdInSubtree,
         ///         GroupBy = maskingAnalyticGroupBy,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -145,6 +151,18 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("maskingPolicyId")]
         public string? MaskingPolicyId { get; set; }
+
+        /// <summary>
+        /// A filter to return only items related to a specific sensitive type OCID.
+        /// </summary>
+        [Input("sensitiveTypeId")]
+        public string? SensitiveTypeId { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -193,6 +211,18 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? MaskingPolicyId { get; set; }
 
         /// <summary>
+        /// A filter to return only items related to a specific sensitive type OCID.
+        /// </summary>
+        [Input("sensitiveTypeId")]
+        public Input<string>? SensitiveTypeId { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -222,6 +252,11 @@ namespace Pulumi.Oci.DataSafe
         public readonly ImmutableArray<Outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionResult> MaskingAnalyticsCollections;
         public readonly string? MaskingPolicyId;
         /// <summary>
+        /// The OCID of the sensitive type masked.
+        /// </summary>
+        public readonly string? SensitiveTypeId;
+        public readonly string? TargetDatabaseGroupId;
+        /// <summary>
         /// The OCID of the target database.
         /// </summary>
         public readonly string? TargetId;
@@ -242,6 +277,10 @@ namespace Pulumi.Oci.DataSafe
 
             string? maskingPolicyId,
 
+            string? sensitiveTypeId,
+
+            string? targetDatabaseGroupId,
+
             string? targetId)
         {
             CompartmentId = compartmentId;
@@ -251,6 +290,8 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             MaskingAnalyticsCollections = maskingAnalyticsCollections;
             MaskingPolicyId = maskingPolicyId;
+            SensitiveTypeId = sensitiveTypeId;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
         }
     }

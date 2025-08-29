@@ -2050,6 +2050,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/attributeSet",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/attributeSet:AttributeSet": "AttributeSet"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/auditArchiveRetrieval",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -2290,10 +2298,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/securityAssessmentCheck",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck": "SecurityAssessmentCheck"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/securityAssessmentFinding",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding": "SecurityAssessmentFinding"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/securityPolicy",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/securityPolicy:SecurityPolicy": "SecurityPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/securityPolicyConfig",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig": "SecurityPolicyConfig"
   }
  },
  {
@@ -2458,10 +2490,34 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/targetDatabaseGroup",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/targetDatabaseGroup:TargetDatabaseGroup": "TargetDatabaseGroup"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/targetDatabasePeerTargetDatabase",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase": "TargetDatabasePeerTargetDatabase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/unifiedAuditPolicy",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/unifiedAuditPolicy:UnifiedAuditPolicy": "UnifiedAuditPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/unifiedAuditPolicyDefinition",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/unifiedAuditPolicyDefinition:UnifiedAuditPolicyDefinition": "UnifiedAuditPolicyDefinition"
   }
  },
  {
@@ -7206,6 +7262,30 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation": "DbmulticloudOracleDbAzureVaultAssociation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/managedKafkaKafkaCluster",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster": "ManagedKafkaKafkaCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/managedKafkaKafkaClusterConfig",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig": "ManagedKafkaKafkaClusterConfig"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/managedKafkaKafkaClusterSuperusersManagement",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement": "ManagedKafkaKafkaClusterSuperusersManagement"
   }
  }
 ]

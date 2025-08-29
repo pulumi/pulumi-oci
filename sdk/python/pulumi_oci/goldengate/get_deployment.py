@@ -27,13 +27,16 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, availability_domain=None, backup_schedules=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, availability_domain=None, backup_schedules=None, byol_cpu_core_count_limit=None, category=None, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_role=None, deployment_type=None, deployment_url=None, description=None, display_name=None, environment_type=None, fault_domain=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_byol_cpu_core_count_limit_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, placements=None, private_ip_address=None, public_ip_address=None, source_deployment_id=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_last_backup_scheduled=None, time_next_backup_scheduled=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_role_changed=None, time_updated=None, time_upgrade_required=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_schedules and not isinstance(backup_schedules, list):
             raise TypeError("Expected argument 'backup_schedules' to be a list")
         pulumi.set(__self__, "backup_schedules", backup_schedules)
+        if byol_cpu_core_count_limit and not isinstance(byol_cpu_core_count_limit, int):
+            raise TypeError("Expected argument 'byol_cpu_core_count_limit' to be a int")
+        pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
@@ -91,6 +94,9 @@ class GetDeploymentResult:
         if is_auto_scaling_enabled and not isinstance(is_auto_scaling_enabled, bool):
             raise TypeError("Expected argument 'is_auto_scaling_enabled' to be a bool")
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        if is_byol_cpu_core_count_limit_enabled and not isinstance(is_byol_cpu_core_count_limit_enabled, bool):
+            raise TypeError("Expected argument 'is_byol_cpu_core_count_limit_enabled' to be a bool")
+        pulumi.set(__self__, "is_byol_cpu_core_count_limit_enabled", is_byol_cpu_core_count_limit_enabled)
         if is_healthy and not isinstance(is_healthy, bool):
             raise TypeError("Expected argument 'is_healthy' to be a bool")
         pulumi.set(__self__, "is_healthy", is_healthy)
@@ -206,6 +212,14 @@ class GetDeploymentResult:
         Defines the schedule of the deployment backup.
         """
         return pulumi.get(self, "backup_schedules")
+
+    @_builtins.property
+    @pulumi.getter(name="byolCpuCoreCountLimit")
+    def byol_cpu_core_count_limit(self) -> _builtins.int:
+        """
+        The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        """
+        return pulumi.get(self, "byol_cpu_core_count_limit")
 
     @_builtins.property
     @pulumi.getter
@@ -355,6 +369,14 @@ class GetDeploymentResult:
         Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isByolCpuCoreCountLimitEnabled")
+    def is_byol_cpu_core_count_limit_enabled(self) -> _builtins.bool:
+        """
+        Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        """
+        return pulumi.get(self, "is_byol_cpu_core_count_limit_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isHealthy")
@@ -626,6 +648,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
         return GetDeploymentResult(
             availability_domain=self.availability_domain,
             backup_schedules=self.backup_schedules,
+            byol_cpu_core_count_limit=self.byol_cpu_core_count_limit,
             category=self.category,
             compartment_id=self.compartment_id,
             cpu_core_count=self.cpu_core_count,
@@ -645,6 +668,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             id=self.id,
             ingress_ips=self.ingress_ips,
             is_auto_scaling_enabled=self.is_auto_scaling_enabled,
+            is_byol_cpu_core_count_limit_enabled=self.is_byol_cpu_core_count_limit_enabled,
             is_healthy=self.is_healthy,
             is_latest_version=self.is_latest_version,
             is_lock_override=self.is_lock_override,
@@ -707,6 +731,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     return AwaitableGetDeploymentResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         backup_schedules=pulumi.get(__ret__, 'backup_schedules'),
+        byol_cpu_core_count_limit=pulumi.get(__ret__, 'byol_cpu_core_count_limit'),
         category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
@@ -726,6 +751,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         ingress_ips=pulumi.get(__ret__, 'ingress_ips'),
         is_auto_scaling_enabled=pulumi.get(__ret__, 'is_auto_scaling_enabled'),
+        is_byol_cpu_core_count_limit_enabled=pulumi.get(__ret__, 'is_byol_cpu_core_count_limit_enabled'),
         is_healthy=pulumi.get(__ret__, 'is_healthy'),
         is_latest_version=pulumi.get(__ret__, 'is_latest_version'),
         is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
@@ -785,6 +811,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     return __ret__.apply(lambda __response__: GetDeploymentResult(
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         backup_schedules=pulumi.get(__response__, 'backup_schedules'),
+        byol_cpu_core_count_limit=pulumi.get(__response__, 'byol_cpu_core_count_limit'),
         category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
@@ -804,6 +831,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
         id=pulumi.get(__response__, 'id'),
         ingress_ips=pulumi.get(__response__, 'ingress_ips'),
         is_auto_scaling_enabled=pulumi.get(__response__, 'is_auto_scaling_enabled'),
+        is_byol_cpu_core_count_limit_enabled=pulumi.get(__response__, 'is_byol_cpu_core_count_limit_enabled'),
         is_healthy=pulumi.get(__response__, 'is_healthy'),
         is_latest_version=pulumi.get(__response__, 'is_latest_version'),
         is_lock_override=pulumi.get(__response__, 'is_lock_override'),

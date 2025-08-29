@@ -19,22 +19,30 @@ import * as utilities from "../utilities";
  *
  * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
+ *     attachedShapeAttributes: exascaleDbStorageVaultAttachedShapeAttributes,
+ *     attachedShapeAttributesNotEqualTo: exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
+ *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+ *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
  * });
  * ```
  */
 export function getExascaleDbStorageVaults(args: GetExascaleDbStorageVaultsArgs, opts?: pulumi.InvokeOptions): Promise<GetExascaleDbStorageVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", {
+        "attachedShapeAttributes": args.attachedShapeAttributes,
+        "attachedShapeAttributesNotEqualTo": args.attachedShapeAttributesNotEqualTo,
         "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterCountGreaterThanOrEqualTo": args.vmClusterCountGreaterThanOrEqualTo,
+        "vmClusterCountLessThanOrEqualTo": args.vmClusterCountLessThanOrEqualTo,
     }, opts);
 }
 
@@ -42,6 +50,14 @@ export function getExascaleDbStorageVaults(args: GetExascaleDbStorageVaultsArgs,
  * A collection of arguments for invoking getExascaleDbStorageVaults.
  */
 export interface GetExascaleDbStorageVaultsArgs {
+    /**
+     * A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     */
+    attachedShapeAttributes?: string;
+    /**
+     * A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+     */
+    attachedShapeAttributesNotEqualTo?: string;
     /**
      * A filter to return only resources that match the given cluster placement group ID exactly.
      */
@@ -63,12 +79,25 @@ export interface GetExascaleDbStorageVaultsArgs {
      * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
      */
     state?: string;
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+     */
+    vmClusterCountGreaterThanOrEqualTo?: number;
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+     */
+    vmClusterCountLessThanOrEqualTo?: number;
 }
 
 /**
  * A collection of values returned by getExascaleDbStorageVaults.
  */
 export interface GetExascaleDbStorageVaultsResult {
+    /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     */
+    readonly attachedShapeAttributes?: string;
+    readonly attachedShapeAttributesNotEqualTo?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      */
@@ -98,6 +127,8 @@ export interface GetExascaleDbStorageVaultsResult {
      * The current state of the Exadata Database Storage Vault.
      */
     readonly state?: string;
+    readonly vmClusterCountGreaterThanOrEqualTo?: number;
+    readonly vmClusterCountLessThanOrEqualTo?: number;
 }
 /**
  * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
@@ -112,22 +143,30 @@ export interface GetExascaleDbStorageVaultsResult {
  *
  * const testExascaleDbStorageVaults = oci.Database.getExascaleDbStorageVaults({
  *     compartmentId: compartmentId,
+ *     attachedShapeAttributes: exascaleDbStorageVaultAttachedShapeAttributes,
+ *     attachedShapeAttributesNotEqualTo: exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
+ *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+ *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
  * });
  * ```
  */
 export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVaultsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExascaleDbStorageVaultsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", {
+        "attachedShapeAttributes": args.attachedShapeAttributes,
+        "attachedShapeAttributesNotEqualTo": args.attachedShapeAttributesNotEqualTo,
         "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "exadataInfrastructureId": args.exadataInfrastructureId,
         "filters": args.filters,
         "state": args.state,
+        "vmClusterCountGreaterThanOrEqualTo": args.vmClusterCountGreaterThanOrEqualTo,
+        "vmClusterCountLessThanOrEqualTo": args.vmClusterCountLessThanOrEqualTo,
     }, opts);
 }
 
@@ -135,6 +174,14 @@ export function getExascaleDbStorageVaultsOutput(args: GetExascaleDbStorageVault
  * A collection of arguments for invoking getExascaleDbStorageVaults.
  */
 export interface GetExascaleDbStorageVaultsOutputArgs {
+    /**
+     * A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     */
+    attachedShapeAttributes?: pulumi.Input<string>;
+    /**
+     * A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+     */
+    attachedShapeAttributesNotEqualTo?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given cluster placement group ID exactly.
      */
@@ -156,4 +203,12 @@ export interface GetExascaleDbStorageVaultsOutputArgs {
      * A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+     */
+    vmClusterCountGreaterThanOrEqualTo?: pulumi.Input<number>;
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+     */
+    vmClusterCountLessThanOrEqualTo?: pulumi.Input<number>;
 }

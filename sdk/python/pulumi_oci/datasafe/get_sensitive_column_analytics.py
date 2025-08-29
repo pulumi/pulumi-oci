@@ -28,7 +28,7 @@ class GetSensitiveColumnAnalyticsResult:
     """
     A collection of values returned by getSensitiveColumnAnalytics.
     """
-    def __init__(__self__, access_level=None, column_names=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_bies=None, id=None, objects=None, schema_names=None, sensitive_column_analytics_collections=None, sensitive_data_model_id=None, sensitive_type_group_id=None, sensitive_type_ids=None, target_id=None):
+    def __init__(__self__, access_level=None, column_names=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_bies=None, id=None, objects=None, schema_names=None, sensitive_column_analytics_collections=None, sensitive_data_model_id=None, sensitive_type_group_id=None, sensitive_type_ids=None, target_database_group_id=None, target_id=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -68,6 +68,9 @@ class GetSensitiveColumnAnalyticsResult:
         if sensitive_type_ids and not isinstance(sensitive_type_ids, list):
             raise TypeError("Expected argument 'sensitive_type_ids' to be a list")
         pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -159,6 +162,11 @@ class GetSensitiveColumnAnalyticsResult:
         return pulumi.get(self, "sensitive_type_ids")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -186,6 +194,7 @@ class AwaitableGetSensitiveColumnAnalyticsResult(GetSensitiveColumnAnalyticsResu
             sensitive_data_model_id=self.sensitive_data_model_id,
             sensitive_type_group_id=self.sensitive_type_group_id,
             sensitive_type_ids=self.sensitive_type_ids,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id)
 
 
@@ -200,6 +209,7 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
                                    sensitive_data_model_id: Optional[_builtins.str] = None,
                                    sensitive_type_group_id: Optional[_builtins.str] = None,
                                    sensitive_type_ids: Optional[Sequence[_builtins.str]] = None,
+                                   target_database_group_id: Optional[_builtins.str] = None,
                                    target_id: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveColumnAnalyticsResult:
     """
@@ -232,6 +242,7 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_ids=test_sensitive_type["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -246,6 +257,7 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
     :param _builtins.str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
     :param _builtins.str sensitive_type_group_id: An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
     :param Sequence[_builtins.str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -260,6 +272,7 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
     __args__['sensitiveTypeGroupId'] = sensitive_type_group_id
     __args__['sensitiveTypeIds'] = sensitive_type_ids
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics', __args__, opts=opts, typ=GetSensitiveColumnAnalyticsResult).value
@@ -278,6 +291,7 @@ def get_sensitive_column_analytics(access_level: Optional[_builtins.str] = None,
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_type_group_id=pulumi.get(__ret__, 'sensitive_type_group_id'),
         sensitive_type_ids=pulumi.get(__ret__, 'sensitive_type_ids'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -290,6 +304,7 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
                                           sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           sensitive_type_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           sensitive_type_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                          target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveColumnAnalyticsResult]:
     """
@@ -322,6 +337,7 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_ids=test_sensitive_type["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -336,6 +352,7 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
     :param _builtins.str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
     :param _builtins.str sensitive_type_group_id: An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
     :param Sequence[_builtins.str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -350,6 +367,7 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
     __args__['sensitiveTypeGroupId'] = sensitive_type_group_id
     __args__['sensitiveTypeIds'] = sensitive_type_ids
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveColumnAnalytics:getSensitiveColumnAnalytics', __args__, opts=opts, typ=GetSensitiveColumnAnalyticsResult)
@@ -367,4 +385,5 @@ def get_sensitive_column_analytics_output(access_level: Optional[pulumi.Input[Op
         sensitive_data_model_id=pulumi.get(__response__, 'sensitive_data_model_id'),
         sensitive_type_group_id=pulumi.get(__response__, 'sensitive_type_group_id'),
         sensitive_type_ids=pulumi.get(__response__, 'sensitive_type_ids'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id')))

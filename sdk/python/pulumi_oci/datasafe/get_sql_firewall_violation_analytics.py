@@ -200,7 +200,7 @@ def get_sql_firewall_violation_analytics(access_level: Optional[_builtins.str] =
     :param _builtins.str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
+           **Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction eq "BLOCKED")
     :param Sequence[_builtins.str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
     :param _builtins.str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param _builtins.str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -273,7 +273,7 @@ def get_sql_firewall_violation_analytics_output(access_level: Optional[pulumi.In
     :param _builtins.str query_time_zone: Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
+           **Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction eq "BLOCKED")
     :param Sequence[_builtins.str] summary_fields: Specifies a subset of summarized fields to be returned in the response.
     :param _builtins.str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     :param _builtins.str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

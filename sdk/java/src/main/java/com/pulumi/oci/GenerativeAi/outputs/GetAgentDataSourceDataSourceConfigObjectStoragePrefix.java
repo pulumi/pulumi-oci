@@ -21,7 +21,7 @@ public final class GetAgentDataSourceDataSourceConfigObjectStoragePrefix {
      */
     private String namespace;
     /**
-     * @return The name of the object (file) or prefix (folder).
+     * @return The prefix of file object(s) or folder prefix.
      * 
      */
     private String prefix;
@@ -42,7 +42,7 @@ public final class GetAgentDataSourceDataSourceConfigObjectStoragePrefix {
         return this.namespace;
     }
     /**
-     * @return The name of the object (file) or prefix (folder).
+     * @return The prefix of file object(s) or folder prefix.
      * 
      */
     public String prefix() {

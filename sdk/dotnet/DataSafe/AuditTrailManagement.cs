@@ -28,6 +28,7 @@ namespace Pulumi.Oci.DataSafe
     ///     {
     ///         CompartmentId = compartmentId,
     ///         TargetId = testTargetDatabase.Id,
+    ///         CanUpdateLastArchiveTimeOnTarget = auditTrailManagementCanUpdateLastArchiveTimeOnTarget,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -66,6 +67,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("auditProfileId")]
         public Output<string> AuditProfileId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Output("canUpdateLastArchiveTimeOnTarget")]
+        public Output<bool> CanUpdateLastArchiveTimeOnTarget { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment that contains the target.
@@ -238,6 +245,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? AuditCollectionStartTime { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Input("canUpdateLastArchiveTimeOnTarget")]
+        public Input<bool>? CanUpdateLastArchiveTimeOnTarget { get; set; }
+
+        /// <summary>
         /// The OCID of the compartment that contains the target.
         /// </summary>
         [Input("compartmentId")]
@@ -344,6 +357,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("auditProfileId")]
         public Input<string>? AuditProfileId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Input("canUpdateLastArchiveTimeOnTarget")]
+        public Input<bool>? CanUpdateLastArchiveTimeOnTarget { get; set; }
 
         /// <summary>
         /// The OCID of the compartment that contains the target.

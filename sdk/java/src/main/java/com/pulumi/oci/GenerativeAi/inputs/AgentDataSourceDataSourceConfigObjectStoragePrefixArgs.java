@@ -47,14 +47,14 @@ public final class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs extend
     }
 
     /**
-     * (Updatable) The name of the object (file) or prefix (folder).
+     * (Updatable) The prefix of file object(s) or folder prefix.
      * 
      */
     @Import(name="prefix")
     private @Nullable Output<String> prefix;
 
     /**
-     * @return (Updatable) The name of the object (file) or prefix (folder).
+     * @return (Updatable) The prefix of file object(s) or folder prefix.
      * 
      */
     public Optional<Output<String>> prefix() {
@@ -130,7 +130,7 @@ public final class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs extend
         }
 
         /**
-         * @param prefix (Updatable) The name of the object (file) or prefix (folder).
+         * @param prefix (Updatable) The prefix of file object(s) or folder prefix.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs extend
         }
 
         /**
-         * @param prefix (Updatable) The name of the object (file) or prefix (folder).
+         * @param prefix (Updatable) The prefix of file object(s) or folder prefix.
          * 
          * @return builder
          * 

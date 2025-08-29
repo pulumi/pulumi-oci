@@ -51,7 +51,22 @@ public final class GetSecurityAssessmentsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The OCID of the target database group that the group assessment is created for.
+     * 
+     */
+    private @Nullable String targetDatabaseGroupId;
     private @Nullable String targetId;
+    /**
+     * @return Indicates whether the security assessment is for a target database or a target database group.
+     * 
+     */
+    private @Nullable String targetType;
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+     * 
+     */
+    private @Nullable String templateAssessmentId;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
     /**
@@ -60,7 +75,7 @@ public final class GetSecurityAssessmentsResult {
      */
     private @Nullable String triggeredBy;
     /**
-     * @return The type of this security assessment. The possible types are:
+     * @return The type of the security assessment. Possible values are:
      * 
      */
     private @Nullable String type;
@@ -123,8 +138,29 @@ public final class GetSecurityAssessmentsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The OCID of the target database group that the group assessment is created for.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+    /**
+     * @return Indicates whether the security assessment is for a target database or a target database group.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+     * 
+     */
+    public Optional<String> templateAssessmentId() {
+        return Optional.ofNullable(this.templateAssessmentId);
     }
     public Optional<String> timeCreatedGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeCreatedGreaterThanOrEqualTo);
@@ -140,7 +176,7 @@ public final class GetSecurityAssessmentsResult {
         return Optional.ofNullable(this.triggeredBy);
     }
     /**
-     * @return The type of this security assessment. The possible types are:
+     * @return The type of the security assessment. Possible values are:
      * 
      */
     public Optional<String> type() {
@@ -167,7 +203,10 @@ public final class GetSecurityAssessmentsResult {
         private @Nullable String scheduleAssessmentId;
         private List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
+        private @Nullable String targetType;
+        private @Nullable String templateAssessmentId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         private @Nullable String triggeredBy;
@@ -186,7 +225,10 @@ public final class GetSecurityAssessmentsResult {
     	      this.scheduleAssessmentId = defaults.scheduleAssessmentId;
     	      this.securityAssessments = defaults.securityAssessments;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
+    	      this.templateAssessmentId = defaults.templateAssessmentId;
     	      this.timeCreatedGreaterThanOrEqualTo = defaults.timeCreatedGreaterThanOrEqualTo;
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
     	      this.triggeredBy = defaults.triggeredBy;
@@ -272,9 +314,27 @@ public final class GetSecurityAssessmentsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder templateAssessmentId(@Nullable String templateAssessmentId) {
+
+            this.templateAssessmentId = templateAssessmentId;
             return this;
         }
         @CustomType.Setter
@@ -314,7 +374,10 @@ public final class GetSecurityAssessmentsResult {
             _resultValue.scheduleAssessmentId = scheduleAssessmentId;
             _resultValue.securityAssessments = securityAssessments;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
+            _resultValue.templateAssessmentId = templateAssessmentId;
             _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             _resultValue.timeCreatedLessThan = timeCreatedLessThan;
             _resultValue.triggeredBy = triggeredBy;

@@ -27,13 +27,19 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult:
     """
     A collection of values returned by getSecurityPolicyDeploymentSecurityPolicyEntryState.
     """
-    def __init__(__self__, deployment_status=None, entry_details=None, id=None, security_policy_deployment_id=None, security_policy_entry_id=None, security_policy_entry_state_id=None):
+    def __init__(__self__, deployment_status=None, deployment_status_details=None, entry_details=None, entry_type=None, id=None, security_policy_deployment_id=None, security_policy_entry_id=None, security_policy_entry_state_id=None, target_id=None):
         if deployment_status and not isinstance(deployment_status, str):
             raise TypeError("Expected argument 'deployment_status' to be a str")
         pulumi.set(__self__, "deployment_status", deployment_status)
+        if deployment_status_details and not isinstance(deployment_status_details, str):
+            raise TypeError("Expected argument 'deployment_status_details' to be a str")
+        pulumi.set(__self__, "deployment_status_details", deployment_status_details)
         if entry_details and not isinstance(entry_details, list):
             raise TypeError("Expected argument 'entry_details' to be a list")
         pulumi.set(__self__, "entry_details", entry_details)
+        if entry_type and not isinstance(entry_type, str):
+            raise TypeError("Expected argument 'entry_type' to be a str")
+        pulumi.set(__self__, "entry_type", entry_type)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -46,6 +52,9 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult:
         if security_policy_entry_state_id and not isinstance(security_policy_entry_state_id, str):
             raise TypeError("Expected argument 'security_policy_entry_state_id' to be a str")
         pulumi.set(__self__, "security_policy_entry_state_id", security_policy_entry_state_id)
+        if target_id and not isinstance(target_id, str):
+            raise TypeError("Expected argument 'target_id' to be a str")
+        pulumi.set(__self__, "target_id", target_id)
 
     @_builtins.property
     @pulumi.getter(name="deploymentStatus")
@@ -56,12 +65,31 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult:
         return pulumi.get(self, "deployment_status")
 
     @_builtins.property
+    @pulumi.getter(name="deploymentStatusDetails")
+    def deployment_status_details(self) -> _builtins.str:
+        """
+        Details about the current deployment status.
+        """
+        return pulumi.get(self, "deployment_status_details")
+
+    @_builtins.property
     @pulumi.getter(name="entryDetails")
     def entry_details(self) -> Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult']:
         """
         Details specific to the security policy entry.
         """
         return pulumi.get(self, "entry_details")
+
+    @_builtins.property
+    @pulumi.getter(name="entryType")
+    def entry_type(self) -> _builtins.str:
+        """
+        The security policy entry type. Allowed values:
+        * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        * AUDIT_POLICY - The audit policy entry type.
+        * CONFIG - Config changes deployment.
+        """
+        return pulumi.get(self, "entry_type")
 
     @_builtins.property
     @pulumi.getter
@@ -92,6 +120,14 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult:
     def security_policy_entry_state_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_entry_state_id")
 
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> _builtins.str:
+        """
+        The OCID of the target on which the security policy is deployed.
+        """
+        return pulumi.get(self, "target_id")
+
 
 class AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult):
     # pylint: disable=using-constant-test
@@ -100,11 +136,14 @@ class AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(GetSecu
             yield self
         return GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(
             deployment_status=self.deployment_status,
+            deployment_status_details=self.deployment_status_details,
             entry_details=self.entry_details,
+            entry_type=self.entry_type,
             id=self.id,
             security_policy_deployment_id=self.security_policy_deployment_id,
             security_policy_entry_id=self.security_policy_entry_id,
-            security_policy_entry_state_id=self.security_policy_entry_state_id)
+            security_policy_entry_state_id=self.security_policy_entry_state_id,
+            target_id=self.target_id)
 
 
 def get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id: Optional[_builtins.str] = None,
@@ -137,11 +176,14 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
 
     return AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(
         deployment_status=pulumi.get(__ret__, 'deployment_status'),
+        deployment_status_details=pulumi.get(__ret__, 'deployment_status_details'),
         entry_details=pulumi.get(__ret__, 'entry_details'),
+        entry_type=pulumi.get(__ret__, 'entry_type'),
         id=pulumi.get(__ret__, 'id'),
         security_policy_deployment_id=pulumi.get(__ret__, 'security_policy_deployment_id'),
         security_policy_entry_id=pulumi.get(__ret__, 'security_policy_entry_id'),
-        security_policy_entry_state_id=pulumi.get(__ret__, 'security_policy_entry_state_id'))
+        security_policy_entry_state_id=pulumi.get(__ret__, 'security_policy_entry_state_id'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 def get_security_policy_deployment_security_policy_entry_state_output(security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                                       security_policy_entry_state_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult]:
@@ -171,8 +213,11 @@ def get_security_policy_deployment_security_policy_entry_state_output(security_p
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyDeploymentSecurityPolicyEntryState:getSecurityPolicyDeploymentSecurityPolicyEntryState', __args__, opts=opts, typ=GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(
         deployment_status=pulumi.get(__response__, 'deployment_status'),
+        deployment_status_details=pulumi.get(__response__, 'deployment_status_details'),
         entry_details=pulumi.get(__response__, 'entry_details'),
+        entry_type=pulumi.get(__response__, 'entry_type'),
         id=pulumi.get(__response__, 'id'),
         security_policy_deployment_id=pulumi.get(__response__, 'security_policy_deployment_id'),
         security_policy_entry_id=pulumi.get(__response__, 'security_policy_entry_id'),
-        security_policy_entry_state_id=pulumi.get(__response__, 'security_policy_entry_state_id')))
+        security_policy_entry_state_id=pulumi.get(__response__, 'security_policy_entry_state_id'),
+        target_id=pulumi.get(__response__, 'target_id')))

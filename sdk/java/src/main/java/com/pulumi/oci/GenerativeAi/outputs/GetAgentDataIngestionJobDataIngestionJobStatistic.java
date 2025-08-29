@@ -21,6 +21,11 @@ public final class GetAgentDataIngestionJobDataIngestionJobStatistic {
      */
     private Integer numberOfFailedFiles;
     /**
+     * @return The number of files that have been ignored during the ingestion.
+     * 
+     */
+    private Integer numberOfIgnoredFiles;
+    /**
      * @return The number of files that have been successfully ingested during the ingestion.
      * 
      */
@@ -42,6 +47,13 @@ public final class GetAgentDataIngestionJobDataIngestionJobStatistic {
         return this.numberOfFailedFiles;
     }
     /**
+     * @return The number of files that have been ignored during the ingestion.
+     * 
+     */
+    public Integer numberOfIgnoredFiles() {
+        return this.numberOfIgnoredFiles;
+    }
+    /**
      * @return The number of files that have been successfully ingested during the ingestion.
      * 
      */
@@ -60,12 +72,14 @@ public final class GetAgentDataIngestionJobDataIngestionJobStatistic {
     public static final class Builder {
         private Integer durationInSeconds;
         private Integer numberOfFailedFiles;
+        private Integer numberOfIgnoredFiles;
         private Integer numberOfIngestedFiles;
         public Builder() {}
         public Builder(GetAgentDataIngestionJobDataIngestionJobStatistic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInSeconds = defaults.durationInSeconds;
     	      this.numberOfFailedFiles = defaults.numberOfFailedFiles;
+    	      this.numberOfIgnoredFiles = defaults.numberOfIgnoredFiles;
     	      this.numberOfIngestedFiles = defaults.numberOfIngestedFiles;
         }
 
@@ -86,6 +100,14 @@ public final class GetAgentDataIngestionJobDataIngestionJobStatistic {
             return this;
         }
         @CustomType.Setter
+        public Builder numberOfIgnoredFiles(Integer numberOfIgnoredFiles) {
+            if (numberOfIgnoredFiles == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataIngestionJobDataIngestionJobStatistic", "numberOfIgnoredFiles");
+            }
+            this.numberOfIgnoredFiles = numberOfIgnoredFiles;
+            return this;
+        }
+        @CustomType.Setter
         public Builder numberOfIngestedFiles(Integer numberOfIngestedFiles) {
             if (numberOfIngestedFiles == null) {
               throw new MissingRequiredPropertyException("GetAgentDataIngestionJobDataIngestionJobStatistic", "numberOfIngestedFiles");
@@ -97,6 +119,7 @@ public final class GetAgentDataIngestionJobDataIngestionJobStatistic {
             final var _resultValue = new GetAgentDataIngestionJobDataIngestionJobStatistic();
             _resultValue.durationInSeconds = durationInSeconds;
             _resultValue.numberOfFailedFiles = numberOfFailedFiles;
+            _resultValue.numberOfIgnoredFiles = numberOfIgnoredFiles;
             _resultValue.numberOfIngestedFiles = numberOfIngestedFiles;
             return _resultValue;
         }

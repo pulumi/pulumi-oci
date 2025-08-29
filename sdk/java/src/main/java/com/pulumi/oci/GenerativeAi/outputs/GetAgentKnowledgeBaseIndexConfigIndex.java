@@ -18,7 +18,7 @@ public final class GetAgentKnowledgeBaseIndexConfigIndex {
      */
     private String name;
     /**
-     * @return **IndexSchema**
+     * @return The index schema details.
      * 
      */
     private List<GetAgentKnowledgeBaseIndexConfigIndexSchema> schemas;
@@ -32,7 +32,7 @@ public final class GetAgentKnowledgeBaseIndexConfigIndex {
         return this.name;
     }
     /**
-     * @return **IndexSchema**
+     * @return The index schema details.
      * 
      */
     public List<GetAgentKnowledgeBaseIndexConfigIndexSchema> schemas() {

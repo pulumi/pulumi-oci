@@ -26,9 +26,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigS
      */
     private String scopeUrl;
     /**
-     * @return The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * @return The type of OpenID.
      * 
      */
     private String type;
@@ -61,9 +59,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigS
         return this.scopeUrl;
     }
     /**
-     * @return The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * @return The type of OpenID.
      * 
      */
     public String type() {

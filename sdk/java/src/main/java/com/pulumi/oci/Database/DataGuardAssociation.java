@@ -66,6 +66,8 @@ import javax.annotation.Nullable;
  *             .transportType(dataGuardAssociationTransportType)
  *             .availabilityDomain(dataGuardAssociationAvailabilityDomain)
  *             .backupNetworkNsgIds(dataGuardAssociationBackupNetworkNsgIds)
+ *             .computeCount(dataGuardAssociationComputeCount)
+ *             .computeModel(dataGuardAssociationComputeModel)
  *             .cpuCoreCount(dataGuardAssociationCpuCoreCount)
  *             .databaseDefinedTags(dataGuardAssociationDatabaseDefinedTags)
  *             .databaseFreeformTags(dataGuardAssociationDatabaseFreeformTags)
@@ -167,6 +169,34 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<String>>> backupNetworkNsgIds() {
         return Codegen.optional(this.backupNetworkNsgIds);
+    }
+    /**
+     * The number of compute servers for the DB system.
+     * 
+     */
+    @Export(name="computeCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> computeCount;
+
+    /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    public Output<Integer> computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    @Export(name="computeModel", refs={String.class}, tree="[0]")
+    private Output<String> computeModel;
+
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public Output<String> computeModel() {
+        return this.computeModel;
     }
     /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.

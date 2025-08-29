@@ -22,31 +22,51 @@ __all__ = ['SecurityAssessmentArgs', 'SecurityAssessment']
 class SecurityAssessmentArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
+                 apply_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 base_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compare_to_template_baseline_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remove_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SecurityAssessment resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
+        :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        :param pulumi.Input[_builtins.int] compare_to_template_baseline_trigger: (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
-        :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which security assessment is to be run.
+        :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
+               
+               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which security assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_type: The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        :param pulumi.Input[_builtins.str] template_assessment_id: The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        :param pulumi.Input[_builtins.str] type: The type of the security assessment
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if apply_template_trigger is not None:
+            pulumi.set(__self__, "apply_template_trigger", apply_template_trigger)
+        if base_security_assessment_id is not None:
+            pulumi.set(__self__, "base_security_assessment_id", base_security_assessment_id)
+        if compare_to_template_baseline_trigger is not None:
+            pulumi.set(__self__, "compare_to_template_baseline_trigger", compare_to_template_baseline_trigger)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -57,10 +77,18 @@ class SecurityAssessmentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_assessment_scheduled is not None:
             pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
+        if remove_template_trigger is not None:
+            pulumi.set(__self__, "remove_template_trigger", remove_template_trigger)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
+        if template_assessment_id is not None:
+            pulumi.set(__self__, "template_assessment_id", template_assessment_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -73,6 +101,42 @@ class SecurityAssessmentArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyTemplateTrigger")
+    def apply_template_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        """
+        return pulumi.get(self, "apply_template_trigger")
+
+    @apply_template_trigger.setter
+    def apply_template_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "apply_template_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="baseSecurityAssessmentId")
+    def base_security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        """
+        return pulumi.get(self, "base_security_assessment_id")
+
+    @base_security_assessment_id.setter
+    def base_security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "base_security_assessment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compareToTemplateBaselineTrigger")
+    def compare_to_template_baseline_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        """
+        return pulumi.get(self, "compare_to_template_baseline_trigger")
+
+    @compare_to_template_baseline_trigger.setter
+    def compare_to_template_baseline_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compare_to_template_baseline_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -135,6 +199,22 @@ class SecurityAssessmentArgs:
         pulumi.set(self, "is_assessment_scheduled", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeTemplateTrigger")
+    def remove_template_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "remove_template_trigger")
+
+    @remove_template_trigger.setter
+    def remove_template_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "remove_template_trigger", value)
+
+    @_builtins.property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -152,11 +232,7 @@ class SecurityAssessmentArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which security assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -164,10 +240,51 @@ class SecurityAssessmentArgs:
     def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="templateAssessmentId")
+    def template_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        """
+        return pulumi.get(self, "template_assessment_id")
+
+    @template_assessment_id.setter
+    def template_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "template_assessment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of the security assessment
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
 
 @pulumi.input_type
 class _SecurityAssessmentState:
     def __init__(__self__, *,
+                 apply_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 base_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 baseline_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 checks: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckArgs']]]] = None,
+                 compare_to_template_baseline_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -181,14 +298,18 @@ class _SecurityAssessmentState:
                  last_compared_baseline_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  link: Optional[pulumi.Input[_builtins.str]] = None,
+                 remove_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
                  schedule_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  statistics: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  target_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_assessed: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -196,6 +317,11 @@ class _SecurityAssessmentState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessment resources.
+        :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        :param pulumi.Input[_builtins.str] baseline_assessment_id: The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckArgs']]] checks: The security checks to be evaluated for type template.
+        :param pulumi.Input[_builtins.int] compare_to_template_baseline_trigger: (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the security assessment.
@@ -209,6 +335,11 @@ class _SecurityAssessmentState:
         :param pulumi.Input[_builtins.str] last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security assessment.
         :param pulumi.Input[_builtins.str] link: The summary of findings for the security assessment.
+        :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -216,19 +347,28 @@ class _SecurityAssessmentState:
         :param pulumi.Input[_builtins.str] state: The current state of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentStatisticArgs']]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_database_group_id: The OCID of the target database group that the group assessment is created for.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which security assessment is to be run.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
+        :param pulumi.Input[_builtins.str] target_type: The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
         :param pulumi.Input[_builtins.str] target_version: The version of the target database.
+        :param pulumi.Input[_builtins.str] template_assessment_id: The OCID of the template assessment. It will be required while creating the template baseline assessment.
         :param pulumi.Input[_builtins.str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] triggered_by: Indicates whether the security assessment was created by system or by a user.
-        :param pulumi.Input[_builtins.str] type: The type of this security assessment. The possible types are:
+        :param pulumi.Input[_builtins.str] type: The type of the security assessment
         """
+        if apply_template_trigger is not None:
+            pulumi.set(__self__, "apply_template_trigger", apply_template_trigger)
+        if base_security_assessment_id is not None:
+            pulumi.set(__self__, "base_security_assessment_id", base_security_assessment_id)
+        if baseline_assessment_id is not None:
+            pulumi.set(__self__, "baseline_assessment_id", baseline_assessment_id)
+        if checks is not None:
+            pulumi.set(__self__, "checks", checks)
+        if compare_to_template_baseline_trigger is not None:
+            pulumi.set(__self__, "compare_to_template_baseline_trigger", compare_to_template_baseline_trigger)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -255,6 +395,8 @@ class _SecurityAssessmentState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if link is not None:
             pulumi.set(__self__, "link", link)
+        if remove_template_trigger is not None:
+            pulumi.set(__self__, "remove_template_trigger", remove_template_trigger)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
         if schedule_security_assessment_id is not None:
@@ -265,12 +407,18 @@ class _SecurityAssessmentState:
             pulumi.set(__self__, "statistics", statistics)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_database_group_id is not None:
+            pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if target_ids is not None:
             pulumi.set(__self__, "target_ids", target_ids)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
         if target_version is not None:
             pulumi.set(__self__, "target_version", target_version)
+        if template_assessment_id is not None:
+            pulumi.set(__self__, "template_assessment_id", template_assessment_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_last_assessed is not None:
@@ -281,6 +429,66 @@ class _SecurityAssessmentState:
             pulumi.set(__self__, "triggered_by", triggered_by)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="applyTemplateTrigger")
+    def apply_template_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        """
+        return pulumi.get(self, "apply_template_trigger")
+
+    @apply_template_trigger.setter
+    def apply_template_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "apply_template_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="baseSecurityAssessmentId")
+    def base_security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        """
+        return pulumi.get(self, "base_security_assessment_id")
+
+    @base_security_assessment_id.setter
+    def base_security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "base_security_assessment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="baselineAssessmentId")
+    def baseline_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        """
+        return pulumi.get(self, "baseline_assessment_id")
+
+    @baseline_assessment_id.setter
+    def baseline_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "baseline_assessment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def checks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckArgs']]]]:
+        """
+        The security checks to be evaluated for type template.
+        """
+        return pulumi.get(self, "checks")
+
+    @checks.setter
+    def checks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckArgs']]]]):
+        pulumi.set(self, "checks", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compareToTemplateBaselineTrigger")
+    def compare_to_template_baseline_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        """
+        return pulumi.get(self, "compare_to_template_baseline_trigger")
+
+    @compare_to_template_baseline_trigger.setter
+    def compare_to_template_baseline_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compare_to_template_baseline_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -439,6 +647,22 @@ class _SecurityAssessmentState:
         pulumi.set(self, "link", value)
 
     @_builtins.property
+    @pulumi.getter(name="removeTemplateTrigger")
+    def remove_template_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "remove_template_trigger")
+
+    @remove_template_trigger.setter
+    def remove_template_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "remove_template_trigger", value)
+
+    @_builtins.property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -501,14 +725,22 @@ class _SecurityAssessmentState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the target database group that the group assessment is created for.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_database_group_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which security assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -529,6 +761,18 @@ class _SecurityAssessmentState:
         pulumi.set(self, "target_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetVersion")
     def target_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -539,6 +783,18 @@ class _SecurityAssessmentState:
     @target_version.setter
     def target_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "target_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="templateAssessmentId")
+    def template_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        """
+        return pulumi.get(self, "template_assessment_id")
+
+    @template_assessment_id.setter
+    def template_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "template_assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -592,7 +848,7 @@ class _SecurityAssessmentState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The type of this security assessment. The possible types are:
+        The type of the security assessment
         """
         return pulumi.get(self, "type")
 
@@ -607,14 +863,21 @@ class SecurityAssessment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 apply_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 base_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compare_to_template_baseline_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remove_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -622,27 +885,6 @@ class SecurityAssessment(pulumi.CustomResource):
         Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
         it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
         at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_assessment = oci.datasafe.SecurityAssessment("test_security_assessment",
-            compartment_id=compartment_id,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=security_assessment_description,
-            display_name=security_assessment_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_assessment_scheduled=security_assessment_is_assessment_scheduled,
-            schedule=security_assessment_schedule,
-            target_id=test_target["id"])
-        ```
 
         ## Import
 
@@ -654,20 +896,27 @@ class SecurityAssessment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        :param pulumi.Input[_builtins.int] compare_to_template_baseline_trigger: (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the security assessment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
-        :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
-               
-               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which security assessment is to be run.
+        :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
+               
+               Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which security assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_type: The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        :param pulumi.Input[_builtins.str] template_assessment_id: The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        :param pulumi.Input[_builtins.str] type: The type of the security assessment
         """
         ...
     @overload
@@ -681,27 +930,6 @@ class SecurityAssessment(pulumi.CustomResource):
         Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
         it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
         at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_security_assessment = oci.datasafe.SecurityAssessment("test_security_assessment",
-            compartment_id=compartment_id,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=security_assessment_description,
-            display_name=security_assessment_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_assessment_scheduled=security_assessment_is_assessment_scheduled,
-            schedule=security_assessment_schedule,
-            target_id=test_target["id"])
-        ```
 
         ## Import
 
@@ -726,14 +954,21 @@ class SecurityAssessment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 apply_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 base_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compare_to_template_baseline_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remove_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -743,6 +978,9 @@ class SecurityAssessment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SecurityAssessmentArgs.__new__(SecurityAssessmentArgs)
 
+            __props__.__dict__["apply_template_trigger"] = apply_template_trigger
+            __props__.__dict__["base_security_assessment_id"] = base_security_assessment_id
+            __props__.__dict__["compare_to_template_baseline_trigger"] = compare_to_template_baseline_trigger
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -751,8 +989,14 @@ class SecurityAssessment(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_assessment_scheduled"] = is_assessment_scheduled
+            __props__.__dict__["remove_template_trigger"] = remove_template_trigger
             __props__.__dict__["schedule"] = schedule
             __props__.__dict__["target_id"] = target_id
+            __props__.__dict__["target_type"] = target_type
+            __props__.__dict__["template_assessment_id"] = template_assessment_id
+            __props__.__dict__["type"] = type
+            __props__.__dict__["baseline_assessment_id"] = None
+            __props__.__dict__["checks"] = None
             __props__.__dict__["ignored_assessment_ids"] = None
             __props__.__dict__["ignored_targets"] = None
             __props__.__dict__["is_baseline"] = None
@@ -764,13 +1008,13 @@ class SecurityAssessment(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["statistics"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["target_database_group_id"] = None
             __props__.__dict__["target_ids"] = None
             __props__.__dict__["target_version"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_last_assessed"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["triggered_by"] = None
-            __props__.__dict__["type"] = None
         super(SecurityAssessment, __self__).__init__(
             'oci:DataSafe/securityAssessment:SecurityAssessment',
             resource_name,
@@ -781,6 +1025,11 @@ class SecurityAssessment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            apply_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+            base_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            baseline_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            checks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckArgs', 'SecurityAssessmentCheckArgsDict']]]]] = None,
+            compare_to_template_baseline_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -794,14 +1043,18 @@ class SecurityAssessment(pulumi.CustomResource):
             last_compared_baseline_id: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             link: Optional[pulumi.Input[_builtins.str]] = None,
+            remove_template_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             schedule: Optional[pulumi.Input[_builtins.str]] = None,
             schedule_security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             statistics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentStatisticArgs', 'SecurityAssessmentStatisticArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             target_id: Optional[pulumi.Input[_builtins.str]] = None,
             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_type: Optional[pulumi.Input[_builtins.str]] = None,
             target_version: Optional[pulumi.Input[_builtins.str]] = None,
+            template_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_assessed: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -814,6 +1067,11 @@ class SecurityAssessment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.int] apply_template_trigger: (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] base_security_assessment_id: The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        :param pulumi.Input[_builtins.str] baseline_assessment_id: The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentCheckArgs', 'SecurityAssessmentCheckArgsDict']]]] checks: The security checks to be evaluated for type template.
+        :param pulumi.Input[_builtins.int] compare_to_template_baseline_trigger: (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the security assessment.
@@ -827,6 +1085,11 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security assessment.
         :param pulumi.Input[_builtins.str] link: The summary of findings for the security assessment.
+        :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -834,23 +1097,27 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentStatisticArgs', 'SecurityAssessmentStatisticArgsDict']]]] statistics: Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which security assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_database_group_id: The OCID of the target database group that the group assessment is created for.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which security assessment is to be run.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
+        :param pulumi.Input[_builtins.str] target_type: The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
         :param pulumi.Input[_builtins.str] target_version: The version of the target database.
+        :param pulumi.Input[_builtins.str] template_assessment_id: The OCID of the template assessment. It will be required while creating the template baseline assessment.
         :param pulumi.Input[_builtins.str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] triggered_by: Indicates whether the security assessment was created by system or by a user.
-        :param pulumi.Input[_builtins.str] type: The type of this security assessment. The possible types are:
+        :param pulumi.Input[_builtins.str] type: The type of the security assessment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _SecurityAssessmentState.__new__(_SecurityAssessmentState)
 
+        __props__.__dict__["apply_template_trigger"] = apply_template_trigger
+        __props__.__dict__["base_security_assessment_id"] = base_security_assessment_id
+        __props__.__dict__["baseline_assessment_id"] = baseline_assessment_id
+        __props__.__dict__["checks"] = checks
+        __props__.__dict__["compare_to_template_baseline_trigger"] = compare_to_template_baseline_trigger
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -864,20 +1131,64 @@ class SecurityAssessment(pulumi.CustomResource):
         __props__.__dict__["last_compared_baseline_id"] = last_compared_baseline_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["link"] = link
+        __props__.__dict__["remove_template_trigger"] = remove_template_trigger
         __props__.__dict__["schedule"] = schedule
         __props__.__dict__["schedule_security_assessment_id"] = schedule_security_assessment_id
         __props__.__dict__["state"] = state
         __props__.__dict__["statistics"] = statistics
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_database_group_id"] = target_database_group_id
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["target_ids"] = target_ids
+        __props__.__dict__["target_type"] = target_type
         __props__.__dict__["target_version"] = target_version
+        __props__.__dict__["template_assessment_id"] = template_assessment_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_assessed"] = time_last_assessed
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["triggered_by"] = triggered_by
         __props__.__dict__["type"] = type
         return SecurityAssessment(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="applyTemplateTrigger")
+    def apply_template_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        """
+        return pulumi.get(self, "apply_template_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="baseSecurityAssessmentId")
+    def base_security_assessment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        """
+        return pulumi.get(self, "base_security_assessment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="baselineAssessmentId")
+    def baseline_assessment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        """
+        return pulumi.get(self, "baseline_assessment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def checks(self) -> pulumi.Output[Sequence['outputs.SecurityAssessmentCheck']]:
+        """
+        The security checks to be evaluated for type template.
+        """
+        return pulumi.get(self, "checks")
+
+    @_builtins.property
+    @pulumi.getter(name="compareToTemplateBaselineTrigger")
+    def compare_to_template_baseline_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        """
+        return pulumi.get(self, "compare_to_template_baseline_trigger")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -984,6 +1295,18 @@ class SecurityAssessment(pulumi.CustomResource):
         return pulumi.get(self, "link")
 
     @_builtins.property
+    @pulumi.getter(name="removeTemplateTrigger")
+    def remove_template_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "remove_template_trigger")
+
+    @_builtins.property
     @pulumi.getter
     def schedule(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1026,14 +1349,18 @@ class SecurityAssessment(pulumi.CustomResource):
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the target database group that the group assessment is created for.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the target database on which security assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which security assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -1046,12 +1373,28 @@ class SecurityAssessment(pulumi.CustomResource):
         return pulumi.get(self, "target_ids")
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        """
+        return pulumi.get(self, "target_type")
+
+    @_builtins.property
     @pulumi.getter(name="targetVersion")
     def target_version(self) -> pulumi.Output[_builtins.str]:
         """
         The version of the target database.
         """
         return pulumi.get(self, "target_version")
+
+    @_builtins.property
+    @pulumi.getter(name="templateAssessmentId")
+    def template_assessment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        """
+        return pulumi.get(self, "template_assessment_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -1089,7 +1432,7 @@ class SecurityAssessment(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        The type of this security assessment. The possible types are:
+        The type of the security assessment
         """
         return pulumi.get(self, "type")
 

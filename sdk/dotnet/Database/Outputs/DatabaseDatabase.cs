@@ -116,6 +116,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? SourceTdeWalletPassword;
         /// <summary>
+        /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        /// </summary>
+        public readonly Outputs.DatabaseDatabaseStorageSizeDetails? StorageSizeDetails;
+        /// <summary>
         /// The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
         public readonly string? TdeWalletPassword;
@@ -185,6 +189,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? sourceTdeWalletPassword,
 
+            Outputs.DatabaseDatabaseStorageSizeDetails? storageSizeDetails,
+
             string? tdeWalletPassword,
 
             string? transportType,
@@ -215,6 +221,7 @@ namespace Pulumi.Oci.Database.Outputs
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             SourceTdeWalletPassword = sourceTdeWalletPassword;
+            StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;
             TransportType = transportType;
             VaultId = vaultId;

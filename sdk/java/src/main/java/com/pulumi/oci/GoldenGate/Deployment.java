@@ -70,6 +70,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.backupSchedule;
     }
     /**
+     * (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    @Export(name="byolCpuCoreCountLimit", refs={Integer.class}, tree="[0]")
+    private Output<Integer> byolCpuCoreCountLimit;
+
+    /**
+     * @return (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    public Output<Integer> byolCpuCoreCountLimit() {
+        return this.byolCpuCoreCountLimit;
+    }
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -306,6 +320,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isAutoScalingEnabled() {
         return this.isAutoScalingEnabled;
+    }
+    /**
+     * (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    @Export(name="isByolCpuCoreCountLimitEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * @return (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    public Output<Boolean> isByolCpuCoreCountLimitEnabled() {
+        return this.isByolCpuCoreCountLimitEnabled;
     }
     /**
      * True if all of the aggregate resources are working correctly.

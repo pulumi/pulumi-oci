@@ -22,6 +22,12 @@ import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAlertsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAlertsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditArchiveRetrievalsArgs;
@@ -48,6 +54,8 @@ import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumePlainAr
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfileCollectedAuditVolumesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfilePlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditProfilesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetAuditTrailAnalyticArgs;
@@ -141,6 +149,8 @@ import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentComparisonPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingAnalyticsArgs;
@@ -156,11 +166,21 @@ import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyt
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeatureAnalyticsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentSecurityFeaturesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPoliciesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs;
@@ -247,6 +267,12 @@ import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabaseArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasePlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasePeerTargetDatabasesArgs;
@@ -264,6 +290,14 @@ import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesSchemasPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesTablesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonArgs;
 import com.pulumi.oci.DataSafe.inputs.GetUserAssessmentComparisonPlainArgs;
@@ -289,6 +323,9 @@ import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRuleResult;
 import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRulesResult;
 import com.pulumi.oci.DataSafe.outputs.GetAlertResult;
 import com.pulumi.oci.DataSafe.outputs.GetAlertsResult;
+import com.pulumi.oci.DataSafe.outputs.GetAttributeSetAssociatedResourcesResult;
+import com.pulumi.oci.DataSafe.outputs.GetAttributeSetResult;
+import com.pulumi.oci.DataSafe.outputs.GetAttributeSetsResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditArchiveRetrievalResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditArchiveRetrievalsResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditEventAnalyticResult;
@@ -302,6 +339,7 @@ import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAvailableAuditVolumesResul
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileCollectedAuditVolumeResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileCollectedAuditVolumesResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileResult;
+import com.pulumi.oci.DataSafe.outputs.GetAuditProfileTargetOverridesResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfilesResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditTrailAnalyticResult;
 import com.pulumi.oci.DataSafe.outputs.GetAuditTrailResult;
@@ -349,6 +387,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceDifferenceCo
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceResult;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferencesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentChecksResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingResult;
@@ -357,8 +396,13 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentSecurityFeatureAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentSecurityFeaturesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentTemplateAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentTemplateAssociationAnalyticsResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentTemplateBaselineComparisonResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyConfigResult;
+import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyConfigsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult;
@@ -402,6 +446,9 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseGroupGroupMemberResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseGroupResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseGroupsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabaseResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasePeerTargetDatabasesResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseResult;
@@ -411,6 +458,10 @@ import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesSchemasResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesTablesResult;
+import com.pulumi.oci.DataSafe.outputs.GetUnifiedAuditPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetUnifiedAuditPolicyDefinitionResult;
+import com.pulumi.oci.DataSafe.outputs.GetUnifiedAuditPolicyDefinitionsResult;
+import com.pulumi.oci.DataSafe.outputs.GetUnifiedAuditPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentPasswordExpiryDateAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentProfileAnalyticsResult;
@@ -2086,6 +2137,781 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getAlerts:getAlerts", TypeShape.of(GetAlertsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified attribute set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetResult> getAttributeSet(GetAttributeSetArgs args) {
+        return getAttributeSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified attribute set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetResult> getAttributeSetPlain(GetAttributeSetPlainArgs args) {
+        return getAttributeSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified attribute set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetResult> getAttributeSet(GetAttributeSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSet:getAttributeSet", TypeShape.of(GetAttributeSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified attribute set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetResult> getAttributeSet(GetAttributeSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSet:getAttributeSet", TypeShape.of(GetAttributeSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified attribute set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSet = DataSafeFunctions.getAttributeSet(GetAttributeSetArgs.builder()
+     *             .attributeSetId(testAttributeSetOciDataSafeAttributeSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetResult> getAttributeSetPlain(GetAttributeSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getAttributeSet:getAttributeSet", TypeShape.of(GetAttributeSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns list of all associated resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
+     *             .attributeSetId(testAttributeSet.id())
+     *             .associatedResourceId(testResource.id())
+     *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetAssociatedResourcesResult> getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs args) {
+        return getAttributeSetAssociatedResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns list of all associated resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
+     *             .attributeSetId(testAttributeSet.id())
+     *             .associatedResourceId(testResource.id())
+     *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetAssociatedResourcesResult> getAttributeSetAssociatedResourcesPlain(GetAttributeSetAssociatedResourcesPlainArgs args) {
+        return getAttributeSetAssociatedResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns list of all associated resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
+     *             .attributeSetId(testAttributeSet.id())
+     *             .associatedResourceId(testResource.id())
+     *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetAssociatedResourcesResult> getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSetAssociatedResources:getAttributeSetAssociatedResources", TypeShape.of(GetAttributeSetAssociatedResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns list of all associated resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
+     *             .attributeSetId(testAttributeSet.id())
+     *             .associatedResourceId(testResource.id())
+     *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetAssociatedResourcesResult> getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSetAssociatedResources:getAttributeSetAssociatedResources", TypeShape.of(GetAttributeSetAssociatedResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns list of all associated resources.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetAssociatedResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSetAssociatedResources = DataSafeFunctions.getAttributeSetAssociatedResources(GetAttributeSetAssociatedResourcesArgs.builder()
+     *             .attributeSetId(testAttributeSet.id())
+     *             .associatedResourceId(testResource.id())
+     *             .associatedResourceType(attributeSetAssociatedResourceAssociatedResourceType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetAssociatedResourcesResult> getAttributeSetAssociatedResourcesPlain(GetAttributeSetAssociatedResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getAttributeSetAssociatedResources:getAttributeSetAssociatedResources", TypeShape.of(GetAttributeSetAssociatedResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the list of attribute sets.
+     * 
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(attributeSetAccessLevel)
+     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetType(attributeSetAttributeSetType)
+     *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
+     *             .displayName(attributeSetDisplayName)
+     *             .inUse(attributeSetInUse)
+     *             .isUserDefined(attributeSetIsUserDefined)
+     *             .state(attributeSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetsResult> getAttributeSets(GetAttributeSetsArgs args) {
+        return getAttributeSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the list of attribute sets.
+     * 
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(attributeSetAccessLevel)
+     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetType(attributeSetAttributeSetType)
+     *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
+     *             .displayName(attributeSetDisplayName)
+     *             .inUse(attributeSetInUse)
+     *             .isUserDefined(attributeSetIsUserDefined)
+     *             .state(attributeSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetsResult> getAttributeSetsPlain(GetAttributeSetsPlainArgs args) {
+        return getAttributeSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the list of attribute sets.
+     * 
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(attributeSetAccessLevel)
+     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetType(attributeSetAttributeSetType)
+     *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
+     *             .displayName(attributeSetDisplayName)
+     *             .inUse(attributeSetInUse)
+     *             .isUserDefined(attributeSetIsUserDefined)
+     *             .state(attributeSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetsResult> getAttributeSets(GetAttributeSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSets:getAttributeSets", TypeShape.of(GetAttributeSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the list of attribute sets.
+     * 
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(attributeSetAccessLevel)
+     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetType(attributeSetAttributeSetType)
+     *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
+     *             .displayName(attributeSetDisplayName)
+     *             .inUse(attributeSetInUse)
+     *             .isUserDefined(attributeSetIsUserDefined)
+     *             .state(attributeSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeSetsResult> getAttributeSets(GetAttributeSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAttributeSets:getAttributeSets", TypeShape.of(GetAttributeSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Attribute Sets in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the list of attribute sets.
+     * 
+     * The ListAttributeSets operation returns only the attribute sets in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAttributeSet on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAttributeSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeSets = DataSafeFunctions.getAttributeSets(GetAttributeSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(attributeSetAccessLevel)
+     *             .attributeSetId(testAttributeSet.id())
+     *             .attributeSetType(attributeSetAttributeSetType)
+     *             .compartmentIdInSubtree(attributeSetCompartmentIdInSubtree)
+     *             .displayName(attributeSetDisplayName)
+     *             .inUse(attributeSetInUse)
+     *             .isUserDefined(attributeSetIsUserDefined)
+     *             .state(attributeSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeSetsResult> getAttributeSetsPlain(GetAttributeSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getAttributeSets:getAttributeSets", TypeShape.of(GetAttributeSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the specified archive retreival.
@@ -2342,6 +3168,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
@@ -2393,6 +3220,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
@@ -2444,6 +3272,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
@@ -2495,6 +3324,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
@@ -2546,6 +3376,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
      *             .displayName(auditArchiveRetrievalDisplayName)
      *             .state(auditArchiveRetrievalState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
@@ -3486,6 +4317,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -3550,6 +4382,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -3614,6 +4447,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -3678,6 +4512,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -3742,6 +4577,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
      *             .displayName(auditPolicyDisplayName)
      *             .state(auditPolicyState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -5441,6 +6277,231 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes", TypeShape.of(GetAuditProfileCollectedAuditVolumesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
+     *             .auditProfileId(testAuditProfile.id())
+     *             .displayName(auditProfileTargetOverrideDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAuditProfileTargetOverridesResult> getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs args) {
+        return getAuditProfileTargetOverrides(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
+     *             .auditProfileId(testAuditProfile.id())
+     *             .displayName(auditProfileTargetOverrideDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAuditProfileTargetOverridesResult> getAuditProfileTargetOverridesPlain(GetAuditProfileTargetOverridesPlainArgs args) {
+        return getAuditProfileTargetOverridesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
+     *             .auditProfileId(testAuditProfile.id())
+     *             .displayName(auditProfileTargetOverrideDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAuditProfileTargetOverridesResult> getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAuditProfileTargetOverrides:getAuditProfileTargetOverrides", TypeShape.of(GetAuditProfileTargetOverridesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
+     *             .auditProfileId(testAuditProfile.id())
+     *             .displayName(auditProfileTargetOverrideDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAuditProfileTargetOverridesResult> getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getAuditProfileTargetOverrides:getAuditProfileTargetOverrides", TypeShape.of(GetAuditProfileTargetOverridesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of all targets whose audit settings override the target group setting.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetAuditProfileTargetOverridesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuditProfileTargetOverrides = DataSafeFunctions.getAuditProfileTargetOverrides(GetAuditProfileTargetOverridesArgs.builder()
+     *             .auditProfileId(testAuditProfile.id())
+     *             .displayName(auditProfileTargetOverrideDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAuditProfileTargetOverridesResult> getAuditProfileTargetOverridesPlain(GetAuditProfileTargetOverridesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getAuditProfileTargetOverrides:getAuditProfileTargetOverrides", TypeShape.of(GetAuditProfileTargetOverridesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all audit profiles.
@@ -5494,7 +6555,9 @@ public final class DataSafeFunctions {
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(auditProfileTargetType)
      *             .build());
      * 
      *     }
@@ -5561,7 +6624,9 @@ public final class DataSafeFunctions {
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(auditProfileTargetType)
      *             .build());
      * 
      *     }
@@ -5628,7 +6693,9 @@ public final class DataSafeFunctions {
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(auditProfileTargetType)
      *             .build());
      * 
      *     }
@@ -5695,7 +6762,9 @@ public final class DataSafeFunctions {
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(auditProfileTargetType)
      *             .build());
      * 
      *     }
@@ -5762,7 +6831,9 @@ public final class DataSafeFunctions {
      *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
      *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
      *             .state(auditProfileState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(auditProfileTargetType)
      *             .build());
      * 
      *     }
@@ -6346,6 +7417,7 @@ public final class DataSafeFunctions {
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -6410,6 +7482,7 @@ public final class DataSafeFunctions {
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -6474,6 +7547,7 @@ public final class DataSafeFunctions {
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -6538,6 +7612,7 @@ public final class DataSafeFunctions {
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -6602,6 +7677,7 @@ public final class DataSafeFunctions {
      *             .displayName(auditTrailDisplayName)
      *             .state(auditTrailState)
      *             .status(auditTrailStatus)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -8144,6 +9220,7 @@ public final class DataSafeFunctions {
      *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
@@ -8209,6 +9286,7 @@ public final class DataSafeFunctions {
      *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
@@ -8274,6 +9352,7 @@ public final class DataSafeFunctions {
      *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
@@ -8339,6 +9418,7 @@ public final class DataSafeFunctions {
      *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
@@ -8404,6 +9484,7 @@ public final class DataSafeFunctions {
      *             .databaseSecurityConfigId(testDatabaseSecurityConfig.id())
      *             .displayName(databaseSecurityConfigDisplayName)
      *             .state(databaseSecurityConfigState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(databaseSecurityConfigTimeCreatedLessThan)
@@ -8707,7 +9788,9 @@ public final class DataSafeFunctions {
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -8759,7 +9842,9 @@ public final class DataSafeFunctions {
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -8811,7 +9896,9 @@ public final class DataSafeFunctions {
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -8863,7 +9950,9 @@ public final class DataSafeFunctions {
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -8915,7 +10004,9 @@ public final class DataSafeFunctions {
      *             .groupBy(discoveryAnalyticGroupBy)
      *             .isCommon(discoveryAnalyticIsCommon)
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -10666,6 +11757,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -10716,6 +11809,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -10766,6 +11861,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -10816,6 +11913,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -10866,6 +11965,8 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
      *             .groupBy(maskingAnalyticGroupBy)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -14720,7 +15821,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
      *             .onPremConnectorId(testOnPremConnector.id())
-     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
+     *             .state(onPremConnectorState)
      *             .build());
      * 
      *     }
@@ -14769,7 +15870,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
      *             .onPremConnectorId(testOnPremConnector.id())
-     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
+     *             .state(onPremConnectorState)
      *             .build());
      * 
      *     }
@@ -14818,7 +15919,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
      *             .onPremConnectorId(testOnPremConnector.id())
-     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
+     *             .state(onPremConnectorState)
      *             .build());
      * 
      *     }
@@ -14867,7 +15968,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
      *             .onPremConnectorId(testOnPremConnector.id())
-     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
+     *             .state(onPremConnectorState)
      *             .build());
      * 
      *     }
@@ -14916,7 +16017,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
      *             .displayName(onPremConnectorDisplayName)
      *             .onPremConnectorId(testOnPremConnector.id())
-     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
+     *             .state(onPremConnectorState)
      *             .build());
      * 
      *     }
@@ -15888,6 +16989,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
@@ -15941,6 +17043,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
@@ -15994,6 +17097,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
@@ -16047,6 +17151,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
@@ -16100,6 +17205,7 @@ public final class DataSafeFunctions {
      *             .compartmentId(compartmentId)
      *             .accessLevel(reportAccessLevel)
      *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .dataSource(reportDataSource)
      *             .displayName(reportDisplayName)
      *             .mimeType(reportMimeType)
      *             .reportDefinitionId(testReportDefinition.id())
@@ -17285,6 +18391,256 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", TypeShape.of(GetSecurityAssessmentResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .accessLevel(securityAssessmentCheckAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
+     *             .containsReferences(securityAssessmentCheckContainsReferences)
+     *             .containsSeverities(securityAssessmentCheckContainsSeverity)
+     *             .key(securityAssessmentCheckKey)
+     *             .suggestedSeverity(securityAssessmentCheckSuggestedSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentChecksResult> getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs args) {
+        return getSecurityAssessmentChecks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .accessLevel(securityAssessmentCheckAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
+     *             .containsReferences(securityAssessmentCheckContainsReferences)
+     *             .containsSeverities(securityAssessmentCheckContainsSeverity)
+     *             .key(securityAssessmentCheckKey)
+     *             .suggestedSeverity(securityAssessmentCheckSuggestedSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentChecksResult> getSecurityAssessmentChecksPlain(GetSecurityAssessmentChecksPlainArgs args) {
+        return getSecurityAssessmentChecksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .accessLevel(securityAssessmentCheckAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
+     *             .containsReferences(securityAssessmentCheckContainsReferences)
+     *             .containsSeverities(securityAssessmentCheckContainsSeverity)
+     *             .key(securityAssessmentCheckKey)
+     *             .suggestedSeverity(securityAssessmentCheckSuggestedSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentChecksResult> getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentChecks:getSecurityAssessmentChecks", TypeShape.of(GetSecurityAssessmentChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .accessLevel(securityAssessmentCheckAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
+     *             .containsReferences(securityAssessmentCheckContainsReferences)
+     *             .containsSeverities(securityAssessmentCheckContainsSeverity)
+     *             .key(securityAssessmentCheckKey)
+     *             .suggestedSeverity(securityAssessmentCheckSuggestedSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentChecksResult> getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentChecks:getSecurityAssessmentChecks", TypeShape.of(GetSecurityAssessmentChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentChecksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentChecks = DataSafeFunctions.getSecurityAssessmentChecks(GetSecurityAssessmentChecksArgs.builder()
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .accessLevel(securityAssessmentCheckAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCheckCompartmentIdInSubtree)
+     *             .containsReferences(securityAssessmentCheckContainsReferences)
+     *             .containsSeverities(securityAssessmentCheckContainsSeverity)
+     *             .key(securityAssessmentCheckKey)
+     *             .suggestedSeverity(securityAssessmentCheckSuggestedSeverity)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentChecksResult> getSecurityAssessmentChecksPlain(GetSecurityAssessmentChecksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentChecks:getSecurityAssessmentChecks", TypeShape.of(GetSecurityAssessmentChecksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the comparison report for the security assessments submitted for comparison.
@@ -17827,7 +19183,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args) {
@@ -17836,7 +19192,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args) {
@@ -17845,7 +19201,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args, InvokeOptions options) {
@@ -17854,7 +19210,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      * 
      */
     public static Output<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindings(GetSecurityAssessmentFindingsArgs args, InvokeOutputOptions options) {
@@ -17863,7 +19219,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * List all the findings from all the targets in the specified compartment.
+     * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
      * 
      */
     public static CompletableFuture<GetSecurityAssessmentFindingsResult> getSecurityAssessmentFindingsPlain(GetSecurityAssessmentFindingsPlainArgs args, InvokeOptions options) {
@@ -18695,6 +20051,896 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", TypeShape.of(GetSecurityAssessmentSecurityFeaturesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * 
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAnalyticCompartmentIdInSubtree)
+     *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
+     *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
+     *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAnalyticsResult> getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs args) {
+        return getSecurityAssessmentTemplateAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * 
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAnalyticCompartmentIdInSubtree)
+     *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
+     *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
+     *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateAnalyticsResult> getSecurityAssessmentTemplateAnalyticsPlain(GetSecurityAssessmentTemplateAnalyticsPlainArgs args) {
+        return getSecurityAssessmentTemplateAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * 
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAnalyticCompartmentIdInSubtree)
+     *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
+     *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
+     *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAnalyticsResult> getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateAnalytics:getSecurityAssessmentTemplateAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * 
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAnalyticCompartmentIdInSubtree)
+     *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
+     *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
+     *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAnalyticsResult> getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateAnalytics:getSecurityAssessmentTemplateAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template aggregated details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates. It also provides information
+     * about the statistics for the template baseline and the comparison related. If the comparison is done, it will show if there is any drift,
+     * and how many checks have drifts.
+     * The dimension field - isGroup identifies if the targetId belongs to a target group or a individual target.
+     * The dimension field - isCompared identifies if the comparison between the latest assessment and the template baseline assessment is done or not.
+     * The dimension field - isCompliant identifies if the latest assessment is compliant with the template baseline assessment or not.
+     * The dimension field - totalChecksFailed identifies how many checks in the template have drifts in the comparison.
+     * 
+     * When you perform the ListTemplateAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAnalytics(GetSecurityAssessmentTemplateAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAnalyticCompartmentIdInSubtree)
+     *             .isCompared(securityAssessmentTemplateAnalyticIsCompared)
+     *             .isCompliant(securityAssessmentTemplateAnalyticIsCompliant)
+     *             .isGroup(securityAssessmentTemplateAnalyticIsGroup)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateAnalyticsResult> getSecurityAssessmentTemplateAnalyticsPlain(GetSecurityAssessmentTemplateAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentTemplateAnalytics:getSecurityAssessmentTemplateAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * 
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * 
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * 
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAssociationAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAssociationAnalyticsResult> getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs args) {
+        return getSecurityAssessmentTemplateAssociationAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * 
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * 
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * 
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAssociationAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateAssociationAnalyticsResult> getSecurityAssessmentTemplateAssociationAnalyticsPlain(GetSecurityAssessmentTemplateAssociationAnalyticsPlainArgs args) {
+        return getSecurityAssessmentTemplateAssociationAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * 
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * 
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * 
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAssociationAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAssociationAnalyticsResult> getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateAssociationAnalytics:getSecurityAssessmentTemplateAssociationAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAssociationAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * 
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * 
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * 
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAssociationAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateAssociationAnalyticsResult> getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateAssociationAnalytics:getSecurityAssessmentTemplateAssociationAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAssociationAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of template association details in the specified compartment. This provides information about the
+     * overall template usage, by returning the count of the target databases/target groups using the templates.
+     * 
+     * If the template baseline is created for a target group which contains several targets, we will have each individual target
+     * listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
+     * it will have targetId field only.
+     * 
+     * By leveraging the targetId filter, you will be able to know all the template or template baseline that this target has something to do with.
+     * No matter if they are directly applied or created for this target, or they are for the target group the target belongs to.
+     * 
+     * When you perform the ListTemplateAssociationAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns statistics from the compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then &#34;Not Authorized&#34; is returned.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateAssociationAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateAssociationAnalytics = DataSafeFunctions.getSecurityAssessmentTemplateAssociationAnalytics(GetSecurityAssessmentTemplateAssociationAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentTemplateAssociationAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetId(testTarget.id())
+     *             .templateAssessmentId(testTemplateAssessment.id())
+     *             .templateBaselineAssessmentId(testTemplateBaselineAssessment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateAssociationAnalyticsResult> getSecurityAssessmentTemplateAssociationAnalyticsPlain(GetSecurityAssessmentTemplateAssociationAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentTemplateAssociationAnalytics:getSecurityAssessmentTemplateAssociationAnalytics", TypeShape.of(GetSecurityAssessmentTemplateAssociationAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .category(securityAssessmentTemplateBaselineComparisonCategory)
+     *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateBaselineComparisonResult> getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs args) {
+        return getSecurityAssessmentTemplateBaselineComparison(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .category(securityAssessmentTemplateBaselineComparisonCategory)
+     *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateBaselineComparisonResult> getSecurityAssessmentTemplateBaselineComparisonPlain(GetSecurityAssessmentTemplateBaselineComparisonPlainArgs args) {
+        return getSecurityAssessmentTemplateBaselineComparisonPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .category(securityAssessmentTemplateBaselineComparisonCategory)
+     *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateBaselineComparisonResult> getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateBaselineComparison:getSecurityAssessmentTemplateBaselineComparison", TypeShape.of(GetSecurityAssessmentTemplateBaselineComparisonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .category(securityAssessmentTemplateBaselineComparisonCategory)
+     *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityAssessmentTemplateBaselineComparisonResult> getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityAssessmentTemplateBaselineComparison:getSecurityAssessmentTemplateBaselineComparison", TypeShape.of(GetSecurityAssessmentTemplateBaselineComparisonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Assessment Template Baseline Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the comparison report for the security assessments submitted for comparison.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentTemplateBaselineComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityAssessmentTemplateBaselineComparison = DataSafeFunctions.getSecurityAssessmentTemplateBaselineComparison(GetSecurityAssessmentTemplateBaselineComparisonArgs.builder()
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .category(securityAssessmentTemplateBaselineComparisonCategory)
+     *             .findingKey(securityAssessmentTemplateBaselineComparisonFindingKey)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityAssessmentTemplateBaselineComparisonResult> getSecurityAssessmentTemplateBaselineComparisonPlain(GetSecurityAssessmentTemplateBaselineComparisonPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityAssessmentTemplateBaselineComparison:getSecurityAssessmentTemplateBaselineComparison", TypeShape.of(GetSecurityAssessmentTemplateBaselineComparisonResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Security Assessments in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of security assessments.
@@ -18747,7 +20993,10 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
      *             .scheduleAssessmentId(testScheduleAssessment.id())
      *             .state(securityAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(securityAssessmentTargetType)
+     *             .templateAssessmentId(testTemplateAssessment.id())
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -18817,7 +21066,10 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
      *             .scheduleAssessmentId(testScheduleAssessment.id())
      *             .state(securityAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(securityAssessmentTargetType)
+     *             .templateAssessmentId(testTemplateAssessment.id())
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -18887,7 +21139,10 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
      *             .scheduleAssessmentId(testScheduleAssessment.id())
      *             .state(securityAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(securityAssessmentTargetType)
+     *             .templateAssessmentId(testTemplateAssessment.id())
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -18957,7 +21212,10 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
      *             .scheduleAssessmentId(testScheduleAssessment.id())
      *             .state(securityAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(securityAssessmentTargetType)
+     *             .templateAssessmentId(testTemplateAssessment.id())
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -19027,7 +21285,10 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
      *             .scheduleAssessmentId(testScheduleAssessment.id())
      *             .state(securityAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(securityAssessmentTargetType)
+     *             .templateAssessmentId(testTemplateAssessment.id())
      *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
      *             .triggeredBy(securityAssessmentTriggeredBy)
@@ -19093,6 +21354,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
      *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
      * 
@@ -19155,6 +21417,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
      *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
      * 
@@ -19217,6 +21480,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
      *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
      * 
@@ -19279,6 +21543,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
      *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
      * 
@@ -19341,6 +21606,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
      *             .displayName(securityPolicyDisplayName)
      *             .securityPolicyId(testSecurityPolicy.id())
+     *             .securityPolicyType(securityPolicySecurityPolicyType)
      *             .state(securityPolicyState)
      *             .build());
      * 
@@ -19573,6 +21839,551 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicy:getSecurityPolicy", TypeShape.of(GetSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigResult> getSecurityPolicyConfig(GetSecurityPolicyConfigArgs args) {
+        return getSecurityPolicyConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyConfigResult> getSecurityPolicyConfigPlain(GetSecurityPolicyConfigPlainArgs args) {
+        return getSecurityPolicyConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigResult> getSecurityPolicyConfig(GetSecurityPolicyConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyConfig:getSecurityPolicyConfig", TypeShape.of(GetSecurityPolicyConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigResult> getSecurityPolicyConfig(GetSecurityPolicyConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyConfig:getSecurityPolicyConfig", TypeShape.of(GetSecurityPolicyConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a security policy configuration by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfig = DataSafeFunctions.getSecurityPolicyConfig(GetSecurityPolicyConfigArgs.builder()
+     *             .securityPolicyConfigId(testSecurityPolicyConfigOciDataSafeSecurityPolicyConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyConfigResult> getSecurityPolicyConfigPlain(GetSecurityPolicyConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyConfig:getSecurityPolicyConfig", TypeShape.of(GetSecurityPolicyConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * 
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfigs = DataSafeFunctions.getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyConfigAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
+     *             .displayName(securityPolicyConfigDisplayName)
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyConfigState)
+     *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigsResult> getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs args) {
+        return getSecurityPolicyConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * 
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfigs = DataSafeFunctions.getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyConfigAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
+     *             .displayName(securityPolicyConfigDisplayName)
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyConfigState)
+     *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyConfigsResult> getSecurityPolicyConfigsPlain(GetSecurityPolicyConfigsPlainArgs args) {
+        return getSecurityPolicyConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Security Policy Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * 
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfigs = DataSafeFunctions.getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyConfigAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
+     *             .displayName(securityPolicyConfigDisplayName)
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyConfigState)
+     *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigsResult> getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyConfigs:getSecurityPolicyConfigs", TypeShape.of(GetSecurityPolicyConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * 
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfigs = DataSafeFunctions.getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyConfigAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
+     *             .displayName(securityPolicyConfigDisplayName)
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyConfigState)
+     *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSecurityPolicyConfigsResult> getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSecurityPolicyConfigs:getSecurityPolicyConfigs", TypeShape.of(GetSecurityPolicyConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Security Policy Configs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all security policy configurations in Data Safe.
+     * 
+     * The ListSecurityPolicyConfigs operation returns only the security policy configurations in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicyConfigs on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSecurityPolicyConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicyConfigs = DataSafeFunctions.getSecurityPolicyConfigs(GetSecurityPolicyConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyConfigAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyConfigCompartmentIdInSubtree)
+     *             .displayName(securityPolicyConfigDisplayName)
+     *             .securityPolicyConfigId(testSecurityPolicyConfig.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyConfigState)
+     *             .timeCreatedGreaterThanOrEqualTo(securityPolicyConfigTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityPolicyConfigTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSecurityPolicyConfigsResult> getSecurityPolicyConfigsPlain(GetSecurityPolicyConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSecurityPolicyConfigs:getSecurityPolicyConfigs", TypeShape.of(GetSecurityPolicyConfigsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -20055,6 +22866,8 @@ public final class DataSafeFunctions {
      *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
      *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -20103,6 +22916,8 @@ public final class DataSafeFunctions {
      *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
      *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -20151,6 +22966,8 @@ public final class DataSafeFunctions {
      *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
      *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -20199,6 +23016,8 @@ public final class DataSafeFunctions {
      *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
      *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -20247,6 +23066,8 @@ public final class DataSafeFunctions {
      *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
      *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
      *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
+     *             .securityPolicyEntryType(securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -20311,6 +23132,7 @@ public final class DataSafeFunctions {
      *             .securityPolicyId(testSecurityPolicy.id())
      *             .state(securityPolicyDeploymentState)
      *             .targetId(testTarget.id())
+     *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
      *     }
@@ -20375,6 +23197,7 @@ public final class DataSafeFunctions {
      *             .securityPolicyId(testSecurityPolicy.id())
      *             .state(securityPolicyDeploymentState)
      *             .targetId(testTarget.id())
+     *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
      *     }
@@ -20439,6 +23262,7 @@ public final class DataSafeFunctions {
      *             .securityPolicyId(testSecurityPolicy.id())
      *             .state(securityPolicyDeploymentState)
      *             .targetId(testTarget.id())
+     *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
      *     }
@@ -20503,6 +23327,7 @@ public final class DataSafeFunctions {
      *             .securityPolicyId(testSecurityPolicy.id())
      *             .state(securityPolicyDeploymentState)
      *             .targetId(testTarget.id())
+     *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
      *     }
@@ -20567,6 +23392,7 @@ public final class DataSafeFunctions {
      *             .securityPolicyId(testSecurityPolicy.id())
      *             .state(securityPolicyDeploymentState)
      *             .targetId(testTarget.id())
+     *             .targetType(securityPolicyDeploymentTargetType)
      *             .build());
      * 
      *     }
@@ -22329,6 +25155,7 @@ public final class DataSafeFunctions {
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -22392,6 +25219,7 @@ public final class DataSafeFunctions {
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -22455,6 +25283,7 @@ public final class DataSafeFunctions {
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -22518,6 +25347,7 @@ public final class DataSafeFunctions {
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -22581,6 +25411,7 @@ public final class DataSafeFunctions {
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .sensitiveTypeGroupId(testSensitiveTypeGroup.id())
      *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -26548,6 +29379,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
@@ -26612,6 +29444,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
@@ -26676,6 +29509,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
@@ -26740,6 +29574,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
@@ -26804,6 +29639,7 @@ public final class DataSafeFunctions {
      *             .compartmentIdInSubtree(sqlCollectionAnalyticCompartmentIdInSubtree)
      *             .groupBies(sqlCollectionAnalyticGroupBy)
      *             .state(sqlCollectionAnalyticState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeEnded(sqlCollectionAnalyticTimeEnded)
      *             .timeStarted(sqlCollectionAnalyticTimeStarted)
@@ -27105,6 +29941,7 @@ public final class DataSafeFunctions {
      *             .displayName(sqlCollectionDisplayName)
      *             .sqlCollectionId(testSqlCollection.id())
      *             .state(sqlCollectionState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
@@ -27171,6 +30008,7 @@ public final class DataSafeFunctions {
      *             .displayName(sqlCollectionDisplayName)
      *             .sqlCollectionId(testSqlCollection.id())
      *             .state(sqlCollectionState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
@@ -27237,6 +30075,7 @@ public final class DataSafeFunctions {
      *             .displayName(sqlCollectionDisplayName)
      *             .sqlCollectionId(testSqlCollection.id())
      *             .state(sqlCollectionState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
@@ -27303,6 +30142,7 @@ public final class DataSafeFunctions {
      *             .displayName(sqlCollectionDisplayName)
      *             .sqlCollectionId(testSqlCollection.id())
      *             .state(sqlCollectionState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
@@ -27369,6 +30209,7 @@ public final class DataSafeFunctions {
      *             .displayName(sqlCollectionDisplayName)
      *             .sqlCollectionId(testSqlCollection.id())
      *             .state(sqlCollectionState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .timeCreatedGreaterThanOrEqualTo(sqlCollectionTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(sqlCollectionTimeCreatedLessThan)
@@ -29797,44 +32638,6 @@ public final class DataSafeFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
-     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
-     *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
-     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
-     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29849,44 +32652,6 @@ public final class DataSafeFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
-     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
-     *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
-     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
-     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29901,44 +32666,6 @@ public final class DataSafeFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
-     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
-     *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
-     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
-     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -29953,44 +32680,6 @@ public final class DataSafeFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
-     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
-     *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
-     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
-     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -30005,44 +32694,6 @@ public final class DataSafeFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(compartmentId)
-     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
-     *             .alertPolicyId(testAlertPolicy.id())
-     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
-     *             .state(targetAlertPolicyAssociationState)
-     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
-     *             .targetId(testTarget.id())
-     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
-     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -30268,6 +32919,711 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetTargetDatabaseResult> getTargetDatabasePlain(GetTargetDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabase:getTargetDatabase", TypeShape.of(GetTargetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified target database group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupResult> getTargetDatabaseGroup(GetTargetDatabaseGroupArgs args) {
+        return getTargetDatabaseGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified target database group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupResult> getTargetDatabaseGroupPlain(GetTargetDatabaseGroupPlainArgs args) {
+        return getTargetDatabaseGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified target database group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupResult> getTargetDatabaseGroup(GetTargetDatabaseGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroup:getTargetDatabaseGroup", TypeShape.of(GetTargetDatabaseGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified target database group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupResult> getTargetDatabaseGroup(GetTargetDatabaseGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroup:getTargetDatabaseGroup", TypeShape.of(GetTargetDatabaseGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Returns the details of the specified target database group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroup = DataSafeFunctions.getTargetDatabaseGroup(GetTargetDatabaseGroupArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroupOciDataSafeTargetDatabaseGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupResult> getTargetDatabaseGroupPlain(GetTargetDatabaseGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabaseGroup:getTargetDatabaseGroup", TypeShape.of(GetTargetDatabaseGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the members of the target database group with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupGroupMemberResult> getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs args) {
+        return getTargetDatabaseGroupGroupMember(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the members of the target database group with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupGroupMemberResult> getTargetDatabaseGroupGroupMemberPlain(GetTargetDatabaseGroupGroupMemberPlainArgs args) {
+        return getTargetDatabaseGroupGroupMemberPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the members of the target database group with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupGroupMemberResult> getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroupGroupMember:getTargetDatabaseGroupGroupMember", TypeShape.of(GetTargetDatabaseGroupGroupMemberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the members of the target database group with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupGroupMemberResult> getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroupGroupMember:getTargetDatabaseGroupGroupMember", TypeShape.of(GetTargetDatabaseGroupGroupMemberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves the members of the target database group with the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupGroupMemberArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroupGroupMember = DataSafeFunctions.getTargetDatabaseGroupGroupMember(GetTargetDatabaseGroupGroupMemberArgs.builder()
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupGroupMemberResult> getTargetDatabaseGroupGroupMemberPlain(GetTargetDatabaseGroupGroupMemberPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabaseGroupGroupMember:getTargetDatabaseGroupGroupMember", TypeShape.of(GetTargetDatabaseGroupGroupMemberResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of target database groups according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroups = DataSafeFunctions.getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseGroupAccessLevel)
+     *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
+     *             .displayName(targetDatabaseGroupDisplayName)
+     *             .state(targetDatabaseGroupState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
+     *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupsResult> getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs args) {
+        return getTargetDatabaseGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of target database groups according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroups = DataSafeFunctions.getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseGroupAccessLevel)
+     *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
+     *             .displayName(targetDatabaseGroupDisplayName)
+     *             .state(targetDatabaseGroupState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
+     *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupsResult> getTargetDatabaseGroupsPlain(GetTargetDatabaseGroupsPlainArgs args) {
+        return getTargetDatabaseGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of target database groups according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroups = DataSafeFunctions.getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseGroupAccessLevel)
+     *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
+     *             .displayName(targetDatabaseGroupDisplayName)
+     *             .state(targetDatabaseGroupState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
+     *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupsResult> getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroups:getTargetDatabaseGroups", TypeShape.of(GetTargetDatabaseGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of target database groups according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroups = DataSafeFunctions.getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseGroupAccessLevel)
+     *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
+     *             .displayName(targetDatabaseGroupDisplayName)
+     *             .state(targetDatabaseGroupState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
+     *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetTargetDatabaseGroupsResult> getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetDatabaseGroups:getTargetDatabaseGroups", TypeShape.of(GetTargetDatabaseGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of target database groups according to the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetDatabaseGroups = DataSafeFunctions.getTargetDatabaseGroups(GetTargetDatabaseGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseGroupAccessLevel)
+     *             .compartmentIdInSubtree(targetDatabaseGroupCompartmentIdInSubtree)
+     *             .displayName(targetDatabaseGroupDisplayName)
+     *             .state(targetDatabaseGroupState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
+     *             .targetDatabaseGroupFilter(targetDatabaseGroupTargetDatabaseGroupFilter)
+     *             .timeCreatedGreaterThanOrEqualTo(targetDatabaseGroupTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetDatabaseGroupTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetTargetDatabaseGroupsResult> getTargetDatabaseGroupsPlain(GetTargetDatabaseGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabaseGroups:getTargetDatabaseGroups", TypeShape.of(GetTargetDatabaseGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -31958,6 +35314,1106 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetTargetDatabasesTablesResult> getTargetDatabasesTablesPlain(GetTargetDatabasesTablesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", TypeShape.of(GetTargetDatabasesTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all Unified Audit policies.
+     * 
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicies = DataSafeFunctions.getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDisplayName)
+     *             .isSeeded(unifiedAuditPolicyIsSeeded)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(unifiedAuditPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPoliciesResult> getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs args) {
+        return getUnifiedAuditPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Unified Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all Unified Audit policies.
+     * 
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicies = DataSafeFunctions.getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDisplayName)
+     *             .isSeeded(unifiedAuditPolicyIsSeeded)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(unifiedAuditPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPoliciesResult> getUnifiedAuditPoliciesPlain(GetUnifiedAuditPoliciesPlainArgs args) {
+        return getUnifiedAuditPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Unified Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all Unified Audit policies.
+     * 
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicies = DataSafeFunctions.getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDisplayName)
+     *             .isSeeded(unifiedAuditPolicyIsSeeded)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(unifiedAuditPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPoliciesResult> getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicies:getUnifiedAuditPolicies", TypeShape.of(GetUnifiedAuditPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all Unified Audit policies.
+     * 
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicies = DataSafeFunctions.getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDisplayName)
+     *             .isSeeded(unifiedAuditPolicyIsSeeded)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(unifiedAuditPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPoliciesResult> getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicies:getUnifiedAuditPolicies", TypeShape.of(GetUnifiedAuditPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policies in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all Unified Audit policies.
+     * 
+     * The ListUnifiedAuditPolicies operation returns only the Unified Audit policies in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a sub-compartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicies on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and sub-compartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicies = DataSafeFunctions.getUnifiedAuditPolicies(GetUnifiedAuditPoliciesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDisplayName)
+     *             .isSeeded(unifiedAuditPolicyIsSeeded)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(unifiedAuditPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(unifiedAuditPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(unifiedAuditPolicyTimeCreatedLessThan)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPoliciesResult> getUnifiedAuditPoliciesPlain(GetUnifiedAuditPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUnifiedAuditPolicies:getUnifiedAuditPolicies", TypeShape.of(GetUnifiedAuditPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a Unified Audit policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyResult> getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs args) {
+        return getUnifiedAuditPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a Unified Audit policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyResult> getUnifiedAuditPolicyPlain(GetUnifiedAuditPolicyPlainArgs args) {
+        return getUnifiedAuditPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a Unified Audit policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyResult> getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicy:getUnifiedAuditPolicy", TypeShape.of(GetUnifiedAuditPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a Unified Audit policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyResult> getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicy:getUnifiedAuditPolicy", TypeShape.of(GetUnifiedAuditPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a Unified Audit policy by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicy = DataSafeFunctions.getUnifiedAuditPolicy(GetUnifiedAuditPolicyArgs.builder()
+     *             .unifiedAuditPolicyId(testUnifiedAuditPolicyOciDataSafeUnifiedAuditPolicy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyResult> getUnifiedAuditPolicyPlain(GetUnifiedAuditPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUnifiedAuditPolicy:getUnifiedAuditPolicy", TypeShape.of(GetUnifiedAuditPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionResult> getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs args) {
+        return getUnifiedAuditPolicyDefinition(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyDefinitionResult> getUnifiedAuditPolicyDefinitionPlain(GetUnifiedAuditPolicyDefinitionPlainArgs args) {
+        return getUnifiedAuditPolicyDefinitionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionResult> getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicyDefinition:getUnifiedAuditPolicyDefinition", TypeShape.of(GetUnifiedAuditPolicyDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionResult> getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicyDefinition:getUnifiedAuditPolicyDefinition", TypeShape.of(GetUnifiedAuditPolicyDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a unified audit policy definition by the specified OCID of the unified audit policy definition resource.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinition = DataSafeFunctions.getUnifiedAuditPolicyDefinition(GetUnifiedAuditPolicyDefinitionArgs.builder()
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinitionOciDataSafeUnifiedAuditPolicyDefinition.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyDefinitionResult> getUnifiedAuditPolicyDefinitionPlain(GetUnifiedAuditPolicyDefinitionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUnifiedAuditPolicyDefinition:getUnifiedAuditPolicyDefinition", TypeShape.of(GetUnifiedAuditPolicyDefinitionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * 
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinitions = DataSafeFunctions.getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyDefinitionAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyDefinitionCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDefinitionDisplayName)
+     *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
+     *             .state(unifiedAuditPolicyDefinitionState)
+     *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionsResult> getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs args) {
+        return getUnifiedAuditPolicyDefinitions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * 
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinitions = DataSafeFunctions.getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyDefinitionAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyDefinitionCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDefinitionDisplayName)
+     *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
+     *             .state(unifiedAuditPolicyDefinitionState)
+     *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyDefinitionsResult> getUnifiedAuditPolicyDefinitionsPlain(GetUnifiedAuditPolicyDefinitionsPlainArgs args) {
+        return getUnifiedAuditPolicyDefinitionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * 
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinitions = DataSafeFunctions.getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyDefinitionAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyDefinitionCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDefinitionDisplayName)
+     *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
+     *             .state(unifiedAuditPolicyDefinitionState)
+     *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionsResult> getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicyDefinitions:getUnifiedAuditPolicyDefinitions", TypeShape.of(GetUnifiedAuditPolicyDefinitionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * 
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinitions = DataSafeFunctions.getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyDefinitionAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyDefinitionCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDefinitionDisplayName)
+     *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
+     *             .state(unifiedAuditPolicyDefinitionState)
+     *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUnifiedAuditPolicyDefinitionsResult> getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getUnifiedAuditPolicyDefinitions:getUnifiedAuditPolicyDefinitions", TypeShape.of(GetUnifiedAuditPolicyDefinitionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Retrieves a list of all unified audit policy definitions in Data Safe.
+     * 
+     * The ListUnifiedAuditPolicyDefinitions operation returns only the unified audit policy definitions in the specified `compartmentId`.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requester has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUnifiedAuditPolicyDefinitions on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetUnifiedAuditPolicyDefinitionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAuditPolicyDefinitions = DataSafeFunctions.getUnifiedAuditPolicyDefinitions(GetUnifiedAuditPolicyDefinitionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(unifiedAuditPolicyDefinitionAccessLevel)
+     *             .compartmentIdInSubtree(unifiedAuditPolicyDefinitionCompartmentIdInSubtree)
+     *             .displayName(unifiedAuditPolicyDefinitionDisplayName)
+     *             .isSeeded(unifiedAuditPolicyDefinitionIsSeeded)
+     *             .state(unifiedAuditPolicyDefinitionState)
+     *             .unifiedAuditPolicyCategory(unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory)
+     *             .unifiedAuditPolicyDefinitionId(testUnifiedAuditPolicyDefinition.id())
+     *             .unifiedAuditPolicyName(testUnifiedAuditPolicy.name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUnifiedAuditPolicyDefinitionsResult> getUnifiedAuditPolicyDefinitionsPlain(GetUnifiedAuditPolicyDefinitionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getUnifiedAuditPolicyDefinitions:getUnifiedAuditPolicyDefinitions", TypeShape.of(GetUnifiedAuditPolicyDefinitionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -34367,7 +38823,9 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
      *             .scheduleUserAssessmentId(testUserAssessment.id())
      *             .state(userAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
      *             .triggeredBy(userAssessmentTriggeredBy)
@@ -34437,7 +38895,9 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
      *             .scheduleUserAssessmentId(testUserAssessment.id())
      *             .state(userAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
      *             .triggeredBy(userAssessmentTriggeredBy)
@@ -34507,7 +38967,9 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
      *             .scheduleUserAssessmentId(testUserAssessment.id())
      *             .state(userAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
      *             .triggeredBy(userAssessmentTriggeredBy)
@@ -34577,7 +39039,9 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
      *             .scheduleUserAssessmentId(testUserAssessment.id())
      *             .state(userAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
      *             .triggeredBy(userAssessmentTriggeredBy)
@@ -34647,7 +39111,9 @@ public final class DataSafeFunctions {
      *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
      *             .scheduleUserAssessmentId(testUserAssessment.id())
      *             .state(userAssessmentState)
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
+     *             .targetType(userAssessmentTargetType)
      *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
      *             .triggeredBy(userAssessmentTriggeredBy)

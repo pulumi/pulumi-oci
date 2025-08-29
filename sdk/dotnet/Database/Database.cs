@@ -245,6 +245,12 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        /// </summary>
+        [Output("storageSizeDetails")]
+        public Output<ImmutableArray<Outputs.DatabaseStorageSizeDetail>> StorageSizeDetails { get; private set; } = null!;
+
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("systemTags")]
@@ -653,6 +659,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("storageSizeDetails")]
+        private InputList<Inputs.DatabaseStorageSizeDetailGetArgs>? _storageSizeDetails;
+
+        /// <summary>
+        /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        /// </summary>
+        public InputList<Inputs.DatabaseStorageSizeDetailGetArgs> StorageSizeDetails
+        {
+            get => _storageSizeDetails ?? (_storageSizeDetails = new InputList<Inputs.DatabaseStorageSizeDetailGetArgs>());
+            set => _storageSizeDetails = value;
+        }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

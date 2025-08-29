@@ -126,6 +126,8 @@ type LookupExadbVmClusterResult struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the Exadata VM cluster on Exascale Infrastructure resource
 	Shape string `pulumi:"shape"`
+	// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+	ShapeAttribute string `pulumi:"shapeAttribute"`
 	// The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -352,6 +354,11 @@ func (o LookupExadbVmClusterResultOutput) SecurityAttributes() pulumi.StringMapO
 // The shape of the Exadata VM cluster on Exascale Infrastructure resource
 func (o LookupExadbVmClusterResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+func (o LookupExadbVmClusterResultOutput) ShapeAttribute() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.ShapeAttribute }).(pulumi.StringOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.

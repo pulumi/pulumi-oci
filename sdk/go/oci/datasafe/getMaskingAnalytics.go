@@ -36,6 +36,8 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(maskingAnalyticCompartmentIdInSubtree),
 //				GroupBy:                pulumi.StringRef(maskingAnalyticGroupBy),
 //				MaskingPolicyId:        pulumi.StringRef(testMaskingPolicy.Id),
+//				SensitiveTypeId:        pulumi.StringRef(testSensitiveType.Id),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -67,6 +69,10 @@ type GetMaskingAnalyticsArgs struct {
 	GroupBy *string `pulumi:"groupBy"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -82,6 +88,9 @@ type GetMaskingAnalyticsResult struct {
 	// The list of masking_analytics_collection.
 	MaskingAnalyticsCollections []GetMaskingAnalyticsMaskingAnalyticsCollection `pulumi:"maskingAnalyticsCollections"`
 	MaskingPolicyId             *string                                         `pulumi:"maskingPolicyId"`
+	// The OCID of the sensitive type masked.
+	SensitiveTypeId       *string `pulumi:"sensitiveTypeId"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target database.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -106,6 +115,10 @@ type GetMaskingAnalyticsOutputArgs struct {
 	GroupBy pulumi.StringPtrInput `pulumi:"groupBy"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId pulumi.StringPtrInput `pulumi:"maskingPolicyId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId pulumi.StringPtrInput `pulumi:"sensitiveTypeId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -159,6 +172,15 @@ func (o GetMaskingAnalyticsResultOutput) MaskingAnalyticsCollections() GetMaskin
 
 func (o GetMaskingAnalyticsResultOutput) MaskingPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMaskingAnalyticsResult) *string { return v.MaskingPolicyId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the sensitive type masked.
+func (o GetMaskingAnalyticsResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingAnalyticsResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMaskingAnalyticsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingAnalyticsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database.

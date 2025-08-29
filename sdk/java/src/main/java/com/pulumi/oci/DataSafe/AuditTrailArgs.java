@@ -35,6 +35,21 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    @Import(name="canUpdateLastArchiveTimeOnTarget")
+    private @Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * @return (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Optional<Output<Boolean>> canUpdateLastArchiveTimeOnTarget() {
+        return Optional.ofNullable(this.canUpdateLastArchiveTimeOnTarget);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -149,6 +164,7 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
 
     private AuditTrailArgs(AuditTrailArgs $) {
         this.auditTrailId = $.auditTrailId;
+        this.canUpdateLastArchiveTimeOnTarget = $.canUpdateLastArchiveTimeOnTarget;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -195,6 +211,27 @@ public final class AuditTrailArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder auditTrailId(String auditTrailId) {
             return auditTrailId(Output.of(auditTrailId));
+        }
+
+        /**
+         * @param canUpdateLastArchiveTimeOnTarget (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(@Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget) {
+            $.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            return this;
+        }
+
+        /**
+         * @param canUpdateLastArchiveTimeOnTarget (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            return canUpdateLastArchiveTimeOnTarget(Output.of(canUpdateLastArchiveTimeOnTarget));
         }
 
         /**

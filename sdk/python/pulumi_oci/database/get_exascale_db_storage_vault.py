@@ -27,10 +27,13 @@ class GetExascaleDbStorageVaultResult:
     """
     A collection of values returned by getExascaleDbStorageVault.
     """
-    def __init__(__self__, additional_flash_cache_in_percent=None, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, lifecycle_details=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
+    def __init__(__self__, additional_flash_cache_in_percent=None, attached_shape_attributes=None, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, lifecycle_details=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
         if additional_flash_cache_in_percent and not isinstance(additional_flash_cache_in_percent, int):
             raise TypeError("Expected argument 'additional_flash_cache_in_percent' to be a int")
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        if attached_shape_attributes and not isinstance(attached_shape_attributes, list):
+            raise TypeError("Expected argument 'attached_shape_attributes' to be a list")
+        pulumi.set(__self__, "attached_shape_attributes", attached_shape_attributes)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -96,6 +99,14 @@ class GetExascaleDbStorageVaultResult:
         The size of additional Flash Cache in percentage of High Capacity database storage.
         """
         return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedShapeAttributes")
+    def attached_shape_attributes(self) -> Sequence[_builtins.str]:
+        """
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "attached_shape_attributes")
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -254,6 +265,7 @@ class AwaitableGetExascaleDbStorageVaultResult(GetExascaleDbStorageVaultResult):
             yield self
         return GetExascaleDbStorageVaultResult(
             additional_flash_cache_in_percent=self.additional_flash_cache_in_percent,
+            attached_shape_attributes=self.attached_shape_attributes,
             availability_domain=self.availability_domain,
             cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
@@ -301,6 +313,7 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[_builti
 
     return AwaitableGetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__ret__, 'additional_flash_cache_in_percent'),
+        attached_shape_attributes=pulumi.get(__ret__, 'attached_shape_attributes'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -345,6 +358,7 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault', __args__, opts=opts, typ=GetExascaleDbStorageVaultResult)
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__response__, 'additional_flash_cache_in_percent'),
+        attached_shape_attributes=pulumi.get(__response__, 'attached_shape_attributes'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),

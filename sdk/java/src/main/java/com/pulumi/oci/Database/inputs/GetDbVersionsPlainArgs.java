@@ -101,6 +101,21 @@ public final class GetDbVersionsPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    @Import(name="shapeAttribute")
+    private @Nullable String shapeAttribute;
+
+    /**
+     * @return If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    public Optional<String> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
+
+    /**
      * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
      * * ASM specifies Oracle Automatic Storage Management
      * * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -128,6 +143,7 @@ public final class GetDbVersionsPlainArgs extends com.pulumi.resources.InvokeArg
         this.filters = $.filters;
         this.isDatabaseSoftwareImageSupported = $.isDatabaseSoftwareImageSupported;
         this.isUpgradeSupported = $.isUpgradeSupported;
+        this.shapeAttribute = $.shapeAttribute;
         this.storageManagement = $.storageManagement;
     }
 
@@ -210,6 +226,17 @@ public final class GetDbVersionsPlainArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
             $.isUpgradeSupported = isUpgradeSupported;
+            return this;
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return the results based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(@Nullable String shapeAttribute) {
+            $.shapeAttribute = shapeAttribute;
             return this;
         }
 

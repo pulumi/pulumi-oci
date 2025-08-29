@@ -32,6 +32,12 @@ public final class GetMaskingAnalyticsResult {
     private List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
     private @Nullable String maskingPolicyId;
     /**
+     * @return The OCID of the sensitive type masked.
+     * 
+     */
+    private @Nullable String sensitiveTypeId;
+    private @Nullable String targetDatabaseGroupId;
+    /**
      * @return The OCID of the target database.
      * 
      */
@@ -68,6 +74,16 @@ public final class GetMaskingAnalyticsResult {
         return Optional.ofNullable(this.maskingPolicyId);
     }
     /**
+     * @return The OCID of the sensitive type masked.
+     * 
+     */
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
+    }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+    /**
      * @return The OCID of the target database.
      * 
      */
@@ -91,6 +107,8 @@ public final class GetMaskingAnalyticsResult {
         private String id;
         private List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections;
         private @Nullable String maskingPolicyId;
+        private @Nullable String sensitiveTypeId;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetMaskingAnalyticsResult defaults) {
@@ -102,6 +120,8 @@ public final class GetMaskingAnalyticsResult {
     	      this.id = defaults.id;
     	      this.maskingAnalyticsCollections = defaults.maskingAnalyticsCollections;
     	      this.maskingPolicyId = defaults.maskingPolicyId;
+    	      this.sensitiveTypeId = defaults.sensitiveTypeId;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -160,6 +180,18 @@ public final class GetMaskingAnalyticsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+
+            this.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -174,6 +206,8 @@ public final class GetMaskingAnalyticsResult {
             _resultValue.id = id;
             _resultValue.maskingAnalyticsCollections = maskingAnalyticsCollections;
             _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

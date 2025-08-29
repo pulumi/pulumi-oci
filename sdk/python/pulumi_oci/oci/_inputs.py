@@ -29,6 +29,14 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
+    'ManagedKafkaKafkaClusterAccessSubnetArgs',
+    'ManagedKafkaKafkaClusterAccessSubnetArgsDict',
+    'ManagedKafkaKafkaClusterBrokerShapeArgs',
+    'ManagedKafkaKafkaClusterBrokerShapeArgsDict',
+    'ManagedKafkaKafkaClusterConfigLatestConfigArgs',
+    'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict',
+    'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs',
+    'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict',
     'GetApiPlatformApiPlatformInstancesFilterArgs',
     'GetApiPlatformApiPlatformInstancesFilterArgsDict',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs',
@@ -53,6 +61,12 @@ __all__ = [
     'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict',
     'GetDbmulticloudOracleDbAzureVaultsFilterArgs',
     'GetDbmulticloudOracleDbAzureVaultsFilterArgsDict',
+    'GetManagedKafkaKafkaClusterConfigVersionsFilterArgs',
+    'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict',
+    'GetManagedKafkaKafkaClusterConfigsFilterArgs',
+    'GetManagedKafkaKafkaClusterConfigsFilterArgsDict',
+    'GetManagedKafkaKafkaClustersFilterArgs',
+    'GetManagedKafkaKafkaClustersFilterArgsDict',
     'GetWlmsManagedInstanceScanResultsFilterArgs',
     'GetWlmsManagedInstanceScanResultsFilterArgsDict',
     'GetWlmsManagedInstanceServerInstalledPatchesFilterArgs',
@@ -642,6 +656,262 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
 
 
 if not MYPY:
+    class ManagedKafkaKafkaClusterAccessSubnetArgsDict(TypedDict):
+        subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) Subnets OCIDs
+        """
+elif False:
+    ManagedKafkaKafkaClusterAccessSubnetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedKafkaKafkaClusterAccessSubnetArgs:
+    def __init__(__self__, *,
+                 subnets: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnets: (Updatable) Subnets OCIDs
+        """
+        pulumi.set(__self__, "subnets", subnets)
+
+    @_builtins.property
+    @pulumi.getter
+    def subnets(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) Subnets OCIDs
+        """
+        return pulumi.get(self, "subnets")
+
+    @subnets.setter
+    def subnets(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "subnets", value)
+
+
+if not MYPY:
+    class ManagedKafkaKafkaClusterBrokerShapeArgsDict(TypedDict):
+        node_count: pulumi.Input[_builtins.int]
+        """
+        (Updatable) Number of Kafka broker nodes
+        """
+        ocpu_count: pulumi.Input[_builtins.int]
+        """
+        (Updatable) Number of OCPUs per nodes
+        """
+        storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Size of the storage per nodes.
+        """
+elif False:
+    ManagedKafkaKafkaClusterBrokerShapeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedKafkaKafkaClusterBrokerShapeArgs:
+    def __init__(__self__, *,
+                 node_count: pulumi.Input[_builtins.int],
+                 ocpu_count: pulumi.Input[_builtins.int],
+                 storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] node_count: (Updatable) Number of Kafka broker nodes
+        :param pulumi.Input[_builtins.int] ocpu_count: (Updatable) Number of OCPUs per nodes
+        :param pulumi.Input[_builtins.int] storage_size_in_gbs: (Updatable) Size of the storage per nodes.
+        """
+        pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if storage_size_in_gbs is not None:
+            pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) Number of Kafka broker nodes
+        """
+        return pulumi.get(self, "node_count")
+
+    @node_count.setter
+    def node_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "node_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ocpuCount")
+    def ocpu_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) Number of OCPUs per nodes
+        """
+        return pulumi.get(self, "ocpu_count")
+
+    @ocpu_count.setter
+    def ocpu_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeInGbs")
+    def storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Size of the storage per nodes.
+        """
+        return pulumi.get(self, "storage_size_in_gbs")
+
+    @storage_size_in_gbs.setter
+    def storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "storage_size_in_gbs", value)
+
+
+if not MYPY:
+    class ManagedKafkaKafkaClusterConfigLatestConfigArgsDict(TypedDict):
+        properties: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) Cluster configuration key-value pairs
+        """
+        config_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) ID cluster configuration
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        version_number: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Version of the cluster configuration
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    ManagedKafkaKafkaClusterConfigLatestConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedKafkaKafkaClusterConfigLatestConfigArgs:
+    def __init__(__self__, *,
+                 properties: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
+                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 version_number: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) Cluster configuration key-value pairs
+        :param pulumi.Input[_builtins.str] config_id: (Updatable) ID cluster configuration
+        :param pulumi.Input[_builtins.str] time_created: (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.int] version_number: (Updatable) Version of the cluster configuration
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "properties", properties)
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) Cluster configuration key-value pairs
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) ID cluster configuration
+        """
+        return pulumi.get(self, "config_id")
+
+    @config_id.setter
+    def config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "config_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Version of the cluster configuration
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version_number")
+
+    @version_number.setter
+    def version_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "version_number", value)
+
+
+if not MYPY:
+    class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Bootstrap URL
+        """
+elif False:
+    ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 url: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the Kafka listener providing this bootstrap URL
+        :param pulumi.Input[_builtins.str] url: Bootstrap URL
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Bootstrap URL
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+if not MYPY:
     class GetApiPlatformApiPlatformInstancesFilterArgsDict(TypedDict):
         name: _builtins.str
         """
@@ -1198,6 +1468,156 @@ class GetDbmulticloudOracleDbAzureVaultsFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetManagedKafkaKafkaClusterConfigVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetManagedKafkaKafkaClusterConfigsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetManagedKafkaKafkaClusterConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetManagedKafkaKafkaClusterConfigsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetManagedKafkaKafkaClustersFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetManagedKafkaKafkaClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetManagedKafkaKafkaClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the Kafka listener providing this bootstrap URL
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
         return pulumi.get(self, "name")
 
     @name.setter

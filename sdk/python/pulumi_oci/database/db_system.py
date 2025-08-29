@@ -31,6 +31,8 @@ class DbSystemArgs:
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -88,6 +90,8 @@ class DbSystemArgs:
                
                **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
         :param pulumi.Input[_builtins.str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -103,7 +107,7 @@ class DbSystemArgs:
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
         :param pulumi.Input['DbSystemDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
-        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input['DbSystemDbSystemOptionsArgs'] db_system_options: The DB system options.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -124,7 +128,7 @@ class DbSystemArgs:
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input['DbSystemMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -154,6 +158,10 @@ class DbSystemArgs:
             pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if data_collection_options is not None:
@@ -348,6 +356,30 @@ class DbSystemArgs:
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_model", value)
+
+    @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -399,7 +431,7 @@ class DbSystemArgs:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -563,7 +595,7 @@ class DbSystemArgs:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         """
         return pulumi.get(self, "node_count")
 
@@ -705,6 +737,8 @@ class _DbSystemState:
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -767,6 +801,8 @@ class _DbSystemState:
                **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
         :param pulumi.Input[_builtins.str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+        :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -782,7 +818,7 @@ class _DbSystemState:
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
         :param pulumi.Input['DbSystemDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
-        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input['DbSystemDbHomeArgs'] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
                
@@ -819,7 +855,7 @@ class _DbSystemState:
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] os_version: The most recent OS Patch Version applied on the DB system.
@@ -872,6 +908,10 @@ class _DbSystemState:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if data_collection_options is not None:
@@ -1042,6 +1082,30 @@ class _DbSystemState:
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_model", value)
+
+    @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -1093,7 +1157,7 @@ class _DbSystemState:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -1383,7 +1447,7 @@ class _DbSystemState:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         """
         return pulumi.get(self, "node_count")
 
@@ -1730,6 +1794,8 @@ class DbSystem(pulumi.CustomResource):
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1825,6 +1891,8 @@ class DbSystem(pulumi.CustomResource):
                **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
         :param pulumi.Input[_builtins.str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+        :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -1840,7 +1908,7 @@ class DbSystem(pulumi.CustomResource):
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
         :param pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
-        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
                
@@ -1869,7 +1937,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
         :param pulumi.Input[Union['DbSystemMaintenanceWindowDetailsArgs', 'DbSystemMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
@@ -1978,6 +2046,8 @@ class DbSystem(pulumi.CustomResource):
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2028,6 +2098,8 @@ class DbSystem(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compute_count"] = compute_count
+            __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_percentage"] = data_storage_percentage
@@ -2106,6 +2178,8 @@ class DbSystem(pulumi.CustomResource):
             backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
             data_collection_options: Optional[pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']]] = None,
             data_storage_percentage: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2173,6 +2247,8 @@ class DbSystem(pulumi.CustomResource):
                **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
         :param pulumi.Input[_builtins.str] cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+        :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
                * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
                * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -2188,7 +2264,7 @@ class DbSystem(pulumi.CustomResource):
                This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
         :param pulumi.Input[Union['DbSystemDataCollectionOptionsArgs', 'DbSystemDataCollectionOptionsArgsDict']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
-        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         :param pulumi.Input[_builtins.str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
         :param pulumi.Input[Union['DbSystemDbHomeArgs', 'DbSystemDbHomeArgsDict']] db_home: (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
                
@@ -2225,7 +2301,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemMaintenanceWindowArgs', 'DbSystemMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: Memory allocated to the DB system, in gigabytes.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] os_version: The most recent OS Patch Version applied on the DB system.
@@ -2277,6 +2353,8 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["backup_subnet_id"] = backup_subnet_id
         __props__.__dict__["cluster_name"] = cluster_name
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["data_collection_options"] = data_collection_options
         __props__.__dict__["data_storage_percentage"] = data_storage_percentage
@@ -2375,6 +2453,22 @@ class DbSystem(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[_builtins.int]:
         """
@@ -2414,7 +2508,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -2612,7 +2706,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[_builtins.int]:
         """
-        The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         """
         return pulumi.get(self, "node_count")
 

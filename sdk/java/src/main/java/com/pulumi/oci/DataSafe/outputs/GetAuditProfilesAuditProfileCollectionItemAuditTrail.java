@@ -24,6 +24,11 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
      */
     private String auditProfileId;
     /**
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    private Boolean canUpdateLastArchiveTimeOnTarget;
+    /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
@@ -148,6 +153,13 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
      */
     public String auditProfileId() {
         return this.auditProfileId;
+    }
+    /**
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Boolean canUpdateLastArchiveTimeOnTarget() {
+        return this.canUpdateLastArchiveTimeOnTarget;
     }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
@@ -315,6 +327,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
     public static final class Builder {
         private String auditCollectionStartTime;
         private String auditProfileId;
+        private Boolean canUpdateLastArchiveTimeOnTarget;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -342,6 +355,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectionStartTime = defaults.auditCollectionStartTime;
     	      this.auditProfileId = defaults.auditProfileId;
+    	      this.canUpdateLastArchiveTimeOnTarget = defaults.canUpdateLastArchiveTimeOnTarget;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -380,6 +394,14 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
               throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItemAuditTrail", "auditProfileId");
             }
             this.auditProfileId = auditProfileId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            if (canUpdateLastArchiveTimeOnTarget == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesAuditProfileCollectionItemAuditTrail", "canUpdateLastArchiveTimeOnTarget");
+            }
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             return this;
         }
         @CustomType.Setter
@@ -562,6 +584,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
             final var _resultValue = new GetAuditProfilesAuditProfileCollectionItemAuditTrail();
             _resultValue.auditCollectionStartTime = auditCollectionStartTime;
             _resultValue.auditProfileId = auditProfileId;
+            _resultValue.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

@@ -38,18 +38,14 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) **DatabaseConnection**
-     * 
-     * The connection type for Databases.
+     * (Updatable) The connection type for Databases.
      * 
      */
     @Import(name="databaseConnection")
     private @Nullable Output<AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs> databaseConnection;
 
     /**
-     * @return (Updatable) **DatabaseConnection**
-     * 
-     * The connection type for Databases.
+     * @return (Updatable) The connection type for Databases.
      * 
      */
     public Optional<Output<AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs>> databaseConnection() {
@@ -72,20 +68,14 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * (Updatable) The type of index.
      * 
      */
     @Import(name="indexConfigType", required=true)
     private Output<String> indexConfigType;
 
     /**
-     * @return (Updatable) The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * @return (Updatable) The type of index.
      * 
      */
     public Output<String> indexConfigType() {
@@ -108,18 +98,14 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) **SecretDetail**
-     * 
-     * The details of configured security configuration on OpenSearch.
+     * (Updatable) The details of configured security configuration on OpenSearch.
      * 
      */
     @Import(name="secretDetail")
     private @Nullable Output<AgentKnowledgeBaseIndexConfigSecretDetailArgs> secretDetail;
 
     /**
-     * @return (Updatable) **SecretDetail**
-     * 
-     * The details of configured security configuration on OpenSearch.
+     * @return (Updatable) The details of configured security configuration on OpenSearch.
      * 
      */
     public Optional<Output<AgentKnowledgeBaseIndexConfigSecretDetailArgs>> secretDetail() {
@@ -199,9 +185,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param databaseConnection (Updatable) **DatabaseConnection**
-         * 
-         * The connection type for Databases.
+         * @param databaseConnection (Updatable) The connection type for Databases.
          * 
          * @return builder
          * 
@@ -212,9 +196,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param databaseConnection (Updatable) **DatabaseConnection**
-         * 
-         * The connection type for Databases.
+         * @param databaseConnection (Updatable) The connection type for Databases.
          * 
          * @return builder
          * 
@@ -255,10 +237,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param indexConfigType (Updatable) The type of index. The allowed values are:
-         * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-         * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-         * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+         * @param indexConfigType (Updatable) The type of index.
          * 
          * @return builder
          * 
@@ -269,10 +248,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param indexConfigType (Updatable) The type of index. The allowed values are:
-         * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-         * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-         * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+         * @param indexConfigType (Updatable) The type of index.
          * 
          * @return builder
          * 
@@ -313,9 +289,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param secretDetail (Updatable) **SecretDetail**
-         * 
-         * The details of configured security configuration on OpenSearch.
+         * @param secretDetail (Updatable) The details of configured security configuration on OpenSearch.
          * 
          * @return builder
          * 
@@ -326,9 +300,7 @@ public final class AgentKnowledgeBaseIndexConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param secretDetail (Updatable) **SecretDetail**
-         * 
-         * The details of configured security configuration on OpenSearch.
+         * @param secretDetail (Updatable) The details of configured security configuration on OpenSearch.
          * 
          * @return builder
          * 

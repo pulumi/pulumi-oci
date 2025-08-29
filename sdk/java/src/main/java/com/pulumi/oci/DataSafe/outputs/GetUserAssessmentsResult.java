@@ -52,7 +52,17 @@ public final class GetUserAssessmentsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The OCID of target database group.
+     * 
+     */
+    private @Nullable String targetDatabaseGroupId;
     private @Nullable String targetId;
+    /**
+     * @return Indicates whether the user assessment is for a target database or a target database group.
+     * 
+     */
+    private @Nullable String targetType;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
     /**
@@ -129,8 +139,22 @@ public final class GetUserAssessmentsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The OCID of target database group.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+    /**
+     * @return Indicates whether the user assessment is for a target database or a target database group.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
     public Optional<String> timeCreatedGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeCreatedGreaterThanOrEqualTo);
@@ -180,7 +204,9 @@ public final class GetUserAssessmentsResult {
         private @Nullable Boolean isScheduleAssessment;
         private @Nullable String scheduleUserAssessmentId;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
+        private @Nullable String targetType;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         private @Nullable String triggeredBy;
@@ -200,7 +226,9 @@ public final class GetUserAssessmentsResult {
     	      this.isScheduleAssessment = defaults.isScheduleAssessment;
     	      this.scheduleUserAssessmentId = defaults.scheduleUserAssessmentId;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreatedGreaterThanOrEqualTo = defaults.timeCreatedGreaterThanOrEqualTo;
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
     	      this.triggeredBy = defaults.triggeredBy;
@@ -287,9 +315,21 @@ public final class GetUserAssessmentsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
@@ -340,7 +380,9 @@ public final class GetUserAssessmentsResult {
             _resultValue.isScheduleAssessment = isScheduleAssessment;
             _resultValue.scheduleUserAssessmentId = scheduleUserAssessmentId;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             _resultValue.timeCreatedLessThan = timeCreatedLessThan;
             _resultValue.triggeredBy = triggeredBy;

@@ -10,6 +10,7 @@ import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseStorageSizeDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -171,6 +172,11 @@ public final class GetDatabasesDatabase {
      * 
      */
     private String state;
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    private List<GetDatabasesDatabaseStorageSizeDetail> storageSizeDetails;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -418,6 +424,13 @@ public final class GetDatabasesDatabase {
         return this.state;
     }
     /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public List<GetDatabasesDatabaseStorageSizeDetail> storageSizeDetails() {
+        return this.storageSizeDetails;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -491,6 +504,7 @@ public final class GetDatabasesDatabase {
         private String source;
         private String sourceDatabasePointInTimeRecoveryTimestamp;
         private String state;
+        private List<GetDatabasesDatabaseStorageSizeDetail> storageSizeDetails;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String vaultId;
@@ -534,6 +548,7 @@ public final class GetDatabasesDatabase {
     	      this.source = defaults.source;
     	      this.sourceDatabasePointInTimeRecoveryTimestamp = defaults.sourceDatabasePointInTimeRecoveryTimestamp;
     	      this.state = defaults.state;
+    	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vaultId = defaults.vaultId;
@@ -844,6 +859,17 @@ public final class GetDatabasesDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSizeDetails(List<GetDatabasesDatabaseStorageSizeDetail> storageSizeDetails) {
+            if (storageSizeDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabase", "storageSizeDetails");
+            }
+            this.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+        public Builder storageSizeDetails(GetDatabasesDatabaseStorageSizeDetail... storageSizeDetails) {
+            return storageSizeDetails(List.of(storageSizeDetails));
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabase", "systemTags");
@@ -913,6 +939,7 @@ public final class GetDatabasesDatabase {
             _resultValue.source = source;
             _resultValue.sourceDatabasePointInTimeRecoveryTimestamp = sourceDatabasePointInTimeRecoveryTimestamp;
             _resultValue.state = state;
+            _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vaultId = vaultId;

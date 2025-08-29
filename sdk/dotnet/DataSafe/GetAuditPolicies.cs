@@ -49,6 +49,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditPolicyCompartmentIdInSubtree,
         ///         DisplayName = auditPolicyDisplayName,
         ///         State = auditPolicyState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -96,6 +97,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditPolicyCompartmentIdInSubtree,
         ///         DisplayName = auditPolicyDisplayName,
         ///         State = auditPolicyState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -143,6 +145,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditPolicyCompartmentIdInSubtree,
         ///         DisplayName = auditPolicyDisplayName,
         ///         State = auditPolicyState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -199,6 +202,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -259,6 +268,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -298,6 +313,7 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the audit policy.
         /// </summary>
         public readonly string? State;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target for which the audit policy is created.
         /// </summary>
@@ -323,6 +339,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId)
         {
             AccessLevel = accessLevel;
@@ -334,6 +352,7 @@ namespace Pulumi.Oci.DataSafe
             Filters = filters;
             Id = id;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
         }
     }

@@ -36,7 +36,9 @@ namespace Pulumi.Oci.DataSafe
         ///         GroupBy = discoveryAnalyticGroupBy,
         ///         IsCommon = discoveryAnalyticIsCommon,
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -71,7 +73,9 @@ namespace Pulumi.Oci.DataSafe
         ///         GroupBy = discoveryAnalyticGroupBy,
         ///         IsCommon = discoveryAnalyticIsCommon,
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -106,7 +110,9 @@ namespace Pulumi.Oci.DataSafe
         ///         GroupBy = discoveryAnalyticGroupBy,
         ///         IsCommon = discoveryAnalyticIsCommon,
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -159,10 +165,22 @@ namespace Pulumi.Oci.DataSafe
         public string? SensitiveDataModelId { get; set; }
 
         /// <summary>
+        /// An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+        /// </summary>
+        [Input("sensitiveTypeGroupId")]
+        public string? SensitiveTypeGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific sensitive type OCID.
         /// </summary>
         [Input("sensitiveTypeId")]
         public string? SensitiveTypeId { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -217,10 +235,22 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? SensitiveDataModelId { get; set; }
 
         /// <summary>
+        /// An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+        /// </summary>
+        [Input("sensitiveTypeGroupId")]
+        public Input<string>? SensitiveTypeGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific sensitive type OCID.
         /// </summary>
         [Input("sensitiveTypeId")]
         public Input<string>? SensitiveTypeId { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -255,10 +285,12 @@ namespace Pulumi.Oci.DataSafe
         /// The OCID of the sensitive data model.
         /// </summary>
         public readonly string? SensitiveDataModelId;
+        public readonly string? SensitiveTypeGroupId;
         /// <summary>
         /// The OCID of the sensitive type.
         /// </summary>
         public readonly string? SensitiveTypeId;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target database.
         /// </summary>
@@ -282,7 +314,11 @@ namespace Pulumi.Oci.DataSafe
 
             string? sensitiveDataModelId,
 
+            string? sensitiveTypeGroupId,
+
             string? sensitiveTypeId,
+
+            string? targetDatabaseGroupId,
 
             string? targetId)
         {
@@ -294,7 +330,9 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             IsCommon = isCommon;
             SensitiveDataModelId = sensitiveDataModelId;
+            SensitiveTypeGroupId = sensitiveTypeGroupId;
             SensitiveTypeId = sensitiveTypeId;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
         }
     }

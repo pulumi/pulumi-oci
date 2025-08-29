@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseStorageSizeDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -104,6 +105,11 @@ public final class GetDatabaseDatabase {
     private String sourceDatabaseId;
     private List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
     private String sourceTdeWalletPassword;
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    private List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails;
     private String tdeWalletPassword;
     /**
      * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -256,6 +262,13 @@ public final class GetDatabaseDatabase {
     public String sourceTdeWalletPassword() {
         return this.sourceTdeWalletPassword;
     }
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails() {
+        return this.storageSizeDetails;
+    }
     public String tdeWalletPassword() {
         return this.tdeWalletPassword;
     }
@@ -310,6 +323,7 @@ public final class GetDatabaseDatabase {
         private String sourceDatabaseId;
         private List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
         private String sourceTdeWalletPassword;
+        private List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails;
         private String tdeWalletPassword;
         private String transportType;
         private String vaultId;
@@ -340,6 +354,7 @@ public final class GetDatabaseDatabase {
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
+    	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
@@ -550,6 +565,17 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSizeDetails(List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails) {
+            if (storageSizeDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "storageSizeDetails");
+            }
+            this.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+        public Builder storageSizeDetails(GetDatabaseDatabaseStorageSizeDetail... storageSizeDetails) {
+            return storageSizeDetails(List.of(storageSizeDetails));
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             if (tdeWalletPassword == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "tdeWalletPassword");
@@ -599,6 +625,7 @@ public final class GetDatabaseDatabase {
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
+            _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;

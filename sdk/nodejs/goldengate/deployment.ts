@@ -56,6 +56,10 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly backupSchedule!: pulumi.Output<outputs.GoldenGate.DeploymentBackupSchedule>;
     /**
+     * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     */
+    public readonly byolCpuCoreCountLimit!: pulumi.Output<number>;
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
     public /*out*/ readonly category!: pulumi.Output<string>;
@@ -123,6 +127,10 @@ export class Deployment extends pulumi.CustomResource {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     public readonly isAutoScalingEnabled!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    public readonly isByolCpuCoreCountLimitEnabled!: pulumi.Output<boolean>;
     /**
      * True if all of the aggregate resources are working correctly.
      */
@@ -265,6 +273,7 @@ export class Deployment extends pulumi.CustomResource {
             const state = argsOrState as DeploymentState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupSchedule"] = state ? state.backupSchedule : undefined;
+            resourceInputs["byolCpuCoreCountLimit"] = state ? state.byolCpuCoreCountLimit : undefined;
             resourceInputs["category"] = state ? state.category : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
@@ -282,6 +291,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
             resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
+            resourceInputs["isByolCpuCoreCountLimitEnabled"] = state ? state.isByolCpuCoreCountLimitEnabled : undefined;
             resourceInputs["isHealthy"] = state ? state.isHealthy : undefined;
             resourceInputs["isLatestVersion"] = state ? state.isLatestVersion : undefined;
             resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
@@ -328,6 +338,7 @@ export class Deployment extends pulumi.CustomResource {
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupSchedule"] = args ? args.backupSchedule : undefined;
+            resourceInputs["byolCpuCoreCountLimit"] = args ? args.byolCpuCoreCountLimit : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -340,6 +351,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["fqdn"] = args ? args.fqdn : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
+            resourceInputs["isByolCpuCoreCountLimitEnabled"] = args ? args.isByolCpuCoreCountLimitEnabled : undefined;
             resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["isPublic"] = args ? args.isPublic : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
@@ -396,6 +408,10 @@ export interface DeploymentState {
      * (Updatable) Defines the backup schedule details for create operation.
      */
     backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
+    /**
+     * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     */
+    byolCpuCoreCountLimit?: pulumi.Input<number>;
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
@@ -464,6 +480,10 @@ export interface DeploymentState {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     isAutoScalingEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean>;
     /**
      * True if all of the aggregate resources are working correctly.
      */
@@ -605,6 +625,10 @@ export interface DeploymentArgs {
      */
     backupSchedule?: pulumi.Input<inputs.GoldenGate.DeploymentBackupSchedule>;
     /**
+     * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     */
+    byolCpuCoreCountLimit?: pulumi.Input<number>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
     compartmentId: pulumi.Input<string>;
@@ -652,6 +676,10 @@ export interface DeploymentArgs {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     isAutoScalingEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     */
+    isByolCpuCoreCountLimitEnabled?: pulumi.Input<boolean>;
     isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) True if this object is publicly available.

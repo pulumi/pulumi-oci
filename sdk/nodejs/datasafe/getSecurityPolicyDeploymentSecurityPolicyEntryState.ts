@@ -54,9 +54,20 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
      */
     readonly deploymentStatus: string;
     /**
+     * Details about the current deployment status.
+     */
+    readonly deploymentStatusDetails: string;
+    /**
      * Details specific to the security policy entry.
      */
     readonly entryDetails: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail[];
+    /**
+     * The security policy entry type. Allowed values:
+     * * FIREWALL_POLICY - The SQL Firewall policy entry type.
+     * * AUDIT_POLICY - The audit policy entry type.
+     * * CONFIG - Config changes deployment.
+     */
+    readonly entryType: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -70,6 +81,10 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
      */
     readonly securityPolicyEntryId: string;
     readonly securityPolicyEntryStateId: string;
+    /**
+     * The OCID of the target on which the security policy is deployed.
+     */
+    readonly targetId: string;
 }
 /**
  * This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.

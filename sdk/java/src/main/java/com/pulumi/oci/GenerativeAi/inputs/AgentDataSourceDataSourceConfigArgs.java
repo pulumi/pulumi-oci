@@ -17,16 +17,14 @@ public final class AgentDataSourceDataSourceConfigArgs extends com.pulumi.resour
     public static final AgentDataSourceDataSourceConfigArgs Empty = new AgentDataSourceDataSourceConfigArgs();
 
     /**
-     * (Updatable) The type of the tool. The allowed values are:
-     * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+     * (Updatable) The type of the tool.
      * 
      */
     @Import(name="dataSourceConfigType", required=true)
     private Output<String> dataSourceConfigType;
 
     /**
-     * @return (Updatable) The type of the tool. The allowed values are:
-     * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+     * @return (Updatable) The type of the tool.
      * 
      */
     public Output<String> dataSourceConfigType() {
@@ -74,8 +72,7 @@ public final class AgentDataSourceDataSourceConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param dataSourceConfigType (Updatable) The type of the tool. The allowed values are:
-         * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+         * @param dataSourceConfigType (Updatable) The type of the tool.
          * 
          * @return builder
          * 
@@ -86,8 +83,7 @@ public final class AgentDataSourceDataSourceConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param dataSourceConfigType (Updatable) The type of the tool. The allowed values are:
-         * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+         * @param dataSourceConfigType (Updatable) The type of the tool.
          * 
          * @return builder
          * 

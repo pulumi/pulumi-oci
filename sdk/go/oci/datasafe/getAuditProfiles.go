@@ -53,7 +53,9 @@ import (
 //				IsOverrideGlobalRetentionSetting:         pulumi.BoolRef(auditProfileIsOverrideGlobalRetentionSetting),
 //				IsPaidUsageEnabled:                       pulumi.BoolRef(auditProfileIsPaidUsageEnabled),
 //				State:                                    pulumi.StringRef(auditProfileState),
+//				TargetDatabaseGroupId:                    pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                                 pulumi.StringRef(testTarget.Id),
+//				TargetType:                               pulumi.StringRef(auditProfileTargetType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -94,8 +96,12 @@ type GetAuditProfilesArgs struct {
 	IsPaidUsageEnabled *bool `pulumi:"isPaidUsageEnabled"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified audit profile type.
+	TargetType *string `pulumi:"targetType"`
 }
 
 // A collection of values returned by getAuditProfiles.
@@ -106,7 +112,7 @@ type GetAuditProfilesResult struct {
 	AuditProfileCollections []GetAuditProfilesAuditProfileCollection `pulumi:"auditProfileCollections"`
 	// The OCID of the  parent audit.
 	AuditProfileId *string `pulumi:"auditProfileId"`
-	// The OCID of the compartment that contains the audit.
+	// The OCID of the compartment that contains the audit profile.
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
 	// The display name of the audit profile.
@@ -114,14 +120,17 @@ type GetAuditProfilesResult struct {
 	Filters     []GetAuditProfilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+	// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
 	IsPaidUsageEnabled *bool `pulumi:"isPaidUsageEnabled"`
 	// The current state of the audit profile.
-	State *string `pulumi:"state"`
-	// The OCID of the Data Safe target for which the audit profile is created.
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
+	// The OCID of the target database or target database group for which the audit profile is created.
 	TargetId *string `pulumi:"targetId"`
+	// The resource type that is represented by the audit profile.
+	TargetType *string `pulumi:"targetType"`
 }
 
 func GetAuditProfilesOutput(ctx *pulumi.Context, args GetAuditProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAuditProfilesResultOutput {
@@ -154,8 +163,12 @@ type GetAuditProfilesOutputArgs struct {
 	IsPaidUsageEnabled pulumi.BoolPtrInput `pulumi:"isPaidUsageEnabled"`
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified audit profile type.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
 
 func (GetAuditProfilesOutputArgs) ElementType() reflect.Type {
@@ -197,7 +210,7 @@ func (o GetAuditProfilesResultOutput) AuditProfileId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.AuditProfileId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the compartment that contains the audit.
+// The OCID of the compartment that contains the audit profile.
 func (o GetAuditProfilesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -220,7 +233,7 @@ func (o GetAuditProfilesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
 func (o GetAuditProfilesResultOutput) IsOverrideGlobalRetentionSetting() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) *bool { return v.IsOverrideGlobalRetentionSetting }).(pulumi.BoolPtrOutput)
 }
@@ -235,9 +248,18 @@ func (o GetAuditProfilesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Safe target for which the audit profile is created.
+func (o GetAuditProfilesResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the target database or target database group for which the audit profile is created.
 func (o GetAuditProfilesResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// The resource type that is represented by the audit profile.
+func (o GetAuditProfilesResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditProfilesResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

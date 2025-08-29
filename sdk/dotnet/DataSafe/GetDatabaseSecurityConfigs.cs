@@ -48,6 +48,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DatabaseSecurityConfigId = testDatabaseSecurityConfig.Id,
         ///         DisplayName = databaseSecurityConfigDisplayName,
         ///         State = databaseSecurityConfigState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = databaseSecurityConfigTimeCreatedLessThan,
@@ -96,6 +97,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DatabaseSecurityConfigId = testDatabaseSecurityConfig.Id,
         ///         DisplayName = databaseSecurityConfigDisplayName,
         ///         State = databaseSecurityConfigState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = databaseSecurityConfigTimeCreatedLessThan,
@@ -144,6 +146,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DatabaseSecurityConfigId = testDatabaseSecurityConfig.Id,
         ///         DisplayName = databaseSecurityConfigDisplayName,
         ///         State = databaseSecurityConfigState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = databaseSecurityConfigTimeCreatedLessThan,
@@ -202,6 +205,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -278,6 +287,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -333,6 +348,7 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the database security config.
         /// </summary>
         public readonly string? State;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The target OCID corresponding to the database security config.
         /// </summary>
@@ -360,6 +376,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId,
 
             string? timeCreatedGreaterThanOrEqualTo,
@@ -375,6 +393,7 @@ namespace Pulumi.Oci.DataSafe
             Filters = filters;
             Id = id;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TimeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             TimeCreatedLessThan = timeCreatedLessThan;

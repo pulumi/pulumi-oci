@@ -19,9 +19,7 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) **IndexSchema**
-        /// 
-        /// The index schema details.
+        /// (Updatable) The index schema details.
         /// </summary>
         [Input("schema")]
         public Input<Inputs.AgentKnowledgeBaseIndexConfigIndexSchemaGetArgs>? Schema { get; set; }

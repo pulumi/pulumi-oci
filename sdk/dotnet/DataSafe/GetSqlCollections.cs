@@ -49,6 +49,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = sqlCollectionDisplayName,
         ///         SqlCollectionId = testSqlCollection.Id,
         ///         State = sqlCollectionState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = sqlCollectionTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = sqlCollectionTimeCreatedLessThan,
@@ -98,6 +99,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = sqlCollectionDisplayName,
         ///         SqlCollectionId = testSqlCollection.Id,
         ///         State = sqlCollectionState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = sqlCollectionTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = sqlCollectionTimeCreatedLessThan,
@@ -147,6 +149,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = sqlCollectionDisplayName,
         ///         SqlCollectionId = testSqlCollection.Id,
         ///         State = sqlCollectionState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeCreatedGreaterThanOrEqualTo = sqlCollectionTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = sqlCollectionTimeCreatedLessThan,
@@ -211,6 +214,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -293,6 +302,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -352,6 +367,7 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the SQL collection.
         /// </summary>
         public readonly string? State;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target corresponding to the security policy deployment.
         /// </summary>
@@ -381,6 +397,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId,
 
             string? timeCreatedGreaterThanOrEqualTo,
@@ -397,6 +415,7 @@ namespace Pulumi.Oci.DataSafe
             SqlCollectionCollections = sqlCollectionCollections;
             SqlCollectionId = sqlCollectionId;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TimeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             TimeCreatedLessThan = timeCreatedLessThan;

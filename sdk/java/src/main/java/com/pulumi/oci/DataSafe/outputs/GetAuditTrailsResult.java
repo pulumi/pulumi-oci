@@ -50,6 +50,7 @@ public final class GetAuditTrailsResult {
      * 
      */
     private @Nullable String status;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
@@ -111,6 +112,9 @@ public final class GetAuditTrailsResult {
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
@@ -138,6 +142,7 @@ public final class GetAuditTrailsResult {
         private String id;
         private @Nullable String state;
         private @Nullable String status;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetAuditTrailsResult defaults) {
@@ -152,6 +157,7 @@ public final class GetAuditTrailsResult {
     	      this.id = defaults.id;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -228,6 +234,12 @@ public final class GetAuditTrailsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -245,6 +257,7 @@ public final class GetAuditTrailsResult {
             _resultValue.id = id;
             _resultValue.state = state;
             _resultValue.status = status;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

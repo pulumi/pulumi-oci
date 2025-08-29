@@ -30,10 +30,14 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AttachedShapeAttributes = exascaleDbStorageVaultAttachedShapeAttributes,
+        ///         AttachedShapeAttributesNotEqualTo = exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
         ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
+        ///         VmClusterCountGreaterThanOrEqualTo = exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+        ///         VmClusterCountLessThanOrEqualTo = exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -61,10 +65,14 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AttachedShapeAttributes = exascaleDbStorageVaultAttachedShapeAttributes,
+        ///         AttachedShapeAttributesNotEqualTo = exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
         ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
+        ///         VmClusterCountGreaterThanOrEqualTo = exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+        ///         VmClusterCountLessThanOrEqualTo = exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -92,10 +100,14 @@ namespace Pulumi.Oci.Database
         ///     var testExascaleDbStorageVaults = Oci.Database.GetExascaleDbStorageVaults.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AttachedShapeAttributes = exascaleDbStorageVaultAttachedShapeAttributes,
+        ///         AttachedShapeAttributesNotEqualTo = exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo,
         ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
         ///         DisplayName = exascaleDbStorageVaultDisplayName,
         ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         State = exascaleDbStorageVaultState,
+        ///         VmClusterCountGreaterThanOrEqualTo = exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+        ///         VmClusterCountLessThanOrEqualTo = exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -108,6 +120,18 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExascaleDbStorageVaultsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+        /// </summary>
+        [Input("attachedShapeAttributes")]
+        public string? AttachedShapeAttributes { get; set; }
+
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+        /// </summary>
+        [Input("attachedShapeAttributesNotEqualTo")]
+        public string? AttachedShapeAttributesNotEqualTo { get; set; }
+
         /// <summary>
         /// A filter to return only resources that match the given cluster placement group ID exactly.
         /// </summary>
@@ -146,6 +170,18 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+        /// </summary>
+        [Input("vmClusterCountGreaterThanOrEqualTo")]
+        public int? VmClusterCountGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+        /// </summary>
+        [Input("vmClusterCountLessThanOrEqualTo")]
+        public int? VmClusterCountLessThanOrEqualTo { get; set; }
+
         public GetExascaleDbStorageVaultsArgs()
         {
         }
@@ -154,6 +190,18 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetExascaleDbStorageVaultsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+        /// </summary>
+        [Input("attachedShapeAttributes")]
+        public Input<string>? AttachedShapeAttributes { get; set; }
+
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+        /// </summary>
+        [Input("attachedShapeAttributesNotEqualTo")]
+        public Input<string>? AttachedShapeAttributesNotEqualTo { get; set; }
+
         /// <summary>
         /// A filter to return only resources that match the given cluster placement group ID exactly.
         /// </summary>
@@ -192,6 +240,18 @@ namespace Pulumi.Oci.Database
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+        /// </summary>
+        [Input("vmClusterCountGreaterThanOrEqualTo")]
+        public Input<int>? VmClusterCountGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+        /// </summary>
+        [Input("vmClusterCountLessThanOrEqualTo")]
+        public Input<int>? VmClusterCountLessThanOrEqualTo { get; set; }
+
         public GetExascaleDbStorageVaultsInvokeArgs()
         {
         }
@@ -202,6 +262,11 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetExascaleDbStorageVaultsResult
     {
+        /// <summary>
+        /// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        /// </summary>
+        public readonly string? AttachedShapeAttributes;
+        public readonly string? AttachedShapeAttributesNotEqualTo;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
         /// </summary>
@@ -231,9 +296,15 @@ namespace Pulumi.Oci.Database
         /// The current state of the Exadata Database Storage Vault.
         /// </summary>
         public readonly string? State;
+        public readonly int? VmClusterCountGreaterThanOrEqualTo;
+        public readonly int? VmClusterCountLessThanOrEqualTo;
 
         [OutputConstructor]
         private GetExascaleDbStorageVaultsResult(
+            string? attachedShapeAttributes,
+
+            string? attachedShapeAttributesNotEqualTo,
+
             string? clusterPlacementGroupId,
 
             string compartmentId,
@@ -248,8 +319,14 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            string? state)
+            string? state,
+
+            int? vmClusterCountGreaterThanOrEqualTo,
+
+            int? vmClusterCountLessThanOrEqualTo)
         {
+            AttachedShapeAttributes = attachedShapeAttributes;
+            AttachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -258,6 +335,8 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             State = state;
+            VmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
+            VmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
         }
     }
 }

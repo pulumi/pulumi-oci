@@ -43,6 +43,17 @@ export interface GetSecurityAssessmentArgs {
  * A collection of values returned by getSecurityAssessment.
  */
 export interface GetSecurityAssessmentResult {
+    readonly applyTemplateTrigger: number;
+    readonly baseSecurityAssessmentId: string;
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     */
+    readonly baselineAssessmentId: string;
+    /**
+     * The security checks to be evaluated for type template.
+     */
+    readonly checks: outputs.DataSafe.GetSecurityAssessmentCheck[];
+    readonly compareToTemplateBaselineTrigger: number;
     /**
      * The OCID of the compartment that contains the security assessment.
      */
@@ -99,6 +110,7 @@ export interface GetSecurityAssessmentResult {
      * The summary of findings for the security assessment.
      */
     readonly link: string;
+    readonly removeTemplateTrigger: number;
     /**
      * Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
      */
@@ -120,15 +132,27 @@ export interface GetSecurityAssessmentResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The OCID of the target database group that the group assessment is created for.
+     */
+    readonly targetDatabaseGroupId: string;
     readonly targetId: string;
     /**
      * Array of database target OCIDs.
      */
     readonly targetIds: string[];
     /**
+     * Indicates whether the security assessment is for a target database or a target database group.
+     */
+    readonly targetType: string;
+    /**
      * The version of the target database.
      */
     readonly targetVersion: string;
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+     */
+    readonly templateAssessmentId: string;
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
@@ -146,7 +170,7 @@ export interface GetSecurityAssessmentResult {
      */
     readonly triggeredBy: string;
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment. Possible values are:
      */
     readonly type: string;
 }

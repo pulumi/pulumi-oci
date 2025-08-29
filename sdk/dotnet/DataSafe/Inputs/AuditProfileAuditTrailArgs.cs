@@ -19,13 +19,19 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? AuditCollectionStartTime { get; set; }
 
         /// <summary>
-        /// The OCID of the audit.
+        /// The OCID of the  parent audit.
         /// </summary>
         [Input("auditProfileId")]
         public Input<string>? AuditProfileId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the audit.
+        /// Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        [Input("canUpdateLastArchiveTimeOnTarget")]
+        public Input<bool>? CanUpdateLastArchiveTimeOnTarget { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment where you want to create the audit profile.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -133,7 +139,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         }
 
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

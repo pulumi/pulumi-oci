@@ -32,6 +32,7 @@ import (
 //			_, err := database.GetDbSystemShapes(ctx, &database.GetDbSystemShapesArgs{
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(dbSystemShapeAvailabilityDomain),
+//				ShapeAttribute:     pulumi.StringRef(dbSystemShapeShapeAttribute),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetDbSystemShapesArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                    `pulumi:"compartmentId"`
 	Filters       []GetDbSystemShapesFilter `pulumi:"filters"`
+	// If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+	ShapeAttribute *string `pulumi:"shapeAttribute"`
 }
 
 // A collection of values returned by getDbSystemShapes.
@@ -68,7 +71,8 @@ type GetDbSystemShapesResult struct {
 	DbSystemShapes []GetDbSystemShapesDbSystemShape `pulumi:"dbSystemShapes"`
 	Filters        []GetDbSystemShapesFilter        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id             string  `pulumi:"id"`
+	ShapeAttribute *string `pulumi:"shapeAttribute"`
 }
 
 func GetDbSystemShapesOutput(ctx *pulumi.Context, args GetDbSystemShapesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemShapesResultOutput {
@@ -87,6 +91,8 @@ type GetDbSystemShapesOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput                `pulumi:"compartmentId"`
 	Filters       GetDbSystemShapesFilterArrayInput `pulumi:"filters"`
+	// If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+	ShapeAttribute pulumi.StringPtrInput `pulumi:"shapeAttribute"`
 }
 
 func (GetDbSystemShapesOutputArgs) ElementType() reflect.Type {
@@ -128,6 +134,10 @@ func (o GetDbSystemShapesResultOutput) Filters() GetDbSystemShapesFilterArrayOut
 // The provider-assigned unique ID for this managed resource.
 func (o GetDbSystemShapesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemShapesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDbSystemShapesResultOutput) ShapeAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemShapesResult) *string { return v.ShapeAttribute }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -38,9 +38,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// **IndexConfig**
+        /// The index configuration of Knowledge bases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult> IndexConfigs;
+        /// <summary>
+        /// Statistics for Default Knowledge Base.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult> KnowledgeBaseStatistics;
         /// <summary>
         /// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             ImmutableArray<Outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult> indexConfigs,
 
+            ImmutableArray<Outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult> knowledgeBaseStatistics,
+
             string lifecycleDetails,
 
             string state,
@@ -95,6 +101,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IndexConfigs = indexConfigs;
+            KnowledgeBaseStatistics = knowledgeBaseStatistics;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SystemTags = systemTags;

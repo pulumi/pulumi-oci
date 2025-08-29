@@ -45,6 +45,7 @@ public final class GetAuditPoliciesResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target for which the audit policy is created.
      * 
@@ -99,6 +100,9 @@ public final class GetAuditPoliciesResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the target for which the audit policy is created.
      * 
@@ -125,6 +129,7 @@ public final class GetAuditPoliciesResult {
         private @Nullable List<GetAuditPoliciesFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetAuditPoliciesResult defaults) {
@@ -138,6 +143,7 @@ public final class GetAuditPoliciesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -208,6 +214,12 @@ public final class GetAuditPoliciesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -224,6 +236,7 @@ public final class GetAuditPoliciesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

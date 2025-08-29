@@ -195,11 +195,19 @@ namespace Pulumi.Oci.DataSafe
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The OCID of target database group.
+        /// </summary>
+        public readonly string TargetDatabaseGroupId;
         public readonly string TargetId;
         /// <summary>
         /// Array of database target OCIDs.
         /// </summary>
         public readonly ImmutableArray<string> TargetIds;
+        /// <summary>
+        /// Indicates whether the user assessment is for a target database or a target database group.
+        /// </summary>
+        public readonly string TargetType;
         /// <summary>
         /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
@@ -260,9 +268,13 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableDictionary<string, string> systemTags,
 
+            string targetDatabaseGroupId,
+
             string targetId,
 
             ImmutableArray<string> targetIds,
+
+            string targetType,
 
             string timeCreated,
 
@@ -294,8 +306,10 @@ namespace Pulumi.Oci.DataSafe
             State = state;
             Statistics = statistics;
             SystemTags = systemTags;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TargetIds = targetIds;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;

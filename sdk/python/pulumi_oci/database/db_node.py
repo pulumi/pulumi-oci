@@ -87,6 +87,8 @@ class _DbNodeState:
                  backup_ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_vnic2id: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -117,6 +119,8 @@ class _DbNodeState:
         :param pulumi.Input[_builtins.str] backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param pulumi.Input[_builtins.str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores enabled on the Db node.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
@@ -155,6 +159,10 @@ class _DbNodeState:
             pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
         if backup_vnic_id is not None:
             pulumi.set(__self__, "backup_vnic_id", backup_vnic_id)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if db_node_id is not None:
@@ -261,6 +269,30 @@ class _DbNodeState:
     @backup_vnic_id.setter
     def backup_vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "backup_vnic_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -632,6 +664,8 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["backup_ipv6id"] = None
             __props__.__dict__["backup_vnic2id"] = None
             __props__.__dict__["backup_vnic_id"] = None
+            __props__.__dict__["compute_count"] = None
+            __props__.__dict__["compute_model"] = None
             __props__.__dict__["cpu_core_count"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["db_server_id"] = None
@@ -667,6 +701,8 @@ class DbNode(pulumi.CustomResource):
             backup_ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
             backup_vnic2id: Optional[pulumi.Input[_builtins.str]] = None,
             backup_vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
+            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
             db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -702,6 +738,8 @@ class DbNode(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param pulumi.Input[_builtins.str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param pulumi.Input[_builtins.str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores enabled on the Db node.
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
@@ -739,6 +777,8 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["backup_ipv6id"] = backup_ipv6id
         __props__.__dict__["backup_vnic2id"] = backup_vnic2id
         __props__.__dict__["backup_vnic_id"] = backup_vnic_id
+        __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["db_node_id"] = db_node_id
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
@@ -803,6 +843,22 @@ class DbNode(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         """
         return pulumi.get(self, "backup_vnic_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[_builtins.str]:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")

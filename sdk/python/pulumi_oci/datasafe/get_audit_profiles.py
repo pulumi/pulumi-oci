@@ -28,7 +28,7 @@ class GetAuditProfilesResult:
     """
     A collection of values returned by getAuditProfiles.
     """
-    def __init__(__self__, access_level=None, audit_collected_volume_greater_than_or_equal_to=None, audit_profile_collections=None, audit_profile_id=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, is_override_global_retention_setting=None, is_paid_usage_enabled=None, state=None, target_id=None):
+    def __init__(__self__, access_level=None, audit_collected_volume_greater_than_or_equal_to=None, audit_profile_collections=None, audit_profile_id=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, is_override_global_retention_setting=None, is_paid_usage_enabled=None, state=None, target_database_group_id=None, target_id=None, target_type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -65,9 +65,15 @@ class GetAuditProfilesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
 
     @_builtins.property
     @pulumi.getter(name="accessLevel")
@@ -99,7 +105,7 @@ class GetAuditProfilesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID of the compartment that contains the audit.
+        The OCID of the compartment that contains the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -133,7 +139,7 @@ class GetAuditProfilesResult:
     @pulumi.getter(name="isOverrideGlobalRetentionSetting")
     def is_override_global_retention_setting(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         """
         return pulumi.get(self, "is_override_global_retention_setting")
 
@@ -154,12 +160,25 @@ class GetAuditProfilesResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[_builtins.str]:
+        """
+        The resource type that is represented by the audit profile.
+        """
+        return pulumi.get(self, "target_type")
 
 
 class AwaitableGetAuditProfilesResult(GetAuditProfilesResult):
@@ -180,7 +199,9 @@ class AwaitableGetAuditProfilesResult(GetAuditProfilesResult):
             is_override_global_retention_setting=self.is_override_global_retention_setting,
             is_paid_usage_enabled=self.is_paid_usage_enabled,
             state=self.state,
-            target_id=self.target_id)
+            target_database_group_id=self.target_database_group_id,
+            target_id=self.target_id,
+            target_type=self.target_type)
 
 
 def get_audit_profiles(access_level: Optional[_builtins.str] = None,
@@ -193,7 +214,9 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
                        is_override_global_retention_setting: Optional[_builtins.bool] = None,
                        is_paid_usage_enabled: Optional[_builtins.bool] = None,
                        state: Optional[_builtins.str] = None,
+                       target_database_group_id: Optional[_builtins.str] = None,
                        target_id: Optional[_builtins.str] = None,
+                       target_type: Optional[_builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditProfilesResult:
     """
     This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -229,7 +252,9 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
         is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
         is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
         state=audit_profile_state,
-        target_id=test_target["id"])
+        target_database_group_id=test_target_database_group["id"],
+        target_id=test_target["id"],
+        target_type=audit_profile_target_type)
     ```
 
 
@@ -242,7 +267,9 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool is_override_global_retention_setting: A optional filter to return only resources that match the specified retention configured value.
     :param _builtins.bool is_paid_usage_enabled: Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
     :param _builtins.str state: A optional filter to return only resources that match the specified lifecycle state.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified audit profile type.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -255,7 +282,9 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
     __args__['isOverrideGlobalRetentionSetting'] = is_override_global_retention_setting
     __args__['isPaidUsageEnabled'] = is_paid_usage_enabled
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getAuditProfiles:getAuditProfiles', __args__, opts=opts, typ=GetAuditProfilesResult).value
 
@@ -272,7 +301,9 @@ def get_audit_profiles(access_level: Optional[_builtins.str] = None,
         is_override_global_retention_setting=pulumi.get(__ret__, 'is_override_global_retention_setting'),
         is_paid_usage_enabled=pulumi.get(__ret__, 'is_paid_usage_enabled'),
         state=pulumi.get(__ret__, 'state'),
-        target_id=pulumi.get(__ret__, 'target_id'))
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
+        target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'))
 def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               audit_collected_volume_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               audit_profile_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -283,7 +314,9 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
                               is_override_global_retention_setting: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                               is_paid_usage_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                              target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                              target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfilesResult]:
     """
     This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -319,7 +352,9 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
         is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
         is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
         state=audit_profile_state,
-        target_id=test_target["id"])
+        target_database_group_id=test_target_database_group["id"],
+        target_id=test_target["id"],
+        target_type=audit_profile_target_type)
     ```
 
 
@@ -332,7 +367,9 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
     :param _builtins.bool is_override_global_retention_setting: A optional filter to return only resources that match the specified retention configured value.
     :param _builtins.bool is_paid_usage_enabled: Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
     :param _builtins.str state: A optional filter to return only resources that match the specified lifecycle state.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified audit profile type.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -345,7 +382,9 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
     __args__['isOverrideGlobalRetentionSetting'] = is_override_global_retention_setting
     __args__['isPaidUsageEnabled'] = is_paid_usage_enabled
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getAuditProfiles:getAuditProfiles', __args__, opts=opts, typ=GetAuditProfilesResult)
     return __ret__.apply(lambda __response__: GetAuditProfilesResult(
@@ -361,4 +400,6 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[_buil
         is_override_global_retention_setting=pulumi.get(__response__, 'is_override_global_retention_setting'),
         is_paid_usage_enabled=pulumi.get(__response__, 'is_paid_usage_enabled'),
         state=pulumi.get(__response__, 'state'),
-        target_id=pulumi.get(__response__, 'target_id')))
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type')))

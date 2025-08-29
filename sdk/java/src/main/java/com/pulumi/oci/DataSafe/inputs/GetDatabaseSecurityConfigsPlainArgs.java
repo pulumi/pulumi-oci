@@ -116,6 +116,21 @@ public final class GetDatabaseSecurityConfigsPlainArgs extends com.pulumi.resour
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -178,6 +193,7 @@ public final class GetDatabaseSecurityConfigsPlainArgs extends com.pulumi.resour
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
@@ -273,6 +289,17 @@ public final class GetDatabaseSecurityConfigsPlainArgs extends com.pulumi.resour
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 

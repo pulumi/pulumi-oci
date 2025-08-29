@@ -63,6 +63,8 @@ type LookupAuditTrailResult struct {
 	// The OCID of the  parent audit.
 	AuditProfileId string `pulumi:"auditProfileId"`
 	AuditTrailId   string `pulumi:"auditTrailId"`
+	// Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+	CanUpdateLastArchiveTimeOnTarget bool `pulumi:"canUpdateLastArchiveTimeOnTarget"`
 	// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -156,6 +158,11 @@ func (o LookupAuditTrailResultOutput) AuditProfileId() pulumi.StringOutput {
 
 func (o LookupAuditTrailResultOutput) AuditTrailId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditTrailResult) string { return v.AuditTrailId }).(pulumi.StringOutput)
+}
+
+// Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+func (o LookupAuditTrailResultOutput) CanUpdateLastArchiveTimeOnTarget() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAuditTrailResult) bool { return v.CanUpdateLastArchiveTimeOnTarget }).(pulumi.BoolOutput)
 }
 
 // The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.

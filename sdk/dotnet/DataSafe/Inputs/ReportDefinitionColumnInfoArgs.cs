@@ -12,6 +12,18 @@ namespace Pulumi.Oci.DataSafe.Inputs
 
     public sealed class ReportDefinitionColumnInfoArgs : global::Pulumi.ResourceArgs
     {
+        [Input("applicableOperators")]
+        private InputList<string>? _applicableOperators;
+
+        /// <summary>
+        /// (Updatable) An array of operators that can be supported by column fieldName.
+        /// </summary>
+        public InputList<string> ApplicableOperators
+        {
+            get => _applicableOperators ?? (_applicableOperators = new InputList<string>());
+            set => _applicableOperators = value;
+        }
+
         /// <summary>
         /// (Updatable) Specifies the data type of the column.
         /// </summary>
@@ -41,6 +53,12 @@ namespace Pulumi.Oci.DataSafe.Inputs
         /// </summary>
         [Input("isHidden", required: true)]
         public Input<bool> IsHidden { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies if column is virtual and can only be used as column filter.
+        /// </summary>
+        [Input("isVirtual")]
+        public Input<bool>? IsVirtual { get; set; }
 
         public ReportDefinitionColumnInfoArgs()
         {

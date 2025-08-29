@@ -26,7 +26,7 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, system_tags=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, compute_count=None, compute_model=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, system_tags=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -42,6 +42,12 @@ class GetDbNodeResult:
         if backup_vnic_id and not isinstance(backup_vnic_id, str):
             raise TypeError("Expected argument 'backup_vnic_id' to be a str")
         pulumi.set(__self__, "backup_vnic_id", backup_vnic_id)
+        if compute_count and not isinstance(compute_count, int):
+            raise TypeError("Expected argument 'compute_count' to be a int")
+        pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model and not isinstance(compute_model, str):
+            raise TypeError("Expected argument 'compute_model' to be a str")
+        pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count and not isinstance(cpu_core_count, int):
             raise TypeError("Expected argument 'cpu_core_count' to be a int")
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -154,6 +160,22 @@ class GetDbNodeResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         """
         return pulumi.get(self, "backup_vnic_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> _builtins.int:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> _builtins.str:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -356,6 +378,8 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             backup_ipv6id=self.backup_ipv6id,
             backup_vnic2id=self.backup_vnic2id,
             backup_vnic_id=self.backup_vnic_id,
+            compute_count=self.compute_count,
+            compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
             db_node_id=self.db_node_id,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
@@ -412,6 +436,8 @@ def get_db_node(db_node_id: Optional[_builtins.str] = None,
         backup_ipv6id=pulumi.get(__ret__, 'backup_ipv6id'),
         backup_vnic2id=pulumi.get(__ret__, 'backup_vnic2id'),
         backup_vnic_id=pulumi.get(__ret__, 'backup_vnic_id'),
+        compute_count=pulumi.get(__ret__, 'compute_count'),
+        compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
         db_node_id=pulumi.get(__ret__, 'db_node_id'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
@@ -465,6 +491,8 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
         backup_ipv6id=pulumi.get(__response__, 'backup_ipv6id'),
         backup_vnic2id=pulumi.get(__response__, 'backup_vnic2id'),
         backup_vnic_id=pulumi.get(__response__, 'backup_vnic_id'),
+        compute_count=pulumi.get(__response__, 'compute_count'),
+        compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
         db_node_id=pulumi.get(__response__, 'db_node_id'),
         db_node_storage_size_in_gbs=pulumi.get(__response__, 'db_node_storage_size_in_gbs'),

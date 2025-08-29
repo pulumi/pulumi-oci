@@ -45,6 +45,7 @@ class ExadbVmClusterArgs:
                  scan_listener_port_tcp: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_version: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
@@ -81,6 +82,7 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[_builtins.str] shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] system_version: (Updatable) Operating system version of the image.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -126,6 +128,8 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
+        if shape_attribute is not None:
+            pulumi.set(__self__, "shape_attribute", shape_attribute)
         if subscription_id is not None:
             pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
@@ -429,6 +433,18 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        """
+        return pulumi.get(self, "shape_attribute")
+
+    @shape_attribute.setter
+    def shape_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shape_attribute", value)
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -504,6 +520,7 @@ class _ExadbVmClusterState:
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -555,6 +572,7 @@ class _ExadbVmClusterState:
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        :param pulumi.Input[_builtins.str] shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -634,6 +652,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
+        if shape_attribute is not None:
+            pulumi.set(__self__, "shape_attribute", shape_attribute)
         if ssh_public_keys is not None:
             pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if state is not None:
@@ -1047,6 +1067,18 @@ class _ExadbVmClusterState:
         pulumi.set(self, "shape", value)
 
     @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        """
+        return pulumi.get(self, "shape_attribute")
+
+    @shape_attribute.setter
+    def shape_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shape_attribute", value)
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -1199,6 +1231,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1258,6 +1291,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
             security_attributes=exadb_vm_cluster_security_attributes,
+            shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,
             system_version=exadb_vm_cluster_system_version,
             time_zone=exadb_vm_cluster_time_zone)
@@ -1302,6 +1336,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        :param pulumi.Input[_builtins.str] shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -1371,6 +1406,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_listener_port_tcp=exadb_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=exadb_vm_cluster_scan_listener_port_tcp_ssl,
             security_attributes=exadb_vm_cluster_security_attributes,
+            shape_attribute=exadb_vm_cluster_shape_attribute,
             subscription_id=tenant_subscription_id,
             system_version=exadb_vm_cluster_system_version,
             time_zone=exadb_vm_cluster_time_zone)
@@ -1421,6 +1457,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1475,6 +1512,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
+            __props__.__dict__["shape_attribute"] = shape_attribute
             if ssh_public_keys is None and not opts.urn:
                 raise TypeError("Missing required property 'ssh_public_keys'")
             __props__.__dict__["ssh_public_keys"] = ssh_public_keys
@@ -1541,6 +1579,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             scan_listener_port_tcp_ssl: Optional[pulumi.Input[_builtins.int]] = None,
             security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: Optional[pulumi.Input[_builtins.str]] = None,
+            shape_attribute: Optional[pulumi.Input[_builtins.str]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1597,6 +1636,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        :param pulumi.Input[_builtins.str] shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -1648,6 +1688,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
         __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
+        __props__.__dict__["shape_attribute"] = shape_attribute
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
@@ -1922,6 +1963,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The shape of the Exadata VM cluster on Exascale Infrastructure resource
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        """
+        return pulumi.get(self, "shape_attribute")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")

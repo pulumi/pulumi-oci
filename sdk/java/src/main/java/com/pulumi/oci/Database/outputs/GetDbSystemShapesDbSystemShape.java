@@ -9,6 +9,7 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -132,6 +133,11 @@ public final class GetDbSystemShapesDbSystemShape {
      */
     @Deprecated /* The 'shape' field has been deprecated. Please use 'name' instead. */
     private String shape;
+    /**
+     * @return The shapeAttributes of the DB system shape.
+     * 
+     */
+    private List<String> shapeAttributes;
     /**
      * @return The family of the shape used for the DB system.
      * 
@@ -310,6 +316,13 @@ public final class GetDbSystemShapesDbSystemShape {
         return this.shape;
     }
     /**
+     * @return The shapeAttributes of the DB system shape.
+     * 
+     */
+    public List<String> shapeAttributes() {
+        return this.shapeAttributes;
+    }
+    /**
      * @return The family of the shape used for the DB system.
      * 
      */
@@ -356,6 +369,7 @@ public final class GetDbSystemShapesDbSystemShape {
         private Integer minimumNodeCount;
         private String name;
         private String shape;
+        private List<String> shapeAttributes;
         private String shapeFamily;
         private String shapeType;
         public Builder() {}
@@ -384,6 +398,7 @@ public final class GetDbSystemShapesDbSystemShape {
     	      this.minimumNodeCount = defaults.minimumNodeCount;
     	      this.name = defaults.name;
     	      this.shape = defaults.shape;
+    	      this.shapeAttributes = defaults.shapeAttributes;
     	      this.shapeFamily = defaults.shapeFamily;
     	      this.shapeType = defaults.shapeType;
         }
@@ -573,6 +588,17 @@ public final class GetDbSystemShapesDbSystemShape {
             return this;
         }
         @CustomType.Setter
+        public Builder shapeAttributes(List<String> shapeAttributes) {
+            if (shapeAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "shapeAttributes");
+            }
+            this.shapeAttributes = shapeAttributes;
+            return this;
+        }
+        public Builder shapeAttributes(String... shapeAttributes) {
+            return shapeAttributes(List.of(shapeAttributes));
+        }
+        @CustomType.Setter
         public Builder shapeFamily(String shapeFamily) {
             if (shapeFamily == null) {
               throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "shapeFamily");
@@ -613,6 +639,7 @@ public final class GetDbSystemShapesDbSystemShape {
             _resultValue.minimumNodeCount = minimumNodeCount;
             _resultValue.name = name;
             _resultValue.shape = shape;
+            _resultValue.shapeAttributes = shapeAttributes;
             _resultValue.shapeFamily = shapeFamily;
             _resultValue.shapeType = shapeType;
             return _resultValue;

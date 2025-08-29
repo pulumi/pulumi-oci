@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The name of the aggregation metric.
         /// </summary>
         public readonly string MetricName;
+        /// <summary>
+        /// The date and time when data discovery was last done on the target database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeLastDiscovered;
 
         [OutputConstructor]
         private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult> dimensions,
 
-            string metricName)
+            string metricName,
+
+            string timeLastDiscovered)
         {
             Count = count;
             Dimensions = dimensions;
             MetricName = metricName;
+            TimeLastDiscovered = timeLastDiscovered;
         }
     }
 }

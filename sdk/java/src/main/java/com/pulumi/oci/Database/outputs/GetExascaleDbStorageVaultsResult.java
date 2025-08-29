@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultsExascaleDbStorageVault;
 import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExascaleDbStorageVaultsResult {
+    /**
+     * @return The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    private @Nullable String attachedShapeAttributes;
+    private @Nullable String attachedShapeAttributesNotEqualTo;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      * 
@@ -51,8 +58,20 @@ public final class GetExascaleDbStorageVaultsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable Integer vmClusterCountGreaterThanOrEqualTo;
+    private @Nullable Integer vmClusterCountLessThanOrEqualTo;
 
     private GetExascaleDbStorageVaultsResult() {}
+    /**
+     * @return The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<String> attachedShapeAttributes() {
+        return Optional.ofNullable(this.attachedShapeAttributes);
+    }
+    public Optional<String> attachedShapeAttributesNotEqualTo() {
+        return Optional.ofNullable(this.attachedShapeAttributesNotEqualTo);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      * 
@@ -105,6 +124,12 @@ public final class GetExascaleDbStorageVaultsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<Integer> vmClusterCountGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.vmClusterCountGreaterThanOrEqualTo);
+    }
+    public Optional<Integer> vmClusterCountLessThanOrEqualTo() {
+        return Optional.ofNullable(this.vmClusterCountLessThanOrEqualTo);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -115,6 +140,8 @@ public final class GetExascaleDbStorageVaultsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String attachedShapeAttributes;
+        private @Nullable String attachedShapeAttributesNotEqualTo;
         private @Nullable String clusterPlacementGroupId;
         private String compartmentId;
         private @Nullable String displayName;
@@ -123,9 +150,13 @@ public final class GetExascaleDbStorageVaultsResult {
         private @Nullable List<GetExascaleDbStorageVaultsFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable Integer vmClusterCountGreaterThanOrEqualTo;
+        private @Nullable Integer vmClusterCountLessThanOrEqualTo;
         public Builder() {}
         public Builder(GetExascaleDbStorageVaultsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.attachedShapeAttributes = defaults.attachedShapeAttributes;
+    	      this.attachedShapeAttributesNotEqualTo = defaults.attachedShapeAttributesNotEqualTo;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
@@ -134,8 +165,22 @@ public final class GetExascaleDbStorageVaultsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.vmClusterCountGreaterThanOrEqualTo = defaults.vmClusterCountGreaterThanOrEqualTo;
+    	      this.vmClusterCountLessThanOrEqualTo = defaults.vmClusterCountLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
+        public Builder attachedShapeAttributes(@Nullable String attachedShapeAttributes) {
+
+            this.attachedShapeAttributes = attachedShapeAttributes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder attachedShapeAttributesNotEqualTo(@Nullable String attachedShapeAttributesNotEqualTo) {
+
+            this.attachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
+            return this;
+        }
         @CustomType.Setter
         public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
 
@@ -196,8 +241,22 @@ public final class GetExascaleDbStorageVaultsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterCountGreaterThanOrEqualTo(@Nullable Integer vmClusterCountGreaterThanOrEqualTo) {
+
+            this.vmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vmClusterCountLessThanOrEqualTo(@Nullable Integer vmClusterCountLessThanOrEqualTo) {
+
+            this.vmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
+            return this;
+        }
         public GetExascaleDbStorageVaultsResult build() {
             final var _resultValue = new GetExascaleDbStorageVaultsResult();
+            _resultValue.attachedShapeAttributes = attachedShapeAttributes;
+            _resultValue.attachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
@@ -206,6 +265,8 @@ public final class GetExascaleDbStorageVaultsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.vmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
+            _resultValue.vmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
             return _resultValue;
         }
     }

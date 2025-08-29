@@ -55,12 +55,28 @@ public final class GetDbSystemShapesArgs extends com.pulumi.resources.InvokeArgs
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     * 
+     */
+    @Import(name="shapeAttribute")
+    private @Nullable Output<String> shapeAttribute;
+
+    /**
+     * @return If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     * 
+     */
+    public Optional<Output<String>> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
+
     private GetDbSystemShapesArgs() {}
 
     private GetDbSystemShapesArgs(GetDbSystemShapesArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.shapeAttribute = $.shapeAttribute;
     }
 
     public static Builder builder() {
@@ -134,6 +150,27 @@ public final class GetDbSystemShapesArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetDbSystemShapesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(@Nullable Output<String> shapeAttribute) {
+            $.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            return shapeAttribute(Output.of(shapeAttribute));
         }
 
         public GetDbSystemShapesArgs build() {

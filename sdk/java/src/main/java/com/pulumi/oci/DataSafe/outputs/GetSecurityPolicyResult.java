@@ -48,6 +48,11 @@ public final class GetSecurityPolicyResult {
     private String lifecycleDetails;
     private String securityPolicyId;
     /**
+     * @return The type of the security policy.
+     * 
+     */
+    private String securityPolicyType;
+    /**
      * @return The current state of the security policy.
      * 
      */
@@ -122,6 +127,13 @@ public final class GetSecurityPolicyResult {
         return this.securityPolicyId;
     }
     /**
+     * @return The type of the security policy.
+     * 
+     */
+    public String securityPolicyType() {
+        return this.securityPolicyType;
+    }
+    /**
      * @return The current state of the security policy.
      * 
      */
@@ -167,6 +179,7 @@ public final class GetSecurityPolicyResult {
         private String id;
         private String lifecycleDetails;
         private String securityPolicyId;
+        private String securityPolicyType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -182,6 +195,7 @@ public final class GetSecurityPolicyResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.securityPolicyId = defaults.securityPolicyId;
+    	      this.securityPolicyType = defaults.securityPolicyType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -253,6 +267,14 @@ public final class GetSecurityPolicyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityPolicyType(String securityPolicyType) {
+            if (securityPolicyType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyResult", "securityPolicyType");
+            }
+            this.securityPolicyType = securityPolicyType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetSecurityPolicyResult", "state");
@@ -294,6 +316,7 @@ public final class GetSecurityPolicyResult {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.securityPolicyType = securityPolicyType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

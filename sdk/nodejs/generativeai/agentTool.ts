@@ -11,6 +11,93 @@ import * as utilities from "../utilities";
  *
  * Creates a tool.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTool = new oci.generativeai.AgentTool("test_tool", {
+ *     agentId: testAgent.id,
+ *     compartmentId: compartmentId,
+ *     description: toolDescription,
+ *     toolConfig: {
+ *         toolConfigType: toolToolConfigToolConfigType,
+ *         agentEndpointId: testAgentEndpoint.id,
+ *         apiSchema: {
+ *             apiSchemaInputLocationType: toolToolConfigApiSchemaApiSchemaInputLocationType,
+ *             bucket: toolToolConfigApiSchemaBucket,
+ *             content: toolToolConfigApiSchemaContent,
+ *             namespace: toolToolConfigApiSchemaNamespace,
+ *             object: toolToolConfigApiSchemaObject,
+ *         },
+ *         databaseConnection: {
+ *             connectionId: testConnection.id,
+ *             connectionType: toolToolConfigDatabaseConnectionConnectionType,
+ *         },
+ *         databaseSchema: {
+ *             inputLocationType: toolToolConfigDatabaseSchemaInputLocationType,
+ *             bucket: toolToolConfigDatabaseSchemaBucket,
+ *             content: toolToolConfigDatabaseSchemaContent,
+ *             namespace: toolToolConfigDatabaseSchemaNamespace,
+ *             prefix: toolToolConfigDatabaseSchemaPrefix,
+ *         },
+ *         dialect: toolToolConfigDialect,
+ *         "function": {
+ *             description: toolToolConfigFunctionDescription,
+ *             name: toolToolConfigFunctionName,
+ *             parameters: toolToolConfigFunctionParameters,
+ *         },
+ *         generationLlmCustomization: {
+ *             instruction: toolToolConfigGenerationLlmCustomizationInstruction,
+ *         },
+ *         httpEndpointAuthConfig: {
+ *             httpEndpointAuthSources: [{
+ *                 httpEndpointAuthScope: toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScope,
+ *                 httpEndpointAuthScopeConfig: {
+ *                     httpEndpointAuthScopeConfigType: toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigHttpEndpointAuthScopeConfigType,
+ *                     clientId: testClient.id,
+ *                     idcsUrl: toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigIdcsUrl,
+ *                     keyLocation: toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigKeyLocation,
+ *                     keyName: testKey.name,
+ *                     scopeUrl: toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigScopeUrl,
+ *                     vaultSecretId: testSecret.id,
+ *                 },
+ *             }],
+ *         },
+ *         iclExamples: {
+ *             inputLocationType: toolToolConfigIclExamplesInputLocationType,
+ *             bucket: toolToolConfigIclExamplesBucket,
+ *             content: toolToolConfigIclExamplesContent,
+ *             namespace: toolToolConfigIclExamplesNamespace,
+ *             prefix: toolToolConfigIclExamplesPrefix,
+ *         },
+ *         knowledgeBaseConfigs: [{
+ *             knowledgeBaseId: testKnowledgeBase.id,
+ *         }],
+ *         modelSize: toolToolConfigModelSize,
+ *         shouldEnableSelfCorrection: toolToolConfigShouldEnableSelfCorrection,
+ *         shouldEnableSqlExecution: toolToolConfigShouldEnableSqlExecution,
+ *         subnetId: testSubnet.id,
+ *         tableAndColumnDescription: {
+ *             inputLocationType: toolToolConfigTableAndColumnDescriptionInputLocationType,
+ *             bucket: toolToolConfigTableAndColumnDescriptionBucket,
+ *             content: toolToolConfigTableAndColumnDescriptionContent,
+ *             namespace: toolToolConfigTableAndColumnDescriptionNamespace,
+ *             prefix: toolToolConfigTableAndColumnDescriptionPrefix,
+ *         },
+ *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: toolDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     metadata: toolMetadata,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Tools can be imported using the `id`, e.g.

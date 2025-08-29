@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,
+ *     deploymentType: deploymentDeploymentType,
  *     displayName: deploymentDisplayName,
  *     fqdn: deploymentFqdn,
  *     lifecycleSubState: deploymentLifecycleSubState,
@@ -35,6 +36,7 @@ export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOpt
         "assignableConnectionId": args.assignableConnectionId,
         "assignedConnectionId": args.assignedConnectionId,
         "compartmentId": args.compartmentId,
+        "deploymentType": args.deploymentType,
         "displayName": args.displayName,
         "filters": args.filters,
         "fqdn": args.fqdn,
@@ -60,6 +62,10 @@ export interface GetDeploymentsArgs {
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
     compartmentId: string;
+    /**
+     * A filter that returns only the resources matching the specified 'deploymentType'.
+     */
+    deploymentType?: string;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
@@ -98,6 +104,10 @@ export interface GetDeploymentsResult {
      */
     readonly deploymentCollections: outputs.GoldenGate.GetDeploymentsDeploymentCollection[];
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     */
+    readonly deploymentType?: string;
+    /**
      * An object's Display Name.
      */
     readonly displayName?: string;
@@ -135,6 +145,7 @@ export interface GetDeploymentsResult {
  *     compartmentId: compartmentId,
  *     assignableConnectionId: testConnection.id,
  *     assignedConnectionId: testConnection.id,
+ *     deploymentType: deploymentDeploymentType,
  *     displayName: deploymentDisplayName,
  *     fqdn: deploymentFqdn,
  *     lifecycleSubState: deploymentLifecycleSubState,
@@ -149,6 +160,7 @@ export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulu
         "assignableConnectionId": args.assignableConnectionId,
         "assignedConnectionId": args.assignedConnectionId,
         "compartmentId": args.compartmentId,
+        "deploymentType": args.deploymentType,
         "displayName": args.displayName,
         "filters": args.filters,
         "fqdn": args.fqdn,
@@ -174,6 +186,10 @@ export interface GetDeploymentsOutputArgs {
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * A filter that returns only the resources matching the specified 'deploymentType'.
+     */
+    deploymentType?: pulumi.Input<string>;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */

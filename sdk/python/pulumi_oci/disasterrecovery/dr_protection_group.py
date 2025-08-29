@@ -507,6 +507,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "backup_config": {
                     "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
+                    "exclude_namespaces": dr_protection_group_members_backup_config_exclude_namespaces,
                     "image_replication_vault_secret_id": test_secret["id"],
                     "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
                     "namespaces": dr_protection_group_members_backup_config_namespaces,
@@ -540,6 +541,14 @@ class DrProtectionGroup(pulumi.CustomResource):
                     "vault_id": test_vault["id"],
                 },
                 "connection_string_type": dr_protection_group_members_connection_string_type,
+                "db_system_admin_user_details": {
+                    "password_vault_secret_id": test_secret["id"],
+                    "username": dr_protection_group_members_db_system_admin_user_details_username,
+                },
+                "db_system_replication_user_details": {
+                    "password_vault_secret_id": test_secret["id"],
+                    "username": dr_protection_group_members_db_system_replication_user_details_username,
+                },
                 "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
                 "destination_backup_policy_id": test_policy["id"],
                 "destination_capacity_reservation_id": destination_capacity_reservation_id,
@@ -567,6 +576,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_target_id": test_mount_target["id"],
                     },
                 }],
+                "gtid_reconciliation_timeout": dr_protection_group_members_gtid_reconciliation_timeout,
+                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout,
                 "is_movable": dr_protection_group_members_is_movable,
                 "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
                 "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
@@ -587,6 +598,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                     "source_network_load_balancer_id": test_network_load_balancer["id"],
                 }],
                 "peer_cluster_id": test_cluster["id"],
+                "peer_db_system_id": test_db_system["id"],
                 "source_volume_to_destination_encryption_key_mappings": [{
                     "destination_encryption_key": {
                         "encryption_key_id": test_key["id"],
@@ -705,6 +717,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                 }],
                 "backup_config": {
                     "backup_schedule": dr_protection_group_members_backup_config_backup_schedule,
+                    "exclude_namespaces": dr_protection_group_members_backup_config_exclude_namespaces,
                     "image_replication_vault_secret_id": test_secret["id"],
                     "max_number_of_backups_retained": dr_protection_group_members_backup_config_max_number_of_backups_retained,
                     "namespaces": dr_protection_group_members_backup_config_namespaces,
@@ -738,6 +751,14 @@ class DrProtectionGroup(pulumi.CustomResource):
                     "vault_id": test_vault["id"],
                 },
                 "connection_string_type": dr_protection_group_members_connection_string_type,
+                "db_system_admin_user_details": {
+                    "password_vault_secret_id": test_secret["id"],
+                    "username": dr_protection_group_members_db_system_admin_user_details_username,
+                },
+                "db_system_replication_user_details": {
+                    "password_vault_secret_id": test_secret["id"],
+                    "username": dr_protection_group_members_db_system_replication_user_details_username,
+                },
                 "destination_availability_domain": dr_protection_group_members_destination_availability_domain,
                 "destination_backup_policy_id": test_policy["id"],
                 "destination_capacity_reservation_id": destination_capacity_reservation_id,
@@ -765,6 +786,8 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "mount_target_id": test_mount_target["id"],
                     },
                 }],
+                "gtid_reconciliation_timeout": dr_protection_group_members_gtid_reconciliation_timeout,
+                "is_continue_on_gtid_reconciliation_timeout": dr_protection_group_members_is_continue_on_gtid_reconciliation_timeout,
                 "is_movable": dr_protection_group_members_is_movable,
                 "is_retain_fault_domain": dr_protection_group_members_is_retain_fault_domain,
                 "is_start_stop_enabled": dr_protection_group_members_is_start_stop_enabled,
@@ -785,6 +808,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                     "source_network_load_balancer_id": test_network_load_balancer["id"],
                 }],
                 "peer_cluster_id": test_cluster["id"],
+                "peer_db_system_id": test_db_system["id"],
                 "source_volume_to_destination_encryption_key_mappings": [{
                     "destination_encryption_key": {
                         "encryption_key_id": test_key["id"],

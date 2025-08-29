@@ -32,6 +32,21 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    @Import(name="dataSource")
+    private @Nullable Output<String> dataSource;
+
+    /**
+     * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    public Optional<Output<String>> dataSource() {
+        return Optional.ofNullable(this.dataSource);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -188,6 +203,21 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Specifies the time at which the report was created.
+     * 
+     */
+    @Import(name="timeCreated")
+    private @Nullable Output<String> timeCreated;
+
+    /**
+     * @return Specifies the time at which the report was created.
+     * 
+     */
+    public Optional<Output<String>> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
+    }
+
+    /**
      * Specifies the date and time the report was generated.
      * 
      */
@@ -200,6 +230,21 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> timeGenerated() {
         return Optional.ofNullable(this.timeGenerated);
+    }
+
+    /**
+     * The date and time of the report update in Data Safe.
+     * 
+     */
+    @Import(name="timeUpdated")
+    private @Nullable Output<String> timeUpdated;
+
+    /**
+     * @return The date and time of the report update in Data Safe.
+     * 
+     */
+    public Optional<Output<String>> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     /**
@@ -221,6 +266,7 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
 
     private ReportState(ReportState $) {
         this.compartmentId = $.compartmentId;
+        this.dataSource = $.dataSource;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -231,7 +277,9 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         this.reportId = $.reportId;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.timeCreated = $.timeCreated;
         this.timeGenerated = $.timeGenerated;
+        this.timeUpdated = $.timeUpdated;
         this.type = $.type;
     }
 
@@ -272,6 +320,27 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param dataSource Specifies the name of a resource that provides data for the report. For example alerts, events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSource(@Nullable Output<String> dataSource) {
+            $.dataSource = dataSource;
+            return this;
+        }
+
+        /**
+         * @param dataSource Specifies the name of a resource that provides data for the report. For example alerts, events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSource(String dataSource) {
+            return dataSource(Output.of(dataSource));
         }
 
         /**
@@ -491,6 +560,27 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param timeCreated Specifies the time at which the report was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreated(@Nullable Output<String> timeCreated) {
+            $.timeCreated = timeCreated;
+            return this;
+        }
+
+        /**
+         * @param timeCreated Specifies the time at which the report was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreated(String timeCreated) {
+            return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
          * @param timeGenerated Specifies the date and time the report was generated.
          * 
          * @return builder
@@ -509,6 +599,27 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeGenerated(String timeGenerated) {
             return timeGenerated(Output.of(timeGenerated));
+        }
+
+        /**
+         * @param timeUpdated The date and time of the report update in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(@Nullable Output<String> timeUpdated) {
+            $.timeUpdated = timeUpdated;
+            return this;
+        }
+
+        /**
+         * @param timeUpdated The date and time of the report update in Data Safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(String timeUpdated) {
+            return timeUpdated(Output.of(timeUpdated));
         }
 
         /**

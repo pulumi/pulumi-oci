@@ -178,23 +178,6 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
 
     Gets a list of all target-alert policy associations.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=compartment_id,
-        access_level=target_alert_policy_association_access_level,
-        alert_policy_id=test_alert_policy["id"],
-        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree,
-        state=target_alert_policy_association_state,
-        target_alert_policy_association_id=test_target_alert_policy_association["id"],
-        target_id=test_target["id"],
-        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
-        time_created_less_than=target_alert_policy_association_time_created_less_than)
-    ```
-
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str alert_policy_id: A filter to return policy by it's OCID.
@@ -252,23 +235,6 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all target-alert policy associations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=compartment_id,
-        access_level=target_alert_policy_association_access_level,
-        alert_policy_id=test_alert_policy["id"],
-        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree,
-        state=target_alert_policy_association_state,
-        target_alert_policy_association_id=test_target_alert_policy_association["id"],
-        target_id=test_target["id"],
-        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
-        time_created_less_than=target_alert_policy_association_time_created_less_than)
-    ```
 
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

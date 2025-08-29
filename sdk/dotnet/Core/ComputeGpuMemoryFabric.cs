@@ -32,6 +32,12 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> AdditionalData { get; private set; } = null!;
 
         /// <summary>
+        /// The total number of available bare metal hosts located in this compute GPU memory fabric.
+        /// </summary>
+        [Output("availableHostCount")]
+        public Output<string> AvailableHostCount { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         /// </summary>
         [Output("compartmentId")]
@@ -230,6 +236,12 @@ namespace Pulumi.Oci.Core
             get => _additionalData ?? (_additionalData = new InputMap<string>());
             set => _additionalData = value;
         }
+
+        /// <summary>
+        /// The total number of available bare metal hosts located in this compute GPU memory fabric.
+        /// </summary>
+        [Input("availableHostCount")]
+        public Input<string>? AvailableHostCount { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.

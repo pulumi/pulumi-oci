@@ -23,20 +23,14 @@ public final class UserAssessmentIgnoredTargetArgs extends com.pulumi.resources.
     }
 
     /**
-     * The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -86,10 +80,7 @@ public final class UserAssessmentIgnoredTargetArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param targetId The OCID of the target database on which the user assessment is to be run.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target database or target database group on which user assessment is to be run.
          * 
          * @return builder
          * 
@@ -100,10 +91,7 @@ public final class UserAssessmentIgnoredTargetArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param targetId The OCID of the target database on which the user assessment is to be run.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target database or target database group on which user assessment is to be run.
          * 
          * @return builder
          * 

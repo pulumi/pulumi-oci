@@ -27,7 +27,7 @@ class GetDatabaseResult:
     """
     A collection of values returned by getDatabase.
     """
-    def __init__(__self__, action_trigger=None, character_set=None, compartment_id=None, connection_strings=None, data_guard_action=None, data_guard_groups=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, system_tags=None, time_created=None, vault_id=None, vm_cluster_id=None):
+    def __init__(__self__, action_trigger=None, character_set=None, compartment_id=None, connection_strings=None, data_guard_action=None, data_guard_groups=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, storage_size_details=None, system_tags=None, time_created=None, vault_id=None, vm_cluster_id=None):
         if action_trigger and not isinstance(action_trigger, int):
             raise TypeError("Expected argument 'action_trigger' to be a int")
         pulumi.set(__self__, "action_trigger", action_trigger)
@@ -139,6 +139,9 @@ class GetDatabaseResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if storage_size_details and not isinstance(storage_size_details, list):
+            raise TypeError("Expected argument 'storage_size_details' to be a list")
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -428,6 +431,14 @@ class GetDatabaseResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDatabaseStorageSizeDetailResult']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -503,6 +514,7 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
             source=self.source,
             source_database_point_in_time_recovery_timestamp=self.source_database_point_in_time_recovery_timestamp,
             state=self.state,
+            storage_size_details=self.storage_size_details,
             system_tags=self.system_tags,
             time_created=self.time_created,
             vault_id=self.vault_id,
@@ -571,6 +583,7 @@ def get_database(database_id: Optional[_builtins.str] = None,
         source=pulumi.get(__ret__, 'source'),
         source_database_point_in_time_recovery_timestamp=pulumi.get(__ret__, 'source_database_point_in_time_recovery_timestamp'),
         state=pulumi.get(__ret__, 'state'),
+        storage_size_details=pulumi.get(__ret__, 'storage_size_details'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
@@ -636,6 +649,7 @@ def get_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = Non
         source=pulumi.get(__response__, 'source'),
         source_database_point_in_time_recovery_timestamp=pulumi.get(__response__, 'source_database_point_in_time_recovery_timestamp'),
         state=pulumi.get(__response__, 'state'),
+        storage_size_details=pulumi.get(__response__, 'storage_size_details'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         vault_id=pulumi.get(__response__, 'vault_id'),

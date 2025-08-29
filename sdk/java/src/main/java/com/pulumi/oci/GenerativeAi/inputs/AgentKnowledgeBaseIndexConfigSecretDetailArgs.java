@@ -62,18 +62,14 @@ public final class AgentKnowledgeBaseIndexConfigSecretDetailArgs extends com.pul
     }
 
     /**
-     * (Updatable) The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * (Updatable) The type of OpenID.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * @return (Updatable) The type of OpenID.
      * 
      */
     public Output<String> type() {
@@ -187,9 +183,7 @@ public final class AgentKnowledgeBaseIndexConfigSecretDetailArgs extends com.pul
         }
 
         /**
-         * @param type (Updatable) The type of OpenID. The allowed values are:
-         * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-         * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+         * @param type (Updatable) The type of OpenID.
          * 
          * @return builder
          * 
@@ -200,9 +194,7 @@ public final class AgentKnowledgeBaseIndexConfigSecretDetailArgs extends com.pul
         }
 
         /**
-         * @param type (Updatable) The type of OpenID. The allowed values are:
-         * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-         * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+         * @param type (Updatable) The type of OpenID.
          * 
          * @return builder
          * 

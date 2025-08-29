@@ -25,6 +25,12 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<int>? NumberOfFailedFiles { get; set; }
 
         /// <summary>
+        /// The number of files that have been ignored during the ingestion.
+        /// </summary>
+        [Input("numberOfIgnoredFiles")]
+        public Input<int>? NumberOfIgnoredFiles { get; set; }
+
+        /// <summary>
         /// The number of files that have been successfully ingested during the ingestion.
         /// </summary>
         [Input("numberOfIngestedFiles")]

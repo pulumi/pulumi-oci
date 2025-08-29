@@ -68,6 +68,10 @@ type LookupDbNodeResult struct {
 	BackupVnic2id string `pulumi:"backupVnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
 	BackupVnicId string `pulumi:"backupVnicId"`
+	// The number of compute servers for the DB system.
+	ComputeCount int `pulumi:"computeCount"`
+	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled on the Db node.
 	CpuCoreCount int    `pulumi:"cpuCoreCount"`
 	DbNodeId     string `pulumi:"dbNodeId"`
@@ -174,6 +178,16 @@ func (o LookupDbNodeResultOutput) BackupVnic2id() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
 func (o LookupDbNodeResultOutput) BackupVnicId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeResult) string { return v.BackupVnicId }).(pulumi.StringOutput)
+}
+
+// The number of compute servers for the DB system.
+func (o LookupDbNodeResultOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDbNodeResult) int { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+func (o LookupDbNodeResultOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbNodeResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
 // The number of CPU cores enabled on the Db node.

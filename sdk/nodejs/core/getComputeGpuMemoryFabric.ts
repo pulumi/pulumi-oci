@@ -46,6 +46,10 @@ export interface GetComputeGpuMemoryFabricResult {
      */
     readonly additionalData: {[key: string]: string};
     /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     */
+    readonly availableHostCount: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
     readonly compartmentId: string;

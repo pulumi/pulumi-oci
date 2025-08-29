@@ -1990,8 +1990,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetDataSource**
-     * 
      * Gets information about a data source.
      * 
      * ## Example Usage
@@ -2035,8 +2033,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetDataSource**
      * 
      * Gets information about a data source.
      * 
@@ -2082,8 +2078,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetDataSource**
-     * 
      * Gets information about a data source.
      * 
      * ## Example Usage
@@ -2127,8 +2121,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetDataSource**
      * 
      * Gets information about a data source.
      * 
@@ -2174,8 +2166,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetDataSource**
-     * 
      * Gets information about a data source.
      * 
      * ## Example Usage
@@ -2219,8 +2209,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListDataSources**
      * 
      * Gets a list of data sources.
      * 
@@ -2269,8 +2257,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListDataSources**
-     * 
      * Gets a list of data sources.
      * 
      * ## Example Usage
@@ -2317,8 +2303,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListDataSources**
      * 
      * Gets a list of data sources.
      * 
@@ -2367,8 +2351,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListDataSources**
-     * 
      * Gets a list of data sources.
      * 
      * ## Example Usage
@@ -2415,8 +2397,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListDataSources**
      * 
      * Gets a list of data sources.
      * 
@@ -2465,8 +2445,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListDataSources**
-     * 
      * Gets a list of data sources.
      * 
      * ## Example Usage
@@ -2513,8 +2491,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListDataSources**
      * 
      * Gets a list of data sources.
      * 
@@ -2563,8 +2539,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetKnowledgeBase**
-     * 
      * Gets information about a knowledge base.
      * 
      * ## Example Usage
@@ -2608,8 +2582,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetKnowledgeBase**
      * 
      * Gets information about a knowledge base.
      * 
@@ -2655,8 +2627,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetKnowledgeBase**
-     * 
      * Gets information about a knowledge base.
      * 
      * ## Example Usage
@@ -2700,8 +2670,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetKnowledgeBase**
      * 
      * Gets information about a knowledge base.
      * 
@@ -2747,8 +2715,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetKnowledgeBase**
-     * 
      * Gets information about a knowledge base.
      * 
      * ## Example Usage
@@ -2792,8 +2758,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListKnowledgeBases**
      * 
      * Gets a list of knowledge bases.
      * 
@@ -2841,8 +2805,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListKnowledgeBases**
-     * 
      * Gets a list of knowledge bases.
      * 
      * ## Example Usage
@@ -2888,8 +2850,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListKnowledgeBases**
      * 
      * Gets a list of knowledge bases.
      * 
@@ -2937,8 +2897,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListKnowledgeBases**
-     * 
      * Gets a list of knowledge bases.
      * 
      * ## Example Usage
@@ -2984,8 +2942,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListKnowledgeBases**
      * 
      * Gets a list of knowledge bases.
      * 
@@ -3033,8 +2989,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListKnowledgeBases**
-     * 
      * Gets a list of knowledge bases.
      * 
      * ## Example Usage
@@ -3080,8 +3034,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListKnowledgeBases**
      * 
      * Gets a list of knowledge bases.
      * 

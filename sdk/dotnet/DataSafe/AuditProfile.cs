@@ -12,7 +12,43 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Updates one or more attributes of the specified audit profile.
+    /// Create a new audit profile resource for a target group. For a target database, it will update the auto created audit profile
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAuditProfile = new Oci.DataSafe.AuditProfile("test_audit_profile", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         TargetId = testTarget.Id,
+    ///         TargetType = auditProfileTargetType,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = auditProfileDescription,
+    ///         DisplayName = auditProfileDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsOverrideGlobalPaidUsage = auditProfileIsOverrideGlobalPaidUsage,
+    ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
+    ///         OfflineMonths = auditProfileOfflineMonths,
+    ///         OnlineMonths = auditProfileOnlineMonths,
+    ///         ChangeRetentionTrigger = retentionTrigger,
+    ///         IsOverrideGlobalRetentionSetting = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 
@@ -26,19 +62,13 @@ namespace Pulumi.Oci.DataSafe
     public partial class AuditProfile : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        /// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         /// </summary>
         [Output("auditCollectedVolume")]
         public Output<string> AuditCollectedVolume { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the audit.
-        /// </summary>
-        [Output("auditProfileId")]
-        public Output<string> AuditProfileId { get; private set; } = null!;
-
-        /// <summary>
-        /// Indicates the list of available audit trails on the target.
+        /// Contains the list of available audit trails on the target database.
         /// </summary>
         [Output("auditTrails")]
         public Output<ImmutableArray<Outputs.AuditProfileAuditTrail>> AuditTrails { get; private set; } = null!;
@@ -54,7 +84,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<int?> ChangeRetentionTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the audit.
+        /// (Updatable) The OCID of the compartment where you want to create the audit profile.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -84,7 +114,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        /// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        /// </summary>
+        [Output("isOverrideGlobalPaidUsage")]
+        public Output<bool> IsOverrideGlobalPaidUsage { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         /// </summary>
         [Output("isOverrideGlobalRetentionSetting")]
         public Output<bool> IsOverrideGlobalRetentionSetting { get; private set; } = null!;
@@ -102,16 +138,34 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        /// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         /// </summary>
         [Output("offlineMonths")]
         public Output<int> OfflineMonths { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        /// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Output("offlineMonthsSource")]
+        public Output<string> OfflineMonthsSource { get; private set; } = null!;
+
+        /// <summary>
+        /// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
         /// </summary>
         [Output("onlineMonths")]
         public Output<int> OnlineMonths { get; private set; } = null!;
+
+        /// <summary>
+        /// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Output("onlineMonthsSource")]
+        public Output<string> OnlineMonthsSource { get; private set; } = null!;
+
+        /// <summary>
+        /// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Output("paidUsageSource")]
+        public Output<string> PaidUsageSource { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the audit profile.
@@ -126,10 +180,16 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The resource type that is represented by the audit profile.
+        /// </summary>
+        [Output("targetType")]
+        public Output<string> TargetType { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -190,12 +250,6 @@ namespace Pulumi.Oci.DataSafe
     public sealed class AuditProfileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the audit.
-        /// </summary>
-        [Input("auditProfileId", required: true)]
-        public Input<string> AuditProfileId { get; set; } = null!;
-
-        /// <summary>
         /// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
         /// 
         /// 
@@ -206,10 +260,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<int>? ChangeRetentionTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the audit.
+        /// (Updatable) The OCID of the compartment where you want to create the audit profile.
         /// </summary>
-        [Input("compartmentId")]
-        public Input<string>? CompartmentId { get; set; }
+        [Input("compartmentId", required: true)]
+        public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -248,10 +302,46 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        /// </summary>
+        [Input("isOverrideGlobalPaidUsage")]
+        public Input<bool>? IsOverrideGlobalPaidUsage { get; set; }
+
+        /// <summary>
+        /// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
+        /// </summary>
+        [Input("isOverrideGlobalRetentionSetting")]
+        public Input<bool>? IsOverrideGlobalRetentionSetting { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         /// </summary>
         [Input("isPaidUsageEnabled")]
         public Input<bool>? IsPaidUsageEnabled { get; set; }
+
+        /// <summary>
+        /// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
+        /// </summary>
+        [Input("offlineMonths")]
+        public Input<int>? OfflineMonths { get; set; }
+
+        /// <summary>
+        /// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        /// </summary>
+        [Input("onlineMonths")]
+        public Input<int>? OnlineMonths { get; set; }
+
+        /// <summary>
+        /// The OCID of the target database or target database group for which the audit profile is created.
+        /// </summary>
+        [Input("targetId", required: true)]
+        public Input<string> TargetId { get; set; } = null!;
+
+        /// <summary>
+        /// The resource type that is represented by the audit profile.
+        /// </summary>
+        [Input("targetType", required: true)]
+        public Input<string> TargetType { get; set; } = null!;
 
         public AuditProfileArgs()
         {
@@ -262,22 +352,16 @@ namespace Pulumi.Oci.DataSafe
     public sealed class AuditProfileState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        /// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         /// </summary>
         [Input("auditCollectedVolume")]
         public Input<string>? AuditCollectedVolume { get; set; }
-
-        /// <summary>
-        /// The OCID of the audit.
-        /// </summary>
-        [Input("auditProfileId")]
-        public Input<string>? AuditProfileId { get; set; }
 
         [Input("auditTrails")]
         private InputList<Inputs.AuditProfileAuditTrailGetArgs>? _auditTrails;
 
         /// <summary>
-        /// Indicates the list of available audit trails on the target.
+        /// Contains the list of available audit trails on the target database.
         /// </summary>
         public InputList<Inputs.AuditProfileAuditTrailGetArgs> AuditTrails
         {
@@ -296,7 +380,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<int>? ChangeRetentionTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the audit.
+        /// (Updatable) The OCID of the compartment where you want to create the audit profile.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -338,7 +422,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        /// (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        /// </summary>
+        [Input("isOverrideGlobalPaidUsage")]
+        public Input<bool>? IsOverrideGlobalPaidUsage { get; set; }
+
+        /// <summary>
+        /// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         /// </summary>
         [Input("isOverrideGlobalRetentionSetting")]
         public Input<bool>? IsOverrideGlobalRetentionSetting { get; set; }
@@ -356,16 +446,34 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        /// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         /// </summary>
         [Input("offlineMonths")]
         public Input<int>? OfflineMonths { get; set; }
 
         /// <summary>
-        /// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        /// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Input("offlineMonthsSource")]
+        public Input<string>? OfflineMonthsSource { get; set; }
+
+        /// <summary>
+        /// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
         /// </summary>
         [Input("onlineMonths")]
         public Input<int>? OnlineMonths { get; set; }
+
+        /// <summary>
+        /// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Input("onlineMonthsSource")]
+        public Input<string>? OnlineMonthsSource { get; set; }
+
+        /// <summary>
+        /// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        [Input("paidUsageSource")]
+        public Input<string>? PaidUsageSource { get; set; }
 
         /// <summary>
         /// The current state of the audit profile.
@@ -386,10 +494,16 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// The resource type that is represented by the audit profile.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         /// <summary>
         /// The date and time the audit profile was created, in the format defined by RFC3339.

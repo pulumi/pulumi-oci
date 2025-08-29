@@ -94,9 +94,13 @@ type LookupUserAssessmentResult struct {
 	Statistics string `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	TargetId   string            `pulumi:"targetId"`
+	// The OCID of target database group.
+	TargetDatabaseGroupId string `pulumi:"targetDatabaseGroupId"`
+	TargetId              string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
+	// Indicates whether the user assessment is for a target database or a target database group.
+	TargetType string `pulumi:"targetType"`
 	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -234,6 +238,11 @@ func (o LookupUserAssessmentResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupUserAssessmentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The OCID of target database group.
+func (o LookupUserAssessmentResultOutput) TargetDatabaseGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUserAssessmentResult) string { return v.TargetDatabaseGroupId }).(pulumi.StringOutput)
+}
+
 func (o LookupUserAssessmentResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserAssessmentResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
@@ -241,6 +250,11 @@ func (o LookupUserAssessmentResultOutput) TargetId() pulumi.StringOutput {
 // Array of database target OCIDs.
 func (o LookupUserAssessmentResultOutput) TargetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupUserAssessmentResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether the user assessment is for a target database or a target database group.
+func (o LookupUserAssessmentResultOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUserAssessmentResult) string { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

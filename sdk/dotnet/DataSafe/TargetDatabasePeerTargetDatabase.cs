@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
     ///             InstanceId = testInstance.Id,
     ///             IpAddresses = targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses,
     ///             ListenerPort = targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort,
+    ///             PluggableDatabaseId = testPluggableDatabase.Id,
     ///             ServiceName = testService.Name,
     ///             VmClusterId = testVmCluster.Id,
     ///         },

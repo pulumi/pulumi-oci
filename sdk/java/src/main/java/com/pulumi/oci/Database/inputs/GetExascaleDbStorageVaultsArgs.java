@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsFilterArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,36 @@ import javax.annotation.Nullable;
 public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetExascaleDbStorageVaultsArgs Empty = new GetExascaleDbStorageVaultsArgs();
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     * 
+     */
+    @Import(name="attachedShapeAttributes")
+    private @Nullable Output<String> attachedShapeAttributes;
+
+    /**
+     * @return A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     * 
+     */
+    public Optional<Output<String>> attachedShapeAttributes() {
+        return Optional.ofNullable(this.attachedShapeAttributes);
+    }
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+     * 
+     */
+    @Import(name="attachedShapeAttributesNotEqualTo")
+    private @Nullable Output<String> attachedShapeAttributesNotEqualTo;
+
+    /**
+     * @return A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+     * 
+     */
+    public Optional<Output<String>> attachedShapeAttributesNotEqualTo() {
+        return Optional.ofNullable(this.attachedShapeAttributesNotEqualTo);
+    }
 
     /**
      * A filter to return only resources that match the given cluster placement group ID exactly.
@@ -100,15 +131,49 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+     * 
+     */
+    @Import(name="vmClusterCountGreaterThanOrEqualTo")
+    private @Nullable Output<Integer> vmClusterCountGreaterThanOrEqualTo;
+
+    /**
+     * @return A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+     * 
+     */
+    public Optional<Output<Integer>> vmClusterCountGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.vmClusterCountGreaterThanOrEqualTo);
+    }
+
+    /**
+     * A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+     * 
+     */
+    @Import(name="vmClusterCountLessThanOrEqualTo")
+    private @Nullable Output<Integer> vmClusterCountLessThanOrEqualTo;
+
+    /**
+     * @return A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+     * 
+     */
+    public Optional<Output<Integer>> vmClusterCountLessThanOrEqualTo() {
+        return Optional.ofNullable(this.vmClusterCountLessThanOrEqualTo);
+    }
+
     private GetExascaleDbStorageVaultsArgs() {}
 
     private GetExascaleDbStorageVaultsArgs(GetExascaleDbStorageVaultsArgs $) {
+        this.attachedShapeAttributes = $.attachedShapeAttributes;
+        this.attachedShapeAttributesNotEqualTo = $.attachedShapeAttributesNotEqualTo;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.filters = $.filters;
         this.state = $.state;
+        this.vmClusterCountGreaterThanOrEqualTo = $.vmClusterCountGreaterThanOrEqualTo;
+        this.vmClusterCountLessThanOrEqualTo = $.vmClusterCountLessThanOrEqualTo;
     }
 
     public static Builder builder() {
@@ -127,6 +192,48 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
 
         public Builder(GetExascaleDbStorageVaultsArgs defaults) {
             $ = new GetExascaleDbStorageVaultsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param attachedShapeAttributes A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributes(@Nullable Output<String> attachedShapeAttributes) {
+            $.attachedShapeAttributes = attachedShapeAttributes;
+            return this;
+        }
+
+        /**
+         * @param attachedShapeAttributes A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributes(String attachedShapeAttributes) {
+            return attachedShapeAttributes(Output.of(attachedShapeAttributes));
+        }
+
+        /**
+         * @param attachedShapeAttributesNotEqualTo A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributesNotEqualTo(@Nullable Output<String> attachedShapeAttributesNotEqualTo) {
+            $.attachedShapeAttributesNotEqualTo = attachedShapeAttributesNotEqualTo;
+            return this;
+        }
+
+        /**
+         * @param attachedShapeAttributesNotEqualTo A filter to return only Exadata Database Storage Vaults which do not match the given attachedShapeAttributes
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributesNotEqualTo(String attachedShapeAttributesNotEqualTo) {
+            return attachedShapeAttributesNotEqualTo(Output.of(attachedShapeAttributesNotEqualTo));
         }
 
         /**
@@ -245,6 +352,48 @@ public final class GetExascaleDbStorageVaultsArgs extends com.pulumi.resources.I
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param vmClusterCountGreaterThanOrEqualTo A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterCountGreaterThanOrEqualTo(@Nullable Output<Integer> vmClusterCountGreaterThanOrEqualTo) {
+            $.vmClusterCountGreaterThanOrEqualTo = vmClusterCountGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param vmClusterCountGreaterThanOrEqualTo A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters greater than or equal to the given count
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterCountGreaterThanOrEqualTo(Integer vmClusterCountGreaterThanOrEqualTo) {
+            return vmClusterCountGreaterThanOrEqualTo(Output.of(vmClusterCountGreaterThanOrEqualTo));
+        }
+
+        /**
+         * @param vmClusterCountLessThanOrEqualTo A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterCountLessThanOrEqualTo(@Nullable Output<Integer> vmClusterCountLessThanOrEqualTo) {
+            $.vmClusterCountLessThanOrEqualTo = vmClusterCountLessThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param vmClusterCountLessThanOrEqualTo A filter to return only Exadata Database Storage Vaults with associated Exadata VM Clusters less than or equal to the given count
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterCountLessThanOrEqualTo(Integer vmClusterCountLessThanOrEqualTo) {
+            return vmClusterCountLessThanOrEqualTo(Output.of(vmClusterCountLessThanOrEqualTo));
         }
 
         public GetExascaleDbStorageVaultsArgs build() {

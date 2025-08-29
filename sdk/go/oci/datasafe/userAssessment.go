@@ -45,6 +45,7 @@ import (
 //				},
 //				IsAssessmentScheduled: pulumi.Any(userAssessmentIsAssessmentScheduled),
 //				Schedule:              pulumi.Any(userAssessmentSchedule),
+//				TargetType:            pulumi.Any(userAssessmentTargetType),
 //			})
 //			if err != nil {
 //				return err
@@ -101,13 +102,17 @@ type UserAssessment struct {
 	Statistics pulumi.StringOutput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The OCID of the target database on which the user assessment is to be run.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of target database group.
+	TargetDatabaseGroupId pulumi.StringOutput `pulumi:"targetDatabaseGroupId"`
+	// The OCID of the target database or target database group on which user assessment is to be run.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
+	// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType pulumi.StringOutput `pulumi:"targetType"`
 	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -192,13 +197,17 @@ type userAssessmentState struct {
 	Statistics *string `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The OCID of the target database on which the user assessment is to be run.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of target database group.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
+	// The OCID of the target database or target database group on which user assessment is to be run.
 	TargetId *string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
+	// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType *string `pulumi:"targetType"`
 	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -248,13 +257,17 @@ type UserAssessmentState struct {
 	Statistics pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The OCID of the target database on which the user assessment is to be run.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of target database group.
+	TargetDatabaseGroupId pulumi.StringPtrInput
+	// The OCID of the target database or target database group on which user assessment is to be run.
 	TargetId pulumi.StringPtrInput
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayInput
+	// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType pulumi.StringPtrInput
 	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -288,11 +301,13 @@ type userAssessmentArgs struct {
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
 	Schedule *string `pulumi:"schedule"`
-	// The OCID of the target database on which the user assessment is to be run.
+	// The OCID of the target database or target database group on which user assessment is to be run.
+	TargetId string `pulumi:"targetId"`
+	// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TargetId string `pulumi:"targetId"`
+	TargetType *string `pulumi:"targetType"`
 }
 
 // The set of arguments for constructing a UserAssessment resource.
@@ -313,11 +328,13 @@ type UserAssessmentArgs struct {
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
 	Schedule pulumi.StringPtrInput
-	// The OCID of the target database on which the user assessment is to be run.
+	// The OCID of the target database or target database group on which user assessment is to be run.
+	TargetId pulumi.StringInput
+	// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TargetId pulumi.StringInput
+	TargetType pulumi.StringPtrInput
 }
 
 func (UserAssessmentArgs) ElementType() reflect.Type {
@@ -494,10 +511,12 @@ func (o UserAssessmentOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the target database on which the user assessment is to be run.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The OCID of target database group.
+func (o UserAssessmentOutput) TargetDatabaseGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TargetDatabaseGroupId }).(pulumi.StringOutput)
+}
+
+// The OCID of the target database or target database group on which user assessment is to be run.
 func (o UserAssessmentOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }
@@ -505,6 +524,14 @@ func (o UserAssessmentOutput) TargetId() pulumi.StringOutput {
 // Array of database target OCIDs.
 func (o UserAssessmentOutput) TargetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringArrayOutput { return v.TargetIds }).(pulumi.StringArrayOutput)
+}
+
+// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o UserAssessmentOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

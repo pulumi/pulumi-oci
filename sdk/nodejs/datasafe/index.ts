@@ -25,6 +25,11 @@ export type AlertPolicyRule = import("./alertPolicyRule").AlertPolicyRule;
 export const AlertPolicyRule: typeof import("./alertPolicyRule").AlertPolicyRule = null as any;
 utilities.lazyLoad(exports, ["AlertPolicyRule"], () => require("./alertPolicyRule"));
 
+export { AttributeSetArgs, AttributeSetState } from "./attributeSet";
+export type AttributeSet = import("./attributeSet").AttributeSet;
+export const AttributeSet: typeof import("./attributeSet").AttributeSet = null as any;
+utilities.lazyLoad(exports, ["AttributeSet"], () => require("./attributeSet"));
+
 export { AuditArchiveRetrievalArgs, AuditArchiveRetrievalState } from "./auditArchiveRetrieval";
 export type AuditArchiveRetrieval = import("./auditArchiveRetrieval").AuditArchiveRetrieval;
 export const AuditArchiveRetrieval: typeof import("./auditArchiveRetrieval").AuditArchiveRetrieval = null as any;
@@ -150,6 +155,21 @@ export const getAlerts: typeof import("./getAlerts").getAlerts = null as any;
 export const getAlertsOutput: typeof import("./getAlerts").getAlertsOutput = null as any;
 utilities.lazyLoad(exports, ["getAlerts","getAlertsOutput"], () => require("./getAlerts"));
 
+export { GetAttributeSetArgs, GetAttributeSetResult, GetAttributeSetOutputArgs } from "./getAttributeSet";
+export const getAttributeSet: typeof import("./getAttributeSet").getAttributeSet = null as any;
+export const getAttributeSetOutput: typeof import("./getAttributeSet").getAttributeSetOutput = null as any;
+utilities.lazyLoad(exports, ["getAttributeSet","getAttributeSetOutput"], () => require("./getAttributeSet"));
+
+export { GetAttributeSetAssociatedResourcesArgs, GetAttributeSetAssociatedResourcesResult, GetAttributeSetAssociatedResourcesOutputArgs } from "./getAttributeSetAssociatedResources";
+export const getAttributeSetAssociatedResources: typeof import("./getAttributeSetAssociatedResources").getAttributeSetAssociatedResources = null as any;
+export const getAttributeSetAssociatedResourcesOutput: typeof import("./getAttributeSetAssociatedResources").getAttributeSetAssociatedResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getAttributeSetAssociatedResources","getAttributeSetAssociatedResourcesOutput"], () => require("./getAttributeSetAssociatedResources"));
+
+export { GetAttributeSetsArgs, GetAttributeSetsResult, GetAttributeSetsOutputArgs } from "./getAttributeSets";
+export const getAttributeSets: typeof import("./getAttributeSets").getAttributeSets = null as any;
+export const getAttributeSetsOutput: typeof import("./getAttributeSets").getAttributeSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getAttributeSets","getAttributeSetsOutput"], () => require("./getAttributeSets"));
+
 export { GetAuditArchiveRetrievalArgs, GetAuditArchiveRetrievalResult, GetAuditArchiveRetrievalOutputArgs } from "./getAuditArchiveRetrieval";
 export const getAuditArchiveRetrieval: typeof import("./getAuditArchiveRetrieval").getAuditArchiveRetrieval = null as any;
 export const getAuditArchiveRetrievalOutput: typeof import("./getAuditArchiveRetrieval").getAuditArchiveRetrievalOutput = null as any;
@@ -214,6 +234,11 @@ export { GetAuditProfileCollectedAuditVolumesArgs, GetAuditProfileCollectedAudit
 export const getAuditProfileCollectedAuditVolumes: typeof import("./getAuditProfileCollectedAuditVolumes").getAuditProfileCollectedAuditVolumes = null as any;
 export const getAuditProfileCollectedAuditVolumesOutput: typeof import("./getAuditProfileCollectedAuditVolumes").getAuditProfileCollectedAuditVolumesOutput = null as any;
 utilities.lazyLoad(exports, ["getAuditProfileCollectedAuditVolumes","getAuditProfileCollectedAuditVolumesOutput"], () => require("./getAuditProfileCollectedAuditVolumes"));
+
+export { GetAuditProfileTargetOverridesArgs, GetAuditProfileTargetOverridesResult, GetAuditProfileTargetOverridesOutputArgs } from "./getAuditProfileTargetOverrides";
+export const getAuditProfileTargetOverrides: typeof import("./getAuditProfileTargetOverrides").getAuditProfileTargetOverrides = null as any;
+export const getAuditProfileTargetOverridesOutput: typeof import("./getAuditProfileTargetOverrides").getAuditProfileTargetOverridesOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileTargetOverrides","getAuditProfileTargetOverridesOutput"], () => require("./getAuditProfileTargetOverrides"));
 
 export { GetAuditProfilesArgs, GetAuditProfilesResult, GetAuditProfilesOutputArgs } from "./getAuditProfiles";
 export const getAuditProfiles: typeof import("./getAuditProfiles").getAuditProfiles = null as any;
@@ -455,6 +480,11 @@ export const getSecurityAssessment: typeof import("./getSecurityAssessment").get
 export const getSecurityAssessmentOutput: typeof import("./getSecurityAssessment").getSecurityAssessmentOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityAssessment","getSecurityAssessmentOutput"], () => require("./getSecurityAssessment"));
 
+export { GetSecurityAssessmentChecksArgs, GetSecurityAssessmentChecksResult, GetSecurityAssessmentChecksOutputArgs } from "./getSecurityAssessmentChecks";
+export const getSecurityAssessmentChecks: typeof import("./getSecurityAssessmentChecks").getSecurityAssessmentChecks = null as any;
+export const getSecurityAssessmentChecksOutput: typeof import("./getSecurityAssessmentChecks").getSecurityAssessmentChecksOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentChecks","getSecurityAssessmentChecksOutput"], () => require("./getSecurityAssessmentChecks"));
+
 export { GetSecurityAssessmentComparisonArgs, GetSecurityAssessmentComparisonResult, GetSecurityAssessmentComparisonOutputArgs } from "./getSecurityAssessmentComparison";
 export const getSecurityAssessmentComparison: typeof import("./getSecurityAssessmentComparison").getSecurityAssessmentComparison = null as any;
 export const getSecurityAssessmentComparisonOutput: typeof import("./getSecurityAssessmentComparison").getSecurityAssessmentComparisonOutput = null as any;
@@ -490,6 +520,21 @@ export const getSecurityAssessmentSecurityFeatures: typeof import("./getSecurity
 export const getSecurityAssessmentSecurityFeaturesOutput: typeof import("./getSecurityAssessmentSecurityFeatures").getSecurityAssessmentSecurityFeaturesOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityAssessmentSecurityFeatures","getSecurityAssessmentSecurityFeaturesOutput"], () => require("./getSecurityAssessmentSecurityFeatures"));
 
+export { GetSecurityAssessmentTemplateAnalyticsArgs, GetSecurityAssessmentTemplateAnalyticsResult, GetSecurityAssessmentTemplateAnalyticsOutputArgs } from "./getSecurityAssessmentTemplateAnalytics";
+export const getSecurityAssessmentTemplateAnalytics: typeof import("./getSecurityAssessmentTemplateAnalytics").getSecurityAssessmentTemplateAnalytics = null as any;
+export const getSecurityAssessmentTemplateAnalyticsOutput: typeof import("./getSecurityAssessmentTemplateAnalytics").getSecurityAssessmentTemplateAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentTemplateAnalytics","getSecurityAssessmentTemplateAnalyticsOutput"], () => require("./getSecurityAssessmentTemplateAnalytics"));
+
+export { GetSecurityAssessmentTemplateAssociationAnalyticsArgs, GetSecurityAssessmentTemplateAssociationAnalyticsResult, GetSecurityAssessmentTemplateAssociationAnalyticsOutputArgs } from "./getSecurityAssessmentTemplateAssociationAnalytics";
+export const getSecurityAssessmentTemplateAssociationAnalytics: typeof import("./getSecurityAssessmentTemplateAssociationAnalytics").getSecurityAssessmentTemplateAssociationAnalytics = null as any;
+export const getSecurityAssessmentTemplateAssociationAnalyticsOutput: typeof import("./getSecurityAssessmentTemplateAssociationAnalytics").getSecurityAssessmentTemplateAssociationAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentTemplateAssociationAnalytics","getSecurityAssessmentTemplateAssociationAnalyticsOutput"], () => require("./getSecurityAssessmentTemplateAssociationAnalytics"));
+
+export { GetSecurityAssessmentTemplateBaselineComparisonArgs, GetSecurityAssessmentTemplateBaselineComparisonResult, GetSecurityAssessmentTemplateBaselineComparisonOutputArgs } from "./getSecurityAssessmentTemplateBaselineComparison";
+export const getSecurityAssessmentTemplateBaselineComparison: typeof import("./getSecurityAssessmentTemplateBaselineComparison").getSecurityAssessmentTemplateBaselineComparison = null as any;
+export const getSecurityAssessmentTemplateBaselineComparisonOutput: typeof import("./getSecurityAssessmentTemplateBaselineComparison").getSecurityAssessmentTemplateBaselineComparisonOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentTemplateBaselineComparison","getSecurityAssessmentTemplateBaselineComparisonOutput"], () => require("./getSecurityAssessmentTemplateBaselineComparison"));
+
 export { GetSecurityAssessmentsArgs, GetSecurityAssessmentsResult, GetSecurityAssessmentsOutputArgs } from "./getSecurityAssessments";
 export const getSecurityAssessments: typeof import("./getSecurityAssessments").getSecurityAssessments = null as any;
 export const getSecurityAssessmentsOutput: typeof import("./getSecurityAssessments").getSecurityAssessmentsOutput = null as any;
@@ -504,6 +549,16 @@ export { GetSecurityPolicyArgs, GetSecurityPolicyResult, GetSecurityPolicyOutput
 export const getSecurityPolicy: typeof import("./getSecurityPolicy").getSecurityPolicy = null as any;
 export const getSecurityPolicyOutput: typeof import("./getSecurityPolicy").getSecurityPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityPolicy","getSecurityPolicyOutput"], () => require("./getSecurityPolicy"));
+
+export { GetSecurityPolicyConfigArgs, GetSecurityPolicyConfigResult, GetSecurityPolicyConfigOutputArgs } from "./getSecurityPolicyConfig";
+export const getSecurityPolicyConfig: typeof import("./getSecurityPolicyConfig").getSecurityPolicyConfig = null as any;
+export const getSecurityPolicyConfigOutput: typeof import("./getSecurityPolicyConfig").getSecurityPolicyConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityPolicyConfig","getSecurityPolicyConfigOutput"], () => require("./getSecurityPolicyConfig"));
+
+export { GetSecurityPolicyConfigsArgs, GetSecurityPolicyConfigsResult, GetSecurityPolicyConfigsOutputArgs } from "./getSecurityPolicyConfigs";
+export const getSecurityPolicyConfigs: typeof import("./getSecurityPolicyConfigs").getSecurityPolicyConfigs = null as any;
+export const getSecurityPolicyConfigsOutput: typeof import("./getSecurityPolicyConfigs").getSecurityPolicyConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityPolicyConfigs","getSecurityPolicyConfigsOutput"], () => require("./getSecurityPolicyConfigs"));
 
 export { GetSecurityPolicyDeploymentArgs, GetSecurityPolicyDeploymentResult, GetSecurityPolicyDeploymentOutputArgs } from "./getSecurityPolicyDeployment";
 export const getSecurityPolicyDeployment: typeof import("./getSecurityPolicyDeployment").getSecurityPolicyDeployment = null as any;
@@ -720,6 +775,21 @@ export const getTargetDatabase: typeof import("./getTargetDatabase").getTargetDa
 export const getTargetDatabaseOutput: typeof import("./getTargetDatabase").getTargetDatabaseOutput = null as any;
 utilities.lazyLoad(exports, ["getTargetDatabase","getTargetDatabaseOutput"], () => require("./getTargetDatabase"));
 
+export { GetTargetDatabaseGroupArgs, GetTargetDatabaseGroupResult, GetTargetDatabaseGroupOutputArgs } from "./getTargetDatabaseGroup";
+export const getTargetDatabaseGroup: typeof import("./getTargetDatabaseGroup").getTargetDatabaseGroup = null as any;
+export const getTargetDatabaseGroupOutput: typeof import("./getTargetDatabaseGroup").getTargetDatabaseGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabaseGroup","getTargetDatabaseGroupOutput"], () => require("./getTargetDatabaseGroup"));
+
+export { GetTargetDatabaseGroupGroupMemberArgs, GetTargetDatabaseGroupGroupMemberResult, GetTargetDatabaseGroupGroupMemberOutputArgs } from "./getTargetDatabaseGroupGroupMember";
+export const getTargetDatabaseGroupGroupMember: typeof import("./getTargetDatabaseGroupGroupMember").getTargetDatabaseGroupGroupMember = null as any;
+export const getTargetDatabaseGroupGroupMemberOutput: typeof import("./getTargetDatabaseGroupGroupMember").getTargetDatabaseGroupGroupMemberOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabaseGroupGroupMember","getTargetDatabaseGroupGroupMemberOutput"], () => require("./getTargetDatabaseGroupGroupMember"));
+
+export { GetTargetDatabaseGroupsArgs, GetTargetDatabaseGroupsResult, GetTargetDatabaseGroupsOutputArgs } from "./getTargetDatabaseGroups";
+export const getTargetDatabaseGroups: typeof import("./getTargetDatabaseGroups").getTargetDatabaseGroups = null as any;
+export const getTargetDatabaseGroupsOutput: typeof import("./getTargetDatabaseGroups").getTargetDatabaseGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabaseGroups","getTargetDatabaseGroupsOutput"], () => require("./getTargetDatabaseGroups"));
+
 export { GetTargetDatabasePeerTargetDatabaseArgs, GetTargetDatabasePeerTargetDatabaseResult, GetTargetDatabasePeerTargetDatabaseOutputArgs } from "./getTargetDatabasePeerTargetDatabase";
 export const getTargetDatabasePeerTargetDatabase: typeof import("./getTargetDatabasePeerTargetDatabase").getTargetDatabasePeerTargetDatabase = null as any;
 export const getTargetDatabasePeerTargetDatabaseOutput: typeof import("./getTargetDatabasePeerTargetDatabase").getTargetDatabasePeerTargetDatabaseOutput = null as any;
@@ -759,6 +829,26 @@ export { GetTargetDatabasesTablesArgs, GetTargetDatabasesTablesResult, GetTarget
 export const getTargetDatabasesTables: typeof import("./getTargetDatabasesTables").getTargetDatabasesTables = null as any;
 export const getTargetDatabasesTablesOutput: typeof import("./getTargetDatabasesTables").getTargetDatabasesTablesOutput = null as any;
 utilities.lazyLoad(exports, ["getTargetDatabasesTables","getTargetDatabasesTablesOutput"], () => require("./getTargetDatabasesTables"));
+
+export { GetUnifiedAuditPoliciesArgs, GetUnifiedAuditPoliciesResult, GetUnifiedAuditPoliciesOutputArgs } from "./getUnifiedAuditPolicies";
+export const getUnifiedAuditPolicies: typeof import("./getUnifiedAuditPolicies").getUnifiedAuditPolicies = null as any;
+export const getUnifiedAuditPoliciesOutput: typeof import("./getUnifiedAuditPolicies").getUnifiedAuditPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAuditPolicies","getUnifiedAuditPoliciesOutput"], () => require("./getUnifiedAuditPolicies"));
+
+export { GetUnifiedAuditPolicyArgs, GetUnifiedAuditPolicyResult, GetUnifiedAuditPolicyOutputArgs } from "./getUnifiedAuditPolicy";
+export const getUnifiedAuditPolicy: typeof import("./getUnifiedAuditPolicy").getUnifiedAuditPolicy = null as any;
+export const getUnifiedAuditPolicyOutput: typeof import("./getUnifiedAuditPolicy").getUnifiedAuditPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAuditPolicy","getUnifiedAuditPolicyOutput"], () => require("./getUnifiedAuditPolicy"));
+
+export { GetUnifiedAuditPolicyDefinitionArgs, GetUnifiedAuditPolicyDefinitionResult, GetUnifiedAuditPolicyDefinitionOutputArgs } from "./getUnifiedAuditPolicyDefinition";
+export const getUnifiedAuditPolicyDefinition: typeof import("./getUnifiedAuditPolicyDefinition").getUnifiedAuditPolicyDefinition = null as any;
+export const getUnifiedAuditPolicyDefinitionOutput: typeof import("./getUnifiedAuditPolicyDefinition").getUnifiedAuditPolicyDefinitionOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAuditPolicyDefinition","getUnifiedAuditPolicyDefinitionOutput"], () => require("./getUnifiedAuditPolicyDefinition"));
+
+export { GetUnifiedAuditPolicyDefinitionsArgs, GetUnifiedAuditPolicyDefinitionsResult, GetUnifiedAuditPolicyDefinitionsOutputArgs } from "./getUnifiedAuditPolicyDefinitions";
+export const getUnifiedAuditPolicyDefinitions: typeof import("./getUnifiedAuditPolicyDefinitions").getUnifiedAuditPolicyDefinitions = null as any;
+export const getUnifiedAuditPolicyDefinitionsOutput: typeof import("./getUnifiedAuditPolicyDefinitions").getUnifiedAuditPolicyDefinitionsOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAuditPolicyDefinitions","getUnifiedAuditPolicyDefinitionsOutput"], () => require("./getUnifiedAuditPolicyDefinitions"));
 
 export { GetUserAssessmentArgs, GetUserAssessmentResult, GetUserAssessmentOutputArgs } from "./getUserAssessment";
 export const getUserAssessment: typeof import("./getUserAssessment").getUserAssessment = null as any;
@@ -865,10 +955,25 @@ export type SecurityAssessment = import("./securityAssessment").SecurityAssessme
 export const SecurityAssessment: typeof import("./securityAssessment").SecurityAssessment = null as any;
 utilities.lazyLoad(exports, ["SecurityAssessment"], () => require("./securityAssessment"));
 
+export { SecurityAssessmentCheckArgs, SecurityAssessmentCheckState } from "./securityAssessmentCheck";
+export type SecurityAssessmentCheck = import("./securityAssessmentCheck").SecurityAssessmentCheck;
+export const SecurityAssessmentCheck: typeof import("./securityAssessmentCheck").SecurityAssessmentCheck = null as any;
+utilities.lazyLoad(exports, ["SecurityAssessmentCheck"], () => require("./securityAssessmentCheck"));
+
+export { SecurityAssessmentFindingArgs, SecurityAssessmentFindingState } from "./securityAssessmentFinding";
+export type SecurityAssessmentFinding = import("./securityAssessmentFinding").SecurityAssessmentFinding;
+export const SecurityAssessmentFinding: typeof import("./securityAssessmentFinding").SecurityAssessmentFinding = null as any;
+utilities.lazyLoad(exports, ["SecurityAssessmentFinding"], () => require("./securityAssessmentFinding"));
+
 export { SecurityPolicyArgs, SecurityPolicyState } from "./securityPolicy";
 export type SecurityPolicy = import("./securityPolicy").SecurityPolicy;
 export const SecurityPolicy: typeof import("./securityPolicy").SecurityPolicy = null as any;
 utilities.lazyLoad(exports, ["SecurityPolicy"], () => require("./securityPolicy"));
+
+export { SecurityPolicyConfigArgs, SecurityPolicyConfigState } from "./securityPolicyConfig";
+export type SecurityPolicyConfig = import("./securityPolicyConfig").SecurityPolicyConfig;
+export const SecurityPolicyConfig: typeof import("./securityPolicyConfig").SecurityPolicyConfig = null as any;
+utilities.lazyLoad(exports, ["SecurityPolicyConfig"], () => require("./securityPolicyConfig"));
 
 export { SecurityPolicyDeploymentArgs, SecurityPolicyDeploymentState } from "./securityPolicyDeployment";
 export type SecurityPolicyDeployment = import("./securityPolicyDeployment").SecurityPolicyDeployment;
@@ -970,10 +1075,25 @@ export type TargetDatabase = import("./targetDatabase").TargetDatabase;
 export const TargetDatabase: typeof import("./targetDatabase").TargetDatabase = null as any;
 utilities.lazyLoad(exports, ["TargetDatabase"], () => require("./targetDatabase"));
 
+export { TargetDatabaseGroupArgs, TargetDatabaseGroupState } from "./targetDatabaseGroup";
+export type TargetDatabaseGroup = import("./targetDatabaseGroup").TargetDatabaseGroup;
+export const TargetDatabaseGroup: typeof import("./targetDatabaseGroup").TargetDatabaseGroup = null as any;
+utilities.lazyLoad(exports, ["TargetDatabaseGroup"], () => require("./targetDatabaseGroup"));
+
 export { TargetDatabasePeerTargetDatabaseArgs, TargetDatabasePeerTargetDatabaseState } from "./targetDatabasePeerTargetDatabase";
 export type TargetDatabasePeerTargetDatabase = import("./targetDatabasePeerTargetDatabase").TargetDatabasePeerTargetDatabase;
 export const TargetDatabasePeerTargetDatabase: typeof import("./targetDatabasePeerTargetDatabase").TargetDatabasePeerTargetDatabase = null as any;
 utilities.lazyLoad(exports, ["TargetDatabasePeerTargetDatabase"], () => require("./targetDatabasePeerTargetDatabase"));
+
+export { UnifiedAuditPolicyArgs, UnifiedAuditPolicyState } from "./unifiedAuditPolicy";
+export type UnifiedAuditPolicy = import("./unifiedAuditPolicy").UnifiedAuditPolicy;
+export const UnifiedAuditPolicy: typeof import("./unifiedAuditPolicy").UnifiedAuditPolicy = null as any;
+utilities.lazyLoad(exports, ["UnifiedAuditPolicy"], () => require("./unifiedAuditPolicy"));
+
+export { UnifiedAuditPolicyDefinitionArgs, UnifiedAuditPolicyDefinitionState } from "./unifiedAuditPolicyDefinition";
+export type UnifiedAuditPolicyDefinition = import("./unifiedAuditPolicyDefinition").UnifiedAuditPolicyDefinition;
+export const UnifiedAuditPolicyDefinition: typeof import("./unifiedAuditPolicyDefinition").UnifiedAuditPolicyDefinition = null as any;
+utilities.lazyLoad(exports, ["UnifiedAuditPolicyDefinition"], () => require("./unifiedAuditPolicyDefinition"));
 
 export { UnsetSecurityAssessmentBaselineArgs, UnsetSecurityAssessmentBaselineState } from "./unsetSecurityAssessmentBaseline";
 export type UnsetSecurityAssessmentBaseline = import("./unsetSecurityAssessmentBaseline").UnsetSecurityAssessmentBaseline;
@@ -1013,6 +1133,8 @@ const _module = {
                 return new AlertPolicy(name, <any>undefined, { urn })
             case "oci:DataSafe/alertPolicyRule:AlertPolicyRule":
                 return new AlertPolicyRule(name, <any>undefined, { urn })
+            case "oci:DataSafe/attributeSet:AttributeSet":
+                return new AttributeSet(name, <any>undefined, { urn })
             case "oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval":
                 return new AuditArchiveRetrieval(name, <any>undefined, { urn })
             case "oci:DataSafe/auditPolicy:AuditPolicy":
@@ -1073,8 +1195,14 @@ const _module = {
                 return new SdmMaskingPolicyDifference(name, <any>undefined, { urn })
             case "oci:DataSafe/securityAssessment:SecurityAssessment":
                 return new SecurityAssessment(name, <any>undefined, { urn })
+            case "oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck":
+                return new SecurityAssessmentCheck(name, <any>undefined, { urn })
+            case "oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding":
+                return new SecurityAssessmentFinding(name, <any>undefined, { urn })
             case "oci:DataSafe/securityPolicy:SecurityPolicy":
                 return new SecurityPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/securityPolicyConfig:SecurityPolicyConfig":
+                return new SecurityPolicyConfig(name, <any>undefined, { urn })
             case "oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment":
                 return new SecurityPolicyDeployment(name, <any>undefined, { urn })
             case "oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement":
@@ -1115,8 +1243,14 @@ const _module = {
                 return new TargetAlertPolicyAssociation(name, <any>undefined, { urn })
             case "oci:DataSafe/targetDatabase:TargetDatabase":
                 return new TargetDatabase(name, <any>undefined, { urn })
+            case "oci:DataSafe/targetDatabaseGroup:TargetDatabaseGroup":
+                return new TargetDatabaseGroup(name, <any>undefined, { urn })
             case "oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase":
                 return new TargetDatabasePeerTargetDatabase(name, <any>undefined, { urn })
+            case "oci:DataSafe/unifiedAuditPolicy:UnifiedAuditPolicy":
+                return new UnifiedAuditPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/unifiedAuditPolicyDefinition:UnifiedAuditPolicyDefinition":
+                return new UnifiedAuditPolicyDefinition(name, <any>undefined, { urn })
             case "oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline":
                 return new UnsetSecurityAssessmentBaseline(name, <any>undefined, { urn })
             case "oci:DataSafe/unsetSecurityAssessmentBaselineManagement:UnsetSecurityAssessmentBaselineManagement":
@@ -1136,6 +1270,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/addSdmColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/alert", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/alertPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/alertPolicyRule", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/attributeSet", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditArchiveRetrieval", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicyManagement", _module)
@@ -1166,7 +1301,10 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/report", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/reportDefinition", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sdmMaskingPolicyDifference", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityAssessment", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/securityAssessmentCheck", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/securityAssessmentFinding", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyDeployment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyDeploymentManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/securityPolicyManagement", _module)
@@ -1187,7 +1325,10 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicy", _modu
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicyManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetAlertPolicyAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/targetDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/targetDatabasePeerTargetDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/unifiedAuditPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/unifiedAuditPolicyDefinition", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/unsetSecurityAssessmentBaseline", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/unsetSecurityAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/unsetUserAssessmentBaseline", _module)

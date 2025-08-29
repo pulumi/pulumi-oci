@@ -39,6 +39,7 @@ import * as utilities from "../utilities";
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: securityPolicyDeploymentState,
  *     targetId: testTarget.id,
+ *     targetType: securityPolicyDeploymentTargetType,
  * });
  * ```
  */
@@ -54,6 +55,7 @@ export function getSecurityPolicyDeployments(args: GetSecurityPolicyDeploymentsA
         "securityPolicyId": args.securityPolicyId,
         "state": args.state,
         "targetId": args.targetId,
+        "targetType": args.targetType,
     }, opts);
 }
 
@@ -94,6 +96,10 @@ export interface GetSecurityPolicyDeploymentsArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * A optional filter to return only resources that belong to the specified target type.
+     */
+    targetType?: string;
 }
 
 /**
@@ -129,9 +135,13 @@ export interface GetSecurityPolicyDeploymentsResult {
      */
     readonly state?: string;
     /**
-     * The OCID of the target where the security policy is deployed.
+     * The OCID of the target/target group where the security policy is deployed.
      */
     readonly targetId?: string;
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     */
+    readonly targetType?: string;
 }
 /**
  * This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
@@ -166,6 +176,7 @@ export interface GetSecurityPolicyDeploymentsResult {
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: securityPolicyDeploymentState,
  *     targetId: testTarget.id,
+ *     targetType: securityPolicyDeploymentTargetType,
  * });
  * ```
  */
@@ -181,6 +192,7 @@ export function getSecurityPolicyDeploymentsOutput(args: GetSecurityPolicyDeploy
         "securityPolicyId": args.securityPolicyId,
         "state": args.state,
         "targetId": args.targetId,
+        "targetType": args.targetType,
     }, opts);
 }
 
@@ -221,4 +233,8 @@ export interface GetSecurityPolicyDeploymentsOutputArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * A optional filter to return only resources that belong to the specified target type.
+     */
+    targetType?: pulumi.Input<string>;
 }

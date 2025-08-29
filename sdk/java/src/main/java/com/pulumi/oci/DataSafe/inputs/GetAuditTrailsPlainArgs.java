@@ -131,6 +131,21 @@ public final class GetAuditTrailsPlainArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -156,6 +171,7 @@ public final class GetAuditTrailsPlainArgs extends com.pulumi.resources.InvokeAr
         this.filters = $.filters;
         this.state = $.state;
         this.status = $.status;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -260,6 +276,17 @@ public final class GetAuditTrailsPlainArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder status(@Nullable String status) {
             $.status = status;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 

@@ -62,6 +62,8 @@ type LookupDeploymentResult struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules []GetDeploymentBackupSchedule `pulumi:"backupSchedules"`
+	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+	ByolCpuCoreCountLimit int `pulumi:"byolCpuCoreCountLimit"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category string `pulumi:"category"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -99,6 +101,8 @@ type LookupDeploymentResult struct {
 	IngressIps []GetDeploymentIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
+	// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+	IsByolCpuCoreCountLimitEnabled bool `pulumi:"isByolCpuCoreCountLimitEnabled"`
 	// True if all of the aggregate resources are working correctly.
 	IsHealthy bool `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
@@ -210,6 +214,11 @@ func (o LookupDeploymentResultOutput) BackupSchedules() GetDeploymentBackupSched
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentBackupSchedule { return v.BackupSchedules }).(GetDeploymentBackupScheduleArrayOutput)
 }
 
+// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+func (o LookupDeploymentResultOutput) ByolCpuCoreCountLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) int { return v.ByolCpuCoreCountLimit }).(pulumi.IntOutput)
+}
+
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 func (o LookupDeploymentResultOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Category }).(pulumi.StringOutput)
@@ -304,6 +313,11 @@ func (o LookupDeploymentResultOutput) IngressIps() GetDeploymentIngressIpArrayOu
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o LookupDeploymentResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
+}
+
+// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+func (o LookupDeploymentResultOutput) IsByolCpuCoreCountLimitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsByolCpuCoreCountLimitEnabled }).(pulumi.BoolOutput)
 }
 
 // True if all of the aggregate resources are working correctly.

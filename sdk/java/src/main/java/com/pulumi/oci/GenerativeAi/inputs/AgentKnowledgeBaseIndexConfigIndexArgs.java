@@ -32,18 +32,14 @@ public final class AgentKnowledgeBaseIndexConfigIndexArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) **IndexSchema**
-     * 
-     * The index schema details.
+     * (Updatable) The index schema details.
      * 
      */
     @Import(name="schema")
     private @Nullable Output<AgentKnowledgeBaseIndexConfigIndexSchemaArgs> schema;
 
     /**
-     * @return (Updatable) **IndexSchema**
-     * 
-     * The index schema details.
+     * @return (Updatable) The index schema details.
      * 
      */
     public Optional<Output<AgentKnowledgeBaseIndexConfigIndexSchemaArgs>> schema() {
@@ -97,9 +93,7 @@ public final class AgentKnowledgeBaseIndexConfigIndexArgs extends com.pulumi.res
         }
 
         /**
-         * @param schema (Updatable) **IndexSchema**
-         * 
-         * The index schema details.
+         * @param schema (Updatable) The index schema details.
          * 
          * @return builder
          * 
@@ -110,9 +104,7 @@ public final class AgentKnowledgeBaseIndexConfigIndexArgs extends com.pulumi.res
         }
 
         /**
-         * @param schema (Updatable) **IndexSchema**
-         * 
-         * The index schema details.
+         * @param schema (Updatable) The index schema details.
          * 
          * @return builder
          * 

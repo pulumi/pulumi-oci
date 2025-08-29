@@ -61,6 +61,12 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<int>? ListenerPort { get; set; }
 
         /// <summary>
+        /// The OCID of the pluggable database registered as a target database in Data Safe.
+        /// </summary>
+        [Input("pluggableDatabaseId")]
+        public Input<string>? PluggableDatabaseId { get; set; }
+
+        /// <summary>
         /// The service name of the database registered as target database.
         /// </summary>
         [Input("serviceName")]

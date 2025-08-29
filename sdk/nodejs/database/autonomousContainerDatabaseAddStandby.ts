@@ -82,220 +82,220 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
-    public /*out*/ readonly autonomousExadataInfrastructureId!: pulumi.Output<string>;
+    declare public /*out*/ readonly autonomousExadataInfrastructureId: pulumi.Output<string>;
     /**
      * The OCID of the Autonomous VM Cluster.
      */
-    public /*out*/ readonly autonomousVmClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly autonomousVmClusterId: pulumi.Output<string>;
     /**
      * The domain of the Autonomous Container Database
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      */
-    public /*out*/ readonly availableCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableCpus: pulumi.Output<number>;
     /**
      * Backup options for the Autonomous Container Database.
      */
-    public /*out*/ readonly backupConfigs!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfig[]>;
+    declare public /*out*/ readonly backupConfigs: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfig[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
-    public /*out*/ readonly cloudAutonomousVmClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudAutonomousVmClusterId: pulumi.Output<string>;
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
-    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
      * Array of Dg associations.
      */
-    public /*out*/ readonly dataguardGroupMembers!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyDataguardGroupMember[]>;
+    declare public /*out*/ readonly dataguardGroupMembers: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyDataguardGroupMember[]>;
     /**
      * The properties that define Autonomous Container Databases Dataguard.
      */
-    public /*out*/ readonly dataguards!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyDataguard[]>;
+    declare public /*out*/ readonly dataguards: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyDataguard[]>;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
-    public /*out*/ readonly dbName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbName: pulumi.Output<string>;
     /**
      * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
-    public /*out*/ readonly dbSplitThreshold!: pulumi.Output<number>;
-    public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbSplitThreshold: pulumi.Output<number>;
+    declare public /*out*/ readonly dbUniqueName: pulumi.Output<string>;
     /**
      * Oracle Database version of the Autonomous Container Database.
      */
-    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbVersion: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-provided name for the Autonomous Container Database.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
-    public /*out*/ readonly distributionAffinity!: pulumi.Output<string>;
+    declare public /*out*/ readonly distributionAffinity: pulumi.Output<string>;
     /**
      * DST Time-Zone File version of the Autonomous Container Database.
      */
-    public /*out*/ readonly dstFileVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dstFileVersion: pulumi.Output<string>;
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
-    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
+    declare public readonly fastStartFailOverLagLimitInSeconds: pulumi.Output<number>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The infrastructure type this resource belongs to.
      */
-    public /*out*/ readonly infrastructureType!: pulumi.Output<string>;
+    declare public /*out*/ readonly infrastructureType: pulumi.Output<string>;
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
-    public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutomaticFailoverEnabled: pulumi.Output<boolean>;
     /**
      * **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    public /*out*/ readonly isDataGuardEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDataGuardEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    public /*out*/ readonly isDstFileUpdateEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDstFileUpdateEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if it is multiple standby Autonomous Dataguard
      */
-    public /*out*/ readonly isMultipleStandby!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMultipleStandby: pulumi.Output<boolean>;
     /**
      * Key History Entry.
      */
-    public /*out*/ readonly keyHistoryEntries!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry[]>;
+    declare public /*out*/ readonly keyHistoryEntries: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreId: pulumi.Output<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreWalletName: pulumi.Output<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      */
-    public /*out*/ readonly largestProvisionableAutonomousDatabaseInCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly largestProvisionableAutonomousDatabaseInCpus: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * List of One-Off patches that has been successfully applied to Autonomous Container Database
      */
-    public /*out*/ readonly listOneOffPatches!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly listOneOffPatches: pulumi.Output<string[]>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow[]>;
     /**
      * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      */
-    public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
-    public /*out*/ readonly netServicesArchitecture!: pulumi.Output<string>;
+    declare public /*out*/ readonly netServicesArchitecture: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
     /**
      * The OKV End Point Group name for the Autonomous Container Database.
      */
-    public /*out*/ readonly okvEndPointGroupName!: pulumi.Output<string>;
+    declare public /*out*/ readonly okvEndPointGroupName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
-    public /*out*/ readonly patchId!: pulumi.Output<string>;
+    declare public /*out*/ readonly patchId: pulumi.Output<string>;
     /**
      * Database patch model preference.
      */
-    public /*out*/ readonly patchModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly patchModel: pulumi.Output<string>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    public readonly peerAutonomousContainerDatabaseBackupConfig!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig>;
+    declare public readonly peerAutonomousContainerDatabaseBackupConfig: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    public readonly peerAutonomousContainerDatabaseCompartmentId!: pulumi.Output<string>;
+    declare public readonly peerAutonomousContainerDatabaseCompartmentId: pulumi.Output<string>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
-    public readonly peerAutonomousContainerDatabaseDisplayName!: pulumi.Output<string>;
+    declare public readonly peerAutonomousContainerDatabaseDisplayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    public readonly peerAutonomousVmClusterId!: pulumi.Output<string>;
+    declare public readonly peerAutonomousVmClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    public readonly peerCloudAutonomousVmClusterId!: pulumi.Output<string>;
+    declare public readonly peerCloudAutonomousVmClusterId: pulumi.Output<string>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    public readonly peerDbUniqueName!: pulumi.Output<string>;
+    declare public readonly peerDbUniqueName: pulumi.Output<string>;
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    declare public readonly protectionMode: pulumi.Output<string>;
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      */
-    public /*out*/ readonly provisionableCpuses!: pulumi.Output<number[]>;
+    declare public /*out*/ readonly provisionableCpuses: pulumi.Output<number[]>;
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
      */
-    public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly provisionedCpus: pulumi.Output<number>;
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
-    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly reclaimableCpus: pulumi.Output<number>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      */
-    public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
      * The service level agreement type of the container database. The default is STANDARD.
      */
-    public /*out*/ readonly serviceLevelAgreementType!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceLevelAgreementType: pulumi.Output<string>;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
      *
@@ -303,39 +303,39 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly standbyMaintenanceBufferInDays!: pulumi.Output<number>;
+    declare public readonly standbyMaintenanceBufferInDays: pulumi.Output<number>;
     /**
      * The current state of the Autonomous Container Database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Container Database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
      */
-    public /*out*/ readonly timeOfLastBackup!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfLastBackup: pulumi.Output<string>;
     /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
-    public /*out*/ readonly timeSnapshotStandbyRevert!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeSnapshotStandbyRevert: pulumi.Output<string>;
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.
      */
-    public /*out*/ readonly totalCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalCpus: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vaultId: pulumi.Output<string>;
     /**
      * The next maintenance version preference.
      */
-    public /*out*/ readonly versionPreference!: pulumi.Output<string>;
+    declare public /*out*/ readonly versionPreference: pulumi.Output<string>;
     /**
      * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      */
-    public /*out*/ readonly vmFailoverReservation!: pulumi.Output<number>;
+    declare public /*out*/ readonly vmFailoverReservation: pulumi.Output<number>;
 
     /**
      * Create a AutonomousContainerDatabaseAddStandby resource with the given unique name, arguments, and options.
@@ -350,86 +350,86 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseAddStandbyState | undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["autonomousExadataInfrastructureId"] = state ? state.autonomousExadataInfrastructureId : undefined;
-            resourceInputs["autonomousVmClusterId"] = state ? state.autonomousVmClusterId : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["availableCpus"] = state ? state.availableCpus : undefined;
-            resourceInputs["backupConfigs"] = state ? state.backupConfigs : undefined;
-            resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["dataguardGroupMembers"] = state ? state.dataguardGroupMembers : undefined;
-            resourceInputs["dataguards"] = state ? state.dataguards : undefined;
-            resourceInputs["dbName"] = state ? state.dbName : undefined;
-            resourceInputs["dbSplitThreshold"] = state ? state.dbSplitThreshold : undefined;
-            resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["distributionAffinity"] = state ? state.distributionAffinity : undefined;
-            resourceInputs["dstFileVersion"] = state ? state.dstFileVersion : undefined;
-            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state ? state.fastStartFailOverLagLimitInSeconds : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["infrastructureType"] = state ? state.infrastructureType : undefined;
-            resourceInputs["isAutomaticFailoverEnabled"] = state ? state.isAutomaticFailoverEnabled : undefined;
-            resourceInputs["isDataGuardEnabled"] = state ? state.isDataGuardEnabled : undefined;
-            resourceInputs["isDstFileUpdateEnabled"] = state ? state.isDstFileUpdateEnabled : undefined;
-            resourceInputs["isMultipleStandby"] = state ? state.isMultipleStandby : undefined;
-            resourceInputs["keyHistoryEntries"] = state ? state.keyHistoryEntries : undefined;
-            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
-            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["largestProvisionableAutonomousDatabaseInCpus"] = state ? state.largestProvisionableAutonomousDatabaseInCpus : undefined;
-            resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["listOneOffPatches"] = state ? state.listOneOffPatches : undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
-            resourceInputs["netServicesArchitecture"] = state ? state.netServicesArchitecture : undefined;
-            resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
-            resourceInputs["okvEndPointGroupName"] = state ? state.okvEndPointGroupName : undefined;
-            resourceInputs["patchId"] = state ? state.patchId : undefined;
-            resourceInputs["patchModel"] = state ? state.patchModel : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state ? state.peerAutonomousContainerDatabaseBackupConfig : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = state ? state.peerAutonomousContainerDatabaseCompartmentId : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = state ? state.peerAutonomousContainerDatabaseDisplayName : undefined;
-            resourceInputs["peerAutonomousVmClusterId"] = state ? state.peerAutonomousVmClusterId : undefined;
-            resourceInputs["peerCloudAutonomousVmClusterId"] = state ? state.peerCloudAutonomousVmClusterId : undefined;
-            resourceInputs["peerDbUniqueName"] = state ? state.peerDbUniqueName : undefined;
-            resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
-            resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
-            resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
-            resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
-            resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["serviceLevelAgreementType"] = state ? state.serviceLevelAgreementType : undefined;
-            resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfLastBackup"] = state ? state.timeOfLastBackup : undefined;
-            resourceInputs["timeSnapshotStandbyRevert"] = state ? state.timeSnapshotStandbyRevert : undefined;
-            resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
-            resourceInputs["versionPreference"] = state ? state.versionPreference : undefined;
-            resourceInputs["vmFailoverReservation"] = state ? state.vmFailoverReservation : undefined;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["autonomousExadataInfrastructureId"] = state?.autonomousExadataInfrastructureId;
+            resourceInputs["autonomousVmClusterId"] = state?.autonomousVmClusterId;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["availableCpus"] = state?.availableCpus;
+            resourceInputs["backupConfigs"] = state?.backupConfigs;
+            resourceInputs["cloudAutonomousVmClusterId"] = state?.cloudAutonomousVmClusterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["dataguardGroupMembers"] = state?.dataguardGroupMembers;
+            resourceInputs["dataguards"] = state?.dataguards;
+            resourceInputs["dbName"] = state?.dbName;
+            resourceInputs["dbSplitThreshold"] = state?.dbSplitThreshold;
+            resourceInputs["dbUniqueName"] = state?.dbUniqueName;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["distributionAffinity"] = state?.distributionAffinity;
+            resourceInputs["dstFileVersion"] = state?.dstFileVersion;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = state?.fastStartFailOverLagLimitInSeconds;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["infrastructureType"] = state?.infrastructureType;
+            resourceInputs["isAutomaticFailoverEnabled"] = state?.isAutomaticFailoverEnabled;
+            resourceInputs["isDataGuardEnabled"] = state?.isDataGuardEnabled;
+            resourceInputs["isDstFileUpdateEnabled"] = state?.isDstFileUpdateEnabled;
+            resourceInputs["isMultipleStandby"] = state?.isMultipleStandby;
+            resourceInputs["keyHistoryEntries"] = state?.keyHistoryEntries;
+            resourceInputs["keyStoreId"] = state?.keyStoreId;
+            resourceInputs["keyStoreWalletName"] = state?.keyStoreWalletName;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["largestProvisionableAutonomousDatabaseInCpus"] = state?.largestProvisionableAutonomousDatabaseInCpus;
+            resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["listOneOffPatches"] = state?.listOneOffPatches;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
+            resourceInputs["netServicesArchitecture"] = state?.netServicesArchitecture;
+            resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
+            resourceInputs["okvEndPointGroupName"] = state?.okvEndPointGroupName;
+            resourceInputs["patchId"] = state?.patchId;
+            resourceInputs["patchModel"] = state?.patchModel;
+            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state?.peerAutonomousContainerDatabaseBackupConfig;
+            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = state?.peerAutonomousContainerDatabaseCompartmentId;
+            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = state?.peerAutonomousContainerDatabaseDisplayName;
+            resourceInputs["peerAutonomousVmClusterId"] = state?.peerAutonomousVmClusterId;
+            resourceInputs["peerCloudAutonomousVmClusterId"] = state?.peerCloudAutonomousVmClusterId;
+            resourceInputs["peerDbUniqueName"] = state?.peerDbUniqueName;
+            resourceInputs["protectionMode"] = state?.protectionMode;
+            resourceInputs["provisionableCpuses"] = state?.provisionableCpuses;
+            resourceInputs["provisionedCpus"] = state?.provisionedCpus;
+            resourceInputs["reclaimableCpus"] = state?.reclaimableCpus;
+            resourceInputs["reservedCpus"] = state?.reservedCpus;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["serviceLevelAgreementType"] = state?.serviceLevelAgreementType;
+            resourceInputs["standbyMaintenanceBufferInDays"] = state?.standbyMaintenanceBufferInDays;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfLastBackup"] = state?.timeOfLastBackup;
+            resourceInputs["timeSnapshotStandbyRevert"] = state?.timeSnapshotStandbyRevert;
+            resourceInputs["totalCpus"] = state?.totalCpus;
+            resourceInputs["vaultId"] = state?.vaultId;
+            resourceInputs["versionPreference"] = state?.versionPreference;
+            resourceInputs["vmFailoverReservation"] = state?.vmFailoverReservation;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseAddStandbyArgs | undefined;
-            if ((!args || args.autonomousContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseId'");
             }
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args ? args.fastStartFailOverLagLimitInSeconds : undefined;
-            resourceInputs["isAutomaticFailoverEnabled"] = args ? args.isAutomaticFailoverEnabled : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args ? args.peerAutonomousContainerDatabaseBackupConfig : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args ? args.peerAutonomousContainerDatabaseCompartmentId : undefined;
-            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = args ? args.peerAutonomousContainerDatabaseDisplayName : undefined;
-            resourceInputs["peerAutonomousVmClusterId"] = args ? args.peerAutonomousVmClusterId : undefined;
-            resourceInputs["peerCloudAutonomousVmClusterId"] = args ? args.peerCloudAutonomousVmClusterId : undefined;
-            resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
-            resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
-            resourceInputs["standbyMaintenanceBufferInDays"] = args ? args.standbyMaintenanceBufferInDays : undefined;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["fastStartFailOverLagLimitInSeconds"] = args?.fastStartFailOverLagLimitInSeconds;
+            resourceInputs["isAutomaticFailoverEnabled"] = args?.isAutomaticFailoverEnabled;
+            resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args?.peerAutonomousContainerDatabaseBackupConfig;
+            resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args?.peerAutonomousContainerDatabaseCompartmentId;
+            resourceInputs["peerAutonomousContainerDatabaseDisplayName"] = args?.peerAutonomousContainerDatabaseDisplayName;
+            resourceInputs["peerAutonomousVmClusterId"] = args?.peerAutonomousVmClusterId;
+            resourceInputs["peerCloudAutonomousVmClusterId"] = args?.peerCloudAutonomousVmClusterId;
+            resourceInputs["peerDbUniqueName"] = args?.peerDbUniqueName;
+            resourceInputs["protectionMode"] = args?.protectionMode;
+            resourceInputs["standbyMaintenanceBufferInDays"] = args?.standbyMaintenanceBufferInDays;
             resourceInputs["autonomousExadataInfrastructureId"] = undefined /*out*/;
             resourceInputs["autonomousVmClusterId"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;

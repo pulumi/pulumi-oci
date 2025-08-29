@@ -67,16 +67,16 @@ export class SensitiveTypeGroupGroupedSensitiveType extends pulumi.CustomResourc
     /**
      * List of sensitive type id summary objects present in the sensitive type group.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypeItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypeItem[]>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.DataSafe.SensitiveTypeGroupGroupedSensitiveTypePatchOperation[] | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveTypeGroupId!: pulumi.Output<string>;
+    declare public readonly sensitiveTypeGroupId: pulumi.Output<string>;
 
     /**
      * Create a SensitiveTypeGroupGroupedSensitiveType resource with the given unique name, arguments, and options.
@@ -91,16 +91,16 @@ export class SensitiveTypeGroupGroupedSensitiveType extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SensitiveTypeGroupGroupedSensitiveTypeState | undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["sensitiveTypeGroupId"] = state ? state.sensitiveTypeGroupId : undefined;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["sensitiveTypeGroupId"] = state?.sensitiveTypeGroupId;
         } else {
             const args = argsOrState as SensitiveTypeGroupGroupedSensitiveTypeArgs | undefined;
-            if ((!args || args.sensitiveTypeGroupId === undefined) && !opts.urn) {
+            if (args?.sensitiveTypeGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sensitiveTypeGroupId'");
             }
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["sensitiveTypeGroupId"] = args ? args.sensitiveTypeGroupId : undefined;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["sensitiveTypeGroupId"] = args?.sensitiveTypeGroupId;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

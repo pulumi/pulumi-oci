@@ -55,18 +55,18 @@ export class ExternalPluggableDatabaseManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === ExternalPluggableDatabaseManagement.__pulumiType;
     }
 
-    public readonly enableManagement!: pulumi.Output<boolean>;
+    declare public readonly enableManagement: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
+    declare public readonly externalDatabaseConnectorId: pulumi.Output<string>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly externalPluggableDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalPluggableDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a ExternalPluggableDatabaseManagement resource with the given unique name, arguments, and options.
@@ -81,23 +81,23 @@ export class ExternalPluggableDatabaseManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalPluggableDatabaseManagementState | undefined;
-            resourceInputs["enableManagement"] = state ? state.enableManagement : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = state ? state.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = state ? state.externalPluggableDatabaseId : undefined;
+            resourceInputs["enableManagement"] = state?.enableManagement;
+            resourceInputs["externalDatabaseConnectorId"] = state?.externalDatabaseConnectorId;
+            resourceInputs["externalPluggableDatabaseId"] = state?.externalPluggableDatabaseId;
         } else {
             const args = argsOrState as ExternalPluggableDatabaseManagementArgs | undefined;
-            if ((!args || args.enableManagement === undefined) && !opts.urn) {
+            if (args?.enableManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableManagement'");
             }
-            if ((!args || args.externalDatabaseConnectorId === undefined) && !opts.urn) {
+            if (args?.externalDatabaseConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDatabaseConnectorId'");
             }
-            if ((!args || args.externalPluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalPluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalPluggableDatabaseId'");
             }
-            resourceInputs["enableManagement"] = args ? args.enableManagement : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = args ? args.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalPluggableDatabaseId"] = args ? args.externalPluggableDatabaseId : undefined;
+            resourceInputs["enableManagement"] = args?.enableManagement;
+            resourceInputs["externalDatabaseConnectorId"] = args?.externalDatabaseConnectorId;
+            resourceInputs["externalPluggableDatabaseId"] = args?.externalPluggableDatabaseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalPluggableDatabaseManagement.__pulumiType, name, resourceInputs, opts);

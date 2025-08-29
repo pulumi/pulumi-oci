@@ -64,15 +64,15 @@ export class IdpGroupMapping extends pulumi.CustomResource {
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * The OCID of the identity provider.
      */
-    public readonly identityProviderId!: pulumi.Output<string>;
+    declare public readonly identityProviderId: pulumi.Output<string>;
     /**
      * (Updatable) The name of the IdP group you want to map.
      *
@@ -80,19 +80,19 @@ export class IdpGroupMapping extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly idpGroupName!: pulumi.Output<string>;
+    declare public readonly idpGroupName: pulumi.Output<string>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveState: pulumi.Output<string>;
     /**
      * The mapping's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a IdpGroupMapping resource with the given unique name, arguments, and options.
@@ -107,27 +107,27 @@ export class IdpGroupMapping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IdpGroupMappingState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["identityProviderId"] = state ? state.identityProviderId : undefined;
-            resourceInputs["idpGroupName"] = state ? state.idpGroupName : undefined;
-            resourceInputs["inactiveState"] = state ? state.inactiveState : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["identityProviderId"] = state?.identityProviderId;
+            resourceInputs["idpGroupName"] = state?.idpGroupName;
+            resourceInputs["inactiveState"] = state?.inactiveState;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as IdpGroupMappingArgs | undefined;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.identityProviderId === undefined) && !opts.urn) {
+            if (args?.identityProviderId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identityProviderId'");
             }
-            if ((!args || args.idpGroupName === undefined) && !opts.urn) {
+            if (args?.idpGroupName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idpGroupName'");
             }
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["identityProviderId"] = args ? args.identityProviderId : undefined;
-            resourceInputs["idpGroupName"] = args ? args.idpGroupName : undefined;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["identityProviderId"] = args?.identityProviderId;
+            resourceInputs["idpGroupName"] = args?.idpGroupName;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["inactiveState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

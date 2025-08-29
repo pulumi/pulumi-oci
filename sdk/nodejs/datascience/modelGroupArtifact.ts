@@ -62,15 +62,15 @@ export class ModelGroupArtifact extends pulumi.CustomResource {
     /**
      * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
      */
-    public readonly contentDisposition!: pulumi.Output<string>;
+    declare public readonly contentDisposition: pulumi.Output<string>;
     /**
      * The content length of the body.
      */
-    public readonly contentLength!: pulumi.Output<string>;
+    declare public readonly contentLength: pulumi.Output<string>;
     /**
      * The model group artifact to upload.
      */
-    public readonly modelGroupArtifact!: pulumi.Output<string>;
+    declare public readonly modelGroupArtifact: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
      *
@@ -78,7 +78,7 @@ export class ModelGroupArtifact extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly modelGroupId!: pulumi.Output<string>;
+    declare public readonly modelGroupId: pulumi.Output<string>;
 
     /**
      * Create a ModelGroupArtifact resource with the given unique name, arguments, and options.
@@ -93,25 +93,25 @@ export class ModelGroupArtifact extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelGroupArtifactState | undefined;
-            resourceInputs["contentDisposition"] = state ? state.contentDisposition : undefined;
-            resourceInputs["contentLength"] = state ? state.contentLength : undefined;
-            resourceInputs["modelGroupArtifact"] = state ? state.modelGroupArtifact : undefined;
-            resourceInputs["modelGroupId"] = state ? state.modelGroupId : undefined;
+            resourceInputs["contentDisposition"] = state?.contentDisposition;
+            resourceInputs["contentLength"] = state?.contentLength;
+            resourceInputs["modelGroupArtifact"] = state?.modelGroupArtifact;
+            resourceInputs["modelGroupId"] = state?.modelGroupId;
         } else {
             const args = argsOrState as ModelGroupArtifactArgs | undefined;
-            if ((!args || args.contentLength === undefined) && !opts.urn) {
+            if (args?.contentLength === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentLength'");
             }
-            if ((!args || args.modelGroupArtifact === undefined) && !opts.urn) {
+            if (args?.modelGroupArtifact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelGroupArtifact'");
             }
-            if ((!args || args.modelGroupId === undefined) && !opts.urn) {
+            if (args?.modelGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelGroupId'");
             }
-            resourceInputs["contentDisposition"] = args ? args.contentDisposition : undefined;
-            resourceInputs["contentLength"] = args ? args.contentLength : undefined;
-            resourceInputs["modelGroupArtifact"] = args ? args.modelGroupArtifact : undefined;
-            resourceInputs["modelGroupId"] = args ? args.modelGroupId : undefined;
+            resourceInputs["contentDisposition"] = args?.contentDisposition;
+            resourceInputs["contentLength"] = args?.contentLength;
+            resourceInputs["modelGroupArtifact"] = args?.modelGroupArtifact;
+            resourceInputs["modelGroupId"] = args?.modelGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ModelGroupArtifact.__pulumiType, name, resourceInputs, opts);

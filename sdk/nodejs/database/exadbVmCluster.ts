@@ -105,65 +105,65 @@ export class ExadbVmCluster extends pulumi.CustomResource {
     /**
      * The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    public readonly backupNetworkNsgIds!: pulumi.Output<string[]>;
+    declare public readonly backupNetworkNsgIds: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
      */
-    public readonly backupSubnetId!: pulumi.Output<string>;
+    declare public readonly backupSubnetId: pulumi.Output<string>;
     /**
      * The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
      */
-    public /*out*/ readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.ExadbVmClusterDataCollectionOptions>;
+    declare public readonly dataCollectionOptions: pulumi.Output<outputs.Database.ExadbVmClusterDataCollectionOptions>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      */
-    public readonly exascaleDbStorageVaultId!: pulumi.Output<string>;
+    declare public readonly exascaleDbStorageVaultId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    public /*out*/ readonly giVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly giVersion: pulumi.Output<string>;
     /**
      * (Updatable) Grid Setup will be done using this grid image id.
      *
      * The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>. The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
      */
-    public readonly gridImageId!: pulumi.Output<string>;
+    declare public readonly gridImageId: pulumi.Output<string>;
     /**
      * The type of Grid Image
      */
-    public /*out*/ readonly gridImageType!: pulumi.Output<string>;
+    declare public /*out*/ readonly gridImageType: pulumi.Output<string>;
     /**
      * The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
      *
@@ -171,104 +171,104 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      *
      * **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    declare public readonly hostname: pulumi.Output<string>;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.ExadbVmClusterIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.ExadbVmClusterIormConfigCach[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
-    public /*out*/ readonly lastUpdateHistoryEntryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdateHistoryEntryId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
      */
-    public /*out*/ readonly listenerPort!: pulumi.Output<string>;
+    declare public /*out*/ readonly listenerPort: pulumi.Output<string>;
     /**
      * (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      */
-    public readonly nodeConfig!: pulumi.Output<outputs.Database.ExadbVmClusterNodeConfig>;
+    declare public readonly nodeConfig: pulumi.Output<outputs.Database.ExadbVmClusterNodeConfig>;
     /**
      * Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
      */
-    public readonly nodeResources!: pulumi.Output<outputs.Database.ExadbVmClusterNodeResource[]>;
+    declare public readonly nodeResources: pulumi.Output<outputs.Database.ExadbVmClusterNodeResource[]>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * The private zone ID in which you want DNS records to be created.
      */
-    public readonly privateZoneId!: pulumi.Output<string>;
+    declare public readonly privateZoneId: pulumi.Output<string>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      */
-    public /*out*/ readonly scanDnsName!: pulumi.Output<string>;
+    declare public /*out*/ readonly scanDnsName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      */
-    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scanDnsRecordId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly scanIpIds: pulumi.Output<string[]>;
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
-    public readonly scanListenerPortTcp!: pulumi.Output<number>;
+    declare public readonly scanListenerPortTcp: pulumi.Output<number>;
     /**
      * The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
      */
-    public readonly scanListenerPortTcpSsl!: pulumi.Output<number>;
+    declare public readonly scanListenerPortTcpSsl: pulumi.Output<number>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
      */
-    public readonly shapeAttribute!: pulumi.Output<string>;
+    declare public readonly shapeAttribute: pulumi.Output<string>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      */
-    public readonly sshPublicKeys!: pulumi.Output<string[]>;
+    declare public readonly sshPublicKeys: pulumi.Output<string[]>;
     /**
      * The current state of the Exadata VM cluster on Exascale Infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Operating system version of the image.
      */
-    public readonly systemVersion!: pulumi.Output<string>;
+    declare public readonly systemVersion: pulumi.Output<string>;
     /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *
@@ -276,15 +276,15 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      */
-    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly vipIds: pulumi.Output<string[]>;
     /**
      * The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
      */
-    public /*out*/ readonly zoneId!: pulumi.Output<string>;
+    declare public /*out*/ readonly zoneId: pulumi.Output<string>;
 
     /**
      * Create a ExadbVmCluster resource with the given unique name, arguments, and options.
@@ -299,112 +299,112 @@ export class ExadbVmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadbVmClusterState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
-            resourceInputs["backupSubnetId"] = state ? state.backupSubnetId : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["exascaleDbStorageVaultId"] = state ? state.exascaleDbStorageVaultId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["giVersion"] = state ? state.giVersion : undefined;
-            resourceInputs["gridImageId"] = state ? state.gridImageId : undefined;
-            resourceInputs["gridImageType"] = state ? state.gridImageType : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["iormConfigCaches"] = state ? state.iormConfigCaches : undefined;
-            resourceInputs["lastUpdateHistoryEntryId"] = state ? state.lastUpdateHistoryEntryId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
-            resourceInputs["nodeConfig"] = state ? state.nodeConfig : undefined;
-            resourceInputs["nodeResources"] = state ? state.nodeResources : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["privateZoneId"] = state ? state.privateZoneId : undefined;
-            resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
-            resourceInputs["scanDnsRecordId"] = state ? state.scanDnsRecordId : undefined;
-            resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
-            resourceInputs["scanListenerPortTcp"] = state ? state.scanListenerPortTcp : undefined;
-            resourceInputs["scanListenerPortTcpSsl"] = state ? state.scanListenerPortTcpSsl : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["shapeAttribute"] = state ? state.shapeAttribute : undefined;
-            resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["vipIds"] = state ? state.vipIds : undefined;
-            resourceInputs["zoneId"] = state ? state.zoneId : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = state?.backupNetworkNsgIds;
+            resourceInputs["backupSubnetId"] = state?.backupSubnetId;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataCollectionOptions"] = state?.dataCollectionOptions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["exascaleDbStorageVaultId"] = state?.exascaleDbStorageVaultId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["giVersion"] = state?.giVersion;
+            resourceInputs["gridImageId"] = state?.gridImageId;
+            resourceInputs["gridImageType"] = state?.gridImageType;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["iormConfigCaches"] = state?.iormConfigCaches;
+            resourceInputs["lastUpdateHistoryEntryId"] = state?.lastUpdateHistoryEntryId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["listenerPort"] = state?.listenerPort;
+            resourceInputs["nodeConfig"] = state?.nodeConfig;
+            resourceInputs["nodeResources"] = state?.nodeResources;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["privateZoneId"] = state?.privateZoneId;
+            resourceInputs["scanDnsName"] = state?.scanDnsName;
+            resourceInputs["scanDnsRecordId"] = state?.scanDnsRecordId;
+            resourceInputs["scanIpIds"] = state?.scanIpIds;
+            resourceInputs["scanListenerPortTcp"] = state?.scanListenerPortTcp;
+            resourceInputs["scanListenerPortTcpSsl"] = state?.scanListenerPortTcpSsl;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["shapeAttribute"] = state?.shapeAttribute;
+            resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["systemVersion"] = state?.systemVersion;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["vipIds"] = state?.vipIds;
+            resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as ExadbVmClusterArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.backupSubnetId === undefined) && !opts.urn) {
+            if (args?.backupSubnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backupSubnetId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.exascaleDbStorageVaultId === undefined) && !opts.urn) {
+            if (args?.exascaleDbStorageVaultId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exascaleDbStorageVaultId'");
             }
-            if ((!args || args.gridImageId === undefined) && !opts.urn) {
+            if (args?.gridImageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'gridImageId'");
             }
-            if ((!args || args.hostname === undefined) && !opts.urn) {
+            if (args?.hostname === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostname'");
             }
-            if ((!args || args.nodeConfig === undefined) && !opts.urn) {
+            if (args?.nodeConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeConfig'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.sshPublicKeys === undefined) && !opts.urn) {
+            if (args?.sshPublicKeys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sshPublicKeys'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
-            resourceInputs["backupSubnetId"] = args ? args.backupSubnetId : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["exascaleDbStorageVaultId"] = args ? args.exascaleDbStorageVaultId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gridImageId"] = args ? args.gridImageId : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["nodeConfig"] = args ? args.nodeConfig : undefined;
-            resourceInputs["nodeResources"] = args ? args.nodeResources : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["privateZoneId"] = args ? args.privateZoneId : undefined;
-            resourceInputs["scanListenerPortTcp"] = args ? args.scanListenerPortTcp : undefined;
-            resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["shapeAttribute"] = args ? args.shapeAttribute : undefined;
-            resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
-            resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = args?.backupNetworkNsgIds;
+            resourceInputs["backupSubnetId"] = args?.backupSubnetId;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataCollectionOptions"] = args?.dataCollectionOptions;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["exascaleDbStorageVaultId"] = args?.exascaleDbStorageVaultId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gridImageId"] = args?.gridImageId;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["nodeConfig"] = args?.nodeConfig;
+            resourceInputs["nodeResources"] = args?.nodeResources;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["privateZoneId"] = args?.privateZoneId;
+            resourceInputs["scanListenerPortTcp"] = args?.scanListenerPortTcp;
+            resourceInputs["scanListenerPortTcpSsl"] = args?.scanListenerPortTcpSsl;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["shapeAttribute"] = args?.shapeAttribute;
+            resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
+            resourceInputs["systemVersion"] = args?.systemVersion;
+            resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
             resourceInputs["giVersion"] = undefined /*out*/;
             resourceInputs["gridImageType"] = undefined /*out*/;

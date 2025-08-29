@@ -71,51 +71,51 @@ export class Backup extends pulumi.CustomResource {
     /**
      * The size of the backup, in gigabytes.
      */
-    public /*out*/ readonly backupSize!: pulumi.Output<number>;
+    declare public /*out*/ readonly backupSize: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * List of status for Backup Copy
      */
-    public /*out*/ readonly copyStatuses!: pulumi.Output<outputs.Psql.BackupCopyStatus[]>;
+    declare public /*out*/ readonly copyStatuses: pulumi.Output<outputs.Psql.BackupCopyStatus[]>;
     /**
      * Information about the database system associated with a backup.
      */
-    public /*out*/ readonly dbSystemDetails!: pulumi.Output<outputs.Psql.BackupDbSystemDetail[]>;
+    declare public /*out*/ readonly dbSystemDetails: pulumi.Output<outputs.Psql.BackupDbSystemDetail[]>;
     /**
      * The ID of the database system.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A description for the backup.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * lastAcceptedRequestToken from MP.
      */
-    public /*out*/ readonly lastAcceptedRequestToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastAcceptedRequestToken: pulumi.Output<string>;
     /**
      * lastCompletedRequestToken from MP.
      */
-    public /*out*/ readonly lastCompletedRequestToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastCompletedRequestToken: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Backup retention period in days.
      *
@@ -123,35 +123,35 @@ export class Backup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionPeriod!: pulumi.Output<number>;
+    declare public readonly retentionPeriod: pulumi.Output<number>;
     /**
      * Information about the Source Backup associated with a backup.
      */
-    public readonly sourceBackupDetails!: pulumi.Output<outputs.Psql.BackupSourceBackupDetails | undefined>;
+    declare public readonly sourceBackupDetails: pulumi.Output<outputs.Psql.BackupSourceBackupDetails | undefined>;
     /**
      * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceType: pulumi.Output<string>;
     /**
      * The current state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreatedPrecise!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreatedPrecise: pulumi.Output<string>;
     /**
      * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Backup resource with the given unique name, arguments, and options.
@@ -166,39 +166,39 @@ export class Backup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackupState | undefined;
-            resourceInputs["backupSize"] = state ? state.backupSize : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["copyStatuses"] = state ? state.copyStatuses : undefined;
-            resourceInputs["dbSystemDetails"] = state ? state.dbSystemDetails : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastAcceptedRequestToken"] = state ? state.lastAcceptedRequestToken : undefined;
-            resourceInputs["lastCompletedRequestToken"] = state ? state.lastCompletedRequestToken : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["retentionPeriod"] = state ? state.retentionPeriod : undefined;
-            resourceInputs["sourceBackupDetails"] = state ? state.sourceBackupDetails : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeCreatedPrecise"] = state ? state.timeCreatedPrecise : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["backupSize"] = state?.backupSize;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["copyStatuses"] = state?.copyStatuses;
+            resourceInputs["dbSystemDetails"] = state?.dbSystemDetails;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastAcceptedRequestToken"] = state?.lastAcceptedRequestToken;
+            resourceInputs["lastCompletedRequestToken"] = state?.lastCompletedRequestToken;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["retentionPeriod"] = state?.retentionPeriod;
+            resourceInputs["sourceBackupDetails"] = state?.sourceBackupDetails;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeCreatedPrecise"] = state?.timeCreatedPrecise;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BackupArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["retentionPeriod"] = args ? args.retentionPeriod : undefined;
-            resourceInputs["sourceBackupDetails"] = args ? args.sourceBackupDetails : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["retentionPeriod"] = args?.retentionPeriod;
+            resourceInputs["sourceBackupDetails"] = args?.sourceBackupDetails;
             resourceInputs["backupSize"] = undefined /*out*/;
             resourceInputs["copyStatuses"] = undefined /*out*/;
             resourceInputs["dbSystemDetails"] = undefined /*out*/;

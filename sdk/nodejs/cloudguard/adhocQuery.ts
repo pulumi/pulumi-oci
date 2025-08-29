@@ -75,23 +75,23 @@ export class AdhocQuery extends pulumi.CustomResource {
     /**
      * Detailed information about the adhoc query.
      */
-    public readonly adhocQueryDetails!: pulumi.Output<outputs.CloudGuard.AdhocQueryAdhocQueryDetails>;
+    declare public readonly adhocQueryDetails: pulumi.Output<outputs.CloudGuard.AdhocQueryAdhocQueryDetails>;
     /**
      * Instance level status for each region
      */
-    public /*out*/ readonly adhocQueryRegionalDetails!: pulumi.Output<outputs.CloudGuard.AdhocQueryAdhocQueryRegionalDetail[]>;
+    declare public /*out*/ readonly adhocQueryRegionalDetails: pulumi.Output<outputs.CloudGuard.AdhocQueryAdhocQueryRegionalDetail[]>;
     /**
      * Compartment OCID of adhoc query
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Error message to show on UI in case of failure
      */
-    public /*out*/ readonly errorMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly errorMessage: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
@@ -101,27 +101,27 @@ export class AdhocQuery extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Status of the adhoc query
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the adhoc query was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the adhoc query was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AdhocQuery resource with the given unique name, arguments, and options.
@@ -136,29 +136,29 @@ export class AdhocQuery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AdhocQueryState | undefined;
-            resourceInputs["adhocQueryDetails"] = state ? state.adhocQueryDetails : undefined;
-            resourceInputs["adhocQueryRegionalDetails"] = state ? state.adhocQueryRegionalDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["errorMessage"] = state ? state.errorMessage : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["adhocQueryDetails"] = state?.adhocQueryDetails;
+            resourceInputs["adhocQueryRegionalDetails"] = state?.adhocQueryRegionalDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["errorMessage"] = state?.errorMessage;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AdhocQueryArgs | undefined;
-            if ((!args || args.adhocQueryDetails === undefined) && !opts.urn) {
+            if (args?.adhocQueryDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adhocQueryDetails'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["adhocQueryDetails"] = args ? args.adhocQueryDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["adhocQueryDetails"] = args?.adhocQueryDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["adhocQueryRegionalDetails"] = undefined /*out*/;
             resourceInputs["errorMessage"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

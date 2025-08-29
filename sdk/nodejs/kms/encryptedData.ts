@@ -62,31 +62,31 @@ export class EncryptedData extends pulumi.CustomResource {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    public readonly associatedData!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly associatedData: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The encrypted data.
      */
-    public /*out*/ readonly ciphertext!: pulumi.Output<string>;
+    declare public /*out*/ readonly ciphertext: pulumi.Output<string>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
-    public readonly cryptoEndpoint!: pulumi.Output<string>;
+    declare public readonly cryptoEndpoint: pulumi.Output<string>;
     /**
      * The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
      */
-    public readonly encryptionAlgorithm!: pulumi.Output<string>;
+    declare public readonly encryptionAlgorithm: pulumi.Output<string>;
     /**
      * The OCID of the key to encrypt with.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * The OCID of the key version used to encrypt the ciphertext.
      */
-    public readonly keyVersionId!: pulumi.Output<string>;
+    declare public readonly keyVersionId: pulumi.Output<string>;
     /**
      * Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
      */
-    public readonly loggingContext!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly loggingContext: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The plaintext data to encrypt.
      *
@@ -94,7 +94,7 @@ export class EncryptedData extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly plaintext!: pulumi.Output<string>;
+    declare public readonly plaintext: pulumi.Output<string>;
 
     /**
      * Create a EncryptedData resource with the given unique name, arguments, and options.
@@ -109,32 +109,32 @@ export class EncryptedData extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EncryptedDataState | undefined;
-            resourceInputs["associatedData"] = state ? state.associatedData : undefined;
-            resourceInputs["ciphertext"] = state ? state.ciphertext : undefined;
-            resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
-            resourceInputs["encryptionAlgorithm"] = state ? state.encryptionAlgorithm : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
-            resourceInputs["loggingContext"] = state ? state.loggingContext : undefined;
-            resourceInputs["plaintext"] = state ? state.plaintext : undefined;
+            resourceInputs["associatedData"] = state?.associatedData;
+            resourceInputs["ciphertext"] = state?.ciphertext;
+            resourceInputs["cryptoEndpoint"] = state?.cryptoEndpoint;
+            resourceInputs["encryptionAlgorithm"] = state?.encryptionAlgorithm;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["keyVersionId"] = state?.keyVersionId;
+            resourceInputs["loggingContext"] = state?.loggingContext;
+            resourceInputs["plaintext"] = state?.plaintext;
         } else {
             const args = argsOrState as EncryptedDataArgs | undefined;
-            if ((!args || args.cryptoEndpoint === undefined) && !opts.urn) {
+            if (args?.cryptoEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cryptoEndpoint'");
             }
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.plaintext === undefined) && !opts.urn) {
+            if (args?.plaintext === undefined && !opts.urn) {
                 throw new Error("Missing required property 'plaintext'");
             }
-            resourceInputs["associatedData"] = args ? args.associatedData : undefined;
-            resourceInputs["cryptoEndpoint"] = args ? args.cryptoEndpoint : undefined;
-            resourceInputs["encryptionAlgorithm"] = args ? args.encryptionAlgorithm : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["keyVersionId"] = args ? args.keyVersionId : undefined;
-            resourceInputs["loggingContext"] = args ? args.loggingContext : undefined;
-            resourceInputs["plaintext"] = args ? args.plaintext : undefined;
+            resourceInputs["associatedData"] = args?.associatedData;
+            resourceInputs["cryptoEndpoint"] = args?.cryptoEndpoint;
+            resourceInputs["encryptionAlgorithm"] = args?.encryptionAlgorithm;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["keyVersionId"] = args?.keyVersionId;
+            resourceInputs["loggingContext"] = args?.loggingContext;
+            resourceInputs["plaintext"] = args?.plaintext;
             resourceInputs["ciphertext"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

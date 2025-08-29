@@ -73,55 +73,55 @@ export class DrPlanExecution extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly drProtectionGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly drProtectionGroupId: pulumi.Output<string>;
     /**
      * The total duration in seconds taken to complete the step execution.  Example: `35`
      */
-    public /*out*/ readonly executionDurationInSec!: pulumi.Output<number>;
+    declare public /*out*/ readonly executionDurationInSec: pulumi.Output<number>;
     /**
      * The options for a plan execution.
      */
-    public readonly executionOptions!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionExecutionOptions>;
+    declare public readonly executionOptions: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionExecutionOptions>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A list of groups executed in this DR plan execution.
      */
-    public /*out*/ readonly groupExecutions!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionGroupExecution[]>;
+    declare public /*out*/ readonly groupExecutions: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionGroupExecution[]>;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifeCycleDetails: pulumi.Output<string>;
     /**
      * The details of an object storage log location for a DR protection group.
      */
-    public /*out*/ readonly logLocations!: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionLogLocation[]>;
+    declare public /*out*/ readonly logLocations: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionLogLocation[]>;
     /**
      * The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerDrProtectionGroupId: pulumi.Output<string>;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerRegion: pulumi.Output<string>;
     /**
      * The type of the DR plan executed.
      */
-    public /*out*/ readonly planExecutionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly planExecutionType: pulumi.Output<string>;
     /**
      * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
      *
@@ -129,31 +129,31 @@ export class DrPlanExecution extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly planId!: pulumi.Output<string>;
+    declare public readonly planId: pulumi.Output<string>;
     /**
      * The current state of the DR plan execution.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEnded: pulumi.Output<string>;
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DrPlanExecution resource with the given unique name, arguments, and options.
@@ -168,39 +168,39 @@ export class DrPlanExecution extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrPlanExecutionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drProtectionGroupId"] = state ? state.drProtectionGroupId : undefined;
-            resourceInputs["executionDurationInSec"] = state ? state.executionDurationInSec : undefined;
-            resourceInputs["executionOptions"] = state ? state.executionOptions : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["groupExecutions"] = state ? state.groupExecutions : undefined;
-            resourceInputs["lifeCycleDetails"] = state ? state.lifeCycleDetails : undefined;
-            resourceInputs["logLocations"] = state ? state.logLocations : undefined;
-            resourceInputs["peerDrProtectionGroupId"] = state ? state.peerDrProtectionGroupId : undefined;
-            resourceInputs["peerRegion"] = state ? state.peerRegion : undefined;
-            resourceInputs["planExecutionType"] = state ? state.planExecutionType : undefined;
-            resourceInputs["planId"] = state ? state.planId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drProtectionGroupId"] = state?.drProtectionGroupId;
+            resourceInputs["executionDurationInSec"] = state?.executionDurationInSec;
+            resourceInputs["executionOptions"] = state?.executionOptions;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["groupExecutions"] = state?.groupExecutions;
+            resourceInputs["lifeCycleDetails"] = state?.lifeCycleDetails;
+            resourceInputs["logLocations"] = state?.logLocations;
+            resourceInputs["peerDrProtectionGroupId"] = state?.peerDrProtectionGroupId;
+            resourceInputs["peerRegion"] = state?.peerRegion;
+            resourceInputs["planExecutionType"] = state?.planExecutionType;
+            resourceInputs["planId"] = state?.planId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeEnded"] = state?.timeEnded;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DrPlanExecutionArgs | undefined;
-            if ((!args || args.executionOptions === undefined) && !opts.urn) {
+            if (args?.executionOptions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executionOptions'");
             }
-            if ((!args || args.planId === undefined) && !opts.urn) {
+            if (args?.planId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'planId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["executionOptions"] = args ? args.executionOptions : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["planId"] = args ? args.planId : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["executionOptions"] = args?.executionOptions;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["planId"] = args?.planId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["drProtectionGroupId"] = undefined /*out*/;
             resourceInputs["executionDurationInSec"] = undefined /*out*/;

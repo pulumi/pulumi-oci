@@ -82,51 +82,51 @@ export class StreamPool extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
      */
-    public readonly customEncryptionKey!: pulumi.Output<outputs.Streaming.StreamPoolCustomEncryptionKey>;
+    declare public readonly customEncryptionKey: pulumi.Output<outputs.Streaming.StreamPoolCustomEncryptionKey>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      */
-    public /*out*/ readonly endpointFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly endpointFqdn: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      */
-    public /*out*/ readonly isPrivate!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isPrivate: pulumi.Output<boolean>;
     /**
      * (Updatable) Settings for the Kafka compatibility layer.
      */
-    public readonly kafkaSettings!: pulumi.Output<outputs.Streaming.StreamPoolKafkaSettings>;
+    declare public readonly kafkaSettings: pulumi.Output<outputs.Streaming.StreamPoolKafkaSettings>;
     /**
      * Any additional details about the current state of the stream.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Optional parameters if a private stream pool is requested.
      */
-    public readonly privateEndpointSettings!: pulumi.Output<outputs.Streaming.StreamPoolPrivateEndpointSettings>;
+    declare public readonly privateEndpointSettings: pulumi.Output<outputs.Streaming.StreamPoolPrivateEndpointSettings>;
     /**
      * The current state of the stream pool.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a StreamPool resource with the given unique name, arguments, and options.
@@ -141,30 +141,30 @@ export class StreamPool extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StreamPoolState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["customEncryptionKey"] = state ? state.customEncryptionKey : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["endpointFqdn"] = state ? state.endpointFqdn : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
-            resourceInputs["kafkaSettings"] = state ? state.kafkaSettings : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["privateEndpointSettings"] = state ? state.privateEndpointSettings : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["customEncryptionKey"] = state?.customEncryptionKey;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["endpointFqdn"] = state?.endpointFqdn;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isPrivate"] = state?.isPrivate;
+            resourceInputs["kafkaSettings"] = state?.kafkaSettings;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["privateEndpointSettings"] = state?.privateEndpointSettings;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as StreamPoolArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["customEncryptionKey"] = args ? args.customEncryptionKey : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kafkaSettings"] = args ? args.kafkaSettings : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["privateEndpointSettings"] = args ? args.privateEndpointSettings : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["customEncryptionKey"] = args?.customEncryptionKey;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kafkaSettings"] = args?.kafkaSettings;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["privateEndpointSettings"] = args?.privateEndpointSettings;
             resourceInputs["endpointFqdn"] = undefined /*out*/;
             resourceInputs["isPrivate"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;

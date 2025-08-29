@@ -68,7 +68,7 @@ export class DomainReplicationToRegion extends pulumi.CustomResource {
     /**
      * The OCID of the domain
      */
-    public readonly domainId!: pulumi.Output<string>;
+    declare public readonly domainId: pulumi.Output<string>;
     /**
      * A region for which domain replication is requested for. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1` 
      *
@@ -76,7 +76,7 @@ export class DomainReplicationToRegion extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly replicaRegion!: pulumi.Output<string>;
+    declare public readonly replicaRegion: pulumi.Output<string>;
 
     /**
      * Create a DomainReplicationToRegion resource with the given unique name, arguments, and options.
@@ -91,15 +91,15 @@ export class DomainReplicationToRegion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainReplicationToRegionState | undefined;
-            resourceInputs["domainId"] = state ? state.domainId : undefined;
-            resourceInputs["replicaRegion"] = state ? state.replicaRegion : undefined;
+            resourceInputs["domainId"] = state?.domainId;
+            resourceInputs["replicaRegion"] = state?.replicaRegion;
         } else {
             const args = argsOrState as DomainReplicationToRegionArgs | undefined;
-            if ((!args || args.domainId === undefined) && !opts.urn) {
+            if (args?.domainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainId'");
             }
-            resourceInputs["domainId"] = args ? args.domainId : undefined;
-            resourceInputs["replicaRegion"] = args ? args.replicaRegion : undefined;
+            resourceInputs["domainId"] = args?.domainId;
+            resourceInputs["replicaRegion"] = args?.replicaRegion;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DomainReplicationToRegion.__pulumiType, name, resourceInputs, opts);

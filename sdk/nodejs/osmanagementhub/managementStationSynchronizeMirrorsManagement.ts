@@ -60,7 +60,7 @@ export class ManagementStationSynchronizeMirrorsManagement extends pulumi.Custom
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to synchronize.
      *
@@ -68,7 +68,7 @@ export class ManagementStationSynchronizeMirrorsManagement extends pulumi.Custom
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSourceLists!: pulumi.Output<string[]>;
+    declare public readonly softwareSourceLists: pulumi.Output<string[]>;
 
     /**
      * Create a ManagementStationSynchronizeMirrorsManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ManagementStationSynchronizeMirrorsManagement extends pulumi.Custom
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationSynchronizeMirrorsManagementState | undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
-            resourceInputs["softwareSourceLists"] = state ? state.softwareSourceLists : undefined;
+            resourceInputs["managementStationId"] = state?.managementStationId;
+            resourceInputs["softwareSourceLists"] = state?.softwareSourceLists;
         } else {
             const args = argsOrState as ManagementStationSynchronizeMirrorsManagementArgs | undefined;
-            if ((!args || args.managementStationId === undefined) && !opts.urn) {
+            if (args?.managementStationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementStationId'");
             }
-            if ((!args || args.softwareSourceLists === undefined) && !opts.urn) {
+            if (args?.softwareSourceLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceLists'");
             }
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
-            resourceInputs["softwareSourceLists"] = args ? args.softwareSourceLists : undefined;
+            resourceInputs["managementStationId"] = args?.managementStationId;
+            resourceInputs["softwareSourceLists"] = args?.softwareSourceLists;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementStationSynchronizeMirrorsManagement.__pulumiType, name, resourceInputs, opts);

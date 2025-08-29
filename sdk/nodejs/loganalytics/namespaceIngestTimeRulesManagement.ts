@@ -57,15 +57,15 @@ export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableIngestTimeRule!: pulumi.Output<boolean>;
+    declare public readonly enableIngestTimeRule: pulumi.Output<boolean>;
     /**
      * Unique ocid of the ingest time rule.
      */
-    public readonly ingestTimeRuleId!: pulumi.Output<string>;
+    declare public readonly ingestTimeRuleId: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a NamespaceIngestTimeRulesManagement resource with the given unique name, arguments, and options.
@@ -80,23 +80,23 @@ export class NamespaceIngestTimeRulesManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceIngestTimeRulesManagementState | undefined;
-            resourceInputs["enableIngestTimeRule"] = state ? state.enableIngestTimeRule : undefined;
-            resourceInputs["ingestTimeRuleId"] = state ? state.ingestTimeRuleId : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["enableIngestTimeRule"] = state?.enableIngestTimeRule;
+            resourceInputs["ingestTimeRuleId"] = state?.ingestTimeRuleId;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceIngestTimeRulesManagementArgs | undefined;
-            if ((!args || args.enableIngestTimeRule === undefined) && !opts.urn) {
+            if (args?.enableIngestTimeRule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableIngestTimeRule'");
             }
-            if ((!args || args.ingestTimeRuleId === undefined) && !opts.urn) {
+            if (args?.ingestTimeRuleId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ingestTimeRuleId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["enableIngestTimeRule"] = args ? args.enableIngestTimeRule : undefined;
-            resourceInputs["ingestTimeRuleId"] = args ? args.ingestTimeRuleId : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["enableIngestTimeRule"] = args?.enableIngestTimeRule;
+            resourceInputs["ingestTimeRuleId"] = args?.ingestTimeRuleId;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NamespaceIngestTimeRulesManagement.__pulumiType, name, resourceInputs, opts);

@@ -67,71 +67,71 @@ export class ExecutionWindow extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Description of the execution window.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The user-friendly name for the execution window. The name does not need to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The estimated time of the execution window in minutes.
      */
-    public /*out*/ readonly estimatedTimeInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedTimeInMins: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
      */
-    public readonly executionResourceId!: pulumi.Output<string>;
+    declare public readonly executionResourceId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
      */
-    public readonly isEnforcedDuration!: pulumi.Output<boolean>;
+    declare public readonly isEnforcedDuration: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
      */
-    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubstate: pulumi.Output<string>;
     /**
      * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the execution window was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the execution window ended.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEnded: pulumi.Output<string>;
     /**
      * (Updatable) The scheduled start date and time of the execution window.
      */
-    public readonly timeScheduled!: pulumi.Output<string>;
+    declare public readonly timeScheduled: pulumi.Output<string>;
     /**
      * The date and time that the execution window was started.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * The last date and time that the execution window was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The total time taken by corresponding resource activity in minutes.
      */
-    public /*out*/ readonly totalTimeTakenInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalTimeTakenInMins: pulumi.Output<number>;
     /**
      * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
      *
@@ -139,11 +139,11 @@ export class ExecutionWindow extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly windowDurationInMins!: pulumi.Output<number>;
+    declare public readonly windowDurationInMins: pulumi.Output<number>;
     /**
      * The execution window is of PLANNED or UNPLANNED type.
      */
-    public /*out*/ readonly windowType!: pulumi.Output<string>;
+    declare public /*out*/ readonly windowType: pulumi.Output<string>;
 
     /**
      * Create a ExecutionWindow resource with the given unique name, arguments, and options.
@@ -158,46 +158,46 @@ export class ExecutionWindow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExecutionWindowState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedTimeInMins"] = state ? state.estimatedTimeInMins : undefined;
-            resourceInputs["executionResourceId"] = state ? state.executionResourceId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnforcedDuration"] = state ? state.isEnforcedDuration : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubstate"] = state ? state.lifecycleSubstate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
-            resourceInputs["timeScheduled"] = state ? state.timeScheduled : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalTimeTakenInMins"] = state ? state.totalTimeTakenInMins : undefined;
-            resourceInputs["windowDurationInMins"] = state ? state.windowDurationInMins : undefined;
-            resourceInputs["windowType"] = state ? state.windowType : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedTimeInMins"] = state?.estimatedTimeInMins;
+            resourceInputs["executionResourceId"] = state?.executionResourceId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnforcedDuration"] = state?.isEnforcedDuration;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubstate"] = state?.lifecycleSubstate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeEnded"] = state?.timeEnded;
+            resourceInputs["timeScheduled"] = state?.timeScheduled;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalTimeTakenInMins"] = state?.totalTimeTakenInMins;
+            resourceInputs["windowDurationInMins"] = state?.windowDurationInMins;
+            resourceInputs["windowType"] = state?.windowType;
         } else {
             const args = argsOrState as ExecutionWindowArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.executionResourceId === undefined) && !opts.urn) {
+            if (args?.executionResourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executionResourceId'");
             }
-            if ((!args || args.timeScheduled === undefined) && !opts.urn) {
+            if (args?.timeScheduled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeScheduled'");
             }
-            if ((!args || args.windowDurationInMins === undefined) && !opts.urn) {
+            if (args?.windowDurationInMins === undefined && !opts.urn) {
                 throw new Error("Missing required property 'windowDurationInMins'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["executionResourceId"] = args ? args.executionResourceId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnforcedDuration"] = args ? args.isEnforcedDuration : undefined;
-            resourceInputs["timeScheduled"] = args ? args.timeScheduled : undefined;
-            resourceInputs["windowDurationInMins"] = args ? args.windowDurationInMins : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["executionResourceId"] = args?.executionResourceId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnforcedDuration"] = args?.isEnforcedDuration;
+            resourceInputs["timeScheduled"] = args?.timeScheduled;
+            resourceInputs["windowDurationInMins"] = args?.windowDurationInMins;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["estimatedTimeInMins"] = undefined /*out*/;

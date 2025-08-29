@@ -50,92 +50,92 @@ export class MediaAsset extends pulumi.CustomResource {
     /**
      * The name of the object storage bucket where this asset is located.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.MediaServices.MediaAssetLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.MediaServices.MediaAssetLock[]>;
     /**
      * (Updatable) The ID of the senior most asset from which this asset is derived.
      */
-    public readonly masterMediaAssetId!: pulumi.Output<string>;
+    declare public readonly masterMediaAssetId: pulumi.Output<string>;
     /**
      * (Updatable) list of tags for the MediaAsset.
      */
-    public readonly mediaAssetTags!: pulumi.Output<outputs.MediaServices.MediaAssetMediaAssetTag[]>;
+    declare public readonly mediaAssetTags: pulumi.Output<outputs.MediaServices.MediaAssetMediaAssetTag[]>;
     /**
      * The ID of the MediaWorkflowJob used to produce this asset.
      */
-    public readonly mediaWorkflowJobId!: pulumi.Output<string>;
+    declare public readonly mediaWorkflowJobId: pulumi.Output<string>;
     /**
      * (Updatable) List of Metadata.
      */
-    public readonly metadatas!: pulumi.Output<outputs.MediaServices.MediaAssetMetadata[]>;
+    declare public readonly metadatas: pulumi.Output<outputs.MediaServices.MediaAssetMetadata[]>;
     /**
      * The object storage namespace where this asset is located.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The object storage object name that identifies this asset.
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * eTag of the underlying object storage object.
      */
-    public readonly objectEtag!: pulumi.Output<string>;
+    declare public readonly objectEtag: pulumi.Output<string>;
     /**
      * (Updatable) The ID of the parent asset from which this asset is derived.
      */
-    public readonly parentMediaAssetId!: pulumi.Output<string>;
+    declare public readonly parentMediaAssetId: pulumi.Output<string>;
     /**
      * The end index for video segment files.
      */
-    public readonly segmentRangeEndIndex!: pulumi.Output<string>;
+    declare public readonly segmentRangeEndIndex: pulumi.Output<string>;
     /**
      * The start index for video segment files.
      */
-    public readonly segmentRangeStartIndex!: pulumi.Output<string>;
+    declare public readonly segmentRangeStartIndex: pulumi.Output<string>;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    public readonly sourceMediaWorkflowId!: pulumi.Output<string>;
+    declare public readonly sourceMediaWorkflowId: pulumi.Output<string>;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    public readonly sourceMediaWorkflowVersion!: pulumi.Output<string>;
+    declare public readonly sourceMediaWorkflowVersion: pulumi.Output<string>;
     /**
      * The current state of the MediaAsset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The type of the media asset.
      *
@@ -143,7 +143,7 @@ export class MediaAsset extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a MediaAsset resource with the given unique name, arguments, and options.
@@ -158,58 +158,58 @@ export class MediaAsset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MediaAssetState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["masterMediaAssetId"] = state ? state.masterMediaAssetId : undefined;
-            resourceInputs["mediaAssetTags"] = state ? state.mediaAssetTags : undefined;
-            resourceInputs["mediaWorkflowJobId"] = state ? state.mediaWorkflowJobId : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["objectEtag"] = state ? state.objectEtag : undefined;
-            resourceInputs["parentMediaAssetId"] = state ? state.parentMediaAssetId : undefined;
-            resourceInputs["segmentRangeEndIndex"] = state ? state.segmentRangeEndIndex : undefined;
-            resourceInputs["segmentRangeStartIndex"] = state ? state.segmentRangeStartIndex : undefined;
-            resourceInputs["sourceMediaWorkflowId"] = state ? state.sourceMediaWorkflowId : undefined;
-            resourceInputs["sourceMediaWorkflowVersion"] = state ? state.sourceMediaWorkflowVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["masterMediaAssetId"] = state?.masterMediaAssetId;
+            resourceInputs["mediaAssetTags"] = state?.mediaAssetTags;
+            resourceInputs["mediaWorkflowJobId"] = state?.mediaWorkflowJobId;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["objectEtag"] = state?.objectEtag;
+            resourceInputs["parentMediaAssetId"] = state?.parentMediaAssetId;
+            resourceInputs["segmentRangeEndIndex"] = state?.segmentRangeEndIndex;
+            resourceInputs["segmentRangeStartIndex"] = state?.segmentRangeStartIndex;
+            resourceInputs["sourceMediaWorkflowId"] = state?.sourceMediaWorkflowId;
+            resourceInputs["sourceMediaWorkflowVersion"] = state?.sourceMediaWorkflowVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as MediaAssetArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["masterMediaAssetId"] = args ? args.masterMediaAssetId : undefined;
-            resourceInputs["mediaAssetTags"] = args ? args.mediaAssetTags : undefined;
-            resourceInputs["mediaWorkflowJobId"] = args ? args.mediaWorkflowJobId : undefined;
-            resourceInputs["metadatas"] = args ? args.metadatas : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
-            resourceInputs["objectEtag"] = args ? args.objectEtag : undefined;
-            resourceInputs["parentMediaAssetId"] = args ? args.parentMediaAssetId : undefined;
-            resourceInputs["segmentRangeEndIndex"] = args ? args.segmentRangeEndIndex : undefined;
-            resourceInputs["segmentRangeStartIndex"] = args ? args.segmentRangeStartIndex : undefined;
-            resourceInputs["sourceMediaWorkflowId"] = args ? args.sourceMediaWorkflowId : undefined;
-            resourceInputs["sourceMediaWorkflowVersion"] = args ? args.sourceMediaWorkflowVersion : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["masterMediaAssetId"] = args?.masterMediaAssetId;
+            resourceInputs["mediaAssetTags"] = args?.mediaAssetTags;
+            resourceInputs["mediaWorkflowJobId"] = args?.mediaWorkflowJobId;
+            resourceInputs["metadatas"] = args?.metadatas;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["object"] = args?.object;
+            resourceInputs["objectEtag"] = args?.objectEtag;
+            resourceInputs["parentMediaAssetId"] = args?.parentMediaAssetId;
+            resourceInputs["segmentRangeEndIndex"] = args?.segmentRangeEndIndex;
+            resourceInputs["segmentRangeStartIndex"] = args?.segmentRangeStartIndex;
+            resourceInputs["sourceMediaWorkflowId"] = args?.sourceMediaWorkflowId;
+            resourceInputs["sourceMediaWorkflowVersion"] = args?.sourceMediaWorkflowVersion;
+            resourceInputs["type"] = args?.type;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

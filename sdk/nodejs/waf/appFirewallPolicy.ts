@@ -181,51 +181,51 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      */
-    public readonly actions!: pulumi.Output<outputs.Waf.AppFirewallPolicyAction[]>;
+    declare public readonly actions: pulumi.Output<outputs.Waf.AppFirewallPolicyAction[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
      */
-    public readonly requestAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestAccessControl>;
+    declare public readonly requestAccessControl: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestAccessControl>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      */
-    public readonly requestProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestProtection>;
+    declare public readonly requestProtection: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestProtection>;
     /**
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      */
-    public readonly requestRateLimiting!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestRateLimiting>;
+    declare public readonly requestRateLimiting: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestRateLimiting>;
     /**
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      */
-    public readonly responseAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseAccessControl>;
+    declare public readonly responseAccessControl: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseAccessControl>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      */
-    public readonly responseProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseProtection>;
+    declare public readonly responseProtection: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseProtection>;
     /**
      * The current state of the WebAppFirewallPolicy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -233,15 +233,15 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AppFirewallPolicy resource with the given unique name, arguments, and options.
@@ -256,37 +256,37 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppFirewallPolicyState | undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["requestAccessControl"] = state ? state.requestAccessControl : undefined;
-            resourceInputs["requestProtection"] = state ? state.requestProtection : undefined;
-            resourceInputs["requestRateLimiting"] = state ? state.requestRateLimiting : undefined;
-            resourceInputs["responseAccessControl"] = state ? state.responseAccessControl : undefined;
-            resourceInputs["responseProtection"] = state ? state.responseProtection : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["requestAccessControl"] = state?.requestAccessControl;
+            resourceInputs["requestProtection"] = state?.requestProtection;
+            resourceInputs["requestRateLimiting"] = state?.requestRateLimiting;
+            resourceInputs["responseAccessControl"] = state?.responseAccessControl;
+            resourceInputs["responseProtection"] = state?.responseProtection;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AppFirewallPolicyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["actions"] = args ? args.actions : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["requestAccessControl"] = args ? args.requestAccessControl : undefined;
-            resourceInputs["requestProtection"] = args ? args.requestProtection : undefined;
-            resourceInputs["requestRateLimiting"] = args ? args.requestRateLimiting : undefined;
-            resourceInputs["responseAccessControl"] = args ? args.responseAccessControl : undefined;
-            resourceInputs["responseProtection"] = args ? args.responseProtection : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["actions"] = args?.actions;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["requestAccessControl"] = args?.requestAccessControl;
+            resourceInputs["requestProtection"] = args?.requestProtection;
+            resourceInputs["requestRateLimiting"] = args?.requestRateLimiting;
+            resourceInputs["responseAccessControl"] = args?.responseAccessControl;
+            resourceInputs["responseProtection"] = args?.responseProtection;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

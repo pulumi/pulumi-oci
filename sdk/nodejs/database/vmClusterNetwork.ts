@@ -95,68 +95,68 @@ export class VmClusterNetwork extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmClusterNetwork.__pulumiType;
     }
 
-    public readonly action!: pulumi.Output<string | undefined>;
+    declare public readonly action: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    public readonly dns!: pulumi.Output<string[]>;
+    declare public readonly dns: pulumi.Output<string[]>;
     /**
      * (Updatable) The SCAN details for DR network
      */
-    public readonly drScans!: pulumi.Output<outputs.Database.VmClusterNetworkDrScan[]>;
+    declare public readonly drScans: pulumi.Output<outputs.Database.VmClusterNetworkDrScan[]>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    public readonly ntps!: pulumi.Output<string[]>;
+    declare public readonly ntps: pulumi.Output<string[]>;
     /**
      * (Updatable) The SCAN details.
      */
-    public readonly scans!: pulumi.Output<outputs.Database.VmClusterNetworkScan[]>;
+    declare public readonly scans: pulumi.Output<outputs.Database.VmClusterNetworkScan[]>;
     /**
      * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time when the VM cluster network was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public readonly validateVmClusterNetwork!: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public readonly validateVmClusterNetwork: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      */
-    public /*out*/ readonly vmClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vmClusterId: pulumi.Output<string>;
     /**
      * (Updatable) Details of the client and backup networks.
      */
-    public readonly vmNetworks!: pulumi.Output<outputs.Database.VmClusterNetworkVmNetwork[]>;
+    declare public readonly vmNetworks: pulumi.Output<outputs.Database.VmClusterNetworkVmNetwork[]>;
 
     /**
      * Create a VmClusterNetwork resource with the given unique name, arguments, and options.
@@ -171,52 +171,52 @@ export class VmClusterNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmClusterNetworkState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dns"] = state ? state.dns : undefined;
-            resourceInputs["drScans"] = state ? state.drScans : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["ntps"] = state ? state.ntps : undefined;
-            resourceInputs["scans"] = state ? state.scans : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["validateVmClusterNetwork"] = state ? state.validateVmClusterNetwork : undefined;
-            resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
-            resourceInputs["vmNetworks"] = state ? state.vmNetworks : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dns"] = state?.dns;
+            resourceInputs["drScans"] = state?.drScans;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["ntps"] = state?.ntps;
+            resourceInputs["scans"] = state?.scans;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["validateVmClusterNetwork"] = state?.validateVmClusterNetwork;
+            resourceInputs["vmClusterId"] = state?.vmClusterId;
+            resourceInputs["vmNetworks"] = state?.vmNetworks;
         } else {
             const args = argsOrState as VmClusterNetworkArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.exadataInfrastructureId === undefined) && !opts.urn) {
+            if (args?.exadataInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exadataInfrastructureId'");
             }
-            if ((!args || args.scans === undefined) && !opts.urn) {
+            if (args?.scans === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scans'");
             }
-            if ((!args || args.vmNetworks === undefined) && !opts.urn) {
+            if (args?.vmNetworks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmNetworks'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dns"] = args ? args.dns : undefined;
-            resourceInputs["drScans"] = args ? args.drScans : undefined;
-            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ntps"] = args ? args.ntps : undefined;
-            resourceInputs["scans"] = args ? args.scans : undefined;
-            resourceInputs["validateVmClusterNetwork"] = args ? args.validateVmClusterNetwork : undefined;
-            resourceInputs["vmNetworks"] = args ? args.vmNetworks : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dns"] = args?.dns;
+            resourceInputs["drScans"] = args?.drScans;
+            resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ntps"] = args?.ntps;
+            resourceInputs["scans"] = args?.scans;
+            resourceInputs["validateVmClusterNetwork"] = args?.validateVmClusterNetwork;
+            resourceInputs["vmNetworks"] = args?.vmNetworks;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

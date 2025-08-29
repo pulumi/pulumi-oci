@@ -89,19 +89,19 @@ export class ManagedDatabasesChangeDatabaseParameter extends pulumi.CustomResour
     /**
      * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    public readonly credentials!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials>;
+    declare public readonly credentials: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials>;
     /**
      * The credential to connect to the database to perform tablespace administration tasks.
      */
-    public readonly databaseCredential!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential>;
+    declare public readonly databaseCredential: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
-    public readonly managedDatabaseId!: pulumi.Output<string>;
+    declare public readonly managedDatabaseId: pulumi.Output<string>;
     /**
      * A list of database parameters and their values.
      */
-    public readonly parameters!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterParameter[]>;
+    declare public readonly parameters: pulumi.Output<outputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterParameter[]>;
     /**
      * The clause used to specify when the parameter change takes effect.
      *
@@ -111,7 +111,7 @@ export class ManagedDatabasesChangeDatabaseParameter extends pulumi.CustomResour
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
 
     /**
      * Create a ManagedDatabasesChangeDatabaseParameter resource with the given unique name, arguments, and options.
@@ -126,27 +126,27 @@ export class ManagedDatabasesChangeDatabaseParameter extends pulumi.CustomResour
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedDatabasesChangeDatabaseParameterState | undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["databaseCredential"] = state ? state.databaseCredential : undefined;
-            resourceInputs["managedDatabaseId"] = state ? state.managedDatabaseId : undefined;
-            resourceInputs["parameters"] = state ? state.parameters : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["databaseCredential"] = state?.databaseCredential;
+            resourceInputs["managedDatabaseId"] = state?.managedDatabaseId;
+            resourceInputs["parameters"] = state?.parameters;
+            resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as ManagedDatabasesChangeDatabaseParameterArgs | undefined;
-            if ((!args || args.managedDatabaseId === undefined) && !opts.urn) {
+            if (args?.managedDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedDatabaseId'");
             }
-            if ((!args || args.parameters === undefined) && !opts.urn) {
+            if (args?.parameters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parameters'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["databaseCredential"] = args ? args.databaseCredential : undefined;
-            resourceInputs["managedDatabaseId"] = args ? args.managedDatabaseId : undefined;
-            resourceInputs["parameters"] = args ? args.parameters : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["databaseCredential"] = args?.databaseCredential;
+            resourceInputs["managedDatabaseId"] = args?.managedDatabaseId;
+            resourceInputs["parameters"] = args?.parameters;
+            resourceInputs["scope"] = args?.scope;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedDatabasesChangeDatabaseParameter.__pulumiType, name, resourceInputs, opts);

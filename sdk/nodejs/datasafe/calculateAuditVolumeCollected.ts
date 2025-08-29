@@ -63,15 +63,15 @@ export class CalculateAuditVolumeCollected extends pulumi.CustomResource {
     /**
      * The OCID of the audit.
      */
-    public readonly auditProfileId!: pulumi.Output<string>;
+    declare public readonly auditProfileId: pulumi.Output<string>;
     /**
      * List of collected audit volumes.
      */
-    public /*out*/ readonly collectedAuditVolumes!: pulumi.Output<outputs.DataSafe.CalculateAuditVolumeCollectedCollectedAuditVolume[]>;
+    declare public /*out*/ readonly collectedAuditVolumes: pulumi.Output<outputs.DataSafe.CalculateAuditVolumeCollectedCollectedAuditVolume[]>;
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339.
      */
-    public readonly timeFromMonth!: pulumi.Output<string>;
+    declare public readonly timeFromMonth: pulumi.Output<string>;
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
      *
@@ -79,7 +79,7 @@ export class CalculateAuditVolumeCollected extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeToMonth!: pulumi.Output<string>;
+    declare public readonly timeToMonth: pulumi.Output<string>;
 
     /**
      * Create a CalculateAuditVolumeCollected resource with the given unique name, arguments, and options.
@@ -94,21 +94,21 @@ export class CalculateAuditVolumeCollected extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CalculateAuditVolumeCollectedState | undefined;
-            resourceInputs["auditProfileId"] = state ? state.auditProfileId : undefined;
-            resourceInputs["collectedAuditVolumes"] = state ? state.collectedAuditVolumes : undefined;
-            resourceInputs["timeFromMonth"] = state ? state.timeFromMonth : undefined;
-            resourceInputs["timeToMonth"] = state ? state.timeToMonth : undefined;
+            resourceInputs["auditProfileId"] = state?.auditProfileId;
+            resourceInputs["collectedAuditVolumes"] = state?.collectedAuditVolumes;
+            resourceInputs["timeFromMonth"] = state?.timeFromMonth;
+            resourceInputs["timeToMonth"] = state?.timeToMonth;
         } else {
             const args = argsOrState as CalculateAuditVolumeCollectedArgs | undefined;
-            if ((!args || args.auditProfileId === undefined) && !opts.urn) {
+            if (args?.auditProfileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'auditProfileId'");
             }
-            if ((!args || args.timeFromMonth === undefined) && !opts.urn) {
+            if (args?.timeFromMonth === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeFromMonth'");
             }
-            resourceInputs["auditProfileId"] = args ? args.auditProfileId : undefined;
-            resourceInputs["timeFromMonth"] = args ? args.timeFromMonth : undefined;
-            resourceInputs["timeToMonth"] = args ? args.timeToMonth : undefined;
+            resourceInputs["auditProfileId"] = args?.auditProfileId;
+            resourceInputs["timeFromMonth"] = args?.timeFromMonth;
+            resourceInputs["timeToMonth"] = args?.timeToMonth;
             resourceInputs["collectedAuditVolumes"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

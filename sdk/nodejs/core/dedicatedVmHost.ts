@@ -78,31 +78,31 @@ export class DedicatedVmHost extends pulumi.CustomResource {
     /**
      * The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * A list of total and remaining CPU & memory per capacity bucket.
      */
-    public /*out*/ readonly capacityBins!: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
+    declare public /*out*/ readonly capacityBins: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the compute bare metal host.
      */
-    public /*out*/ readonly computeBareMetalHostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeBareMetalHostId: pulumi.Output<string>;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
      */
-    public readonly dedicatedVmHostShape!: pulumi.Output<string>;
+    declare public readonly dedicatedVmHostShape: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
      *
@@ -110,39 +110,39 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    declare public readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
      */
-    public readonly placementConstraintDetails!: pulumi.Output<outputs.Core.DedicatedVmHostPlacementConstraintDetails>;
+    declare public readonly placementConstraintDetails: pulumi.Output<outputs.Core.DedicatedVmHostPlacementConstraintDetails>;
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */
-    public /*out*/ readonly remainingMemoryInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly remainingMemoryInGbs: pulumi.Output<number>;
     /**
      * The current available OCPUs of the dedicated VM host.
      */
-    public /*out*/ readonly remainingOcpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly remainingOcpus: pulumi.Output<number>;
     /**
      * The current state of the dedicated VM host.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */
-    public /*out*/ readonly totalMemoryInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalMemoryInGbs: pulumi.Output<number>;
     /**
      * The current total OCPUs of the dedicated VM host.
      */
-    public /*out*/ readonly totalOcpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalOcpus: pulumi.Output<number>;
 
     /**
      * Create a DedicatedVmHost resource with the given unique name, arguments, and options.
@@ -157,41 +157,41 @@ export class DedicatedVmHost extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DedicatedVmHostState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["capacityBins"] = state ? state.capacityBins : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeBareMetalHostId"] = state ? state.computeBareMetalHostId : undefined;
-            resourceInputs["dedicatedVmHostShape"] = state ? state.dedicatedVmHostShape : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["placementConstraintDetails"] = state ? state.placementConstraintDetails : undefined;
-            resourceInputs["remainingMemoryInGbs"] = state ? state.remainingMemoryInGbs : undefined;
-            resourceInputs["remainingOcpus"] = state ? state.remainingOcpus : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["totalMemoryInGbs"] = state ? state.totalMemoryInGbs : undefined;
-            resourceInputs["totalOcpus"] = state ? state.totalOcpus : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["capacityBins"] = state?.capacityBins;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeBareMetalHostId"] = state?.computeBareMetalHostId;
+            resourceInputs["dedicatedVmHostShape"] = state?.dedicatedVmHostShape;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["placementConstraintDetails"] = state?.placementConstraintDetails;
+            resourceInputs["remainingMemoryInGbs"] = state?.remainingMemoryInGbs;
+            resourceInputs["remainingOcpus"] = state?.remainingOcpus;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["totalMemoryInGbs"] = state?.totalMemoryInGbs;
+            resourceInputs["totalOcpus"] = state?.totalOcpus;
         } else {
             const args = argsOrState as DedicatedVmHostArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dedicatedVmHostShape === undefined) && !opts.urn) {
+            if (args?.dedicatedVmHostShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dedicatedVmHostShape'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dedicatedVmHostShape"] = args ? args.dedicatedVmHostShape : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["placementConstraintDetails"] = args ? args.placementConstraintDetails : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dedicatedVmHostShape"] = args?.dedicatedVmHostShape;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["faultDomain"] = args?.faultDomain;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["placementConstraintDetails"] = args?.placementConstraintDetails;
             resourceInputs["capacityBins"] = undefined /*out*/;
             resourceInputs["computeBareMetalHostId"] = undefined /*out*/;
             resourceInputs["remainingMemoryInGbs"] = undefined /*out*/;

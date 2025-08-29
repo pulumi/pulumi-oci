@@ -56,75 +56,75 @@ export class MaskingReportManagement extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains the masking report.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Indicates if the temporary tables created during the masking operation were dropped after masking.
      */
-    public /*out*/ readonly isDropTempTablesEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDropTempTablesEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if redo logging was enabled during the masking operation.
      */
-    public /*out*/ readonly isRedoLoggingEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRedoLoggingEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if statistics gathering was enabled during the masking operation.
      */
-    public /*out*/ readonly isRefreshStatsEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRefreshStatsEnabled: pulumi.Output<boolean>;
     /**
      * The OCID of the masking policy.
      */
-    public readonly maskingPolicyId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
     /**
      * The OCID of the masking work request that resulted in this masking report.
      */
-    public /*out*/ readonly maskingWorkRequestId!: pulumi.Output<string>;
+    declare public /*out*/ readonly maskingWorkRequestId: pulumi.Output<string>;
     /**
      * Indicates if parallel execution was enabled during the masking operation.
      */
-    public /*out*/ readonly parallelDegree!: pulumi.Output<string>;
+    declare public /*out*/ readonly parallelDegree: pulumi.Output<string>;
     /**
      * Indicates how invalid objects were recompiled post the masking operation.
      */
-    public /*out*/ readonly recompile!: pulumi.Output<string>;
+    declare public /*out*/ readonly recompile: pulumi.Output<string>;
     /**
      * The current state of the masking report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the target database masked.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    public /*out*/ readonly timeMaskingFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaskingFinished: pulumi.Output<string>;
     /**
      * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    public /*out*/ readonly timeMaskingStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaskingStarted: pulumi.Output<string>;
     /**
      * The total number of masked columns.
      */
-    public /*out*/ readonly totalMaskedColumns!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalMaskedColumns: pulumi.Output<string>;
     /**
      * The total number of unique objects (tables and editioning views) that contain the masked columns.
      */
-    public /*out*/ readonly totalMaskedObjects!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalMaskedObjects: pulumi.Output<string>;
     /**
      * The total number of unique schemas that contain the masked columns.
      */
-    public /*out*/ readonly totalMaskedSchemas!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalMaskedSchemas: pulumi.Output<string>;
     /**
      * The total number of unique sensitive types associated with the masked columns.
      */
-    public /*out*/ readonly totalMaskedSensitiveTypes!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalMaskedSensitiveTypes: pulumi.Output<string>;
     /**
      * The total number of masked values.
      */
-    public /*out*/ readonly totalMaskedValues!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalMaskedValues: pulumi.Output<string>;
 
     /**
      * Create a MaskingReportManagement resource with the given unique name, arguments, and options.
@@ -139,29 +139,29 @@ export class MaskingReportManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaskingReportManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isDropTempTablesEnabled"] = state ? state.isDropTempTablesEnabled : undefined;
-            resourceInputs["isRedoLoggingEnabled"] = state ? state.isRedoLoggingEnabled : undefined;
-            resourceInputs["isRefreshStatsEnabled"] = state ? state.isRefreshStatsEnabled : undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["maskingWorkRequestId"] = state ? state.maskingWorkRequestId : undefined;
-            resourceInputs["parallelDegree"] = state ? state.parallelDegree : undefined;
-            resourceInputs["recompile"] = state ? state.recompile : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeMaskingFinished"] = state ? state.timeMaskingFinished : undefined;
-            resourceInputs["timeMaskingStarted"] = state ? state.timeMaskingStarted : undefined;
-            resourceInputs["totalMaskedColumns"] = state ? state.totalMaskedColumns : undefined;
-            resourceInputs["totalMaskedObjects"] = state ? state.totalMaskedObjects : undefined;
-            resourceInputs["totalMaskedSchemas"] = state ? state.totalMaskedSchemas : undefined;
-            resourceInputs["totalMaskedSensitiveTypes"] = state ? state.totalMaskedSensitiveTypes : undefined;
-            resourceInputs["totalMaskedValues"] = state ? state.totalMaskedValues : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isDropTempTablesEnabled"] = state?.isDropTempTablesEnabled;
+            resourceInputs["isRedoLoggingEnabled"] = state?.isRedoLoggingEnabled;
+            resourceInputs["isRefreshStatsEnabled"] = state?.isRefreshStatsEnabled;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["maskingWorkRequestId"] = state?.maskingWorkRequestId;
+            resourceInputs["parallelDegree"] = state?.parallelDegree;
+            resourceInputs["recompile"] = state?.recompile;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeMaskingFinished"] = state?.timeMaskingFinished;
+            resourceInputs["timeMaskingStarted"] = state?.timeMaskingStarted;
+            resourceInputs["totalMaskedColumns"] = state?.totalMaskedColumns;
+            resourceInputs["totalMaskedObjects"] = state?.totalMaskedObjects;
+            resourceInputs["totalMaskedSchemas"] = state?.totalMaskedSchemas;
+            resourceInputs["totalMaskedSensitiveTypes"] = state?.totalMaskedSensitiveTypes;
+            resourceInputs["totalMaskedValues"] = state?.totalMaskedValues;
         } else {
             const args = argsOrState as MaskingReportManagementArgs | undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["isDropTempTablesEnabled"] = undefined /*out*/;
             resourceInputs["isRedoLoggingEnabled"] = undefined /*out*/;
             resourceInputs["isRefreshStatsEnabled"] = undefined /*out*/;

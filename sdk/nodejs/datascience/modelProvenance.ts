@@ -65,27 +65,27 @@ export class ModelProvenance extends pulumi.CustomResource {
     /**
      * (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      */
-    public readonly gitBranch!: pulumi.Output<string>;
+    declare public readonly gitBranch: pulumi.Output<string>;
     /**
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      */
-    public readonly gitCommit!: pulumi.Output<string>;
+    declare public readonly gitCommit: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
-    public readonly modelId!: pulumi.Output<string>;
+    declare public readonly modelId: pulumi.Output<string>;
     /**
      * (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      */
-    public readonly repositoryUrl!: pulumi.Output<string>;
+    declare public readonly repositoryUrl: pulumi.Output<string>;
     /**
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      */
-    public readonly scriptDir!: pulumi.Output<string>;
+    declare public readonly scriptDir: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      */
-    public readonly trainingId!: pulumi.Output<string>;
+    declare public readonly trainingId: pulumi.Output<string>;
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
      *
@@ -93,7 +93,7 @@ export class ModelProvenance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly trainingScript!: pulumi.Output<string>;
+    declare public readonly trainingScript: pulumi.Output<string>;
 
     /**
      * Create a ModelProvenance resource with the given unique name, arguments, and options.
@@ -108,25 +108,25 @@ export class ModelProvenance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelProvenanceState | undefined;
-            resourceInputs["gitBranch"] = state ? state.gitBranch : undefined;
-            resourceInputs["gitCommit"] = state ? state.gitCommit : undefined;
-            resourceInputs["modelId"] = state ? state.modelId : undefined;
-            resourceInputs["repositoryUrl"] = state ? state.repositoryUrl : undefined;
-            resourceInputs["scriptDir"] = state ? state.scriptDir : undefined;
-            resourceInputs["trainingId"] = state ? state.trainingId : undefined;
-            resourceInputs["trainingScript"] = state ? state.trainingScript : undefined;
+            resourceInputs["gitBranch"] = state?.gitBranch;
+            resourceInputs["gitCommit"] = state?.gitCommit;
+            resourceInputs["modelId"] = state?.modelId;
+            resourceInputs["repositoryUrl"] = state?.repositoryUrl;
+            resourceInputs["scriptDir"] = state?.scriptDir;
+            resourceInputs["trainingId"] = state?.trainingId;
+            resourceInputs["trainingScript"] = state?.trainingScript;
         } else {
             const args = argsOrState as ModelProvenanceArgs | undefined;
-            if ((!args || args.modelId === undefined) && !opts.urn) {
+            if (args?.modelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelId'");
             }
-            resourceInputs["gitBranch"] = args ? args.gitBranch : undefined;
-            resourceInputs["gitCommit"] = args ? args.gitCommit : undefined;
-            resourceInputs["modelId"] = args ? args.modelId : undefined;
-            resourceInputs["repositoryUrl"] = args ? args.repositoryUrl : undefined;
-            resourceInputs["scriptDir"] = args ? args.scriptDir : undefined;
-            resourceInputs["trainingId"] = args ? args.trainingId : undefined;
-            resourceInputs["trainingScript"] = args ? args.trainingScript : undefined;
+            resourceInputs["gitBranch"] = args?.gitBranch;
+            resourceInputs["gitCommit"] = args?.gitCommit;
+            resourceInputs["modelId"] = args?.modelId;
+            resourceInputs["repositoryUrl"] = args?.repositoryUrl;
+            resourceInputs["scriptDir"] = args?.scriptDir;
+            resourceInputs["trainingId"] = args?.trainingId;
+            resourceInputs["trainingScript"] = args?.trainingScript;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ModelProvenance.__pulumiType, name, resourceInputs, opts);

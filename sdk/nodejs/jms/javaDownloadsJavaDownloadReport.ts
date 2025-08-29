@@ -67,57 +67,57 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
     /**
      * The algorithm used for calculating the checksum.
      */
-    public /*out*/ readonly checksumType!: pulumi.Output<string>;
+    declare public /*out*/ readonly checksumType: pulumi.Output<string>;
     /**
      * The checksum value of the Java download report file.
      */
-    public /*out*/ readonly checksumValue!: pulumi.Output<string>;
+    declare public /*out*/ readonly checksumValue: pulumi.Output<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * An authorized principal.
      */
-    public /*out*/ readonly createdBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadReportCreatedBy[]>;
+    declare public /*out*/ readonly createdBies: pulumi.Output<outputs.Jms.JavaDownloadsJavaDownloadReportCreatedBy[]>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Display name for the Java download report.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Approximate size of the Java download report file in bytes.
      */
-    public /*out*/ readonly fileSizeInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly fileSizeInBytes: pulumi.Output<string>;
     /**
      * The format of the report that is generated.
      */
-    public readonly format!: pulumi.Output<string>;
+    declare public readonly format: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly sortBy!: pulumi.Output<string>;
-    public /*out*/ readonly sortOrder!: pulumi.Output<string>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly sortBy: pulumi.Output<string>;
+    declare public /*out*/ readonly sortOrder: pulumi.Output<string>;
     /**
      * The current state of the Java download report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public readonly timeEnd!: pulumi.Output<string>;
+    declare public readonly timeEnd: pulumi.Output<string>;
     /**
      * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
      *
@@ -125,7 +125,7 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStart!: pulumi.Output<string>;
+    declare public readonly timeStart: pulumi.Output<string>;
 
     /**
      * Create a JavaDownloadsJavaDownloadReport resource with the given unique name, arguments, and options.
@@ -140,36 +140,36 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JavaDownloadsJavaDownloadReportState | undefined;
-            resourceInputs["checksumType"] = state ? state.checksumType : undefined;
-            resourceInputs["checksumValue"] = state ? state.checksumValue : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBies"] = state ? state.createdBies : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fileSizeInBytes"] = state ? state.fileSizeInBytes : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["sortBy"] = state ? state.sortBy : undefined;
-            resourceInputs["sortOrder"] = state ? state.sortOrder : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeEnd"] = state ? state.timeEnd : undefined;
-            resourceInputs["timeStart"] = state ? state.timeStart : undefined;
+            resourceInputs["checksumType"] = state?.checksumType;
+            resourceInputs["checksumValue"] = state?.checksumValue;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBies"] = state?.createdBies;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fileSizeInBytes"] = state?.fileSizeInBytes;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["sortBy"] = state?.sortBy;
+            resourceInputs["sortOrder"] = state?.sortOrder;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeEnd"] = state?.timeEnd;
+            resourceInputs["timeStart"] = state?.timeStart;
         } else {
             const args = argsOrState as JavaDownloadsJavaDownloadReportArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.format === undefined) && !opts.urn) {
+            if (args?.format === undefined && !opts.urn) {
                 throw new Error("Missing required property 'format'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["timeEnd"] = args ? args.timeEnd : undefined;
-            resourceInputs["timeStart"] = args ? args.timeStart : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["timeEnd"] = args?.timeEnd;
+            resourceInputs["timeStart"] = args?.timeStart;
             resourceInputs["checksumType"] = undefined /*out*/;
             resourceInputs["checksumValue"] = undefined /*out*/;
             resourceInputs["createdBies"] = undefined /*out*/;

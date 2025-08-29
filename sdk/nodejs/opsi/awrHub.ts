@@ -69,35 +69,35 @@ export class AwrHub extends pulumi.CustomResource {
     /**
      * Mailbox URL required for AWR hub and AWR source setup.
      */
-    public /*out*/ readonly awrMailboxUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly awrMailboxUrl: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-friedly name of AWR Hub that does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Dst Time Zone Version of the AWR Hub
      */
-    public /*out*/ readonly hubDstTimezoneVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly hubDstTimezoneVersion: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Object Storage Bucket Name
      */
-    public readonly objectStorageBucketName!: pulumi.Output<string>;
+    declare public readonly objectStorageBucketName: pulumi.Output<string>;
     /**
      * OPSI Warehouse OCID
      *
@@ -105,23 +105,23 @@ export class AwrHub extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
+    declare public readonly operationsInsightsWarehouseId: pulumi.Output<string>;
     /**
      * Possible lifecycle states
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AwrHub resource with the given unique name, arguments, and options.
@@ -136,36 +136,36 @@ export class AwrHub extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwrHubState | undefined;
-            resourceInputs["awrMailboxUrl"] = state ? state.awrMailboxUrl : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hubDstTimezoneVersion"] = state ? state.hubDstTimezoneVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["objectStorageBucketName"] = state ? state.objectStorageBucketName : undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = state ? state.operationsInsightsWarehouseId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["awrMailboxUrl"] = state?.awrMailboxUrl;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hubDstTimezoneVersion"] = state?.hubDstTimezoneVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["objectStorageBucketName"] = state?.objectStorageBucketName;
+            resourceInputs["operationsInsightsWarehouseId"] = state?.operationsInsightsWarehouseId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AwrHubArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
+            if (args?.operationsInsightsWarehouseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["objectStorageBucketName"] = args ? args.objectStorageBucketName : undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["objectStorageBucketName"] = args?.objectStorageBucketName;
+            resourceInputs["operationsInsightsWarehouseId"] = args?.operationsInsightsWarehouseId;
             resourceInputs["awrMailboxUrl"] = undefined /*out*/;
             resourceInputs["hubDstTimezoneVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

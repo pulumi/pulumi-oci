@@ -90,190 +90,190 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === AutonomousVmCluster.__pulumiType;
     }
 
-    public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number>;
+    declare public /*out*/ readonly autonomousDataStoragePercentage: pulumi.Output<number>;
     /**
      * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
-    public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public readonly autonomousDataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      */
-    public /*out*/ readonly availableAutonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableAutonomousDataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      */
-    public /*out*/ readonly availableContainerDatabases!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableContainerDatabases: pulumi.Output<number>;
     /**
      * The numnber of CPU cores available.
      */
-    public /*out*/ readonly availableCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableCpus: pulumi.Output<number>;
     /**
      * **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
      */
-    public /*out*/ readonly availableDataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly availableDataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    declare public readonly computeModel: pulumi.Output<string>;
     /**
      * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
-    public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
-    public /*out*/ readonly cpuPercentage!: pulumi.Output<number>;
+    declare public readonly cpuCoreCountPerNode: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuPercentage: pulumi.Output<number>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
-    public /*out*/ readonly cpusLowestScaledValue!: pulumi.Output<number>;
-    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpusEnabled: pulumi.Output<number>;
+    declare public /*out*/ readonly cpusLowestScaledValue: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * The total data storage allocated in TBs
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    public readonly dbServers!: pulumi.Output<string[]>;
+    declare public readonly dbServers: pulumi.Output<string[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * The lowest value to which exadataStorage(in TBs) can be scaled down.
      */
-    public /*out*/ readonly exadataStorageInTbsLowestScaledValue!: pulumi.Output<number>;
+    declare public /*out*/ readonly exadataStorageInTbsLowestScaledValue: pulumi.Output<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
      */
-    public readonly isLocalBackupEnabled!: pulumi.Output<boolean>;
+    declare public readonly isLocalBackupEnabled: pulumi.Output<boolean>;
     /**
      * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
      */
-    public readonly isMtlsEnabled!: pulumi.Output<boolean>;
+    declare public readonly isMtlsEnabled: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindowDetail[]>;
+    declare public readonly maintenanceWindowDetails: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindowDetail[]>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
     /**
      * The lowest value to which maximum number of ACDs can be scaled down.
      */
-    public /*out*/ readonly maxAcdsLowestScaledValue!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxAcdsLowestScaledValue: pulumi.Output<number>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    declare public readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
     /**
      * The number of nodes in the Autonomous VM Cluster.
      */
-    public /*out*/ readonly nodeCount!: pulumi.Output<number>;
-    public /*out*/ readonly nonProvisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    declare public /*out*/ readonly nodeCount: pulumi.Output<number>;
+    declare public /*out*/ readonly nonProvisionableAutonomousContainerDatabases: pulumi.Output<number>;
     /**
      * The number of enabled OCPU cores.
      */
-    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    declare public /*out*/ readonly ocpusEnabled: pulumi.Output<number>;
     /**
      * **Deprecated.** Use field totalContainerDatabases.
      */
-    public /*out*/ readonly provisionableAutonomousContainerDatabases!: pulumi.Output<number>;
+    declare public /*out*/ readonly provisionableAutonomousContainerDatabases: pulumi.Output<number>;
     /**
      * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      */
-    public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
+    declare public /*out*/ readonly provisionedAutonomousContainerDatabases: pulumi.Output<number>;
     /**
      * The number of CPUs provisioned in an Autonomous VM Cluster.
      */
-    public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly provisionedCpus: pulumi.Output<number>;
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
      */
-    public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly reclaimableCpus: pulumi.Output<number>;
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
-    public /*out*/ readonly reservedCpus!: pulumi.Output<number>;
+    declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
     /**
      * The SCAN Listener Non TLS port number. Default value is 1521.
      */
-    public readonly scanListenerPortNonTls!: pulumi.Output<number>;
+    declare public readonly scanListenerPortNonTls: pulumi.Output<number>;
     /**
      * The SCAN Listener TLS port number. Default value is 2484.
      */
-    public readonly scanListenerPortTls!: pulumi.Output<number>;
+    declare public readonly scanListenerPortTls: pulumi.Output<number>;
     /**
      * The current state of the Autonomous VM cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the Autonomous VM cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time of Database SSL certificate expiration.
      */
-    public /*out*/ readonly timeDatabaseSslCertificateExpires!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDatabaseSslCertificateExpires: pulumi.Output<string>;
     /**
      * The date and time of ORDS certificate expiration.
      */
-    public /*out*/ readonly timeOrdsCertificateExpires!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOrdsCertificateExpires: pulumi.Output<string>;
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string>;
-    public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number>;
+    declare public readonly timeZone: pulumi.Output<string>;
+    declare public /*out*/ readonly totalAutonomousDataStorageInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
-    public readonly totalContainerDatabases!: pulumi.Output<number>;
+    declare public readonly totalContainerDatabases: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      *
@@ -281,7 +281,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vmClusterNetworkId!: pulumi.Output<string>;
+    declare public readonly vmClusterNetworkId: pulumi.Output<string>;
 
     /**
      * Create a AutonomousVmCluster resource with the given unique name, arguments, and options.
@@ -296,90 +296,90 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousVmClusterState | undefined;
-            resourceInputs["autonomousDataStoragePercentage"] = state ? state.autonomousDataStoragePercentage : undefined;
-            resourceInputs["autonomousDataStorageSizeInTbs"] = state ? state.autonomousDataStorageSizeInTbs : undefined;
-            resourceInputs["availableAutonomousDataStorageSizeInTbs"] = state ? state.availableAutonomousDataStorageSizeInTbs : undefined;
-            resourceInputs["availableContainerDatabases"] = state ? state.availableContainerDatabases : undefined;
-            resourceInputs["availableCpus"] = state ? state.availableCpus : undefined;
-            resourceInputs["availableDataStorageSizeInTbs"] = state ? state.availableDataStorageSizeInTbs : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
-            resourceInputs["cpuPercentage"] = state ? state.cpuPercentage : undefined;
-            resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
-            resourceInputs["cpusLowestScaledValue"] = state ? state.cpusLowestScaledValue : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServers"] = state ? state.dbServers : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["exadataStorageInTbsLowestScaledValue"] = state ? state.exadataStorageInTbsLowestScaledValue : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLocalBackupEnabled"] = state ? state.isLocalBackupEnabled : undefined;
-            resourceInputs["isMtlsEnabled"] = state ? state.isMtlsEnabled : undefined;
-            resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["maxAcdsLowestScaledValue"] = state ? state.maxAcdsLowestScaledValue : undefined;
-            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state ? state.nonProvisionableAutonomousContainerDatabases : undefined;
-            resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
-            resourceInputs["provisionableAutonomousContainerDatabases"] = state ? state.provisionableAutonomousContainerDatabases : undefined;
-            resourceInputs["provisionedAutonomousContainerDatabases"] = state ? state.provisionedAutonomousContainerDatabases : undefined;
-            resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
-            resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
-            resourceInputs["reservedCpus"] = state ? state.reservedCpus : undefined;
-            resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
-            resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
-            resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["totalAutonomousDataStorageInTbs"] = state ? state.totalAutonomousDataStorageInTbs : undefined;
-            resourceInputs["totalContainerDatabases"] = state ? state.totalContainerDatabases : undefined;
-            resourceInputs["vmClusterNetworkId"] = state ? state.vmClusterNetworkId : undefined;
+            resourceInputs["autonomousDataStoragePercentage"] = state?.autonomousDataStoragePercentage;
+            resourceInputs["autonomousDataStorageSizeInTbs"] = state?.autonomousDataStorageSizeInTbs;
+            resourceInputs["availableAutonomousDataStorageSizeInTbs"] = state?.availableAutonomousDataStorageSizeInTbs;
+            resourceInputs["availableContainerDatabases"] = state?.availableContainerDatabases;
+            resourceInputs["availableCpus"] = state?.availableCpus;
+            resourceInputs["availableDataStorageSizeInTbs"] = state?.availableDataStorageSizeInTbs;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuCoreCountPerNode"] = state?.cpuCoreCountPerNode;
+            resourceInputs["cpuPercentage"] = state?.cpuPercentage;
+            resourceInputs["cpusEnabled"] = state?.cpusEnabled;
+            resourceInputs["cpusLowestScaledValue"] = state?.cpusLowestScaledValue;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServers"] = state?.dbServers;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["exadataStorageInTbsLowestScaledValue"] = state?.exadataStorageInTbsLowestScaledValue;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLocalBackupEnabled"] = state?.isLocalBackupEnabled;
+            resourceInputs["isMtlsEnabled"] = state?.isMtlsEnabled;
+            resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceWindowDetails"] = state?.maintenanceWindowDetails;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["maxAcdsLowestScaledValue"] = state?.maxAcdsLowestScaledValue;
+            resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state?.nonProvisionableAutonomousContainerDatabases;
+            resourceInputs["ocpusEnabled"] = state?.ocpusEnabled;
+            resourceInputs["provisionableAutonomousContainerDatabases"] = state?.provisionableAutonomousContainerDatabases;
+            resourceInputs["provisionedAutonomousContainerDatabases"] = state?.provisionedAutonomousContainerDatabases;
+            resourceInputs["provisionedCpus"] = state?.provisionedCpus;
+            resourceInputs["reclaimableCpus"] = state?.reclaimableCpus;
+            resourceInputs["reservedCpus"] = state?.reservedCpus;
+            resourceInputs["scanListenerPortNonTls"] = state?.scanListenerPortNonTls;
+            resourceInputs["scanListenerPortTls"] = state?.scanListenerPortTls;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDatabaseSslCertificateExpires"] = state?.timeDatabaseSslCertificateExpires;
+            resourceInputs["timeOrdsCertificateExpires"] = state?.timeOrdsCertificateExpires;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["totalAutonomousDataStorageInTbs"] = state?.totalAutonomousDataStorageInTbs;
+            resourceInputs["totalContainerDatabases"] = state?.totalContainerDatabases;
+            resourceInputs["vmClusterNetworkId"] = state?.vmClusterNetworkId;
         } else {
             const args = argsOrState as AutonomousVmClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.exadataInfrastructureId === undefined) && !opts.urn) {
+            if (args?.exadataInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exadataInfrastructureId'");
             }
-            if ((!args || args.vmClusterNetworkId === undefined) && !opts.urn) {
+            if (args?.vmClusterNetworkId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmClusterNetworkId'");
             }
-            resourceInputs["autonomousDataStorageSizeInTbs"] = args ? args.autonomousDataStorageSizeInTbs : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
-            resourceInputs["cpuCoreCountPerNode"] = args ? args.cpuCoreCountPerNode : undefined;
-            resourceInputs["dbServers"] = args ? args.dbServers : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLocalBackupEnabled"] = args ? args.isLocalBackupEnabled : undefined;
-            resourceInputs["isMtlsEnabled"] = args ? args.isMtlsEnabled : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
-            resourceInputs["memoryPerOracleComputeUnitInGbs"] = args ? args.memoryPerOracleComputeUnitInGbs : undefined;
-            resourceInputs["scanListenerPortNonTls"] = args ? args.scanListenerPortNonTls : undefined;
-            resourceInputs["scanListenerPortTls"] = args ? args.scanListenerPortTls : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
-            resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
-            resourceInputs["vmClusterNetworkId"] = args ? args.vmClusterNetworkId : undefined;
+            resourceInputs["autonomousDataStorageSizeInTbs"] = args?.autonomousDataStorageSizeInTbs;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeModel"] = args?.computeModel;
+            resourceInputs["cpuCoreCountPerNode"] = args?.cpuCoreCountPerNode;
+            resourceInputs["dbServers"] = args?.dbServers;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLocalBackupEnabled"] = args?.isLocalBackupEnabled;
+            resourceInputs["isMtlsEnabled"] = args?.isMtlsEnabled;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["maintenanceWindowDetails"] = args?.maintenanceWindowDetails;
+            resourceInputs["memoryPerOracleComputeUnitInGbs"] = args?.memoryPerOracleComputeUnitInGbs;
+            resourceInputs["scanListenerPortNonTls"] = args?.scanListenerPortNonTls;
+            resourceInputs["scanListenerPortTls"] = args?.scanListenerPortTls;
+            resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["totalContainerDatabases"] = args?.totalContainerDatabases;
+            resourceInputs["vmClusterNetworkId"] = args?.vmClusterNetworkId;
             resourceInputs["autonomousDataStoragePercentage"] = undefined /*out*/;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["availableContainerDatabases"] = undefined /*out*/;

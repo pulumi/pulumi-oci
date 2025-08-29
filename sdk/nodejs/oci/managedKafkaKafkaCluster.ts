@@ -82,51 +82,51 @@ export class ManagedKafkaKafkaCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Subnets where broker/coordinator VNICs will be created.
      */
-    public readonly accessSubnets!: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterAccessSubnet[]>;
+    declare public readonly accessSubnets: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterAccessSubnet[]>;
     /**
      * (Updatable) Configuration of the broker node.
      */
-    public readonly brokerShape!: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterBrokerShape>;
+    declare public readonly brokerShape: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterBrokerShape>;
     /**
      * (Updatable) CA certificate bundle for mTLS broker authentication.
      */
-    public readonly clientCertificateBundle!: pulumi.Output<string>;
+    declare public readonly clientCertificateBundle: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
      */
-    public readonly clusterConfigId!: pulumi.Output<string>;
+    declare public readonly clusterConfigId: pulumi.Output<string>;
     /**
      * (Updatable) The version of configuration object
      */
-    public readonly clusterConfigVersion!: pulumi.Output<number>;
+    declare public readonly clusterConfigVersion: pulumi.Output<number>;
     /**
      * Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on single node PRODUCTION - Minimum allowed broker count is 3
      */
-    public readonly clusterType!: pulumi.Output<string>;
+    declare public readonly clusterType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the KafkaCluster in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Kafka coordination type. Set of available types depends on Kafka version
      */
-    public readonly coordinationType!: pulumi.Output<string>;
+    declare public readonly coordinationType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Bootstrap URL that can be used to connect to Kafka
      */
-    public /*out*/ readonly kafkaBootstrapUrls!: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterKafkaBootstrapUrl[]>;
+    declare public /*out*/ readonly kafkaBootstrapUrls: pulumi.Output<outputs.oci.ManagedKafkaKafkaClusterKafkaBootstrapUrl[]>;
     /**
      * Version of Kafka to use to spin up the cluster
      *
@@ -134,31 +134,31 @@ export class ManagedKafkaKafkaCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly kafkaVersion!: pulumi.Output<string>;
+    declare public readonly kafkaVersion: pulumi.Output<string>;
     /**
      * A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
      */
-    public /*out*/ readonly secretId!: pulumi.Output<string>;
+    declare public /*out*/ readonly secretId: pulumi.Output<string>;
     /**
      * The current state of the KafkaCluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ManagedKafkaKafkaCluster resource with the given unique name, arguments, and options.
@@ -173,63 +173,63 @@ export class ManagedKafkaKafkaCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedKafkaKafkaClusterState | undefined;
-            resourceInputs["accessSubnets"] = state ? state.accessSubnets : undefined;
-            resourceInputs["brokerShape"] = state ? state.brokerShape : undefined;
-            resourceInputs["clientCertificateBundle"] = state ? state.clientCertificateBundle : undefined;
-            resourceInputs["clusterConfigId"] = state ? state.clusterConfigId : undefined;
-            resourceInputs["clusterConfigVersion"] = state ? state.clusterConfigVersion : undefined;
-            resourceInputs["clusterType"] = state ? state.clusterType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["coordinationType"] = state ? state.coordinationType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["kafkaBootstrapUrls"] = state ? state.kafkaBootstrapUrls : undefined;
-            resourceInputs["kafkaVersion"] = state ? state.kafkaVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["accessSubnets"] = state?.accessSubnets;
+            resourceInputs["brokerShape"] = state?.brokerShape;
+            resourceInputs["clientCertificateBundle"] = state?.clientCertificateBundle;
+            resourceInputs["clusterConfigId"] = state?.clusterConfigId;
+            resourceInputs["clusterConfigVersion"] = state?.clusterConfigVersion;
+            resourceInputs["clusterType"] = state?.clusterType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["coordinationType"] = state?.coordinationType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["kafkaBootstrapUrls"] = state?.kafkaBootstrapUrls;
+            resourceInputs["kafkaVersion"] = state?.kafkaVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ManagedKafkaKafkaClusterArgs | undefined;
-            if ((!args || args.accessSubnets === undefined) && !opts.urn) {
+            if (args?.accessSubnets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'accessSubnets'");
             }
-            if ((!args || args.brokerShape === undefined) && !opts.urn) {
+            if (args?.brokerShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'brokerShape'");
             }
-            if ((!args || args.clusterConfigId === undefined) && !opts.urn) {
+            if (args?.clusterConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterConfigId'");
             }
-            if ((!args || args.clusterConfigVersion === undefined) && !opts.urn) {
+            if (args?.clusterConfigVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterConfigVersion'");
             }
-            if ((!args || args.clusterType === undefined) && !opts.urn) {
+            if (args?.clusterType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.coordinationType === undefined) && !opts.urn) {
+            if (args?.coordinationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'coordinationType'");
             }
-            if ((!args || args.kafkaVersion === undefined) && !opts.urn) {
+            if (args?.kafkaVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaVersion'");
             }
-            resourceInputs["accessSubnets"] = args ? args.accessSubnets : undefined;
-            resourceInputs["brokerShape"] = args ? args.brokerShape : undefined;
-            resourceInputs["clientCertificateBundle"] = args ? args.clientCertificateBundle : undefined;
-            resourceInputs["clusterConfigId"] = args ? args.clusterConfigId : undefined;
-            resourceInputs["clusterConfigVersion"] = args ? args.clusterConfigVersion : undefined;
-            resourceInputs["clusterType"] = args ? args.clusterType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["coordinationType"] = args ? args.coordinationType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kafkaVersion"] = args ? args.kafkaVersion : undefined;
+            resourceInputs["accessSubnets"] = args?.accessSubnets;
+            resourceInputs["brokerShape"] = args?.brokerShape;
+            resourceInputs["clientCertificateBundle"] = args?.clientCertificateBundle;
+            resourceInputs["clusterConfigId"] = args?.clusterConfigId;
+            resourceInputs["clusterConfigVersion"] = args?.clusterConfigVersion;
+            resourceInputs["clusterType"] = args?.clusterType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["coordinationType"] = args?.coordinationType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kafkaVersion"] = args?.kafkaVersion;
             resourceInputs["kafkaBootstrapUrls"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["secretId"] = undefined /*out*/;

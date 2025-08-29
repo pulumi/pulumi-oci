@@ -32,7 +32,7 @@ export class AddSdmColumns extends pulumi.CustomResource {
         return obj['__pulumiType'] === AddSdmColumns.__pulumiType;
     }
 
-    public readonly maskingPolicyId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AddSdmColumns resource with the given unique name, arguments, and options.
@@ -47,13 +47,13 @@ export class AddSdmColumns extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AddSdmColumnsState | undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
         } else {
             const args = argsOrState as AddSdmColumnsArgs | undefined;
-            if ((!args || args.maskingPolicyId === undefined) && !opts.urn) {
+            if (args?.maskingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPolicyId'");
             }
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AddSdmColumns.__pulumiType, name, resourceInputs, opts);

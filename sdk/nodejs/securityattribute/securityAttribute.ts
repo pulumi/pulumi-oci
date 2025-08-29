@@ -80,39 +80,39 @@ export class SecurityAttribute extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains the security attribute definition.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The description you assign to the security attribute during creation.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      */
-    public readonly isRetired!: pulumi.Output<boolean>;
+    declare public readonly isRetired: pulumi.Output<boolean>;
     /**
      * The name you assign to the security attribute during creation. This is the security attribute key. The name must be unique within the namespace and cannot be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The OCID of the security attribute namespace.
      */
-    public readonly securityAttributeNamespaceId!: pulumi.Output<string>;
+    declare public readonly securityAttributeNamespaceId: pulumi.Output<string>;
     /**
      * The name of the security attribute namespace that contains the security attribute.
      */
-    public /*out*/ readonly securityAttributeNamespaceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly securityAttributeNamespaceName: pulumi.Output<string>;
     /**
      * The security attribute's current state. After creating a security attribute, make sure its `lifecycleState` is ACTIVE before using it. After retiring a security attribute, make sure its `lifecycleState` is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted security attribute's `lifecycleState` changes from DELETING to DELETED.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the security attribute was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The data type of the security attribute.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
      *
@@ -120,7 +120,7 @@ export class SecurityAttribute extends pulumi.CustomResource {
      *
      * To clear the validator call UpdateSecurityAttribute with [DefaultSecuirtyAttributeValidator](https://docs.cloud.oracle.com/iaas/api/#/en/securityattribute/latest/datatypes/DefaultTagDefinitionValidator).
      */
-    public readonly validator!: pulumi.Output<outputs.SecurityAttribute.SecurityAttributeValidator | undefined>;
+    declare public readonly validator: pulumi.Output<outputs.SecurityAttribute.SecurityAttributeValidator | undefined>;
 
     /**
      * Create a SecurityAttribute resource with the given unique name, arguments, and options.
@@ -135,29 +135,29 @@ export class SecurityAttribute extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityAttributeState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["isRetired"] = state ? state.isRetired : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["securityAttributeNamespaceId"] = state ? state.securityAttributeNamespaceId : undefined;
-            resourceInputs["securityAttributeNamespaceName"] = state ? state.securityAttributeNamespaceName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["validator"] = state ? state.validator : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["isRetired"] = state?.isRetired;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["securityAttributeNamespaceId"] = state?.securityAttributeNamespaceId;
+            resourceInputs["securityAttributeNamespaceName"] = state?.securityAttributeNamespaceName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["validator"] = state?.validator;
         } else {
             const args = argsOrState as SecurityAttributeArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.securityAttributeNamespaceId === undefined) && !opts.urn) {
+            if (args?.securityAttributeNamespaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityAttributeNamespaceId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["isRetired"] = args ? args.isRetired : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["securityAttributeNamespaceId"] = args ? args.securityAttributeNamespaceId : undefined;
-            resourceInputs["validator"] = args ? args.validator : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["isRetired"] = args?.isRetired;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["securityAttributeNamespaceId"] = args?.securityAttributeNamespaceId;
+            resourceInputs["validator"] = args?.validator;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["securityAttributeNamespaceName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

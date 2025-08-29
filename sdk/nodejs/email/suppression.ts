@@ -63,7 +63,7 @@ export class Suppression extends pulumi.CustomResource {
     /**
      * The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The recipient email address of the suppression.
      *
@@ -71,31 +71,31 @@ export class Suppression extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly emailAddress!: pulumi.Output<string>;
+    declare public readonly emailAddress: pulumi.Output<string>;
     /**
      * The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      */
-    public /*out*/ readonly errorDetail!: pulumi.Output<string>;
+    declare public /*out*/ readonly errorDetail: pulumi.Output<string>;
     /**
      * DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      */
-    public /*out*/ readonly errorSource!: pulumi.Output<string>;
+    declare public /*out*/ readonly errorSource: pulumi.Output<string>;
     /**
      * The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      */
-    public /*out*/ readonly messageId!: pulumi.Output<string>;
+    declare public /*out*/ readonly messageId: pulumi.Output<string>;
     /**
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
-    public /*out*/ readonly reason!: pulumi.Output<string>;
+    declare public /*out*/ readonly reason: pulumi.Output<string>;
     /**
      * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeLastSuppressed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSuppressed: pulumi.Output<string>;
 
     /**
      * Create a Suppression resource with the given unique name, arguments, and options.
@@ -110,24 +110,24 @@ export class Suppression extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SuppressionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["emailAddress"] = state ? state.emailAddress : undefined;
-            resourceInputs["errorDetail"] = state ? state.errorDetail : undefined;
-            resourceInputs["errorSource"] = state ? state.errorSource : undefined;
-            resourceInputs["messageId"] = state ? state.messageId : undefined;
-            resourceInputs["reason"] = state ? state.reason : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastSuppressed"] = state ? state.timeLastSuppressed : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["emailAddress"] = state?.emailAddress;
+            resourceInputs["errorDetail"] = state?.errorDetail;
+            resourceInputs["errorSource"] = state?.errorSource;
+            resourceInputs["messageId"] = state?.messageId;
+            resourceInputs["reason"] = state?.reason;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastSuppressed"] = state?.timeLastSuppressed;
         } else {
             const args = argsOrState as SuppressionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.emailAddress === undefined) && !opts.urn) {
+            if (args?.emailAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'emailAddress'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["emailAddress"] = args ? args.emailAddress : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["emailAddress"] = args?.emailAddress;
             resourceInputs["errorDetail"] = undefined /*out*/;
             resourceInputs["errorSource"] = undefined /*out*/;
             resourceInputs["messageId"] = undefined /*out*/;

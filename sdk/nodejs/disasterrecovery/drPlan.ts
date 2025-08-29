@@ -70,71 +70,71 @@ export class DrPlan extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public readonly drProtectionGroupId!: pulumi.Output<string>;
+    declare public readonly drProtectionGroupId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the DR plan's current state in more detail.
      */
-    public /*out*/ readonly lifeCycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifeCycleDetails: pulumi.Output<string>;
     /**
      * The current state of the DR plan.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubState: pulumi.Output<string>;
     /**
      * The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    public /*out*/ readonly peerDrProtectionGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerDrProtectionGroupId: pulumi.Output<string>;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    public /*out*/ readonly peerRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerRegion: pulumi.Output<string>;
     /**
      * The list of groups in this DR plan.
      */
-    public /*out*/ readonly planGroups!: pulumi.Output<outputs.DisasterRecovery.DrPlanPlanGroup[]>;
+    declare public /*out*/ readonly planGroups: pulumi.Output<outputs.DisasterRecovery.DrPlanPlanGroup[]>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      */
-    public readonly refreshTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly refreshTrigger: pulumi.Output<number | undefined>;
     /**
      * The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    public readonly sourcePlanId!: pulumi.Output<string>;
+    declare public readonly sourcePlanId: pulumi.Output<string>;
     /**
      * The current state of the DR plan.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The type of DR plan to be created.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
      *
@@ -142,7 +142,7 @@ export class DrPlan extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly verifyTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly verifyTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a DrPlan resource with the given unique name, arguments, and options.
@@ -157,43 +157,43 @@ export class DrPlan extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrPlanState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drProtectionGroupId"] = state ? state.drProtectionGroupId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifeCycleDetails"] = state ? state.lifeCycleDetails : undefined;
-            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
-            resourceInputs["peerDrProtectionGroupId"] = state ? state.peerDrProtectionGroupId : undefined;
-            resourceInputs["peerRegion"] = state ? state.peerRegion : undefined;
-            resourceInputs["planGroups"] = state ? state.planGroups : undefined;
-            resourceInputs["refreshTrigger"] = state ? state.refreshTrigger : undefined;
-            resourceInputs["sourcePlanId"] = state ? state.sourcePlanId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["verifyTrigger"] = state ? state.verifyTrigger : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drProtectionGroupId"] = state?.drProtectionGroupId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifeCycleDetails"] = state?.lifeCycleDetails;
+            resourceInputs["lifecycleSubState"] = state?.lifecycleSubState;
+            resourceInputs["peerDrProtectionGroupId"] = state?.peerDrProtectionGroupId;
+            resourceInputs["peerRegion"] = state?.peerRegion;
+            resourceInputs["planGroups"] = state?.planGroups;
+            resourceInputs["refreshTrigger"] = state?.refreshTrigger;
+            resourceInputs["sourcePlanId"] = state?.sourcePlanId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["verifyTrigger"] = state?.verifyTrigger;
         } else {
             const args = argsOrState as DrPlanArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.drProtectionGroupId === undefined) && !opts.urn) {
+            if (args?.drProtectionGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drProtectionGroupId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["drProtectionGroupId"] = args ? args.drProtectionGroupId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["refreshTrigger"] = args ? args.refreshTrigger : undefined;
-            resourceInputs["sourcePlanId"] = args ? args.sourcePlanId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["verifyTrigger"] = args ? args.verifyTrigger : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["drProtectionGroupId"] = args?.drProtectionGroupId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["refreshTrigger"] = args?.refreshTrigger;
+            resourceInputs["sourcePlanId"] = args?.sourcePlanId;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["verifyTrigger"] = args?.verifyTrigger;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifeCycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;

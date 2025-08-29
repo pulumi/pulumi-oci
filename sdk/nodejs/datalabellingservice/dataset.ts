@@ -102,51 +102,51 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalProperties: pulumi.Output<{[key: string]: string}>;
     /**
      * The annotation format name required for labeling records.
      */
-    public readonly annotationFormat!: pulumi.Output<string>;
+    declare public readonly annotationFormat: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment of the resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      */
-    public readonly datasetFormatDetails!: pulumi.Output<outputs.DataLabellingService.DatasetDatasetFormatDetails>;
+    declare public readonly datasetFormatDetails: pulumi.Output<outputs.DataLabellingService.DatasetDatasetFormatDetails>;
     /**
      * This allows the customer to specify the source of the dataset.
      */
-    public readonly datasetSourceDetails!: pulumi.Output<outputs.DataLabellingService.DatasetDatasetSourceDetails>;
+    declare public readonly datasetSourceDetails: pulumi.Output<outputs.DataLabellingService.DatasetDatasetSourceDetails>;
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user provided description of the dataset
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
-    public readonly initialImportDatasetConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    declare public readonly initialImportDatasetConfiguration: pulumi.Output<outputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
     /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
-    public readonly initialRecordGenerationConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
+    declare public readonly initialRecordGenerationConfiguration: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
     /**
      * An ordered collection of labels that are unique by name.
      */
-    public readonly labelSet!: pulumi.Output<outputs.DataLabellingService.DatasetLabelSet>;
+    declare public readonly labelSet: pulumi.Output<outputs.DataLabellingService.DatasetLabelSet>;
     /**
      * (Updatable) The labeling instructions for human labelers in rich text format
      *
@@ -154,27 +154,27 @@ export class Dataset extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly labelingInstructions!: pulumi.Output<string>;
+    declare public readonly labelingInstructions: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      */
-    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubstate: pulumi.Output<string>;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Dataset resource with the given unique name, arguments, and options.
@@ -189,53 +189,53 @@ export class Dataset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatasetState | undefined;
-            resourceInputs["additionalProperties"] = state ? state.additionalProperties : undefined;
-            resourceInputs["annotationFormat"] = state ? state.annotationFormat : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["datasetFormatDetails"] = state ? state.datasetFormatDetails : undefined;
-            resourceInputs["datasetSourceDetails"] = state ? state.datasetSourceDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["initialImportDatasetConfiguration"] = state ? state.initialImportDatasetConfiguration : undefined;
-            resourceInputs["initialRecordGenerationConfiguration"] = state ? state.initialRecordGenerationConfiguration : undefined;
-            resourceInputs["labelSet"] = state ? state.labelSet : undefined;
-            resourceInputs["labelingInstructions"] = state ? state.labelingInstructions : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubstate"] = state ? state.lifecycleSubstate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["additionalProperties"] = state?.additionalProperties;
+            resourceInputs["annotationFormat"] = state?.annotationFormat;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["datasetFormatDetails"] = state?.datasetFormatDetails;
+            resourceInputs["datasetSourceDetails"] = state?.datasetSourceDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["initialImportDatasetConfiguration"] = state?.initialImportDatasetConfiguration;
+            resourceInputs["initialRecordGenerationConfiguration"] = state?.initialRecordGenerationConfiguration;
+            resourceInputs["labelSet"] = state?.labelSet;
+            resourceInputs["labelingInstructions"] = state?.labelingInstructions;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubstate"] = state?.lifecycleSubstate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DatasetArgs | undefined;
-            if ((!args || args.annotationFormat === undefined) && !opts.urn) {
+            if (args?.annotationFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'annotationFormat'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.datasetFormatDetails === undefined) && !opts.urn) {
+            if (args?.datasetFormatDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'datasetFormatDetails'");
             }
-            if ((!args || args.datasetSourceDetails === undefined) && !opts.urn) {
+            if (args?.datasetSourceDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'datasetSourceDetails'");
             }
-            if ((!args || args.labelSet === undefined) && !opts.urn) {
+            if (args?.labelSet === undefined && !opts.urn) {
                 throw new Error("Missing required property 'labelSet'");
             }
-            resourceInputs["annotationFormat"] = args ? args.annotationFormat : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["datasetFormatDetails"] = args ? args.datasetFormatDetails : undefined;
-            resourceInputs["datasetSourceDetails"] = args ? args.datasetSourceDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["initialImportDatasetConfiguration"] = args ? args.initialImportDatasetConfiguration : undefined;
-            resourceInputs["initialRecordGenerationConfiguration"] = args ? args.initialRecordGenerationConfiguration : undefined;
-            resourceInputs["labelSet"] = args ? args.labelSet : undefined;
-            resourceInputs["labelingInstructions"] = args ? args.labelingInstructions : undefined;
+            resourceInputs["annotationFormat"] = args?.annotationFormat;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["datasetFormatDetails"] = args?.datasetFormatDetails;
+            resourceInputs["datasetSourceDetails"] = args?.datasetSourceDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["initialImportDatasetConfiguration"] = args?.initialImportDatasetConfiguration;
+            resourceInputs["initialRecordGenerationConfiguration"] = args?.initialRecordGenerationConfiguration;
+            resourceInputs["labelSet"] = args?.labelSet;
+            resourceInputs["labelingInstructions"] = args?.labelingInstructions;
             resourceInputs["additionalProperties"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubstate"] = undefined /*out*/;

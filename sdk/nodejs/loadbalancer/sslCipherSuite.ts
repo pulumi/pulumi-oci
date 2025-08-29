@@ -58,11 +58,11 @@ export class SslCipherSuite extends pulumi.CustomResource {
         return obj['__pulumiType'] === SslCipherSuite.__pulumiType;
     }
 
-    public readonly ciphers!: pulumi.Output<string[]>;
+    declare public readonly ciphers: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      *
@@ -85,8 +85,8 @@ export class SslCipherSuite extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a SslCipherSuite resource with the given unique name, arguments, and options.
@@ -101,21 +101,21 @@ export class SslCipherSuite extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SslCipherSuiteState | undefined;
-            resourceInputs["ciphers"] = state ? state.ciphers : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["ciphers"] = state?.ciphers;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as SslCipherSuiteArgs | undefined;
-            if ((!args || args.ciphers === undefined) && !opts.urn) {
+            if (args?.ciphers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ciphers'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            resourceInputs["ciphers"] = args ? args.ciphers : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["ciphers"] = args?.ciphers;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["name"] = args?.name;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

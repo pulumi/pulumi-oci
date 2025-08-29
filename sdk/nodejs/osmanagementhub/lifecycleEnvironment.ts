@@ -95,59 +95,59 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
     /**
      * The CPU architecture of the managed instances in the lifecycle environment.
      */
-    public readonly archType!: pulumi.Output<string>;
+    declare public readonly archType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
      */
-    public readonly location!: pulumi.Output<string>;
+    declare public readonly location: pulumi.Output<string>;
     /**
      * The list of managed instances associated with the lifecycle stage.
      */
-    public /*out*/ readonly managedInstanceIds!: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId[]>;
+    declare public /*out*/ readonly managedInstanceIds: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId[]>;
     /**
      * The operating system of the managed instances in the lifecycle environment.
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    declare public readonly osFamily: pulumi.Output<string>;
     /**
      * (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      */
-    public readonly stages!: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentStage[]>;
+    declare public readonly stages: pulumi.Output<outputs.OsManagementHub.LifecycleEnvironmentStage[]>;
     /**
      * The current state of the lifecycle environment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeModified: pulumi.Output<string>;
     /**
      * The vendor of the operating system used by the managed instances in the lifecycle environment.
      *
@@ -155,7 +155,7 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    declare public readonly vendorName: pulumi.Output<string>;
 
     /**
      * Create a LifecycleEnvironment resource with the given unique name, arguments, and options.
@@ -170,51 +170,51 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LifecycleEnvironmentState | undefined;
-            resourceInputs["archType"] = state ? state.archType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["managedInstanceIds"] = state ? state.managedInstanceIds : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["stages"] = state ? state.stages : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeModified"] = state ? state.timeModified : undefined;
-            resourceInputs["vendorName"] = state ? state.vendorName : undefined;
+            resourceInputs["archType"] = state?.archType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["managedInstanceIds"] = state?.managedInstanceIds;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["stages"] = state?.stages;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeModified"] = state?.timeModified;
+            resourceInputs["vendorName"] = state?.vendorName;
         } else {
             const args = argsOrState as LifecycleEnvironmentArgs | undefined;
-            if ((!args || args.archType === undefined) && !opts.urn) {
+            if (args?.archType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'archType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.osFamily === undefined) && !opts.urn) {
+            if (args?.osFamily === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osFamily'");
             }
-            if ((!args || args.stages === undefined) && !opts.urn) {
+            if (args?.stages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'stages'");
             }
-            if ((!args || args.vendorName === undefined) && !opts.urn) {
+            if (args?.vendorName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vendorName'");
             }
-            resourceInputs["archType"] = args ? args.archType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["location"] = args ? args.location : undefined;
-            resourceInputs["osFamily"] = args ? args.osFamily : undefined;
-            resourceInputs["stages"] = args ? args.stages : undefined;
-            resourceInputs["vendorName"] = args ? args.vendorName : undefined;
+            resourceInputs["archType"] = args?.archType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["location"] = args?.location;
+            resourceInputs["osFamily"] = args?.osFamily;
+            resourceInputs["stages"] = args?.stages;
+            resourceInputs["vendorName"] = args?.vendorName;
             resourceInputs["managedInstanceIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

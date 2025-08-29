@@ -64,59 +64,59 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
      * Backup destination details
      */
-    public readonly backupDestinationDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
+    declare public readonly backupDestinationDetails: pulumi.Output<outputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The size of the database in terabytes at the time the backup was taken.
      */
-    public /*out*/ readonly databaseSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly databaseSizeInTbs: pulumi.Output<number>;
     /**
      * A valid Oracle Database version for Autonomous Database.
      */
-    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbVersion: pulumi.Output<string>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
-    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAutomatic: pulumi.Output<boolean>;
     /**
      * Indicates whether the backup is long-term
      */
-    public readonly isLongTermBackup!: pulumi.Output<boolean>;
+    declare public readonly isLongTermBackup: pulumi.Output<boolean>;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
-    public /*out*/ readonly isRestorable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRestorable: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreId: pulumi.Output<string>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyStoreWalletName: pulumi.Output<string>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -124,35 +124,35 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionPeriodInDays!: pulumi.Output<number>;
+    declare public readonly retentionPeriodInDays: pulumi.Output<number>;
     /**
      * The backup size in terrabytes (TB).
      */
-    public /*out*/ readonly sizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly sizeInTbs: pulumi.Output<number>;
     /**
      * The current state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Timestamp until when the backup will be available
      */
-    public /*out*/ readonly timeAvailableTill!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAvailableTill: pulumi.Output<string>;
     /**
      * The date and time the backup completed.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEnded: pulumi.Output<string>;
     /**
      * The date and time the backup started.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * The type of backup.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vaultId: pulumi.Output<string>;
 
     /**
      * Create a AutonomousDatabaseBackup resource with the given unique name, arguments, and options.
@@ -167,38 +167,38 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseBackupState | undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["backupDestinationDetails"] = state ? state.backupDestinationDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseSizeInTbs"] = state ? state.databaseSizeInTbs : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["isAutomatic"] = state ? state.isAutomatic : undefined;
-            resourceInputs["isLongTermBackup"] = state ? state.isLongTermBackup : undefined;
-            resourceInputs["isRestorable"] = state ? state.isRestorable : undefined;
-            resourceInputs["keyStoreId"] = state ? state.keyStoreId : undefined;
-            resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["retentionPeriodInDays"] = state ? state.retentionPeriodInDays : undefined;
-            resourceInputs["sizeInTbs"] = state ? state.sizeInTbs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeAvailableTill"] = state ? state.timeAvailableTill : undefined;
-            resourceInputs["timeEnded"] = state ? state.timeEnded : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["backupDestinationDetails"] = state?.backupDestinationDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseSizeInTbs"] = state?.databaseSizeInTbs;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["isAutomatic"] = state?.isAutomatic;
+            resourceInputs["isLongTermBackup"] = state?.isLongTermBackup;
+            resourceInputs["isRestorable"] = state?.isRestorable;
+            resourceInputs["keyStoreId"] = state?.keyStoreId;
+            resourceInputs["keyStoreWalletName"] = state?.keyStoreWalletName;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["retentionPeriodInDays"] = state?.retentionPeriodInDays;
+            resourceInputs["sizeInTbs"] = state?.sizeInTbs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeAvailableTill"] = state?.timeAvailableTill;
+            resourceInputs["timeEnded"] = state?.timeEnded;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vaultId"] = state?.vaultId;
         } else {
             const args = argsOrState as AutonomousDatabaseBackupArgs | undefined;
-            if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["backupDestinationDetails"] = args ? args.backupDestinationDetails : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["isLongTermBackup"] = args ? args.isLongTermBackup : undefined;
-            resourceInputs["retentionPeriodInDays"] = args ? args.retentionPeriodInDays : undefined;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["backupDestinationDetails"] = args?.backupDestinationDetails;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["isLongTermBackup"] = args?.isLongTermBackup;
+            resourceInputs["retentionPeriodInDays"] = args?.retentionPeriodInDays;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbVersion"] = undefined /*out*/;

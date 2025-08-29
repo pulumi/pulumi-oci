@@ -73,51 +73,51 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      */
-    public readonly endpointType!: pulumi.Output<string>;
+    declare public readonly endpointType: pulumi.Output<string>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
-    public readonly forwardingAddress!: pulumi.Output<string>;
+    declare public readonly forwardingAddress: pulumi.Output<string>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
-    public readonly isForwarding!: pulumi.Output<boolean>;
+    declare public readonly isForwarding: pulumi.Output<boolean>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      */
-    public readonly isListening!: pulumi.Output<boolean>;
+    declare public readonly isListening: pulumi.Output<boolean>;
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      */
-    public readonly listeningAddress!: pulumi.Output<string>;
+    declare public readonly listeningAddress: pulumi.Output<string>;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the target resolver.
      */
-    public readonly resolverId!: pulumi.Output<string>;
+    declare public readonly resolverId: pulumi.Output<string>;
     /**
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *
@@ -125,15 +125,15 @@ export class ResolverEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ResolverEndpoint resource with the given unique name, arguments, and options.
@@ -148,45 +148,45 @@ export class ResolverEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResolverEndpointState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["endpointType"] = state ? state.endpointType : undefined;
-            resourceInputs["forwardingAddress"] = state ? state.forwardingAddress : undefined;
-            resourceInputs["isForwarding"] = state ? state.isForwarding : undefined;
-            resourceInputs["isListening"] = state ? state.isListening : undefined;
-            resourceInputs["listeningAddress"] = state ? state.listeningAddress : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["resolverId"] = state ? state.resolverId : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["endpointType"] = state?.endpointType;
+            resourceInputs["forwardingAddress"] = state?.forwardingAddress;
+            resourceInputs["isForwarding"] = state?.isForwarding;
+            resourceInputs["isListening"] = state?.isListening;
+            resourceInputs["listeningAddress"] = state?.listeningAddress;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["resolverId"] = state?.resolverId;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ResolverEndpointArgs | undefined;
-            if ((!args || args.isForwarding === undefined) && !opts.urn) {
+            if (args?.isForwarding === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isForwarding'");
             }
-            if ((!args || args.isListening === undefined) && !opts.urn) {
+            if (args?.isListening === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isListening'");
             }
-            if ((!args || args.resolverId === undefined) && !opts.urn) {
+            if (args?.resolverId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resolverId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["endpointType"] = args ? args.endpointType : undefined;
-            resourceInputs["forwardingAddress"] = args ? args.forwardingAddress : undefined;
-            resourceInputs["isForwarding"] = args ? args.isForwarding : undefined;
-            resourceInputs["isListening"] = args ? args.isListening : undefined;
-            resourceInputs["listeningAddress"] = args ? args.listeningAddress : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["resolverId"] = args ? args.resolverId : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["endpointType"] = args?.endpointType;
+            resourceInputs["forwardingAddress"] = args?.forwardingAddress;
+            resourceInputs["isForwarding"] = args?.isForwarding;
+            resourceInputs["isListening"] = args?.isListening;
+            resourceInputs["listeningAddress"] = args?.listeningAddress;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["resolverId"] = args?.resolverId;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["self"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

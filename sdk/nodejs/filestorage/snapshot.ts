@@ -76,36 +76,36 @@ export class Snapshot extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The time when this snapshot will be deleted.
      */
-    public readonly expirationTime!: pulumi.Output<string>;
+    declare public readonly expirationTime: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
      */
-    public readonly fileSystemId!: pulumi.Output<string>;
+    declare public readonly fileSystemId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
      */
-    public /*out*/ readonly filesystemSnapshotPolicyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly filesystemSnapshotPolicyId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    public /*out*/ readonly isCloneSource!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCloneSource: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.SnapshotLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.SnapshotLock[]>;
     /**
      * Name of the snapshot. This value is immutable. It must also be unique with respect to all other non-DELETED snapshots on the associated file system.
      *
@@ -117,34 +117,34 @@ export class Snapshot extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    public /*out*/ readonly provenanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly provenanceId: pulumi.Output<string>;
     /**
      * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
      * * If the snapshot is created in the original file system directory.
      * * If the snapshot is cloned from a file system.
      * * If the snapshot is replicated from a file system.
      */
-    public /*out*/ readonly snapshotTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotTime: pulumi.Output<string>;
     /**
      * Specifies the generation type of the snapshot.
      */
-    public /*out*/ readonly snapshotType!: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotType: pulumi.Output<string>;
     /**
      * The current state of the snapshot.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Snapshot resource with the given unique name, arguments, and options.
@@ -159,34 +159,34 @@ export class Snapshot extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SnapshotState | undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["expirationTime"] = state ? state.expirationTime : undefined;
-            resourceInputs["fileSystemId"] = state ? state.fileSystemId : undefined;
-            resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCloneSource"] = state ? state.isCloneSource : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["provenanceId"] = state ? state.provenanceId : undefined;
-            resourceInputs["snapshotTime"] = state ? state.snapshotTime : undefined;
-            resourceInputs["snapshotType"] = state ? state.snapshotType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["expirationTime"] = state?.expirationTime;
+            resourceInputs["fileSystemId"] = state?.fileSystemId;
+            resourceInputs["filesystemSnapshotPolicyId"] = state?.filesystemSnapshotPolicyId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCloneSource"] = state?.isCloneSource;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["provenanceId"] = state?.provenanceId;
+            resourceInputs["snapshotTime"] = state?.snapshotTime;
+            resourceInputs["snapshotType"] = state?.snapshotType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as SnapshotArgs | undefined;
-            if ((!args || args.fileSystemId === undefined) && !opts.urn) {
+            if (args?.fileSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileSystemId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["expirationTime"] = args ? args.expirationTime : undefined;
-            resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["expirationTime"] = args?.expirationTime;
+            resourceInputs["fileSystemId"] = args?.fileSystemId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["name"] = args?.name;
             resourceInputs["filesystemSnapshotPolicyId"] = undefined /*out*/;
             resourceInputs["isCloneSource"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

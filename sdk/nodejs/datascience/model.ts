@@ -99,113 +99,113 @@ export class Model extends pulumi.CustomResource {
     /**
      * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
      */
-    public readonly artifactContentDisposition!: pulumi.Output<string>;
+    declare public readonly artifactContentDisposition: pulumi.Output<string>;
     /**
      * The content length of the model_artifact.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly artifactContentLength!: pulumi.Output<string>;
-    public /*out*/ readonly artifactContentMd5!: pulumi.Output<string>;
-    public /*out*/ readonly artifactLastModified!: pulumi.Output<string>;
+    declare public readonly artifactContentLength: pulumi.Output<string>;
+    declare public /*out*/ readonly artifactContentMd5: pulumi.Output<string>;
+    declare public /*out*/ readonly artifactLastModified: pulumi.Output<string>;
     /**
      * Backup operation details of the model.
      */
-    public /*out*/ readonly backupOperationDetails!: pulumi.Output<outputs.DataScience.ModelBackupOperationDetail[]>;
+    declare public /*out*/ readonly backupOperationDetails: pulumi.Output<outputs.DataScience.ModelBackupOperationDetail[]>;
     /**
      * (Updatable) Back up setting details of the model.
      */
-    public readonly backupSetting!: pulumi.Output<outputs.DataScience.ModelBackupSetting>;
+    declare public readonly backupSetting: pulumi.Output<outputs.DataScience.ModelBackupSetting>;
     /**
      * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) An array of custom metadata details for the model.
      */
-    public readonly customMetadataLists!: pulumi.Output<outputs.DataScience.ModelCustomMetadataList[]>;
+    declare public readonly customMetadataLists: pulumi.Output<outputs.DataScience.ModelCustomMetadataList[]>;
     /**
      * (Updatable) An array of defined metadata details for the model.
      */
-    public readonly definedMetadataLists!: pulumi.Output<outputs.DataScience.ModelDefinedMetadataList[]>;
+    declare public readonly definedMetadataLists: pulumi.Output<outputs.DataScience.ModelDefinedMetadataList[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A short description of the model.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly emptyModel!: pulumi.Output<boolean>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public /*out*/ readonly emptyModel: pulumi.Output<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Input schema file content in String format
      */
-    public readonly inputSchema!: pulumi.Output<string>;
+    declare public readonly inputSchema: pulumi.Output<string>;
     /**
      * Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
      */
-    public /*out*/ readonly isModelByReference!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isModelByReference: pulumi.Output<boolean>;
     /**
      * Details about the lifecycle state of the model.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in "Creating" state until its artifact is uploaded.
      */
-    public readonly modelArtifact!: pulumi.Output<string>;
+    declare public readonly modelArtifact: pulumi.Output<string>;
     /**
      * The OCID of the model version set that the model is associated to.
      */
-    public readonly modelVersionSetId!: pulumi.Output<string>;
+    declare public readonly modelVersionSetId: pulumi.Output<string>;
     /**
      * The name of the model version set that the model is associated to.
      */
-    public readonly modelVersionSetName!: pulumi.Output<string>;
+    declare public readonly modelVersionSetName: pulumi.Output<string>;
     /**
      * Output schema file content in String format
      */
-    public readonly outputSchema!: pulumi.Output<string>;
+    declare public readonly outputSchema: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * Retention operation details for the model.
      */
-    public /*out*/ readonly retentionOperationDetails!: pulumi.Output<outputs.DataScience.ModelRetentionOperationDetail[]>;
+    declare public /*out*/ readonly retentionOperationDetails: pulumi.Output<outputs.DataScience.ModelRetentionOperationDetail[]>;
     /**
      * (Updatable) Retention setting details of the model.
      */
-    public readonly retentionSetting!: pulumi.Output<outputs.DataScience.ModelRetentionSetting>;
+    declare public readonly retentionSetting: pulumi.Output<outputs.DataScience.ModelRetentionSetting>;
     /**
      * The state of the model.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
      */
-    public readonly versionLabel!: pulumi.Output<string>;
+    declare public readonly versionLabel: pulumi.Output<string>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.
@@ -220,68 +220,68 @@ export class Model extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelState | undefined;
-            resourceInputs["artifactContentDisposition"] = state ? state.artifactContentDisposition : undefined;
-            resourceInputs["artifactContentLength"] = state ? state.artifactContentLength : undefined;
-            resourceInputs["artifactContentMd5"] = state ? state.artifactContentMd5 : undefined;
-            resourceInputs["artifactLastModified"] = state ? state.artifactLastModified : undefined;
-            resourceInputs["backupOperationDetails"] = state ? state.backupOperationDetails : undefined;
-            resourceInputs["backupSetting"] = state ? state.backupSetting : undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["customMetadataLists"] = state ? state.customMetadataLists : undefined;
-            resourceInputs["definedMetadataLists"] = state ? state.definedMetadataLists : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["emptyModel"] = state ? state.emptyModel : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inputSchema"] = state ? state.inputSchema : undefined;
-            resourceInputs["isModelByReference"] = state ? state.isModelByReference : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["modelArtifact"] = state ? state.modelArtifact : undefined;
-            resourceInputs["modelVersionSetId"] = state ? state.modelVersionSetId : undefined;
-            resourceInputs["modelVersionSetName"] = state ? state.modelVersionSetName : undefined;
-            resourceInputs["outputSchema"] = state ? state.outputSchema : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["retentionOperationDetails"] = state ? state.retentionOperationDetails : undefined;
-            resourceInputs["retentionSetting"] = state ? state.retentionSetting : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["versionLabel"] = state ? state.versionLabel : undefined;
+            resourceInputs["artifactContentDisposition"] = state?.artifactContentDisposition;
+            resourceInputs["artifactContentLength"] = state?.artifactContentLength;
+            resourceInputs["artifactContentMd5"] = state?.artifactContentMd5;
+            resourceInputs["artifactLastModified"] = state?.artifactLastModified;
+            resourceInputs["backupOperationDetails"] = state?.backupOperationDetails;
+            resourceInputs["backupSetting"] = state?.backupSetting;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["customMetadataLists"] = state?.customMetadataLists;
+            resourceInputs["definedMetadataLists"] = state?.definedMetadataLists;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["emptyModel"] = state?.emptyModel;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inputSchema"] = state?.inputSchema;
+            resourceInputs["isModelByReference"] = state?.isModelByReference;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["modelArtifact"] = state?.modelArtifact;
+            resourceInputs["modelVersionSetId"] = state?.modelVersionSetId;
+            resourceInputs["modelVersionSetName"] = state?.modelVersionSetName;
+            resourceInputs["outputSchema"] = state?.outputSchema;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["retentionOperationDetails"] = state?.retentionOperationDetails;
+            resourceInputs["retentionSetting"] = state?.retentionSetting;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["versionLabel"] = state?.versionLabel;
         } else {
             const args = argsOrState as ModelArgs | undefined;
-            if ((!args || args.artifactContentLength === undefined) && !opts.urn) {
+            if (args?.artifactContentLength === undefined && !opts.urn) {
                 throw new Error("Missing required property 'artifactContentLength'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.modelArtifact === undefined) && !opts.urn) {
+            if (args?.modelArtifact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelArtifact'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["artifactContentDisposition"] = args ? args.artifactContentDisposition : undefined;
-            resourceInputs["artifactContentLength"] = args ? args.artifactContentLength : undefined;
-            resourceInputs["backupSetting"] = args ? args.backupSetting : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["customMetadataLists"] = args ? args.customMetadataLists : undefined;
-            resourceInputs["definedMetadataLists"] = args ? args.definedMetadataLists : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inputSchema"] = args ? args.inputSchema : undefined;
-            resourceInputs["modelArtifact"] = args ? args.modelArtifact : undefined;
-            resourceInputs["modelVersionSetId"] = args ? args.modelVersionSetId : undefined;
-            resourceInputs["modelVersionSetName"] = args ? args.modelVersionSetName : undefined;
-            resourceInputs["outputSchema"] = args ? args.outputSchema : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["retentionSetting"] = args ? args.retentionSetting : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["versionLabel"] = args ? args.versionLabel : undefined;
+            resourceInputs["artifactContentDisposition"] = args?.artifactContentDisposition;
+            resourceInputs["artifactContentLength"] = args?.artifactContentLength;
+            resourceInputs["backupSetting"] = args?.backupSetting;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["customMetadataLists"] = args?.customMetadataLists;
+            resourceInputs["definedMetadataLists"] = args?.definedMetadataLists;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inputSchema"] = args?.inputSchema;
+            resourceInputs["modelArtifact"] = args?.modelArtifact;
+            resourceInputs["modelVersionSetId"] = args?.modelVersionSetId;
+            resourceInputs["modelVersionSetName"] = args?.modelVersionSetName;
+            resourceInputs["outputSchema"] = args?.outputSchema;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["retentionSetting"] = args?.retentionSetting;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["versionLabel"] = args?.versionLabel;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
             resourceInputs["artifactLastModified"] = undefined /*out*/;
             resourceInputs["backupOperationDetails"] = undefined /*out*/;

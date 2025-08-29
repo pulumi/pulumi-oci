@@ -70,43 +70,43 @@ export class EkmsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * CABundle to validate TLS certificate of the external key manager system in PEM format
      */
-    public readonly caBundle!: pulumi.Output<string>;
+    declare public readonly caBundle: pulumi.Output<string>;
     /**
      * Compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Display name of the EKMS private endpoint resource being created.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * External private IP to connect to from this EKMS private endpoint
      */
-    public readonly externalKeyManagerIp!: pulumi.Output<string>;
+    declare public readonly externalKeyManagerIp: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The port of the external key manager system
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
      */
-    public /*out*/ readonly privateEndpointIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpointIp: pulumi.Output<string>;
     /**
      * The current state of the EKMS private endpoint resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of subnet in which the EKMS private endpoint is to be created 
      *
@@ -114,15 +114,15 @@ export class EkmsPrivateEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a EkmsPrivateEndpoint resource with the given unique name, arguments, and options.
@@ -137,44 +137,44 @@ export class EkmsPrivateEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EkmsPrivateEndpointState | undefined;
-            resourceInputs["caBundle"] = state ? state.caBundle : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalKeyManagerIp"] = state ? state.externalKeyManagerIp : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["caBundle"] = state?.caBundle;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalKeyManagerIp"] = state?.externalKeyManagerIp;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["privateEndpointIp"] = state?.privateEndpointIp;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as EkmsPrivateEndpointArgs | undefined;
-            if ((!args || args.caBundle === undefined) && !opts.urn) {
+            if (args?.caBundle === undefined && !opts.urn) {
                 throw new Error("Missing required property 'caBundle'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.externalKeyManagerIp === undefined) && !opts.urn) {
+            if (args?.externalKeyManagerIp === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalKeyManagerIp'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["caBundle"] = args ? args.caBundle : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalKeyManagerIp"] = args ? args.externalKeyManagerIp : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["caBundle"] = args?.caBundle;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalKeyManagerIp"] = args?.externalKeyManagerIp;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateEndpointIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

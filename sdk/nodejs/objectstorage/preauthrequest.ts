@@ -65,49 +65,49 @@ export class Preauthrequest extends pulumi.CustomResource {
     /**
      * The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
      */
-    public readonly accessType!: pulumi.Output<string>;
+    declare public readonly accessType: pulumi.Output<string>;
     /**
      * The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
      */
-    public /*out*/ readonly accessUri!: pulumi.Output<string>;
+    declare public /*out*/ readonly accessUri: pulumi.Output<string>;
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      */
-    public readonly bucketListingAction!: pulumi.Output<string>;
+    declare public readonly bucketListingAction: pulumi.Output<string>;
     /**
      * The full Path for the object.
      */
-    public /*out*/ readonly fullPath!: pulumi.Output<string>;
+    declare public /*out*/ readonly fullPath: pulumi.Output<string>;
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Object Storage namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      *
      * @deprecated The 'object' field has been deprecated. Please use 'object_name' instead.
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      */
-    public readonly objectName!: pulumi.Output<string>;
+    declare public readonly objectName: pulumi.Output<string>;
     /**
      * The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      */
-    public /*out*/ readonly parId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parId: pulumi.Output<string>;
     /**
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
      *
@@ -115,7 +115,7 @@ export class Preauthrequest extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeExpires!: pulumi.Output<string>;
+    declare public readonly timeExpires: pulumi.Output<string>;
 
     /**
      * Create a Preauthrequest resource with the given unique name, arguments, and options.
@@ -130,40 +130,40 @@ export class Preauthrequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PreauthrequestState | undefined;
-            resourceInputs["accessType"] = state ? state.accessType : undefined;
-            resourceInputs["accessUri"] = state ? state.accessUri : undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["bucketListingAction"] = state ? state.bucketListingAction : undefined;
-            resourceInputs["fullPath"] = state ? state.fullPath : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["objectName"] = state ? state.objectName : undefined;
-            resourceInputs["parId"] = state ? state.parId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeExpires"] = state ? state.timeExpires : undefined;
+            resourceInputs["accessType"] = state?.accessType;
+            resourceInputs["accessUri"] = state?.accessUri;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["bucketListingAction"] = state?.bucketListingAction;
+            resourceInputs["fullPath"] = state?.fullPath;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["objectName"] = state?.objectName;
+            resourceInputs["parId"] = state?.parId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeExpires"] = state?.timeExpires;
         } else {
             const args = argsOrState as PreauthrequestArgs | undefined;
-            if ((!args || args.accessType === undefined) && !opts.urn) {
+            if (args?.accessType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'accessType'");
             }
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.timeExpires === undefined) && !opts.urn) {
+            if (args?.timeExpires === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeExpires'");
             }
-            resourceInputs["accessType"] = args ? args.accessType : undefined;
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["bucketListingAction"] = args ? args.bucketListingAction : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
-            resourceInputs["objectName"] = args ? args.objectName : undefined;
-            resourceInputs["timeExpires"] = args ? args.timeExpires : undefined;
+            resourceInputs["accessType"] = args?.accessType;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["bucketListingAction"] = args?.bucketListingAction;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["object"] = args?.object;
+            resourceInputs["objectName"] = args?.objectName;
+            resourceInputs["timeExpires"] = args?.timeExpires;
             resourceInputs["accessUri"] = undefined /*out*/;
             resourceInputs["fullPath"] = undefined /*out*/;
             resourceInputs["parId"] = undefined /*out*/;

@@ -69,31 +69,31 @@ export class DrgRouteTable extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
      */
-    public readonly drgId!: pulumi.Output<string>;
+    declare public readonly drgId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
      */
-    public readonly importDrgRouteDistributionId!: pulumi.Output<string>;
+    declare public readonly importDrgRouteDistributionId: pulumi.Output<string>;
     /**
      * (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
      */
-    public readonly isEcmpEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEcmpEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
      *
@@ -101,15 +101,15 @@ export class DrgRouteTable extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly removeImportTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly removeImportTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The DRG route table's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a DrgRouteTable resource with the given unique name, arguments, and options.
@@ -124,28 +124,28 @@ export class DrgRouteTable extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrgRouteTableState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drgId"] = state ? state.drgId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["importDrgRouteDistributionId"] = state ? state.importDrgRouteDistributionId : undefined;
-            resourceInputs["isEcmpEnabled"] = state ? state.isEcmpEnabled : undefined;
-            resourceInputs["removeImportTrigger"] = state ? state.removeImportTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["importDrgRouteDistributionId"] = state?.importDrgRouteDistributionId;
+            resourceInputs["isEcmpEnabled"] = state?.isEcmpEnabled;
+            resourceInputs["removeImportTrigger"] = state?.removeImportTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as DrgRouteTableArgs | undefined;
-            if ((!args || args.drgId === undefined) && !opts.urn) {
+            if (args?.drgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["drgId"] = args ? args.drgId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["importDrgRouteDistributionId"] = args ? args.importDrgRouteDistributionId : undefined;
-            resourceInputs["isEcmpEnabled"] = args ? args.isEcmpEnabled : undefined;
-            resourceInputs["removeImportTrigger"] = args ? args.removeImportTrigger : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["importDrgRouteDistributionId"] = args?.importDrgRouteDistributionId;
+            resourceInputs["isEcmpEnabled"] = args?.isEcmpEnabled;
+            resourceInputs["removeImportTrigger"] = args?.removeImportTrigger;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

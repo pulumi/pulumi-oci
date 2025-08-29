@@ -48,39 +48,39 @@ export class ComputeImageCapabilitySchema extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The ocid of the compute global image capability schema
      */
-    public /*out*/ readonly computeGlobalImageCapabilitySchemaId!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeGlobalImageCapabilitySchemaId: pulumi.Output<string>;
     /**
      * The name of the compute global image capability schema version
      */
-    public readonly computeGlobalImageCapabilitySchemaVersionName!: pulumi.Output<string>;
+    declare public readonly computeGlobalImageCapabilitySchemaVersionName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The ocid of the image
      */
-    public readonly imageId!: pulumi.Output<string>;
+    declare public readonly imageId: pulumi.Output<string>;
     /**
      * (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
      */
-    public readonly schemaData!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly schemaData: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a ComputeImageCapabilitySchema resource with the given unique name, arguments, and options.
@@ -95,36 +95,36 @@ export class ComputeImageCapabilitySchema extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ComputeImageCapabilitySchemaState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeGlobalImageCapabilitySchemaId"] = state ? state.computeGlobalImageCapabilitySchemaId : undefined;
-            resourceInputs["computeGlobalImageCapabilitySchemaVersionName"] = state ? state.computeGlobalImageCapabilitySchemaVersionName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageId"] = state ? state.imageId : undefined;
-            resourceInputs["schemaData"] = state ? state.schemaData : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeGlobalImageCapabilitySchemaId"] = state?.computeGlobalImageCapabilitySchemaId;
+            resourceInputs["computeGlobalImageCapabilitySchemaVersionName"] = state?.computeGlobalImageCapabilitySchemaVersionName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageId"] = state?.imageId;
+            resourceInputs["schemaData"] = state?.schemaData;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ComputeImageCapabilitySchemaArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.computeGlobalImageCapabilitySchemaVersionName === undefined) && !opts.urn) {
+            if (args?.computeGlobalImageCapabilitySchemaVersionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'computeGlobalImageCapabilitySchemaVersionName'");
             }
-            if ((!args || args.imageId === undefined) && !opts.urn) {
+            if (args?.imageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'imageId'");
             }
-            if ((!args || args.schemaData === undefined) && !opts.urn) {
+            if (args?.schemaData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaData'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeGlobalImageCapabilitySchemaVersionName"] = args ? args.computeGlobalImageCapabilitySchemaVersionName : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["imageId"] = args ? args.imageId : undefined;
-            resourceInputs["schemaData"] = args ? args.schemaData : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeGlobalImageCapabilitySchemaVersionName"] = args?.computeGlobalImageCapabilitySchemaVersionName;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["imageId"] = args?.imageId;
+            resourceInputs["schemaData"] = args?.schemaData;
             resourceInputs["computeGlobalImageCapabilitySchemaId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

@@ -69,43 +69,43 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCrossTenancyPeering: pulumi.Output<boolean>;
     /**
      * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      */
-    public /*out*/ readonly peerAdvertisedCidr!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerAdvertisedCidr: pulumi.Output<string>;
     /**
      * The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      */
-    public /*out*/ readonly peerAdvertisedCidrDetails!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly peerAdvertisedCidrDetails: pulumi.Output<string[]>;
     /**
      * The OCID of the LPG you want to peer with. Specifying a peerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      */
-    public readonly peerId!: pulumi.Output<string>;
+    declare public readonly peerId: pulumi.Output<string>;
     /**
      * Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      */
-    public /*out*/ readonly peeringStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly peeringStatus: pulumi.Output<string>;
     /**
      * Additional information regarding the peering status, if applicable.
      */
-    public /*out*/ readonly peeringStatusDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly peeringStatusDetails: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
      *
@@ -113,15 +113,15 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
      *
      * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    declare public readonly routeTableId: pulumi.Output<string>;
     /**
      * The LPG's current lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
      *
@@ -129,7 +129,7 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a LocalPeeringGateway resource with the given unique name, arguments, and options.
@@ -144,35 +144,35 @@ export class LocalPeeringGateway extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LocalPeeringGatewayState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCrossTenancyPeering"] = state ? state.isCrossTenancyPeering : undefined;
-            resourceInputs["peerAdvertisedCidr"] = state ? state.peerAdvertisedCidr : undefined;
-            resourceInputs["peerAdvertisedCidrDetails"] = state ? state.peerAdvertisedCidrDetails : undefined;
-            resourceInputs["peerId"] = state ? state.peerId : undefined;
-            resourceInputs["peeringStatus"] = state ? state.peeringStatus : undefined;
-            resourceInputs["peeringStatusDetails"] = state ? state.peeringStatusDetails : undefined;
-            resourceInputs["routeTableId"] = state ? state.routeTableId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCrossTenancyPeering"] = state?.isCrossTenancyPeering;
+            resourceInputs["peerAdvertisedCidr"] = state?.peerAdvertisedCidr;
+            resourceInputs["peerAdvertisedCidrDetails"] = state?.peerAdvertisedCidrDetails;
+            resourceInputs["peerId"] = state?.peerId;
+            resourceInputs["peeringStatus"] = state?.peeringStatus;
+            resourceInputs["peeringStatusDetails"] = state?.peeringStatusDetails;
+            resourceInputs["routeTableId"] = state?.routeTableId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as LocalPeeringGatewayArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["peerId"] = args ? args.peerId : undefined;
-            resourceInputs["routeTableId"] = args ? args.routeTableId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["peerId"] = args?.peerId;
+            resourceInputs["routeTableId"] = args?.routeTableId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["isCrossTenancyPeering"] = undefined /*out*/;
             resourceInputs["peerAdvertisedCidr"] = undefined /*out*/;
             resourceInputs["peerAdvertisedCidrDetails"] = undefined /*out*/;

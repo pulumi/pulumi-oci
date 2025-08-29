@@ -78,74 +78,74 @@ export class VolumeGroup extends pulumi.CustomResource {
     /**
      * The availability domain of the volume group.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    public readonly backupPolicyId!: pulumi.Output<string>;
+    declare public readonly backupPolicyId: pulumi.Output<string>;
     /**
      * The clusterPlacementGroup Id of the volume group for volume group placement.
      */
-    public readonly clusterPlacementGroupId!: pulumi.Output<string>;
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
      */
-    public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
-    public readonly preserveVolumeReplica!: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly isHydrated: pulumi.Output<boolean>;
+    declare public readonly preserveVolumeReplica: pulumi.Output<boolean | undefined>;
     /**
      * The aggregate size of the volume group in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInGbs: pulumi.Output<string>;
     /**
      * The aggregate size of the volume group in MBs.
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInMbs: pulumi.Output<string>;
     /**
      * Specifies the source for a volume group.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.VolumeGroupSourceDetails>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Core.VolumeGroupSourceDetails>;
     /**
      * The current state of a volume group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      */
-    public readonly volumeGroupReplicas!: pulumi.Output<outputs.Core.VolumeGroupVolumeGroupReplica[]>;
-    public readonly volumeGroupReplicasDeletion!: pulumi.Output<boolean | undefined>;
+    declare public readonly volumeGroupReplicas: pulumi.Output<outputs.Core.VolumeGroupVolumeGroupReplica[]>;
+    declare public readonly volumeGroupReplicasDeletion: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly volumeIds!: pulumi.Output<string[]>;
+    declare public readonly volumeIds: pulumi.Output<string[]>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    public readonly xrcKmsKeyId!: pulumi.Output<string>;
+    declare public readonly xrcKmsKeyId: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroup resource with the given unique name, arguments, and options.
@@ -160,48 +160,48 @@ export class VolumeGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupPolicyId"] = state ? state.backupPolicyId : undefined;
-            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isHydrated"] = state ? state.isHydrated : undefined;
-            resourceInputs["preserveVolumeReplica"] = state ? state.preserveVolumeReplica : undefined;
-            resourceInputs["sizeInGbs"] = state ? state.sizeInGbs : undefined;
-            resourceInputs["sizeInMbs"] = state ? state.sizeInMbs : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["volumeGroupReplicas"] = state ? state.volumeGroupReplicas : undefined;
-            resourceInputs["volumeGroupReplicasDeletion"] = state ? state.volumeGroupReplicasDeletion : undefined;
-            resourceInputs["volumeIds"] = state ? state.volumeIds : undefined;
-            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupPolicyId"] = state?.backupPolicyId;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isHydrated"] = state?.isHydrated;
+            resourceInputs["preserveVolumeReplica"] = state?.preserveVolumeReplica;
+            resourceInputs["sizeInGbs"] = state?.sizeInGbs;
+            resourceInputs["sizeInMbs"] = state?.sizeInMbs;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["volumeGroupReplicas"] = state?.volumeGroupReplicas;
+            resourceInputs["volumeGroupReplicasDeletion"] = state?.volumeGroupReplicasDeletion;
+            resourceInputs["volumeIds"] = state?.volumeIds;
+            resourceInputs["xrcKmsKeyId"] = state?.xrcKmsKeyId;
         } else {
             const args = argsOrState as VolumeGroupArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.sourceDetails === undefined) && !opts.urn) {
+            if (args?.sourceDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceDetails'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupPolicyId"] = args ? args.backupPolicyId : undefined;
-            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["preserveVolumeReplica"] = args ? args.preserveVolumeReplica : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
-            resourceInputs["volumeGroupReplicas"] = args ? args.volumeGroupReplicas : undefined;
-            resourceInputs["volumeGroupReplicasDeletion"] = args ? args.volumeGroupReplicasDeletion : undefined;
-            resourceInputs["volumeIds"] = args ? args.volumeIds : undefined;
-            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupPolicyId"] = args?.backupPolicyId;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["preserveVolumeReplica"] = args?.preserveVolumeReplica;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["volumeGroupReplicas"] = args?.volumeGroupReplicas;
+            resourceInputs["volumeGroupReplicasDeletion"] = args?.volumeGroupReplicasDeletion;
+            resourceInputs["volumeIds"] = args?.volumeIds;
+            resourceInputs["xrcKmsKeyId"] = args?.xrcKmsKeyId;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["sizeInGbs"] = undefined /*out*/;
             resourceInputs["sizeInMbs"] = undefined /*out*/;

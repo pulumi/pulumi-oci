@@ -87,43 +87,43 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * The OCID of your tenancy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
      */
-    public readonly freeformAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveState: pulumi.Output<string>;
     /**
      * (Updatable) The XML that contains the information required for federating.
      */
-    public readonly metadata!: pulumi.Output<string>;
+    declare public readonly metadata: pulumi.Output<string>;
     /**
      * (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
      */
-    public readonly metadataUrl!: pulumi.Output<string>;
+    declare public readonly metadataUrl: pulumi.Output<string>;
     /**
      * The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`
      */
-    public readonly productType!: pulumi.Output<string>;
+    declare public readonly productType: pulumi.Output<string>;
     /**
      * (Updatable) The protocol used for federation.  Example: `SAML2` 
      *
@@ -131,23 +131,23 @@ export class IdentityProvider extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * The URL to redirect federated users to for authentication with the identity provider.
      */
-    public /*out*/ readonly redirectUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly redirectUrl: pulumi.Output<string>;
     /**
      * The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
      */
-    public /*out*/ readonly signingCertificate!: pulumi.Output<string>;
+    declare public /*out*/ readonly signingCertificate: pulumi.Output<string>;
     /**
      * The current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a IdentityProvider resource with the given unique name, arguments, and options.
@@ -162,51 +162,51 @@ export class IdentityProvider extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IdentityProviderState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformAttributes"] = state ? state.freeformAttributes : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inactiveState"] = state ? state.inactiveState : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["metadataUrl"] = state ? state.metadataUrl : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["productType"] = state ? state.productType : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["redirectUrl"] = state ? state.redirectUrl : undefined;
-            resourceInputs["signingCertificate"] = state ? state.signingCertificate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformAttributes"] = state?.freeformAttributes;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inactiveState"] = state?.inactiveState;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["metadataUrl"] = state?.metadataUrl;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["productType"] = state?.productType;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["redirectUrl"] = state?.redirectUrl;
+            resourceInputs["signingCertificate"] = state?.signingCertificate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as IdentityProviderArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.metadata === undefined) && !opts.urn) {
+            if (args?.metadata === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metadata'");
             }
-            if ((!args || args.metadataUrl === undefined) && !opts.urn) {
+            if (args?.metadataUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metadataUrl'");
             }
-            if ((!args || args.productType === undefined) && !opts.urn) {
+            if (args?.productType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'productType'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformAttributes"] = args ? args.freeformAttributes : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["metadataUrl"] = args ? args.metadataUrl : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["productType"] = args ? args.productType : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformAttributes"] = args?.freeformAttributes;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["metadataUrl"] = args?.metadataUrl;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["productType"] = args?.productType;
+            resourceInputs["protocol"] = args?.protocol;
             resourceInputs["inactiveState"] = undefined /*out*/;
             resourceInputs["redirectUrl"] = undefined /*out*/;
             resourceInputs["signingCertificate"] = undefined /*out*/;

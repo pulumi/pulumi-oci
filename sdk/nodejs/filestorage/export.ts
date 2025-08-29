@@ -91,24 +91,24 @@ export class Export extends pulumi.CustomResource {
      *
      * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
-    public readonly exportOptions!: pulumi.Output<outputs.FileStorage.ExportExportOption[]>;
+    declare public readonly exportOptions: pulumi.Output<outputs.FileStorage.ExportExportOption[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
      */
-    public readonly exportSetId!: pulumi.Output<string>;
+    declare public readonly exportSetId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
      */
-    public readonly fileSystemId!: pulumi.Output<string>;
+    declare public readonly fileSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
-    public readonly isIdmapGroupsForSysAuth!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly isIdmapGroupsForSysAuth: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.ExportLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.ExportLock[]>;
     /**
      * Path used to access the associated file system.
      *
@@ -120,15 +120,15 @@ export class Export extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly path!: pulumi.Output<string>;
+    declare public readonly path: pulumi.Output<string>;
     /**
      * The current state of this export.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Export resource with the given unique name, arguments, and options.
@@ -143,33 +143,33 @@ export class Export extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExportState | undefined;
-            resourceInputs["exportOptions"] = state ? state.exportOptions : undefined;
-            resourceInputs["exportSetId"] = state ? state.exportSetId : undefined;
-            resourceInputs["fileSystemId"] = state ? state.fileSystemId : undefined;
-            resourceInputs["isIdmapGroupsForSysAuth"] = state ? state.isIdmapGroupsForSysAuth : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["path"] = state ? state.path : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["exportOptions"] = state?.exportOptions;
+            resourceInputs["exportSetId"] = state?.exportSetId;
+            resourceInputs["fileSystemId"] = state?.fileSystemId;
+            resourceInputs["isIdmapGroupsForSysAuth"] = state?.isIdmapGroupsForSysAuth;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["path"] = state?.path;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ExportArgs | undefined;
-            if ((!args || args.exportSetId === undefined) && !opts.urn) {
+            if (args?.exportSetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exportSetId'");
             }
-            if ((!args || args.fileSystemId === undefined) && !opts.urn) {
+            if (args?.fileSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileSystemId'");
             }
-            if ((!args || args.path === undefined) && !opts.urn) {
+            if (args?.path === undefined && !opts.urn) {
                 throw new Error("Missing required property 'path'");
             }
-            resourceInputs["exportOptions"] = args ? args.exportOptions : undefined;
-            resourceInputs["exportSetId"] = args ? args.exportSetId : undefined;
-            resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
-            resourceInputs["isIdmapGroupsForSysAuth"] = args ? args.isIdmapGroupsForSysAuth : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["path"] = args ? args.path : undefined;
+            resourceInputs["exportOptions"] = args?.exportOptions;
+            resourceInputs["exportSetId"] = args?.exportSetId;
+            resourceInputs["fileSystemId"] = args?.fileSystemId;
+            resourceInputs["isIdmapGroupsForSysAuth"] = args?.isIdmapGroupsForSysAuth;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["path"] = args?.path;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

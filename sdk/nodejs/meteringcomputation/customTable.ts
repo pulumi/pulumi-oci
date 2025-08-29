@@ -74,11 +74,11 @@ export class CustomTable extends pulumi.CustomResource {
     /**
      * The compartment OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The custom table for Cost Analysis UI rendering.
      */
-    public readonly savedCustomTable!: pulumi.Output<outputs.MeteringComputation.CustomTableSavedCustomTable>;
+    declare public readonly savedCustomTable: pulumi.Output<outputs.MeteringComputation.CustomTableSavedCustomTable>;
     /**
      * The associated saved report OCID.
      *
@@ -86,7 +86,7 @@ export class CustomTable extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly savedReportId!: pulumi.Output<string>;
+    declare public readonly savedReportId: pulumi.Output<string>;
 
     /**
      * Create a CustomTable resource with the given unique name, arguments, and options.
@@ -101,23 +101,23 @@ export class CustomTable extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomTableState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["savedCustomTable"] = state ? state.savedCustomTable : undefined;
-            resourceInputs["savedReportId"] = state ? state.savedReportId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["savedCustomTable"] = state?.savedCustomTable;
+            resourceInputs["savedReportId"] = state?.savedReportId;
         } else {
             const args = argsOrState as CustomTableArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.savedCustomTable === undefined) && !opts.urn) {
+            if (args?.savedCustomTable === undefined && !opts.urn) {
                 throw new Error("Missing required property 'savedCustomTable'");
             }
-            if ((!args || args.savedReportId === undefined) && !opts.urn) {
+            if (args?.savedReportId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'savedReportId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["savedCustomTable"] = args ? args.savedCustomTable : undefined;
-            resourceInputs["savedReportId"] = args ? args.savedReportId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["savedCustomTable"] = args?.savedCustomTable;
+            resourceInputs["savedReportId"] = args?.savedReportId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CustomTable.__pulumiType, name, resourceInputs, opts);

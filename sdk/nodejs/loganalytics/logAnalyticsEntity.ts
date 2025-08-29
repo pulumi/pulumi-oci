@@ -84,91 +84,91 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
-    public /*out*/ readonly areLogsCollected!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly areLogsCollected: pulumi.Output<boolean>;
     /**
      * The count of associated log sources for a given log analytics entity.
      */
-    public /*out*/ readonly associatedSourcesCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly associatedSourcesCount: pulumi.Output<number>;
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
-    public readonly cloudResourceId!: pulumi.Output<string>;
+    declare public readonly cloudResourceId: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Internal name for the log analytics entity type.
      */
-    public /*out*/ readonly entityTypeInternalName!: pulumi.Output<string>;
+    declare public /*out*/ readonly entityTypeInternalName: pulumi.Output<string>;
     /**
      * Log analytics entity type name.
      */
-    public readonly entityTypeName!: pulumi.Output<string>;
+    declare public readonly entityTypeName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    declare public readonly hostname: pulumi.Output<string>;
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Management agent (management-agents resource kind) compartment OCID
      */
-    public /*out*/ readonly managementAgentCompartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementAgentCompartmentId: pulumi.Output<string>;
     /**
      * Management agent (management-agents resource kind) display name
      */
-    public /*out*/ readonly managementAgentDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementAgentDisplayName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Management Agent.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    declare public readonly managementAgentId: pulumi.Output<string>;
     /**
      * (Updatable) Details of Entity Metadata.
      */
-    public readonly metadata!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    declare public readonly metadata: pulumi.Output<outputs.LogAnalytics.LogAnalyticsEntityMetadata>;
     /**
      * (Updatable) Log analytics entity name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    public readonly properties!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    declare public readonly sourceId: pulumi.Output<string>;
     /**
      * The current state of the log analytics entity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
      */
-    public readonly timeLastDiscovered!: pulumi.Output<string>;
+    declare public readonly timeLastDiscovered: pulumi.Output<string>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The timezone region of the log analytics entity. 
      *
@@ -176,7 +176,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timezoneRegion!: pulumi.Output<string>;
+    declare public readonly timezoneRegion: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsEntity resource with the given unique name, arguments, and options.
@@ -191,54 +191,54 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsEntityState | undefined;
-            resourceInputs["areLogsCollected"] = state ? state.areLogsCollected : undefined;
-            resourceInputs["associatedSourcesCount"] = state ? state.associatedSourcesCount : undefined;
-            resourceInputs["cloudResourceId"] = state ? state.cloudResourceId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["entityTypeInternalName"] = state ? state.entityTypeInternalName : undefined;
-            resourceInputs["entityTypeName"] = state ? state.entityTypeName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["managementAgentCompartmentId"] = state ? state.managementAgentCompartmentId : undefined;
-            resourceInputs["managementAgentDisplayName"] = state ? state.managementAgentDisplayName : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["sourceId"] = state ? state.sourceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastDiscovered"] = state ? state.timeLastDiscovered : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timezoneRegion"] = state ? state.timezoneRegion : undefined;
+            resourceInputs["areLogsCollected"] = state?.areLogsCollected;
+            resourceInputs["associatedSourcesCount"] = state?.associatedSourcesCount;
+            resourceInputs["cloudResourceId"] = state?.cloudResourceId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["entityTypeInternalName"] = state?.entityTypeInternalName;
+            resourceInputs["entityTypeName"] = state?.entityTypeName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managementAgentCompartmentId"] = state?.managementAgentCompartmentId;
+            resourceInputs["managementAgentDisplayName"] = state?.managementAgentDisplayName;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["sourceId"] = state?.sourceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastDiscovered"] = state?.timeLastDiscovered;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timezoneRegion"] = state?.timezoneRegion;
         } else {
             const args = argsOrState as LogAnalyticsEntityArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.entityTypeName === undefined) && !opts.urn) {
+            if (args?.entityTypeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityTypeName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["cloudResourceId"] = args ? args.cloudResourceId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["entityTypeName"] = args ? args.entityTypeName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["sourceId"] = args ? args.sourceId : undefined;
-            resourceInputs["timeLastDiscovered"] = args ? args.timeLastDiscovered : undefined;
-            resourceInputs["timezoneRegion"] = args ? args.timezoneRegion : undefined;
+            resourceInputs["cloudResourceId"] = args?.cloudResourceId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["entityTypeName"] = args?.entityTypeName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["sourceId"] = args?.sourceId;
+            resourceInputs["timeLastDiscovered"] = args?.timeLastDiscovered;
+            resourceInputs["timezoneRegion"] = args?.timezoneRegion;
             resourceInputs["areLogsCollected"] = undefined /*out*/;
             resourceInputs["associatedSourcesCount"] = undefined /*out*/;
             resourceInputs["entityTypeInternalName"] = undefined /*out*/;

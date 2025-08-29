@@ -71,59 +71,59 @@ export class SqlCollection extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment containing the SQL collection.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The database user name.
      */
-    public readonly dbUserName!: pulumi.Output<string>;
+    declare public readonly dbUserName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the SQL collection.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
      */
-    public readonly generateSqlFirewallPolicyTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly generateSqlFirewallPolicyTrigger: pulumi.Output<boolean | undefined>;
     /**
      * Details about the current state of the SQL collection in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
      */
-    public readonly purgeLogsTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly purgeLogsTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh Log Insights. Could be set to any integer value.
      */
-    public readonly refreshLogInsightsTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly refreshLogInsightsTrigger: pulumi.Output<boolean | undefined>;
     /**
      * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    public readonly sqlLevel!: pulumi.Output<string>;
+    declare public readonly sqlLevel: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
      */
-    public readonly startTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly startTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The current state of the SQL collection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
@@ -131,31 +131,31 @@ export class SqlCollection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly stopTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly stopTrigger: pulumi.Output<boolean | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The time that the SQL collection was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastStarted: pulumi.Output<string>;
     /**
      * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastStopped!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastStopped: pulumi.Output<string>;
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SqlCollection resource with the given unique name, arguments, and options.
@@ -170,52 +170,52 @@ export class SqlCollection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SqlCollectionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbUserName"] = state ? state.dbUserName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["generateSqlFirewallPolicyTrigger"] = state ? state.generateSqlFirewallPolicyTrigger : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["purgeLogsTrigger"] = state ? state.purgeLogsTrigger : undefined;
-            resourceInputs["refreshLogInsightsTrigger"] = state ? state.refreshLogInsightsTrigger : undefined;
-            resourceInputs["sqlLevel"] = state ? state.sqlLevel : undefined;
-            resourceInputs["startTrigger"] = state ? state.startTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["stopTrigger"] = state ? state.stopTrigger : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastStarted"] = state ? state.timeLastStarted : undefined;
-            resourceInputs["timeLastStopped"] = state ? state.timeLastStopped : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbUserName"] = state?.dbUserName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["generateSqlFirewallPolicyTrigger"] = state?.generateSqlFirewallPolicyTrigger;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["purgeLogsTrigger"] = state?.purgeLogsTrigger;
+            resourceInputs["refreshLogInsightsTrigger"] = state?.refreshLogInsightsTrigger;
+            resourceInputs["sqlLevel"] = state?.sqlLevel;
+            resourceInputs["startTrigger"] = state?.startTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["stopTrigger"] = state?.stopTrigger;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastStarted"] = state?.timeLastStarted;
+            resourceInputs["timeLastStopped"] = state?.timeLastStopped;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SqlCollectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbUserName === undefined) && !opts.urn) {
+            if (args?.dbUserName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbUserName'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbUserName"] = args ? args.dbUserName : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["generateSqlFirewallPolicyTrigger"] = args ? args.generateSqlFirewallPolicyTrigger : undefined;
-            resourceInputs["purgeLogsTrigger"] = args ? args.purgeLogsTrigger : undefined;
-            resourceInputs["refreshLogInsightsTrigger"] = args ? args.refreshLogInsightsTrigger : undefined;
-            resourceInputs["sqlLevel"] = args ? args.sqlLevel : undefined;
-            resourceInputs["startTrigger"] = args ? args.startTrigger : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["stopTrigger"] = args ? args.stopTrigger : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbUserName"] = args?.dbUserName;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["generateSqlFirewallPolicyTrigger"] = args?.generateSqlFirewallPolicyTrigger;
+            resourceInputs["purgeLogsTrigger"] = args?.purgeLogsTrigger;
+            resourceInputs["refreshLogInsightsTrigger"] = args?.refreshLogInsightsTrigger;
+            resourceInputs["sqlLevel"] = args?.sqlLevel;
+            resourceInputs["startTrigger"] = args?.startTrigger;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["stopTrigger"] = args?.stopTrigger;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

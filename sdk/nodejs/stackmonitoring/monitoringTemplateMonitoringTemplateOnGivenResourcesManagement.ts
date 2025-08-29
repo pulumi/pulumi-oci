@@ -56,11 +56,11 @@ export class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement exte
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableMonitoringTemplateOnGivenResources!: pulumi.Output<boolean>;
+    declare public readonly enableMonitoringTemplateOnGivenResources: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      */
-    public readonly monitoringTemplateId!: pulumi.Output<string>;
+    declare public readonly monitoringTemplateId: pulumi.Output<string>;
 
     /**
      * Create a MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resource with the given unique name, arguments, and options.
@@ -75,18 +75,18 @@ export class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement exte
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState | undefined;
-            resourceInputs["enableMonitoringTemplateOnGivenResources"] = state ? state.enableMonitoringTemplateOnGivenResources : undefined;
-            resourceInputs["monitoringTemplateId"] = state ? state.monitoringTemplateId : undefined;
+            resourceInputs["enableMonitoringTemplateOnGivenResources"] = state?.enableMonitoringTemplateOnGivenResources;
+            resourceInputs["monitoringTemplateId"] = state?.monitoringTemplateId;
         } else {
             const args = argsOrState as MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs | undefined;
-            if ((!args || args.enableMonitoringTemplateOnGivenResources === undefined) && !opts.urn) {
+            if (args?.enableMonitoringTemplateOnGivenResources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableMonitoringTemplateOnGivenResources'");
             }
-            if ((!args || args.monitoringTemplateId === undefined) && !opts.urn) {
+            if (args?.monitoringTemplateId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'monitoringTemplateId'");
             }
-            resourceInputs["enableMonitoringTemplateOnGivenResources"] = args ? args.enableMonitoringTemplateOnGivenResources : undefined;
-            resourceInputs["monitoringTemplateId"] = args ? args.monitoringTemplateId : undefined;
+            resourceInputs["enableMonitoringTemplateOnGivenResources"] = args?.enableMonitoringTemplateOnGivenResources;
+            resourceInputs["monitoringTemplateId"] = args?.monitoringTemplateId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.__pulumiType, name, resourceInputs, opts);

@@ -72,104 +72,104 @@ export class MysqlBackup extends pulumi.CustomResource {
     /**
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      */
-    public /*out*/ readonly backupSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly backupSizeInGbs: pulumi.Output<number>;
     /**
      * The type of backup.
      */
-    public readonly backupType!: pulumi.Output<string>;
+    declare public readonly backupType: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Indicates how the backup was created: manually, automatic, or by an Operator.
      */
-    public /*out*/ readonly creationType!: pulumi.Output<string>;
+    declare public /*out*/ readonly creationType: pulumi.Output<string>;
     /**
      * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
      */
-    public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * The OCID of the DB System the Backup is associated with.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
-    public readonly dbSystemSnapshotSummaries!: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshotSummary[]>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
+    declare public readonly dbSystemSnapshotSummaries: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshotSummary[]>;
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
-    public /*out*/ readonly dbSystemSnapshots!: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshot[]>;
+    declare public /*out*/ readonly dbSystemSnapshots: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshot[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-supplied description for the backup.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-supplied display name for the backup.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Encrypt data details.
      */
-    public readonly encryptData!: pulumi.Output<outputs.Mysql.MysqlBackupEncryptData>;
+    declare public readonly encryptData: pulumi.Output<outputs.Mysql.MysqlBackupEncryptData>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the immediate source DB system backup from which this DB system backup was copied.
      */
-    public /*out*/ readonly immediateSourceBackupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly immediateSourceBackupId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The MySQL server version of the DB System used for backup.
      */
-    public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly mysqlVersion: pulumi.Output<string>;
     /**
      * The OCID of the original source DB system backup from which this DB system backup was copied.
      */
-    public /*out*/ readonly originalSourceBackupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly originalSourceBackupId: pulumi.Output<string>;
     /**
      * (Updatable) Number of days to retain this backup.
      */
-    public readonly retentionInDays!: pulumi.Output<number>;
+    declare public readonly retentionInDays: pulumi.Output<number>;
     /**
      * The shape of the DB System instance used for backup.
      */
-    public /*out*/ readonly shapeName!: pulumi.Output<string>;
+    declare public /*out*/ readonly shapeName: pulumi.Output<string>;
     /**
      * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
      */
-    public readonly softDelete!: pulumi.Output<string>;
+    declare public readonly softDelete: pulumi.Output<string>;
     /**
      * Details of backup source in the cloud.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Mysql.MysqlBackupSourceDetails | undefined>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Mysql.MysqlBackupSourceDetails | undefined>;
     /**
      * The state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCopyCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCopyCreated: pulumi.Output<string>;
     /**
      * The time the backup record was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the backup was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MysqlBackup resource with the given unique name, arguments, and options.
@@ -184,46 +184,46 @@ export class MysqlBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MysqlBackupState | undefined;
-            resourceInputs["backupSizeInGbs"] = state ? state.backupSizeInGbs : undefined;
-            resourceInputs["backupType"] = state ? state.backupType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["creationType"] = state ? state.creationType : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["dbSystemSnapshotSummaries"] = state ? state.dbSystemSnapshotSummaries : undefined;
-            resourceInputs["dbSystemSnapshots"] = state ? state.dbSystemSnapshots : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encryptData"] = state ? state.encryptData : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["immediateSourceBackupId"] = state ? state.immediateSourceBackupId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
-            resourceInputs["originalSourceBackupId"] = state ? state.originalSourceBackupId : undefined;
-            resourceInputs["retentionInDays"] = state ? state.retentionInDays : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["softDelete"] = state ? state.softDelete : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCopyCreated"] = state ? state.timeCopyCreated : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["backupSizeInGbs"] = state?.backupSizeInGbs;
+            resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["creationType"] = state?.creationType;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["dbSystemSnapshotSummaries"] = state?.dbSystemSnapshotSummaries;
+            resourceInputs["dbSystemSnapshots"] = state?.dbSystemSnapshots;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encryptData"] = state?.encryptData;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["immediateSourceBackupId"] = state?.immediateSourceBackupId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["mysqlVersion"] = state?.mysqlVersion;
+            resourceInputs["originalSourceBackupId"] = state?.originalSourceBackupId;
+            resourceInputs["retentionInDays"] = state?.retentionInDays;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["softDelete"] = state?.softDelete;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCopyCreated"] = state?.timeCopyCreated;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MysqlBackupArgs | undefined;
-            resourceInputs["backupType"] = args ? args.backupType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["dbSystemSnapshotSummaries"] = args ? args.dbSystemSnapshotSummaries : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["encryptData"] = args ? args.encryptData : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["retentionInDays"] = args ? args.retentionInDays : undefined;
-            resourceInputs["softDelete"] = args ? args.softDelete : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
+            resourceInputs["backupType"] = args?.backupType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["dbSystemSnapshotSummaries"] = args?.dbSystemSnapshotSummaries;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["encryptData"] = args?.encryptData;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["retentionInDays"] = args?.retentionInDays;
+            resourceInputs["softDelete"] = args?.softDelete;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
             resourceInputs["backupSizeInGbs"] = undefined /*out*/;
             resourceInputs["creationType"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;

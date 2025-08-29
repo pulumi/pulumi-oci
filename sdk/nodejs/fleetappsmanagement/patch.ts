@@ -104,63 +104,63 @@ export class Patch extends pulumi.CustomResource {
     /**
      * (Updatable) Patch artifact description and content details.
      */
-    public readonly artifactDetails!: pulumi.Output<outputs.FleetAppsManagement.PatchArtifactDetails>;
+    declare public readonly artifactDetails: pulumi.Output<outputs.FleetAppsManagement.PatchArtifactDetails>;
     /**
      * (Updatable)
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Dependent Patches for this patch.
      */
-    public readonly dependentPatches!: pulumi.Output<outputs.FleetAppsManagement.PatchDependentPatch[]>;
+    declare public readonly dependentPatches: pulumi.Output<outputs.FleetAppsManagement.PatchDependentPatch[]>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A user-friendly name. Should be unique within the tenancy, and cannot be changed after creation.  Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Patch Type
      */
-    public readonly patchType!: pulumi.Output<outputs.FleetAppsManagement.PatchPatchType>;
+    declare public readonly patchType: pulumi.Output<outputs.FleetAppsManagement.PatchPatchType>;
     /**
      * (Updatable) Product
      */
-    public readonly product!: pulumi.Output<outputs.FleetAppsManagement.PatchProduct>;
+    declare public readonly product: pulumi.Output<outputs.FleetAppsManagement.PatchProduct>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * (Updatable) Patch Severity.
      */
-    public readonly severity!: pulumi.Output<string>;
+    declare public readonly severity: pulumi.Output<string>;
     /**
      * The current state of the Patch.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Date when the patch was released.
      *
@@ -168,15 +168,15 @@ export class Patch extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeReleased!: pulumi.Output<string>;
+    declare public readonly timeReleased: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Provide information on who defined the patch. Example: For Custom Patches the value will be USER_DEFINED For Oracle Defined Patches the value will be ORACLE_DEFINED
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a Patch resource with the given unique name, arguments, and options.
@@ -191,55 +191,55 @@ export class Patch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PatchState | undefined;
-            resourceInputs["artifactDetails"] = state ? state.artifactDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dependentPatches"] = state ? state.dependentPatches : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["patchType"] = state ? state.patchType : undefined;
-            resourceInputs["product"] = state ? state.product : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["severity"] = state ? state.severity : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeReleased"] = state ? state.timeReleased : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["artifactDetails"] = state?.artifactDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dependentPatches"] = state?.dependentPatches;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["patchType"] = state?.patchType;
+            resourceInputs["product"] = state?.product;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["severity"] = state?.severity;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeReleased"] = state?.timeReleased;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as PatchArgs | undefined;
-            if ((!args || args.artifactDetails === undefined) && !opts.urn) {
+            if (args?.artifactDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'artifactDetails'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.patchType === undefined) && !opts.urn) {
+            if (args?.patchType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'patchType'");
             }
-            if ((!args || args.product === undefined) && !opts.urn) {
+            if (args?.product === undefined && !opts.urn) {
                 throw new Error("Missing required property 'product'");
             }
-            if ((!args || args.severity === undefined) && !opts.urn) {
+            if (args?.severity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'severity'");
             }
-            if ((!args || args.timeReleased === undefined) && !opts.urn) {
+            if (args?.timeReleased === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeReleased'");
             }
-            resourceInputs["artifactDetails"] = args ? args.artifactDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["dependentPatches"] = args ? args.dependentPatches : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["patchType"] = args ? args.patchType : undefined;
-            resourceInputs["product"] = args ? args.product : undefined;
-            resourceInputs["severity"] = args ? args.severity : undefined;
-            resourceInputs["timeReleased"] = args ? args.timeReleased : undefined;
+            resourceInputs["artifactDetails"] = args?.artifactDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["dependentPatches"] = args?.dependentPatches;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["patchType"] = args?.patchType;
+            resourceInputs["product"] = args?.product;
+            resourceInputs["severity"] = args?.severity;
+            resourceInputs["timeReleased"] = args?.timeReleased;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

@@ -91,11 +91,11 @@ export class Query extends pulumi.CustomResource {
     /**
      * The compartment OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The common fields for queries.
      */
-    public readonly queryDefinition!: pulumi.Output<outputs.MeteringComputation.QueryQueryDefinition>;
+    declare public readonly queryDefinition: pulumi.Output<outputs.MeteringComputation.QueryQueryDefinition>;
 
     /**
      * Create a Query resource with the given unique name, arguments, and options.
@@ -110,18 +110,18 @@ export class Query extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueryState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["queryDefinition"] = state ? state.queryDefinition : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["queryDefinition"] = state?.queryDefinition;
         } else {
             const args = argsOrState as QueryArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.queryDefinition === undefined) && !opts.urn) {
+            if (args?.queryDefinition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'queryDefinition'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["queryDefinition"] = args ? args.queryDefinition : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["queryDefinition"] = args?.queryDefinition;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Query.__pulumiType, name, resourceInputs, opts);

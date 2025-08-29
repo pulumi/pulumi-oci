@@ -50,107 +50,107 @@ export class WorkspaceTask extends pulumi.CustomResource {
     /**
      * (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      */
-    public readonly apiCallMode!: pulumi.Output<string>;
+    declare public readonly apiCallMode: pulumi.Output<string>;
     /**
      * (Updatable) Authentication configuration for Generic REST invocation.
      */
-    public readonly authConfig!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskAuthConfig>;
+    declare public readonly authConfig: pulumi.Output<outputs.DataIntegration.WorkspaceTaskAuthConfig>;
     /**
      * (Updatable) The REST API configuration for cancelling the task.
      */
-    public readonly cancelRestCallConfig!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
+    declare public readonly cancelRestCallConfig: pulumi.Output<outputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
     /**
      * (Updatable) The type to create a config provider.
      */
-    public readonly configProviderDelegate!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
+    declare public readonly configProviderDelegate: pulumi.Output<outputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The REST API configuration for execution.
      */
-    public readonly executeRestCallConfig!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig>;
+    declare public readonly executeRestCallConfig: pulumi.Output<outputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * (Updatable) An array of input ports.
      */
-    public readonly inputPorts!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskInputPort[]>;
+    declare public readonly inputPorts: pulumi.Output<outputs.DataIntegration.WorkspaceTaskInputPort[]>;
     /**
      * (Updatable) Defines whether Data Loader task is used for single load or multiple
      */
-    public readonly isSingleLoad!: pulumi.Output<boolean>;
+    declare public readonly isSingleLoad: pulumi.Output<boolean>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly keyMap: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceTaskMetadata[]>;
     /**
      * (Updatable) The type of the task.
      */
-    public readonly modelType!: pulumi.Output<string>;
+    declare public readonly modelType: pulumi.Output<string>;
     /**
      * (Updatable) The object's model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly objectVersion: pulumi.Output<number>;
     /**
      * (Updatable) Configuration values can be string, objects, or parameters.
      */
-    public readonly opConfigValues!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskOpConfigValues>;
+    declare public readonly opConfigValues: pulumi.Output<outputs.DataIntegration.WorkspaceTaskOpConfigValues>;
     /**
      * (Updatable) Describes the shape of the execution result
      */
-    public readonly operation!: pulumi.Output<string>;
+    declare public readonly operation: pulumi.Output<string>;
     /**
      * (Updatable) An array of output ports.
      */
-    public readonly outputPorts!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskOutputPort[]>;
+    declare public readonly outputPorts: pulumi.Output<outputs.DataIntegration.WorkspaceTaskOutputPort[]>;
     /**
      * (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
      */
-    public readonly parallelLoadLimit!: pulumi.Output<number>;
+    declare public readonly parallelLoadLimit: pulumi.Output<number>;
     /**
      * (Updatable) An array of parameters.
      */
-    public readonly parameters!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskParameter[]>;
+    declare public readonly parameters: pulumi.Output<outputs.DataIntegration.WorkspaceTaskParameter[]>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    public readonly parentRef!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskParentRef>;
+    declare public readonly parentRef: pulumi.Output<outputs.DataIntegration.WorkspaceTaskParentRef>;
     /**
      * (Updatable) The REST API configuration for polling.
      */
-    public readonly pollRestCallConfig!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskPollRestCallConfig>;
+    declare public readonly pollRestCallConfig: pulumi.Output<outputs.DataIntegration.WorkspaceTaskPollRestCallConfig>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceTaskRegistryMetadata>;
     /**
      * (Updatable) List of typed expressions.
      */
-    public readonly typedExpressions!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskTypedExpression[]>;
+    declare public readonly typedExpressions: pulumi.Output<outputs.DataIntegration.WorkspaceTaskTypedExpression[]>;
     /**
      * The workspace ID.
      *
@@ -158,7 +158,7 @@ export class WorkspaceTask extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceTask resource with the given unique name, arguments, and options.
@@ -173,71 +173,71 @@ export class WorkspaceTask extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceTaskState | undefined;
-            resourceInputs["apiCallMode"] = state ? state.apiCallMode : undefined;
-            resourceInputs["authConfig"] = state ? state.authConfig : undefined;
-            resourceInputs["cancelRestCallConfig"] = state ? state.cancelRestCallConfig : undefined;
-            resourceInputs["configProviderDelegate"] = state ? state.configProviderDelegate : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["executeRestCallConfig"] = state ? state.executeRestCallConfig : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["inputPorts"] = state ? state.inputPorts : undefined;
-            resourceInputs["isSingleLoad"] = state ? state.isSingleLoad : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["keyMap"] = state ? state.keyMap : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["opConfigValues"] = state ? state.opConfigValues : undefined;
-            resourceInputs["operation"] = state ? state.operation : undefined;
-            resourceInputs["outputPorts"] = state ? state.outputPorts : undefined;
-            resourceInputs["parallelLoadLimit"] = state ? state.parallelLoadLimit : undefined;
-            resourceInputs["parameters"] = state ? state.parameters : undefined;
-            resourceInputs["parentRef"] = state ? state.parentRef : undefined;
-            resourceInputs["pollRestCallConfig"] = state ? state.pollRestCallConfig : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["typedExpressions"] = state ? state.typedExpressions : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["apiCallMode"] = state?.apiCallMode;
+            resourceInputs["authConfig"] = state?.authConfig;
+            resourceInputs["cancelRestCallConfig"] = state?.cancelRestCallConfig;
+            resourceInputs["configProviderDelegate"] = state?.configProviderDelegate;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["executeRestCallConfig"] = state?.executeRestCallConfig;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["inputPorts"] = state?.inputPorts;
+            resourceInputs["isSingleLoad"] = state?.isSingleLoad;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["keyMap"] = state?.keyMap;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["opConfigValues"] = state?.opConfigValues;
+            resourceInputs["operation"] = state?.operation;
+            resourceInputs["outputPorts"] = state?.outputPorts;
+            resourceInputs["parallelLoadLimit"] = state?.parallelLoadLimit;
+            resourceInputs["parameters"] = state?.parameters;
+            resourceInputs["parentRef"] = state?.parentRef;
+            resourceInputs["pollRestCallConfig"] = state?.pollRestCallConfig;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["typedExpressions"] = state?.typedExpressions;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceTaskArgs | undefined;
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.modelType === undefined) && !opts.urn) {
+            if (args?.modelType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelType'");
             }
-            if ((!args || args.registryMetadata === undefined) && !opts.urn) {
+            if (args?.registryMetadata === undefined && !opts.urn) {
                 throw new Error("Missing required property 'registryMetadata'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["apiCallMode"] = args ? args.apiCallMode : undefined;
-            resourceInputs["authConfig"] = args ? args.authConfig : undefined;
-            resourceInputs["cancelRestCallConfig"] = args ? args.cancelRestCallConfig : undefined;
-            resourceInputs["configProviderDelegate"] = args ? args.configProviderDelegate : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["executeRestCallConfig"] = args ? args.executeRestCallConfig : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["inputPorts"] = args ? args.inputPorts : undefined;
-            resourceInputs["isSingleLoad"] = args ? args.isSingleLoad : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelType"] = args ? args.modelType : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["opConfigValues"] = args ? args.opConfigValues : undefined;
-            resourceInputs["operation"] = args ? args.operation : undefined;
-            resourceInputs["outputPorts"] = args ? args.outputPorts : undefined;
-            resourceInputs["parallelLoadLimit"] = args ? args.parallelLoadLimit : undefined;
-            resourceInputs["parameters"] = args ? args.parameters : undefined;
-            resourceInputs["parentRef"] = args ? args.parentRef : undefined;
-            resourceInputs["pollRestCallConfig"] = args ? args.pollRestCallConfig : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["typedExpressions"] = args ? args.typedExpressions : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["apiCallMode"] = args?.apiCallMode;
+            resourceInputs["authConfig"] = args?.authConfig;
+            resourceInputs["cancelRestCallConfig"] = args?.cancelRestCallConfig;
+            resourceInputs["configProviderDelegate"] = args?.configProviderDelegate;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["executeRestCallConfig"] = args?.executeRestCallConfig;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["inputPorts"] = args?.inputPorts;
+            resourceInputs["isSingleLoad"] = args?.isSingleLoad;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelType"] = args?.modelType;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["opConfigValues"] = args?.opConfigValues;
+            resourceInputs["operation"] = args?.operation;
+            resourceInputs["outputPorts"] = args?.outputPorts;
+            resourceInputs["parallelLoadLimit"] = args?.parallelLoadLimit;
+            resourceInputs["parameters"] = args?.parameters;
+            resourceInputs["parentRef"] = args?.parentRef;
+            resourceInputs["pollRestCallConfig"] = args?.pollRestCallConfig;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["typedExpressions"] = args?.typedExpressions;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["keyMap"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["objectVersion"] = undefined /*out*/;

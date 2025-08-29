@@ -40,8 +40,8 @@ export class BdsInstanceSoftwareUpdateAction extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
-    public readonly softwareUpdateKeys!: pulumi.Output<string[]>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
+    declare public readonly softwareUpdateKeys: pulumi.Output<string[]>;
 
     /**
      * Create a BdsInstanceSoftwareUpdateAction resource with the given unique name, arguments, and options.
@@ -56,18 +56,18 @@ export class BdsInstanceSoftwareUpdateAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceSoftwareUpdateActionState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["softwareUpdateKeys"] = state ? state.softwareUpdateKeys : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["softwareUpdateKeys"] = state?.softwareUpdateKeys;
         } else {
             const args = argsOrState as BdsInstanceSoftwareUpdateActionArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.softwareUpdateKeys === undefined) && !opts.urn) {
+            if (args?.softwareUpdateKeys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareUpdateKeys'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["softwareUpdateKeys"] = args ? args.softwareUpdateKeys : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
+            resourceInputs["softwareUpdateKeys"] = args?.softwareUpdateKeys;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BdsInstanceSoftwareUpdateAction.__pulumiType, name, resourceInputs, opts);

@@ -50,55 +50,55 @@ export class CloudListener extends pulumi.CustomResource {
     /**
      * The additional details of the cloud listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
-    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly adrHomeDirectory: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
      */
-    public readonly cloudConnectorId!: pulumi.Output<string>;
+    declare public readonly cloudConnectorId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
      */
-    public /*out*/ readonly cloudDbHomeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudDbHomeId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
      */
-    public /*out*/ readonly cloudDbNodeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudDbNodeId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the listener is a part of.
      */
-    public /*out*/ readonly cloudDbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudDbSystemId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
      */
-    public readonly cloudListenerId!: pulumi.Output<string>;
+    declare public readonly cloudListenerId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of the cloud listener.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
      */
-    public /*out*/ readonly dbaasId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbaasId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The list of protocol addresses the listener is configured to listen on.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.DatabaseManagement.CloudListenerEndpoint[]>;
+    declare public /*out*/ readonly endpoints: pulumi.Output<outputs.DatabaseManagement.CloudListenerEndpoint[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -106,67 +106,67 @@ export class CloudListener extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the host on which the cloud listener is running.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostName: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The listener alias.
      */
-    public /*out*/ readonly listenerAlias!: pulumi.Output<string>;
+    declare public /*out*/ readonly listenerAlias: pulumi.Output<string>;
     /**
      * The location of the listener configuration file listener.ora.
      */
-    public /*out*/ readonly listenerOraLocation!: pulumi.Output<string>;
+    declare public /*out*/ readonly listenerOraLocation: pulumi.Output<string>;
     /**
      * The type of listener.
      */
-    public /*out*/ readonly listenerType!: pulumi.Output<string>;
+    declare public /*out*/ readonly listenerType: pulumi.Output<string>;
     /**
      * The destination directory of the listener log file.
      */
-    public /*out*/ readonly logDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly logDirectory: pulumi.Output<string>;
     /**
      * The Oracle home location of the listener.
      */
-    public /*out*/ readonly oracleHome!: pulumi.Output<string>;
+    declare public /*out*/ readonly oracleHome: pulumi.Output<string>;
     /**
      * The list of ASMs that are serviced by the listener.
      */
-    public /*out*/ readonly servicedAsms!: pulumi.Output<outputs.DatabaseManagement.CloudListenerServicedAsm[]>;
+    declare public /*out*/ readonly servicedAsms: pulumi.Output<outputs.DatabaseManagement.CloudListenerServicedAsm[]>;
     /**
      * The list of databases that are serviced by the listener.
      */
-    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.CloudListenerServicedDatabase[]>;
+    declare public /*out*/ readonly servicedDatabases: pulumi.Output<outputs.DatabaseManagement.CloudListenerServicedDatabase[]>;
     /**
      * The current lifecycle state of the cloud listener.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cloud listener was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the cloud listener was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The destination directory of the listener trace file.
      */
-    public /*out*/ readonly traceDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly traceDirectory: pulumi.Output<string>;
     /**
      * The listener version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a CloudListener resource with the given unique name, arguments, and options.
@@ -181,44 +181,44 @@ export class CloudListener extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudListenerState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["adrHomeDirectory"] = state ? state.adrHomeDirectory : undefined;
-            resourceInputs["cloudConnectorId"] = state ? state.cloudConnectorId : undefined;
-            resourceInputs["cloudDbHomeId"] = state ? state.cloudDbHomeId : undefined;
-            resourceInputs["cloudDbNodeId"] = state ? state.cloudDbNodeId : undefined;
-            resourceInputs["cloudDbSystemId"] = state ? state.cloudDbSystemId : undefined;
-            resourceInputs["cloudListenerId"] = state ? state.cloudListenerId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentName"] = state ? state.componentName : undefined;
-            resourceInputs["dbaasId"] = state ? state.dbaasId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["listenerAlias"] = state ? state.listenerAlias : undefined;
-            resourceInputs["listenerOraLocation"] = state ? state.listenerOraLocation : undefined;
-            resourceInputs["listenerType"] = state ? state.listenerType : undefined;
-            resourceInputs["logDirectory"] = state ? state.logDirectory : undefined;
-            resourceInputs["oracleHome"] = state ? state.oracleHome : undefined;
-            resourceInputs["servicedAsms"] = state ? state.servicedAsms : undefined;
-            resourceInputs["servicedDatabases"] = state ? state.servicedDatabases : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["traceDirectory"] = state ? state.traceDirectory : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["adrHomeDirectory"] = state?.adrHomeDirectory;
+            resourceInputs["cloudConnectorId"] = state?.cloudConnectorId;
+            resourceInputs["cloudDbHomeId"] = state?.cloudDbHomeId;
+            resourceInputs["cloudDbNodeId"] = state?.cloudDbNodeId;
+            resourceInputs["cloudDbSystemId"] = state?.cloudDbSystemId;
+            resourceInputs["cloudListenerId"] = state?.cloudListenerId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentName"] = state?.componentName;
+            resourceInputs["dbaasId"] = state?.dbaasId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["listenerAlias"] = state?.listenerAlias;
+            resourceInputs["listenerOraLocation"] = state?.listenerOraLocation;
+            resourceInputs["listenerType"] = state?.listenerType;
+            resourceInputs["logDirectory"] = state?.logDirectory;
+            resourceInputs["oracleHome"] = state?.oracleHome;
+            resourceInputs["servicedAsms"] = state?.servicedAsms;
+            resourceInputs["servicedDatabases"] = state?.servicedDatabases;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["traceDirectory"] = state?.traceDirectory;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as CloudListenerArgs | undefined;
-            if ((!args || args.cloudListenerId === undefined) && !opts.urn) {
+            if (args?.cloudListenerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudListenerId'");
             }
-            resourceInputs["cloudConnectorId"] = args ? args.cloudConnectorId : undefined;
-            resourceInputs["cloudListenerId"] = args ? args.cloudListenerId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["cloudConnectorId"] = args?.cloudConnectorId;
+            resourceInputs["cloudListenerId"] = args?.cloudListenerId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["adrHomeDirectory"] = undefined /*out*/;
             resourceInputs["cloudDbHomeId"] = undefined /*out*/;

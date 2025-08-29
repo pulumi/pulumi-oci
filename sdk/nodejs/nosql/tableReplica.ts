@@ -63,19 +63,19 @@ export class TableReplica extends pulumi.CustomResource {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
      */
-    public readonly maxReadUnits!: pulumi.Output<number>;
+    declare public readonly maxReadUnits: pulumi.Output<number>;
     /**
      * Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
      */
-    public readonly maxWriteUnits!: pulumi.Output<number>;
+    declare public readonly maxWriteUnits: pulumi.Output<number>;
     /**
      * Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * A table name within the compartment, or a table OCID.
      *
@@ -83,7 +83,7 @@ export class TableReplica extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
-    public readonly tableNameOrId!: pulumi.Output<string>;
+    declare public readonly tableNameOrId: pulumi.Output<string>;
 
     /**
      * Create a TableReplica resource with the given unique name, arguments, and options.
@@ -98,24 +98,24 @@ export class TableReplica extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TableReplicaState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["maxReadUnits"] = state ? state.maxReadUnits : undefined;
-            resourceInputs["maxWriteUnits"] = state ? state.maxWriteUnits : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["tableNameOrId"] = state ? state.tableNameOrId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["maxReadUnits"] = state?.maxReadUnits;
+            resourceInputs["maxWriteUnits"] = state?.maxWriteUnits;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["tableNameOrId"] = state?.tableNameOrId;
         } else {
             const args = argsOrState as TableReplicaArgs | undefined;
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            if ((!args || args.tableNameOrId === undefined) && !opts.urn) {
+            if (args?.tableNameOrId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tableNameOrId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["maxReadUnits"] = args ? args.maxReadUnits : undefined;
-            resourceInputs["maxWriteUnits"] = args ? args.maxWriteUnits : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["tableNameOrId"] = args ? args.tableNameOrId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["maxReadUnits"] = args?.maxReadUnits;
+            resourceInputs["maxWriteUnits"] = args?.maxWriteUnits;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["tableNameOrId"] = args?.tableNameOrId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TableReplica.__pulumiType, name, resourceInputs, opts);

@@ -66,11 +66,11 @@ export class SoftwareSourceAddPackagesManagement extends pulumi.CustomResource {
     /**
      * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
      */
-    public readonly isContinueOnMissingPackages!: pulumi.Output<boolean>;
+    declare public readonly isContinueOnMissingPackages: pulumi.Output<boolean>;
     /**
      * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      */
-    public readonly packages!: pulumi.Output<string[]>;
+    declare public readonly packages: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -78,7 +78,7 @@ export class SoftwareSourceAddPackagesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSourceId!: pulumi.Output<string>;
+    declare public readonly softwareSourceId: pulumi.Output<string>;
 
     /**
      * Create a SoftwareSourceAddPackagesManagement resource with the given unique name, arguments, and options.
@@ -93,20 +93,20 @@ export class SoftwareSourceAddPackagesManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceAddPackagesManagementState | undefined;
-            resourceInputs["isContinueOnMissingPackages"] = state ? state.isContinueOnMissingPackages : undefined;
-            resourceInputs["packages"] = state ? state.packages : undefined;
-            resourceInputs["softwareSourceId"] = state ? state.softwareSourceId : undefined;
+            resourceInputs["isContinueOnMissingPackages"] = state?.isContinueOnMissingPackages;
+            resourceInputs["packages"] = state?.packages;
+            resourceInputs["softwareSourceId"] = state?.softwareSourceId;
         } else {
             const args = argsOrState as SoftwareSourceAddPackagesManagementArgs | undefined;
-            if ((!args || args.packages === undefined) && !opts.urn) {
+            if (args?.packages === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packages'");
             }
-            if ((!args || args.softwareSourceId === undefined) && !opts.urn) {
+            if (args?.softwareSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceId'");
             }
-            resourceInputs["isContinueOnMissingPackages"] = args ? args.isContinueOnMissingPackages : undefined;
-            resourceInputs["packages"] = args ? args.packages : undefined;
-            resourceInputs["softwareSourceId"] = args ? args.softwareSourceId : undefined;
+            resourceInputs["isContinueOnMissingPackages"] = args?.isContinueOnMissingPackages;
+            resourceInputs["packages"] = args?.packages;
+            resourceInputs["softwareSourceId"] = args?.softwareSourceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SoftwareSourceAddPackagesManagement.__pulumiType, name, resourceInputs, opts);

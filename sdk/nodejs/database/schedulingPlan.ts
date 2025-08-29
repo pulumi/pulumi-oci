@@ -67,43 +67,43 @@ export class SchedulingPlan extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The display name of the Scheduling Plan.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The estimated time for the Scheduling Plan.
      */
-    public /*out*/ readonly estimatedTimeInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedTimeInMins: pulumi.Output<number>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If true, recommended scheduled actions will be generated for the scheduling plan.
      */
-    public readonly isUsingRecommendedScheduledActions!: pulumi.Output<boolean>;
+    declare public readonly isUsingRecommendedScheduledActions: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
      */
-    public /*out*/ readonly planIntent!: pulumi.Output<string>;
+    declare public /*out*/ readonly planIntent: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    public readonly resourceId!: pulumi.Output<string>;
+    declare public readonly resourceId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
      */
-    public readonly schedulingPolicyId!: pulumi.Output<string>;
+    declare public readonly schedulingPolicyId: pulumi.Output<string>;
     /**
      * The service type of the Scheduling Plan.
      *
@@ -111,23 +111,23 @@ export class SchedulingPlan extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly serviceType!: pulumi.Output<string>;
+    declare public readonly serviceType: pulumi.Output<string>;
     /**
      * The current state of the Scheduling Plan. Valid states are CREATING, NEEDS_ATTENTION, AVAILABLE, UPDATING, FAILED, DELETING and DELETED.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Scheduling Plan Resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Scheduling Plan Resource was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SchedulingPlan resource with the given unique name, arguments, and options.
@@ -142,42 +142,42 @@ export class SchedulingPlan extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SchedulingPlanState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedTimeInMins"] = state ? state.estimatedTimeInMins : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isUsingRecommendedScheduledActions"] = state ? state.isUsingRecommendedScheduledActions : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["planIntent"] = state ? state.planIntent : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["schedulingPolicyId"] = state ? state.schedulingPolicyId : undefined;
-            resourceInputs["serviceType"] = state ? state.serviceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedTimeInMins"] = state?.estimatedTimeInMins;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isUsingRecommendedScheduledActions"] = state?.isUsingRecommendedScheduledActions;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["planIntent"] = state?.planIntent;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["schedulingPolicyId"] = state?.schedulingPolicyId;
+            resourceInputs["serviceType"] = state?.serviceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SchedulingPlanArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.resourceId === undefined) && !opts.urn) {
+            if (args?.resourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceId'");
             }
-            if ((!args || args.schedulingPolicyId === undefined) && !opts.urn) {
+            if (args?.schedulingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedulingPolicyId'");
             }
-            if ((!args || args.serviceType === undefined) && !opts.urn) {
+            if (args?.serviceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isUsingRecommendedScheduledActions"] = args ? args.isUsingRecommendedScheduledActions : undefined;
-            resourceInputs["resourceId"] = args ? args.resourceId : undefined;
-            resourceInputs["schedulingPolicyId"] = args ? args.schedulingPolicyId : undefined;
-            resourceInputs["serviceType"] = args ? args.serviceType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isUsingRecommendedScheduledActions"] = args?.isUsingRecommendedScheduledActions;
+            resourceInputs["resourceId"] = args?.resourceId;
+            resourceInputs["schedulingPolicyId"] = args?.schedulingPolicyId;
+            resourceInputs["serviceType"] = args?.serviceType;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["estimatedTimeInMins"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

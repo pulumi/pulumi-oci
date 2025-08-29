@@ -63,23 +63,23 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
     /**
      * (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    public readonly icmpCode!: pulumi.Output<number>;
+    declare public readonly icmpCode: pulumi.Output<number>;
     /**
      * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    public readonly icmpType!: pulumi.Output<number>;
+    declare public readonly icmpType: pulumi.Output<number>;
     /**
      * Name of the application
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this application belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6
      *
@@ -87,7 +87,7 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyApplication resource with the given unique name, arguments, and options.
@@ -102,28 +102,28 @@ export class NetworkFirewallPolicyApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyApplicationState | undefined;
-            resourceInputs["icmpCode"] = state ? state.icmpCode : undefined;
-            resourceInputs["icmpType"] = state ? state.icmpType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["icmpCode"] = state?.icmpCode;
+            resourceInputs["icmpType"] = state?.icmpType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkFirewallPolicyApplicationArgs | undefined;
-            if ((!args || args.icmpType === undefined) && !opts.urn) {
+            if (args?.icmpType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'icmpType'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["icmpCode"] = args ? args.icmpCode : undefined;
-            resourceInputs["icmpType"] = args ? args.icmpType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["icmpCode"] = args?.icmpCode;
+            resourceInputs["icmpType"] = args?.icmpType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["type"] = args?.type;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

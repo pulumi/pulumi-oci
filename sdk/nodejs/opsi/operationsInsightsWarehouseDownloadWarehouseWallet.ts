@@ -60,7 +60,7 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
     /**
      * Unique Ops Insights Warehouse identifier
      */
-    public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
+    declare public readonly operationsInsightsWarehouseId: pulumi.Output<string>;
     /**
      * User provided ADW wallet password for the Ops Insights Warehouse.
      *
@@ -68,7 +68,7 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly operationsInsightsWarehouseWalletPassword!: pulumi.Output<string>;
+    declare public readonly operationsInsightsWarehouseWalletPassword: pulumi.Output<string>;
 
     /**
      * Create a OperationsInsightsWarehouseDownloadWarehouseWallet resource with the given unique name, arguments, and options.
@@ -83,17 +83,17 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OperationsInsightsWarehouseDownloadWarehouseWalletState | undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = state ? state.operationsInsightsWarehouseId : undefined;
-            resourceInputs["operationsInsightsWarehouseWalletPassword"] = state ? state.operationsInsightsWarehouseWalletPassword : undefined;
+            resourceInputs["operationsInsightsWarehouseId"] = state?.operationsInsightsWarehouseId;
+            resourceInputs["operationsInsightsWarehouseWalletPassword"] = state?.operationsInsightsWarehouseWalletPassword;
         } else {
             const args = argsOrState as OperationsInsightsWarehouseDownloadWarehouseWalletArgs | undefined;
-            if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
+            if (args?.operationsInsightsWarehouseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
-            if ((!args || args.operationsInsightsWarehouseWalletPassword === undefined) && !opts.urn) {
+            if (args?.operationsInsightsWarehouseWalletPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseWalletPassword'");
             }
-            resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
+            resourceInputs["operationsInsightsWarehouseId"] = args?.operationsInsightsWarehouseId;
             resourceInputs["operationsInsightsWarehouseWalletPassword"] = args?.operationsInsightsWarehouseWalletPassword ? pulumi.secret(args.operationsInsightsWarehouseWalletPassword) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

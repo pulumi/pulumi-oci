@@ -50,283 +50,283 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies the approval policy.
      */
-    public readonly approvalPolicy!: pulumi.Output<outputs.DevOps.DeployStageApprovalPolicy>;
+    declare public readonly approvalPolicy: pulumi.Output<outputs.DevOps.DeployStageApprovalPolicy>;
     /**
      * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
      */
-    public readonly areHooksEnabled!: pulumi.Output<boolean>;
+    declare public readonly areHooksEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
-    public readonly blueBackendIps!: pulumi.Output<outputs.DevOps.DeployStageBlueBackendIps>;
+    declare public readonly blueBackendIps: pulumi.Output<outputs.DevOps.DeployStageBlueBackendIps>;
     /**
      * Specifies the required blue green release strategy for OKE deployment.
      */
-    public readonly blueGreenStrategy!: pulumi.Output<outputs.DevOps.DeployStageBlueGreenStrategy>;
+    declare public readonly blueGreenStrategy: pulumi.Output<outputs.DevOps.DeployStageBlueGreenStrategy>;
     /**
      * Specifies the required canary release strategy for OKE deployment.
      */
-    public readonly canaryStrategy!: pulumi.Output<outputs.DevOps.DeployStageCanaryStrategy>;
+    declare public readonly canaryStrategy: pulumi.Output<outputs.DevOps.DeployStageCanaryStrategy>;
     /**
      * (Updatable) The OCID of the artifact that contains the command specification.
      */
-    public readonly commandSpecDeployArtifactId!: pulumi.Output<string>;
+    declare public readonly commandSpecDeployArtifactId: pulumi.Output<string>;
     /**
      * The OCID of the compartment where the ContainerInstance will be created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      */
-    public readonly computeInstanceGroupBlueGreenDeploymentDeployStageId!: pulumi.Output<string>;
+    declare public readonly computeInstanceGroupBlueGreenDeploymentDeployStageId: pulumi.Output<string>;
     /**
      * A compute instance group canary stage OCID for load balancer.
      */
-    public readonly computeInstanceGroupCanaryDeployStageId!: pulumi.Output<string>;
+    declare public readonly computeInstanceGroupCanaryDeployStageId: pulumi.Output<string>;
     /**
      * (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
      */
-    public readonly computeInstanceGroupCanaryTrafficShiftDeployStageId!: pulumi.Output<string>;
+    declare public readonly computeInstanceGroupCanaryTrafficShiftDeployStageId: pulumi.Output<string>;
     /**
      * (Updatable) A compute instance group environment OCID for rolling deployment.
      */
-    public readonly computeInstanceGroupDeployEnvironmentId!: pulumi.Output<string>;
+    declare public readonly computeInstanceGroupDeployEnvironmentId: pulumi.Output<string>;
     /**
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      */
-    public readonly config!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly config: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * (Updatable) Specifies the container configuration.
      */
-    public readonly containerConfig!: pulumi.Output<outputs.DevOps.DeployStageContainerConfig>;
+    declare public readonly containerConfig: pulumi.Output<outputs.DevOps.DeployStageContainerConfig>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      */
-    public readonly deployArtifactId!: pulumi.Output<string | undefined>;
+    declare public readonly deployArtifactId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of file artifact OCIDs to deploy.
      */
-    public readonly deployArtifactIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly deployArtifactIds: pulumi.Output<string[] | undefined>;
     /**
      * First compute instance group environment OCID for deployment.
      */
-    public readonly deployEnvironmentIdA!: pulumi.Output<string>;
+    declare public readonly deployEnvironmentIdA: pulumi.Output<string>;
     /**
      * Second compute instance group environment OCID for deployment.
      */
-    public readonly deployEnvironmentIdB!: pulumi.Output<string>;
+    declare public readonly deployEnvironmentIdB: pulumi.Output<string>;
     /**
      * The OCID of a pipeline.
      */
-    public readonly deployPipelineId!: pulumi.Output<string>;
+    declare public readonly deployPipelineId: pulumi.Output<string>;
     /**
      * (Updatable) Collection containing the predecessors of a stage.
      */
-    public readonly deployStagePredecessorCollection!: pulumi.Output<outputs.DevOps.DeployStageDeployStagePredecessorCollection>;
+    declare public readonly deployStagePredecessorCollection: pulumi.Output<outputs.DevOps.DeployStageDeployStagePredecessorCollection>;
     /**
      * (Updatable) Deployment stage type.
      */
-    public readonly deployStageType!: pulumi.Output<string>;
+    declare public readonly deployStageType: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the artifact that contains the deployment specification.
      */
-    public readonly deploymentSpecDeployArtifactId!: pulumi.Output<string>;
+    declare public readonly deploymentSpecDeployArtifactId: pulumi.Output<string>;
     /**
      * (Updatable) Optional description about the deployment stage.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A Docker image artifact OCID.
      */
-    public readonly dockerImageDeployArtifactId!: pulumi.Output<string>;
+    declare public readonly dockerImageDeployArtifactId: pulumi.Output<string>;
     /**
      * (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
      */
-    public readonly failurePolicy!: pulumi.Output<outputs.DevOps.DeployStageFailurePolicy>;
+    declare public readonly failurePolicy: pulumi.Output<outputs.DevOps.DeployStageFailurePolicy>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Function environment OCID.
      */
-    public readonly functionDeployEnvironmentId!: pulumi.Output<string>;
+    declare public readonly functionDeployEnvironmentId: pulumi.Output<string>;
     /**
      * (Updatable) Timeout for execution of the Function. Value in seconds.
      */
-    public readonly functionTimeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly functionTimeoutInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
-    public readonly greenBackendIps!: pulumi.Output<outputs.DevOps.DeployStageGreenBackendIps>;
+    declare public readonly greenBackendIps: pulumi.Output<outputs.DevOps.DeployStageGreenBackendIps>;
     /**
      * (Updatable) Helm chart artifact OCID.
      */
-    public readonly helmChartDeployArtifactId!: pulumi.Output<string>;
+    declare public readonly helmChartDeployArtifactId: pulumi.Output<string>;
     /**
      * (Updatable) List of Helm command artifact OCIDs.
      */
-    public readonly helmCommandArtifactIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly helmCommandArtifactIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
-    public readonly isAsync!: pulumi.Output<boolean>;
+    declare public readonly isAsync: pulumi.Output<boolean>;
     /**
      * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
      */
-    public readonly isDebugEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDebugEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      */
-    public readonly isForceEnabled!: pulumi.Output<boolean>;
+    declare public readonly isForceEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Uninstall the Helm chart release on deleting the stage.
      */
-    public readonly isUninstallOnStageDelete!: pulumi.Output<boolean>;
+    declare public readonly isUninstallOnStageDelete: pulumi.Output<boolean>;
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
-    public readonly isValidationEnabled!: pulumi.Output<boolean>;
+    declare public readonly isValidationEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) List of Kubernetes manifest artifact OCIDs.
      */
-    public readonly kubernetesManifestDeployArtifactIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly kubernetesManifestDeployArtifactIds: pulumi.Output<string[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
-    public readonly loadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageLoadBalancerConfig>;
+    declare public readonly loadBalancerConfig: pulumi.Output<outputs.DevOps.DeployStageLoadBalancerConfig>;
     /**
      * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      */
-    public readonly maxHistory!: pulumi.Output<number>;
+    declare public readonly maxHistory: pulumi.Output<number>;
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      */
-    public readonly maxMemoryInMbs!: pulumi.Output<string>;
+    declare public readonly maxMemoryInMbs: pulumi.Output<string>;
     /**
      * (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      */
-    public readonly okeBlueGreenDeployStageId!: pulumi.Output<string>;
+    declare public readonly okeBlueGreenDeployStageId: pulumi.Output<string>;
     /**
      * The OCID of an upstream OKE canary deployment stage in this pipeline.
      */
-    public readonly okeCanaryDeployStageId!: pulumi.Output<string>;
+    declare public readonly okeCanaryDeployStageId: pulumi.Output<string>;
     /**
      * The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      */
-    public readonly okeCanaryTrafficShiftDeployStageId!: pulumi.Output<string>;
+    declare public readonly okeCanaryTrafficShiftDeployStageId: pulumi.Output<string>;
     /**
      * (Updatable) Kubernetes cluster environment OCID for deployment.
      */
-    public readonly okeClusterDeployEnvironmentId!: pulumi.Output<string>;
+    declare public readonly okeClusterDeployEnvironmentId: pulumi.Output<string>;
     /**
      * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
-    public readonly productionLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageProductionLoadBalancerConfig>;
+    declare public readonly productionLoadBalancerConfig: pulumi.Output<outputs.DevOps.DeployStageProductionLoadBalancerConfig>;
     /**
      * The OCID of a project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    declare public /*out*/ readonly projectId: pulumi.Output<string>;
     /**
      * (Updatable) The purpose of running this Helm stage
      */
-    public readonly purpose!: pulumi.Output<string>;
+    declare public readonly purpose: pulumi.Output<string>;
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      */
-    public readonly releaseName!: pulumi.Output<string>;
+    declare public readonly releaseName: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
-    public readonly rollbackPolicy!: pulumi.Output<outputs.DevOps.DeployStageRollbackPolicy>;
+    declare public readonly rollbackPolicy: pulumi.Output<outputs.DevOps.DeployStageRollbackPolicy>;
     /**
      * (Updatable) Description of rollout policy for load balancer traffic shift stage.
      */
-    public readonly rolloutPolicy!: pulumi.Output<outputs.DevOps.DeployStageRolloutPolicy>;
+    declare public readonly rolloutPolicy: pulumi.Output<outputs.DevOps.DeployStageRolloutPolicy>;
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      */
-    public readonly setString!: pulumi.Output<outputs.DevOps.DeployStageSetString>;
+    declare public readonly setString: pulumi.Output<outputs.DevOps.DeployStageSetString>;
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      */
-    public readonly setValues!: pulumi.Output<outputs.DevOps.DeployStageSetValues>;
+    declare public readonly setValues: pulumi.Output<outputs.DevOps.DeployStageSetValues>;
     /**
      * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      */
-    public readonly shouldCleanupOnFail!: pulumi.Output<boolean>;
+    declare public readonly shouldCleanupOnFail: pulumi.Output<boolean>;
     /**
      * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
      */
-    public readonly shouldNotWait!: pulumi.Output<boolean>;
+    declare public readonly shouldNotWait: pulumi.Output<boolean>;
     /**
      * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      */
-    public readonly shouldResetValues!: pulumi.Output<boolean>;
+    declare public readonly shouldResetValues: pulumi.Output<boolean>;
     /**
      * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      */
-    public readonly shouldReuseValues!: pulumi.Output<boolean>;
+    declare public readonly shouldReuseValues: pulumi.Output<boolean>;
     /**
      * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      */
-    public readonly shouldSkipCrds!: pulumi.Output<boolean>;
+    declare public readonly shouldSkipCrds: pulumi.Output<boolean>;
     /**
      * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
      */
-    public readonly shouldSkipRenderSubchartNotes!: pulumi.Output<boolean>;
+    declare public readonly shouldSkipRenderSubchartNotes: pulumi.Output<boolean>;
     /**
      * The current state of the deployment stage.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
-    public readonly testLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageTestLoadBalancerConfig>;
+    declare public readonly testLoadBalancerConfig: pulumi.Output<outputs.DevOps.DeployStageTestLoadBalancerConfig>;
     /**
      * Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Specifies the target or destination backend set.
      */
-    public readonly trafficShiftTarget!: pulumi.Output<string>;
+    declare public readonly trafficShiftTarget: pulumi.Output<string>;
     /**
      * (Updatable) List of values.yaml file artifact OCIDs.
      */
-    public readonly valuesArtifactIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly valuesArtifactIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.DeployStageWaitCriteria>;
+    declare public readonly waitCriteria: pulumi.Output<outputs.DevOps.DeployStageWaitCriteria>;
 
     /**
      * Create a DeployStage resource with the given unique name, arguments, and options.
@@ -341,150 +341,150 @@ export class DeployStage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeployStageState | undefined;
-            resourceInputs["approvalPolicy"] = state ? state.approvalPolicy : undefined;
-            resourceInputs["areHooksEnabled"] = state ? state.areHooksEnabled : undefined;
-            resourceInputs["blueBackendIps"] = state ? state.blueBackendIps : undefined;
-            resourceInputs["blueGreenStrategy"] = state ? state.blueGreenStrategy : undefined;
-            resourceInputs["canaryStrategy"] = state ? state.canaryStrategy : undefined;
-            resourceInputs["commandSpecDeployArtifactId"] = state ? state.commandSpecDeployArtifactId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = state ? state.computeInstanceGroupBlueGreenDeploymentDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupCanaryDeployStageId"] = state ? state.computeInstanceGroupCanaryDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = state ? state.computeInstanceGroupCanaryTrafficShiftDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupDeployEnvironmentId"] = state ? state.computeInstanceGroupDeployEnvironmentId : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["containerConfig"] = state ? state.containerConfig : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deployArtifactId"] = state ? state.deployArtifactId : undefined;
-            resourceInputs["deployArtifactIds"] = state ? state.deployArtifactIds : undefined;
-            resourceInputs["deployEnvironmentIdA"] = state ? state.deployEnvironmentIdA : undefined;
-            resourceInputs["deployEnvironmentIdB"] = state ? state.deployEnvironmentIdB : undefined;
-            resourceInputs["deployPipelineId"] = state ? state.deployPipelineId : undefined;
-            resourceInputs["deployStagePredecessorCollection"] = state ? state.deployStagePredecessorCollection : undefined;
-            resourceInputs["deployStageType"] = state ? state.deployStageType : undefined;
-            resourceInputs["deploymentSpecDeployArtifactId"] = state ? state.deploymentSpecDeployArtifactId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dockerImageDeployArtifactId"] = state ? state.dockerImageDeployArtifactId : undefined;
-            resourceInputs["failurePolicy"] = state ? state.failurePolicy : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["functionDeployEnvironmentId"] = state ? state.functionDeployEnvironmentId : undefined;
-            resourceInputs["functionTimeoutInSeconds"] = state ? state.functionTimeoutInSeconds : undefined;
-            resourceInputs["greenBackendIps"] = state ? state.greenBackendIps : undefined;
-            resourceInputs["helmChartDeployArtifactId"] = state ? state.helmChartDeployArtifactId : undefined;
-            resourceInputs["helmCommandArtifactIds"] = state ? state.helmCommandArtifactIds : undefined;
-            resourceInputs["isAsync"] = state ? state.isAsync : undefined;
-            resourceInputs["isDebugEnabled"] = state ? state.isDebugEnabled : undefined;
-            resourceInputs["isForceEnabled"] = state ? state.isForceEnabled : undefined;
-            resourceInputs["isUninstallOnStageDelete"] = state ? state.isUninstallOnStageDelete : undefined;
-            resourceInputs["isValidationEnabled"] = state ? state.isValidationEnabled : undefined;
-            resourceInputs["kubernetesManifestDeployArtifactIds"] = state ? state.kubernetesManifestDeployArtifactIds : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["loadBalancerConfig"] = state ? state.loadBalancerConfig : undefined;
-            resourceInputs["maxHistory"] = state ? state.maxHistory : undefined;
-            resourceInputs["maxMemoryInMbs"] = state ? state.maxMemoryInMbs : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["okeBlueGreenDeployStageId"] = state ? state.okeBlueGreenDeployStageId : undefined;
-            resourceInputs["okeCanaryDeployStageId"] = state ? state.okeCanaryDeployStageId : undefined;
-            resourceInputs["okeCanaryTrafficShiftDeployStageId"] = state ? state.okeCanaryTrafficShiftDeployStageId : undefined;
-            resourceInputs["okeClusterDeployEnvironmentId"] = state ? state.okeClusterDeployEnvironmentId : undefined;
-            resourceInputs["productionLoadBalancerConfig"] = state ? state.productionLoadBalancerConfig : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["purpose"] = state ? state.purpose : undefined;
-            resourceInputs["releaseName"] = state ? state.releaseName : undefined;
-            resourceInputs["rollbackPolicy"] = state ? state.rollbackPolicy : undefined;
-            resourceInputs["rolloutPolicy"] = state ? state.rolloutPolicy : undefined;
-            resourceInputs["setString"] = state ? state.setString : undefined;
-            resourceInputs["setValues"] = state ? state.setValues : undefined;
-            resourceInputs["shouldCleanupOnFail"] = state ? state.shouldCleanupOnFail : undefined;
-            resourceInputs["shouldNotWait"] = state ? state.shouldNotWait : undefined;
-            resourceInputs["shouldResetValues"] = state ? state.shouldResetValues : undefined;
-            resourceInputs["shouldReuseValues"] = state ? state.shouldReuseValues : undefined;
-            resourceInputs["shouldSkipCrds"] = state ? state.shouldSkipCrds : undefined;
-            resourceInputs["shouldSkipRenderSubchartNotes"] = state ? state.shouldSkipRenderSubchartNotes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["testLoadBalancerConfig"] = state ? state.testLoadBalancerConfig : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["trafficShiftTarget"] = state ? state.trafficShiftTarget : undefined;
-            resourceInputs["valuesArtifactIds"] = state ? state.valuesArtifactIds : undefined;
-            resourceInputs["waitCriteria"] = state ? state.waitCriteria : undefined;
+            resourceInputs["approvalPolicy"] = state?.approvalPolicy;
+            resourceInputs["areHooksEnabled"] = state?.areHooksEnabled;
+            resourceInputs["blueBackendIps"] = state?.blueBackendIps;
+            resourceInputs["blueGreenStrategy"] = state?.blueGreenStrategy;
+            resourceInputs["canaryStrategy"] = state?.canaryStrategy;
+            resourceInputs["commandSpecDeployArtifactId"] = state?.commandSpecDeployArtifactId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = state?.computeInstanceGroupBlueGreenDeploymentDeployStageId;
+            resourceInputs["computeInstanceGroupCanaryDeployStageId"] = state?.computeInstanceGroupCanaryDeployStageId;
+            resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = state?.computeInstanceGroupCanaryTrafficShiftDeployStageId;
+            resourceInputs["computeInstanceGroupDeployEnvironmentId"] = state?.computeInstanceGroupDeployEnvironmentId;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["containerConfig"] = state?.containerConfig;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deployArtifactId"] = state?.deployArtifactId;
+            resourceInputs["deployArtifactIds"] = state?.deployArtifactIds;
+            resourceInputs["deployEnvironmentIdA"] = state?.deployEnvironmentIdA;
+            resourceInputs["deployEnvironmentIdB"] = state?.deployEnvironmentIdB;
+            resourceInputs["deployPipelineId"] = state?.deployPipelineId;
+            resourceInputs["deployStagePredecessorCollection"] = state?.deployStagePredecessorCollection;
+            resourceInputs["deployStageType"] = state?.deployStageType;
+            resourceInputs["deploymentSpecDeployArtifactId"] = state?.deploymentSpecDeployArtifactId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dockerImageDeployArtifactId"] = state?.dockerImageDeployArtifactId;
+            resourceInputs["failurePolicy"] = state?.failurePolicy;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["functionDeployEnvironmentId"] = state?.functionDeployEnvironmentId;
+            resourceInputs["functionTimeoutInSeconds"] = state?.functionTimeoutInSeconds;
+            resourceInputs["greenBackendIps"] = state?.greenBackendIps;
+            resourceInputs["helmChartDeployArtifactId"] = state?.helmChartDeployArtifactId;
+            resourceInputs["helmCommandArtifactIds"] = state?.helmCommandArtifactIds;
+            resourceInputs["isAsync"] = state?.isAsync;
+            resourceInputs["isDebugEnabled"] = state?.isDebugEnabled;
+            resourceInputs["isForceEnabled"] = state?.isForceEnabled;
+            resourceInputs["isUninstallOnStageDelete"] = state?.isUninstallOnStageDelete;
+            resourceInputs["isValidationEnabled"] = state?.isValidationEnabled;
+            resourceInputs["kubernetesManifestDeployArtifactIds"] = state?.kubernetesManifestDeployArtifactIds;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["loadBalancerConfig"] = state?.loadBalancerConfig;
+            resourceInputs["maxHistory"] = state?.maxHistory;
+            resourceInputs["maxMemoryInMbs"] = state?.maxMemoryInMbs;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["okeBlueGreenDeployStageId"] = state?.okeBlueGreenDeployStageId;
+            resourceInputs["okeCanaryDeployStageId"] = state?.okeCanaryDeployStageId;
+            resourceInputs["okeCanaryTrafficShiftDeployStageId"] = state?.okeCanaryTrafficShiftDeployStageId;
+            resourceInputs["okeClusterDeployEnvironmentId"] = state?.okeClusterDeployEnvironmentId;
+            resourceInputs["productionLoadBalancerConfig"] = state?.productionLoadBalancerConfig;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["purpose"] = state?.purpose;
+            resourceInputs["releaseName"] = state?.releaseName;
+            resourceInputs["rollbackPolicy"] = state?.rollbackPolicy;
+            resourceInputs["rolloutPolicy"] = state?.rolloutPolicy;
+            resourceInputs["setString"] = state?.setString;
+            resourceInputs["setValues"] = state?.setValues;
+            resourceInputs["shouldCleanupOnFail"] = state?.shouldCleanupOnFail;
+            resourceInputs["shouldNotWait"] = state?.shouldNotWait;
+            resourceInputs["shouldResetValues"] = state?.shouldResetValues;
+            resourceInputs["shouldReuseValues"] = state?.shouldReuseValues;
+            resourceInputs["shouldSkipCrds"] = state?.shouldSkipCrds;
+            resourceInputs["shouldSkipRenderSubchartNotes"] = state?.shouldSkipRenderSubchartNotes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["testLoadBalancerConfig"] = state?.testLoadBalancerConfig;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["trafficShiftTarget"] = state?.trafficShiftTarget;
+            resourceInputs["valuesArtifactIds"] = state?.valuesArtifactIds;
+            resourceInputs["waitCriteria"] = state?.waitCriteria;
         } else {
             const args = argsOrState as DeployStageArgs | undefined;
-            if ((!args || args.deployPipelineId === undefined) && !opts.urn) {
+            if (args?.deployPipelineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deployPipelineId'");
             }
-            if ((!args || args.deployStagePredecessorCollection === undefined) && !opts.urn) {
+            if (args?.deployStagePredecessorCollection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deployStagePredecessorCollection'");
             }
-            if ((!args || args.deployStageType === undefined) && !opts.urn) {
+            if (args?.deployStageType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deployStageType'");
             }
-            resourceInputs["approvalPolicy"] = args ? args.approvalPolicy : undefined;
-            resourceInputs["areHooksEnabled"] = args ? args.areHooksEnabled : undefined;
-            resourceInputs["blueBackendIps"] = args ? args.blueBackendIps : undefined;
-            resourceInputs["blueGreenStrategy"] = args ? args.blueGreenStrategy : undefined;
-            resourceInputs["canaryStrategy"] = args ? args.canaryStrategy : undefined;
-            resourceInputs["commandSpecDeployArtifactId"] = args ? args.commandSpecDeployArtifactId : undefined;
-            resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = args ? args.computeInstanceGroupBlueGreenDeploymentDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupCanaryDeployStageId"] = args ? args.computeInstanceGroupCanaryDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = args ? args.computeInstanceGroupCanaryTrafficShiftDeployStageId : undefined;
-            resourceInputs["computeInstanceGroupDeployEnvironmentId"] = args ? args.computeInstanceGroupDeployEnvironmentId : undefined;
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["containerConfig"] = args ? args.containerConfig : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deployArtifactId"] = args ? args.deployArtifactId : undefined;
-            resourceInputs["deployArtifactIds"] = args ? args.deployArtifactIds : undefined;
-            resourceInputs["deployEnvironmentIdA"] = args ? args.deployEnvironmentIdA : undefined;
-            resourceInputs["deployEnvironmentIdB"] = args ? args.deployEnvironmentIdB : undefined;
-            resourceInputs["deployPipelineId"] = args ? args.deployPipelineId : undefined;
-            resourceInputs["deployStagePredecessorCollection"] = args ? args.deployStagePredecessorCollection : undefined;
-            resourceInputs["deployStageType"] = args ? args.deployStageType : undefined;
-            resourceInputs["deploymentSpecDeployArtifactId"] = args ? args.deploymentSpecDeployArtifactId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dockerImageDeployArtifactId"] = args ? args.dockerImageDeployArtifactId : undefined;
-            resourceInputs["failurePolicy"] = args ? args.failurePolicy : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["functionDeployEnvironmentId"] = args ? args.functionDeployEnvironmentId : undefined;
-            resourceInputs["functionTimeoutInSeconds"] = args ? args.functionTimeoutInSeconds : undefined;
-            resourceInputs["greenBackendIps"] = args ? args.greenBackendIps : undefined;
-            resourceInputs["helmChartDeployArtifactId"] = args ? args.helmChartDeployArtifactId : undefined;
-            resourceInputs["helmCommandArtifactIds"] = args ? args.helmCommandArtifactIds : undefined;
-            resourceInputs["isAsync"] = args ? args.isAsync : undefined;
-            resourceInputs["isDebugEnabled"] = args ? args.isDebugEnabled : undefined;
-            resourceInputs["isForceEnabled"] = args ? args.isForceEnabled : undefined;
-            resourceInputs["isUninstallOnStageDelete"] = args ? args.isUninstallOnStageDelete : undefined;
-            resourceInputs["isValidationEnabled"] = args ? args.isValidationEnabled : undefined;
-            resourceInputs["kubernetesManifestDeployArtifactIds"] = args ? args.kubernetesManifestDeployArtifactIds : undefined;
-            resourceInputs["loadBalancerConfig"] = args ? args.loadBalancerConfig : undefined;
-            resourceInputs["maxHistory"] = args ? args.maxHistory : undefined;
-            resourceInputs["maxMemoryInMbs"] = args ? args.maxMemoryInMbs : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["okeBlueGreenDeployStageId"] = args ? args.okeBlueGreenDeployStageId : undefined;
-            resourceInputs["okeCanaryDeployStageId"] = args ? args.okeCanaryDeployStageId : undefined;
-            resourceInputs["okeCanaryTrafficShiftDeployStageId"] = args ? args.okeCanaryTrafficShiftDeployStageId : undefined;
-            resourceInputs["okeClusterDeployEnvironmentId"] = args ? args.okeClusterDeployEnvironmentId : undefined;
-            resourceInputs["productionLoadBalancerConfig"] = args ? args.productionLoadBalancerConfig : undefined;
-            resourceInputs["purpose"] = args ? args.purpose : undefined;
-            resourceInputs["releaseName"] = args ? args.releaseName : undefined;
-            resourceInputs["rollbackPolicy"] = args ? args.rollbackPolicy : undefined;
-            resourceInputs["rolloutPolicy"] = args ? args.rolloutPolicy : undefined;
-            resourceInputs["setString"] = args ? args.setString : undefined;
-            resourceInputs["setValues"] = args ? args.setValues : undefined;
-            resourceInputs["shouldCleanupOnFail"] = args ? args.shouldCleanupOnFail : undefined;
-            resourceInputs["shouldNotWait"] = args ? args.shouldNotWait : undefined;
-            resourceInputs["shouldResetValues"] = args ? args.shouldResetValues : undefined;
-            resourceInputs["shouldReuseValues"] = args ? args.shouldReuseValues : undefined;
-            resourceInputs["shouldSkipCrds"] = args ? args.shouldSkipCrds : undefined;
-            resourceInputs["shouldSkipRenderSubchartNotes"] = args ? args.shouldSkipRenderSubchartNotes : undefined;
-            resourceInputs["testLoadBalancerConfig"] = args ? args.testLoadBalancerConfig : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["trafficShiftTarget"] = args ? args.trafficShiftTarget : undefined;
-            resourceInputs["valuesArtifactIds"] = args ? args.valuesArtifactIds : undefined;
-            resourceInputs["waitCriteria"] = args ? args.waitCriteria : undefined;
+            resourceInputs["approvalPolicy"] = args?.approvalPolicy;
+            resourceInputs["areHooksEnabled"] = args?.areHooksEnabled;
+            resourceInputs["blueBackendIps"] = args?.blueBackendIps;
+            resourceInputs["blueGreenStrategy"] = args?.blueGreenStrategy;
+            resourceInputs["canaryStrategy"] = args?.canaryStrategy;
+            resourceInputs["commandSpecDeployArtifactId"] = args?.commandSpecDeployArtifactId;
+            resourceInputs["computeInstanceGroupBlueGreenDeploymentDeployStageId"] = args?.computeInstanceGroupBlueGreenDeploymentDeployStageId;
+            resourceInputs["computeInstanceGroupCanaryDeployStageId"] = args?.computeInstanceGroupCanaryDeployStageId;
+            resourceInputs["computeInstanceGroupCanaryTrafficShiftDeployStageId"] = args?.computeInstanceGroupCanaryTrafficShiftDeployStageId;
+            resourceInputs["computeInstanceGroupDeployEnvironmentId"] = args?.computeInstanceGroupDeployEnvironmentId;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["containerConfig"] = args?.containerConfig;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deployArtifactId"] = args?.deployArtifactId;
+            resourceInputs["deployArtifactIds"] = args?.deployArtifactIds;
+            resourceInputs["deployEnvironmentIdA"] = args?.deployEnvironmentIdA;
+            resourceInputs["deployEnvironmentIdB"] = args?.deployEnvironmentIdB;
+            resourceInputs["deployPipelineId"] = args?.deployPipelineId;
+            resourceInputs["deployStagePredecessorCollection"] = args?.deployStagePredecessorCollection;
+            resourceInputs["deployStageType"] = args?.deployStageType;
+            resourceInputs["deploymentSpecDeployArtifactId"] = args?.deploymentSpecDeployArtifactId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dockerImageDeployArtifactId"] = args?.dockerImageDeployArtifactId;
+            resourceInputs["failurePolicy"] = args?.failurePolicy;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["functionDeployEnvironmentId"] = args?.functionDeployEnvironmentId;
+            resourceInputs["functionTimeoutInSeconds"] = args?.functionTimeoutInSeconds;
+            resourceInputs["greenBackendIps"] = args?.greenBackendIps;
+            resourceInputs["helmChartDeployArtifactId"] = args?.helmChartDeployArtifactId;
+            resourceInputs["helmCommandArtifactIds"] = args?.helmCommandArtifactIds;
+            resourceInputs["isAsync"] = args?.isAsync;
+            resourceInputs["isDebugEnabled"] = args?.isDebugEnabled;
+            resourceInputs["isForceEnabled"] = args?.isForceEnabled;
+            resourceInputs["isUninstallOnStageDelete"] = args?.isUninstallOnStageDelete;
+            resourceInputs["isValidationEnabled"] = args?.isValidationEnabled;
+            resourceInputs["kubernetesManifestDeployArtifactIds"] = args?.kubernetesManifestDeployArtifactIds;
+            resourceInputs["loadBalancerConfig"] = args?.loadBalancerConfig;
+            resourceInputs["maxHistory"] = args?.maxHistory;
+            resourceInputs["maxMemoryInMbs"] = args?.maxMemoryInMbs;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["okeBlueGreenDeployStageId"] = args?.okeBlueGreenDeployStageId;
+            resourceInputs["okeCanaryDeployStageId"] = args?.okeCanaryDeployStageId;
+            resourceInputs["okeCanaryTrafficShiftDeployStageId"] = args?.okeCanaryTrafficShiftDeployStageId;
+            resourceInputs["okeClusterDeployEnvironmentId"] = args?.okeClusterDeployEnvironmentId;
+            resourceInputs["productionLoadBalancerConfig"] = args?.productionLoadBalancerConfig;
+            resourceInputs["purpose"] = args?.purpose;
+            resourceInputs["releaseName"] = args?.releaseName;
+            resourceInputs["rollbackPolicy"] = args?.rollbackPolicy;
+            resourceInputs["rolloutPolicy"] = args?.rolloutPolicy;
+            resourceInputs["setString"] = args?.setString;
+            resourceInputs["setValues"] = args?.setValues;
+            resourceInputs["shouldCleanupOnFail"] = args?.shouldCleanupOnFail;
+            resourceInputs["shouldNotWait"] = args?.shouldNotWait;
+            resourceInputs["shouldResetValues"] = args?.shouldResetValues;
+            resourceInputs["shouldReuseValues"] = args?.shouldReuseValues;
+            resourceInputs["shouldSkipCrds"] = args?.shouldSkipCrds;
+            resourceInputs["shouldSkipRenderSubchartNotes"] = args?.shouldSkipRenderSubchartNotes;
+            resourceInputs["testLoadBalancerConfig"] = args?.testLoadBalancerConfig;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["trafficShiftTarget"] = args?.trafficShiftTarget;
+            resourceInputs["valuesArtifactIds"] = args?.valuesArtifactIds;
+            resourceInputs["waitCriteria"] = args?.waitCriteria;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["projectId"] = undefined /*out*/;

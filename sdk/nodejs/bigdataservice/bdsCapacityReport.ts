@@ -69,15 +69,15 @@ export class BdsCapacityReport extends pulumi.CustomResource {
     /**
      * The OCID for the compartment. This should always be the root compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Information about the shapes in the capacity report.
      */
-    public readonly shapeAvailabilities!: pulumi.Output<outputs.BigDataService.BdsCapacityReportShapeAvailability[]>;
+    declare public readonly shapeAvailabilities: pulumi.Output<outputs.BigDataService.BdsCapacityReportShapeAvailability[]>;
     /**
      * The time the report was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a BdsCapacityReport resource with the given unique name, arguments, and options.
@@ -92,19 +92,19 @@ export class BdsCapacityReport extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsCapacityReportState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["shapeAvailabilities"] = state ? state.shapeAvailabilities : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["shapeAvailabilities"] = state?.shapeAvailabilities;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as BdsCapacityReportArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shapeAvailabilities === undefined) && !opts.urn) {
+            if (args?.shapeAvailabilities === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeAvailabilities'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["shapeAvailabilities"] = args ? args.shapeAvailabilities : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["shapeAvailabilities"] = args?.shapeAvailabilities;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

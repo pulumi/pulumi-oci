@@ -66,11 +66,11 @@ export class ZonePromoteDnssecKeyVersion extends pulumi.CustomResource {
     /**
      * The UUID of the `DnssecKeyVersion` that is being promoted.
      */
-    public readonly dnssecKeyVersionUuid!: pulumi.Output<string>;
+    declare public readonly dnssecKeyVersionUuid: pulumi.Output<string>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * The OCID of the target zone.
      *
@@ -78,7 +78,7 @@ export class ZonePromoteDnssecKeyVersion extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly zoneId!: pulumi.Output<string>;
+    declare public readonly zoneId: pulumi.Output<string>;
 
     /**
      * Create a ZonePromoteDnssecKeyVersion resource with the given unique name, arguments, and options.
@@ -93,20 +93,20 @@ export class ZonePromoteDnssecKeyVersion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ZonePromoteDnssecKeyVersionState | undefined;
-            resourceInputs["dnssecKeyVersionUuid"] = state ? state.dnssecKeyVersionUuid : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["zoneId"] = state ? state.zoneId : undefined;
+            resourceInputs["dnssecKeyVersionUuid"] = state?.dnssecKeyVersionUuid;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as ZonePromoteDnssecKeyVersionArgs | undefined;
-            if ((!args || args.dnssecKeyVersionUuid === undefined) && !opts.urn) {
+            if (args?.dnssecKeyVersionUuid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dnssecKeyVersionUuid'");
             }
-            if ((!args || args.zoneId === undefined) && !opts.urn) {
+            if (args?.zoneId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zoneId'");
             }
-            resourceInputs["dnssecKeyVersionUuid"] = args ? args.dnssecKeyVersionUuid : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["zoneId"] = args ? args.zoneId : undefined;
+            resourceInputs["dnssecKeyVersionUuid"] = args?.dnssecKeyVersionUuid;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["zoneId"] = args?.zoneId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ZonePromoteDnssecKeyVersion.__pulumiType, name, resourceInputs, opts);

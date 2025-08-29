@@ -67,27 +67,27 @@ export class Peer extends pulumi.CustomResource {
     /**
      * Availability Domain to place new peer
      */
-    public readonly ad!: pulumi.Output<string>;
+    declare public readonly ad: pulumi.Output<string>;
     /**
      * peer alias
      */
-    public readonly alias!: pulumi.Output<string>;
+    declare public readonly alias: pulumi.Output<string>;
     /**
      * Unique service identifier.
      */
-    public readonly blockchainPlatformId!: pulumi.Output<string>;
+    declare public readonly blockchainPlatformId: pulumi.Output<string>;
     /**
      * Host on which the Peer exists
      */
-    public /*out*/ readonly host!: pulumi.Output<string>;
+    declare public /*out*/ readonly host: pulumi.Output<string>;
     /**
      * (Updatable) OCPU allocation parameter
      */
-    public readonly ocpuAllocationParam!: pulumi.Output<outputs.Blockchain.PeerOcpuAllocationParam>;
+    declare public readonly ocpuAllocationParam: pulumi.Output<outputs.Blockchain.PeerOcpuAllocationParam>;
     /**
      * peer identifier
      */
-    public /*out*/ readonly peerKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerKey: pulumi.Output<string>;
     /**
      * Peer role
      *
@@ -95,11 +95,11 @@ export class Peer extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly role: pulumi.Output<string>;
     /**
      * The current state of the peer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a Peer resource with the given unique name, arguments, and options.
@@ -114,33 +114,33 @@ export class Peer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PeerState | undefined;
-            resourceInputs["ad"] = state ? state.ad : undefined;
-            resourceInputs["alias"] = state ? state.alias : undefined;
-            resourceInputs["blockchainPlatformId"] = state ? state.blockchainPlatformId : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["ocpuAllocationParam"] = state ? state.ocpuAllocationParam : undefined;
-            resourceInputs["peerKey"] = state ? state.peerKey : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["ad"] = state?.ad;
+            resourceInputs["alias"] = state?.alias;
+            resourceInputs["blockchainPlatformId"] = state?.blockchainPlatformId;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["ocpuAllocationParam"] = state?.ocpuAllocationParam;
+            resourceInputs["peerKey"] = state?.peerKey;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as PeerArgs | undefined;
-            if ((!args || args.ad === undefined) && !opts.urn) {
+            if (args?.ad === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ad'");
             }
-            if ((!args || args.blockchainPlatformId === undefined) && !opts.urn) {
+            if (args?.blockchainPlatformId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'blockchainPlatformId'");
             }
-            if ((!args || args.ocpuAllocationParam === undefined) && !opts.urn) {
+            if (args?.ocpuAllocationParam === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ocpuAllocationParam'");
             }
-            if ((!args || args.role === undefined) && !opts.urn) {
+            if (args?.role === undefined && !opts.urn) {
                 throw new Error("Missing required property 'role'");
             }
-            resourceInputs["ad"] = args ? args.ad : undefined;
-            resourceInputs["alias"] = args ? args.alias : undefined;
-            resourceInputs["blockchainPlatformId"] = args ? args.blockchainPlatformId : undefined;
-            resourceInputs["ocpuAllocationParam"] = args ? args.ocpuAllocationParam : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
+            resourceInputs["ad"] = args?.ad;
+            resourceInputs["alias"] = args?.alias;
+            resourceInputs["blockchainPlatformId"] = args?.blockchainPlatformId;
+            resourceInputs["ocpuAllocationParam"] = args?.ocpuAllocationParam;
+            resourceInputs["role"] = args?.role;
             resourceInputs["host"] = undefined /*out*/;
             resourceInputs["peerKey"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

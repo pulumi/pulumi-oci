@@ -61,7 +61,7 @@ export class ManagementStationRefreshManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
 
     /**
      * Create a ManagementStationRefreshManagement resource with the given unique name, arguments, and options.
@@ -76,13 +76,13 @@ export class ManagementStationRefreshManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationRefreshManagementState | undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
+            resourceInputs["managementStationId"] = state?.managementStationId;
         } else {
             const args = argsOrState as ManagementStationRefreshManagementArgs | undefined;
-            if ((!args || args.managementStationId === undefined) && !opts.urn) {
+            if (args?.managementStationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementStationId'");
             }
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
+            resourceInputs["managementStationId"] = args?.managementStationId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementStationRefreshManagement.__pulumiType, name, resourceInputs, opts);

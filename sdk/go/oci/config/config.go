@@ -11,8 +11,7 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 func GetAuth(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:auth")
 }
@@ -22,14 +21,13 @@ func GetConfigFileProfile(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:configFileProfile")
 }
 
-// (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-// consistency problems but it also introduced performance issues on destroy operations.
+// (Optional) Disable automatic retries for retriable errors.
+// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 func GetDisableAutoRetries(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "oci:disableAutoRetries")
 }
 
-// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-// console. Required if auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func GetFingerprint(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:fingerprint")
 }
@@ -37,8 +35,8 @@ func GetIgnoreDefinedTags(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:ignoreDefinedTags")
 }
 
-// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-// set to 'ApiKey', ignored otherwise.
+// (Optional) A PEM formatted RSA private key for the user.
+// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 func GetPrivateKey(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKey")
 }
@@ -48,8 +46,8 @@ func GetPrivateKeyPassword(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKeyPassword")
 }
 
-// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-// is set to 'ApiKey', ignored otherwise.
+// (Optional) The path to the user's PEM formatted private key.
+// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 func GetPrivateKeyPath(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:privateKeyPath")
 }
@@ -64,15 +62,13 @@ func GetRegion(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:region")
 }
 
-// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
-// set to true.
+// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
 func GetRetryDurationSeconds(ctx *pulumi.Context) int {
 	return config.GetInt(ctx, "oci:retryDurationSeconds")
 }
 
-// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func GetTenancyOcid(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:tenancyOcid")
 }
@@ -80,8 +76,7 @@ func GetTestTimeMaintenanceRebootDue(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:testTimeMaintenanceRebootDue")
 }
 
-// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-// auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func GetUserOcid(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:userOcid")
 }

@@ -79,34 +79,34 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
      * * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic. The resources mentioned must already be present in the policy before being referenced in the rule.
      */
-    public readonly condition!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
+    declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRuleCondition>;
     /**
      * (Updatable) Type of inspection to affect the traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      */
-    public readonly inspection!: pulumi.Output<string | undefined>;
+    declare public readonly inspection: pulumi.Output<string | undefined>;
     /**
      * Name for the Security rule, must be unique within the policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this security rule belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      */
-    public readonly positions!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition[]>;
-    public readonly priorityOrder!: pulumi.Output<string | undefined>;
+    declare public readonly positions: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicySecurityRulePosition[]>;
+    declare public readonly priorityOrder: pulumi.Output<string | undefined>;
 
     /**
      * Create a NetworkFirewallPolicySecurityRule resource with the given unique name, arguments, and options.
@@ -121,32 +121,32 @@ export class NetworkFirewallPolicySecurityRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicySecurityRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["condition"] = state ? state.condition : undefined;
-            resourceInputs["inspection"] = state ? state.inspection : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["positions"] = state ? state.positions : undefined;
-            resourceInputs["priorityOrder"] = state ? state.priorityOrder : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["condition"] = state?.condition;
+            resourceInputs["inspection"] = state?.inspection;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["positions"] = state?.positions;
+            resourceInputs["priorityOrder"] = state?.priorityOrder;
         } else {
             const args = argsOrState as NetworkFirewallPolicySecurityRuleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.condition === undefined) && !opts.urn) {
+            if (args?.condition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'condition'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["condition"] = args ? args.condition : undefined;
-            resourceInputs["inspection"] = args ? args.inspection : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["positions"] = args ? args.positions : undefined;
-            resourceInputs["priorityOrder"] = args ? args.priorityOrder : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["condition"] = args?.condition;
+            resourceInputs["inspection"] = args?.inspection;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["positions"] = args?.positions;
+            resourceInputs["priorityOrder"] = args?.priorityOrder;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

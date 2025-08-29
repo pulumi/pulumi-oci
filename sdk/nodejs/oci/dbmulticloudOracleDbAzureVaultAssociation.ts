@@ -68,35 +68,35 @@ export class DbmulticloudOracleDbAzureVaultAssociation extends pulumi.CustomReso
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Display name of Oracle DB Azure Vault Association.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The Associated Resources are accessible or not.
      */
-    public /*out*/ readonly isResourceAccessible!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isResourceAccessible: pulumi.Output<boolean>;
     /**
      * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
      */
-    public /*out*/ readonly lastModification!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastModification: pulumi.Output<string>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
      */
-    public readonly oracleDbAzureConnectorId!: pulumi.Output<string>;
+    declare public readonly oracleDbAzureConnectorId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
      *
@@ -104,23 +104,23 @@ export class DbmulticloudOracleDbAzureVaultAssociation extends pulumi.CustomReso
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly oracleDbAzureVaultId!: pulumi.Output<string>;
+    declare public readonly oracleDbAzureVaultId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DbmulticloudOracleDbAzureVaultAssociation resource with the given unique name, arguments, and options.
@@ -135,39 +135,39 @@ export class DbmulticloudOracleDbAzureVaultAssociation extends pulumi.CustomReso
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbmulticloudOracleDbAzureVaultAssociationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isResourceAccessible"] = state ? state.isResourceAccessible : undefined;
-            resourceInputs["lastModification"] = state ? state.lastModification : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["oracleDbAzureConnectorId"] = state ? state.oracleDbAzureConnectorId : undefined;
-            resourceInputs["oracleDbAzureVaultId"] = state ? state.oracleDbAzureVaultId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isResourceAccessible"] = state?.isResourceAccessible;
+            resourceInputs["lastModification"] = state?.lastModification;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["oracleDbAzureConnectorId"] = state?.oracleDbAzureConnectorId;
+            resourceInputs["oracleDbAzureVaultId"] = state?.oracleDbAzureVaultId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DbmulticloudOracleDbAzureVaultAssociationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.oracleDbAzureConnectorId === undefined) && !opts.urn) {
+            if (args?.oracleDbAzureConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'oracleDbAzureConnectorId'");
             }
-            if ((!args || args.oracleDbAzureVaultId === undefined) && !opts.urn) {
+            if (args?.oracleDbAzureVaultId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'oracleDbAzureVaultId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["oracleDbAzureConnectorId"] = args ? args.oracleDbAzureConnectorId : undefined;
-            resourceInputs["oracleDbAzureVaultId"] = args ? args.oracleDbAzureVaultId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["oracleDbAzureConnectorId"] = args?.oracleDbAzureConnectorId;
+            resourceInputs["oracleDbAzureVaultId"] = args?.oracleDbAzureVaultId;
             resourceInputs["isResourceAccessible"] = undefined /*out*/;
             resourceInputs["lastModification"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;

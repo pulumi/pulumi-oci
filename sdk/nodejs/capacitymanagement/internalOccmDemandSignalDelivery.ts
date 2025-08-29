@@ -73,39 +73,39 @@ export class InternalOccmDemandSignalDelivery extends pulumi.CustomResource {
     /**
      * (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
      */
-    public readonly acceptedQuantity!: pulumi.Output<string>;
+    declare public readonly acceptedQuantity: pulumi.Output<string>;
     /**
      * The OCID of the tenancy from which the demand signal delivery resource is created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the demand signal under which this delivery will be grouped.
      */
-    public readonly demandSignalId!: pulumi.Output<string>;
+    declare public readonly demandSignalId: pulumi.Output<string>;
     /**
      * The OCID of the demand signal item corresponding to which this delivery is made.
      */
-    public readonly demandSignalItemId!: pulumi.Output<string>;
+    declare public readonly demandSignalItemId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
      */
-    public readonly justification!: pulumi.Output<string>;
+    declare public readonly justification: pulumi.Output<string>;
     /**
      * The enum values corresponding to the various states associated with the delivery resource.
      */
-    public readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) This field acts as a notes section for operators.
      */
-    public readonly notes!: pulumi.Output<string>;
+    declare public readonly notes: pulumi.Output<string>;
     /**
      * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
      *
@@ -113,19 +113,19 @@ export class InternalOccmDemandSignalDelivery extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly occCustomerGroupId!: pulumi.Output<string>;
+    declare public readonly occCustomerGroupId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
      */
-    public /*out*/ readonly timeDelivered!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDelivered: pulumi.Output<string>;
 
     /**
      * Create a InternalOccmDemandSignalDelivery resource with the given unique name, arguments, and options.
@@ -140,46 +140,46 @@ export class InternalOccmDemandSignalDelivery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InternalOccmDemandSignalDeliveryState | undefined;
-            resourceInputs["acceptedQuantity"] = state ? state.acceptedQuantity : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["demandSignalId"] = state ? state.demandSignalId : undefined;
-            resourceInputs["demandSignalItemId"] = state ? state.demandSignalItemId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["justification"] = state ? state.justification : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["notes"] = state ? state.notes : undefined;
-            resourceInputs["occCustomerGroupId"] = state ? state.occCustomerGroupId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeDelivered"] = state ? state.timeDelivered : undefined;
+            resourceInputs["acceptedQuantity"] = state?.acceptedQuantity;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["demandSignalId"] = state?.demandSignalId;
+            resourceInputs["demandSignalItemId"] = state?.demandSignalItemId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["justification"] = state?.justification;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["notes"] = state?.notes;
+            resourceInputs["occCustomerGroupId"] = state?.occCustomerGroupId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeDelivered"] = state?.timeDelivered;
         } else {
             const args = argsOrState as InternalOccmDemandSignalDeliveryArgs | undefined;
-            if ((!args || args.acceptedQuantity === undefined) && !opts.urn) {
+            if (args?.acceptedQuantity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'acceptedQuantity'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.demandSignalId === undefined) && !opts.urn) {
+            if (args?.demandSignalId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'demandSignalId'");
             }
-            if ((!args || args.demandSignalItemId === undefined) && !opts.urn) {
+            if (args?.demandSignalItemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'demandSignalItemId'");
             }
-            if ((!args || args.occCustomerGroupId === undefined) && !opts.urn) {
+            if (args?.occCustomerGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'occCustomerGroupId'");
             }
-            resourceInputs["acceptedQuantity"] = args ? args.acceptedQuantity : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["demandSignalId"] = args ? args.demandSignalId : undefined;
-            resourceInputs["demandSignalItemId"] = args ? args.demandSignalItemId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["justification"] = args ? args.justification : undefined;
-            resourceInputs["lifecycleDetails"] = args ? args.lifecycleDetails : undefined;
-            resourceInputs["notes"] = args ? args.notes : undefined;
-            resourceInputs["occCustomerGroupId"] = args ? args.occCustomerGroupId : undefined;
+            resourceInputs["acceptedQuantity"] = args?.acceptedQuantity;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["demandSignalId"] = args?.demandSignalId;
+            resourceInputs["demandSignalItemId"] = args?.demandSignalItemId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["justification"] = args?.justification;
+            resourceInputs["lifecycleDetails"] = args?.lifecycleDetails;
+            resourceInputs["notes"] = args?.notes;
+            resourceInputs["occCustomerGroupId"] = args?.occCustomerGroupId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeDelivered"] = undefined /*out*/;

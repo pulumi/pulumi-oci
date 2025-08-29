@@ -68,16 +68,16 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
     /**
      * (Updatable) The customer tenancy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly emailRecipientsGroupId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly emailRecipientsGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The list of recipients that will receive usage statement emails.
      */
-    public readonly recipientsLists!: pulumi.Output<outputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList[]>;
+    declare public readonly recipientsLists: pulumi.Output<outputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList[]>;
     /**
      * The email recipients group lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The usage statement subscription unique OCID.
      *
@@ -85,7 +85,7 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
 
     /**
      * Create a UsageStatementEmailRecipientsGroup resource with the given unique name, arguments, and options.
@@ -100,26 +100,26 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsageStatementEmailRecipientsGroupState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["emailRecipientsGroupId"] = state ? state.emailRecipientsGroupId : undefined;
-            resourceInputs["recipientsLists"] = state ? state.recipientsLists : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["emailRecipientsGroupId"] = state?.emailRecipientsGroupId;
+            resourceInputs["recipientsLists"] = state?.recipientsLists;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
         } else {
             const args = argsOrState as UsageStatementEmailRecipientsGroupArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.recipientsLists === undefined) && !opts.urn) {
+            if (args?.recipientsLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recipientsLists'");
             }
-            if ((!args || args.subscriptionId === undefined) && !opts.urn) {
+            if (args?.subscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscriptionId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["emailRecipientsGroupId"] = args ? args.emailRecipientsGroupId : undefined;
-            resourceInputs["recipientsLists"] = args ? args.recipientsLists : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["emailRecipientsGroupId"] = args?.emailRecipientsGroupId;
+            resourceInputs["recipientsLists"] = args?.recipientsLists;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

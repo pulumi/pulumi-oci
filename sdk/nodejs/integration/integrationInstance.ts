@@ -96,112 +96,112 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[]>;
+    declare public readonly alternateCustomEndpoints: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[]>;
     /**
      * A list of associated attachments to other services
      */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.Integration.IntegrationInstanceAttachment[]>;
+    declare public /*out*/ readonly attachments: pulumi.Output<outputs.Integration.IntegrationInstanceAttachment[]>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    declare public readonly consumptionModel: pulumi.Output<string>;
     /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
-    public readonly customEndpoint!: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint>;
+    declare public readonly customEndpoint: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint>;
     /**
      * Data retention period set for given integration instance
      */
-    public /*out*/ readonly dataRetentionPeriod!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataRetentionPeriod: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Disaster recovery details for the integration instance created in the region.
      */
-    public /*out*/ readonly disasterRecoveryDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceDisasterRecoveryDetail[]>;
+    declare public /*out*/ readonly disasterRecoveryDetails: pulumi.Output<outputs.Integration.IntegrationInstanceDisasterRecoveryDetail[]>;
     /**
      * (Updatable) Integration Instance Identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
-    public readonly domainId!: pulumi.Output<string | undefined>;
+    declare public readonly domainId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
-    public readonly enableProcessAutomationTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly enableProcessAutomationTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
      */
-    public readonly extendDataRetentionTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly extendDataRetentionTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */
-    public readonly failoverTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly failoverTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
      */
-    public readonly idcsAt!: pulumi.Output<string | undefined>;
+    declare public readonly idcsAt: pulumi.Output<string | undefined>;
     /**
      * Information for IDCS access
      */
-    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[]>;
-    public /*out*/ readonly instanceDesignTimeUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsInfos: pulumi.Output<outputs.Integration.IntegrationInstanceIdcsInfo[]>;
+    declare public /*out*/ readonly instanceDesignTimeUrl: pulumi.Output<string>;
     /**
      * The Integration Instance URL.
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceUrl: pulumi.Output<string>;
     /**
      * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
-    public readonly integrationInstanceType!: pulumi.Output<string>;
+    declare public readonly integrationInstanceType: pulumi.Output<string>;
     /**
      * (Updatable) Bring your own license.
      */
-    public readonly isByol!: pulumi.Output<boolean>;
+    declare public readonly isByol: pulumi.Output<boolean>;
     /**
      * Is Disaster Recovery enabled or not.
      */
-    public readonly isDisasterRecoveryEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDisasterRecoveryEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The file server is enabled or not.
      */
-    public readonly isFileServerEnabled!: pulumi.Output<boolean>;
+    declare public readonly isFileServerEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
+    declare public readonly isVisualBuilderEnabled: pulumi.Output<boolean>;
     /**
      * Additional details of lifecycleState or substates
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The number of configured message packs
      */
-    public readonly messagePacks!: pulumi.Output<number>;
+    declare public readonly messagePacks: pulumi.Output<number>;
     /**
      * Base representation of a network endpoint.
      */
-    public readonly networkEndpointDetails!: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    declare public readonly networkEndpointDetails: pulumi.Output<outputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
     /**
      * Base representation for Outbound Connection (Reverse Connection).
      */
-    public /*out*/ readonly privateEndpointOutboundConnections!: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
+    declare public /*out*/ readonly privateEndpointOutboundConnections: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
     /**
      * Shape
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
@@ -209,23 +209,23 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateMessage: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a IntegrationInstance resource with the given unique name, arguments, and options.
@@ -240,77 +240,77 @@ export class IntegrationInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IntegrationInstanceState | undefined;
-            resourceInputs["alternateCustomEndpoints"] = state ? state.alternateCustomEndpoints : undefined;
-            resourceInputs["attachments"] = state ? state.attachments : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
-            resourceInputs["customEndpoint"] = state ? state.customEndpoint : undefined;
-            resourceInputs["dataRetentionPeriod"] = state ? state.dataRetentionPeriod : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["disasterRecoveryDetails"] = state ? state.disasterRecoveryDetails : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domainId"] = state ? state.domainId : undefined;
-            resourceInputs["enableProcessAutomationTrigger"] = state ? state.enableProcessAutomationTrigger : undefined;
-            resourceInputs["extendDataRetentionTrigger"] = state ? state.extendDataRetentionTrigger : undefined;
-            resourceInputs["failoverTrigger"] = state ? state.failoverTrigger : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
-            resourceInputs["idcsInfos"] = state ? state.idcsInfos : undefined;
-            resourceInputs["instanceDesignTimeUrl"] = state ? state.instanceDesignTimeUrl : undefined;
-            resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
-            resourceInputs["integrationInstanceType"] = state ? state.integrationInstanceType : undefined;
-            resourceInputs["isByol"] = state ? state.isByol : undefined;
-            resourceInputs["isDisasterRecoveryEnabled"] = state ? state.isDisasterRecoveryEnabled : undefined;
-            resourceInputs["isFileServerEnabled"] = state ? state.isFileServerEnabled : undefined;
-            resourceInputs["isVisualBuilderEnabled"] = state ? state.isVisualBuilderEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["messagePacks"] = state ? state.messagePacks : undefined;
-            resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
-            resourceInputs["privateEndpointOutboundConnections"] = state ? state.privateEndpointOutboundConnections : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["alternateCustomEndpoints"] = state?.alternateCustomEndpoints;
+            resourceInputs["attachments"] = state?.attachments;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["consumptionModel"] = state?.consumptionModel;
+            resourceInputs["customEndpoint"] = state?.customEndpoint;
+            resourceInputs["dataRetentionPeriod"] = state?.dataRetentionPeriod;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["disasterRecoveryDetails"] = state?.disasterRecoveryDetails;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domainId"] = state?.domainId;
+            resourceInputs["enableProcessAutomationTrigger"] = state?.enableProcessAutomationTrigger;
+            resourceInputs["extendDataRetentionTrigger"] = state?.extendDataRetentionTrigger;
+            resourceInputs["failoverTrigger"] = state?.failoverTrigger;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["idcsAt"] = state?.idcsAt;
+            resourceInputs["idcsInfos"] = state?.idcsInfos;
+            resourceInputs["instanceDesignTimeUrl"] = state?.instanceDesignTimeUrl;
+            resourceInputs["instanceUrl"] = state?.instanceUrl;
+            resourceInputs["integrationInstanceType"] = state?.integrationInstanceType;
+            resourceInputs["isByol"] = state?.isByol;
+            resourceInputs["isDisasterRecoveryEnabled"] = state?.isDisasterRecoveryEnabled;
+            resourceInputs["isFileServerEnabled"] = state?.isFileServerEnabled;
+            resourceInputs["isVisualBuilderEnabled"] = state?.isVisualBuilderEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["messagePacks"] = state?.messagePacks;
+            resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
+            resourceInputs["privateEndpointOutboundConnections"] = state?.privateEndpointOutboundConnections;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateMessage"] = state?.stateMessage;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as IntegrationInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.integrationInstanceType === undefined) && !opts.urn) {
+            if (args?.integrationInstanceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'integrationInstanceType'");
             }
-            if ((!args || args.isByol === undefined) && !opts.urn) {
+            if (args?.isByol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isByol'");
             }
-            if ((!args || args.messagePacks === undefined) && !opts.urn) {
+            if (args?.messagePacks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'messagePacks'");
             }
-            resourceInputs["alternateCustomEndpoints"] = args ? args.alternateCustomEndpoints : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = args ? args.consumptionModel : undefined;
-            resourceInputs["customEndpoint"] = args ? args.customEndpoint : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domainId"] = args ? args.domainId : undefined;
-            resourceInputs["enableProcessAutomationTrigger"] = args ? args.enableProcessAutomationTrigger : undefined;
-            resourceInputs["extendDataRetentionTrigger"] = args ? args.extendDataRetentionTrigger : undefined;
-            resourceInputs["failoverTrigger"] = args ? args.failoverTrigger : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["alternateCustomEndpoints"] = args?.alternateCustomEndpoints;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["consumptionModel"] = args?.consumptionModel;
+            resourceInputs["customEndpoint"] = args?.customEndpoint;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domainId"] = args?.domainId;
+            resourceInputs["enableProcessAutomationTrigger"] = args?.enableProcessAutomationTrigger;
+            resourceInputs["extendDataRetentionTrigger"] = args?.extendDataRetentionTrigger;
+            resourceInputs["failoverTrigger"] = args?.failoverTrigger;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["idcsAt"] = args?.idcsAt ? pulumi.secret(args.idcsAt) : undefined;
-            resourceInputs["integrationInstanceType"] = args ? args.integrationInstanceType : undefined;
-            resourceInputs["isByol"] = args ? args.isByol : undefined;
-            resourceInputs["isDisasterRecoveryEnabled"] = args ? args.isDisasterRecoveryEnabled : undefined;
-            resourceInputs["isFileServerEnabled"] = args ? args.isFileServerEnabled : undefined;
-            resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
-            resourceInputs["messagePacks"] = args ? args.messagePacks : undefined;
-            resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["integrationInstanceType"] = args?.integrationInstanceType;
+            resourceInputs["isByol"] = args?.isByol;
+            resourceInputs["isDisasterRecoveryEnabled"] = args?.isDisasterRecoveryEnabled;
+            resourceInputs["isFileServerEnabled"] = args?.isFileServerEnabled;
+            resourceInputs["isVisualBuilderEnabled"] = args?.isVisualBuilderEnabled;
+            resourceInputs["messagePacks"] = args?.messagePacks;
+            resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["state"] = args?.state;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["dataRetentionPeriod"] = undefined /*out*/;
             resourceInputs["disasterRecoveryDetails"] = undefined /*out*/;

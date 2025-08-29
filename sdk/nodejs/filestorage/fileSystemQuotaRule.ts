@@ -62,27 +62,27 @@ export class FileSystemQuotaRule extends pulumi.CustomResource {
         return obj['__pulumiType'] === FileSystemQuotaRule.__pulumiType;
     }
 
-    public readonly areViolatorsOnly!: pulumi.Output<boolean | undefined>;
+    declare public readonly areViolatorsOnly: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    public readonly fileSystemId!: pulumi.Output<string>;
+    declare public readonly fileSystemId: pulumi.Output<string>;
     /**
      * The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is true, the quota rule will be enforced so the write will be blocked if usage exceeds the hard quota limit. If `isHardQuota` is false, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
      */
-    public readonly isHardQuota!: pulumi.Output<boolean>;
+    declare public readonly isHardQuota: pulumi.Output<boolean>;
     /**
      * An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
      */
-    public readonly principalId!: pulumi.Output<number>;
+    declare public readonly principalId: pulumi.Output<number>;
     /**
      * The type of the owner of this quota rule and usage.
      */
-    public readonly principalType!: pulumi.Output<string>;
+    declare public readonly principalType: pulumi.Output<string>;
     /**
      * (Updatable) The value of the quota rule. The unit is Gigabyte. 
      *
@@ -90,16 +90,16 @@ export class FileSystemQuotaRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly quotaLimitInGigabytes!: pulumi.Output<number>;
-    public readonly quotaRuleId!: pulumi.Output<string>;
+    declare public readonly quotaLimitInGigabytes: pulumi.Output<number>;
+    declare public readonly quotaRuleId: pulumi.Output<string>;
     /**
      * The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a FileSystemQuotaRule resource with the given unique name, arguments, and options.
@@ -114,38 +114,38 @@ export class FileSystemQuotaRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FileSystemQuotaRuleState | undefined;
-            resourceInputs["areViolatorsOnly"] = state ? state.areViolatorsOnly : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fileSystemId"] = state ? state.fileSystemId : undefined;
-            resourceInputs["isHardQuota"] = state ? state.isHardQuota : undefined;
-            resourceInputs["principalId"] = state ? state.principalId : undefined;
-            resourceInputs["principalType"] = state ? state.principalType : undefined;
-            resourceInputs["quotaLimitInGigabytes"] = state ? state.quotaLimitInGigabytes : undefined;
-            resourceInputs["quotaRuleId"] = state ? state.quotaRuleId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["areViolatorsOnly"] = state?.areViolatorsOnly;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fileSystemId"] = state?.fileSystemId;
+            resourceInputs["isHardQuota"] = state?.isHardQuota;
+            resourceInputs["principalId"] = state?.principalId;
+            resourceInputs["principalType"] = state?.principalType;
+            resourceInputs["quotaLimitInGigabytes"] = state?.quotaLimitInGigabytes;
+            resourceInputs["quotaRuleId"] = state?.quotaRuleId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FileSystemQuotaRuleArgs | undefined;
-            if ((!args || args.fileSystemId === undefined) && !opts.urn) {
+            if (args?.fileSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileSystemId'");
             }
-            if ((!args || args.isHardQuota === undefined) && !opts.urn) {
+            if (args?.isHardQuota === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isHardQuota'");
             }
-            if ((!args || args.principalType === undefined) && !opts.urn) {
+            if (args?.principalType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'principalType'");
             }
-            if ((!args || args.quotaLimitInGigabytes === undefined) && !opts.urn) {
+            if (args?.quotaLimitInGigabytes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'quotaLimitInGigabytes'");
             }
-            resourceInputs["areViolatorsOnly"] = args ? args.areViolatorsOnly : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["fileSystemId"] = args ? args.fileSystemId : undefined;
-            resourceInputs["isHardQuota"] = args ? args.isHardQuota : undefined;
-            resourceInputs["principalId"] = args ? args.principalId : undefined;
-            resourceInputs["principalType"] = args ? args.principalType : undefined;
-            resourceInputs["quotaLimitInGigabytes"] = args ? args.quotaLimitInGigabytes : undefined;
-            resourceInputs["quotaRuleId"] = args ? args.quotaRuleId : undefined;
+            resourceInputs["areViolatorsOnly"] = args?.areViolatorsOnly;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["fileSystemId"] = args?.fileSystemId;
+            resourceInputs["isHardQuota"] = args?.isHardQuota;
+            resourceInputs["principalId"] = args?.principalId;
+            resourceInputs["principalType"] = args?.principalType;
+            resourceInputs["quotaLimitInGigabytes"] = args?.quotaLimitInGigabytes;
+            resourceInputs["quotaRuleId"] = args?.quotaRuleId;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }

@@ -63,15 +63,15 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
     /**
      * The OCID of the volume or volume group to assign the policy to.
      */
-    public readonly assetId!: pulumi.Output<string>;
+    declare public readonly assetId: pulumi.Output<string>;
     /**
      * The OCID of the volume backup policy to assign to the volume.
      */
-    public readonly policyId!: pulumi.Output<string>;
+    declare public readonly policyId: pulumi.Output<string>;
     /**
      * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
      *
@@ -79,7 +79,7 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly xrcKmsKeyId!: pulumi.Output<string>;
+    declare public readonly xrcKmsKeyId: pulumi.Output<string>;
 
     /**
      * Create a VolumeBackupPolicyAssignment resource with the given unique name, arguments, and options.
@@ -94,21 +94,21 @@ export class VolumeBackupPolicyAssignment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeBackupPolicyAssignmentState | undefined;
-            resourceInputs["assetId"] = state ? state.assetId : undefined;
-            resourceInputs["policyId"] = state ? state.policyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["xrcKmsKeyId"] = state ? state.xrcKmsKeyId : undefined;
+            resourceInputs["assetId"] = state?.assetId;
+            resourceInputs["policyId"] = state?.policyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["xrcKmsKeyId"] = state?.xrcKmsKeyId;
         } else {
             const args = argsOrState as VolumeBackupPolicyAssignmentArgs | undefined;
-            if ((!args || args.assetId === undefined) && !opts.urn) {
+            if (args?.assetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'assetId'");
             }
-            if ((!args || args.policyId === undefined) && !opts.urn) {
+            if (args?.policyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policyId'");
             }
-            resourceInputs["assetId"] = args ? args.assetId : undefined;
-            resourceInputs["policyId"] = args ? args.policyId : undefined;
-            resourceInputs["xrcKmsKeyId"] = args ? args.xrcKmsKeyId : undefined;
+            resourceInputs["assetId"] = args?.assetId;
+            resourceInputs["policyId"] = args?.policyId;
+            resourceInputs["xrcKmsKeyId"] = args?.xrcKmsKeyId;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -62,7 +62,7 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      */
-    public readonly targetIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly targetIds: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the user assessment.
      *
@@ -70,7 +70,7 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userAssessmentId!: pulumi.Output<string>;
+    declare public readonly userAssessmentId: pulumi.Output<string>;
 
     /**
      * Create a UnsetUserAssessmentBaseline resource with the given unique name, arguments, and options.
@@ -85,15 +85,15 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnsetUserAssessmentBaselineState | undefined;
-            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
-            resourceInputs["userAssessmentId"] = state ? state.userAssessmentId : undefined;
+            resourceInputs["targetIds"] = state?.targetIds;
+            resourceInputs["userAssessmentId"] = state?.userAssessmentId;
         } else {
             const args = argsOrState as UnsetUserAssessmentBaselineArgs | undefined;
-            if ((!args || args.userAssessmentId === undefined) && !opts.urn) {
+            if (args?.userAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userAssessmentId'");
             }
-            resourceInputs["targetIds"] = args ? args.targetIds : undefined;
-            resourceInputs["userAssessmentId"] = args ? args.userAssessmentId : undefined;
+            resourceInputs["targetIds"] = args?.targetIds;
+            resourceInputs["userAssessmentId"] = args?.userAssessmentId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UnsetUserAssessmentBaseline.__pulumiType, name, resourceInputs, opts);

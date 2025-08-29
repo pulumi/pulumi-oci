@@ -18,30 +18,26 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrOutput `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrOutput `pulumi:"configFileProfile"`
-	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-	// console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
-	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-	// set to 'ApiKey', ignored otherwise.
+	// (Optional) A PEM formatted RSA private key for the user.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKey pulumi.StringPtrOutput `pulumi:"privateKey"`
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword pulumi.StringPtrOutput `pulumi:"privateKeyPassword"`
-	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-	// is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath pulumi.StringPtrOutput `pulumi:"privateKeyPath"`
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region pulumi.StringPtrOutput `pulumi:"region"`
-	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	TestTimeMaintenanceRebootDue pulumi.StringPtrOutput `pulumi:"testTimeMaintenanceRebootDue"`
-	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrOutput `pulumi:"userOcid"`
 }
 
@@ -73,79 +69,69 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth *string `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile *string `pulumi:"configFileProfile"`
-	// (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-	// consistency problems but it also introduced performance issues on destroy operations.
+	// (Optional) Disable automatic retries for retriable errors.
+	// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 	DisableAutoRetries *bool `pulumi:"disableAutoRetries"`
-	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-	// console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint       *string  `pulumi:"fingerprint"`
 	IgnoreDefinedTags []string `pulumi:"ignoreDefinedTags"`
-	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-	// set to 'ApiKey', ignored otherwise.
+	// (Optional) A PEM formatted RSA private key for the user.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKey *string `pulumi:"privateKey"`
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword *string `pulumi:"privateKeyPassword"`
-	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-	// is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath *string `pulumi:"privateKeyPath"`
 	// (Optional) flags to enable realm specific service endpoint.
 	RealmSpecificServiceEndpointTemplateEnabled *bool `pulumi:"realmSpecificServiceEndpointTemplateEnabled"`
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region *string `pulumi:"region"`
-	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-	// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
-	// set to true.
+	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+	// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
 	RetryDurationSeconds *int `pulumi:"retryDurationSeconds"`
-	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  *string `pulumi:"tenancyOcid"`
 	TestTimeMaintenanceRebootDue *string `pulumi:"testTimeMaintenanceRebootDue"`
-	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid *string `pulumi:"userOcid"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrInput
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrInput
-	// (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-	// consistency problems but it also introduced performance issues on destroy operations.
+	// (Optional) Disable automatic retries for retriable errors.
+	// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 	DisableAutoRetries pulumi.BoolPtrInput
-	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-	// console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint       pulumi.StringPtrInput
 	IgnoreDefinedTags pulumi.StringArrayInput
-	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-	// set to 'ApiKey', ignored otherwise.
+	// (Optional) A PEM formatted RSA private key for the user.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKey pulumi.StringPtrInput
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword pulumi.StringPtrInput
-	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-	// is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key.
+	// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath pulumi.StringPtrInput
 	// (Optional) flags to enable realm specific service endpoint.
 	RealmSpecificServiceEndpointTemplateEnabled pulumi.BoolPtrInput
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region pulumi.StringPtrInput
-	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-	// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
-	// set to true.
+	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+	// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
 	RetryDurationSeconds pulumi.IntPtrInput
-	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  pulumi.StringPtrInput
 	TestTimeMaintenanceRebootDue pulumi.StringPtrInput
-	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrInput
 }
 
@@ -209,8 +195,7 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 func (o ProviderOutput) Auth() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Auth }).(pulumi.StringPtrOutput)
 }
@@ -220,14 +205,13 @@ func (o ProviderOutput) ConfigFileProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ConfigFileProfile }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-// console. Required if auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) Fingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-// set to 'ApiKey', ignored otherwise.
+// (Optional) A PEM formatted RSA private key for the user.
+// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) PrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKey }).(pulumi.StringPtrOutput)
 }
@@ -237,8 +221,8 @@ func (o ProviderOutput) PrivateKeyPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKeyPassword }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-// is set to 'ApiKey', ignored otherwise.
+// (Optional) The path to the user's PEM formatted private key.
+// A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) PrivateKeyPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKeyPath }).(pulumi.StringPtrOutput)
 }
@@ -248,8 +232,7 @@ func (o ProviderOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) TenancyOcid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
@@ -258,8 +241,7 @@ func (o ProviderOutput) TestTimeMaintenanceRebootDue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TestTimeMaintenanceRebootDue }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-// auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) UserOcid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.UserOcid }).(pulumi.StringPtrOutput)
 }

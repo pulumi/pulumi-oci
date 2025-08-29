@@ -79,47 +79,47 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
     /**
      * (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
      */
-    public readonly approverGroupIdLists!: pulumi.Output<string[]>;
+    declare public readonly approverGroupIdLists: pulumi.Output<string[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the privilegedApi control.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Name of the privilegedApi control It has to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
      */
-    public readonly notificationTopicId!: pulumi.Output<string>;
+    declare public readonly notificationTopicId: pulumi.Output<string>;
     /**
      * (Updatable) Number of approvers required to approve an privilegedApi request.
      */
-    public readonly numberOfApprovers!: pulumi.Output<number>;
+    declare public readonly numberOfApprovers: pulumi.Output<number>;
     /**
      * (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
      */
-    public readonly privilegedOperationLists!: pulumi.Output<outputs.oci.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList[]>;
+    declare public readonly privilegedOperationLists: pulumi.Output<outputs.oci.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList[]>;
     /**
      * (Updatable) resourceType for which the PrivilegedApiControl is applicable
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * (Updatable) contains Resource details
      *
@@ -127,31 +127,31 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resources!: pulumi.Output<string[]>;
+    declare public readonly resources: pulumi.Output<string[]>;
     /**
      * The current state of the PrivilegedApiControl.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly stateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateDetails: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeDeleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDeleted: pulumi.Output<string>;
     /**
      * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ApiaccesscontrolPrivilegedApiControl resource with the given unique name, arguments, and options.
@@ -166,55 +166,55 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApiaccesscontrolPrivilegedApiControlState | undefined;
-            resourceInputs["approverGroupIdLists"] = state ? state.approverGroupIdLists : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["notificationTopicId"] = state ? state.notificationTopicId : undefined;
-            resourceInputs["numberOfApprovers"] = state ? state.numberOfApprovers : undefined;
-            resourceInputs["privilegedOperationLists"] = state ? state.privilegedOperationLists : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["resources"] = state ? state.resources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateDetails"] = state ? state.stateDetails : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDeleted"] = state ? state.timeDeleted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["approverGroupIdLists"] = state?.approverGroupIdLists;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["notificationTopicId"] = state?.notificationTopicId;
+            resourceInputs["numberOfApprovers"] = state?.numberOfApprovers;
+            resourceInputs["privilegedOperationLists"] = state?.privilegedOperationLists;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["resources"] = state?.resources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateDetails"] = state?.stateDetails;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDeleted"] = state?.timeDeleted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ApiaccesscontrolPrivilegedApiControlArgs | undefined;
-            if ((!args || args.approverGroupIdLists === undefined) && !opts.urn) {
+            if (args?.approverGroupIdLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'approverGroupIdLists'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.notificationTopicId === undefined) && !opts.urn) {
+            if (args?.notificationTopicId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationTopicId'");
             }
-            if ((!args || args.privilegedOperationLists === undefined) && !opts.urn) {
+            if (args?.privilegedOperationLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilegedOperationLists'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            if ((!args || args.resources === undefined) && !opts.urn) {
+            if (args?.resources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resources'");
             }
-            resourceInputs["approverGroupIdLists"] = args ? args.approverGroupIdLists : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["notificationTopicId"] = args ? args.notificationTopicId : undefined;
-            resourceInputs["numberOfApprovers"] = args ? args.numberOfApprovers : undefined;
-            resourceInputs["privilegedOperationLists"] = args ? args.privilegedOperationLists : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
-            resourceInputs["resources"] = args ? args.resources : undefined;
+            resourceInputs["approverGroupIdLists"] = args?.approverGroupIdLists;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["notificationTopicId"] = args?.notificationTopicId;
+            resourceInputs["numberOfApprovers"] = args?.numberOfApprovers;
+            resourceInputs["privilegedOperationLists"] = args?.privilegedOperationLists;
+            resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["resources"] = args?.resources;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["stateDetails"] = undefined /*out*/;

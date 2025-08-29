@@ -56,64 +56,64 @@ export class KeyVersion extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains this key version.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyVersionExternalKeyReferenceDetail[]>;
+    declare public /*out*/ readonly externalKeyReferenceDetails: pulumi.Output<outputs.Kms.KeyVersionExternalKeyReferenceDetail[]>;
     /**
      * Key version ID associated with the external key.
      */
-    public readonly externalKeyVersionId!: pulumi.Output<string>;
+    declare public readonly externalKeyVersionId: pulumi.Output<string>;
     /**
      * An optional property indicating whether this keyversion is generated from auto rotatation.
      */
-    public /*out*/ readonly isAutoRotated!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAutoRotated: pulumi.Output<boolean>;
     /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isPrimary: pulumi.Output<boolean>;
     /**
      * The OCID of the key.
      */
-    public readonly keyId!: pulumi.Output<string>;
-    public /*out*/ readonly keyVersionId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
+    declare public /*out*/ readonly keyVersionId: pulumi.Output<string>;
     /**
      * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
      */
-    public readonly managementEndpoint!: pulumi.Output<string>;
+    declare public readonly managementEndpoint: pulumi.Output<string>;
     /**
      * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      */
-    public /*out*/ readonly publicKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKey: pulumi.Output<string>;
     /**
      * KeyVersion replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyVersionReplicaDetail[]>;
-    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicaDetails: pulumi.Output<outputs.Kms.KeyVersionReplicaDetail[]>;
+    declare public /*out*/ readonly restoredFromKeyId: pulumi.Output<string>;
     /**
      * The OCID of the key version from which this key version was restored.
      */
-    public /*out*/ readonly restoredFromKeyVersionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly restoredFromKeyVersionId: pulumi.Output<string>;
     /**
      * The key version's current lifecycle state.  Example: `ENABLED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public readonly timeOfDeletion: pulumi.Output<string>;
     /**
      * The OCID of the vault that contains this key version.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vaultId: pulumi.Output<string>;
 
     /**
      * Create a KeyVersion resource with the given unique name, arguments, and options.
@@ -128,34 +128,34 @@ export class KeyVersion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyVersionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["externalKeyReferenceDetails"] = state ? state.externalKeyReferenceDetails : undefined;
-            resourceInputs["externalKeyVersionId"] = state ? state.externalKeyVersionId : undefined;
-            resourceInputs["isAutoRotated"] = state ? state.isAutoRotated : undefined;
-            resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
-            resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
-            resourceInputs["publicKey"] = state ? state.publicKey : undefined;
-            resourceInputs["replicaDetails"] = state ? state.replicaDetails : undefined;
-            resourceInputs["restoredFromKeyId"] = state ? state.restoredFromKeyId : undefined;
-            resourceInputs["restoredFromKeyVersionId"] = state ? state.restoredFromKeyVersionId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["externalKeyReferenceDetails"] = state?.externalKeyReferenceDetails;
+            resourceInputs["externalKeyVersionId"] = state?.externalKeyVersionId;
+            resourceInputs["isAutoRotated"] = state?.isAutoRotated;
+            resourceInputs["isPrimary"] = state?.isPrimary;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["keyVersionId"] = state?.keyVersionId;
+            resourceInputs["managementEndpoint"] = state?.managementEndpoint;
+            resourceInputs["publicKey"] = state?.publicKey;
+            resourceInputs["replicaDetails"] = state?.replicaDetails;
+            resourceInputs["restoredFromKeyId"] = state?.restoredFromKeyId;
+            resourceInputs["restoredFromKeyVersionId"] = state?.restoredFromKeyVersionId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
+            resourceInputs["vaultId"] = state?.vaultId;
         } else {
             const args = argsOrState as KeyVersionArgs | undefined;
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.managementEndpoint === undefined) && !opts.urn) {
+            if (args?.managementEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementEndpoint'");
             }
-            resourceInputs["externalKeyVersionId"] = args ? args.externalKeyVersionId : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["managementEndpoint"] = args ? args.managementEndpoint : undefined;
-            resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
+            resourceInputs["externalKeyVersionId"] = args?.externalKeyVersionId;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["managementEndpoint"] = args?.managementEndpoint;
+            resourceInputs["timeOfDeletion"] = args?.timeOfDeletion;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["externalKeyReferenceDetails"] = undefined /*out*/;
             resourceInputs["isAutoRotated"] = undefined /*out*/;

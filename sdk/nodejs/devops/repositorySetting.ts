@@ -78,15 +78,15 @@ export class RepositorySetting extends pulumi.CustomResource {
     /**
      * (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
      */
-    public readonly approvalRules!: pulumi.Output<outputs.DevOps.RepositorySettingApprovalRules>;
+    declare public readonly approvalRules: pulumi.Output<outputs.DevOps.RepositorySettingApprovalRules>;
     /**
      * (Updatable) Criteria which must be satisfied to merge a pull request.
      */
-    public readonly mergeChecks!: pulumi.Output<outputs.DevOps.RepositorySettingMergeChecks>;
+    declare public readonly mergeChecks: pulumi.Output<outputs.DevOps.RepositorySettingMergeChecks>;
     /**
      * (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
      */
-    public readonly mergeSettings!: pulumi.Output<outputs.DevOps.RepositorySettingMergeSettings>;
+    declare public readonly mergeSettings: pulumi.Output<outputs.DevOps.RepositorySettingMergeSettings>;
     /**
      * Unique repository identifier.
      *
@@ -94,7 +94,7 @@ export class RepositorySetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repositoryId!: pulumi.Output<string>;
+    declare public readonly repositoryId: pulumi.Output<string>;
 
     /**
      * Create a RepositorySetting resource with the given unique name, arguments, and options.
@@ -109,19 +109,19 @@ export class RepositorySetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RepositorySettingState | undefined;
-            resourceInputs["approvalRules"] = state ? state.approvalRules : undefined;
-            resourceInputs["mergeChecks"] = state ? state.mergeChecks : undefined;
-            resourceInputs["mergeSettings"] = state ? state.mergeSettings : undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
+            resourceInputs["approvalRules"] = state?.approvalRules;
+            resourceInputs["mergeChecks"] = state?.mergeChecks;
+            resourceInputs["mergeSettings"] = state?.mergeSettings;
+            resourceInputs["repositoryId"] = state?.repositoryId;
         } else {
             const args = argsOrState as RepositorySettingArgs | undefined;
-            if ((!args || args.repositoryId === undefined) && !opts.urn) {
+            if (args?.repositoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryId'");
             }
-            resourceInputs["approvalRules"] = args ? args.approvalRules : undefined;
-            resourceInputs["mergeChecks"] = args ? args.mergeChecks : undefined;
-            resourceInputs["mergeSettings"] = args ? args.mergeSettings : undefined;
-            resourceInputs["repositoryId"] = args ? args.repositoryId : undefined;
+            resourceInputs["approvalRules"] = args?.approvalRules;
+            resourceInputs["mergeChecks"] = args?.mergeChecks;
+            resourceInputs["mergeSettings"] = args?.mergeSettings;
+            resourceInputs["repositoryId"] = args?.repositoryId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RepositorySetting.__pulumiType, name, resourceInputs, opts);

@@ -82,99 +82,99 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly compartmentIds: pulumi.Output<string[] | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    public readonly excludeFields!: pulumi.Output<string[] | undefined>;
+    declare public readonly excludeFields: pulumi.Output<string[] | undefined>;
     /**
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
-    public readonly externalId!: pulumi.Output<string | undefined>;
+    declare public readonly externalId: pulumi.Output<string | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    public readonly fields!: pulumi.Output<string[] | undefined>;
+    declare public readonly fields: pulumi.Output<string[] | undefined>;
     /**
      * A filter to return resources with host name match.
      */
-    public readonly hostName!: pulumi.Output<string | undefined>;
+    declare public readonly hostName: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources with host name pattern.
      */
-    public readonly hostNameContains!: pulumi.Output<string | undefined>;
+    declare public readonly hostNameContains: pulumi.Output<string | undefined>;
     /**
      * List of monitored resources.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchItem[]>;
     /**
      * License edition of the monitored resource.
      */
-    public readonly license!: pulumi.Output<string | undefined>;
+    declare public readonly license: pulumi.Output<string | undefined>;
     /**
      * Multiple lifecycle states filter.
      */
-    public readonly lifecycleStates!: pulumi.Output<string[] | undefined>;
+    declare public readonly lifecycleStates: pulumi.Output<string[] | undefined>;
     /**
      * A filter to return resources with matching management agent id.
      */
-    public readonly managementAgentId!: pulumi.Output<string | undefined>;
+    declare public readonly managementAgentId: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources that match exact resource name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.
      */
-    public readonly nameContains!: pulumi.Output<string | undefined>;
+    declare public readonly nameContains: pulumi.Output<string | undefined>;
     /**
      * Criteria based on resource property.
      */
-    public readonly propertyEquals!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly propertyEquals: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Resource category filter.
      */
-    public readonly resourceCategory!: pulumi.Output<string | undefined>;
+    declare public readonly resourceCategory: pulumi.Output<string | undefined>;
     /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
-    public readonly resourceTimeZone!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTimeZone: pulumi.Output<string | undefined>;
     /**
      * Source type filter.
      */
-    public readonly sourceType!: pulumi.Output<string | undefined>;
+    declare public readonly sourceType: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources with matching lifecycle state.
      */
-    public readonly state!: pulumi.Output<string | undefined>;
+    declare public readonly state: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    public readonly timeCreatedGreaterThanOrEqualTo!: pulumi.Output<string | undefined>;
+    declare public readonly timeCreatedGreaterThanOrEqualTo: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    public readonly timeCreatedLessThan!: pulumi.Output<string | undefined>;
+    declare public readonly timeCreatedLessThan: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    public readonly timeUpdatedGreaterThanOrEqualTo!: pulumi.Output<string | undefined>;
+    declare public readonly timeUpdatedGreaterThanOrEqualTo: pulumi.Output<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    public readonly timeUpdatedLessThan!: pulumi.Output<string | undefined>;
+    declare public readonly timeUpdatedLessThan: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources that match resource type. 
      *
@@ -182,7 +182,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string | undefined>;
+    declare public readonly type: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredResourcesSearch resource with the given unique name, arguments, and options.
@@ -197,56 +197,56 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourcesSearchState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compartmentIds"] = state ? state.compartmentIds : undefined;
-            resourceInputs["excludeFields"] = state ? state.excludeFields : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["fields"] = state ? state.fields : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["hostNameContains"] = state ? state.hostNameContains : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["license"] = state ? state.license : undefined;
-            resourceInputs["lifecycleStates"] = state ? state.lifecycleStates : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nameContains"] = state ? state.nameContains : undefined;
-            resourceInputs["propertyEquals"] = state ? state.propertyEquals : undefined;
-            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
-            resourceInputs["resourceTimeZone"] = state ? state.resourceTimeZone : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreatedGreaterThanOrEqualTo"] = state ? state.timeCreatedGreaterThanOrEqualTo : undefined;
-            resourceInputs["timeCreatedLessThan"] = state ? state.timeCreatedLessThan : undefined;
-            resourceInputs["timeUpdatedGreaterThanOrEqualTo"] = state ? state.timeUpdatedGreaterThanOrEqualTo : undefined;
-            resourceInputs["timeUpdatedLessThan"] = state ? state.timeUpdatedLessThan : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compartmentIds"] = state?.compartmentIds;
+            resourceInputs["excludeFields"] = state?.excludeFields;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["fields"] = state?.fields;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["hostNameContains"] = state?.hostNameContains;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["license"] = state?.license;
+            resourceInputs["lifecycleStates"] = state?.lifecycleStates;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nameContains"] = state?.nameContains;
+            resourceInputs["propertyEquals"] = state?.propertyEquals;
+            resourceInputs["resourceCategory"] = state?.resourceCategory;
+            resourceInputs["resourceTimeZone"] = state?.resourceTimeZone;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreatedGreaterThanOrEqualTo"] = state?.timeCreatedGreaterThanOrEqualTo;
+            resourceInputs["timeCreatedLessThan"] = state?.timeCreatedLessThan;
+            resourceInputs["timeUpdatedGreaterThanOrEqualTo"] = state?.timeUpdatedGreaterThanOrEqualTo;
+            resourceInputs["timeUpdatedLessThan"] = state?.timeUpdatedLessThan;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as MonitoredResourcesSearchArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["compartmentIds"] = args ? args.compartmentIds : undefined;
-            resourceInputs["excludeFields"] = args ? args.excludeFields : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["fields"] = args ? args.fields : undefined;
-            resourceInputs["hostName"] = args ? args.hostName : undefined;
-            resourceInputs["hostNameContains"] = args ? args.hostNameContains : undefined;
-            resourceInputs["license"] = args ? args.license : undefined;
-            resourceInputs["lifecycleStates"] = args ? args.lifecycleStates : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nameContains"] = args ? args.nameContains : undefined;
-            resourceInputs["propertyEquals"] = args ? args.propertyEquals : undefined;
-            resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
-            resourceInputs["resourceTimeZone"] = args ? args.resourceTimeZone : undefined;
-            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["timeCreatedGreaterThanOrEqualTo"] = args ? args.timeCreatedGreaterThanOrEqualTo : undefined;
-            resourceInputs["timeCreatedLessThan"] = args ? args.timeCreatedLessThan : undefined;
-            resourceInputs["timeUpdatedGreaterThanOrEqualTo"] = args ? args.timeUpdatedGreaterThanOrEqualTo : undefined;
-            resourceInputs["timeUpdatedLessThan"] = args ? args.timeUpdatedLessThan : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["compartmentIds"] = args?.compartmentIds;
+            resourceInputs["excludeFields"] = args?.excludeFields;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["fields"] = args?.fields;
+            resourceInputs["hostName"] = args?.hostName;
+            resourceInputs["hostNameContains"] = args?.hostNameContains;
+            resourceInputs["license"] = args?.license;
+            resourceInputs["lifecycleStates"] = args?.lifecycleStates;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nameContains"] = args?.nameContains;
+            resourceInputs["propertyEquals"] = args?.propertyEquals;
+            resourceInputs["resourceCategory"] = args?.resourceCategory;
+            resourceInputs["resourceTimeZone"] = args?.resourceTimeZone;
+            resourceInputs["sourceType"] = args?.sourceType;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["timeCreatedGreaterThanOrEqualTo"] = args?.timeCreatedGreaterThanOrEqualTo;
+            resourceInputs["timeCreatedLessThan"] = args?.timeCreatedLessThan;
+            resourceInputs["timeUpdatedGreaterThanOrEqualTo"] = args?.timeUpdatedGreaterThanOrEqualTo;
+            resourceInputs["timeUpdatedLessThan"] = args?.timeUpdatedLessThan;
+            resourceInputs["type"] = args?.type;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

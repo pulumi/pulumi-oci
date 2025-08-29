@@ -108,27 +108,27 @@ export class FileSystem extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies the enforcement of quota rules on the file system.
      */
-    public readonly areQuotaRulesEnabled!: pulumi.Output<boolean>;
+    declare public readonly areQuotaRulesEnabled: pulumi.Output<boolean>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
      */
-    public readonly cloneAttachStatus!: pulumi.Output<string>;
+    declare public readonly cloneAttachStatus: pulumi.Output<string>;
     /**
      * Specifies the total number of children of a file system.
      */
-    public /*out*/ readonly cloneCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly cloneCount: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
      *
@@ -136,82 +136,82 @@ export class FileSystem extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly detachCloneTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly detachCloneTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
      *
      * May be unset as a blank value.
      */
-    public readonly filesystemSnapshotPolicyId!: pulumi.Output<string | undefined>;
+    declare public readonly filesystemSnapshotPolicyId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    public /*out*/ readonly isCloneParent!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCloneParent: pulumi.Output<boolean>;
     /**
      * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      */
-    public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isHydrated: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
-    public /*out*/ readonly isTargetable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isTargetable: pulumi.Output<boolean>;
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      */
-    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.FileSystemLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.FileSystemLock[]>;
     /**
      * The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      */
-    public /*out*/ readonly meteredBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly meteredBytes: pulumi.Output<string>;
     /**
      * Displays the state of enforcement of quota rules on the file system.
      */
-    public /*out*/ readonly quotaEnforcementState!: pulumi.Output<string>;
+    declare public /*out*/ readonly quotaEnforcementState: pulumi.Output<string>;
     /**
      * Specifies the total number of replications for which this file system is a source.
      */
-    public /*out*/ readonly replicationSourceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly replicationSourceCount: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      */
-    public /*out*/ readonly replicationTargetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicationTargetId: pulumi.Output<string>;
     /**
      * Source information for the file system.
      */
-    public /*out*/ readonly sourceDetails!: pulumi.Output<outputs.FileStorage.FileSystemSourceDetail[]>;
+    declare public /*out*/ readonly sourceDetails: pulumi.Output<outputs.FileStorage.FileSystemSourceDetail[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    public readonly sourceSnapshotId!: pulumi.Output<string>;
+    declare public readonly sourceSnapshotId: pulumi.Output<string>;
     /**
      * The current state of the file system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a FileSystem resource with the given unique name, arguments, and options.
@@ -226,53 +226,53 @@ export class FileSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FileSystemState | undefined;
-            resourceInputs["areQuotaRulesEnabled"] = state ? state.areQuotaRulesEnabled : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["cloneAttachStatus"] = state ? state.cloneAttachStatus : undefined;
-            resourceInputs["cloneCount"] = state ? state.cloneCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["detachCloneTrigger"] = state ? state.detachCloneTrigger : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCloneParent"] = state ? state.isCloneParent : undefined;
-            resourceInputs["isHydrated"] = state ? state.isHydrated : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["isTargetable"] = state ? state.isTargetable : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["meteredBytes"] = state ? state.meteredBytes : undefined;
-            resourceInputs["quotaEnforcementState"] = state ? state.quotaEnforcementState : undefined;
-            resourceInputs["replicationSourceCount"] = state ? state.replicationSourceCount : undefined;
-            resourceInputs["replicationTargetId"] = state ? state.replicationTargetId : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["sourceSnapshotId"] = state ? state.sourceSnapshotId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["areQuotaRulesEnabled"] = state?.areQuotaRulesEnabled;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["cloneAttachStatus"] = state?.cloneAttachStatus;
+            resourceInputs["cloneCount"] = state?.cloneCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detachCloneTrigger"] = state?.detachCloneTrigger;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["filesystemSnapshotPolicyId"] = state?.filesystemSnapshotPolicyId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCloneParent"] = state?.isCloneParent;
+            resourceInputs["isHydrated"] = state?.isHydrated;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["isTargetable"] = state?.isTargetable;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["meteredBytes"] = state?.meteredBytes;
+            resourceInputs["quotaEnforcementState"] = state?.quotaEnforcementState;
+            resourceInputs["replicationSourceCount"] = state?.replicationSourceCount;
+            resourceInputs["replicationTargetId"] = state?.replicationTargetId;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["sourceSnapshotId"] = state?.sourceSnapshotId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as FileSystemArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["areQuotaRulesEnabled"] = args ? args.areQuotaRulesEnabled : undefined;
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["cloneAttachStatus"] = args ? args.cloneAttachStatus : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["detachCloneTrigger"] = args ? args.detachCloneTrigger : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["filesystemSnapshotPolicyId"] = args ? args.filesystemSnapshotPolicyId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["sourceSnapshotId"] = args ? args.sourceSnapshotId : undefined;
+            resourceInputs["areQuotaRulesEnabled"] = args?.areQuotaRulesEnabled;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["cloneAttachStatus"] = args?.cloneAttachStatus;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["detachCloneTrigger"] = args?.detachCloneTrigger;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["filesystemSnapshotPolicyId"] = args?.filesystemSnapshotPolicyId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["sourceSnapshotId"] = args?.sourceSnapshotId;
             resourceInputs["cloneCount"] = undefined /*out*/;
             resourceInputs["isCloneParent"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;

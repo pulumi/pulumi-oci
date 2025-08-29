@@ -57,15 +57,15 @@ export class MetricExtensionMetricExtensionOnGivenResourcesManagement extends pu
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableMetricExtensionOnGivenResources!: pulumi.Output<boolean>;
+    declare public readonly enableMetricExtensionOnGivenResources: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
      */
-    public readonly metricExtensionId!: pulumi.Output<string>;
+    declare public readonly metricExtensionId: pulumi.Output<string>;
     /**
      * List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
      */
-    public readonly resourceIds!: pulumi.Output<string>;
+    declare public readonly resourceIds: pulumi.Output<string>;
 
     /**
      * Create a MetricExtensionMetricExtensionOnGivenResourcesManagement resource with the given unique name, arguments, and options.
@@ -80,23 +80,23 @@ export class MetricExtensionMetricExtensionOnGivenResourcesManagement extends pu
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MetricExtensionMetricExtensionOnGivenResourcesManagementState | undefined;
-            resourceInputs["enableMetricExtensionOnGivenResources"] = state ? state.enableMetricExtensionOnGivenResources : undefined;
-            resourceInputs["metricExtensionId"] = state ? state.metricExtensionId : undefined;
-            resourceInputs["resourceIds"] = state ? state.resourceIds : undefined;
+            resourceInputs["enableMetricExtensionOnGivenResources"] = state?.enableMetricExtensionOnGivenResources;
+            resourceInputs["metricExtensionId"] = state?.metricExtensionId;
+            resourceInputs["resourceIds"] = state?.resourceIds;
         } else {
             const args = argsOrState as MetricExtensionMetricExtensionOnGivenResourcesManagementArgs | undefined;
-            if ((!args || args.enableMetricExtensionOnGivenResources === undefined) && !opts.urn) {
+            if (args?.enableMetricExtensionOnGivenResources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableMetricExtensionOnGivenResources'");
             }
-            if ((!args || args.metricExtensionId === undefined) && !opts.urn) {
+            if (args?.metricExtensionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricExtensionId'");
             }
-            if ((!args || args.resourceIds === undefined) && !opts.urn) {
+            if (args?.resourceIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceIds'");
             }
-            resourceInputs["enableMetricExtensionOnGivenResources"] = args ? args.enableMetricExtensionOnGivenResources : undefined;
-            resourceInputs["metricExtensionId"] = args ? args.metricExtensionId : undefined;
-            resourceInputs["resourceIds"] = args ? args.resourceIds : undefined;
+            resourceInputs["enableMetricExtensionOnGivenResources"] = args?.enableMetricExtensionOnGivenResources;
+            resourceInputs["metricExtensionId"] = args?.metricExtensionId;
+            resourceInputs["resourceIds"] = args?.resourceIds;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MetricExtensionMetricExtensionOnGivenResourcesManagement.__pulumiType, name, resourceInputs, opts);

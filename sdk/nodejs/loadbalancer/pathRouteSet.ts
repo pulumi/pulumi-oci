@@ -70,16 +70,16 @@ export class PathRouteSet extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The set of path route rules.
      */
-    public readonly pathRoutes!: pulumi.Output<outputs.LoadBalancer.PathRouteSetPathRoute[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly pathRoutes: pulumi.Output<outputs.LoadBalancer.PathRouteSetPathRoute[]>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a PathRouteSet resource with the given unique name, arguments, and options.
@@ -94,21 +94,21 @@ export class PathRouteSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PathRouteSetState | undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["pathRoutes"] = state ? state.pathRoutes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["pathRoutes"] = state?.pathRoutes;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as PathRouteSetArgs | undefined;
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.pathRoutes === undefined) && !opts.urn) {
+            if (args?.pathRoutes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pathRoutes'");
             }
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["pathRoutes"] = args ? args.pathRoutes : undefined;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["pathRoutes"] = args?.pathRoutes;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

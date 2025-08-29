@@ -71,47 +71,47 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The compute model for the OPSI warehouse ADW (OCPU or ECPU)
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    declare public readonly computeModel: pulumi.Output<string>;
     /**
      * (Updatable) Number of CPUs allocated to OPSI Warehouse ADW.
      */
-    public readonly cpuAllocated!: pulumi.Output<number>;
+    declare public readonly cpuAllocated: pulumi.Output<number>;
     /**
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      */
-    public /*out*/ readonly cpuUsed!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuUsed: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * OCID of the dynamic group created for the warehouse
      */
-    public /*out*/ readonly dynamicGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dynamicGroupId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Tenancy Identifier of Ops Insights service
      */
-    public /*out*/ readonly operationsInsightsTenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly operationsInsightsTenancyId: pulumi.Output<string>;
     /**
      * Possible lifecycle states
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Storage allocated to OPSI Warehouse ADW. 
      *
@@ -119,27 +119,27 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly storageAllocatedInGbs!: pulumi.Output<number>;
+    declare public readonly storageAllocatedInGbs: pulumi.Output<number>;
     /**
      * Storage by OPSI Warehouse ADW in GB.
      */
-    public /*out*/ readonly storageUsedInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly storageUsedInGbs: pulumi.Output<number>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeLastWalletRotated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastWalletRotated: pulumi.Output<string>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OperationsInsightsWarehouse resource with the given unique name, arguments, and options.
@@ -154,41 +154,41 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OperationsInsightsWarehouseState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuAllocated"] = state ? state.cpuAllocated : undefined;
-            resourceInputs["cpuUsed"] = state ? state.cpuUsed : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dynamicGroupId"] = state ? state.dynamicGroupId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["operationsInsightsTenancyId"] = state ? state.operationsInsightsTenancyId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageAllocatedInGbs"] = state ? state.storageAllocatedInGbs : undefined;
-            resourceInputs["storageUsedInGbs"] = state ? state.storageUsedInGbs : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastWalletRotated"] = state ? state.timeLastWalletRotated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuAllocated"] = state?.cpuAllocated;
+            resourceInputs["cpuUsed"] = state?.cpuUsed;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dynamicGroupId"] = state?.dynamicGroupId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["operationsInsightsTenancyId"] = state?.operationsInsightsTenancyId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageAllocatedInGbs"] = state?.storageAllocatedInGbs;
+            resourceInputs["storageUsedInGbs"] = state?.storageUsedInGbs;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastWalletRotated"] = state?.timeLastWalletRotated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OperationsInsightsWarehouseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.cpuAllocated === undefined) && !opts.urn) {
+            if (args?.cpuAllocated === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cpuAllocated'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
-            resourceInputs["cpuAllocated"] = args ? args.cpuAllocated : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["storageAllocatedInGbs"] = args ? args.storageAllocatedInGbs : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeModel"] = args?.computeModel;
+            resourceInputs["cpuAllocated"] = args?.cpuAllocated;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["storageAllocatedInGbs"] = args?.storageAllocatedInGbs;
             resourceInputs["cpuUsed"] = undefined /*out*/;
             resourceInputs["dynamicGroupId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

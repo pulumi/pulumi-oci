@@ -61,7 +61,7 @@ export class ManagedInstanceAttachProfileManagement extends pulumi.CustomResourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    public readonly managedInstanceId!: pulumi.Output<string>;
+    declare public readonly managedInstanceId: pulumi.Output<string>;
     /**
      * The profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the managed instance.
      *
@@ -69,7 +69,7 @@ export class ManagedInstanceAttachProfileManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
 
     /**
      * Create a ManagedInstanceAttachProfileManagement resource with the given unique name, arguments, and options.
@@ -84,18 +84,18 @@ export class ManagedInstanceAttachProfileManagement extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceAttachProfileManagementState | undefined;
-            resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
+            resourceInputs["managedInstanceId"] = state?.managedInstanceId;
+            resourceInputs["profileId"] = state?.profileId;
         } else {
             const args = argsOrState as ManagedInstanceAttachProfileManagementArgs | undefined;
-            if ((!args || args.managedInstanceId === undefined) && !opts.urn) {
+            if (args?.managedInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceId'");
             }
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            resourceInputs["managedInstanceId"] = args ? args.managedInstanceId : undefined;
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
+            resourceInputs["managedInstanceId"] = args?.managedInstanceId;
+            resourceInputs["profileId"] = args?.profileId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceAttachProfileManagement.__pulumiType, name, resourceInputs, opts);

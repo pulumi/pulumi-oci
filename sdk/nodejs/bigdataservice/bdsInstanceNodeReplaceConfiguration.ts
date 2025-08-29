@@ -70,39 +70,39 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
      */
-    public readonly durationInMinutes!: pulumi.Output<number>;
+    declare public readonly durationInMinutes: pulumi.Output<number>;
     /**
      * (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
      */
-    public readonly levelTypeDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceNodeReplaceConfigurationLevelTypeDetails>;
+    declare public readonly levelTypeDetails: pulumi.Output<outputs.BigDataService.BdsInstanceNodeReplaceConfigurationLevelTypeDetails>;
     /**
      * (Updatable) Type of compute instance health metric to use for node replacement
      */
-    public readonly metricType!: pulumi.Output<string>;
+    declare public readonly metricType: pulumi.Output<string>;
     /**
      * The state of the NodeReplaceConfiguration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceNodeReplaceConfiguration resource with the given unique name, arguments, and options.
@@ -117,38 +117,38 @@ export class BdsInstanceNodeReplaceConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceNodeReplaceConfigurationState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["durationInMinutes"] = state ? state.durationInMinutes : undefined;
-            resourceInputs["levelTypeDetails"] = state ? state.levelTypeDetails : undefined;
-            resourceInputs["metricType"] = state ? state.metricType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["durationInMinutes"] = state?.durationInMinutes;
+            resourceInputs["levelTypeDetails"] = state?.levelTypeDetails;
+            resourceInputs["metricType"] = state?.metricType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BdsInstanceNodeReplaceConfigurationArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.durationInMinutes === undefined) && !opts.urn) {
+            if (args?.durationInMinutes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'durationInMinutes'");
             }
-            if ((!args || args.levelTypeDetails === undefined) && !opts.urn) {
+            if (args?.levelTypeDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'levelTypeDetails'");
             }
-            if ((!args || args.metricType === undefined) && !opts.urn) {
+            if (args?.metricType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metricType'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["durationInMinutes"] = args ? args.durationInMinutes : undefined;
-            resourceInputs["levelTypeDetails"] = args ? args.levelTypeDetails : undefined;
-            resourceInputs["metricType"] = args ? args.metricType : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["durationInMinutes"] = args?.durationInMinutes;
+            resourceInputs["levelTypeDetails"] = args?.levelTypeDetails;
+            resourceInputs["metricType"] = args?.metricType;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

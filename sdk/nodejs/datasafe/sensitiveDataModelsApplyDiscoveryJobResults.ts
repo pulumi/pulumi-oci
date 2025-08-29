@@ -32,8 +32,8 @@ export class SensitiveDataModelsApplyDiscoveryJobResults extends pulumi.CustomRe
         return obj['__pulumiType'] === SensitiveDataModelsApplyDiscoveryJobResults.__pulumiType;
     }
 
-    public readonly discoveryJobId!: pulumi.Output<string>;
-    public readonly sensitiveDataModelId!: pulumi.Output<string>;
+    declare public readonly discoveryJobId: pulumi.Output<string>;
+    declare public readonly sensitiveDataModelId: pulumi.Output<string>;
 
     /**
      * Create a SensitiveDataModelsApplyDiscoveryJobResults resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class SensitiveDataModelsApplyDiscoveryJobResults extends pulumi.CustomRe
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SensitiveDataModelsApplyDiscoveryJobResultsState | undefined;
-            resourceInputs["discoveryJobId"] = state ? state.discoveryJobId : undefined;
-            resourceInputs["sensitiveDataModelId"] = state ? state.sensitiveDataModelId : undefined;
+            resourceInputs["discoveryJobId"] = state?.discoveryJobId;
+            resourceInputs["sensitiveDataModelId"] = state?.sensitiveDataModelId;
         } else {
             const args = argsOrState as SensitiveDataModelsApplyDiscoveryJobResultsArgs | undefined;
-            if ((!args || args.discoveryJobId === undefined) && !opts.urn) {
+            if (args?.discoveryJobId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'discoveryJobId'");
             }
-            if ((!args || args.sensitiveDataModelId === undefined) && !opts.urn) {
+            if (args?.sensitiveDataModelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sensitiveDataModelId'");
             }
-            resourceInputs["discoveryJobId"] = args ? args.discoveryJobId : undefined;
-            resourceInputs["sensitiveDataModelId"] = args ? args.sensitiveDataModelId : undefined;
+            resourceInputs["discoveryJobId"] = args?.discoveryJobId;
+            resourceInputs["sensitiveDataModelId"] = args?.sensitiveDataModelId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SensitiveDataModelsApplyDiscoveryJobResults.__pulumiType, name, resourceInputs, opts);

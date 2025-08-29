@@ -67,7 +67,7 @@ export class Backend extends pulumi.CustomResource {
     /**
      * The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
      */
-    public readonly backendsetName!: pulumi.Output<string>;
+    declare public readonly backendsetName: pulumi.Output<string>;
     /**
      * (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
      *
@@ -75,19 +75,19 @@ export class Backend extends pulumi.CustomResource {
      *
      * Example: `false`
      */
-    public readonly backup!: pulumi.Output<boolean | undefined>;
+    declare public readonly backup: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
      */
-    public readonly drain!: pulumi.Output<boolean>;
+    declare public readonly drain: pulumi.Output<boolean>;
     /**
      * The IP address of the backend server.  Example: `10.0.0.3`
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
      *
@@ -95,20 +95,20 @@ export class Backend extends pulumi.CustomResource {
      *
      * Example: `300`
      */
-    public readonly maxConnections!: pulumi.Output<number>;
+    declare public readonly maxConnections: pulumi.Output<number>;
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    public readonly offline!: pulumi.Output<boolean>;
+    declare public readonly offline: pulumi.Output<boolean>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
-    public readonly port!: pulumi.Output<number>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly port: pulumi.Output<number>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
      *
@@ -116,7 +116,7 @@ export class Backend extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly weight!: pulumi.Output<number>;
+    declare public readonly weight: pulumi.Output<number>;
 
     /**
      * Create a Backend resource with the given unique name, arguments, and options.
@@ -131,40 +131,40 @@ export class Backend extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackendState | undefined;
-            resourceInputs["backendsetName"] = state ? state.backendsetName : undefined;
-            resourceInputs["backup"] = state ? state.backup : undefined;
-            resourceInputs["drain"] = state ? state.drain : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["maxConnections"] = state ? state.maxConnections : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["offline"] = state ? state.offline : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["weight"] = state ? state.weight : undefined;
+            resourceInputs["backendsetName"] = state?.backendsetName;
+            resourceInputs["backup"] = state?.backup;
+            resourceInputs["drain"] = state?.drain;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["maxConnections"] = state?.maxConnections;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["offline"] = state?.offline;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["weight"] = state?.weight;
         } else {
             const args = argsOrState as BackendArgs | undefined;
-            if ((!args || args.backendsetName === undefined) && !opts.urn) {
+            if (args?.backendsetName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backendsetName'");
             }
-            if ((!args || args.ipAddress === undefined) && !opts.urn) {
+            if (args?.ipAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipAddress'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            resourceInputs["backendsetName"] = args ? args.backendsetName : undefined;
-            resourceInputs["backup"] = args ? args.backup : undefined;
-            resourceInputs["drain"] = args ? args.drain : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["maxConnections"] = args ? args.maxConnections : undefined;
-            resourceInputs["offline"] = args ? args.offline : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["weight"] = args ? args.weight : undefined;
+            resourceInputs["backendsetName"] = args?.backendsetName;
+            resourceInputs["backup"] = args?.backup;
+            resourceInputs["drain"] = args?.drain;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["maxConnections"] = args?.maxConnections;
+            resourceInputs["offline"] = args?.offline;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["weight"] = args?.weight;
             resourceInputs["name"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

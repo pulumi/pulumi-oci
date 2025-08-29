@@ -74,67 +74,67 @@ export class OpaInstance extends pulumi.CustomResource {
     /**
      * A list of associated attachments to other services
      */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.Opa.OpaInstanceAttachment[]>;
+    declare public /*out*/ readonly attachments: pulumi.Output<outputs.Opa.OpaInstanceAttachment[]>;
     /**
      * (Updatable) Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Parameter specifying which entitlement to use for billing purposes
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    declare public readonly consumptionModel: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the Oracle Process Automation instance.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      */
-    public readonly idcsAt!: pulumi.Output<string>;
+    declare public readonly idcsAt: pulumi.Output<string>;
     /**
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityAppDisplayName: pulumi.Output<string>;
     /**
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppGuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityAppGuid: pulumi.Output<string>;
     /**
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppOpcServiceInstanceGuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityAppOpcServiceInstanceGuid: pulumi.Output<string>;
     /**
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    public /*out*/ readonly identityDomainUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityDomainUrl: pulumi.Output<string>;
     /**
      * OPA Instance URL
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceUrl: pulumi.Output<string>;
     /**
      * indicates if breakGlass is enabled for the opa instance.
      */
-    public readonly isBreakglassEnabled!: pulumi.Output<boolean>;
+    declare public readonly isBreakglassEnabled: pulumi.Output<boolean>;
     /**
      * MeteringType Identifier
      */
-    public readonly meteringType!: pulumi.Output<string>;
+    declare public readonly meteringType: pulumi.Output<string>;
     /**
      * Shape of the instance.
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -142,19 +142,19 @@ export class OpaInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OpaInstance resource with the given unique name, arguments, and options.
@@ -169,48 +169,48 @@ export class OpaInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpaInstanceState | undefined;
-            resourceInputs["attachments"] = state ? state.attachments : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = state ? state.consumptionModel : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsAt"] = state ? state.idcsAt : undefined;
-            resourceInputs["identityAppDisplayName"] = state ? state.identityAppDisplayName : undefined;
-            resourceInputs["identityAppGuid"] = state ? state.identityAppGuid : undefined;
-            resourceInputs["identityAppOpcServiceInstanceGuid"] = state ? state.identityAppOpcServiceInstanceGuid : undefined;
-            resourceInputs["identityDomainUrl"] = state ? state.identityDomainUrl : undefined;
-            resourceInputs["instanceUrl"] = state ? state.instanceUrl : undefined;
-            resourceInputs["isBreakglassEnabled"] = state ? state.isBreakglassEnabled : undefined;
-            resourceInputs["meteringType"] = state ? state.meteringType : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["attachments"] = state?.attachments;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["consumptionModel"] = state?.consumptionModel;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["idcsAt"] = state?.idcsAt;
+            resourceInputs["identityAppDisplayName"] = state?.identityAppDisplayName;
+            resourceInputs["identityAppGuid"] = state?.identityAppGuid;
+            resourceInputs["identityAppOpcServiceInstanceGuid"] = state?.identityAppOpcServiceInstanceGuid;
+            resourceInputs["identityDomainUrl"] = state?.identityDomainUrl;
+            resourceInputs["instanceUrl"] = state?.instanceUrl;
+            resourceInputs["isBreakglassEnabled"] = state?.isBreakglassEnabled;
+            resourceInputs["meteringType"] = state?.meteringType;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OpaInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["consumptionModel"] = args ? args.consumptionModel : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsAt"] = args ? args.idcsAt : undefined;
-            resourceInputs["isBreakglassEnabled"] = args ? args.isBreakglassEnabled : undefined;
-            resourceInputs["meteringType"] = args ? args.meteringType : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["consumptionModel"] = args?.consumptionModel;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["idcsAt"] = args?.idcsAt;
+            resourceInputs["isBreakglassEnabled"] = args?.isBreakglassEnabled;
+            resourceInputs["meteringType"] = args?.meteringType;
+            resourceInputs["shapeName"] = args?.shapeName;
+            resourceInputs["state"] = args?.state;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["identityAppDisplayName"] = undefined /*out*/;
             resourceInputs["identityAppGuid"] = undefined /*out*/;

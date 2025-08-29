@@ -50,23 +50,23 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
      */
-    public readonly externalExadataStorageGridId!: pulumi.Output<string>;
+    declare public readonly externalExadataStorageGridId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -74,51 +74,51 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly internalId: pulumi.Output<string>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The type of Exadata resource.
      */
-    public /*out*/ readonly resourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceType: pulumi.Output<string>;
     /**
      * The number of Exadata storage servers in the Exadata infrastructure.
      */
-    public /*out*/ readonly serverCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly serverCount: pulumi.Output<number>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * A list of monitored Exadata storage servers.
      */
-    public /*out*/ readonly storageServers!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageGridStorageServer[]>;
+    declare public /*out*/ readonly storageServers: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageGridStorageServer[]>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ExternalExadataStorageGrid resource with the given unique name, arguments, and options.
@@ -133,31 +133,31 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalExadataStorageGridState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["externalExadataStorageGridId"] = state ? state.externalExadataStorageGridId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["internalId"] = state ? state.internalId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["serverCount"] = state ? state.serverCount : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageServers"] = state ? state.storageServers : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["externalExadataStorageGridId"] = state?.externalExadataStorageGridId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["internalId"] = state?.internalId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["serverCount"] = state?.serverCount;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageServers"] = state?.storageServers;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ExternalExadataStorageGridArgs | undefined;
-            if ((!args || args.externalExadataStorageGridId === undefined) && !opts.urn) {
+            if (args?.externalExadataStorageGridId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalExadataStorageGridId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["externalExadataStorageGridId"] = args ? args.externalExadataStorageGridId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["externalExadataStorageGridId"] = args?.externalExadataStorageGridId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["exadataInfrastructureId"] = undefined /*out*/;

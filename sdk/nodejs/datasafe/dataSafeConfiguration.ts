@@ -58,23 +58,23 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) A filter to return only resources that match the specified compartment OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The Oracle Data Safe's NAT Gateway IP Address.
      */
-    public /*out*/ readonly dataSafeNatGatewayIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataSafeNatGatewayIpAddress: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details of the tenancy level global settings in Data Safe.
      */
-    public /*out*/ readonly globalSettings!: pulumi.Output<outputs.DataSafe.DataSafeConfigurationGlobalSetting[]>;
+    declare public /*out*/ readonly globalSettings: pulumi.Output<outputs.DataSafe.DataSafeConfigurationGlobalSetting[]>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *
@@ -82,19 +82,19 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The current state of Data Safe.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeEnabled!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEnabled: pulumi.Output<string>;
     /**
      * The URL of the Data Safe service.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    declare public /*out*/ readonly url: pulumi.Output<string>;
 
     /**
      * Create a DataSafeConfiguration resource with the given unique name, arguments, and options.
@@ -109,22 +109,22 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DataSafeConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataSafeNatGatewayIpAddress"] = state ? state.dataSafeNatGatewayIpAddress : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["globalSettings"] = state ? state.globalSettings : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeEnabled"] = state ? state.timeEnabled : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataSafeNatGatewayIpAddress"] = state?.dataSafeNatGatewayIpAddress;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["globalSettings"] = state?.globalSettings;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeEnabled"] = state?.timeEnabled;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as DataSafeConfigurationArgs | undefined;
-            if ((!args || args.isEnabled === undefined) && !opts.urn) {
+            if (args?.isEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isEnabled"] = args?.isEnabled;
             resourceInputs["dataSafeNatGatewayIpAddress"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;

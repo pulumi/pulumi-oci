@@ -133,99 +133,99 @@ export class MonitoredResource extends pulumi.CustomResource {
     /**
      * (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
      */
-    public readonly additionalAliases!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAdditionalAlias[] | undefined>;
+    declare public readonly additionalAliases: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAdditionalAlias[] | undefined>;
     /**
      * (Updatable) List of MonitoredResourceCredentials. This property complements the existing  "credentials" property by allowing user to specify more than one credential.  If both "credential" and "additionalCredentials" are specified, union of the  values is used as list of credentials applicable for this resource. If any duplicate found in the combined list of "credentials" and "additionalCredentials",  an error will be thrown.
      */
-    public readonly additionalCredentials!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAdditionalCredential[] | undefined>;
+    declare public readonly additionalCredentials: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAdditionalCredential[] | undefined>;
     /**
      * (Updatable) Monitored Resource Alias Credential Details
      */
-    public readonly aliases!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAliases | undefined>;
+    declare public readonly aliases: pulumi.Output<outputs.StackMonitoring.MonitoredResourceAliases | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Monitored Resource Credential Details.
      */
-    public readonly credentials!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceCredentials | undefined>;
+    declare public readonly credentials: pulumi.Output<outputs.StackMonitoring.MonitoredResourceCredentials | undefined>;
     /**
      * (Updatable) Connection details for the database.
      */
-    public readonly databaseConnectionDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceDatabaseConnectionDetails | undefined>;
+    declare public readonly databaseConnectionDetails: pulumi.Output<outputs.StackMonitoring.MonitoredResourceDatabaseConnectionDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Monitored resource display name.
      */
-    public readonly displayName!: pulumi.Output<string | undefined>;
+    declare public readonly displayName: pulumi.Output<string | undefined>;
     /**
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
      */
-    public readonly externalId!: pulumi.Output<string | undefined>;
+    declare public readonly externalId: pulumi.Output<string | undefined>;
     /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
      */
-    public readonly externalResourceId!: pulumi.Output<string | undefined>;
+    declare public readonly externalResourceId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Host name of the monitored resource.
      */
-    public readonly hostName!: pulumi.Output<string | undefined>;
+    declare public readonly hostName: pulumi.Output<string | undefined>;
     /**
      * (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
      */
-    public readonly license!: pulumi.Output<string>;
+    declare public readonly license: pulumi.Output<string>;
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly managementAgentId!: pulumi.Output<string | undefined>;
+    declare public readonly managementAgentId: pulumi.Output<string | undefined>;
     /**
      * Monitored Resource Name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) List of monitored resource properties.
      */
-    public readonly properties!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceProperty[] | undefined>;
+    declare public readonly properties: pulumi.Output<outputs.StackMonitoring.MonitoredResourceProperty[] | undefined>;
     /**
      * Resource Category to indicate the kind of resource type.
      */
-    public /*out*/ readonly resourceCategory!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceCategory: pulumi.Output<string>;
     /**
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
-    public readonly resourceTimeZone!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTimeZone: pulumi.Output<string | undefined>;
     /**
      * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly sourceType: pulumi.Output<string>;
     /**
      * Lifecycle state of the monitored resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Monitored Resource Type. 
      *
@@ -233,7 +233,7 @@ export class MonitoredResource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a MonitoredResource resource with the given unique name, arguments, and options.
@@ -248,57 +248,57 @@ export class MonitoredResource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourceState | undefined;
-            resourceInputs["additionalAliases"] = state ? state.additionalAliases : undefined;
-            resourceInputs["additionalCredentials"] = state ? state.additionalCredentials : undefined;
-            resourceInputs["aliases"] = state ? state.aliases : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["databaseConnectionDetails"] = state ? state.databaseConnectionDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["externalResourceId"] = state ? state.externalResourceId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["license"] = state ? state.license : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
-            resourceInputs["resourceTimeZone"] = state ? state.resourceTimeZone : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["additionalAliases"] = state?.additionalAliases;
+            resourceInputs["additionalCredentials"] = state?.additionalCredentials;
+            resourceInputs["aliases"] = state?.aliases;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["databaseConnectionDetails"] = state?.databaseConnectionDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["externalResourceId"] = state?.externalResourceId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["license"] = state?.license;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["resourceCategory"] = state?.resourceCategory;
+            resourceInputs["resourceTimeZone"] = state?.resourceTimeZone;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as MonitoredResourceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["additionalAliases"] = args ? args.additionalAliases : undefined;
-            resourceInputs["additionalCredentials"] = args ? args.additionalCredentials : undefined;
-            resourceInputs["aliases"] = args ? args.aliases : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["databaseConnectionDetails"] = args ? args.databaseConnectionDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["externalResourceId"] = args ? args.externalResourceId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostName"] = args ? args.hostName : undefined;
-            resourceInputs["license"] = args ? args.license : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["resourceTimeZone"] = args ? args.resourceTimeZone : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["additionalAliases"] = args?.additionalAliases;
+            resourceInputs["additionalCredentials"] = args?.additionalCredentials;
+            resourceInputs["aliases"] = args?.aliases;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["databaseConnectionDetails"] = args?.databaseConnectionDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["externalResourceId"] = args?.externalResourceId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostName"] = args?.hostName;
+            resourceInputs["license"] = args?.license;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["resourceTimeZone"] = args?.resourceTimeZone;
+            resourceInputs["type"] = args?.type;
             resourceInputs["resourceCategory"] = undefined /*out*/;
             resourceInputs["sourceType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

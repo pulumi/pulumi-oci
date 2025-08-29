@@ -72,47 +72,47 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
     /**
      * The total capacity for a dedicated AI cluster.
      */
-    public /*out*/ readonly capacities!: pulumi.Output<outputs.GenerativeAi.DedicatedAiClusterCapacity[]>;
+    declare public /*out*/ readonly capacities: pulumi.Output<outputs.GenerativeAi.DedicatedAiClusterCapacity[]>;
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional description of the dedicated AI cluster.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state with detail that can provide actionable information.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current state of the dedicated AI cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
      *
@@ -120,11 +120,11 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      * * HOSTING
      * * FINE_TUNING
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) The number of dedicated units in this AI cluster.
      */
-    public readonly unitCount!: pulumi.Output<number>;
+    declare public readonly unitCount: pulumi.Output<number>;
     /**
      * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
      *
@@ -146,7 +146,7 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly unitShape!: pulumi.Output<string>;
+    declare public readonly unitShape: pulumi.Output<string>;
 
     /**
      * Create a DedicatedAiCluster resource with the given unique name, arguments, and options.
@@ -161,42 +161,42 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DedicatedAiClusterState | undefined;
-            resourceInputs["capacities"] = state ? state.capacities : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["unitCount"] = state ? state.unitCount : undefined;
-            resourceInputs["unitShape"] = state ? state.unitShape : undefined;
+            resourceInputs["capacities"] = state?.capacities;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["unitCount"] = state?.unitCount;
+            resourceInputs["unitShape"] = state?.unitShape;
         } else {
             const args = argsOrState as DedicatedAiClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.unitCount === undefined) && !opts.urn) {
+            if (args?.unitCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unitCount'");
             }
-            if ((!args || args.unitShape === undefined) && !opts.urn) {
+            if (args?.unitShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unitShape'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["unitCount"] = args ? args.unitCount : undefined;
-            resourceInputs["unitShape"] = args ? args.unitShape : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["unitCount"] = args?.unitCount;
+            resourceInputs["unitShape"] = args?.unitShape;
             resourceInputs["capacities"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

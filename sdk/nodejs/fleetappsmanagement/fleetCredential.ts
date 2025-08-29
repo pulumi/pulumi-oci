@@ -85,47 +85,47 @@ export class FleetCredential extends pulumi.CustomResource {
     /**
      * Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Credential specific Details.
      */
-    public readonly entitySpecifics!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
+    declare public readonly entitySpecifics: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialEntitySpecifics>;
     /**
      * Unique Fleet identifier.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Credential Details.
      */
-    public readonly password!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialPassword>;
+    declare public readonly password: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialPassword>;
     /**
      * The current state of the FleetCredential.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Credential Details.
      */
-    public readonly user!: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialUser>;
+    declare public readonly user: pulumi.Output<outputs.FleetAppsManagement.FleetCredentialUser>;
 
     /**
      * Create a FleetCredential resource with the given unique name, arguments, and options.
@@ -140,43 +140,43 @@ export class FleetCredential extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetCredentialState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["entitySpecifics"] = state ? state.entitySpecifics : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["entitySpecifics"] = state?.entitySpecifics;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["user"] = state?.user;
         } else {
             const args = argsOrState as FleetCredentialArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.entitySpecifics === undefined) && !opts.urn) {
+            if (args?.entitySpecifics === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entitySpecifics'");
             }
-            if ((!args || args.fleetId === undefined) && !opts.urn) {
+            if (args?.fleetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fleetId'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.user === undefined) && !opts.urn) {
+            if (args?.user === undefined && !opts.urn) {
                 throw new Error("Missing required property 'user'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["entitySpecifics"] = args ? args.entitySpecifics : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["entitySpecifics"] = args?.entitySpecifics;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["user"] = args?.user;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

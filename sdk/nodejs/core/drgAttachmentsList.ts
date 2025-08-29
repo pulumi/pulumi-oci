@@ -59,15 +59,15 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
     /**
      * The type for the network resource attached to the DRG.
      */
-    public readonly attachmentType!: pulumi.Output<string | undefined>;
+    declare public readonly attachmentType: pulumi.Output<string | undefined>;
     /**
      * The list of drg_attachments.
      */
-    public /*out*/ readonly drgAllAttachments!: pulumi.Output<outputs.Core.DrgAttachmentsListDrgAllAttachment[]>;
+    declare public /*out*/ readonly drgAllAttachments: pulumi.Output<outputs.Core.DrgAttachmentsListDrgAllAttachment[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    public readonly drgId!: pulumi.Output<string>;
+    declare public readonly drgId: pulumi.Output<string>;
     /**
      * Whether the DRG attachment lives in a different tenancy than the DRG.
      *
@@ -75,7 +75,7 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isCrossTenancy!: pulumi.Output<boolean | undefined>;
+    declare public readonly isCrossTenancy: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a DrgAttachmentsList resource with the given unique name, arguments, and options.
@@ -90,18 +90,18 @@ export class DrgAttachmentsList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrgAttachmentsListState | undefined;
-            resourceInputs["attachmentType"] = state ? state.attachmentType : undefined;
-            resourceInputs["drgAllAttachments"] = state ? state.drgAllAttachments : undefined;
-            resourceInputs["drgId"] = state ? state.drgId : undefined;
-            resourceInputs["isCrossTenancy"] = state ? state.isCrossTenancy : undefined;
+            resourceInputs["attachmentType"] = state?.attachmentType;
+            resourceInputs["drgAllAttachments"] = state?.drgAllAttachments;
+            resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["isCrossTenancy"] = state?.isCrossTenancy;
         } else {
             const args = argsOrState as DrgAttachmentsListArgs | undefined;
-            if ((!args || args.drgId === undefined) && !opts.urn) {
+            if (args?.drgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgId'");
             }
-            resourceInputs["attachmentType"] = args ? args.attachmentType : undefined;
-            resourceInputs["drgId"] = args ? args.drgId : undefined;
-            resourceInputs["isCrossTenancy"] = args ? args.isCrossTenancy : undefined;
+            resourceInputs["attachmentType"] = args?.attachmentType;
+            resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["isCrossTenancy"] = args?.isCrossTenancy;
             resourceInputs["drgAllAttachments"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

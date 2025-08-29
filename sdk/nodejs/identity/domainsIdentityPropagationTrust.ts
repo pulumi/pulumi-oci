@@ -106,7 +106,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * idcsSearchable: true
      * * uniqueness: none
      */
-    public readonly accountId!: pulumi.Output<string>;
+    declare public readonly accountId: pulumi.Output<string>;
     /**
      * (Updatable) If true, specifies that this Identity Propagation Trust is in an enabled state. The default value is false.
      *
@@ -119,7 +119,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * (Updatable) Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
      *
@@ -132,19 +132,19 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    public readonly allowImpersonation!: pulumi.Output<boolean>;
+    declare public readonly allowImpersonation: pulumi.Output<boolean>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
      *
@@ -157,7 +157,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    public readonly clientClaimName!: pulumi.Output<string>;
+    declare public readonly clientClaimName: pulumi.Output<string>;
     /**
      * (Updatable) The value that corresponds to the client claim name used to identify to whom the token is issued.
      *
@@ -171,7 +171,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    public readonly clientClaimValues!: pulumi.Output<string[]>;
+    declare public readonly clientClaimValues: pulumi.Output<string[]>;
     /**
      * (Updatable) The clock skew (in secs) that's allowed for the token issue and expiry time.
      *
@@ -187,7 +187,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly clockSkewSeconds!: pulumi.Output<number>;
+    declare public readonly clockSkewSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -201,7 +201,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -215,7 +215,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) The description of the Identity Propagation Trust.
      *
@@ -229,7 +229,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -243,7 +243,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -255,11 +255,11 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -271,7 +271,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -285,7 +285,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -298,7 +298,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) The Impersonating Principal.
      *
@@ -312,7 +312,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly impersonationServiceUsers!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser[]>;
+    declare public readonly impersonationServiceUsers: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser[]>;
     /**
      * (Updatable) The issuer claim of the Identity provider.
      *
@@ -326,7 +326,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * idcsSearchable: true
      * * uniqueness: server
      */
-    public readonly issuer!: pulumi.Output<string>;
+    declare public readonly issuer: pulumi.Output<string>;
     /**
      * (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
      *
@@ -340,7 +340,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly keytab!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustKeytab>;
+    declare public readonly keytab: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustKeytab>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -354,7 +354,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustMeta[]>;
     /**
      * The name of the the Identity Propagation Trust.
      *
@@ -368,7 +368,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The value of all the authorized OAuth Clients.
      *
@@ -381,7 +381,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly oauthClients!: pulumi.Output<string[]>;
+    declare public readonly oauthClients: pulumi.Output<string[]>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -395,7 +395,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) Store the public key if public key cert.
      *
@@ -408,7 +408,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    public readonly publicCertificate!: pulumi.Output<string>;
+    declare public readonly publicCertificate: pulumi.Output<string>;
     /**
      * (Updatable) The cloud provider's public key API of SAML and OIDC providers for signature validation.
      *
@@ -422,11 +422,11 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    public readonly publicKeyEndpoint!: pulumi.Output<string>;
+    declare public readonly publicKeyEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -440,7 +440,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) Used for locating the subject claim from the incoming token.
      *
@@ -454,7 +454,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    public readonly subjectClaimName!: pulumi.Output<string>;
+    declare public readonly subjectClaimName: pulumi.Output<string>;
     /**
      * (Updatable) Subject Mapping Attribute to which the value from subject claim name value would be used for identity lookup.
      *
@@ -467,7 +467,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * returned: default
      * * uniqueness: none
      */
-    public readonly subjectMappingAttribute!: pulumi.Output<string>;
+    declare public readonly subjectMappingAttribute: pulumi.Output<string>;
     /**
      * (Updatable) The type of the resource against which lookup will be made in the identity domain in IAM for the incoming subject claim value.
      *
@@ -480,7 +480,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly subjectType!: pulumi.Output<string>;
+    declare public readonly subjectType: pulumi.Output<string>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -494,7 +494,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsIdentityPropagationTrustTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -508,7 +508,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) The type of the inbound token from the Identity cloud provider.
      *
@@ -526,7 +526,7 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a DomainsIdentityPropagationTrust resource with the given unique name, arguments, and options.
@@ -541,81 +541,81 @@ export class DomainsIdentityPropagationTrust extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsIdentityPropagationTrustState | undefined;
-            resourceInputs["accountId"] = state ? state.accountId : undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["allowImpersonation"] = state ? state.allowImpersonation : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["clientClaimName"] = state ? state.clientClaimName : undefined;
-            resourceInputs["clientClaimValues"] = state ? state.clientClaimValues : undefined;
-            resourceInputs["clockSkewSeconds"] = state ? state.clockSkewSeconds : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["impersonationServiceUsers"] = state ? state.impersonationServiceUsers : undefined;
-            resourceInputs["issuer"] = state ? state.issuer : undefined;
-            resourceInputs["keytab"] = state ? state.keytab : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["oauthClients"] = state ? state.oauthClients : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["publicCertificate"] = state ? state.publicCertificate : undefined;
-            resourceInputs["publicKeyEndpoint"] = state ? state.publicKeyEndpoint : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["subjectClaimName"] = state ? state.subjectClaimName : undefined;
-            resourceInputs["subjectMappingAttribute"] = state ? state.subjectMappingAttribute : undefined;
-            resourceInputs["subjectType"] = state ? state.subjectType : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["accountId"] = state?.accountId;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["allowImpersonation"] = state?.allowImpersonation;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["clientClaimName"] = state?.clientClaimName;
+            resourceInputs["clientClaimValues"] = state?.clientClaimValues;
+            resourceInputs["clockSkewSeconds"] = state?.clockSkewSeconds;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["impersonationServiceUsers"] = state?.impersonationServiceUsers;
+            resourceInputs["issuer"] = state?.issuer;
+            resourceInputs["keytab"] = state?.keytab;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["oauthClients"] = state?.oauthClients;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["publicCertificate"] = state?.publicCertificate;
+            resourceInputs["publicKeyEndpoint"] = state?.publicKeyEndpoint;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["subjectClaimName"] = state?.subjectClaimName;
+            resourceInputs["subjectMappingAttribute"] = state?.subjectMappingAttribute;
+            resourceInputs["subjectType"] = state?.subjectType;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as DomainsIdentityPropagationTrustArgs | undefined;
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.issuer === undefined) && !opts.urn) {
+            if (args?.issuer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'issuer'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["accountId"] = args ? args.accountId : undefined;
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["allowImpersonation"] = args ? args.allowImpersonation : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["clientClaimName"] = args ? args.clientClaimName : undefined;
-            resourceInputs["clientClaimValues"] = args ? args.clientClaimValues : undefined;
-            resourceInputs["clockSkewSeconds"] = args ? args.clockSkewSeconds : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["impersonationServiceUsers"] = args ? args.impersonationServiceUsers : undefined;
-            resourceInputs["issuer"] = args ? args.issuer : undefined;
-            resourceInputs["keytab"] = args ? args.keytab : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["oauthClients"] = args ? args.oauthClients : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
-            resourceInputs["publicKeyEndpoint"] = args ? args.publicKeyEndpoint : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["subjectClaimName"] = args ? args.subjectClaimName : undefined;
-            resourceInputs["subjectMappingAttribute"] = args ? args.subjectMappingAttribute : undefined;
-            resourceInputs["subjectType"] = args ? args.subjectType : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["accountId"] = args?.accountId;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["allowImpersonation"] = args?.allowImpersonation;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["clientClaimName"] = args?.clientClaimName;
+            resourceInputs["clientClaimValues"] = args?.clientClaimValues;
+            resourceInputs["clockSkewSeconds"] = args?.clockSkewSeconds;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["impersonationServiceUsers"] = args?.impersonationServiceUsers;
+            resourceInputs["issuer"] = args?.issuer;
+            resourceInputs["keytab"] = args?.keytab;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["oauthClients"] = args?.oauthClients;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["publicCertificate"] = args?.publicCertificate;
+            resourceInputs["publicKeyEndpoint"] = args?.publicKeyEndpoint;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["subjectClaimName"] = args?.subjectClaimName;
+            resourceInputs["subjectMappingAttribute"] = args?.subjectMappingAttribute;
+            resourceInputs["subjectType"] = args?.subjectType;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["type"] = args?.type;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

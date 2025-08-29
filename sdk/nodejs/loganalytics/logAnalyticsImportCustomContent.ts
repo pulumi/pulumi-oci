@@ -60,11 +60,11 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
     /**
      * LogAnalyticsImportCustomChangeList
      */
-    public /*out*/ readonly changeLists!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList[]>;
+    declare public /*out*/ readonly changeLists: pulumi.Output<outputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList[]>;
     /**
      * The content name.
      */
-    public /*out*/ readonly contentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentName: pulumi.Output<string>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      *
@@ -72,31 +72,31 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly expect!: pulumi.Output<string>;
+    declare public readonly expect: pulumi.Output<string>;
     /**
      * The field names.
      */
-    public /*out*/ readonly fieldNames!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly fieldNames: pulumi.Output<string[]>;
     /**
      * Path to the file to upload which contains the custom content.
      */
-    public readonly importCustomContentFile!: pulumi.Output<string>;
+    declare public readonly importCustomContentFile: pulumi.Output<string>;
     /**
      * A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      */
-    public readonly isOverwrite!: pulumi.Output<boolean>;
+    declare public readonly isOverwrite: pulumi.Output<boolean>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The parser names.
      */
-    public /*out*/ readonly parserNames!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly parserNames: pulumi.Output<string[]>;
     /**
      * The source names.
      */
-    public /*out*/ readonly sourceNames!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly sourceNames: pulumi.Output<string[]>;
 
     /**
      * Create a LogAnalyticsImportCustomContent resource with the given unique name, arguments, and options.
@@ -111,27 +111,27 @@ export class LogAnalyticsImportCustomContent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsImportCustomContentState | undefined;
-            resourceInputs["changeLists"] = state ? state.changeLists : undefined;
-            resourceInputs["contentName"] = state ? state.contentName : undefined;
-            resourceInputs["expect"] = state ? state.expect : undefined;
-            resourceInputs["fieldNames"] = state ? state.fieldNames : undefined;
-            resourceInputs["importCustomContentFile"] = state ? state.importCustomContentFile : undefined;
-            resourceInputs["isOverwrite"] = state ? state.isOverwrite : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["parserNames"] = state ? state.parserNames : undefined;
-            resourceInputs["sourceNames"] = state ? state.sourceNames : undefined;
+            resourceInputs["changeLists"] = state?.changeLists;
+            resourceInputs["contentName"] = state?.contentName;
+            resourceInputs["expect"] = state?.expect;
+            resourceInputs["fieldNames"] = state?.fieldNames;
+            resourceInputs["importCustomContentFile"] = state?.importCustomContentFile;
+            resourceInputs["isOverwrite"] = state?.isOverwrite;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["parserNames"] = state?.parserNames;
+            resourceInputs["sourceNames"] = state?.sourceNames;
         } else {
             const args = argsOrState as LogAnalyticsImportCustomContentArgs | undefined;
-            if ((!args || args.importCustomContentFile === undefined) && !opts.urn) {
+            if (args?.importCustomContentFile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'importCustomContentFile'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["expect"] = args ? args.expect : undefined;
-            resourceInputs["importCustomContentFile"] = args ? args.importCustomContentFile : undefined;
-            resourceInputs["isOverwrite"] = args ? args.isOverwrite : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["expect"] = args?.expect;
+            resourceInputs["importCustomContentFile"] = args?.importCustomContentFile;
+            resourceInputs["isOverwrite"] = args?.isOverwrite;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["changeLists"] = undefined /*out*/;
             resourceInputs["contentName"] = undefined /*out*/;
             resourceInputs["fieldNames"] = undefined /*out*/;

@@ -79,43 +79,43 @@ export class MonitoringTemplate extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the monitoringTemplate.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
      */
-    public readonly destinations!: pulumi.Output<string[]>;
+    declare public readonly destinations: pulumi.Output<string[]>;
     /**
      * (Updatable) A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether the alarm is enabled or disabled, it will be Enabled by default.
      */
-    public readonly isAlarmsEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAlarmsEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the alarm notification is enabled or disabled, it will be Enabled by default.
      */
-    public readonly isSplitNotificationEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSplitNotificationEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) List of members of this monitoring template
      */
-    public readonly members!: pulumi.Output<outputs.StackMonitoring.MonitoringTemplateMember[]>;
+    declare public readonly members: pulumi.Output<outputs.StackMonitoring.MonitoringTemplateMember[]>;
     /**
      * (Updatable) The format to use for alarm notifications.
      */
-    public readonly messageFormat!: pulumi.Output<string>;
+    declare public readonly messageFormat: pulumi.Output<string>;
     /**
      * (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
      *
@@ -123,39 +123,39 @@ export class MonitoringTemplate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repeatNotificationDuration!: pulumi.Output<string>;
+    declare public readonly repeatNotificationDuration: pulumi.Output<string>;
     /**
      * The current lifecycle state of the monitoring template.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The current status of the monitoring template i.e. whether it is Applied or NotApplied.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The date and time the monitoringTemplate was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the monitoringTemplate was last updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Total Alarm Conditions
      */
-    public /*out*/ readonly totalAlarmConditions!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalAlarmConditions: pulumi.Output<number>;
     /**
      * Total Applied Alarm Conditions
      */
-    public /*out*/ readonly totalAppliedAlarmConditions!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalAppliedAlarmConditions: pulumi.Output<number>;
 
     /**
      * Create a MonitoringTemplate resource with the given unique name, arguments, and options.
@@ -170,50 +170,50 @@ export class MonitoringTemplate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoringTemplateState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["destinations"] = state ? state.destinations : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAlarmsEnabled"] = state ? state.isAlarmsEnabled : undefined;
-            resourceInputs["isSplitNotificationEnabled"] = state ? state.isSplitNotificationEnabled : undefined;
-            resourceInputs["members"] = state ? state.members : undefined;
-            resourceInputs["messageFormat"] = state ? state.messageFormat : undefined;
-            resourceInputs["repeatNotificationDuration"] = state ? state.repeatNotificationDuration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalAlarmConditions"] = state ? state.totalAlarmConditions : undefined;
-            resourceInputs["totalAppliedAlarmConditions"] = state ? state.totalAppliedAlarmConditions : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["destinations"] = state?.destinations;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAlarmsEnabled"] = state?.isAlarmsEnabled;
+            resourceInputs["isSplitNotificationEnabled"] = state?.isSplitNotificationEnabled;
+            resourceInputs["members"] = state?.members;
+            resourceInputs["messageFormat"] = state?.messageFormat;
+            resourceInputs["repeatNotificationDuration"] = state?.repeatNotificationDuration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalAlarmConditions"] = state?.totalAlarmConditions;
+            resourceInputs["totalAppliedAlarmConditions"] = state?.totalAppliedAlarmConditions;
         } else {
             const args = argsOrState as MonitoringTemplateArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.destinations === undefined) && !opts.urn) {
+            if (args?.destinations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinations'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.members === undefined) && !opts.urn) {
+            if (args?.members === undefined && !opts.urn) {
                 throw new Error("Missing required property 'members'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["destinations"] = args ? args.destinations : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAlarmsEnabled"] = args ? args.isAlarmsEnabled : undefined;
-            resourceInputs["isSplitNotificationEnabled"] = args ? args.isSplitNotificationEnabled : undefined;
-            resourceInputs["members"] = args ? args.members : undefined;
-            resourceInputs["messageFormat"] = args ? args.messageFormat : undefined;
-            resourceInputs["repeatNotificationDuration"] = args ? args.repeatNotificationDuration : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["destinations"] = args?.destinations;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAlarmsEnabled"] = args?.isAlarmsEnabled;
+            resourceInputs["isSplitNotificationEnabled"] = args?.isSplitNotificationEnabled;
+            resourceInputs["members"] = args?.members;
+            resourceInputs["messageFormat"] = args?.messageFormat;
+            resourceInputs["repeatNotificationDuration"] = args?.repeatNotificationDuration;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

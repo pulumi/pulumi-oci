@@ -82,28 +82,28 @@ export class Rrset extends pulumi.CustomResource {
      *
      * This parameter is deprecated and should be omitted.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * (Updatable) 
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
-    public readonly items!: pulumi.Output<outputs.Dns.RrsetItem[]>;
+    declare public readonly items: pulumi.Output<outputs.Dns.RrsetItem[]>;
     /**
      * The type of the target RRSet within the target zone.
      */
-    public readonly rtype!: pulumi.Output<string>;
+    declare public readonly rtype: pulumi.Output<string>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    declare public readonly scope: pulumi.Output<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    public readonly viewId!: pulumi.Output<string | undefined>;
+    declare public readonly viewId: pulumi.Output<string | undefined>;
     /**
      * The name or OCID of the target zone.
      *
@@ -111,7 +111,7 @@ export class Rrset extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly zoneNameOrId!: pulumi.Output<string>;
+    declare public readonly zoneNameOrId: pulumi.Output<string>;
 
     /**
      * Create a Rrset resource with the given unique name, arguments, and options.
@@ -126,31 +126,31 @@ export class Rrset extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RrsetState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["rtype"] = state ? state.rtype : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["viewId"] = state ? state.viewId : undefined;
-            resourceInputs["zoneNameOrId"] = state ? state.zoneNameOrId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["rtype"] = state?.rtype;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["viewId"] = state?.viewId;
+            resourceInputs["zoneNameOrId"] = state?.zoneNameOrId;
         } else {
             const args = argsOrState as RrsetArgs | undefined;
-            if ((!args || args.domain === undefined) && !opts.urn) {
+            if (args?.domain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.rtype === undefined) && !opts.urn) {
+            if (args?.rtype === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rtype'");
             }
-            if ((!args || args.zoneNameOrId === undefined) && !opts.urn) {
+            if (args?.zoneNameOrId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zoneNameOrId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["items"] = args ? args.items : undefined;
-            resourceInputs["rtype"] = args ? args.rtype : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["viewId"] = args ? args.viewId : undefined;
-            resourceInputs["zoneNameOrId"] = args ? args.zoneNameOrId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["items"] = args?.items;
+            resourceInputs["rtype"] = args?.rtype;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["viewId"] = args?.viewId;
+            resourceInputs["zoneNameOrId"] = args?.zoneNameOrId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Rrset.__pulumiType, name, resourceInputs, opts);

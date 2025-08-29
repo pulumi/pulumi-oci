@@ -98,59 +98,59 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * The customer tenancy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the schedule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The unique name of the user-created schedule.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the supported output file format.
      */
-    public readonly outputFileFormat!: pulumi.Output<string>;
+    declare public readonly outputFileFormat: pulumi.Output<string>;
     /**
      * The query properties.
      */
-    public readonly queryProperties!: pulumi.Output<outputs.MeteringComputation.ScheduleQueryProperties>;
+    declare public readonly queryProperties: pulumi.Output<outputs.MeteringComputation.ScheduleQueryProperties>;
     /**
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
-    public readonly resultLocation!: pulumi.Output<outputs.MeteringComputation.ScheduleResultLocation>;
+    declare public readonly resultLocation: pulumi.Output<outputs.MeteringComputation.ScheduleResultLocation>;
     /**
      * The saved report ID which can also be used to generate a query.
      */
-    public readonly savedReportId!: pulumi.Output<string>;
+    declare public readonly savedReportId: pulumi.Output<string>;
     /**
      * Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
-    public readonly scheduleRecurrences!: pulumi.Output<string>;
+    declare public readonly scheduleRecurrences: pulumi.Output<string>;
     /**
      * The schedule lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the schedule was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time of the next job execution.
      */
-    public /*out*/ readonly timeNextRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNextRun: pulumi.Output<string>;
     /**
      * The date and time of the first time job execution.
      *
@@ -158,7 +158,7 @@ export class Schedule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeScheduled!: pulumi.Output<string>;
+    declare public readonly timeScheduled: pulumi.Output<string>;
 
     /**
      * Create a Schedule resource with the given unique name, arguments, and options.
@@ -173,46 +173,46 @@ export class Schedule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduleState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["outputFileFormat"] = state ? state.outputFileFormat : undefined;
-            resourceInputs["queryProperties"] = state ? state.queryProperties : undefined;
-            resourceInputs["resultLocation"] = state ? state.resultLocation : undefined;
-            resourceInputs["savedReportId"] = state ? state.savedReportId : undefined;
-            resourceInputs["scheduleRecurrences"] = state ? state.scheduleRecurrences : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeNextRun"] = state ? state.timeNextRun : undefined;
-            resourceInputs["timeScheduled"] = state ? state.timeScheduled : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["outputFileFormat"] = state?.outputFileFormat;
+            resourceInputs["queryProperties"] = state?.queryProperties;
+            resourceInputs["resultLocation"] = state?.resultLocation;
+            resourceInputs["savedReportId"] = state?.savedReportId;
+            resourceInputs["scheduleRecurrences"] = state?.scheduleRecurrences;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeNextRun"] = state?.timeNextRun;
+            resourceInputs["timeScheduled"] = state?.timeScheduled;
         } else {
             const args = argsOrState as ScheduleArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.resultLocation === undefined) && !opts.urn) {
+            if (args?.resultLocation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resultLocation'");
             }
-            if ((!args || args.scheduleRecurrences === undefined) && !opts.urn) {
+            if (args?.scheduleRecurrences === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scheduleRecurrences'");
             }
-            if ((!args || args.timeScheduled === undefined) && !opts.urn) {
+            if (args?.timeScheduled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeScheduled'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["outputFileFormat"] = args ? args.outputFileFormat : undefined;
-            resourceInputs["queryProperties"] = args ? args.queryProperties : undefined;
-            resourceInputs["resultLocation"] = args ? args.resultLocation : undefined;
-            resourceInputs["savedReportId"] = args ? args.savedReportId : undefined;
-            resourceInputs["scheduleRecurrences"] = args ? args.scheduleRecurrences : undefined;
-            resourceInputs["timeScheduled"] = args ? args.timeScheduled : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["outputFileFormat"] = args?.outputFileFormat;
+            resourceInputs["queryProperties"] = args?.queryProperties;
+            resourceInputs["resultLocation"] = args?.resultLocation;
+            resourceInputs["savedReportId"] = args?.savedReportId;
+            resourceInputs["scheduleRecurrences"] = args?.scheduleRecurrences;
+            resourceInputs["timeScheduled"] = args?.timeScheduled;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

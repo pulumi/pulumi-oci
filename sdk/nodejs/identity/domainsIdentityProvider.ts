@@ -63,15 +63,15 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    public readonly assertionAttribute!: pulumi.Output<string>;
+    declare public readonly assertionAttribute: pulumi.Output<string>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) HTTP binding to use for authentication requests.
      *
@@ -85,11 +85,11 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly authnRequestBinding!: pulumi.Output<string>;
+    declare public readonly authnRequestBinding: pulumi.Output<string>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -103,7 +103,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) Correlation policy
      *
@@ -119,7 +119,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly correlationPolicy!: pulumi.Output<outputs.Identity.DomainsIdentityProviderCorrelationPolicy>;
+    declare public readonly correlationPolicy: pulumi.Output<outputs.Identity.DomainsIdentityProviderCorrelationPolicy>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -133,7 +133,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Description
      *
@@ -147,7 +147,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -161,7 +161,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Set to true to indicate Partner enabled.
      *
@@ -175,7 +175,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Encryption certificate
      *
@@ -189,7 +189,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly encryptionCertificate!: pulumi.Output<string>;
+    declare public readonly encryptionCertificate: pulumi.Output<string>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -202,7 +202,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) Identity Provider Icon URL.
      *
@@ -215,7 +215,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly iconUrl!: pulumi.Output<string>;
+    declare public readonly iconUrl: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -227,11 +227,11 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -243,7 +243,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsIdentityProviderIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -257,7 +257,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -270,7 +270,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) Identity Provider SSO URL
      *
@@ -284,7 +284,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly idpSsoUrl!: pulumi.Output<string>;
+    declare public readonly idpSsoUrl: pulumi.Output<string>;
     /**
      * (Updatable) Set to true to include the signing certificate in the signature.
      *
@@ -298,7 +298,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly includeSigningCertInSignature!: pulumi.Output<boolean>;
+    declare public readonly includeSigningCertInSignature: pulumi.Output<boolean>;
     /**
      * (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
      *
@@ -314,7 +314,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvAssignedGroups!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup[]>;
+    declare public readonly jitUserProvAssignedGroups: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAssignedGroup[]>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -330,7 +330,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvAttributeUpdateEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvAttributeUpdateEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Assertion To User Mapping
      *
@@ -346,7 +346,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvAttributes!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAttributes>;
+    declare public readonly jitUserProvAttributes: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvAttributes>;
     /**
      * (Updatable) Set to true to indicate JIT User Creation is enabled
      *
@@ -362,7 +362,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvCreateUserEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvCreateUserEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning is enabled
      *
@@ -378,7 +378,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
      *
@@ -394,7 +394,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupAssertionAttributeEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvGroupAssertionAttributeEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
      *
@@ -410,7 +410,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupAssignmentMethod!: pulumi.Output<string>;
+    declare public readonly jitUserProvGroupAssignmentMethod: pulumi.Output<string>;
     /**
      * (Updatable) Property to indicate the mode of group mapping
      *
@@ -426,7 +426,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupMappingMode!: pulumi.Output<string>;
+    declare public readonly jitUserProvGroupMappingMode: pulumi.Output<string>;
     /**
      * (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
      *
@@ -441,7 +441,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupMappings!: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping[]>;
+    declare public readonly jitUserProvGroupMappings: pulumi.Output<outputs.Identity.DomainsIdentityProviderJitUserProvGroupMapping[]>;
     /**
      * (Updatable) Name of the assertion attribute containing the users groups
      *
@@ -457,7 +457,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupSamlAttributeName!: pulumi.Output<string>;
+    declare public readonly jitUserProvGroupSamlAttributeName: pulumi.Output<string>;
     /**
      * (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
      *
@@ -473,7 +473,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvGroupStaticListEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvGroupStaticListEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Set to true to indicate ignoring absence of group while provisioning
      *
@@ -490,7 +490,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitUserProvIgnoreErrorOnAbsentGroups!: pulumi.Output<boolean>;
+    declare public readonly jitUserProvIgnoreErrorOnAbsentGroups: pulumi.Output<boolean>;
     /**
      * (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
      *
@@ -506,7 +506,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public /*out*/ readonly lastNotificationSentTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastNotificationSentTime: pulumi.Output<string>;
     /**
      * (Updatable) HTTP binding to use for logout.
      *
@@ -520,7 +520,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutBinding!: pulumi.Output<string>;
+    declare public readonly logoutBinding: pulumi.Output<string>;
     /**
      * (Updatable) Set to true to enable logout.
      *
@@ -534,7 +534,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly logoutEnabled!: pulumi.Output<boolean>;
+    declare public readonly logoutEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Logout request URL
      *
@@ -548,7 +548,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutRequestUrl!: pulumi.Output<string>;
+    declare public readonly logoutRequestUrl: pulumi.Output<string>;
     /**
      * (Updatable) Logout response URL
      *
@@ -562,7 +562,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutResponseUrl!: pulumi.Output<string>;
+    declare public readonly logoutResponseUrl: pulumi.Output<string>;
     /**
      * (Updatable) Metadata
      *
@@ -576,7 +576,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly metadata!: pulumi.Output<string>;
+    declare public readonly metadata: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -590,7 +590,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsIdentityProviderMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsIdentityProviderMeta[]>;
     /**
      * (Updatable) Default authentication request name ID format.
      *
@@ -604,7 +604,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly nameIdFormat!: pulumi.Output<string>;
+    declare public readonly nameIdFormat: pulumi.Output<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -618,7 +618,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) Unique name of the trusted Identity Provider.
      *
@@ -632,7 +632,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly partnerName!: pulumi.Output<string>;
+    declare public readonly partnerName: pulumi.Output<string>;
     /**
      * (Updatable) Provider ID
      *
@@ -646,7 +646,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly partnerProviderId!: pulumi.Output<string>;
+    declare public readonly partnerProviderId: pulumi.Output<string>;
     /**
      * (Updatable) SAML SP authentication type.
      *
@@ -662,7 +662,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly requestedAuthenticationContexts!: pulumi.Output<string[]>;
+    declare public readonly requestedAuthenticationContexts: pulumi.Output<string[]>;
     /**
      * (Updatable) This SP requires requests SAML IdP to enforce re-authentication.
      *
@@ -678,7 +678,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly requireForceAuthn!: pulumi.Output<boolean>;
+    declare public readonly requireForceAuthn: pulumi.Output<boolean>;
     /**
      * (Updatable) SAML SP must accept encrypted assertion only.
      *
@@ -694,11 +694,11 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly requiresEncryptedAssertion!: pulumi.Output<boolean>;
+    declare public readonly requiresEncryptedAssertion: pulumi.Output<boolean>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) SAML SP HoK Enabled.
      *
@@ -714,7 +714,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly samlHoKrequired!: pulumi.Output<boolean>;
+    declare public readonly samlHoKrequired: pulumi.Output<boolean>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -728,7 +728,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
      *
@@ -744,7 +744,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly serviceInstanceIdentifier!: pulumi.Output<string>;
+    declare public readonly serviceInstanceIdentifier: pulumi.Output<string>;
     /**
      * (Updatable) Set to true to indicate whether to show IdP in login page or not.
      *
@@ -758,7 +758,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly shownOnLoginPage!: pulumi.Output<boolean>;
+    declare public readonly shownOnLoginPage: pulumi.Output<boolean>;
     /**
      * (Updatable) Signature hash algorithm.
      *
@@ -772,7 +772,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly signatureHashAlgorithm!: pulumi.Output<string>;
+    declare public readonly signatureHashAlgorithm: pulumi.Output<string>;
     /**
      * (Updatable) Signing certificate
      *
@@ -786,7 +786,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly signingCertificate!: pulumi.Output<string>;
+    declare public readonly signingCertificate: pulumi.Output<string>;
     /**
      * (Updatable) Succinct ID
      *
@@ -800,7 +800,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly succinctId!: pulumi.Output<string>;
+    declare public readonly succinctId: pulumi.Output<string>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -814,7 +814,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsIdentityProviderTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsIdentityProviderTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -828,7 +828,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
      *
@@ -844,7 +844,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenantProviderId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantProviderId: pulumi.Output<string>;
     /**
      * (Updatable) Identity Provider Type
      *
@@ -860,15 +860,15 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * (Updatable) Social Identity Provider Extension Schema
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider>;
     /**
      * (Updatable) X509 Identity Provider Extension Schema
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionx509identityProvider!: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionx509identityProvider: pulumi.Output<outputs.Identity.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider>;
     /**
      * (Updatable) User mapping method.
      *
@@ -885,7 +885,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      */
-    public readonly userMappingMethod!: pulumi.Output<string>;
+    declare public readonly userMappingMethod: pulumi.Output<string>;
     /**
      * (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
      *
@@ -906,7 +906,7 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userMappingStoreAttribute!: pulumi.Output<string>;
+    declare public readonly userMappingStoreAttribute: pulumi.Output<string>;
 
     /**
      * Create a DomainsIdentityProvider resource with the given unique name, arguments, and options.
@@ -921,135 +921,135 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsIdentityProviderState | undefined;
-            resourceInputs["assertionAttribute"] = state ? state.assertionAttribute : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authnRequestBinding"] = state ? state.authnRequestBinding : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["correlationPolicy"] = state ? state.correlationPolicy : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["encryptionCertificate"] = state ? state.encryptionCertificate : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["iconUrl"] = state ? state.iconUrl : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["idpSsoUrl"] = state ? state.idpSsoUrl : undefined;
-            resourceInputs["includeSigningCertInSignature"] = state ? state.includeSigningCertInSignature : undefined;
-            resourceInputs["jitUserProvAssignedGroups"] = state ? state.jitUserProvAssignedGroups : undefined;
-            resourceInputs["jitUserProvAttributeUpdateEnabled"] = state ? state.jitUserProvAttributeUpdateEnabled : undefined;
-            resourceInputs["jitUserProvAttributes"] = state ? state.jitUserProvAttributes : undefined;
-            resourceInputs["jitUserProvCreateUserEnabled"] = state ? state.jitUserProvCreateUserEnabled : undefined;
-            resourceInputs["jitUserProvEnabled"] = state ? state.jitUserProvEnabled : undefined;
-            resourceInputs["jitUserProvGroupAssertionAttributeEnabled"] = state ? state.jitUserProvGroupAssertionAttributeEnabled : undefined;
-            resourceInputs["jitUserProvGroupAssignmentMethod"] = state ? state.jitUserProvGroupAssignmentMethod : undefined;
-            resourceInputs["jitUserProvGroupMappingMode"] = state ? state.jitUserProvGroupMappingMode : undefined;
-            resourceInputs["jitUserProvGroupMappings"] = state ? state.jitUserProvGroupMappings : undefined;
-            resourceInputs["jitUserProvGroupSamlAttributeName"] = state ? state.jitUserProvGroupSamlAttributeName : undefined;
-            resourceInputs["jitUserProvGroupStaticListEnabled"] = state ? state.jitUserProvGroupStaticListEnabled : undefined;
-            resourceInputs["jitUserProvIgnoreErrorOnAbsentGroups"] = state ? state.jitUserProvIgnoreErrorOnAbsentGroups : undefined;
-            resourceInputs["lastNotificationSentTime"] = state ? state.lastNotificationSentTime : undefined;
-            resourceInputs["logoutBinding"] = state ? state.logoutBinding : undefined;
-            resourceInputs["logoutEnabled"] = state ? state.logoutEnabled : undefined;
-            resourceInputs["logoutRequestUrl"] = state ? state.logoutRequestUrl : undefined;
-            resourceInputs["logoutResponseUrl"] = state ? state.logoutResponseUrl : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["nameIdFormat"] = state ? state.nameIdFormat : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["partnerName"] = state ? state.partnerName : undefined;
-            resourceInputs["partnerProviderId"] = state ? state.partnerProviderId : undefined;
-            resourceInputs["requestedAuthenticationContexts"] = state ? state.requestedAuthenticationContexts : undefined;
-            resourceInputs["requireForceAuthn"] = state ? state.requireForceAuthn : undefined;
-            resourceInputs["requiresEncryptedAssertion"] = state ? state.requiresEncryptedAssertion : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["samlHoKrequired"] = state ? state.samlHoKrequired : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["serviceInstanceIdentifier"] = state ? state.serviceInstanceIdentifier : undefined;
-            resourceInputs["shownOnLoginPage"] = state ? state.shownOnLoginPage : undefined;
-            resourceInputs["signatureHashAlgorithm"] = state ? state.signatureHashAlgorithm : undefined;
-            resourceInputs["signingCertificate"] = state ? state.signingCertificate : undefined;
-            resourceInputs["succinctId"] = state ? state.succinctId : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["tenantProviderId"] = state ? state.tenantProviderId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"] = state ? state.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionx509identityProvider"] = state ? state.urnietfparamsscimschemasoracleidcsextensionx509identityProvider : undefined;
-            resourceInputs["userMappingMethod"] = state ? state.userMappingMethod : undefined;
-            resourceInputs["userMappingStoreAttribute"] = state ? state.userMappingStoreAttribute : undefined;
+            resourceInputs["assertionAttribute"] = state?.assertionAttribute;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authnRequestBinding"] = state?.authnRequestBinding;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["correlationPolicy"] = state?.correlationPolicy;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["encryptionCertificate"] = state?.encryptionCertificate;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["iconUrl"] = state?.iconUrl;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["idpSsoUrl"] = state?.idpSsoUrl;
+            resourceInputs["includeSigningCertInSignature"] = state?.includeSigningCertInSignature;
+            resourceInputs["jitUserProvAssignedGroups"] = state?.jitUserProvAssignedGroups;
+            resourceInputs["jitUserProvAttributeUpdateEnabled"] = state?.jitUserProvAttributeUpdateEnabled;
+            resourceInputs["jitUserProvAttributes"] = state?.jitUserProvAttributes;
+            resourceInputs["jitUserProvCreateUserEnabled"] = state?.jitUserProvCreateUserEnabled;
+            resourceInputs["jitUserProvEnabled"] = state?.jitUserProvEnabled;
+            resourceInputs["jitUserProvGroupAssertionAttributeEnabled"] = state?.jitUserProvGroupAssertionAttributeEnabled;
+            resourceInputs["jitUserProvGroupAssignmentMethod"] = state?.jitUserProvGroupAssignmentMethod;
+            resourceInputs["jitUserProvGroupMappingMode"] = state?.jitUserProvGroupMappingMode;
+            resourceInputs["jitUserProvGroupMappings"] = state?.jitUserProvGroupMappings;
+            resourceInputs["jitUserProvGroupSamlAttributeName"] = state?.jitUserProvGroupSamlAttributeName;
+            resourceInputs["jitUserProvGroupStaticListEnabled"] = state?.jitUserProvGroupStaticListEnabled;
+            resourceInputs["jitUserProvIgnoreErrorOnAbsentGroups"] = state?.jitUserProvIgnoreErrorOnAbsentGroups;
+            resourceInputs["lastNotificationSentTime"] = state?.lastNotificationSentTime;
+            resourceInputs["logoutBinding"] = state?.logoutBinding;
+            resourceInputs["logoutEnabled"] = state?.logoutEnabled;
+            resourceInputs["logoutRequestUrl"] = state?.logoutRequestUrl;
+            resourceInputs["logoutResponseUrl"] = state?.logoutResponseUrl;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["nameIdFormat"] = state?.nameIdFormat;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["partnerName"] = state?.partnerName;
+            resourceInputs["partnerProviderId"] = state?.partnerProviderId;
+            resourceInputs["requestedAuthenticationContexts"] = state?.requestedAuthenticationContexts;
+            resourceInputs["requireForceAuthn"] = state?.requireForceAuthn;
+            resourceInputs["requiresEncryptedAssertion"] = state?.requiresEncryptedAssertion;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["samlHoKrequired"] = state?.samlHoKrequired;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["serviceInstanceIdentifier"] = state?.serviceInstanceIdentifier;
+            resourceInputs["shownOnLoginPage"] = state?.shownOnLoginPage;
+            resourceInputs["signatureHashAlgorithm"] = state?.signatureHashAlgorithm;
+            resourceInputs["signingCertificate"] = state?.signingCertificate;
+            resourceInputs["succinctId"] = state?.succinctId;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["tenantProviderId"] = state?.tenantProviderId;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"] = state?.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionx509identityProvider"] = state?.urnietfparamsscimschemasoracleidcsextensionx509identityProvider;
+            resourceInputs["userMappingMethod"] = state?.userMappingMethod;
+            resourceInputs["userMappingStoreAttribute"] = state?.userMappingStoreAttribute;
         } else {
             const args = argsOrState as DomainsIdentityProviderArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.partnerName === undefined) && !opts.urn) {
+            if (args?.partnerName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'partnerName'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["assertionAttribute"] = args ? args.assertionAttribute : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authnRequestBinding"] = args ? args.authnRequestBinding : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["correlationPolicy"] = args ? args.correlationPolicy : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["encryptionCertificate"] = args ? args.encryptionCertificate : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["iconUrl"] = args ? args.iconUrl : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["idpSsoUrl"] = args ? args.idpSsoUrl : undefined;
-            resourceInputs["includeSigningCertInSignature"] = args ? args.includeSigningCertInSignature : undefined;
-            resourceInputs["jitUserProvAssignedGroups"] = args ? args.jitUserProvAssignedGroups : undefined;
-            resourceInputs["jitUserProvAttributeUpdateEnabled"] = args ? args.jitUserProvAttributeUpdateEnabled : undefined;
-            resourceInputs["jitUserProvAttributes"] = args ? args.jitUserProvAttributes : undefined;
-            resourceInputs["jitUserProvCreateUserEnabled"] = args ? args.jitUserProvCreateUserEnabled : undefined;
-            resourceInputs["jitUserProvEnabled"] = args ? args.jitUserProvEnabled : undefined;
-            resourceInputs["jitUserProvGroupAssertionAttributeEnabled"] = args ? args.jitUserProvGroupAssertionAttributeEnabled : undefined;
-            resourceInputs["jitUserProvGroupAssignmentMethod"] = args ? args.jitUserProvGroupAssignmentMethod : undefined;
-            resourceInputs["jitUserProvGroupMappingMode"] = args ? args.jitUserProvGroupMappingMode : undefined;
-            resourceInputs["jitUserProvGroupMappings"] = args ? args.jitUserProvGroupMappings : undefined;
-            resourceInputs["jitUserProvGroupSamlAttributeName"] = args ? args.jitUserProvGroupSamlAttributeName : undefined;
-            resourceInputs["jitUserProvGroupStaticListEnabled"] = args ? args.jitUserProvGroupStaticListEnabled : undefined;
-            resourceInputs["jitUserProvIgnoreErrorOnAbsentGroups"] = args ? args.jitUserProvIgnoreErrorOnAbsentGroups : undefined;
-            resourceInputs["logoutBinding"] = args ? args.logoutBinding : undefined;
-            resourceInputs["logoutEnabled"] = args ? args.logoutEnabled : undefined;
-            resourceInputs["logoutRequestUrl"] = args ? args.logoutRequestUrl : undefined;
-            resourceInputs["logoutResponseUrl"] = args ? args.logoutResponseUrl : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["nameIdFormat"] = args ? args.nameIdFormat : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["partnerName"] = args ? args.partnerName : undefined;
-            resourceInputs["partnerProviderId"] = args ? args.partnerProviderId : undefined;
-            resourceInputs["requestedAuthenticationContexts"] = args ? args.requestedAuthenticationContexts : undefined;
-            resourceInputs["requireForceAuthn"] = args ? args.requireForceAuthn : undefined;
-            resourceInputs["requiresEncryptedAssertion"] = args ? args.requiresEncryptedAssertion : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["samlHoKrequired"] = args ? args.samlHoKrequired : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["serviceInstanceIdentifier"] = args ? args.serviceInstanceIdentifier : undefined;
-            resourceInputs["shownOnLoginPage"] = args ? args.shownOnLoginPage : undefined;
-            resourceInputs["signatureHashAlgorithm"] = args ? args.signatureHashAlgorithm : undefined;
-            resourceInputs["signingCertificate"] = args ? args.signingCertificate : undefined;
-            resourceInputs["succinctId"] = args ? args.succinctId : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"] = args ? args.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionx509identityProvider"] = args ? args.urnietfparamsscimschemasoracleidcsextensionx509identityProvider : undefined;
-            resourceInputs["userMappingMethod"] = args ? args.userMappingMethod : undefined;
-            resourceInputs["userMappingStoreAttribute"] = args ? args.userMappingStoreAttribute : undefined;
+            resourceInputs["assertionAttribute"] = args?.assertionAttribute;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authnRequestBinding"] = args?.authnRequestBinding;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["correlationPolicy"] = args?.correlationPolicy;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["encryptionCertificate"] = args?.encryptionCertificate;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["iconUrl"] = args?.iconUrl;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["idpSsoUrl"] = args?.idpSsoUrl;
+            resourceInputs["includeSigningCertInSignature"] = args?.includeSigningCertInSignature;
+            resourceInputs["jitUserProvAssignedGroups"] = args?.jitUserProvAssignedGroups;
+            resourceInputs["jitUserProvAttributeUpdateEnabled"] = args?.jitUserProvAttributeUpdateEnabled;
+            resourceInputs["jitUserProvAttributes"] = args?.jitUserProvAttributes;
+            resourceInputs["jitUserProvCreateUserEnabled"] = args?.jitUserProvCreateUserEnabled;
+            resourceInputs["jitUserProvEnabled"] = args?.jitUserProvEnabled;
+            resourceInputs["jitUserProvGroupAssertionAttributeEnabled"] = args?.jitUserProvGroupAssertionAttributeEnabled;
+            resourceInputs["jitUserProvGroupAssignmentMethod"] = args?.jitUserProvGroupAssignmentMethod;
+            resourceInputs["jitUserProvGroupMappingMode"] = args?.jitUserProvGroupMappingMode;
+            resourceInputs["jitUserProvGroupMappings"] = args?.jitUserProvGroupMappings;
+            resourceInputs["jitUserProvGroupSamlAttributeName"] = args?.jitUserProvGroupSamlAttributeName;
+            resourceInputs["jitUserProvGroupStaticListEnabled"] = args?.jitUserProvGroupStaticListEnabled;
+            resourceInputs["jitUserProvIgnoreErrorOnAbsentGroups"] = args?.jitUserProvIgnoreErrorOnAbsentGroups;
+            resourceInputs["logoutBinding"] = args?.logoutBinding;
+            resourceInputs["logoutEnabled"] = args?.logoutEnabled;
+            resourceInputs["logoutRequestUrl"] = args?.logoutRequestUrl;
+            resourceInputs["logoutResponseUrl"] = args?.logoutResponseUrl;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["nameIdFormat"] = args?.nameIdFormat;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["partnerName"] = args?.partnerName;
+            resourceInputs["partnerProviderId"] = args?.partnerProviderId;
+            resourceInputs["requestedAuthenticationContexts"] = args?.requestedAuthenticationContexts;
+            resourceInputs["requireForceAuthn"] = args?.requireForceAuthn;
+            resourceInputs["requiresEncryptedAssertion"] = args?.requiresEncryptedAssertion;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["samlHoKrequired"] = args?.samlHoKrequired;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["serviceInstanceIdentifier"] = args?.serviceInstanceIdentifier;
+            resourceInputs["shownOnLoginPage"] = args?.shownOnLoginPage;
+            resourceInputs["signatureHashAlgorithm"] = args?.signatureHashAlgorithm;
+            resourceInputs["signingCertificate"] = args?.signingCertificate;
+            resourceInputs["succinctId"] = args?.succinctId;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider"] = args?.urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionx509identityProvider"] = args?.urnietfparamsscimschemasoracleidcsextensionx509identityProvider;
+            resourceInputs["userMappingMethod"] = args?.userMappingMethod;
+            resourceInputs["userMappingStoreAttribute"] = args?.userMappingStoreAttribute;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

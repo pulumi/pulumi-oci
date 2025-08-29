@@ -81,43 +81,43 @@ export class CompliancePolicyRule extends pulumi.CustomResource {
     /**
      * The OCID of the compartment the CompliancePolicyRule belongs to.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
      */
-    public readonly compliancePolicyId!: pulumi.Output<string>;
+    declare public readonly compliancePolicyId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
      */
-    public readonly gracePeriod!: pulumi.Output<string>;
+    declare public readonly gracePeriod: pulumi.Output<string>;
     /**
      * A message that describes the current state of the CompliancePolicyRule in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Patch Selection Details
      */
-    public readonly patchSelection!: pulumi.Output<outputs.FleetAppsManagement.CompliancePolicyRulePatchSelection>;
+    declare public readonly patchSelection: pulumi.Output<outputs.FleetAppsManagement.CompliancePolicyRulePatchSelection>;
     /**
      * (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      */
-    public readonly patchTypeIds!: pulumi.Output<string[]>;
+    declare public readonly patchTypeIds: pulumi.Output<string[]>;
     /**
      * (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
      */
-    public readonly productVersion!: pulumi.Output<outputs.FleetAppsManagement.CompliancePolicyRuleProductVersion>;
+    declare public readonly productVersion: pulumi.Output<outputs.FleetAppsManagement.CompliancePolicyRuleProductVersion>;
     /**
      * (Updatable) Severity to which this CompliancePolicyRule applies.
      *
@@ -125,23 +125,23 @@ export class CompliancePolicyRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly severities!: pulumi.Output<string[]>;
+    declare public readonly severities: pulumi.Output<string[]>;
     /**
      * The current state of the CompliancePolicyRule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the CompliancePolicyRule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the CompliancePolicyRule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a CompliancePolicyRule resource with the given unique name, arguments, and options.
@@ -156,47 +156,47 @@ export class CompliancePolicyRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CompliancePolicyRuleState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compliancePolicyId"] = state ? state.compliancePolicyId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gracePeriod"] = state ? state.gracePeriod : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["patchSelection"] = state ? state.patchSelection : undefined;
-            resourceInputs["patchTypeIds"] = state ? state.patchTypeIds : undefined;
-            resourceInputs["productVersion"] = state ? state.productVersion : undefined;
-            resourceInputs["severities"] = state ? state.severities : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compliancePolicyId"] = state?.compliancePolicyId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gracePeriod"] = state?.gracePeriod;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["patchSelection"] = state?.patchSelection;
+            resourceInputs["patchTypeIds"] = state?.patchTypeIds;
+            resourceInputs["productVersion"] = state?.productVersion;
+            resourceInputs["severities"] = state?.severities;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as CompliancePolicyRuleArgs | undefined;
-            if ((!args || args.compliancePolicyId === undefined) && !opts.urn) {
+            if (args?.compliancePolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compliancePolicyId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.patchSelection === undefined) && !opts.urn) {
+            if (args?.patchSelection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'patchSelection'");
             }
-            if ((!args || args.patchTypeIds === undefined) && !opts.urn) {
+            if (args?.patchTypeIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'patchTypeIds'");
             }
-            if ((!args || args.productVersion === undefined) && !opts.urn) {
+            if (args?.productVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'productVersion'");
             }
-            resourceInputs["compliancePolicyId"] = args ? args.compliancePolicyId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gracePeriod"] = args ? args.gracePeriod : undefined;
-            resourceInputs["patchSelection"] = args ? args.patchSelection : undefined;
-            resourceInputs["patchTypeIds"] = args ? args.patchTypeIds : undefined;
-            resourceInputs["productVersion"] = args ? args.productVersion : undefined;
-            resourceInputs["severities"] = args ? args.severities : undefined;
+            resourceInputs["compliancePolicyId"] = args?.compliancePolicyId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gracePeriod"] = args?.gracePeriod;
+            resourceInputs["patchSelection"] = args?.patchSelection;
+            resourceInputs["patchTypeIds"] = args?.patchTypeIds;
+            resourceInputs["productVersion"] = args?.productVersion;
+            resourceInputs["severities"] = args?.severities;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

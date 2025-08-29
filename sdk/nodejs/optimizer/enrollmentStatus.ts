@@ -48,15 +48,15 @@ export class EnrollmentStatus extends pulumi.CustomResource {
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The unique OCID associated with the enrollment status.
      */
-    public readonly enrollmentStatusId!: pulumi.Output<string>;
+    declare public readonly enrollmentStatusId: pulumi.Output<string>;
     /**
      * The enrollment status' current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      *
@@ -64,19 +64,19 @@ export class EnrollmentStatus extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * The reason for the enrollment status of the tenancy.
      */
-    public /*out*/ readonly statusReason!: pulumi.Output<string>;
+    declare public /*out*/ readonly statusReason: pulumi.Output<string>;
     /**
      * The date and time the enrollment status was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the enrollment status was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a EnrollmentStatus resource with the given unique name, arguments, and options.
@@ -91,23 +91,23 @@ export class EnrollmentStatus extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EnrollmentStatusState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["enrollmentStatusId"] = state ? state.enrollmentStatusId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["statusReason"] = state ? state.statusReason : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["enrollmentStatusId"] = state?.enrollmentStatusId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["statusReason"] = state?.statusReason;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as EnrollmentStatusArgs | undefined;
-            if ((!args || args.enrollmentStatusId === undefined) && !opts.urn) {
+            if (args?.enrollmentStatusId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enrollmentStatusId'");
             }
-            if ((!args || args.status === undefined) && !opts.urn) {
+            if (args?.status === undefined && !opts.urn) {
                 throw new Error("Missing required property 'status'");
             }
-            resourceInputs["enrollmentStatusId"] = args ? args.enrollmentStatusId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["enrollmentStatusId"] = args?.enrollmentStatusId;
+            resourceInputs["status"] = args?.status;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["statusReason"] = undefined /*out*/;

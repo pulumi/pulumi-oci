@@ -50,35 +50,35 @@ export class ExternalAsm extends pulumi.CustomResource {
     /**
      * The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of the external ASM.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
-    public readonly externalAsmId!: pulumi.Output<string>;
+    declare public readonly externalAsmId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    declare public readonly externalConnectorId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -86,47 +86,47 @@ export class ExternalAsm extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      */
-    public /*out*/ readonly gridHome!: pulumi.Output<string>;
+    declare public /*out*/ readonly gridHome: pulumi.Output<string>;
     /**
      * Indicates whether the ASM is a cluster ASM or not.
      */
-    public /*out*/ readonly isCluster!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCluster: pulumi.Output<boolean>;
     /**
      * Indicates whether Oracle Flex ASM is enabled or not.
      */
-    public /*out*/ readonly isFlexEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isFlexEnabled: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The list of databases that are serviced by the ASM.
      */
-    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.ExternalAsmServicedDatabase[]>;
+    declare public /*out*/ readonly servicedDatabases: pulumi.Output<outputs.DatabaseManagement.ExternalAsmServicedDatabase[]>;
     /**
      * The current lifecycle state of the external ASM.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the external ASM was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the external ASM was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The ASM version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ExternalAsm resource with the given unique name, arguments, and options.
@@ -141,34 +141,34 @@ export class ExternalAsm extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalAsmState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentName"] = state ? state.componentName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalAsmId"] = state ? state.externalAsmId : undefined;
-            resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gridHome"] = state ? state.gridHome : undefined;
-            resourceInputs["isCluster"] = state ? state.isCluster : undefined;
-            resourceInputs["isFlexEnabled"] = state ? state.isFlexEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["servicedDatabases"] = state ? state.servicedDatabases : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentName"] = state?.componentName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalAsmId"] = state?.externalAsmId;
+            resourceInputs["externalConnectorId"] = state?.externalConnectorId;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gridHome"] = state?.gridHome;
+            resourceInputs["isCluster"] = state?.isCluster;
+            resourceInputs["isFlexEnabled"] = state?.isFlexEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["servicedDatabases"] = state?.servicedDatabases;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ExternalAsmArgs | undefined;
-            if ((!args || args.externalAsmId === undefined) && !opts.urn) {
+            if (args?.externalAsmId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalAsmId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["externalAsmId"] = args ? args.externalAsmId : undefined;
-            resourceInputs["externalConnectorId"] = args ? args.externalConnectorId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["externalAsmId"] = args?.externalAsmId;
+            resourceInputs["externalConnectorId"] = args?.externalConnectorId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["componentName"] = undefined /*out*/;

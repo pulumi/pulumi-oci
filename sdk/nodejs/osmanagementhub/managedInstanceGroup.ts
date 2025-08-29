@@ -79,83 +79,83 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * The CPU architecture type of the managed instances that will be attached to this group.
      */
-    public readonly archType!: pulumi.Output<string>;
+    declare public readonly archType: pulumi.Output<string>;
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service.
      */
-    public readonly autonomousSettings!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
+    declare public readonly autonomousSettings: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupAutonomousSettings>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the Autonomous Linux service manages the group.
      */
-    public /*out*/ readonly isManagedByAutonomousLinux!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isManagedByAutonomousLinux: pulumi.Output<boolean>;
     /**
      * The location of managed instances attached to the group. If no location is provided, the default is on premises.
      */
-    public readonly location!: pulumi.Output<string>;
+    declare public readonly location: pulumi.Output<string>;
     /**
      * The number of managed instances in the group.
      */
-    public /*out*/ readonly managedInstanceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly managedInstanceCount: pulumi.Output<number>;
     /**
      * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      */
-    public readonly managedInstanceIds!: pulumi.Output<string[]>;
+    declare public readonly managedInstanceIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    public readonly notificationTopicId!: pulumi.Output<string>;
+    declare public readonly notificationTopicId: pulumi.Output<string>;
     /**
      * The operating system type of the managed instances that will be attached to this group.
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    declare public readonly osFamily: pulumi.Output<string>;
     /**
      * The number of scheduled jobs pending against the managed instance group.
      */
-    public /*out*/ readonly pendingJobCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly pendingJobCount: pulumi.Output<number>;
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      */
-    public readonly softwareSourceIds!: pulumi.Output<string[]>;
+    declare public readonly softwareSourceIds: pulumi.Output<string[]>;
     /**
      * The list of software sources that the managed instance group will use.
      */
-    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupSoftwareSource[]>;
+    declare public /*out*/ readonly softwareSources: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupSoftwareSource[]>;
     /**
      * The current state of the managed instance group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeModified: pulumi.Output<string>;
     /**
      * The vendor of the operating system that will be used by the managed instances in the group. 
      *
@@ -163,7 +163,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    declare public readonly vendorName: pulumi.Output<string>;
 
     /**
      * Create a ManagedInstanceGroup resource with the given unique name, arguments, and options.
@@ -178,57 +178,57 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupState | undefined;
-            resourceInputs["archType"] = state ? state.archType : undefined;
-            resourceInputs["autonomousSettings"] = state ? state.autonomousSettings : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isManagedByAutonomousLinux"] = state ? state.isManagedByAutonomousLinux : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["managedInstanceCount"] = state ? state.managedInstanceCount : undefined;
-            resourceInputs["managedInstanceIds"] = state ? state.managedInstanceIds : undefined;
-            resourceInputs["notificationTopicId"] = state ? state.notificationTopicId : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["pendingJobCount"] = state ? state.pendingJobCount : undefined;
-            resourceInputs["softwareSourceIds"] = state ? state.softwareSourceIds : undefined;
-            resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeModified"] = state ? state.timeModified : undefined;
-            resourceInputs["vendorName"] = state ? state.vendorName : undefined;
+            resourceInputs["archType"] = state?.archType;
+            resourceInputs["autonomousSettings"] = state?.autonomousSettings;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isManagedByAutonomousLinux"] = state?.isManagedByAutonomousLinux;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["managedInstanceCount"] = state?.managedInstanceCount;
+            resourceInputs["managedInstanceIds"] = state?.managedInstanceIds;
+            resourceInputs["notificationTopicId"] = state?.notificationTopicId;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["pendingJobCount"] = state?.pendingJobCount;
+            resourceInputs["softwareSourceIds"] = state?.softwareSourceIds;
+            resourceInputs["softwareSources"] = state?.softwareSources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeModified"] = state?.timeModified;
+            resourceInputs["vendorName"] = state?.vendorName;
         } else {
             const args = argsOrState as ManagedInstanceGroupArgs | undefined;
-            if ((!args || args.archType === undefined) && !opts.urn) {
+            if (args?.archType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'archType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.osFamily === undefined) && !opts.urn) {
+            if (args?.osFamily === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osFamily'");
             }
-            if ((!args || args.vendorName === undefined) && !opts.urn) {
+            if (args?.vendorName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vendorName'");
             }
-            resourceInputs["archType"] = args ? args.archType : undefined;
-            resourceInputs["autonomousSettings"] = args ? args.autonomousSettings : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["location"] = args ? args.location : undefined;
-            resourceInputs["managedInstanceIds"] = args ? args.managedInstanceIds : undefined;
-            resourceInputs["notificationTopicId"] = args ? args.notificationTopicId : undefined;
-            resourceInputs["osFamily"] = args ? args.osFamily : undefined;
-            resourceInputs["softwareSourceIds"] = args ? args.softwareSourceIds : undefined;
-            resourceInputs["vendorName"] = args ? args.vendorName : undefined;
+            resourceInputs["archType"] = args?.archType;
+            resourceInputs["autonomousSettings"] = args?.autonomousSettings;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["location"] = args?.location;
+            resourceInputs["managedInstanceIds"] = args?.managedInstanceIds;
+            resourceInputs["notificationTopicId"] = args?.notificationTopicId;
+            resourceInputs["osFamily"] = args?.osFamily;
+            resourceInputs["softwareSourceIds"] = args?.softwareSourceIds;
+            resourceInputs["vendorName"] = args?.vendorName;
             resourceInputs["isManagedByAutonomousLinux"] = undefined /*out*/;
             resourceInputs["managedInstanceCount"] = undefined /*out*/;
             resourceInputs["pendingJobCount"] = undefined /*out*/;

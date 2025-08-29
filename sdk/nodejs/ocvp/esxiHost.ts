@@ -44,47 +44,47 @@ export class EsxiHost extends pulumi.CustomResource {
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly billingContractEndDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly billingContractEndDate: pulumi.Output<string>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      *
      * @deprecated This 'billing_donor_host_id' argument has been deprecated and will be computed only.
      */
-    public readonly billingDonorHostId!: pulumi.Output<string>;
+    declare public readonly billingDonorHostId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
      */
-    public readonly clusterId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterId: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      */
-    public readonly computeAvailabilityDomain!: pulumi.Output<string>;
+    declare public readonly computeAvailabilityDomain: pulumi.Output<string>;
     /**
      * In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      */
-    public /*out*/ readonly computeInstanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeInstanceId: pulumi.Output<string>;
     /**
      * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    public /*out*/ readonly currentCommitment!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentCommitment: pulumi.Output<string>;
     /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
-    public readonly currentSku!: pulumi.Output<string>;
+    declare public readonly currentSku: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
@@ -92,59 +92,59 @@ export class EsxiHost extends pulumi.CustomResource {
      *
      * Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    public readonly esxiSoftwareVersion!: pulumi.Output<string>;
+    declare public readonly esxiSoftwareVersion: pulumi.Output<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      *
      * @deprecated This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
      */
-    public readonly failedEsxiHostId!: pulumi.Output<string>;
+    declare public readonly failedEsxiHostId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      */
-    public /*out*/ readonly gracePeriodEndDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly gracePeriodEndDate: pulumi.Output<string>;
     /**
      * The OCPU count of the ESXi host.
      */
-    public readonly hostOcpuCount!: pulumi.Output<number>;
+    declare public readonly hostOcpuCount: pulumi.Output<number>;
     /**
      * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
-    public readonly hostShapeName!: pulumi.Output<string>;
+    declare public readonly hostShapeName: pulumi.Output<string>;
     /**
      * Indicates whether this host is in the progress of billing continuation.
      */
-    public /*out*/ readonly isBillingContinuationInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isBillingContinuationInProgress: pulumi.Output<boolean>;
     /**
      * Indicates whether this host is in the progress of swapping billing.
      */
-    public /*out*/ readonly isBillingSwappingInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isBillingSwappingInProgress: pulumi.Output<boolean>;
     /**
      * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    public /*out*/ readonly nextCommitment!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextCommitment: pulumi.Output<string>;
     /**
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
-    public readonly nextSku!: pulumi.Output<string>;
+    declare public readonly nextSku: pulumi.Output<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      *
      * @deprecated This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
      */
-    public readonly nonUpgradedEsxiHostId!: pulumi.Output<string>;
+    declare public readonly nonUpgradedEsxiHostId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
-    public /*out*/ readonly replacementEsxiHostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly replacementEsxiHostId: pulumi.Output<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
@@ -154,31 +154,31 @@ export class EsxiHost extends pulumi.CustomResource {
      *
      * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */
-    public readonly sddcId!: pulumi.Output<string | undefined>;
+    declare public readonly sddcId: pulumi.Output<string | undefined>;
     /**
      * The current state of the ESXi host.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      */
-    public /*out*/ readonly swapBillingHostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly swapBillingHostId: pulumi.Output<string>;
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
      */
-    public /*out*/ readonly upgradedReplacementEsxiHostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly upgradedReplacementEsxiHostId: pulumi.Output<string>;
     /**
      * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
      */
-    public /*out*/ readonly vmwareSoftwareVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly vmwareSoftwareVersion: pulumi.Output<string>;
 
     /**
      * Create a EsxiHost resource with the given unique name, arguments, and options.
@@ -193,53 +193,53 @@ export class EsxiHost extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EsxiHostState | undefined;
-            resourceInputs["billingContractEndDate"] = state ? state.billingContractEndDate : undefined;
-            resourceInputs["billingDonorHostId"] = state ? state.billingDonorHostId : undefined;
-            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
-            resourceInputs["computeInstanceId"] = state ? state.computeInstanceId : undefined;
-            resourceInputs["currentCommitment"] = state ? state.currentCommitment : undefined;
-            resourceInputs["currentSku"] = state ? state.currentSku : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["esxiSoftwareVersion"] = state ? state.esxiSoftwareVersion : undefined;
-            resourceInputs["failedEsxiHostId"] = state ? state.failedEsxiHostId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gracePeriodEndDate"] = state ? state.gracePeriodEndDate : undefined;
-            resourceInputs["hostOcpuCount"] = state ? state.hostOcpuCount : undefined;
-            resourceInputs["hostShapeName"] = state ? state.hostShapeName : undefined;
-            resourceInputs["isBillingContinuationInProgress"] = state ? state.isBillingContinuationInProgress : undefined;
-            resourceInputs["isBillingSwappingInProgress"] = state ? state.isBillingSwappingInProgress : undefined;
-            resourceInputs["nextCommitment"] = state ? state.nextCommitment : undefined;
-            resourceInputs["nextSku"] = state ? state.nextSku : undefined;
-            resourceInputs["nonUpgradedEsxiHostId"] = state ? state.nonUpgradedEsxiHostId : undefined;
-            resourceInputs["replacementEsxiHostId"] = state ? state.replacementEsxiHostId : undefined;
-            resourceInputs["sddcId"] = state ? state.sddcId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["swapBillingHostId"] = state ? state.swapBillingHostId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upgradedReplacementEsxiHostId"] = state ? state.upgradedReplacementEsxiHostId : undefined;
-            resourceInputs["vmwareSoftwareVersion"] = state ? state.vmwareSoftwareVersion : undefined;
+            resourceInputs["billingContractEndDate"] = state?.billingContractEndDate;
+            resourceInputs["billingDonorHostId"] = state?.billingDonorHostId;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
+            resourceInputs["computeInstanceId"] = state?.computeInstanceId;
+            resourceInputs["currentCommitment"] = state?.currentCommitment;
+            resourceInputs["currentSku"] = state?.currentSku;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
+            resourceInputs["failedEsxiHostId"] = state?.failedEsxiHostId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gracePeriodEndDate"] = state?.gracePeriodEndDate;
+            resourceInputs["hostOcpuCount"] = state?.hostOcpuCount;
+            resourceInputs["hostShapeName"] = state?.hostShapeName;
+            resourceInputs["isBillingContinuationInProgress"] = state?.isBillingContinuationInProgress;
+            resourceInputs["isBillingSwappingInProgress"] = state?.isBillingSwappingInProgress;
+            resourceInputs["nextCommitment"] = state?.nextCommitment;
+            resourceInputs["nextSku"] = state?.nextSku;
+            resourceInputs["nonUpgradedEsxiHostId"] = state?.nonUpgradedEsxiHostId;
+            resourceInputs["replacementEsxiHostId"] = state?.replacementEsxiHostId;
+            resourceInputs["sddcId"] = state?.sddcId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["swapBillingHostId"] = state?.swapBillingHostId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upgradedReplacementEsxiHostId"] = state?.upgradedReplacementEsxiHostId;
+            resourceInputs["vmwareSoftwareVersion"] = state?.vmwareSoftwareVersion;
         } else {
             const args = argsOrState as EsxiHostArgs | undefined;
-            resourceInputs["billingDonorHostId"] = args ? args.billingDonorHostId : undefined;
-            resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
-            resourceInputs["currentSku"] = args ? args.currentSku : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["esxiSoftwareVersion"] = args ? args.esxiSoftwareVersion : undefined;
-            resourceInputs["failedEsxiHostId"] = args ? args.failedEsxiHostId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostOcpuCount"] = args ? args.hostOcpuCount : undefined;
-            resourceInputs["hostShapeName"] = args ? args.hostShapeName : undefined;
-            resourceInputs["nextSku"] = args ? args.nextSku : undefined;
-            resourceInputs["nonUpgradedEsxiHostId"] = args ? args.nonUpgradedEsxiHostId : undefined;
-            resourceInputs["sddcId"] = args ? args.sddcId : undefined;
+            resourceInputs["billingDonorHostId"] = args?.billingDonorHostId;
+            resourceInputs["capacityReservationId"] = args?.capacityReservationId;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
+            resourceInputs["currentSku"] = args?.currentSku;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
+            resourceInputs["failedEsxiHostId"] = args?.failedEsxiHostId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostOcpuCount"] = args?.hostOcpuCount;
+            resourceInputs["hostShapeName"] = args?.hostShapeName;
+            resourceInputs["nextSku"] = args?.nextSku;
+            resourceInputs["nonUpgradedEsxiHostId"] = args?.nonUpgradedEsxiHostId;
+            resourceInputs["sddcId"] = args?.sddcId;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;

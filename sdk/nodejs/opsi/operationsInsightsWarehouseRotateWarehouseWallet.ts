@@ -61,7 +61,7 @@ export class OperationsInsightsWarehouseRotateWarehouseWallet extends pulumi.Cus
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
+    declare public readonly operationsInsightsWarehouseId: pulumi.Output<string>;
 
     /**
      * Create a OperationsInsightsWarehouseRotateWarehouseWallet resource with the given unique name, arguments, and options.
@@ -76,13 +76,13 @@ export class OperationsInsightsWarehouseRotateWarehouseWallet extends pulumi.Cus
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OperationsInsightsWarehouseRotateWarehouseWalletState | undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = state ? state.operationsInsightsWarehouseId : undefined;
+            resourceInputs["operationsInsightsWarehouseId"] = state?.operationsInsightsWarehouseId;
         } else {
             const args = argsOrState as OperationsInsightsWarehouseRotateWarehouseWalletArgs | undefined;
-            if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
+            if (args?.operationsInsightsWarehouseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
-            resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
+            resourceInputs["operationsInsightsWarehouseId"] = args?.operationsInsightsWarehouseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OperationsInsightsWarehouseRotateWarehouseWallet.__pulumiType, name, resourceInputs, opts);

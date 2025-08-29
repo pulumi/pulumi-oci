@@ -130,27 +130,27 @@ export class MountTarget extends pulumi.CustomResource {
     /**
      * The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
      */
-    public /*out*/ readonly exportSetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly exportSetId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      *
@@ -160,59 +160,59 @@ export class MountTarget extends pulumi.CustomResource {
      *
      * Example: `files-1`
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    declare public readonly hostnameLabel: pulumi.Output<string>;
     /**
      * (Updatable) The method used to map a Unix UID to secondary groups, if any.
      */
-    public readonly idmapType!: pulumi.Output<string>;
+    declare public readonly idmapType: pulumi.Output<string>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * (Updatable) Whether to override locks (if any exist).
      */
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * (Updatable) Kerberos details needed to create configuration.
      */
-    public readonly kerberos!: pulumi.Output<outputs.FileStorage.MountTargetKerberos | undefined>;
+    declare public readonly kerberos: pulumi.Output<outputs.FileStorage.MountTargetKerberos | undefined>;
     /**
      * (Updatable) Mount target details about the LDAP ID mapping configuration.
      */
-    public readonly ldapIdmap!: pulumi.Output<outputs.FileStorage.MountTargetLdapIdmap | undefined>;
+    declare public readonly ldapIdmap: pulumi.Output<outputs.FileStorage.MountTargetLdapIdmap | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.MountTargetLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.MountTargetLock[]>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    public /*out*/ readonly observedThroughput!: pulumi.Output<string>;
+    declare public /*out*/ readonly observedThroughput: pulumi.Output<string>;
     /**
      * The OCIDs of the private IP addresses associated with this mount target.
      */
-    public /*out*/ readonly privateIpIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly privateIpIds: pulumi.Output<string[]>;
     /**
      * (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    public readonly requestedThroughput!: pulumi.Output<string>;
+    declare public readonly requestedThroughput: pulumi.Output<string>;
     /**
      * * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
      */
-    public /*out*/ readonly reservedStorageCapacity!: pulumi.Output<string>;
+    declare public /*out*/ readonly reservedStorageCapacity: pulumi.Output<string>;
     /**
      * The current state of the mount target.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
      *
@@ -220,19 +220,19 @@ export class MountTarget extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the mount target current billing cycle will end, expressed in  [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated  automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeBillingCycleEnd!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeBillingCycleEnd: pulumi.Output<string>;
     /**
      * The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a MountTarget resource with the given unique name, arguments, and options.
@@ -247,56 +247,56 @@ export class MountTarget extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MountTargetState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exportSetId"] = state ? state.exportSetId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
-            resourceInputs["idmapType"] = state ? state.idmapType : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["kerberos"] = state ? state.kerberos : undefined;
-            resourceInputs["ldapIdmap"] = state ? state.ldapIdmap : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["observedThroughput"] = state ? state.observedThroughput : undefined;
-            resourceInputs["privateIpIds"] = state ? state.privateIpIds : undefined;
-            resourceInputs["requestedThroughput"] = state ? state.requestedThroughput : undefined;
-            resourceInputs["reservedStorageCapacity"] = state ? state.reservedStorageCapacity : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeBillingCycleEnd"] = state ? state.timeBillingCycleEnd : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exportSetId"] = state?.exportSetId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostnameLabel"] = state?.hostnameLabel;
+            resourceInputs["idmapType"] = state?.idmapType;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["kerberos"] = state?.kerberos;
+            resourceInputs["ldapIdmap"] = state?.ldapIdmap;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["observedThroughput"] = state?.observedThroughput;
+            resourceInputs["privateIpIds"] = state?.privateIpIds;
+            resourceInputs["requestedThroughput"] = state?.requestedThroughput;
+            resourceInputs["reservedStorageCapacity"] = state?.reservedStorageCapacity;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeBillingCycleEnd"] = state?.timeBillingCycleEnd;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as MountTargetArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
-            resourceInputs["idmapType"] = args ? args.idmapType : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["kerberos"] = args ? args.kerberos : undefined;
-            resourceInputs["ldapIdmap"] = args ? args.ldapIdmap : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["requestedThroughput"] = args ? args.requestedThroughput : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostnameLabel"] = args?.hostnameLabel;
+            resourceInputs["idmapType"] = args?.idmapType;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["kerberos"] = args?.kerberos;
+            resourceInputs["ldapIdmap"] = args?.ldapIdmap;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["requestedThroughput"] = args?.requestedThroughput;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["exportSetId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["observedThroughput"] = undefined /*out*/;

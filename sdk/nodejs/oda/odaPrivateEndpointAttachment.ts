@@ -63,11 +63,11 @@ export class OdaPrivateEndpointAttachment extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
      */
-    public readonly odaInstanceId!: pulumi.Output<string>;
+    declare public readonly odaInstanceId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      *
@@ -75,19 +75,19 @@ export class OdaPrivateEndpointAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly odaPrivateEndpointId!: pulumi.Output<string>;
+    declare public readonly odaPrivateEndpointId: pulumi.Output<string>;
     /**
      * The current state of the ODA Private Endpoint attachment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OdaPrivateEndpointAttachment resource with the given unique name, arguments, and options.
@@ -102,22 +102,22 @@ export class OdaPrivateEndpointAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OdaPrivateEndpointAttachmentState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["odaInstanceId"] = state ? state.odaInstanceId : undefined;
-            resourceInputs["odaPrivateEndpointId"] = state ? state.odaPrivateEndpointId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["odaInstanceId"] = state?.odaInstanceId;
+            resourceInputs["odaPrivateEndpointId"] = state?.odaPrivateEndpointId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OdaPrivateEndpointAttachmentArgs | undefined;
-            if ((!args || args.odaInstanceId === undefined) && !opts.urn) {
+            if (args?.odaInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'odaInstanceId'");
             }
-            if ((!args || args.odaPrivateEndpointId === undefined) && !opts.urn) {
+            if (args?.odaPrivateEndpointId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'odaPrivateEndpointId'");
             }
-            resourceInputs["odaInstanceId"] = args ? args.odaInstanceId : undefined;
-            resourceInputs["odaPrivateEndpointId"] = args ? args.odaPrivateEndpointId : undefined;
+            resourceInputs["odaInstanceId"] = args?.odaInstanceId;
+            resourceInputs["odaPrivateEndpointId"] = args?.odaPrivateEndpointId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

@@ -50,83 +50,83 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The OCID of a compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies the list of artifact override arguments at the time of deployment.
      */
-    public readonly deployArtifactOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployArtifactOverrideArguments>;
+    declare public readonly deployArtifactOverrideArguments: pulumi.Output<outputs.DevOps.DeploymentDeployArtifactOverrideArguments>;
     /**
      * List of all artifacts used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineArtifacts!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineArtifact[]>;
+    declare public /*out*/ readonly deployPipelineArtifacts: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineArtifact[]>;
     /**
      * List of all environments used in the pipeline.
      */
-    public /*out*/ readonly deployPipelineEnvironments!: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineEnvironment[]>;
+    declare public /*out*/ readonly deployPipelineEnvironments: pulumi.Output<outputs.DevOps.DeploymentDeployPipelineEnvironment[]>;
     /**
      * The OCID of a pipeline.
      */
-    public readonly deployPipelineId!: pulumi.Output<string>;
+    declare public readonly deployPipelineId: pulumi.Output<string>;
     /**
      * Specifies the OCID of the stage to be redeployed.
      */
-    public readonly deployStageId!: pulumi.Output<string>;
+    declare public readonly deployStageId: pulumi.Output<string>;
     /**
      * Specifies the list of arguments to be overriden per Stage at the time of deployment.
      */
-    public readonly deployStageOverrideArguments!: pulumi.Output<outputs.DevOps.DeploymentDeployStageOverrideArguments>;
+    declare public readonly deployStageOverrideArguments: pulumi.Output<outputs.DevOps.DeploymentDeployStageOverrideArguments>;
     /**
      * Specifies list of arguments passed along with the deployment.
      */
-    public readonly deploymentArguments!: pulumi.Output<outputs.DevOps.DeploymentDeploymentArguments>;
+    declare public readonly deploymentArguments: pulumi.Output<outputs.DevOps.DeploymentDeploymentArguments>;
     /**
      * The execution progress details of a deployment.
      */
-    public /*out*/ readonly deploymentExecutionProgresses!: pulumi.Output<outputs.DevOps.DeploymentDeploymentExecutionProgress[]>;
+    declare public /*out*/ readonly deploymentExecutionProgresses: pulumi.Output<outputs.DevOps.DeploymentDeploymentExecutionProgress[]>;
     /**
      * (Updatable) Specifies type for this deployment.
      */
-    public readonly deploymentType!: pulumi.Output<string>;
+    declare public readonly deploymentType: pulumi.Output<string>;
     /**
      * (Updatable) Deployment display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
      */
-    public readonly previousDeploymentId!: pulumi.Output<string>;
+    declare public readonly previousDeploymentId: pulumi.Output<string>;
     /**
      * The OCID of a project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    declare public /*out*/ readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the deployment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
      *
@@ -134,7 +134,7 @@ export class Deployment extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. Additionally, while `triggerNewDevopsDeployment`
      * is set true each apply will force the destruction and recreation of the resource with the new property values.
      */
-    public readonly triggerNewDevopsDeployment!: pulumi.Output<boolean | undefined>;
+    declare public readonly triggerNewDevopsDeployment: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a Deployment resource with the given unique name, arguments, and options.
@@ -149,46 +149,46 @@ export class Deployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deployArtifactOverrideArguments"] = state ? state.deployArtifactOverrideArguments : undefined;
-            resourceInputs["deployPipelineArtifacts"] = state ? state.deployPipelineArtifacts : undefined;
-            resourceInputs["deployPipelineEnvironments"] = state ? state.deployPipelineEnvironments : undefined;
-            resourceInputs["deployPipelineId"] = state ? state.deployPipelineId : undefined;
-            resourceInputs["deployStageId"] = state ? state.deployStageId : undefined;
-            resourceInputs["deployStageOverrideArguments"] = state ? state.deployStageOverrideArguments : undefined;
-            resourceInputs["deploymentArguments"] = state ? state.deploymentArguments : undefined;
-            resourceInputs["deploymentExecutionProgresses"] = state ? state.deploymentExecutionProgresses : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["previousDeploymentId"] = state ? state.previousDeploymentId : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["triggerNewDevopsDeployment"] = state ? state.triggerNewDevopsDeployment : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deployArtifactOverrideArguments"] = state?.deployArtifactOverrideArguments;
+            resourceInputs["deployPipelineArtifacts"] = state?.deployPipelineArtifacts;
+            resourceInputs["deployPipelineEnvironments"] = state?.deployPipelineEnvironments;
+            resourceInputs["deployPipelineId"] = state?.deployPipelineId;
+            resourceInputs["deployStageId"] = state?.deployStageId;
+            resourceInputs["deployStageOverrideArguments"] = state?.deployStageOverrideArguments;
+            resourceInputs["deploymentArguments"] = state?.deploymentArguments;
+            resourceInputs["deploymentExecutionProgresses"] = state?.deploymentExecutionProgresses;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["previousDeploymentId"] = state?.previousDeploymentId;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["triggerNewDevopsDeployment"] = state?.triggerNewDevopsDeployment;
         } else {
             const args = argsOrState as DeploymentArgs | undefined;
-            if ((!args || args.deployPipelineId === undefined) && !opts.urn) {
+            if (args?.deployPipelineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deployPipelineId'");
             }
-            if ((!args || args.deploymentType === undefined) && !opts.urn) {
+            if (args?.deploymentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deploymentType'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deployArtifactOverrideArguments"] = args ? args.deployArtifactOverrideArguments : undefined;
-            resourceInputs["deployPipelineId"] = args ? args.deployPipelineId : undefined;
-            resourceInputs["deployStageId"] = args ? args.deployStageId : undefined;
-            resourceInputs["deployStageOverrideArguments"] = args ? args.deployStageOverrideArguments : undefined;
-            resourceInputs["deploymentArguments"] = args ? args.deploymentArguments : undefined;
-            resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["previousDeploymentId"] = args ? args.previousDeploymentId : undefined;
-            resourceInputs["triggerNewDevopsDeployment"] = args ? args.triggerNewDevopsDeployment : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deployArtifactOverrideArguments"] = args?.deployArtifactOverrideArguments;
+            resourceInputs["deployPipelineId"] = args?.deployPipelineId;
+            resourceInputs["deployStageId"] = args?.deployStageId;
+            resourceInputs["deployStageOverrideArguments"] = args?.deployStageOverrideArguments;
+            resourceInputs["deploymentArguments"] = args?.deploymentArguments;
+            resourceInputs["deploymentType"] = args?.deploymentType;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["previousDeploymentId"] = args?.previousDeploymentId;
+            resourceInputs["triggerNewDevopsDeployment"] = args?.triggerNewDevopsDeployment;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["deployPipelineArtifacts"] = undefined /*out*/;
             resourceInputs["deployPipelineEnvironments"] = undefined /*out*/;

@@ -75,43 +75,43 @@ export class ExecutionAction extends pulumi.CustomResource {
     /**
      * (Updatable) List of action members of this execution action.
      */
-    public readonly actionMembers!: pulumi.Output<outputs.Database.ExecutionActionActionMember[]>;
+    declare public readonly actionMembers: pulumi.Output<outputs.Database.ExecutionActionActionMember[]>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    public readonly actionParams!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly actionParams: pulumi.Output<{[key: string]: string}>;
     /**
      * The action type of the execution action being performed
      */
-    public readonly actionType!: pulumi.Output<string>;
+    declare public readonly actionType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Description of the execution action.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The user-friendly name for the execution action. The name does not need to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The estimated time of the execution action in minutes.
      */
-    public /*out*/ readonly estimatedTimeInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedTimeInMins: pulumi.Output<number>;
     /**
      * The priority order of the execution action.
      */
-    public /*out*/ readonly executionActionOrder!: pulumi.Output<number>;
+    declare public /*out*/ readonly executionActionOrder: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window resource the execution action belongs to.
      */
-    public readonly executionWindowId!: pulumi.Output<string>;
+    declare public readonly executionWindowId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -119,31 +119,31 @@ export class ExecutionAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current sub-state of the execution action. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
      */
-    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubstate: pulumi.Output<string>;
     /**
      * The current state of the execution action. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the execution action was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The last date and time that the execution action was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The total time taken by corresponding resource activity in minutes.
      */
-    public /*out*/ readonly totalTimeTakenInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalTimeTakenInMins: pulumi.Output<number>;
 
     /**
      * Create a ExecutionAction resource with the given unique name, arguments, and options.
@@ -158,38 +158,38 @@ export class ExecutionAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExecutionActionState | undefined;
-            resourceInputs["actionMembers"] = state ? state.actionMembers : undefined;
-            resourceInputs["actionParams"] = state ? state.actionParams : undefined;
-            resourceInputs["actionType"] = state ? state.actionType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedTimeInMins"] = state ? state.estimatedTimeInMins : undefined;
-            resourceInputs["executionActionOrder"] = state ? state.executionActionOrder : undefined;
-            resourceInputs["executionWindowId"] = state ? state.executionWindowId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubstate"] = state ? state.lifecycleSubstate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalTimeTakenInMins"] = state ? state.totalTimeTakenInMins : undefined;
+            resourceInputs["actionMembers"] = state?.actionMembers;
+            resourceInputs["actionParams"] = state?.actionParams;
+            resourceInputs["actionType"] = state?.actionType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedTimeInMins"] = state?.estimatedTimeInMins;
+            resourceInputs["executionActionOrder"] = state?.executionActionOrder;
+            resourceInputs["executionWindowId"] = state?.executionWindowId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubstate"] = state?.lifecycleSubstate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalTimeTakenInMins"] = state?.totalTimeTakenInMins;
         } else {
             const args = argsOrState as ExecutionActionArgs | undefined;
-            if ((!args || args.actionType === undefined) && !opts.urn) {
+            if (args?.actionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actionType'");
             }
-            if ((!args || args.executionWindowId === undefined) && !opts.urn) {
+            if (args?.executionWindowId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executionWindowId'");
             }
-            resourceInputs["actionMembers"] = args ? args.actionMembers : undefined;
-            resourceInputs["actionParams"] = args ? args.actionParams : undefined;
-            resourceInputs["actionType"] = args ? args.actionType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["executionWindowId"] = args ? args.executionWindowId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["actionMembers"] = args?.actionMembers;
+            resourceInputs["actionParams"] = args?.actionParams;
+            resourceInputs["actionType"] = args?.actionType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["executionWindowId"] = args?.executionWindowId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["estimatedTimeInMins"] = undefined /*out*/;

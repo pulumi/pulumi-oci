@@ -50,39 +50,39 @@ export class Addon extends pulumi.CustomResource {
     /**
      * The error info of the addon.
      */
-    public /*out*/ readonly addonErrors!: pulumi.Output<outputs.ContainerEngine.AddonAddonError[]>;
+    declare public /*out*/ readonly addonErrors: pulumi.Output<outputs.ContainerEngine.AddonAddonError[]>;
     /**
      * The name of the addon.
      */
-    public readonly addonName!: pulumi.Output<string>;
+    declare public readonly addonName: pulumi.Output<string>;
     /**
      * The OCID of the cluster.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * (Updatable) Addon configuration details
      */
-    public readonly configurations!: pulumi.Output<outputs.ContainerEngine.AddonConfiguration[]>;
+    declare public readonly configurations: pulumi.Output<outputs.ContainerEngine.AddonConfiguration[]>;
     /**
      * current installed version of the addon
      */
-    public /*out*/ readonly currentInstalledVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentInstalledVersion: pulumi.Output<string>;
     /**
      * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
      */
-    public readonly overrideExisting!: pulumi.Output<boolean | undefined>;
+    declare public readonly overrideExisting: pulumi.Output<boolean | undefined>;
     /**
      * Whether to remove addon resource in deletion.
      */
-    public readonly removeAddonResourcesOnDelete!: pulumi.Output<boolean>;
+    declare public readonly removeAddonResourcesOnDelete: pulumi.Output<boolean>;
     /**
      * The state of the addon.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The version of addon to be installed.
      *
@@ -90,7 +90,7 @@ export class Addon extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly version!: pulumi.Output<string | undefined>;
+    declare public readonly version: pulumi.Output<string | undefined>;
 
     /**
      * Create a Addon resource with the given unique name, arguments, and options.
@@ -105,33 +105,33 @@ export class Addon extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AddonState | undefined;
-            resourceInputs["addonErrors"] = state ? state.addonErrors : undefined;
-            resourceInputs["addonName"] = state ? state.addonName : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["configurations"] = state ? state.configurations : undefined;
-            resourceInputs["currentInstalledVersion"] = state ? state.currentInstalledVersion : undefined;
-            resourceInputs["overrideExisting"] = state ? state.overrideExisting : undefined;
-            resourceInputs["removeAddonResourcesOnDelete"] = state ? state.removeAddonResourcesOnDelete : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["addonErrors"] = state?.addonErrors;
+            resourceInputs["addonName"] = state?.addonName;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["configurations"] = state?.configurations;
+            resourceInputs["currentInstalledVersion"] = state?.currentInstalledVersion;
+            resourceInputs["overrideExisting"] = state?.overrideExisting;
+            resourceInputs["removeAddonResourcesOnDelete"] = state?.removeAddonResourcesOnDelete;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as AddonArgs | undefined;
-            if ((!args || args.addonName === undefined) && !opts.urn) {
+            if (args?.addonName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'addonName'");
             }
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            if ((!args || args.removeAddonResourcesOnDelete === undefined) && !opts.urn) {
+            if (args?.removeAddonResourcesOnDelete === undefined && !opts.urn) {
                 throw new Error("Missing required property 'removeAddonResourcesOnDelete'");
             }
-            resourceInputs["addonName"] = args ? args.addonName : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["configurations"] = args ? args.configurations : undefined;
-            resourceInputs["overrideExisting"] = args ? args.overrideExisting : undefined;
-            resourceInputs["removeAddonResourcesOnDelete"] = args ? args.removeAddonResourcesOnDelete : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["addonName"] = args?.addonName;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["configurations"] = args?.configurations;
+            resourceInputs["overrideExisting"] = args?.overrideExisting;
+            resourceInputs["removeAddonResourcesOnDelete"] = args?.removeAddonResourcesOnDelete;
+            resourceInputs["version"] = args?.version;
             resourceInputs["addonErrors"] = undefined /*out*/;
             resourceInputs["currentInstalledVersion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

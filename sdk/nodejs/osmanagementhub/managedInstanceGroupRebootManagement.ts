@@ -66,15 +66,15 @@ export class ManagedInstanceGroupRebootManagement extends pulumi.CustomResource 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
      */
-    public readonly rebootTimeoutInMins!: pulumi.Output<number>;
+    declare public readonly rebootTimeoutInMins: pulumi.Output<number>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupRebootManagement resource with the given unique name, arguments, and options.
@@ -89,17 +89,17 @@ export class ManagedInstanceGroupRebootManagement extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupRebootManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["rebootTimeoutInMins"] = state ? state.rebootTimeoutInMins : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["rebootTimeoutInMins"] = state?.rebootTimeoutInMins;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupRebootManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["rebootTimeoutInMins"] = args ? args.rebootTimeoutInMins : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["rebootTimeoutInMins"] = args?.rebootTimeoutInMins;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupRebootManagement.__pulumiType, name, resourceInputs, opts);

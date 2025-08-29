@@ -117,51 +117,51 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
     /**
      * An array of child columns that are in referential relationship with the masking column.
      */
-    public /*out*/ readonly childColumns!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly childColumns: pulumi.Output<string[]>;
     /**
      * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      */
-    public readonly columnName!: pulumi.Output<string>;
+    declare public readonly columnName: pulumi.Output<string>;
     /**
      * The data type of the masking column.
      */
-    public /*out*/ readonly dataType!: pulumi.Output<string>;
+    declare public /*out*/ readonly dataType: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
      */
-    public readonly isMaskingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isMaskingEnabled: pulumi.Output<boolean>;
     /**
      * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * Details about the current state of the masking column.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */
-    public readonly maskingColumnGroup!: pulumi.Output<string>;
+    declare public readonly maskingColumnGroup: pulumi.Output<string>;
     /**
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      */
-    public readonly maskingFormats!: pulumi.Output<outputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat[]>;
+    declare public readonly maskingFormats: pulumi.Output<outputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat[]>;
     /**
      * The OCID of the masking policy.
      */
-    public readonly maskingPolicyId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
     /**
      * The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * (Updatable) The type of the object that contains the database column.
      */
-    public readonly objectType!: pulumi.Output<string>;
+    declare public readonly objectType: pulumi.Output<string>;
     /**
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
      */
-    public readonly schemaName!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
      *
@@ -169,19 +169,19 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveTypeId!: pulumi.Output<string>;
+    declare public readonly sensitiveTypeId: pulumi.Output<string>;
     /**
      * The current state of the masking column.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MaskingPoliciesMaskingColumn resource with the given unique name, arguments, and options.
@@ -196,45 +196,45 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaskingPoliciesMaskingColumnState | undefined;
-            resourceInputs["childColumns"] = state ? state.childColumns : undefined;
-            resourceInputs["columnName"] = state ? state.columnName : undefined;
-            resourceInputs["dataType"] = state ? state.dataType : undefined;
-            resourceInputs["isMaskingEnabled"] = state ? state.isMaskingEnabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maskingColumnGroup"] = state ? state.maskingColumnGroup : undefined;
-            resourceInputs["maskingFormats"] = state ? state.maskingFormats : undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["objectType"] = state ? state.objectType : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sensitiveTypeId"] = state ? state.sensitiveTypeId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["childColumns"] = state?.childColumns;
+            resourceInputs["columnName"] = state?.columnName;
+            resourceInputs["dataType"] = state?.dataType;
+            resourceInputs["isMaskingEnabled"] = state?.isMaskingEnabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maskingColumnGroup"] = state?.maskingColumnGroup;
+            resourceInputs["maskingFormats"] = state?.maskingFormats;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["objectType"] = state?.objectType;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sensitiveTypeId"] = state?.sensitiveTypeId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MaskingPoliciesMaskingColumnArgs | undefined;
-            if ((!args || args.columnName === undefined) && !opts.urn) {
+            if (args?.columnName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'columnName'");
             }
-            if ((!args || args.maskingPolicyId === undefined) && !opts.urn) {
+            if (args?.maskingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPolicyId'");
             }
-            if ((!args || args.object === undefined) && !opts.urn) {
+            if (args?.object === undefined && !opts.urn) {
                 throw new Error("Missing required property 'object'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            resourceInputs["columnName"] = args ? args.columnName : undefined;
-            resourceInputs["isMaskingEnabled"] = args ? args.isMaskingEnabled : undefined;
-            resourceInputs["maskingColumnGroup"] = args ? args.maskingColumnGroup : undefined;
-            resourceInputs["maskingFormats"] = args ? args.maskingFormats : undefined;
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
-            resourceInputs["objectType"] = args ? args.objectType : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sensitiveTypeId"] = args ? args.sensitiveTypeId : undefined;
+            resourceInputs["columnName"] = args?.columnName;
+            resourceInputs["isMaskingEnabled"] = args?.isMaskingEnabled;
+            resourceInputs["maskingColumnGroup"] = args?.maskingColumnGroup;
+            resourceInputs["maskingFormats"] = args?.maskingFormats;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["object"] = args?.object;
+            resourceInputs["objectType"] = args?.objectType;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sensitiveTypeId"] = args?.sensitiveTypeId;
             resourceInputs["childColumns"] = undefined /*out*/;
             resourceInputs["dataType"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;

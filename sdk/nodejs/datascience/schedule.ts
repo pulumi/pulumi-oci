@@ -171,75 +171,75 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * (Updatable) The schedule action
      */
-    public readonly action!: pulumi.Output<outputs.DataScience.ScheduleAction>;
+    declare public readonly action: pulumi.Output<outputs.DataScience.ScheduleAction>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A short description of the schedule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
      */
-    public /*out*/ readonly lastScheduleRunDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastScheduleRunDetails: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Custom logging details for schedule execution.
      */
-    public readonly logDetails!: pulumi.Output<outputs.DataScience.ScheduleLogDetails | undefined>;
+    declare public readonly logDetails: pulumi.Output<outputs.DataScience.ScheduleLogDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the schedule.           Example: `ACTIVE`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
      */
-    public /*out*/ readonly timeLastScheduleRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastScheduleRun: pulumi.Output<string>;
     /**
      * The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
      */
-    public /*out*/ readonly timeNextScheduledRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNextScheduledRun: pulumi.Output<string>;
     /**
      * The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
      */
-    public readonly trigger!: pulumi.Output<outputs.DataScience.ScheduleTrigger>;
+    declare public readonly trigger: pulumi.Output<outputs.DataScience.ScheduleTrigger>;
 
     /**
      * Create a Schedule resource with the given unique name, arguments, and options.
@@ -254,50 +254,50 @@ export class Schedule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastScheduleRunDetails"] = state ? state.lastScheduleRunDetails : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["logDetails"] = state ? state.logDetails : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastScheduleRun"] = state ? state.timeLastScheduleRun : undefined;
-            resourceInputs["timeNextScheduledRun"] = state ? state.timeNextScheduledRun : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["trigger"] = state ? state.trigger : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastScheduleRunDetails"] = state?.lastScheduleRunDetails;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logDetails"] = state?.logDetails;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastScheduleRun"] = state?.timeLastScheduleRun;
+            resourceInputs["timeNextScheduledRun"] = state?.timeNextScheduledRun;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["trigger"] = state?.trigger;
         } else {
             const args = argsOrState as ScheduleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if ((!args || args.trigger === undefined) && !opts.urn) {
+            if (args?.trigger === undefined && !opts.urn) {
                 throw new Error("Missing required property 'trigger'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["logDetails"] = args ? args.logDetails : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["trigger"] = args ? args.trigger : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["logDetails"] = args?.logDetails;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["trigger"] = args?.trigger;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lastScheduleRunDetails"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

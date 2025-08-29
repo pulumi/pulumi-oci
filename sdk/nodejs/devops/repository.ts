@@ -50,63 +50,63 @@ export class Repository extends pulumi.CustomResource {
     /**
      * The count of the branches present in the repository.
      */
-    public /*out*/ readonly branchCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly branchCount: pulumi.Output<number>;
     /**
      * The count of the commits present in the repository.
      */
-    public /*out*/ readonly commitCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly commitCount: pulumi.Output<number>;
     /**
      * The OCID of the repository's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The default branch of the repository.
      */
-    public readonly defaultBranch!: pulumi.Output<string>;
+    declare public readonly defaultBranch: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Details of the repository. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * HTTP URL that you use to git clone, pull and push.
      */
-    public /*out*/ readonly httpUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly httpUrl: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecyleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Configuration information for mirroring the repository.
      */
-    public readonly mirrorRepositoryConfig!: pulumi.Output<outputs.DevOps.RepositoryMirrorRepositoryConfig>;
+    declare public readonly mirrorRepositoryConfig: pulumi.Output<outputs.DevOps.RepositoryMirrorRepositoryConfig>;
     /**
      * (Updatable) Name of the repository. Should be unique within the project.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Tenancy unique namespace.
      */
-    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    declare public /*out*/ readonly namespace: pulumi.Output<string>;
     /**
      * The OCID of the parent repository.
      */
-    public readonly parentRepositoryId!: pulumi.Output<string>;
+    declare public readonly parentRepositoryId: pulumi.Output<string>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * Unique project name in a namespace.
      */
-    public /*out*/ readonly projectName!: pulumi.Output<string>;
+    declare public /*out*/ readonly projectName: pulumi.Output<string>;
     /**
      * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
      *
@@ -114,35 +114,35 @@ export class Repository extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repositoryType!: pulumi.Output<string>;
+    declare public readonly repositoryType: pulumi.Output<string>;
     /**
      * The size of the repository in bytes.
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly sizeInBytes: pulumi.Output<string>;
     /**
      * SSH URL that you use to git clone, pull and push.
      */
-    public /*out*/ readonly sshUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly sshUrl: pulumi.Output<string>;
     /**
      * The current state of the repository.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      */
-    public /*out*/ readonly triggerBuildEvents!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly triggerBuildEvents: pulumi.Output<string[]>;
 
     /**
      * Create a Repository resource with the given unique name, arguments, and options.
@@ -157,46 +157,46 @@ export class Repository extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RepositoryState | undefined;
-            resourceInputs["branchCount"] = state ? state.branchCount : undefined;
-            resourceInputs["commitCount"] = state ? state.commitCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["defaultBranch"] = state ? state.defaultBranch : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["httpUrl"] = state ? state.httpUrl : undefined;
-            resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
-            resourceInputs["mirrorRepositoryConfig"] = state ? state.mirrorRepositoryConfig : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["parentRepositoryId"] = state ? state.parentRepositoryId : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["projectName"] = state ? state.projectName : undefined;
-            resourceInputs["repositoryType"] = state ? state.repositoryType : undefined;
-            resourceInputs["sizeInBytes"] = state ? state.sizeInBytes : undefined;
-            resourceInputs["sshUrl"] = state ? state.sshUrl : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["triggerBuildEvents"] = state ? state.triggerBuildEvents : undefined;
+            resourceInputs["branchCount"] = state?.branchCount;
+            resourceInputs["commitCount"] = state?.commitCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["defaultBranch"] = state?.defaultBranch;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["httpUrl"] = state?.httpUrl;
+            resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
+            resourceInputs["mirrorRepositoryConfig"] = state?.mirrorRepositoryConfig;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["parentRepositoryId"] = state?.parentRepositoryId;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["projectName"] = state?.projectName;
+            resourceInputs["repositoryType"] = state?.repositoryType;
+            resourceInputs["sizeInBytes"] = state?.sizeInBytes;
+            resourceInputs["sshUrl"] = state?.sshUrl;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["triggerBuildEvents"] = state?.triggerBuildEvents;
         } else {
             const args = argsOrState as RepositoryArgs | undefined;
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if ((!args || args.repositoryType === undefined) && !opts.urn) {
+            if (args?.repositoryType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryType'");
             }
-            resourceInputs["defaultBranch"] = args ? args.defaultBranch : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["mirrorRepositoryConfig"] = args ? args.mirrorRepositoryConfig : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["parentRepositoryId"] = args ? args.parentRepositoryId : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["repositoryType"] = args ? args.repositoryType : undefined;
+            resourceInputs["defaultBranch"] = args?.defaultBranch;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["mirrorRepositoryConfig"] = args?.mirrorRepositoryConfig;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["parentRepositoryId"] = args?.parentRepositoryId;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["repositoryType"] = args?.repositoryType;
             resourceInputs["branchCount"] = undefined /*out*/;
             resourceInputs["commitCount"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;

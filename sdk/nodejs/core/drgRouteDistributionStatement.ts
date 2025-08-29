@@ -68,15 +68,15 @@ export class DrgRouteDistributionStatement extends pulumi.CustomResource {
     /**
      * Accept: import/export the route "as is"
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
      */
-    public readonly drgRouteDistributionId!: pulumi.Output<string>;
+    declare public readonly drgRouteDistributionId: pulumi.Output<string>;
     /**
      * (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
      */
-    public readonly matchCriteria!: pulumi.Output<outputs.Core.DrgRouteDistributionStatementMatchCriteria>;
+    declare public readonly matchCriteria: pulumi.Output<outputs.Core.DrgRouteDistributionStatementMatchCriteria>;
     /**
      * (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
      *
@@ -84,7 +84,7 @@ export class DrgRouteDistributionStatement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly priority!: pulumi.Output<number>;
+    declare public readonly priority: pulumi.Output<number>;
 
     /**
      * Create a DrgRouteDistributionStatement resource with the given unique name, arguments, and options.
@@ -99,28 +99,28 @@ export class DrgRouteDistributionStatement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrgRouteDistributionStatementState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["drgRouteDistributionId"] = state ? state.drgRouteDistributionId : undefined;
-            resourceInputs["matchCriteria"] = state ? state.matchCriteria : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["drgRouteDistributionId"] = state?.drgRouteDistributionId;
+            resourceInputs["matchCriteria"] = state?.matchCriteria;
+            resourceInputs["priority"] = state?.priority;
         } else {
             const args = argsOrState as DrgRouteDistributionStatementArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.drgRouteDistributionId === undefined) && !opts.urn) {
+            if (args?.drgRouteDistributionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgRouteDistributionId'");
             }
-            if ((!args || args.matchCriteria === undefined) && !opts.urn) {
+            if (args?.matchCriteria === undefined && !opts.urn) {
                 throw new Error("Missing required property 'matchCriteria'");
             }
-            if ((!args || args.priority === undefined) && !opts.urn) {
+            if (args?.priority === undefined && !opts.urn) {
                 throw new Error("Missing required property 'priority'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["drgRouteDistributionId"] = args ? args.drgRouteDistributionId : undefined;
-            resourceInputs["matchCriteria"] = args ? args.matchCriteria : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["drgRouteDistributionId"] = args?.drgRouteDistributionId;
+            resourceInputs["matchCriteria"] = args?.matchCriteria;
+            resourceInputs["priority"] = args?.priority;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DrgRouteDistributionStatement.__pulumiType, name, resourceInputs, opts);

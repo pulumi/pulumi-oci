@@ -50,47 +50,47 @@ export class AuditPolicy extends pulumi.CustomResource {
     /**
      * Lists the audit policy provisioning conditions for the target database.
      */
-    public /*out*/ readonly auditConditions!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditCondition[]>;
+    declare public /*out*/ readonly auditConditions: pulumi.Output<outputs.DataSafe.AuditPolicyAuditCondition[]>;
     /**
      * Unique audit policy identifier.
      */
-    public readonly auditPolicyId!: pulumi.Output<string>;
+    declare public readonly auditPolicyId: pulumi.Output<string>;
     /**
      * Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      */
-    public /*out*/ readonly auditSpecifications!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditSpecification[]>;
+    declare public /*out*/ readonly auditSpecifications: pulumi.Output<outputs.DataSafe.AuditPolicyAuditSpecification[]>;
     /**
      * (Updatable) The OCID of the compartment containing the audit policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      */
-    public /*out*/ readonly isDataSafeServiceAccountExcluded!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDataSafeServiceAccountExcluded: pulumi.Output<boolean>;
     /**
      * Details about the current state of the audit policy in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
      */
-    public readonly provisionTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly provisionTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      *
@@ -98,35 +98,35 @@ export class AuditPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retrieveFromTargetTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly retrieveFromTargetTrigger: pulumi.Output<number | undefined>;
     /**
      * The current state of the audit policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target for which the audit policy is created.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetId: pulumi.Output<string>;
     /**
      * The time the the audit policy was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastProvisioned!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastProvisioned: pulumi.Output<string>;
     /**
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastRetrieved!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastRetrieved: pulumi.Output<string>;
     /**
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AuditPolicy resource with the given unique name, arguments, and options.
@@ -141,38 +141,38 @@ export class AuditPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditPolicyState | undefined;
-            resourceInputs["auditConditions"] = state ? state.auditConditions : undefined;
-            resourceInputs["auditPolicyId"] = state ? state.auditPolicyId : undefined;
-            resourceInputs["auditSpecifications"] = state ? state.auditSpecifications : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isDataSafeServiceAccountExcluded"] = state ? state.isDataSafeServiceAccountExcluded : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["provisionTrigger"] = state ? state.provisionTrigger : undefined;
-            resourceInputs["retrieveFromTargetTrigger"] = state ? state.retrieveFromTargetTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastProvisioned"] = state ? state.timeLastProvisioned : undefined;
-            resourceInputs["timeLastRetrieved"] = state ? state.timeLastRetrieved : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["auditConditions"] = state?.auditConditions;
+            resourceInputs["auditPolicyId"] = state?.auditPolicyId;
+            resourceInputs["auditSpecifications"] = state?.auditSpecifications;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isDataSafeServiceAccountExcluded"] = state?.isDataSafeServiceAccountExcluded;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["provisionTrigger"] = state?.provisionTrigger;
+            resourceInputs["retrieveFromTargetTrigger"] = state?.retrieveFromTargetTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastProvisioned"] = state?.timeLastProvisioned;
+            resourceInputs["timeLastRetrieved"] = state?.timeLastRetrieved;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AuditPolicyArgs | undefined;
-            if ((!args || args.auditPolicyId === undefined) && !opts.urn) {
+            if (args?.auditPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'auditPolicyId'");
             }
-            resourceInputs["auditPolicyId"] = args ? args.auditPolicyId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["provisionTrigger"] = args ? args.provisionTrigger : undefined;
-            resourceInputs["retrieveFromTargetTrigger"] = args ? args.retrieveFromTargetTrigger : undefined;
+            resourceInputs["auditPolicyId"] = args?.auditPolicyId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["provisionTrigger"] = args?.provisionTrigger;
+            resourceInputs["retrieveFromTargetTrigger"] = args?.retrieveFromTargetTrigger;
             resourceInputs["auditConditions"] = undefined /*out*/;
             resourceInputs["auditSpecifications"] = undefined /*out*/;
             resourceInputs["isDataSafeServiceAccountExcluded"] = undefined /*out*/;

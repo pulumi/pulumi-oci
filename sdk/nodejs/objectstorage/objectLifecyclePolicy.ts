@@ -75,19 +75,19 @@ export class ObjectLifecyclePolicy extends pulumi.CustomResource {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * The Object Storage namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) The bucket's set of lifecycle policy rules.
      */
-    public readonly rules!: pulumi.Output<outputs.ObjectStorage.ObjectLifecyclePolicyRule[]>;
+    declare public readonly rules: pulumi.Output<outputs.ObjectStorage.ObjectLifecyclePolicyRule[]>;
     /**
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a ObjectLifecyclePolicy resource with the given unique name, arguments, and options.
@@ -102,21 +102,21 @@ export class ObjectLifecyclePolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ObjectLifecyclePolicyState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ObjectLifecyclePolicyArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["rules"] = args?.rules;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

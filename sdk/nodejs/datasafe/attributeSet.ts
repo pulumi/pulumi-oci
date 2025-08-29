@@ -69,27 +69,27 @@ export class AttributeSet extends pulumi.CustomResource {
     /**
      * The type of attribute set.
      */
-    public readonly attributeSetType!: pulumi.Output<string>;
+    declare public readonly attributeSetType: pulumi.Output<string>;
     /**
      * (Updatable) The list of values in an attribute set
      */
-    public readonly attributeSetValues!: pulumi.Output<string[]>;
+    declare public readonly attributeSetValues: pulumi.Output<string[]>;
     /**
      * (Updatable) The OCID of the compartment that contains the attribute set.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the attribute set.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the attribute set. The name is unique and changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
      *
@@ -97,31 +97,31 @@ export class AttributeSet extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the attribute set is in use by other resource.
      */
-    public /*out*/ readonly inUse!: pulumi.Output<string>;
+    declare public /*out*/ readonly inUse: pulumi.Output<string>;
     /**
      * A boolean flag indicating to list user defined or seeded attribute sets.
      */
-    public /*out*/ readonly isUserDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isUserDefined: pulumi.Output<boolean>;
     /**
      * The current state of an attribute set.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time an attribute set was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time an attribute set was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AttributeSet resource with the given unique name, arguments, and options.
@@ -136,40 +136,40 @@ export class AttributeSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AttributeSetState | undefined;
-            resourceInputs["attributeSetType"] = state ? state.attributeSetType : undefined;
-            resourceInputs["attributeSetValues"] = state ? state.attributeSetValues : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inUse"] = state ? state.inUse : undefined;
-            resourceInputs["isUserDefined"] = state ? state.isUserDefined : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["attributeSetType"] = state?.attributeSetType;
+            resourceInputs["attributeSetValues"] = state?.attributeSetValues;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inUse"] = state?.inUse;
+            resourceInputs["isUserDefined"] = state?.isUserDefined;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AttributeSetArgs | undefined;
-            if ((!args || args.attributeSetType === undefined) && !opts.urn) {
+            if (args?.attributeSetType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attributeSetType'");
             }
-            if ((!args || args.attributeSetValues === undefined) && !opts.urn) {
+            if (args?.attributeSetValues === undefined && !opts.urn) {
                 throw new Error("Missing required property 'attributeSetValues'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["attributeSetType"] = args ? args.attributeSetType : undefined;
-            resourceInputs["attributeSetValues"] = args ? args.attributeSetValues : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["attributeSetType"] = args?.attributeSetType;
+            resourceInputs["attributeSetValues"] = args?.attributeSetValues;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["inUse"] = undefined /*out*/;
             resourceInputs["isUserDefined"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

@@ -78,67 +78,67 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of personal access token saved in secret store.
      */
-    public readonly accessToken!: pulumi.Output<string>;
+    declare public readonly accessToken: pulumi.Output<string>;
     /**
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      */
-    public readonly appPassword!: pulumi.Output<string>;
+    declare public readonly appPassword: pulumi.Output<string>;
     /**
      * (Updatable) The Base URL of the hosted BitbucketServer.
      */
-    public readonly baseUrl!: pulumi.Output<string>;
+    declare public readonly baseUrl: pulumi.Output<string>;
     /**
      * The OCID of the compartment containing the connection.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The type of connection.
      */
-    public readonly connectionType!: pulumi.Output<string>;
+    declare public readonly connectionType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Optional description about the connection.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Optional connection display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The result of validating the credentials of a connection.
      */
-    public /*out*/ readonly lastConnectionValidationResults!: pulumi.Output<outputs.DevOps.ConnectionLastConnectionValidationResult[]>;
+    declare public /*out*/ readonly lastConnectionValidationResults: pulumi.Output<outputs.DevOps.ConnectionLastConnectionValidationResult[]>;
     /**
      * The OCID of the DevOps project.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) TLS configuration used by build service to verify TLS connection.
      */
-    public readonly tlsVerifyConfig!: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig>;
+    declare public readonly tlsVerifyConfig: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      *
@@ -146,7 +146,7 @@ export class Connection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.
@@ -161,42 +161,42 @@ export class Connection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionState | undefined;
-            resourceInputs["accessToken"] = state ? state.accessToken : undefined;
-            resourceInputs["appPassword"] = state ? state.appPassword : undefined;
-            resourceInputs["baseUrl"] = state ? state.baseUrl : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionType"] = state ? state.connectionType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastConnectionValidationResults"] = state ? state.lastConnectionValidationResults : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["tlsVerifyConfig"] = state ? state.tlsVerifyConfig : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["accessToken"] = state?.accessToken;
+            resourceInputs["appPassword"] = state?.appPassword;
+            resourceInputs["baseUrl"] = state?.baseUrl;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionType"] = state?.connectionType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastConnectionValidationResults"] = state?.lastConnectionValidationResults;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["tlsVerifyConfig"] = state?.tlsVerifyConfig;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
-            if ((!args || args.connectionType === undefined) && !opts.urn) {
+            if (args?.connectionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionType'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["accessToken"] = args ? args.accessToken : undefined;
+            resourceInputs["accessToken"] = args?.accessToken;
             resourceInputs["appPassword"] = args?.appPassword ? pulumi.secret(args.appPassword) : undefined;
-            resourceInputs["baseUrl"] = args ? args.baseUrl : undefined;
-            resourceInputs["connectionType"] = args ? args.connectionType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["tlsVerifyConfig"] = args ? args.tlsVerifyConfig : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["baseUrl"] = args?.baseUrl;
+            resourceInputs["connectionType"] = args?.connectionType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["tlsVerifyConfig"] = args?.tlsVerifyConfig;
+            resourceInputs["username"] = args?.username;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lastConnectionValidationResults"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

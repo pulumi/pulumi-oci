@@ -66,15 +66,15 @@ export class ManagedInstanceGroupUpdateAllPackagesManagement extends pulumi.Cust
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The type of updates to be applied.
      */
-    public readonly updateTypes!: pulumi.Output<string[]>;
+    declare public readonly updateTypes: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupUpdateAllPackagesManagement resource with the given unique name, arguments, and options.
@@ -89,17 +89,17 @@ export class ManagedInstanceGroupUpdateAllPackagesManagement extends pulumi.Cust
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupUpdateAllPackagesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["updateTypes"] = state ? state.updateTypes : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["updateTypes"] = state?.updateTypes;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupUpdateAllPackagesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["updateTypes"] = args ? args.updateTypes : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["updateTypes"] = args?.updateTypes;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupUpdateAllPackagesManagement.__pulumiType, name, resourceInputs, opts);

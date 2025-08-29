@@ -60,7 +60,7 @@ export class GeneratedScopedAccessToken extends pulumi.CustomResource {
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
      */
-    public readonly publicKey!: pulumi.Output<string>;
+    declare public readonly publicKey: pulumi.Output<string>;
     /**
      * Scope definition for the scoped access token 
      *
@@ -68,11 +68,11 @@ export class GeneratedScopedAccessToken extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * The security token, signed by auth service
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    declare public /*out*/ readonly token: pulumi.Output<string>;
 
     /**
      * Create a GeneratedScopedAccessToken resource with the given unique name, arguments, and options.
@@ -87,19 +87,19 @@ export class GeneratedScopedAccessToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GeneratedScopedAccessTokenState | undefined;
-            resourceInputs["publicKey"] = state ? state.publicKey : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["publicKey"] = state?.publicKey;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["token"] = state?.token;
         } else {
             const args = argsOrState as GeneratedScopedAccessTokenArgs | undefined;
-            if ((!args || args.publicKey === undefined) && !opts.urn) {
+            if (args?.publicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicKey'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
+            if (args?.scope === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            resourceInputs["publicKey"] = args ? args.publicKey : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["publicKey"] = args?.publicKey;
+            resourceInputs["scope"] = args?.scope;
             resourceInputs["token"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

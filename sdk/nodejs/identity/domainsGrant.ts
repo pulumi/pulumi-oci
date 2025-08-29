@@ -60,7 +60,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly app!: pulumi.Output<outputs.Identity.DomainsGrantApp>;
+    declare public readonly app: pulumi.Output<outputs.Identity.DomainsGrantApp>;
     /**
      * Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
      *
@@ -75,19 +75,19 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly appEntitlementCollection!: pulumi.Output<outputs.Identity.DomainsGrantAppEntitlementCollection>;
+    declare public readonly appEntitlementCollection: pulumi.Output<outputs.Identity.DomainsGrantAppEntitlementCollection>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -101,7 +101,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
      *
@@ -117,7 +117,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public /*out*/ readonly compositeKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly compositeKey: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -131,7 +131,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -145,7 +145,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * The entitlement or privilege that is being granted
      *
@@ -158,7 +158,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly entitlement!: pulumi.Output<outputs.Identity.DomainsGrantEntitlement>;
+    declare public readonly entitlement: pulumi.Output<outputs.Identity.DomainsGrantEntitlement>;
     /**
      * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
      * * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
@@ -176,7 +176,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly grantMechanism!: pulumi.Output<string>;
+    declare public readonly grantMechanism: pulumi.Output<string>;
     /**
      * Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
      *
@@ -191,7 +191,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly grantedAttributeValuesJson!: pulumi.Output<string>;
+    declare public readonly grantedAttributeValuesJson: pulumi.Output<string>;
     /**
      * Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
      *
@@ -205,7 +205,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly grantee!: pulumi.Output<outputs.Identity.DomainsGrantGrantee>;
+    declare public readonly grantee: pulumi.Output<outputs.Identity.DomainsGrantGrantee>;
     /**
      * (Updatable) User conferring the grant to the beneficiary
      *
@@ -218,7 +218,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly grantors!: pulumi.Output<outputs.Identity.DomainsGrantGrantor[]>;
+    declare public /*out*/ readonly grantors: pulumi.Output<outputs.Identity.DomainsGrantGrantor[]>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -230,11 +230,11 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsGrantIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -246,7 +246,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGrantIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsGrantIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -260,7 +260,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -273,7 +273,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) If true, this Grant has been fulfilled successfully.
      *
@@ -286,7 +286,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly isFulfilled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isFulfilled: pulumi.Output<boolean>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -300,7 +300,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGrantMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsGrantMeta[]>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -314,11 +314,11 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -332,7 +332,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * A list of tags on this resource.
      *
@@ -346,7 +346,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGrantTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsGrantTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -364,7 +364,7 @@ export class DomainsGrant extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
 
     /**
      * Create a DomainsGrant resource with the given unique name, arguments, and options.
@@ -379,60 +379,60 @@ export class DomainsGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsGrantState | undefined;
-            resourceInputs["app"] = state ? state.app : undefined;
-            resourceInputs["appEntitlementCollection"] = state ? state.appEntitlementCollection : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["compositeKey"] = state ? state.compositeKey : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["entitlement"] = state ? state.entitlement : undefined;
-            resourceInputs["grantMechanism"] = state ? state.grantMechanism : undefined;
-            resourceInputs["grantedAttributeValuesJson"] = state ? state.grantedAttributeValuesJson : undefined;
-            resourceInputs["grantee"] = state ? state.grantee : undefined;
-            resourceInputs["grantors"] = state ? state.grantors : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["isFulfilled"] = state ? state.isFulfilled : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
+            resourceInputs["app"] = state?.app;
+            resourceInputs["appEntitlementCollection"] = state?.appEntitlementCollection;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["compositeKey"] = state?.compositeKey;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["entitlement"] = state?.entitlement;
+            resourceInputs["grantMechanism"] = state?.grantMechanism;
+            resourceInputs["grantedAttributeValuesJson"] = state?.grantedAttributeValuesJson;
+            resourceInputs["grantee"] = state?.grantee;
+            resourceInputs["grantors"] = state?.grantors;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["isFulfilled"] = state?.isFulfilled;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
         } else {
             const args = argsOrState as DomainsGrantArgs | undefined;
-            if ((!args || args.grantMechanism === undefined) && !opts.urn) {
+            if (args?.grantMechanism === undefined && !opts.urn) {
                 throw new Error("Missing required property 'grantMechanism'");
             }
-            if ((!args || args.grantee === undefined) && !opts.urn) {
+            if (args?.grantee === undefined && !opts.urn) {
                 throw new Error("Missing required property 'grantee'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["app"] = args ? args.app : undefined;
-            resourceInputs["appEntitlementCollection"] = args ? args.appEntitlementCollection : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["entitlement"] = args ? args.entitlement : undefined;
-            resourceInputs["grantMechanism"] = args ? args.grantMechanism : undefined;
-            resourceInputs["grantedAttributeValuesJson"] = args ? args.grantedAttributeValuesJson : undefined;
-            resourceInputs["grantee"] = args ? args.grantee : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["app"] = args?.app;
+            resourceInputs["appEntitlementCollection"] = args?.appEntitlementCollection;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["entitlement"] = args?.entitlement;
+            resourceInputs["grantMechanism"] = args?.grantMechanism;
+            resourceInputs["grantedAttributeValuesJson"] = args?.grantedAttributeValuesJson;
+            resourceInputs["grantee"] = args?.grantee;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["compositeKey"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;

@@ -104,40 +104,40 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      */
-    public /*out*/ readonly applyLag!: pulumi.Output<string>;
+    declare public /*out*/ readonly applyLag: pulumi.Output<string>;
     /**
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      */
-    public /*out*/ readonly applyRate!: pulumi.Output<string>;
+    declare public /*out*/ readonly applyRate: pulumi.Output<string>;
     /**
      * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly backupNetworkNsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The number of compute servers for the DB system.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    declare public readonly computeModel: pulumi.Output<string>;
     /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
-    public readonly cpuCoreCount!: pulumi.Output<number>;
-    public readonly createAsync!: pulumi.Output<boolean | undefined>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
+    declare public readonly createAsync: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
      */
-    public readonly creationType!: pulumi.Output<string>;
+    declare public readonly creationType: pulumi.Output<string>;
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DataGuardAssociationDataCollectionOptions>;
+    declare public readonly dataCollectionOptions: pulumi.Output<outputs.Database.DataGuardAssociationDataCollectionOptions>;
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      *
@@ -149,44 +149,44 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      *
      * **The password MUST be the same as the primary admin password.**
      */
-    public readonly databaseAdminPassword!: pulumi.Output<string>;
+    declare public readonly databaseAdminPassword: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly databaseDefinedTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly databaseDefinedTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly databaseFreeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly databaseFreeformTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
      */
-    public readonly databaseSoftwareImageId!: pulumi.Output<string | undefined>;
+    declare public readonly databaseSoftwareImageId: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly dbSystemDefinedTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly dbSystemDefinedTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly dbSystemFreeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly dbSystemFreeformTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    public readonly dbSystemSecurityAttributes!: pulumi.Output<{[key: string]: string} | undefined>;
-    public readonly deleteStandbyDbHomeOnDelete!: pulumi.Output<string>;
+    declare public readonly dbSystemSecurityAttributes: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly deleteStandbyDbHomeOnDelete: pulumi.Output<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -198,23 +198,23 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    public readonly faultDomains!: pulumi.Output<string[] | undefined>;
+    declare public readonly faultDomains: pulumi.Output<string[] | undefined>;
     /**
      * The hostname for the DB node.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    declare public readonly hostname: pulumi.Output<string>;
     /**
      * (Updatable) True if active Data Guard is enabled.
      */
-    public readonly isActiveDataGuardEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isActiveDataGuardEnabled: pulumi.Output<boolean | undefined>;
     /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
      */
-    public readonly licenseModel!: pulumi.Output<string | undefined>;
+    declare public readonly licenseModel: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      *
@@ -222,95 +222,95 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly migrateTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly migrateTrigger: pulumi.Output<number | undefined>;
     /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      */
-    public readonly nodeCount!: pulumi.Output<number | undefined>;
+    declare public readonly nodeCount: pulumi.Output<number | undefined>;
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
      */
-    public /*out*/ readonly peerDataGuardAssociationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerDataGuardAssociationId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      */
-    public /*out*/ readonly peerDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerDatabaseId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
      */
-    public readonly peerDbHomeId!: pulumi.Output<string>;
+    declare public readonly peerDbHomeId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
      */
-    public readonly peerDbSystemId!: pulumi.Output<string>;
+    declare public readonly peerDbSystemId: pulumi.Output<string>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    public readonly peerDbUniqueName!: pulumi.Output<string | undefined>;
+    declare public readonly peerDbUniqueName: pulumi.Output<string | undefined>;
     /**
      * The role of the peer database in this Data Guard association.
      */
-    public /*out*/ readonly peerRole!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerRole: pulumi.Output<string>;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
-    public readonly peerSidPrefix!: pulumi.Output<string | undefined>;
+    declare public readonly peerSidPrefix: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
      */
-    public readonly peerVmClusterId!: pulumi.Output<string>;
+    declare public readonly peerVmClusterId: pulumi.Output<string>;
     /**
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
      */
-    public readonly privateIp!: pulumi.Output<string | undefined>;
+    declare public readonly privateIp: pulumi.Output<string | undefined>;
     /**
      * The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
      */
-    public readonly privateIpV6!: pulumi.Output<string>;
+    declare public readonly privateIpV6: pulumi.Output<string>;
     /**
      * (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      *
      * **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    declare public readonly protectionMode: pulumi.Output<string>;
     /**
      * The role of the reporting database in this Data Guard association.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    declare public /*out*/ readonly role: pulumi.Output<string>;
     /**
      * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
      *
      * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current state of the Data Guard association.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */
-    public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
+    declare public readonly storageVolumePerformanceMode: pulumi.Output<string>;
     /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      *
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time the Data Guard association was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string | undefined>;
+    declare public readonly timeZone: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -321,7 +321,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      *
      * **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      */
-    public readonly transportType!: pulumi.Output<string>;
+    declare public readonly transportType: pulumi.Output<string>;
 
     /**
      * Create a DataGuardAssociation resource with the given unique name, arguments, and options.
@@ -336,113 +336,113 @@ export class DataGuardAssociation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DataGuardAssociationState | undefined;
-            resourceInputs["applyLag"] = state ? state.applyLag : undefined;
-            resourceInputs["applyRate"] = state ? state.applyRate : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["createAsync"] = state ? state.createAsync : undefined;
-            resourceInputs["creationType"] = state ? state.creationType : undefined;
-            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
-            resourceInputs["databaseAdminPassword"] = state ? state.databaseAdminPassword : undefined;
-            resourceInputs["databaseDefinedTags"] = state ? state.databaseDefinedTags : undefined;
-            resourceInputs["databaseFreeformTags"] = state ? state.databaseFreeformTags : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
-            resourceInputs["dbSystemDefinedTags"] = state ? state.dbSystemDefinedTags : undefined;
-            resourceInputs["dbSystemFreeformTags"] = state ? state.dbSystemFreeformTags : undefined;
-            resourceInputs["dbSystemSecurityAttributes"] = state ? state.dbSystemSecurityAttributes : undefined;
-            resourceInputs["deleteStandbyDbHomeOnDelete"] = state ? state.deleteStandbyDbHomeOnDelete : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["faultDomains"] = state ? state.faultDomains : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["isActiveDataGuardEnabled"] = state ? state.isActiveDataGuardEnabled : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrateTrigger"] = state ? state.migrateTrigger : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["peerDataGuardAssociationId"] = state ? state.peerDataGuardAssociationId : undefined;
-            resourceInputs["peerDatabaseId"] = state ? state.peerDatabaseId : undefined;
-            resourceInputs["peerDbHomeId"] = state ? state.peerDbHomeId : undefined;
-            resourceInputs["peerDbSystemId"] = state ? state.peerDbSystemId : undefined;
-            resourceInputs["peerDbUniqueName"] = state ? state.peerDbUniqueName : undefined;
-            resourceInputs["peerRole"] = state ? state.peerRole : undefined;
-            resourceInputs["peerSidPrefix"] = state ? state.peerSidPrefix : undefined;
-            resourceInputs["peerVmClusterId"] = state ? state.peerVmClusterId : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["privateIpV6"] = state ? state.privateIpV6 : undefined;
-            resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageVolumePerformanceMode"] = state ? state.storageVolumePerformanceMode : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["transportType"] = state ? state.transportType : undefined;
+            resourceInputs["applyLag"] = state?.applyLag;
+            resourceInputs["applyRate"] = state?.applyRate;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = state?.backupNetworkNsgIds;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["createAsync"] = state?.createAsync;
+            resourceInputs["creationType"] = state?.creationType;
+            resourceInputs["dataCollectionOptions"] = state?.dataCollectionOptions;
+            resourceInputs["databaseAdminPassword"] = state?.databaseAdminPassword;
+            resourceInputs["databaseDefinedTags"] = state?.databaseDefinedTags;
+            resourceInputs["databaseFreeformTags"] = state?.databaseFreeformTags;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseSoftwareImageId"] = state?.databaseSoftwareImageId;
+            resourceInputs["dbSystemDefinedTags"] = state?.dbSystemDefinedTags;
+            resourceInputs["dbSystemFreeformTags"] = state?.dbSystemFreeformTags;
+            resourceInputs["dbSystemSecurityAttributes"] = state?.dbSystemSecurityAttributes;
+            resourceInputs["deleteStandbyDbHomeOnDelete"] = state?.deleteStandbyDbHomeOnDelete;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["faultDomains"] = state?.faultDomains;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["isActiveDataGuardEnabled"] = state?.isActiveDataGuardEnabled;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrateTrigger"] = state?.migrateTrigger;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["peerDataGuardAssociationId"] = state?.peerDataGuardAssociationId;
+            resourceInputs["peerDatabaseId"] = state?.peerDatabaseId;
+            resourceInputs["peerDbHomeId"] = state?.peerDbHomeId;
+            resourceInputs["peerDbSystemId"] = state?.peerDbSystemId;
+            resourceInputs["peerDbUniqueName"] = state?.peerDbUniqueName;
+            resourceInputs["peerRole"] = state?.peerRole;
+            resourceInputs["peerSidPrefix"] = state?.peerSidPrefix;
+            resourceInputs["peerVmClusterId"] = state?.peerVmClusterId;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["privateIpV6"] = state?.privateIpV6;
+            resourceInputs["protectionMode"] = state?.protectionMode;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageVolumePerformanceMode"] = state?.storageVolumePerformanceMode;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["transportType"] = state?.transportType;
         } else {
             const args = argsOrState as DataGuardAssociationArgs | undefined;
-            if ((!args || args.creationType === undefined) && !opts.urn) {
+            if (args?.creationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'creationType'");
             }
-            if ((!args || args.databaseAdminPassword === undefined) && !opts.urn) {
+            if (args?.databaseAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseAdminPassword'");
             }
-            if ((!args || args.databaseId === undefined) && !opts.urn) {
+            if (args?.databaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseId'");
             }
-            if ((!args || args.deleteStandbyDbHomeOnDelete === undefined) && !opts.urn) {
+            if (args?.deleteStandbyDbHomeOnDelete === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deleteStandbyDbHomeOnDelete'");
             }
-            if ((!args || args.protectionMode === undefined) && !opts.urn) {
+            if (args?.protectionMode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protectionMode'");
             }
-            if ((!args || args.transportType === undefined) && !opts.urn) {
+            if (args?.transportType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'transportType'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
-            resourceInputs["createAsync"] = args ? args.createAsync : undefined;
-            resourceInputs["creationType"] = args ? args.creationType : undefined;
-            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = args?.backupNetworkNsgIds;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["computeModel"] = args?.computeModel;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
+            resourceInputs["createAsync"] = args?.createAsync;
+            resourceInputs["creationType"] = args?.creationType;
+            resourceInputs["dataCollectionOptions"] = args?.dataCollectionOptions;
             resourceInputs["databaseAdminPassword"] = args?.databaseAdminPassword ? pulumi.secret(args.databaseAdminPassword) : undefined;
-            resourceInputs["databaseDefinedTags"] = args ? args.databaseDefinedTags : undefined;
-            resourceInputs["databaseFreeformTags"] = args ? args.databaseFreeformTags : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
-            resourceInputs["dbSystemDefinedTags"] = args ? args.dbSystemDefinedTags : undefined;
-            resourceInputs["dbSystemFreeformTags"] = args ? args.dbSystemFreeformTags : undefined;
-            resourceInputs["dbSystemSecurityAttributes"] = args ? args.dbSystemSecurityAttributes : undefined;
-            resourceInputs["deleteStandbyDbHomeOnDelete"] = args ? args.deleteStandbyDbHomeOnDelete : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["faultDomains"] = args ? args.faultDomains : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["isActiveDataGuardEnabled"] = args ? args.isActiveDataGuardEnabled : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["migrateTrigger"] = args ? args.migrateTrigger : undefined;
-            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["peerDbHomeId"] = args ? args.peerDbHomeId : undefined;
-            resourceInputs["peerDbSystemId"] = args ? args.peerDbSystemId : undefined;
-            resourceInputs["peerDbUniqueName"] = args ? args.peerDbUniqueName : undefined;
-            resourceInputs["peerSidPrefix"] = args ? args.peerSidPrefix : undefined;
-            resourceInputs["peerVmClusterId"] = args ? args.peerVmClusterId : undefined;
-            resourceInputs["privateIp"] = args ? args.privateIp : undefined;
-            resourceInputs["privateIpV6"] = args ? args.privateIpV6 : undefined;
-            resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["storageVolumePerformanceMode"] = args ? args.storageVolumePerformanceMode : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
-            resourceInputs["transportType"] = args ? args.transportType : undefined;
+            resourceInputs["databaseDefinedTags"] = args?.databaseDefinedTags;
+            resourceInputs["databaseFreeformTags"] = args?.databaseFreeformTags;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["databaseSoftwareImageId"] = args?.databaseSoftwareImageId;
+            resourceInputs["dbSystemDefinedTags"] = args?.dbSystemDefinedTags;
+            resourceInputs["dbSystemFreeformTags"] = args?.dbSystemFreeformTags;
+            resourceInputs["dbSystemSecurityAttributes"] = args?.dbSystemSecurityAttributes;
+            resourceInputs["deleteStandbyDbHomeOnDelete"] = args?.deleteStandbyDbHomeOnDelete;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["faultDomains"] = args?.faultDomains;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["isActiveDataGuardEnabled"] = args?.isActiveDataGuardEnabled;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["migrateTrigger"] = args?.migrateTrigger;
+            resourceInputs["nodeCount"] = args?.nodeCount;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["peerDbHomeId"] = args?.peerDbHomeId;
+            resourceInputs["peerDbSystemId"] = args?.peerDbSystemId;
+            resourceInputs["peerDbUniqueName"] = args?.peerDbUniqueName;
+            resourceInputs["peerSidPrefix"] = args?.peerSidPrefix;
+            resourceInputs["peerVmClusterId"] = args?.peerVmClusterId;
+            resourceInputs["privateIp"] = args?.privateIp;
+            resourceInputs["privateIpV6"] = args?.privateIpV6;
+            resourceInputs["protectionMode"] = args?.protectionMode;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["storageVolumePerformanceMode"] = args?.storageVolumePerformanceMode;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["transportType"] = args?.transportType;
             resourceInputs["applyLag"] = undefined /*out*/;
             resourceInputs["applyRate"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

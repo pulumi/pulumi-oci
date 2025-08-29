@@ -81,40 +81,40 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     /**
      * The compartment ID of the lock.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
      */
-    public readonly distributionChannelId!: pulumi.Output<string>;
+    declare public readonly distributionChannelId: pulumi.Output<string>;
     /**
      * The encryption used by the stream packaging configuration.
      */
-    public readonly encryption!: pulumi.Output<outputs.MediaServices.StreamPackagingConfigEncryption>;
+    declare public readonly encryption: pulumi.Output<outputs.MediaServices.StreamPackagingConfigEncryption>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.MediaServices.StreamPackagingConfigLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.MediaServices.StreamPackagingConfigLock[]>;
     /**
      * The duration in seconds for each fragment.
      */
-    public readonly segmentTimeInSeconds!: pulumi.Output<number>;
+    declare public readonly segmentTimeInSeconds: pulumi.Output<number>;
     /**
      * The current state of the Packaging Configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The output format for the package.
      *
@@ -122,19 +122,19 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly streamPackagingFormat!: pulumi.Output<string>;
+    declare public readonly streamPackagingFormat: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a StreamPackagingConfig resource with the given unique name, arguments, and options.
@@ -149,43 +149,43 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StreamPackagingConfigState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["distributionChannelId"] = state ? state.distributionChannelId : undefined;
-            resourceInputs["encryption"] = state ? state.encryption : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["segmentTimeInSeconds"] = state ? state.segmentTimeInSeconds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["streamPackagingFormat"] = state ? state.streamPackagingFormat : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["distributionChannelId"] = state?.distributionChannelId;
+            resourceInputs["encryption"] = state?.encryption;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["segmentTimeInSeconds"] = state?.segmentTimeInSeconds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["streamPackagingFormat"] = state?.streamPackagingFormat;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as StreamPackagingConfigArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.distributionChannelId === undefined) && !opts.urn) {
+            if (args?.distributionChannelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'distributionChannelId'");
             }
-            if ((!args || args.segmentTimeInSeconds === undefined) && !opts.urn) {
+            if (args?.segmentTimeInSeconds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'segmentTimeInSeconds'");
             }
-            if ((!args || args.streamPackagingFormat === undefined) && !opts.urn) {
+            if (args?.streamPackagingFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'streamPackagingFormat'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["distributionChannelId"] = args ? args.distributionChannelId : undefined;
-            resourceInputs["encryption"] = args ? args.encryption : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["segmentTimeInSeconds"] = args ? args.segmentTimeInSeconds : undefined;
-            resourceInputs["streamPackagingFormat"] = args ? args.streamPackagingFormat : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["distributionChannelId"] = args?.distributionChannelId;
+            resourceInputs["encryption"] = args?.encryption;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["segmentTimeInSeconds"] = args?.segmentTimeInSeconds;
+            resourceInputs["streamPackagingFormat"] = args?.streamPackagingFormat;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

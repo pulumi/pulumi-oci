@@ -145,15 +145,15 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * * UNRESTRICTED (default): the access to the database is not restricted;
      * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      */
-    public readonly accessMode!: pulumi.Output<string>;
+    declare public readonly accessMode: pulumi.Output<string>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
-    public readonly adminPassword!: pulumi.Output<string>;
+    declare public readonly adminPassword: pulumi.Output<string>;
     /**
      * The username for the administrative user.
      */
-    public readonly adminUsername!: pulumi.Output<string>;
+    declare public readonly adminUsername: pulumi.Output<string>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -161,77 +161,77 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      *
      * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) Backup policy as optionally used for DB System Creation.
      */
-    public readonly backupPolicy!: pulumi.Output<outputs.Mysql.MysqlDbSystemBackupPolicy>;
+    declare public readonly backupPolicy: pulumi.Output<outputs.Mysql.MysqlDbSystemBackupPolicy>;
     /**
      * A list with a summary of all the Channels attached to the DB System.
      */
-    public /*out*/ readonly channels!: pulumi.Output<outputs.Mysql.MysqlDbSystemChannel[]>;
+    declare public /*out*/ readonly channels: pulumi.Output<outputs.Mysql.MysqlDbSystemChannel[]>;
     /**
      * The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
-    public readonly configurationId!: pulumi.Output<string>;
+    declare public readonly configurationId: pulumi.Output<string>;
     /**
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
-    public readonly crashRecovery!: pulumi.Output<string>;
+    declare public readonly crashRecovery: pulumi.Output<string>;
     /**
      * The availability domain and fault domain a DB System is placed in.
      */
-    public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
+    declare public /*out*/ readonly currentPlacements: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
     /**
      * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
      */
-    public readonly customerContacts!: pulumi.Output<outputs.Mysql.MysqlDbSystemCustomerContact[]>;
+    declare public readonly customerContacts: pulumi.Output<outputs.Mysql.MysqlDbSystemCustomerContact[]>;
     /**
      * (Updatable) Data Storage configuration properties.
      */
-    public readonly dataStorage!: pulumi.Output<outputs.Mysql.MysqlDbSystemDataStorage>;
+    declare public readonly dataStorage: pulumi.Output<outputs.Mysql.MysqlDbSystemDataStorage>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
-    public readonly databaseManagement!: pulumi.Output<string>;
+    declare public readonly databaseManagement: pulumi.Output<string>;
     /**
      * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
      * * READ_WRITE (default): allow running read and write statements on the DB system;
      * * READ_ONLY: only allow running read statements on the DB system.
      */
-    public readonly databaseMode!: pulumi.Output<string>;
+    declare public readonly databaseMode: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      */
-    public readonly deletionPolicies!: pulumi.Output<outputs.Mysql.MysqlDbSystemDeletionPolicy[]>;
+    declare public readonly deletionPolicies: pulumi.Output<outputs.Mysql.MysqlDbSystemDeletionPolicy[]>;
     /**
      * (Updatable) User-provided data about the DB System.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Encrypt data details.
      */
-    public readonly encryptData!: pulumi.Output<outputs.Mysql.MysqlDbSystemEncryptData>;
+    declare public readonly encryptData: pulumi.Output<outputs.Mysql.MysqlDbSystemEncryptData>;
     /**
      * The network endpoints available for this DB System.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[]>;
+    declare public /*out*/ readonly endpoints: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[]>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -239,15 +239,15 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      *
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    declare public readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary of a HeatWave cluster.
      */
-    public /*out*/ readonly heatWaveClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[]>;
+    declare public /*out*/ readonly heatWaveClusters: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[]>;
     /**
      * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
@@ -255,97 +255,97 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      *
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    declare public readonly hostnameLabel: pulumi.Output<string>;
     /**
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */
-    public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isHeatWaveClusterAttached: pulumi.Output<boolean>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
      *
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
-    public readonly isHighlyAvailable!: pulumi.Output<boolean>;
+    declare public readonly isHighlyAvailable: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
-    public readonly maintenance!: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance>;
+    declare public readonly maintenance: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance>;
     /**
      * The specific MySQL version identifier.
      */
-    public readonly mysqlVersion!: pulumi.Output<string>;
+    declare public readonly mysqlVersion: pulumi.Output<string>;
     /**
      * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
-    public /*out*/ readonly pointInTimeRecoveryDetails!: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[]>;
+    declare public /*out*/ readonly pointInTimeRecoveryDetails: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[]>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    public readonly portX!: pulumi.Output<number>;
+    declare public readonly portX: pulumi.Output<number>;
     /**
      * (Updatable) Details required to create a Read Endpoint.
      */
-    public readonly readEndpoint!: pulumi.Output<outputs.Mysql.MysqlDbSystemReadEndpoint>;
+    declare public readonly readEndpoint: pulumi.Output<outputs.Mysql.MysqlDbSystemReadEndpoint>;
     /**
      * (Updatable) Details required to configure REST while creating a DB System.
      */
-    public readonly rest!: pulumi.Output<outputs.Mysql.MysqlDbSystemRest>;
+    declare public readonly rest: pulumi.Output<outputs.Mysql.MysqlDbSystemRest>;
     /**
      * (Updatable) Secure connection configuration details.
      */
-    public readonly secureConnections!: pulumi.Output<outputs.Mysql.MysqlDbSystemSecureConnections>;
+    declare public readonly secureConnections: pulumi.Output<outputs.Mysql.MysqlDbSystemSecureConnections>;
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shutdownType!: pulumi.Output<string | undefined>;
+    declare public readonly shutdownType: pulumi.Output<string | undefined>;
     /**
      * Parameters detailing how to provision the initial data of the system.
      */
-    public readonly source!: pulumi.Output<outputs.Mysql.MysqlDbSystemSource>;
+    declare public readonly source: pulumi.Output<outputs.Mysql.MysqlDbSystemSource>;
     /**
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The OCID of the subnet the DB System is associated with.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the DB System was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the DB System was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MysqlDbSystem resource with the given unique name, arguments, and options.
@@ -360,102 +360,102 @@ export class MysqlDbSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MysqlDbSystemState | undefined;
-            resourceInputs["accessMode"] = state ? state.accessMode : undefined;
-            resourceInputs["adminPassword"] = state ? state.adminPassword : undefined;
-            resourceInputs["adminUsername"] = state ? state.adminUsername : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupPolicy"] = state ? state.backupPolicy : undefined;
-            resourceInputs["channels"] = state ? state.channels : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurationId"] = state ? state.configurationId : undefined;
-            resourceInputs["crashRecovery"] = state ? state.crashRecovery : undefined;
-            resourceInputs["currentPlacements"] = state ? state.currentPlacements : undefined;
-            resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
-            resourceInputs["dataStorage"] = state ? state.dataStorage : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["databaseManagement"] = state ? state.databaseManagement : undefined;
-            resourceInputs["databaseMode"] = state ? state.databaseMode : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deletionPolicies"] = state ? state.deletionPolicies : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encryptData"] = state ? state.encryptData : undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["heatWaveClusters"] = state ? state.heatWaveClusters : undefined;
-            resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["isHeatWaveClusterAttached"] = state ? state.isHeatWaveClusterAttached : undefined;
-            resourceInputs["isHighlyAvailable"] = state ? state.isHighlyAvailable : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenance"] = state ? state.maintenance : undefined;
-            resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["pointInTimeRecoveryDetails"] = state ? state.pointInTimeRecoveryDetails : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["portX"] = state ? state.portX : undefined;
-            resourceInputs["readEndpoint"] = state ? state.readEndpoint : undefined;
-            resourceInputs["rest"] = state ? state.rest : undefined;
-            resourceInputs["secureConnections"] = state ? state.secureConnections : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["shutdownType"] = state ? state.shutdownType : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["accessMode"] = state?.accessMode;
+            resourceInputs["adminPassword"] = state?.adminPassword;
+            resourceInputs["adminUsername"] = state?.adminUsername;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupPolicy"] = state?.backupPolicy;
+            resourceInputs["channels"] = state?.channels;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurationId"] = state?.configurationId;
+            resourceInputs["crashRecovery"] = state?.crashRecovery;
+            resourceInputs["currentPlacements"] = state?.currentPlacements;
+            resourceInputs["customerContacts"] = state?.customerContacts;
+            resourceInputs["dataStorage"] = state?.dataStorage;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["databaseManagement"] = state?.databaseManagement;
+            resourceInputs["databaseMode"] = state?.databaseMode;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deletionPolicies"] = state?.deletionPolicies;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encryptData"] = state?.encryptData;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["heatWaveClusters"] = state?.heatWaveClusters;
+            resourceInputs["hostnameLabel"] = state?.hostnameLabel;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["isHeatWaveClusterAttached"] = state?.isHeatWaveClusterAttached;
+            resourceInputs["isHighlyAvailable"] = state?.isHighlyAvailable;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenance"] = state?.maintenance;
+            resourceInputs["mysqlVersion"] = state?.mysqlVersion;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["pointInTimeRecoveryDetails"] = state?.pointInTimeRecoveryDetails;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["portX"] = state?.portX;
+            resourceInputs["readEndpoint"] = state?.readEndpoint;
+            resourceInputs["rest"] = state?.rest;
+            resourceInputs["secureConnections"] = state?.secureConnections;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["shutdownType"] = state?.shutdownType;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MysqlDbSystemArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["accessMode"] = args ? args.accessMode : undefined;
+            resourceInputs["accessMode"] = args?.accessMode;
             resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
-            resourceInputs["adminUsername"] = args ? args.adminUsername : undefined;
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupPolicy"] = args ? args.backupPolicy : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configurationId"] = args ? args.configurationId : undefined;
-            resourceInputs["crashRecovery"] = args ? args.crashRecovery : undefined;
-            resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
-            resourceInputs["dataStorage"] = args ? args.dataStorage : undefined;
-            resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
-            resourceInputs["databaseManagement"] = args ? args.databaseManagement : undefined;
-            resourceInputs["databaseMode"] = args ? args.databaseMode : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deletionPolicies"] = args ? args.deletionPolicies : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["encryptData"] = args ? args.encryptData : undefined;
-            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["isHighlyAvailable"] = args ? args.isHighlyAvailable : undefined;
-            resourceInputs["maintenance"] = args ? args.maintenance : undefined;
-            resourceInputs["mysqlVersion"] = args ? args.mysqlVersion : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["portX"] = args ? args.portX : undefined;
-            resourceInputs["readEndpoint"] = args ? args.readEndpoint : undefined;
-            resourceInputs["rest"] = args ? args.rest : undefined;
-            resourceInputs["secureConnections"] = args ? args.secureConnections : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
-            resourceInputs["shutdownType"] = args ? args.shutdownType : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["adminUsername"] = args?.adminUsername;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupPolicy"] = args?.backupPolicy;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configurationId"] = args?.configurationId;
+            resourceInputs["crashRecovery"] = args?.crashRecovery;
+            resourceInputs["customerContacts"] = args?.customerContacts;
+            resourceInputs["dataStorage"] = args?.dataStorage;
+            resourceInputs["dataStorageSizeInGb"] = args?.dataStorageSizeInGb;
+            resourceInputs["databaseManagement"] = args?.databaseManagement;
+            resourceInputs["databaseMode"] = args?.databaseMode;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deletionPolicies"] = args?.deletionPolicies;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["encryptData"] = args?.encryptData;
+            resourceInputs["faultDomain"] = args?.faultDomain;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostnameLabel"] = args?.hostnameLabel;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["isHighlyAvailable"] = args?.isHighlyAvailable;
+            resourceInputs["maintenance"] = args?.maintenance;
+            resourceInputs["mysqlVersion"] = args?.mysqlVersion;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["portX"] = args?.portX;
+            resourceInputs["readEndpoint"] = args?.readEndpoint;
+            resourceInputs["rest"] = args?.rest;
+            resourceInputs["secureConnections"] = args?.secureConnections;
+            resourceInputs["shapeName"] = args?.shapeName;
+            resourceInputs["shutdownType"] = args?.shutdownType;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["channels"] = undefined /*out*/;
             resourceInputs["currentPlacements"] = undefined /*out*/;
             resourceInputs["endpoints"] = undefined /*out*/;

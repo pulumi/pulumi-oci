@@ -48,47 +48,47 @@ export class ExternalClusterInstance extends pulumi.CustomResource {
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      */
-    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly adrHomeDirectory: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of the external cluster instance.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    declare public /*out*/ readonly componentName: pulumi.Output<string>;
     /**
      * The Oracle base location of Cluster Ready Services (CRS).
      */
-    public /*out*/ readonly crsBaseDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly crsBaseDirectory: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the cluster instance. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
      */
-    public /*out*/ readonly externalClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
      */
-    public readonly externalClusterInstanceId!: pulumi.Output<string>;
+    declare public readonly externalClusterInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    declare public readonly externalConnectorId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      */
-    public /*out*/ readonly externalDbNodeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDbNodeId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -96,35 +96,35 @@ export class ExternalClusterInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the host on which the cluster instance is running.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostName: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The role of the cluster node.
      */
-    public /*out*/ readonly nodeRole!: pulumi.Output<string>;
+    declare public /*out*/ readonly nodeRole: pulumi.Output<string>;
     /**
      * The current lifecycle state of the external cluster instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the external cluster instance was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the external cluster instance was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ExternalClusterInstance resource with the given unique name, arguments, and options.
@@ -139,34 +139,34 @@ export class ExternalClusterInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalClusterInstanceState | undefined;
-            resourceInputs["adrHomeDirectory"] = state ? state.adrHomeDirectory : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentName"] = state ? state.componentName : undefined;
-            resourceInputs["crsBaseDirectory"] = state ? state.crsBaseDirectory : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalClusterId"] = state ? state.externalClusterId : undefined;
-            resourceInputs["externalClusterInstanceId"] = state ? state.externalClusterInstanceId : undefined;
-            resourceInputs["externalConnectorId"] = state ? state.externalConnectorId : undefined;
-            resourceInputs["externalDbNodeId"] = state ? state.externalDbNodeId : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostName"] = state ? state.hostName : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["nodeRole"] = state ? state.nodeRole : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["adrHomeDirectory"] = state?.adrHomeDirectory;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentName"] = state?.componentName;
+            resourceInputs["crsBaseDirectory"] = state?.crsBaseDirectory;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalClusterId"] = state?.externalClusterId;
+            resourceInputs["externalClusterInstanceId"] = state?.externalClusterInstanceId;
+            resourceInputs["externalConnectorId"] = state?.externalConnectorId;
+            resourceInputs["externalDbNodeId"] = state?.externalDbNodeId;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostName"] = state?.hostName;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["nodeRole"] = state?.nodeRole;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ExternalClusterInstanceArgs | undefined;
-            if ((!args || args.externalClusterInstanceId === undefined) && !opts.urn) {
+            if (args?.externalClusterInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalClusterInstanceId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["externalClusterInstanceId"] = args ? args.externalClusterInstanceId : undefined;
-            resourceInputs["externalConnectorId"] = args ? args.externalConnectorId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["externalClusterInstanceId"] = args?.externalClusterInstanceId;
+            resourceInputs["externalConnectorId"] = args?.externalConnectorId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["adrHomeDirectory"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["componentName"] = undefined /*out*/;

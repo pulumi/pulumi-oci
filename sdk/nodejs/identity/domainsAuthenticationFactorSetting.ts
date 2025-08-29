@@ -50,19 +50,19 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * ID of the resource
      */
-    public readonly authenticationFactorSettingId!: pulumi.Output<string>;
+    declare public readonly authenticationFactorSettingId: pulumi.Output<string>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
      *
@@ -77,7 +77,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly autoEnrollEmailFactorDisabled!: pulumi.Output<boolean>;
+    declare public readonly autoEnrollEmailFactorDisabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
      *
@@ -90,7 +90,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly bypassCodeEnabled!: pulumi.Output<boolean>;
+    declare public readonly bypassCodeEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
      *
@@ -103,7 +103,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly bypassCodeSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingBypassCodeSettings>;
+    declare public readonly bypassCodeSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingBypassCodeSettings>;
     /**
      * (Updatable) Settings related to compliance, Personal Identification Number (PIN) policy, and so on
      *
@@ -116,7 +116,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly clientAppSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingClientAppSettings>;
+    declare public readonly clientAppSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingClientAppSettings>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -130,7 +130,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
      *
@@ -144,7 +144,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly compliancePolicies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingCompliancePolicy[]>;
+    declare public readonly compliancePolicies: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingCompliancePolicy[]>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -158,7 +158,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -172,7 +172,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
      *
@@ -187,7 +187,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly emailEnabled!: pulumi.Output<boolean>;
+    declare public readonly emailEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
      *
@@ -202,7 +202,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly emailSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEmailSettings>;
+    declare public readonly emailSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEmailSettings>;
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
      *
@@ -215,7 +215,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly endpointRestrictions!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEndpointRestrictions>;
+    declare public readonly endpointRestrictions: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingEndpointRestrictions>;
     /**
      * (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
      *
@@ -230,7 +230,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly fidoAuthenticatorEnabled!: pulumi.Output<boolean>;
+    declare public readonly fidoAuthenticatorEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
      *
@@ -245,7 +245,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly hideBackupFactorEnabled!: pulumi.Output<boolean>;
+    declare public readonly hideBackupFactorEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -257,11 +257,11 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -273,7 +273,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -287,7 +287,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -300,7 +300,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) Settings related to the use of a user's profile details from the identity store
      *
@@ -313,7 +313,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly identityStoreSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings>;
+    declare public readonly identityStoreSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingIdentityStoreSettings>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -327,7 +327,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingMeta[]>;
     /**
      * (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
      *
@@ -342,7 +342,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly mfaEnabledCategory!: pulumi.Output<string>;
+    declare public /*out*/ readonly mfaEnabledCategory: pulumi.Output<string>;
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
      *
@@ -359,7 +359,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly mfaEnrollmentType!: pulumi.Output<string>;
+    declare public readonly mfaEnrollmentType: pulumi.Output<string>;
     /**
      * (Updatable) Settings related to the Mobile App Notification channel, such as pull
      *
@@ -374,7 +374,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly notificationSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingNotificationSettings>;
+    declare public readonly notificationSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingNotificationSettings>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -388,7 +388,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
      *
@@ -403,7 +403,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly phoneCallEnabled!: pulumi.Output<boolean>;
+    declare public readonly phoneCallEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
      *
@@ -416,11 +416,11 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly pushEnabled!: pulumi.Output<boolean>;
+    declare public readonly pushEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -434,7 +434,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) If true, indicates that Security Questions are enabled for authentication
      *
@@ -447,7 +447,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly securityQuestionsEnabled!: pulumi.Output<boolean>;
+    declare public readonly securityQuestionsEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
      *
@@ -460,7 +460,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly smsEnabled!: pulumi.Output<boolean>;
+    declare public readonly smsEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -474,7 +474,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -488,7 +488,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) Settings related to third-party factor
      *
@@ -503,7 +503,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly thirdPartyFactor!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor>;
+    declare public readonly thirdPartyFactor: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingThirdPartyFactor>;
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
      *
@@ -516,7 +516,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly totpEnabled!: pulumi.Output<boolean>;
+    declare public readonly totpEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
      *
@@ -529,15 +529,15 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly totpSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTotpSettings>;
+    declare public readonly totpSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingTotpSettings>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings!: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings: pulumi.Output<outputs.Identity.DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>;
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
      *
@@ -552,7 +552,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly userEnrollmentDisabledFactors!: pulumi.Output<string[]>;
+    declare public readonly userEnrollmentDisabledFactors: pulumi.Output<string[]>;
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
      *
@@ -571,7 +571,7 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly yubicoOtpEnabled!: pulumi.Output<boolean>;
+    declare public readonly yubicoOtpEnabled: pulumi.Output<boolean>;
 
     /**
      * Create a DomainsAuthenticationFactorSetting resource with the given unique name, arguments, and options.
@@ -586,129 +586,129 @@ export class DomainsAuthenticationFactorSetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsAuthenticationFactorSettingState | undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authenticationFactorSettingId"] = state ? state.authenticationFactorSettingId : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["autoEnrollEmailFactorDisabled"] = state ? state.autoEnrollEmailFactorDisabled : undefined;
-            resourceInputs["bypassCodeEnabled"] = state ? state.bypassCodeEnabled : undefined;
-            resourceInputs["bypassCodeSettings"] = state ? state.bypassCodeSettings : undefined;
-            resourceInputs["clientAppSettings"] = state ? state.clientAppSettings : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["compliancePolicies"] = state ? state.compliancePolicies : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["emailEnabled"] = state ? state.emailEnabled : undefined;
-            resourceInputs["emailSettings"] = state ? state.emailSettings : undefined;
-            resourceInputs["endpointRestrictions"] = state ? state.endpointRestrictions : undefined;
-            resourceInputs["fidoAuthenticatorEnabled"] = state ? state.fidoAuthenticatorEnabled : undefined;
-            resourceInputs["hideBackupFactorEnabled"] = state ? state.hideBackupFactorEnabled : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["identityStoreSettings"] = state ? state.identityStoreSettings : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["mfaEnabledCategory"] = state ? state.mfaEnabledCategory : undefined;
-            resourceInputs["mfaEnrollmentType"] = state ? state.mfaEnrollmentType : undefined;
-            resourceInputs["notificationSettings"] = state ? state.notificationSettings : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["phoneCallEnabled"] = state ? state.phoneCallEnabled : undefined;
-            resourceInputs["pushEnabled"] = state ? state.pushEnabled : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["securityQuestionsEnabled"] = state ? state.securityQuestionsEnabled : undefined;
-            resourceInputs["smsEnabled"] = state ? state.smsEnabled : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["thirdPartyFactor"] = state ? state.thirdPartyFactor : undefined;
-            resourceInputs["totpEnabled"] = state ? state.totpEnabled : undefined;
-            resourceInputs["totpSettings"] = state ? state.totpSettings : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"] = state ? state.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"] = state ? state.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings : undefined;
-            resourceInputs["userEnrollmentDisabledFactors"] = state ? state.userEnrollmentDisabledFactors : undefined;
-            resourceInputs["yubicoOtpEnabled"] = state ? state.yubicoOtpEnabled : undefined;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authenticationFactorSettingId"] = state?.authenticationFactorSettingId;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["autoEnrollEmailFactorDisabled"] = state?.autoEnrollEmailFactorDisabled;
+            resourceInputs["bypassCodeEnabled"] = state?.bypassCodeEnabled;
+            resourceInputs["bypassCodeSettings"] = state?.bypassCodeSettings;
+            resourceInputs["clientAppSettings"] = state?.clientAppSettings;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["compliancePolicies"] = state?.compliancePolicies;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["emailEnabled"] = state?.emailEnabled;
+            resourceInputs["emailSettings"] = state?.emailSettings;
+            resourceInputs["endpointRestrictions"] = state?.endpointRestrictions;
+            resourceInputs["fidoAuthenticatorEnabled"] = state?.fidoAuthenticatorEnabled;
+            resourceInputs["hideBackupFactorEnabled"] = state?.hideBackupFactorEnabled;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["identityStoreSettings"] = state?.identityStoreSettings;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["mfaEnabledCategory"] = state?.mfaEnabledCategory;
+            resourceInputs["mfaEnrollmentType"] = state?.mfaEnrollmentType;
+            resourceInputs["notificationSettings"] = state?.notificationSettings;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["phoneCallEnabled"] = state?.phoneCallEnabled;
+            resourceInputs["pushEnabled"] = state?.pushEnabled;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["securityQuestionsEnabled"] = state?.securityQuestionsEnabled;
+            resourceInputs["smsEnabled"] = state?.smsEnabled;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["thirdPartyFactor"] = state?.thirdPartyFactor;
+            resourceInputs["totpEnabled"] = state?.totpEnabled;
+            resourceInputs["totpSettings"] = state?.totpSettings;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"] = state?.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"] = state?.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+            resourceInputs["userEnrollmentDisabledFactors"] = state?.userEnrollmentDisabledFactors;
+            resourceInputs["yubicoOtpEnabled"] = state?.yubicoOtpEnabled;
         } else {
             const args = argsOrState as DomainsAuthenticationFactorSettingArgs | undefined;
-            if ((!args || args.authenticationFactorSettingId === undefined) && !opts.urn) {
+            if (args?.authenticationFactorSettingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'authenticationFactorSettingId'");
             }
-            if ((!args || args.bypassCodeEnabled === undefined) && !opts.urn) {
+            if (args?.bypassCodeEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bypassCodeEnabled'");
             }
-            if ((!args || args.bypassCodeSettings === undefined) && !opts.urn) {
+            if (args?.bypassCodeSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bypassCodeSettings'");
             }
-            if ((!args || args.clientAppSettings === undefined) && !opts.urn) {
+            if (args?.clientAppSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clientAppSettings'");
             }
-            if ((!args || args.compliancePolicies === undefined) && !opts.urn) {
+            if (args?.compliancePolicies === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compliancePolicies'");
             }
-            if ((!args || args.endpointRestrictions === undefined) && !opts.urn) {
+            if (args?.endpointRestrictions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'endpointRestrictions'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.mfaEnrollmentType === undefined) && !opts.urn) {
+            if (args?.mfaEnrollmentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mfaEnrollmentType'");
             }
-            if ((!args || args.notificationSettings === undefined) && !opts.urn) {
+            if (args?.notificationSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'notificationSettings'");
             }
-            if ((!args || args.pushEnabled === undefined) && !opts.urn) {
+            if (args?.pushEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pushEnabled'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.securityQuestionsEnabled === undefined) && !opts.urn) {
+            if (args?.securityQuestionsEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityQuestionsEnabled'");
             }
-            if ((!args || args.smsEnabled === undefined) && !opts.urn) {
+            if (args?.smsEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'smsEnabled'");
             }
-            if ((!args || args.totpEnabled === undefined) && !opts.urn) {
+            if (args?.totpEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'totpEnabled'");
             }
-            if ((!args || args.totpSettings === undefined) && !opts.urn) {
+            if (args?.totpSettings === undefined && !opts.urn) {
                 throw new Error("Missing required property 'totpSettings'");
             }
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authenticationFactorSettingId"] = args ? args.authenticationFactorSettingId : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["autoEnrollEmailFactorDisabled"] = args ? args.autoEnrollEmailFactorDisabled : undefined;
-            resourceInputs["bypassCodeEnabled"] = args ? args.bypassCodeEnabled : undefined;
-            resourceInputs["bypassCodeSettings"] = args ? args.bypassCodeSettings : undefined;
-            resourceInputs["clientAppSettings"] = args ? args.clientAppSettings : undefined;
-            resourceInputs["compliancePolicies"] = args ? args.compliancePolicies : undefined;
-            resourceInputs["emailEnabled"] = args ? args.emailEnabled : undefined;
-            resourceInputs["emailSettings"] = args ? args.emailSettings : undefined;
-            resourceInputs["endpointRestrictions"] = args ? args.endpointRestrictions : undefined;
-            resourceInputs["fidoAuthenticatorEnabled"] = args ? args.fidoAuthenticatorEnabled : undefined;
-            resourceInputs["hideBackupFactorEnabled"] = args ? args.hideBackupFactorEnabled : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["identityStoreSettings"] = args ? args.identityStoreSettings : undefined;
-            resourceInputs["mfaEnrollmentType"] = args ? args.mfaEnrollmentType : undefined;
-            resourceInputs["notificationSettings"] = args ? args.notificationSettings : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["phoneCallEnabled"] = args ? args.phoneCallEnabled : undefined;
-            resourceInputs["pushEnabled"] = args ? args.pushEnabled : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["securityQuestionsEnabled"] = args ? args.securityQuestionsEnabled : undefined;
-            resourceInputs["smsEnabled"] = args ? args.smsEnabled : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["thirdPartyFactor"] = args ? args.thirdPartyFactor : undefined;
-            resourceInputs["totpEnabled"] = args ? args.totpEnabled : undefined;
-            resourceInputs["totpSettings"] = args ? args.totpSettings : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"] = args ? args.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"] = args ? args.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings : undefined;
-            resourceInputs["userEnrollmentDisabledFactors"] = args ? args.userEnrollmentDisabledFactors : undefined;
-            resourceInputs["yubicoOtpEnabled"] = args ? args.yubicoOtpEnabled : undefined;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authenticationFactorSettingId"] = args?.authenticationFactorSettingId;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["autoEnrollEmailFactorDisabled"] = args?.autoEnrollEmailFactorDisabled;
+            resourceInputs["bypassCodeEnabled"] = args?.bypassCodeEnabled;
+            resourceInputs["bypassCodeSettings"] = args?.bypassCodeSettings;
+            resourceInputs["clientAppSettings"] = args?.clientAppSettings;
+            resourceInputs["compliancePolicies"] = args?.compliancePolicies;
+            resourceInputs["emailEnabled"] = args?.emailEnabled;
+            resourceInputs["emailSettings"] = args?.emailSettings;
+            resourceInputs["endpointRestrictions"] = args?.endpointRestrictions;
+            resourceInputs["fidoAuthenticatorEnabled"] = args?.fidoAuthenticatorEnabled;
+            resourceInputs["hideBackupFactorEnabled"] = args?.hideBackupFactorEnabled;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["identityStoreSettings"] = args?.identityStoreSettings;
+            resourceInputs["mfaEnrollmentType"] = args?.mfaEnrollmentType;
+            resourceInputs["notificationSettings"] = args?.notificationSettings;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["phoneCallEnabled"] = args?.phoneCallEnabled;
+            resourceInputs["pushEnabled"] = args?.pushEnabled;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["securityQuestionsEnabled"] = args?.securityQuestionsEnabled;
+            resourceInputs["smsEnabled"] = args?.smsEnabled;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["thirdPartyFactor"] = args?.thirdPartyFactor;
+            resourceInputs["totpEnabled"] = args?.totpEnabled;
+            resourceInputs["totpSettings"] = args?.totpSettings;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"] = args?.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings"] = args?.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+            resourceInputs["userEnrollmentDisabledFactors"] = args?.userEnrollmentDisabledFactors;
+            resourceInputs["yubicoOtpEnabled"] = args?.yubicoOtpEnabled;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

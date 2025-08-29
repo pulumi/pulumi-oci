@@ -216,87 +216,87 @@ export class Runbook extends pulumi.CustomResource {
     /**
      * (Updatable)
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Estimated time to successfully complete the runbook execution.
      */
-    public readonly estimatedTime!: pulumi.Output<string>;
+    declare public readonly estimatedTime: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Does this runbook has draft versions?
      */
-    public /*out*/ readonly hasDraftVersion!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly hasDraftVersion: pulumi.Output<boolean>;
     /**
      * (Updatable) Is the runbook default?
      */
-    public readonly isDefault!: pulumi.Output<boolean>;
+    declare public readonly isDefault: pulumi.Output<boolean>;
     /**
      * (Updatable) Does this runbook need SUDO access to execute?
      */
-    public readonly isSudoAccessNeeded!: pulumi.Output<boolean>;
+    declare public readonly isSudoAccessNeeded: pulumi.Output<boolean>;
     /**
      * Latest runbook version
      */
-    public /*out*/ readonly latestVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly latestVersion: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The lifecycle operation performed by the task.
      */
-    public readonly operation!: pulumi.Output<string>;
+    declare public readonly operation: pulumi.Output<string>;
     /**
      * (Updatable) The OS type for the runbook.
      */
-    public readonly osType!: pulumi.Output<string>;
+    declare public readonly osType: pulumi.Output<string>;
     /**
      * (Updatable) The platform of the runbook.
      */
-    public readonly platform!: pulumi.Output<string>;
+    declare public readonly platform: pulumi.Output<string>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * Version for the runbook.
      */
-    public readonly runbookVersion!: pulumi.Output<outputs.FleetAppsManagement.RunbookRunbookVersion>;
+    declare public readonly runbookVersion: pulumi.Output<outputs.FleetAppsManagement.RunbookRunbookVersion>;
     /**
      * The current state of the runbook.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The type of the runbook.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a Runbook resource with the given unique name, arguments, and options.
@@ -311,53 +311,53 @@ export class Runbook extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RunbookState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedTime"] = state ? state.estimatedTime : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hasDraftVersion"] = state ? state.hasDraftVersion : undefined;
-            resourceInputs["isDefault"] = state ? state.isDefault : undefined;
-            resourceInputs["isSudoAccessNeeded"] = state ? state.isSudoAccessNeeded : undefined;
-            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["operation"] = state ? state.operation : undefined;
-            resourceInputs["osType"] = state ? state.osType : undefined;
-            resourceInputs["platform"] = state ? state.platform : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["runbookVersion"] = state ? state.runbookVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedTime"] = state?.estimatedTime;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hasDraftVersion"] = state?.hasDraftVersion;
+            resourceInputs["isDefault"] = state?.isDefault;
+            resourceInputs["isSudoAccessNeeded"] = state?.isSudoAccessNeeded;
+            resourceInputs["latestVersion"] = state?.latestVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["operation"] = state?.operation;
+            resourceInputs["osType"] = state?.osType;
+            resourceInputs["platform"] = state?.platform;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["runbookVersion"] = state?.runbookVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as RunbookArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.operation === undefined) && !opts.urn) {
+            if (args?.operation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operation'");
             }
-            if ((!args || args.runbookVersion === undefined) && !opts.urn) {
+            if (args?.runbookVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'runbookVersion'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["estimatedTime"] = args ? args.estimatedTime : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isDefault"] = args ? args.isDefault : undefined;
-            resourceInputs["isSudoAccessNeeded"] = args ? args.isSudoAccessNeeded : undefined;
-            resourceInputs["operation"] = args ? args.operation : undefined;
-            resourceInputs["osType"] = args ? args.osType : undefined;
-            resourceInputs["platform"] = args ? args.platform : undefined;
-            resourceInputs["runbookVersion"] = args ? args.runbookVersion : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["estimatedTime"] = args?.estimatedTime;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isDefault"] = args?.isDefault;
+            resourceInputs["isSudoAccessNeeded"] = args?.isSudoAccessNeeded;
+            resourceInputs["operation"] = args?.operation;
+            resourceInputs["osType"] = args?.osType;
+            resourceInputs["platform"] = args?.platform;
+            resourceInputs["runbookVersion"] = args?.runbookVersion;
             resourceInputs["hasDraftVersion"] = undefined /*out*/;
             resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

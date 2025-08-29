@@ -159,82 +159,82 @@ export class ExadataInsight extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment Identifier of Exadata insight
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    public readonly enterpriseManagerBridgeId!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerBridgeId: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityDisplayName: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerEntityIdentifier: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Name
      */
-    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityName: pulumi.Output<string>;
     /**
      * Enterprise Manager Entity Type
      */
-    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string>;
+    declare public /*out*/ readonly enterpriseManagerEntityType: pulumi.Output<string>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
+    declare public readonly enterpriseManagerIdentifier: pulumi.Output<string>;
     /**
      * (Updatable) Source of the Exadata system.
      */
-    public readonly entitySource!: pulumi.Output<string>;
+    declare public readonly entitySource: pulumi.Output<string>;
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
-    public /*out*/ readonly exadataDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataDisplayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    public readonly exadataInfraId!: pulumi.Output<string>;
-    public /*out*/ readonly exadataInfraResourceType!: pulumi.Output<string>;
+    declare public readonly exadataInfraId: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataInfraResourceType: pulumi.Output<string>;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
-    public /*out*/ readonly exadataName!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataName: pulumi.Output<string>;
     /**
      * Exadata rack type.
      */
-    public /*out*/ readonly exadataRackType!: pulumi.Output<string>;
-    public /*out*/ readonly exadataShape!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataRackType: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataShape: pulumi.Output<string>;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
-    public /*out*/ readonly exadataType!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataType: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      */
-    public readonly isAutoSyncEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoSyncEnabled: pulumi.Output<boolean>;
     /**
      * true if virtualization is used in the Exadata system
      */
-    public /*out*/ readonly isVirtualizedExadata!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isVirtualizedExadata: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly memberVmClusterDetails!: pulumi.Output<outputs.Opsi.ExadataInsightMemberVmClusterDetail[]>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    declare public readonly memberVmClusterDetails: pulumi.Output<outputs.Opsi.ExadataInsightMemberVmClusterDetail[]>;
     /**
      * The current state of the Exadata insight.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      *
@@ -242,19 +242,19 @@ export class ExadataInsight extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ExadataInsight resource with the given unique name, arguments, and options.
@@ -269,51 +269,51 @@ export class ExadataInsight extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataInsightState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["enterpriseManagerBridgeId"] = state ? state.enterpriseManagerBridgeId : undefined;
-            resourceInputs["enterpriseManagerEntityDisplayName"] = state ? state.enterpriseManagerEntityDisplayName : undefined;
-            resourceInputs["enterpriseManagerEntityIdentifier"] = state ? state.enterpriseManagerEntityIdentifier : undefined;
-            resourceInputs["enterpriseManagerEntityName"] = state ? state.enterpriseManagerEntityName : undefined;
-            resourceInputs["enterpriseManagerEntityType"] = state ? state.enterpriseManagerEntityType : undefined;
-            resourceInputs["enterpriseManagerIdentifier"] = state ? state.enterpriseManagerIdentifier : undefined;
-            resourceInputs["entitySource"] = state ? state.entitySource : undefined;
-            resourceInputs["exadataDisplayName"] = state ? state.exadataDisplayName : undefined;
-            resourceInputs["exadataInfraId"] = state ? state.exadataInfraId : undefined;
-            resourceInputs["exadataInfraResourceType"] = state ? state.exadataInfraResourceType : undefined;
-            resourceInputs["exadataName"] = state ? state.exadataName : undefined;
-            resourceInputs["exadataRackType"] = state ? state.exadataRackType : undefined;
-            resourceInputs["exadataShape"] = state ? state.exadataShape : undefined;
-            resourceInputs["exadataType"] = state ? state.exadataType : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoSyncEnabled"] = state ? state.isAutoSyncEnabled : undefined;
-            resourceInputs["isVirtualizedExadata"] = state ? state.isVirtualizedExadata : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["memberVmClusterDetails"] = state ? state.memberVmClusterDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["enterpriseManagerBridgeId"] = state?.enterpriseManagerBridgeId;
+            resourceInputs["enterpriseManagerEntityDisplayName"] = state?.enterpriseManagerEntityDisplayName;
+            resourceInputs["enterpriseManagerEntityIdentifier"] = state?.enterpriseManagerEntityIdentifier;
+            resourceInputs["enterpriseManagerEntityName"] = state?.enterpriseManagerEntityName;
+            resourceInputs["enterpriseManagerEntityType"] = state?.enterpriseManagerEntityType;
+            resourceInputs["enterpriseManagerIdentifier"] = state?.enterpriseManagerIdentifier;
+            resourceInputs["entitySource"] = state?.entitySource;
+            resourceInputs["exadataDisplayName"] = state?.exadataDisplayName;
+            resourceInputs["exadataInfraId"] = state?.exadataInfraId;
+            resourceInputs["exadataInfraResourceType"] = state?.exadataInfraResourceType;
+            resourceInputs["exadataName"] = state?.exadataName;
+            resourceInputs["exadataRackType"] = state?.exadataRackType;
+            resourceInputs["exadataShape"] = state?.exadataShape;
+            resourceInputs["exadataType"] = state?.exadataType;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoSyncEnabled"] = state?.isAutoSyncEnabled;
+            resourceInputs["isVirtualizedExadata"] = state?.isVirtualizedExadata;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["memberVmClusterDetails"] = state?.memberVmClusterDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ExadataInsightArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.entitySource === undefined) && !opts.urn) {
+            if (args?.entitySource === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entitySource'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["enterpriseManagerBridgeId"] = args ? args.enterpriseManagerBridgeId : undefined;
-            resourceInputs["enterpriseManagerEntityIdentifier"] = args ? args.enterpriseManagerEntityIdentifier : undefined;
-            resourceInputs["enterpriseManagerIdentifier"] = args ? args.enterpriseManagerIdentifier : undefined;
-            resourceInputs["entitySource"] = args ? args.entitySource : undefined;
-            resourceInputs["exadataInfraId"] = args ? args.exadataInfraId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoSyncEnabled"] = args ? args.isAutoSyncEnabled : undefined;
-            resourceInputs["memberVmClusterDetails"] = args ? args.memberVmClusterDetails : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["enterpriseManagerBridgeId"] = args?.enterpriseManagerBridgeId;
+            resourceInputs["enterpriseManagerEntityIdentifier"] = args?.enterpriseManagerEntityIdentifier;
+            resourceInputs["enterpriseManagerIdentifier"] = args?.enterpriseManagerIdentifier;
+            resourceInputs["entitySource"] = args?.entitySource;
+            resourceInputs["exadataInfraId"] = args?.exadataInfraId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoSyncEnabled"] = args?.isAutoSyncEnabled;
+            resourceInputs["memberVmClusterDetails"] = args?.memberVmClusterDetails;
+            resourceInputs["status"] = args?.status;
             resourceInputs["enterpriseManagerEntityDisplayName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;

@@ -50,31 +50,31 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The connector of the Exadata storage server.
      */
-    public /*out*/ readonly connectors!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageServerConnector[]>;
+    declare public /*out*/ readonly connectors: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageServerConnector[]>;
     /**
      * The CPU count of the Exadata storage server.
      */
-    public /*out*/ readonly cpuCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpuCount: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      */
-    public readonly externalExadataStorageServerId!: pulumi.Output<string>;
+    declare public readonly externalExadataStorageServerId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -82,75 +82,75 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly internalId: pulumi.Output<string>;
     /**
      * The IP address of the Exadata storage server.
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly ipAddress: pulumi.Output<string>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The make model of the Exadata storage server.
      */
-    public /*out*/ readonly makeModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly makeModel: pulumi.Output<string>;
     /**
      * The maximum flash disk IO operations per second of the Exadata storage server.
      */
-    public /*out*/ readonly maxFlashDiskIops!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxFlashDiskIops: pulumi.Output<number>;
     /**
      * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
      */
-    public /*out*/ readonly maxFlashDiskThroughput!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxFlashDiskThroughput: pulumi.Output<number>;
     /**
      * The maximum hard disk IO operations per second of the Exadata storage server.
      */
-    public /*out*/ readonly maxHardDiskIops!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxHardDiskIops: pulumi.Output<number>;
     /**
      * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
      */
-    public /*out*/ readonly maxHardDiskThroughput!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxHardDiskThroughput: pulumi.Output<number>;
     /**
      * The Exadata storage server memory size in GB.
      */
-    public /*out*/ readonly memoryGb!: pulumi.Output<number>;
+    declare public /*out*/ readonly memoryGb: pulumi.Output<number>;
     /**
      * The type of Exadata resource.
      */
-    public /*out*/ readonly resourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceType: pulumi.Output<string>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
      */
-    public /*out*/ readonly storageGridId!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageGridId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ExternalExadataStorageServer resource with the given unique name, arguments, and options.
@@ -165,39 +165,39 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalExadataStorageServerState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["connectors"] = state ? state.connectors : undefined;
-            resourceInputs["cpuCount"] = state ? state.cpuCount : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["externalExadataStorageServerId"] = state ? state.externalExadataStorageServerId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["internalId"] = state ? state.internalId : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["makeModel"] = state ? state.makeModel : undefined;
-            resourceInputs["maxFlashDiskIops"] = state ? state.maxFlashDiskIops : undefined;
-            resourceInputs["maxFlashDiskThroughput"] = state ? state.maxFlashDiskThroughput : undefined;
-            resourceInputs["maxHardDiskIops"] = state ? state.maxHardDiskIops : undefined;
-            resourceInputs["maxHardDiskThroughput"] = state ? state.maxHardDiskThroughput : undefined;
-            resourceInputs["memoryGb"] = state ? state.memoryGb : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageGridId"] = state ? state.storageGridId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["connectors"] = state?.connectors;
+            resourceInputs["cpuCount"] = state?.cpuCount;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["externalExadataStorageServerId"] = state?.externalExadataStorageServerId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["internalId"] = state?.internalId;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["makeModel"] = state?.makeModel;
+            resourceInputs["maxFlashDiskIops"] = state?.maxFlashDiskIops;
+            resourceInputs["maxFlashDiskThroughput"] = state?.maxFlashDiskThroughput;
+            resourceInputs["maxHardDiskIops"] = state?.maxHardDiskIops;
+            resourceInputs["maxHardDiskThroughput"] = state?.maxHardDiskThroughput;
+            resourceInputs["memoryGb"] = state?.memoryGb;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageGridId"] = state?.storageGridId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ExternalExadataStorageServerArgs | undefined;
-            if ((!args || args.externalExadataStorageServerId === undefined) && !opts.urn) {
+            if (args?.externalExadataStorageServerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalExadataStorageServerId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["externalExadataStorageServerId"] = args ? args.externalExadataStorageServerId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["externalExadataStorageServerId"] = args?.externalExadataStorageServerId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["connectors"] = undefined /*out*/;
             resourceInputs["cpuCount"] = undefined /*out*/;

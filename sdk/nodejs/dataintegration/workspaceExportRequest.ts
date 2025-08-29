@@ -69,75 +69,75 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
     /**
      * This field controls if the references will be exported along with the objects
      */
-    public readonly areReferencesIncluded!: pulumi.Output<boolean>;
+    declare public readonly areReferencesIncluded: pulumi.Output<boolean>;
     /**
      * Name of the Object Storage bucket where the object will be exported.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * Name of the user who initiated export request.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly errorMessages: pulumi.Output<{[key: string]: string}>;
     /**
      * The array of exported object details.
      */
-    public /*out*/ readonly exportedItems!: pulumi.Output<outputs.DataIntegration.WorkspaceExportRequestExportedItem[]>;
+    declare public /*out*/ readonly exportedItems: pulumi.Output<outputs.DataIntegration.WorkspaceExportRequestExportedItem[]>;
     /**
      * Name of the exported zip file.
      */
-    public readonly fileName!: pulumi.Output<string>;
+    declare public readonly fileName: pulumi.Output<string>;
     /**
      * Filters for exported objects
      */
-    public readonly filters!: pulumi.Output<string[]>;
+    declare public readonly filters: pulumi.Output<string[]>;
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      */
-    public readonly isObjectOverwriteEnabled!: pulumi.Output<boolean>;
+    declare public readonly isObjectOverwriteEnabled: pulumi.Output<boolean>;
     /**
      * Export object request key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * Name of the export request.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Field is used to specify which object keys to export
      */
-    public readonly objectKeys!: pulumi.Output<string[]>;
+    declare public readonly objectKeys: pulumi.Output<string[]>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    public readonly objectStorageRegion!: pulumi.Output<string>;
+    declare public readonly objectStorageRegion: pulumi.Output<string>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    public readonly objectStorageTenancyId!: pulumi.Output<string>;
+    declare public readonly objectStorageTenancyId: pulumi.Output<string>;
     /**
      * The array of exported referenced objects.
      */
-    public /*out*/ readonly referencedItems!: pulumi.Output<string>;
+    declare public /*out*/ readonly referencedItems: pulumi.Output<string>;
     /**
      * Export Objects request status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Time at which the request was completely processed.
      */
-    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEndedInMillis: pulumi.Output<string>;
     /**
      * Time at which the request started getting processed.
      */
-    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStartedInMillis: pulumi.Output<string>;
     /**
      * Number of objects that are exported.
      */
-    public /*out*/ readonly totalExportedObjectCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalExportedObjectCount: pulumi.Output<number>;
     /**
      * The workspace ID.
      *
@@ -145,7 +145,7 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceExportRequest resource with the given unique name, arguments, and options.
@@ -160,42 +160,42 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceExportRequestState | undefined;
-            resourceInputs["areReferencesIncluded"] = state ? state.areReferencesIncluded : undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["errorMessages"] = state ? state.errorMessages : undefined;
-            resourceInputs["exportedItems"] = state ? state.exportedItems : undefined;
-            resourceInputs["fileName"] = state ? state.fileName : undefined;
-            resourceInputs["filters"] = state ? state.filters : undefined;
-            resourceInputs["isObjectOverwriteEnabled"] = state ? state.isObjectOverwriteEnabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectKeys"] = state ? state.objectKeys : undefined;
-            resourceInputs["objectStorageRegion"] = state ? state.objectStorageRegion : undefined;
-            resourceInputs["objectStorageTenancyId"] = state ? state.objectStorageTenancyId : undefined;
-            resourceInputs["referencedItems"] = state ? state.referencedItems : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeEndedInMillis"] = state ? state.timeEndedInMillis : undefined;
-            resourceInputs["timeStartedInMillis"] = state ? state.timeStartedInMillis : undefined;
-            resourceInputs["totalExportedObjectCount"] = state ? state.totalExportedObjectCount : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["areReferencesIncluded"] = state?.areReferencesIncluded;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["errorMessages"] = state?.errorMessages;
+            resourceInputs["exportedItems"] = state?.exportedItems;
+            resourceInputs["fileName"] = state?.fileName;
+            resourceInputs["filters"] = state?.filters;
+            resourceInputs["isObjectOverwriteEnabled"] = state?.isObjectOverwriteEnabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectKeys"] = state?.objectKeys;
+            resourceInputs["objectStorageRegion"] = state?.objectStorageRegion;
+            resourceInputs["objectStorageTenancyId"] = state?.objectStorageTenancyId;
+            resourceInputs["referencedItems"] = state?.referencedItems;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeEndedInMillis"] = state?.timeEndedInMillis;
+            resourceInputs["timeStartedInMillis"] = state?.timeStartedInMillis;
+            resourceInputs["totalExportedObjectCount"] = state?.totalExportedObjectCount;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceExportRequestArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["areReferencesIncluded"] = args ? args.areReferencesIncluded : undefined;
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["fileName"] = args ? args.fileName : undefined;
-            resourceInputs["filters"] = args ? args.filters : undefined;
-            resourceInputs["isObjectOverwriteEnabled"] = args ? args.isObjectOverwriteEnabled : undefined;
-            resourceInputs["objectKeys"] = args ? args.objectKeys : undefined;
-            resourceInputs["objectStorageRegion"] = args ? args.objectStorageRegion : undefined;
-            resourceInputs["objectStorageTenancyId"] = args ? args.objectStorageTenancyId : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["areReferencesIncluded"] = args?.areReferencesIncluded;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["fileName"] = args?.fileName;
+            resourceInputs["filters"] = args?.filters;
+            resourceInputs["isObjectOverwriteEnabled"] = args?.isObjectOverwriteEnabled;
+            resourceInputs["objectKeys"] = args?.objectKeys;
+            resourceInputs["objectStorageRegion"] = args?.objectStorageRegion;
+            resourceInputs["objectStorageTenancyId"] = args?.objectStorageTenancyId;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["errorMessages"] = undefined /*out*/;
             resourceInputs["exportedItems"] = undefined /*out*/;

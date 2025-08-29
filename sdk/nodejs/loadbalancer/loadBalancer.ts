@@ -112,30 +112,30 @@ export class LoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An array of IP addresses.
      */
-    public /*out*/ readonly ipAddressDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerIpAddressDetail[]>;
+    declare public /*out*/ readonly ipAddressDetails: pulumi.Output<outputs.LoadBalancer.LoadBalancerIpAddressDetail[]>;
     /**
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      *
      * @deprecated The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly ipAddresses: pulumi.Output<string[]>;
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
      *
@@ -145,7 +145,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: "ipMode":"IPV6"
      */
-    public readonly ipMode!: pulumi.Output<string>;
+    declare public readonly ipMode: pulumi.Output<string>;
     /**
      * Applies to IPV6 LB creation only. 
      *
@@ -153,7 +153,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: "2002::1234:abcd:ffff:c0a8:101/64"
      */
-    public readonly ipv6subnetCidr!: pulumi.Output<string>;
+    declare public readonly ipv6subnetCidr: pulumi.Output<string>;
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      *
@@ -163,7 +163,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
      */
-    public readonly isDeleteProtectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDeleteProtectionEnabled: pulumi.Output<boolean>;
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
@@ -175,7 +175,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly isPrivate!: pulumi.Output<boolean>;
+    declare public readonly isPrivate: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
      *
@@ -187,7 +187,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly isRequestIdEnabled!: pulumi.Output<boolean>;
+    declare public readonly isRequestIdEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
      *
@@ -199,7 +199,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      *
      * Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly networkSecurityGroupIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) If isRequestIdEnabled is true then this field contains the name of the header field that contains the unique request id that is attached to every request from the load balancer to the load balancer backends and to every response from the load balancer.
      *
@@ -213,27 +213,27 @@ export class LoadBalancer extends pulumi.CustomResource {
      * * Unless the header name is "" it must start with "X-" prefix.
      * * Setting the header name to "" will set it to the default: X-Request-Id.
      */
-    public readonly requestIdHeader!: pulumi.Output<string>;
+    declare public readonly requestIdHeader: pulumi.Output<string>;
     /**
      * An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
      */
-    public readonly reservedIps!: pulumi.Output<outputs.LoadBalancer.LoadBalancerReservedIp[] | undefined>;
+    declare public readonly reservedIps: pulumi.Output<outputs.LoadBalancer.LoadBalancerReservedIp[] | undefined>;
     /**
      * (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      */
-    public readonly shapeDetails!: pulumi.Output<outputs.LoadBalancer.LoadBalancerShapeDetails>;
+    declare public readonly shapeDetails: pulumi.Output<outputs.LoadBalancer.LoadBalancerShapeDetails>;
     /**
      * The current state of the load balancer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -241,15 +241,15 @@ export class LoadBalancer extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetIds!: pulumi.Output<string[]>;
+    declare public readonly subnetIds: pulumi.Output<string[]>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a LoadBalancer resource with the given unique name, arguments, and options.
@@ -264,57 +264,57 @@ export class LoadBalancer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LoadBalancerState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddressDetails"] = state ? state.ipAddressDetails : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["ipMode"] = state ? state.ipMode : undefined;
-            resourceInputs["ipv6subnetCidr"] = state ? state.ipv6subnetCidr : undefined;
-            resourceInputs["isDeleteProtectionEnabled"] = state ? state.isDeleteProtectionEnabled : undefined;
-            resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
-            resourceInputs["isRequestIdEnabled"] = state ? state.isRequestIdEnabled : undefined;
-            resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
-            resourceInputs["requestIdHeader"] = state ? state.requestIdHeader : undefined;
-            resourceInputs["reservedIps"] = state ? state.reservedIps : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["shapeDetails"] = state ? state.shapeDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetIds"] = state ? state.subnetIds : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddressDetails"] = state?.ipAddressDetails;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["ipMode"] = state?.ipMode;
+            resourceInputs["ipv6subnetCidr"] = state?.ipv6subnetCidr;
+            resourceInputs["isDeleteProtectionEnabled"] = state?.isDeleteProtectionEnabled;
+            resourceInputs["isPrivate"] = state?.isPrivate;
+            resourceInputs["isRequestIdEnabled"] = state?.isRequestIdEnabled;
+            resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["requestIdHeader"] = state?.requestIdHeader;
+            resourceInputs["reservedIps"] = state?.reservedIps;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["shapeDetails"] = state?.shapeDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetIds"] = state?.subnetIds;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as LoadBalancerArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.subnetIds === undefined) && !opts.urn) {
+            if (args?.subnetIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetIds'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipMode"] = args ? args.ipMode : undefined;
-            resourceInputs["ipv6subnetCidr"] = args ? args.ipv6subnetCidr : undefined;
-            resourceInputs["isDeleteProtectionEnabled"] = args ? args.isDeleteProtectionEnabled : undefined;
-            resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
-            resourceInputs["isRequestIdEnabled"] = args ? args.isRequestIdEnabled : undefined;
-            resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
-            resourceInputs["requestIdHeader"] = args ? args.requestIdHeader : undefined;
-            resourceInputs["reservedIps"] = args ? args.reservedIps : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["shapeDetails"] = args ? args.shapeDetails : undefined;
-            resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipMode"] = args?.ipMode;
+            resourceInputs["ipv6subnetCidr"] = args?.ipv6subnetCidr;
+            resourceInputs["isDeleteProtectionEnabled"] = args?.isDeleteProtectionEnabled;
+            resourceInputs["isPrivate"] = args?.isPrivate;
+            resourceInputs["isRequestIdEnabled"] = args?.isRequestIdEnabled;
+            resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["requestIdHeader"] = args?.requestIdHeader;
+            resourceInputs["reservedIps"] = args?.reservedIps;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["shapeDetails"] = args?.shapeDetails;
+            resourceInputs["subnetIds"] = args?.subnetIds;
             resourceInputs["ipAddressDetails"] = undefined /*out*/;
             resourceInputs["ipAddresses"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

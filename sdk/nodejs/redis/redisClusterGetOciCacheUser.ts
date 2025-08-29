@@ -59,12 +59,12 @@ export class RedisClusterGetOciCacheUser extends pulumi.CustomResource {
     /**
      * The ID of the compartment in which to list resources.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly ociCacheUsers!: pulumi.Output<outputs.Redis.RedisClusterGetOciCacheUserOciCacheUser[]>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public /*out*/ readonly ociCacheUsers: pulumi.Output<outputs.Redis.RedisClusterGetOciCacheUserOciCacheUser[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      *
@@ -72,7 +72,7 @@ export class RedisClusterGetOciCacheUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly redisClusterId!: pulumi.Output<string>;
+    declare public readonly redisClusterId: pulumi.Output<string>;
 
     /**
      * Create a RedisClusterGetOciCacheUser resource with the given unique name, arguments, and options.
@@ -87,18 +87,18 @@ export class RedisClusterGetOciCacheUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterGetOciCacheUserState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["ociCacheUsers"] = state ? state.ociCacheUsers : undefined;
-            resourceInputs["redisClusterId"] = state ? state.redisClusterId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["ociCacheUsers"] = state?.ociCacheUsers;
+            resourceInputs["redisClusterId"] = state?.redisClusterId;
         } else {
             const args = argsOrState as RedisClusterGetOciCacheUserArgs | undefined;
-            if ((!args || args.redisClusterId === undefined) && !opts.urn) {
+            if (args?.redisClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'redisClusterId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["redisClusterId"] = args ? args.redisClusterId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["redisClusterId"] = args?.redisClusterId;
             resourceInputs["ociCacheUsers"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -68,15 +68,15 @@ export class LifecycleStagePromoteSoftwareSourceManagement extends pulumi.Custom
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    declare public readonly lifecycleStageId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
-    public readonly softwareSourceId!: pulumi.Output<string>;
+    declare public readonly softwareSourceId: pulumi.Output<string>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails>;
 
     /**
      * Create a LifecycleStagePromoteSoftwareSourceManagement resource with the given unique name, arguments, and options.
@@ -91,17 +91,17 @@ export class LifecycleStagePromoteSoftwareSourceManagement extends pulumi.Custom
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LifecycleStagePromoteSoftwareSourceManagementState | undefined;
-            resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
-            resourceInputs["softwareSourceId"] = state ? state.softwareSourceId : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["lifecycleStageId"] = state?.lifecycleStageId;
+            resourceInputs["softwareSourceId"] = state?.softwareSourceId;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as LifecycleStagePromoteSoftwareSourceManagementArgs | undefined;
-            if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
+            if (args?.lifecycleStageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
-            resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
-            resourceInputs["softwareSourceId"] = args ? args.softwareSourceId : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["lifecycleStageId"] = args?.lifecycleStageId;
+            resourceInputs["softwareSourceId"] = args?.softwareSourceId;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LifecycleStagePromoteSoftwareSourceManagement.__pulumiType, name, resourceInputs, opts);

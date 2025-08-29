@@ -60,7 +60,7 @@ export class FusionEnvironmentDataMaskingActivity extends pulumi.CustomResource 
     /**
      * unique FusionEnvironment identifier
      */
-    public readonly fusionEnvironmentId!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentId: pulumi.Output<string>;
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
      *
@@ -68,19 +68,19 @@ export class FusionEnvironmentDataMaskingActivity extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isResumeDataMasking!: pulumi.Output<boolean>;
+    declare public readonly isResumeDataMasking: pulumi.Output<boolean>;
     /**
      * The current state of the DataMaskingActivity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeMaskingFinish!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaskingFinish: pulumi.Output<string>;
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeMaskingStart!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMaskingStart: pulumi.Output<string>;
 
     /**
      * Create a FusionEnvironmentDataMaskingActivity resource with the given unique name, arguments, and options.
@@ -95,18 +95,18 @@ export class FusionEnvironmentDataMaskingActivity extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentDataMaskingActivityState | undefined;
-            resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
-            resourceInputs["isResumeDataMasking"] = state ? state.isResumeDataMasking : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeMaskingFinish"] = state ? state.timeMaskingFinish : undefined;
-            resourceInputs["timeMaskingStart"] = state ? state.timeMaskingStart : undefined;
+            resourceInputs["fusionEnvironmentId"] = state?.fusionEnvironmentId;
+            resourceInputs["isResumeDataMasking"] = state?.isResumeDataMasking;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeMaskingFinish"] = state?.timeMaskingFinish;
+            resourceInputs["timeMaskingStart"] = state?.timeMaskingStart;
         } else {
             const args = argsOrState as FusionEnvironmentDataMaskingActivityArgs | undefined;
-            if ((!args || args.fusionEnvironmentId === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentId'");
             }
-            resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
-            resourceInputs["isResumeDataMasking"] = args ? args.isResumeDataMasking : undefined;
+            resourceInputs["fusionEnvironmentId"] = args?.fusionEnvironmentId;
+            resourceInputs["isResumeDataMasking"] = args?.isResumeDataMasking;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeMaskingFinish"] = undefined /*out*/;
             resourceInputs["timeMaskingStart"] = undefined /*out*/;

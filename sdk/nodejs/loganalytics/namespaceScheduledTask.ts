@@ -50,52 +50,52 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
     /**
      * Action for scheduled task.
      */
-    public readonly action!: pulumi.Output<outputs.LogAnalytics.NamespaceScheduledTaskAction>;
+    declare public readonly action: pulumi.Output<outputs.LogAnalytics.NamespaceScheduledTaskAction>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Discriminator.
      */
-    public readonly kind!: pulumi.Output<string>;
+    declare public readonly kind: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * Number of execution occurrences.
      */
-    public /*out*/ readonly numOccurrences!: pulumi.Output<string>;
+    declare public /*out*/ readonly numOccurrences: pulumi.Output<string>;
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
      */
-    public readonly savedSearchId!: pulumi.Output<string>;
-    public /*out*/ readonly scheduledTaskId!: pulumi.Output<string>;
+    declare public readonly savedSearchId: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledTaskId: pulumi.Output<string>;
     /**
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      */
-    public readonly schedules!: pulumi.Output<outputs.LogAnalytics.NamespaceScheduledTaskSchedules>;
+    declare public readonly schedules: pulumi.Output<outputs.LogAnalytics.NamespaceScheduledTaskSchedules>;
     /**
      * The current state of the scheduled task.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      */
-    public /*out*/ readonly taskStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly taskStatus: pulumi.Output<string>;
     /**
      * Task type.
      *
@@ -103,19 +103,19 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly taskType!: pulumi.Output<string>;
+    declare public readonly taskType: pulumi.Output<string>;
     /**
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    declare public /*out*/ readonly workRequestId: pulumi.Output<string>;
 
     /**
      * Create a NamespaceScheduledTask resource with the given unique name, arguments, and options.
@@ -130,53 +130,53 @@ export class NamespaceScheduledTask extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceScheduledTaskState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["kind"] = state ? state.kind : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["numOccurrences"] = state ? state.numOccurrences : undefined;
-            resourceInputs["savedSearchId"] = state ? state.savedSearchId : undefined;
-            resourceInputs["scheduledTaskId"] = state ? state.scheduledTaskId : undefined;
-            resourceInputs["schedules"] = state ? state.schedules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["taskStatus"] = state ? state.taskStatus : undefined;
-            resourceInputs["taskType"] = state ? state.taskType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["kind"] = state?.kind;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["numOccurrences"] = state?.numOccurrences;
+            resourceInputs["savedSearchId"] = state?.savedSearchId;
+            resourceInputs["scheduledTaskId"] = state?.scheduledTaskId;
+            resourceInputs["schedules"] = state?.schedules;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["taskStatus"] = state?.taskStatus;
+            resourceInputs["taskType"] = state?.taskType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["workRequestId"] = state?.workRequestId;
         } else {
             const args = argsOrState as NamespaceScheduledTaskArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.kind === undefined) && !opts.urn) {
+            if (args?.kind === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kind'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.schedules === undefined) && !opts.urn) {
+            if (args?.schedules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedules'");
             }
-            if ((!args || args.taskType === undefined) && !opts.urn) {
+            if (args?.taskType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'taskType'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kind"] = args ? args.kind : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["savedSearchId"] = args ? args.savedSearchId : undefined;
-            resourceInputs["schedules"] = args ? args.schedules : undefined;
-            resourceInputs["taskType"] = args ? args.taskType : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kind"] = args?.kind;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["savedSearchId"] = args?.savedSearchId;
+            resourceInputs["schedules"] = args?.schedules;
+            resourceInputs["taskType"] = args?.taskType;
             resourceInputs["numOccurrences"] = undefined /*out*/;
             resourceInputs["scheduledTaskId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

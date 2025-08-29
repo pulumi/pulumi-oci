@@ -77,87 +77,87 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
     /**
      * The application key.
      */
-    public readonly applicationKey!: pulumi.Output<string>;
+    declare public readonly applicationKey: pulumi.Output<string>;
     /**
      * The application version of the patch.
      */
-    public /*out*/ readonly applicationVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly applicationVersion: pulumi.Output<number>;
     /**
      * List of dependent objects in this patch.
      */
-    public /*out*/ readonly dependentObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchDependentObjectMetadata[]>;
+    declare public /*out*/ readonly dependentObjectMetadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchDependentObjectMetadata[]>;
     /**
      * Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The errors encountered while applying the patch, if any.
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly errorMessages: pulumi.Output<{[key: string]: string}>;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * The object's key.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly keyMap: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchMetadata[]>;
     /**
      * The object type.
      */
-    public /*out*/ readonly modelType!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelType: pulumi.Output<string>;
     /**
      * The object's model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The array of object keys to publish into application.
      */
-    public readonly objectKeys!: pulumi.Output<string[]>;
+    declare public readonly objectKeys: pulumi.Output<string[]>;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * The object version.
      */
-    public /*out*/ readonly objectVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly objectVersion: pulumi.Output<number>;
     /**
      * A reference to the object's parent.
      */
-    public /*out*/ readonly parentReves!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchParentRef[]>;
+    declare public /*out*/ readonly parentReves: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchParentRef[]>;
     /**
      * List of objects that are published or unpublished in this patch.
      */
-    public /*out*/ readonly patchObjectMetadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchPatchObjectMetadata[]>;
+    declare public /*out*/ readonly patchObjectMetadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchPatchObjectMetadata[]>;
     /**
      * Status of the patch applied or being applied on the application
      */
-    public /*out*/ readonly patchStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly patchStatus: pulumi.Output<string>;
     /**
      * The type of the patch applied or being applied on the application.
      */
-    public readonly patchType!: pulumi.Output<string>;
+    declare public readonly patchType: pulumi.Output<string>;
     /**
      * Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata>;
     /**
      * The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timePatched!: pulumi.Output<string>;
+    declare public /*out*/ readonly timePatched: pulumi.Output<string>;
     /**
      * The workspace ID.
      *
@@ -165,7 +165,7 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceApplicationPatch resource with the given unique name, arguments, and options.
@@ -180,50 +180,50 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceApplicationPatchState | undefined;
-            resourceInputs["applicationKey"] = state ? state.applicationKey : undefined;
-            resourceInputs["applicationVersion"] = state ? state.applicationVersion : undefined;
-            resourceInputs["dependentObjectMetadatas"] = state ? state.dependentObjectMetadatas : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["errorMessages"] = state ? state.errorMessages : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["keyMap"] = state ? state.keyMap : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectKeys"] = state ? state.objectKeys : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["parentReves"] = state ? state.parentReves : undefined;
-            resourceInputs["patchObjectMetadatas"] = state ? state.patchObjectMetadatas : undefined;
-            resourceInputs["patchStatus"] = state ? state.patchStatus : undefined;
-            resourceInputs["patchType"] = state ? state.patchType : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["timePatched"] = state ? state.timePatched : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["applicationKey"] = state?.applicationKey;
+            resourceInputs["applicationVersion"] = state?.applicationVersion;
+            resourceInputs["dependentObjectMetadatas"] = state?.dependentObjectMetadatas;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["errorMessages"] = state?.errorMessages;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["keyMap"] = state?.keyMap;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectKeys"] = state?.objectKeys;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["parentReves"] = state?.parentReves;
+            resourceInputs["patchObjectMetadatas"] = state?.patchObjectMetadatas;
+            resourceInputs["patchStatus"] = state?.patchStatus;
+            resourceInputs["patchType"] = state?.patchType;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["timePatched"] = state?.timePatched;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceApplicationPatchArgs | undefined;
-            if ((!args || args.applicationKey === undefined) && !opts.urn) {
+            if (args?.applicationKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationKey'");
             }
-            if ((!args || args.patchType === undefined) && !opts.urn) {
+            if (args?.patchType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'patchType'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["applicationKey"] = args ? args.applicationKey : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objectKeys"] = args ? args.objectKeys : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["patchType"] = args ? args.patchType : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["applicationKey"] = args?.applicationKey;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objectKeys"] = args?.objectKeys;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["patchType"] = args?.patchType;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["applicationVersion"] = undefined /*out*/;
             resourceInputs["dependentObjectMetadatas"] = undefined /*out*/;
             resourceInputs["errorMessages"] = undefined /*out*/;

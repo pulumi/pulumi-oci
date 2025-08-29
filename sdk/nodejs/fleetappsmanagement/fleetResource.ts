@@ -60,67 +60,67 @@ export class FleetResource extends pulumi.CustomResource {
     /**
      * Resource Compartment name.
      */
-    public /*out*/ readonly compartment!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartment: pulumi.Output<string>;
     /**
      * (Updatable) OCID of the compartment to which the resource belongs to.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Compliance State of the Resource.
      */
-    public /*out*/ readonly complianceState!: pulumi.Output<string>;
+    declare public /*out*/ readonly complianceState: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Environment Type associated with the Fleet when the resource type is fleet. Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
-    public /*out*/ readonly environmentType!: pulumi.Output<string>;
+    declare public /*out*/ readonly environmentType: pulumi.Output<string>;
     /**
      * Unique Fleet identifier.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The compliance percentage.
      */
-    public /*out*/ readonly percentCompliant!: pulumi.Output<number>;
+    declare public /*out*/ readonly percentCompliant: pulumi.Output<number>;
     /**
      * Product associated with the resource when the resource type is fleet. Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
      */
-    public /*out*/ readonly product!: pulumi.Output<string>;
+    declare public /*out*/ readonly product: pulumi.Output<string>;
     /**
      * Count of products within the resource.
      */
-    public /*out*/ readonly productCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly productCount: pulumi.Output<number>;
     /**
      * The OCID of the resource.
      */
-    public readonly resourceId!: pulumi.Output<string>;
+    declare public readonly resourceId: pulumi.Output<string>;
     /**
      * Associated region
      */
-    public readonly resourceRegion!: pulumi.Output<string>;
+    declare public readonly resourceRegion: pulumi.Output<string>;
     /**
      * Type of the Resource.
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current state of the FleetResource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Count of targets within the resource.
      */
-    public /*out*/ readonly targetCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly targetCount: pulumi.Output<number>;
     /**
      * (Updatable) OCID of the tenancy to which the resource belongs to.
      *
@@ -128,19 +128,19 @@ export class FleetResource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    declare public readonly tenancyId: pulumi.Output<string>;
     /**
      * Resource Tenancy Name.
      */
-    public /*out*/ readonly tenancyName!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyName: pulumi.Output<string>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a FleetResource resource with the given unique name, arguments, and options.
@@ -155,46 +155,46 @@ export class FleetResource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetResourceState | undefined;
-            resourceInputs["compartment"] = state ? state.compartment : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["complianceState"] = state ? state.complianceState : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["environmentType"] = state ? state.environmentType : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["percentCompliant"] = state ? state.percentCompliant : undefined;
-            resourceInputs["product"] = state ? state.product : undefined;
-            resourceInputs["productCount"] = state ? state.productCount : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetCount"] = state ? state.targetCount : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["tenancyName"] = state ? state.tenancyName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartment"] = state?.compartment;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["complianceState"] = state?.complianceState;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["environmentType"] = state?.environmentType;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["percentCompliant"] = state?.percentCompliant;
+            resourceInputs["product"] = state?.product;
+            resourceInputs["productCount"] = state?.productCount;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetCount"] = state?.targetCount;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["tenancyName"] = state?.tenancyName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FleetResourceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.fleetId === undefined) && !opts.urn) {
+            if (args?.fleetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fleetId'");
             }
-            if ((!args || args.resourceId === undefined) && !opts.urn) {
+            if (args?.resourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceId'");
             }
-            if ((!args || args.tenancyId === undefined) && !opts.urn) {
+            if (args?.tenancyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenancyId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["resourceId"] = args ? args.resourceId : undefined;
-            resourceInputs["resourceRegion"] = args ? args.resourceRegion : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
-            resourceInputs["tenancyId"] = args ? args.tenancyId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["resourceId"] = args?.resourceId;
+            resourceInputs["resourceRegion"] = args?.resourceRegion;
+            resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["tenancyId"] = args?.tenancyId;
             resourceInputs["compartment"] = undefined /*out*/;
             resourceInputs["complianceState"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;

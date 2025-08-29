@@ -24,16 +24,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:oci")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Export(name="auth", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
-     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Output<Optional<String>> auth() {
@@ -54,32 +52,30 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.configFileProfile);
     }
     /**
-     * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> fingerprint;
 
     /**
-     * @return (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> fingerprint() {
         return Codegen.optional(this.fingerprint);
     }
     /**
-     * (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-     * set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) A PEM formatted RSA private key for the user.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKey;
 
     /**
-     * @return (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-     * set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) A PEM formatted RSA private key for the user.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> privateKey() {
@@ -100,16 +96,16 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.privateKeyPassword);
     }
     /**
-     * (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The path to the user&#39;s PEM formatted private key.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="privateKeyPath", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyPath;
 
     /**
-     * @return (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The path to the user&#39;s PEM formatted private key.
+     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> privateKeyPath() {
@@ -130,16 +126,14 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.region);
     }
     /**
-     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> tenancyOcid;
 
     /**
-     * @return (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> tenancyOcid() {
@@ -152,16 +146,14 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.testTimeMaintenanceRebootDue);
     }
     /**
-     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="userOcid", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> userOcid;
 
     /**
-     * @return (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * @return (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> userOcid() {

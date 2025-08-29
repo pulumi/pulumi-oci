@@ -94,11 +94,11 @@ export class CatalogItem extends pulumi.CustomResource {
     /**
      * Catalog result payload.
      */
-    public /*out*/ readonly catalogResultPayloads!: pulumi.Output<outputs.FleetAppsManagement.CatalogItemCatalogResultPayload[]>;
+    declare public /*out*/ readonly catalogResultPayloads: pulumi.Output<outputs.FleetAppsManagement.CatalogItemCatalogResultPayload[]>;
     /**
      * Catalog source payload.
      */
-    public readonly catalogSourcePayload!: pulumi.Output<outputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
+    declare public readonly catalogSourcePayload: pulumi.Output<outputs.FleetAppsManagement.CatalogItemCatalogSourcePayload>;
     /**
      * (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
      *
@@ -106,87 +106,87 @@ export class CatalogItem extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly cloneCatalogItemTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly cloneCatalogItemTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
      */
-    public readonly configSourceType!: pulumi.Output<string>;
+    declare public readonly configSourceType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the CatalogItem.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The CatalogItem name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The details of lifecycle state CatalogItem.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The catalog listing Id.
      */
-    public readonly listingId!: pulumi.Output<string>;
+    declare public readonly listingId: pulumi.Output<string>;
     /**
      * The catalog package version.
      */
-    public readonly listingVersion!: pulumi.Output<string>;
+    declare public readonly listingVersion: pulumi.Output<string>;
     /**
      * Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
      */
-    public readonly packageType!: pulumi.Output<string>;
+    declare public readonly packageType: pulumi.Output<string>;
     /**
      * (Updatable) Short description about the catalog item.
      */
-    public readonly shortDescription!: pulumi.Output<string>;
+    declare public readonly shortDescription: pulumi.Output<string>;
     /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */
-    public /*out*/ readonly shouldListPublicItems!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly shouldListPublicItems: pulumi.Output<boolean>;
     /**
      * The current state of the CatalogItem.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the CatalogItem was last checked by backfill job, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeBackfillLastChecked!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeBackfillLastChecked: pulumi.Output<string>;
     /**
      * The date and time the CatalogItem was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the CatalogItem was last checked, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeLastChecked!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastChecked: pulumi.Output<string>;
     /**
      * The date and time the CatalogItem was released, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public readonly timeReleased!: pulumi.Output<string>;
+    declare public readonly timeReleased: pulumi.Output<string>;
     /**
      * The date and time the CatalogItem was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Version description about the catalog item.
      */
-    public readonly versionDescription!: pulumi.Output<string>;
+    declare public readonly versionDescription: pulumi.Output<string>;
 
     /**
      * Create a CatalogItem resource with the given unique name, arguments, and options.
@@ -201,60 +201,60 @@ export class CatalogItem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CatalogItemState | undefined;
-            resourceInputs["catalogResultPayloads"] = state ? state.catalogResultPayloads : undefined;
-            resourceInputs["catalogSourcePayload"] = state ? state.catalogSourcePayload : undefined;
-            resourceInputs["cloneCatalogItemTrigger"] = state ? state.cloneCatalogItemTrigger : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configSourceType"] = state ? state.configSourceType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["listingId"] = state ? state.listingId : undefined;
-            resourceInputs["listingVersion"] = state ? state.listingVersion : undefined;
-            resourceInputs["packageType"] = state ? state.packageType : undefined;
-            resourceInputs["shortDescription"] = state ? state.shortDescription : undefined;
-            resourceInputs["shouldListPublicItems"] = state ? state.shouldListPublicItems : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeBackfillLastChecked"] = state ? state.timeBackfillLastChecked : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastChecked"] = state ? state.timeLastChecked : undefined;
-            resourceInputs["timeReleased"] = state ? state.timeReleased : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["versionDescription"] = state ? state.versionDescription : undefined;
+            resourceInputs["catalogResultPayloads"] = state?.catalogResultPayloads;
+            resourceInputs["catalogSourcePayload"] = state?.catalogSourcePayload;
+            resourceInputs["cloneCatalogItemTrigger"] = state?.cloneCatalogItemTrigger;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configSourceType"] = state?.configSourceType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["listingId"] = state?.listingId;
+            resourceInputs["listingVersion"] = state?.listingVersion;
+            resourceInputs["packageType"] = state?.packageType;
+            resourceInputs["shortDescription"] = state?.shortDescription;
+            resourceInputs["shouldListPublicItems"] = state?.shouldListPublicItems;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeBackfillLastChecked"] = state?.timeBackfillLastChecked;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastChecked"] = state?.timeLastChecked;
+            resourceInputs["timeReleased"] = state?.timeReleased;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["versionDescription"] = state?.versionDescription;
         } else {
             const args = argsOrState as CatalogItemArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.configSourceType === undefined) && !opts.urn) {
+            if (args?.configSourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configSourceType'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.packageType === undefined) && !opts.urn) {
+            if (args?.packageType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageType'");
             }
-            resourceInputs["catalogSourcePayload"] = args ? args.catalogSourcePayload : undefined;
-            resourceInputs["cloneCatalogItemTrigger"] = args ? args.cloneCatalogItemTrigger : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configSourceType"] = args ? args.configSourceType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["listingId"] = args ? args.listingId : undefined;
-            resourceInputs["listingVersion"] = args ? args.listingVersion : undefined;
-            resourceInputs["packageType"] = args ? args.packageType : undefined;
-            resourceInputs["shortDescription"] = args ? args.shortDescription : undefined;
-            resourceInputs["timeReleased"] = args ? args.timeReleased : undefined;
-            resourceInputs["versionDescription"] = args ? args.versionDescription : undefined;
+            resourceInputs["catalogSourcePayload"] = args?.catalogSourcePayload;
+            resourceInputs["cloneCatalogItemTrigger"] = args?.cloneCatalogItemTrigger;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configSourceType"] = args?.configSourceType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["listingId"] = args?.listingId;
+            resourceInputs["listingVersion"] = args?.listingVersion;
+            resourceInputs["packageType"] = args?.packageType;
+            resourceInputs["shortDescription"] = args?.shortDescription;
+            resourceInputs["timeReleased"] = args?.timeReleased;
+            resourceInputs["versionDescription"] = args?.versionDescription;
             resourceInputs["catalogResultPayloads"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["shouldListPublicItems"] = undefined /*out*/;

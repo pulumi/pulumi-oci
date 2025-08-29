@@ -77,60 +77,60 @@ export class DeploymentBackup extends pulumi.CustomResource {
     /**
      * Possible deployment backup source types.
      */
-    public /*out*/ readonly backupSourceType!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupSourceType: pulumi.Output<string>;
     /**
      * Possible Deployment backup types.
      */
-    public /*out*/ readonly backupType!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupType: pulumi.Output<string>;
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    public readonly deploymentId!: pulumi.Output<string>;
+    declare public readonly deploymentId: pulumi.Output<string>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    public /*out*/ readonly deploymentType!: pulumi.Output<string>;
+    declare public /*out*/ readonly deploymentType: pulumi.Output<string>;
     /**
      * An object's Display Name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * True if this object is automatically created
      */
-    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAutomatic: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Parameter to allow users to create backup without trails
      */
-    public readonly isMetadataOnly!: pulumi.Output<boolean>;
+    declare public readonly isMetadataOnly: pulumi.Output<boolean>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.GoldenGate.DeploymentBackupLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.GoldenGate.DeploymentBackupLock[]>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * Name of the object to be uploaded to object storage
      *
@@ -138,39 +138,39 @@ export class DeploymentBackup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * Version of OGG
      */
-    public /*out*/ readonly oggVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly oggVersion: pulumi.Output<string>;
     /**
      * The size of the backup stored in object storage (in bytes)
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<number>;
+    declare public /*out*/ readonly sizeInBytes: pulumi.Output<number>;
     /**
      * Possible lifecycle states.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeBackupFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeBackupFinished: pulumi.Output<string>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOfBackup!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfBackup: pulumi.Output<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DeploymentBackup resource with the given unique name, arguments, and options.
@@ -185,61 +185,61 @@ export class DeploymentBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentBackupState | undefined;
-            resourceInputs["backupSourceType"] = state ? state.backupSourceType : undefined;
-            resourceInputs["backupType"] = state ? state.backupType : undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutomatic"] = state ? state.isAutomatic : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["isMetadataOnly"] = state ? state.isMetadataOnly : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["oggVersion"] = state ? state.oggVersion : undefined;
-            resourceInputs["sizeInBytes"] = state ? state.sizeInBytes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeBackupFinished"] = state ? state.timeBackupFinished : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfBackup"] = state ? state.timeOfBackup : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["backupSourceType"] = state?.backupSourceType;
+            resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deploymentId"] = state?.deploymentId;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutomatic"] = state?.isAutomatic;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["isMetadataOnly"] = state?.isMetadataOnly;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["oggVersion"] = state?.oggVersion;
+            resourceInputs["sizeInBytes"] = state?.sizeInBytes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeBackupFinished"] = state?.timeBackupFinished;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfBackup"] = state?.timeOfBackup;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DeploymentBackupArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.deploymentId === undefined) && !opts.urn) {
+            if (args?.deploymentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deploymentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.object === undefined) && !opts.urn) {
+            if (args?.object === undefined && !opts.urn) {
                 throw new Error("Missing required property 'object'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["isMetadataOnly"] = args ? args.isMetadataOnly : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deploymentId"] = args?.deploymentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["isMetadataOnly"] = args?.isMetadataOnly;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["object"] = args?.object;
             resourceInputs["backupSourceType"] = undefined /*out*/;
             resourceInputs["backupType"] = undefined /*out*/;
             resourceInputs["deploymentType"] = undefined /*out*/;

@@ -63,55 +63,55 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
     /**
      * Total number of install for this keys
      */
-    public readonly allowedKeyInstallCount!: pulumi.Output<number>;
+    declare public readonly allowedKeyInstallCount: pulumi.Output<number>;
     /**
      * Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Principal id of user who created the Agent Install key
      */
-    public /*out*/ readonly createdByPrincipalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdByPrincipalId: pulumi.Output<string>;
     /**
      * Total number of install for this keys
      */
-    public /*out*/ readonly currentKeyInstallCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly currentKeyInstallCount: pulumi.Output<number>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Management Agent install Key Name
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
-    public readonly isUnlimited!: pulumi.Output<boolean>;
+    declare public readonly isUnlimited: pulumi.Output<boolean>;
     /**
      * Management Agent Install Key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Status of Key
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * date after which key would expire after creation
      *
@@ -119,11 +119,11 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeExpires!: pulumi.Output<string>;
+    declare public readonly timeExpires: pulumi.Output<string>;
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ManagementAgentInstallKey resource with the given unique name, arguments, and options.
@@ -138,34 +138,34 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementAgentInstallKeyState | undefined;
-            resourceInputs["allowedKeyInstallCount"] = state ? state.allowedKeyInstallCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdByPrincipalId"] = state ? state.createdByPrincipalId : undefined;
-            resourceInputs["currentKeyInstallCount"] = state ? state.currentKeyInstallCount : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isUnlimited"] = state ? state.isUnlimited : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeExpires"] = state ? state.timeExpires : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["allowedKeyInstallCount"] = state?.allowedKeyInstallCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdByPrincipalId"] = state?.createdByPrincipalId;
+            resourceInputs["currentKeyInstallCount"] = state?.currentKeyInstallCount;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isUnlimited"] = state?.isUnlimited;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeExpires"] = state?.timeExpires;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ManagementAgentInstallKeyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["allowedKeyInstallCount"] = args ? args.allowedKeyInstallCount : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["isUnlimited"] = args ? args.isUnlimited : undefined;
-            resourceInputs["timeExpires"] = args ? args.timeExpires : undefined;
+            resourceInputs["allowedKeyInstallCount"] = args?.allowedKeyInstallCount;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["isUnlimited"] = args?.isUnlimited;
+            resourceInputs["timeExpires"] = args?.timeExpires;
             resourceInputs["createdByPrincipalId"] = undefined /*out*/;
             resourceInputs["currentKeyInstallCount"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;

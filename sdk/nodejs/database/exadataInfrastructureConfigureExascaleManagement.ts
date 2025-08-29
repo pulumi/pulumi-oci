@@ -62,199 +62,199 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly activatedStorageCount: pulumi.Output<number>;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly additionalComputeCount: pulumi.Output<number>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly additionalComputeSystemModel: pulumi.Output<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly additionalStorageCount: pulumi.Output<number>;
     /**
      * The CIDR block for the Exadata administration network.
      */
-    public /*out*/ readonly adminNetworkCidr!: pulumi.Output<string>;
+    declare public /*out*/ readonly adminNetworkCidr: pulumi.Output<string>;
     /**
      * The name of the availability domain that the Exadata infrastructure is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The IP address for the first control plane server.
      */
-    public /*out*/ readonly cloudControlPlaneServer1!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudControlPlaneServer1: pulumi.Output<string>;
     /**
      * The IP address for the second control plane server.
      */
-    public /*out*/ readonly cloudControlPlaneServer2!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudControlPlaneServer2: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly computeCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly computeCount: pulumi.Output<number>;
     /**
      * The list of contacts for the Exadata infrastructure.
      */
-    public /*out*/ readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementContact[]>;
+    declare public /*out*/ readonly contacts: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementContact[]>;
     /**
      * The corporate network proxy for access to the control plane network.
      */
-    public /*out*/ readonly corporateProxy!: pulumi.Output<string>;
+    declare public /*out*/ readonly corporateProxy: pulumi.Output<string>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    declare public /*out*/ readonly cpusEnabled: pulumi.Output<number>;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    public /*out*/ readonly csiNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly csiNumber: pulumi.Output<string>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbServerVersion: pulumi.Output<string>;
     /**
      * Details of the file system configuration of the Exadata infrastructure.
      */
-    public /*out*/ readonly definedFileSystemConfigurations!: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration[]>;
+    declare public /*out*/ readonly definedFileSystemConfigurations: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration[]>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    public /*out*/ readonly dnsServers!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly dnsServers: pulumi.Output<string[]>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
      */
-    public /*out*/ readonly exascaleConfigs!: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementExascaleConfig[]>;
+    declare public /*out*/ readonly exascaleConfigs: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementExascaleConfig[]>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The gateway for the control plane network.
      */
-    public /*out*/ readonly gateway!: pulumi.Output<string>;
+    declare public /*out*/ readonly gateway: pulumi.Output<string>;
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
      */
-    public /*out*/ readonly infiniBandNetworkCidr!: pulumi.Output<string>;
+    declare public /*out*/ readonly infiniBandNetworkCidr: pulumi.Output<string>;
     /**
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    public /*out*/ readonly isCpsOfflineReportEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCpsOfflineReportEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if deployment is Multi-Rack or not.
      */
-    public /*out*/ readonly isMultiRackDeployment!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMultiRackDeployment: pulumi.Output<boolean>;
     /**
      * If true, the infrastructure is using granular maintenance scheduling preference.
      */
-    public /*out*/ readonly isSchedulingPolicyAssociated!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSchedulingPolicyAssociated: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    public /*out*/ readonly maintenanceSloStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceSloStatus: pulumi.Output<string>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementMaintenanceWindow[]>;
     /**
      * The total number of CPU cores available.
      */
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxCpuCount: pulumi.Output<number>;
     /**
      * The total available DATA disk group size.
      */
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDataStorageInTbs: pulumi.Output<number>;
     /**
      * The total local node storage available in GBs.
      */
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDbNodeStorageInGbs: pulumi.Output<number>;
     /**
      * The total memory available in GBs.
      */
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxMemoryInGbs: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly monthlyDbServerVersion: pulumi.Output<string>;
     /**
      * The base64 encoded Multi-Rack configuration json file.
      */
-    public /*out*/ readonly multiRackConfigurationFile!: pulumi.Output<string>;
+    declare public /*out*/ readonly multiRackConfigurationFile: pulumi.Output<string>;
     /**
      * The netmask for the control plane network.
      */
-    public /*out*/ readonly netmask!: pulumi.Output<string>;
+    declare public /*out*/ readonly netmask: pulumi.Output<string>;
     /**
      * Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
-    public /*out*/ readonly networkBondingModeDetails!: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail[]>;
+    declare public /*out*/ readonly networkBondingModeDetails: pulumi.Output<outputs.Database.ExadataInfrastructureConfigureExascaleManagementNetworkBondingModeDetail[]>;
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    public /*out*/ readonly ntpServers!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly ntpServers: pulumi.Output<string[]>;
     /**
      * The serial number for the Exadata infrastructure.
      */
-    public /*out*/ readonly rackSerialNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly rackSerialNumber: pulumi.Output<string>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The number of Exadata storage servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly storageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly storageCount: pulumi.Output<number>;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageServerVersion: pulumi.Output<string>;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
      * Storage size needed for Exascale in GBs.
      *
@@ -262,7 +262,7 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly totalStorageInGbs!: pulumi.Output<number>;
+    declare public readonly totalStorageInGbs: pulumi.Output<number>;
 
     /**
      * Create a ExadataInfrastructureConfigureExascaleManagement resource with the given unique name, arguments, and options.
@@ -277,66 +277,66 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataInfrastructureConfigureExascaleManagementState | undefined;
-            resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
-            resourceInputs["additionalComputeCount"] = state ? state.additionalComputeCount : undefined;
-            resourceInputs["additionalComputeSystemModel"] = state ? state.additionalComputeSystemModel : undefined;
-            resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
-            resourceInputs["adminNetworkCidr"] = state ? state.adminNetworkCidr : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["cloudControlPlaneServer1"] = state ? state.cloudControlPlaneServer1 : undefined;
-            resourceInputs["cloudControlPlaneServer2"] = state ? state.cloudControlPlaneServer2 : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["contacts"] = state ? state.contacts : undefined;
-            resourceInputs["corporateProxy"] = state ? state.corporateProxy : undefined;
-            resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
-            resourceInputs["csiNumber"] = state ? state.csiNumber : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
-            resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["exascaleConfigs"] = state ? state.exascaleConfigs : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gateway"] = state ? state.gateway : undefined;
-            resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
-            resourceInputs["isCpsOfflineReportEnabled"] = state ? state.isCpsOfflineReportEnabled : undefined;
-            resourceInputs["isMultiRackDeployment"] = state ? state.isMultiRackDeployment : undefined;
-            resourceInputs["isSchedulingPolicyAssociated"] = state ? state.isSchedulingPolicyAssociated : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceSloStatus"] = state ? state.maintenanceSloStatus : undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["maxCpuCount"] = state ? state.maxCpuCount : undefined;
-            resourceInputs["maxDataStorageInTbs"] = state ? state.maxDataStorageInTbs : undefined;
-            resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
-            resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
-            resourceInputs["multiRackConfigurationFile"] = state ? state.multiRackConfigurationFile : undefined;
-            resourceInputs["netmask"] = state ? state.netmask : undefined;
-            resourceInputs["networkBondingModeDetails"] = state ? state.networkBondingModeDetails : undefined;
-            resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
-            resourceInputs["rackSerialNumber"] = state ? state.rackSerialNumber : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageCount"] = state ? state.storageCount : undefined;
-            resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["totalStorageInGbs"] = state ? state.totalStorageInGbs : undefined;
+            resourceInputs["activatedStorageCount"] = state?.activatedStorageCount;
+            resourceInputs["additionalComputeCount"] = state?.additionalComputeCount;
+            resourceInputs["additionalComputeSystemModel"] = state?.additionalComputeSystemModel;
+            resourceInputs["additionalStorageCount"] = state?.additionalStorageCount;
+            resourceInputs["adminNetworkCidr"] = state?.adminNetworkCidr;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["cloudControlPlaneServer1"] = state?.cloudControlPlaneServer1;
+            resourceInputs["cloudControlPlaneServer2"] = state?.cloudControlPlaneServer2;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["contacts"] = state?.contacts;
+            resourceInputs["corporateProxy"] = state?.corporateProxy;
+            resourceInputs["cpusEnabled"] = state?.cpusEnabled;
+            resourceInputs["csiNumber"] = state?.csiNumber;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServerVersion"] = state?.dbServerVersion;
+            resourceInputs["definedFileSystemConfigurations"] = state?.definedFileSystemConfigurations;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsServers"] = state?.dnsServers;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["exascaleConfigs"] = state?.exascaleConfigs;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gateway"] = state?.gateway;
+            resourceInputs["infiniBandNetworkCidr"] = state?.infiniBandNetworkCidr;
+            resourceInputs["isCpsOfflineReportEnabled"] = state?.isCpsOfflineReportEnabled;
+            resourceInputs["isMultiRackDeployment"] = state?.isMultiRackDeployment;
+            resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceSloStatus"] = state?.maintenanceSloStatus;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["maxCpuCount"] = state?.maxCpuCount;
+            resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
+            resourceInputs["maxDbNodeStorageInGbs"] = state?.maxDbNodeStorageInGbs;
+            resourceInputs["maxMemoryInGbs"] = state?.maxMemoryInGbs;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["monthlyDbServerVersion"] = state?.monthlyDbServerVersion;
+            resourceInputs["multiRackConfigurationFile"] = state?.multiRackConfigurationFile;
+            resourceInputs["netmask"] = state?.netmask;
+            resourceInputs["networkBondingModeDetails"] = state?.networkBondingModeDetails;
+            resourceInputs["ntpServers"] = state?.ntpServers;
+            resourceInputs["rackSerialNumber"] = state?.rackSerialNumber;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageCount"] = state?.storageCount;
+            resourceInputs["storageServerVersion"] = state?.storageServerVersion;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["totalStorageInGbs"] = state?.totalStorageInGbs;
         } else {
             const args = argsOrState as ExadataInfrastructureConfigureExascaleManagementArgs | undefined;
-            if ((!args || args.exadataInfrastructureId === undefined) && !opts.urn) {
+            if (args?.exadataInfrastructureId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'exadataInfrastructureId'");
             }
-            if ((!args || args.totalStorageInGbs === undefined) && !opts.urn) {
+            if (args?.totalStorageInGbs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'totalStorageInGbs'");
             }
-            resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
-            resourceInputs["totalStorageInGbs"] = args ? args.totalStorageInGbs : undefined;
+            resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
+            resourceInputs["totalStorageInGbs"] = args?.totalStorageInGbs;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalComputeCount"] = undefined /*out*/;
             resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;

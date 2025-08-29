@@ -66,15 +66,15 @@ export class ManagedInstanceGroupRemovePackagesManagement extends pulumi.CustomR
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The list of package names.
      */
-    public readonly packageNames!: pulumi.Output<string[]>;
+    declare public readonly packageNames: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupRemovePackagesManagement resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class ManagedInstanceGroupRemovePackagesManagement extends pulumi.CustomR
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupRemovePackagesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["packageNames"] = state ? state.packageNames : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["packageNames"] = state?.packageNames;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupRemovePackagesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.packageNames === undefined) && !opts.urn) {
+            if (args?.packageNames === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageNames'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["packageNames"] = args ? args.packageNames : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["packageNames"] = args?.packageNames;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupRemovePackagesManagement.__pulumiType, name, resourceInputs, opts);

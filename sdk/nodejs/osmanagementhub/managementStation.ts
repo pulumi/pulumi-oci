@@ -84,95 +84,95 @@ export class ManagementStation extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Overall health information of the management station.
      */
-    public /*out*/ readonly healths!: pulumi.Output<outputs.OsManagementHub.ManagementStationHealth[]>;
+    declare public /*out*/ readonly healths: pulumi.Output<outputs.OsManagementHub.ManagementStationHealth[]>;
     /**
      * (Updatable) Hostname of the management station.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    declare public readonly hostname: pulumi.Output<string>;
     /**
      * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
      */
-    public readonly isAutoConfigEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoConfigEnabled: pulumi.Output<boolean>;
     /**
      * The location of the instance that is acting as the management station.
      */
-    public /*out*/ readonly location!: pulumi.Output<string>;
+    declare public /*out*/ readonly location: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
-    public /*out*/ readonly managedInstanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly managedInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) Information used to create the mirror configuration for a management station.
      */
-    public readonly mirror!: pulumi.Output<outputs.OsManagementHub.ManagementStationMirror>;
+    declare public readonly mirror: pulumi.Output<outputs.OsManagementHub.ManagementStationMirror>;
     /**
      * A decimal number representing the amount of mirror capacity used by the sync.
      */
-    public /*out*/ readonly mirrorCapacity!: pulumi.Output<number>;
+    declare public /*out*/ readonly mirrorCapacity: pulumi.Output<number>;
     /**
      * The total number of all packages within the mirrored software sources.
      */
-    public /*out*/ readonly mirrorPackageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly mirrorPackageCount: pulumi.Output<number>;
     /**
      * The total size of all software source mirrors in bytes.
      */
-    public /*out*/ readonly mirrorSize!: pulumi.Output<string>;
+    declare public /*out*/ readonly mirrorSize: pulumi.Output<string>;
     /**
      * Amount of available mirror storage in bytes.
      */
-    public /*out*/ readonly mirrorStorageAvailableSize!: pulumi.Output<string>;
+    declare public /*out*/ readonly mirrorStorageAvailableSize: pulumi.Output<string>;
     /**
      * Total mirror storage size in bytes.
      */
-    public /*out*/ readonly mirrorStorageSize!: pulumi.Output<string>;
+    declare public /*out*/ readonly mirrorStorageSize: pulumi.Output<string>;
     /**
      * Status summary of the mirror sync.
      */
-    public /*out*/ readonly mirrorSyncStatuses!: pulumi.Output<outputs.OsManagementHub.ManagementStationMirrorSyncStatus[]>;
+    declare public /*out*/ readonly mirrorSyncStatuses: pulumi.Output<outputs.OsManagementHub.ManagementStationMirrorSyncStatus[]>;
     /**
      * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
      */
-    public /*out*/ readonly mirrorUniquePackageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly mirrorUniquePackageCount: pulumi.Output<number>;
     /**
      * A decimal number representing the progress of the current mirror sync.
      */
-    public /*out*/ readonly overallPercentage!: pulumi.Output<number>;
+    declare public /*out*/ readonly overallPercentage: pulumi.Output<number>;
     /**
      * Current state of the mirror sync for the management station.
      */
-    public /*out*/ readonly overallState!: pulumi.Output<string>;
+    declare public /*out*/ readonly overallState: pulumi.Output<string>;
     /**
      * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
      */
-    public /*out*/ readonly peerManagementStations!: pulumi.Output<outputs.OsManagementHub.ManagementStationPeerManagementStation[]>;
+    declare public /*out*/ readonly peerManagementStations: pulumi.Output<outputs.OsManagementHub.ManagementStationPeerManagementStation[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
-    public /*out*/ readonly profileId!: pulumi.Output<string>;
+    declare public /*out*/ readonly profileId: pulumi.Output<string>;
     /**
      * (Updatable) Information used to create the proxy configuration for a management station.
      */
-    public readonly proxy!: pulumi.Output<outputs.OsManagementHub.ManagementStationProxy>;
+    declare public readonly proxy: pulumi.Output<outputs.OsManagementHub.ManagementStationProxy>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -180,23 +180,23 @@ export class ManagementStation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly refreshTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly refreshTrigger: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      */
-    public /*out*/ readonly scheduledJobId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledJobId: pulumi.Output<string>;
     /**
      * The current state of the management station.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The number of software sources that the station is mirroring.
      */
-    public /*out*/ readonly totalMirrors!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalMirrors: pulumi.Output<number>;
 
     /**
      * Create a ManagementStation resource with the given unique name, arguments, and options.
@@ -211,61 +211,61 @@ export class ManagementStation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["healths"] = state ? state.healths : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["isAutoConfigEnabled"] = state ? state.isAutoConfigEnabled : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
-            resourceInputs["mirror"] = state ? state.mirror : undefined;
-            resourceInputs["mirrorCapacity"] = state ? state.mirrorCapacity : undefined;
-            resourceInputs["mirrorPackageCount"] = state ? state.mirrorPackageCount : undefined;
-            resourceInputs["mirrorSize"] = state ? state.mirrorSize : undefined;
-            resourceInputs["mirrorStorageAvailableSize"] = state ? state.mirrorStorageAvailableSize : undefined;
-            resourceInputs["mirrorStorageSize"] = state ? state.mirrorStorageSize : undefined;
-            resourceInputs["mirrorSyncStatuses"] = state ? state.mirrorSyncStatuses : undefined;
-            resourceInputs["mirrorUniquePackageCount"] = state ? state.mirrorUniquePackageCount : undefined;
-            resourceInputs["overallPercentage"] = state ? state.overallPercentage : undefined;
-            resourceInputs["overallState"] = state ? state.overallState : undefined;
-            resourceInputs["peerManagementStations"] = state ? state.peerManagementStations : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
-            resourceInputs["proxy"] = state ? state.proxy : undefined;
-            resourceInputs["refreshTrigger"] = state ? state.refreshTrigger : undefined;
-            resourceInputs["scheduledJobId"] = state ? state.scheduledJobId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["totalMirrors"] = state ? state.totalMirrors : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["healths"] = state?.healths;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["isAutoConfigEnabled"] = state?.isAutoConfigEnabled;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["managedInstanceId"] = state?.managedInstanceId;
+            resourceInputs["mirror"] = state?.mirror;
+            resourceInputs["mirrorCapacity"] = state?.mirrorCapacity;
+            resourceInputs["mirrorPackageCount"] = state?.mirrorPackageCount;
+            resourceInputs["mirrorSize"] = state?.mirrorSize;
+            resourceInputs["mirrorStorageAvailableSize"] = state?.mirrorStorageAvailableSize;
+            resourceInputs["mirrorStorageSize"] = state?.mirrorStorageSize;
+            resourceInputs["mirrorSyncStatuses"] = state?.mirrorSyncStatuses;
+            resourceInputs["mirrorUniquePackageCount"] = state?.mirrorUniquePackageCount;
+            resourceInputs["overallPercentage"] = state?.overallPercentage;
+            resourceInputs["overallState"] = state?.overallState;
+            resourceInputs["peerManagementStations"] = state?.peerManagementStations;
+            resourceInputs["profileId"] = state?.profileId;
+            resourceInputs["proxy"] = state?.proxy;
+            resourceInputs["refreshTrigger"] = state?.refreshTrigger;
+            resourceInputs["scheduledJobId"] = state?.scheduledJobId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["totalMirrors"] = state?.totalMirrors;
         } else {
             const args = argsOrState as ManagementStationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.hostname === undefined) && !opts.urn) {
+            if (args?.hostname === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostname'");
             }
-            if ((!args || args.mirror === undefined) && !opts.urn) {
+            if (args?.mirror === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mirror'");
             }
-            if ((!args || args.proxy === undefined) && !opts.urn) {
+            if (args?.proxy === undefined && !opts.urn) {
                 throw new Error("Missing required property 'proxy'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["isAutoConfigEnabled"] = args ? args.isAutoConfigEnabled : undefined;
-            resourceInputs["mirror"] = args ? args.mirror : undefined;
-            resourceInputs["proxy"] = args ? args.proxy : undefined;
-            resourceInputs["refreshTrigger"] = args ? args.refreshTrigger : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["isAutoConfigEnabled"] = args?.isAutoConfigEnabled;
+            resourceInputs["mirror"] = args?.mirror;
+            resourceInputs["proxy"] = args?.proxy;
+            resourceInputs["refreshTrigger"] = args?.refreshTrigger;
             resourceInputs["healths"] = undefined /*out*/;
             resourceInputs["location"] = undefined /*out*/;
             resourceInputs["managedInstanceId"] = undefined /*out*/;

@@ -82,77 +82,77 @@ export class Configuration extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Indicates the collection of compatible shapes for this configuration.
      */
-    public readonly compatibleShapes!: pulumi.Output<string[]>;
+    declare public readonly compatibleShapes: pulumi.Output<string[]>;
     /**
      * The type of configuration. Either user-created or a default configuration.
      */
-    public /*out*/ readonly configType!: pulumi.Output<string>;
+    declare public /*out*/ readonly configType: pulumi.Output<string>;
     /**
      * List of configuration details.
      */
-    public /*out*/ readonly configurationDetails!: pulumi.Output<outputs.Psql.ConfigurationConfigurationDetail[]>;
+    declare public /*out*/ readonly configurationDetails: pulumi.Output<outputs.Psql.ConfigurationConfigurationDetail[]>;
     /**
      * Configuration overrides for a PostgreSQL instance.
      */
-    public readonly dbConfigurationOverrides!: pulumi.Output<outputs.Psql.ConfigurationDbConfigurationOverrides>;
+    declare public readonly dbConfigurationOverrides: pulumi.Output<outputs.Psql.ConfigurationDbConfigurationOverrides>;
     /**
      * Version of the PostgreSQL database.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * The Default configuration used for this configuration.
      */
-    public /*out*/ readonly defaultConfigId!: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultConfigId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Details about the configuration set.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Memory size in gigabytes with 1GB increment.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    public readonly instanceMemorySizeInGbs!: pulumi.Output<number>;
+    declare public readonly instanceMemorySizeInGbs: pulumi.Output<number>;
     /**
      * CPU core count.
      *
      * Skip or set it's value to 0 if configuration is for a flexible shape.
      */
-    public readonly instanceOcpuCount!: pulumi.Output<number>;
+    declare public readonly instanceOcpuCount: pulumi.Output<number>;
     /**
      * Whether the configuration supports flexible shapes.
      */
-    public readonly isFlexible!: pulumi.Output<boolean>;
+    declare public readonly isFlexible: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The name of the shape for the configuration. 
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current state of the configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -160,11 +160,11 @@ export class Configuration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Configuration resource with the given unique name, arguments, and options.
@@ -179,52 +179,52 @@ export class Configuration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["compatibleShapes"] = state ? state.compatibleShapes : undefined;
-            resourceInputs["configType"] = state ? state.configType : undefined;
-            resourceInputs["configurationDetails"] = state ? state.configurationDetails : undefined;
-            resourceInputs["dbConfigurationOverrides"] = state ? state.dbConfigurationOverrides : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["defaultConfigId"] = state ? state.defaultConfigId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["instanceMemorySizeInGbs"] = state ? state.instanceMemorySizeInGbs : undefined;
-            resourceInputs["instanceOcpuCount"] = state ? state.instanceOcpuCount : undefined;
-            resourceInputs["isFlexible"] = state ? state.isFlexible : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compatibleShapes"] = state?.compatibleShapes;
+            resourceInputs["configType"] = state?.configType;
+            resourceInputs["configurationDetails"] = state?.configurationDetails;
+            resourceInputs["dbConfigurationOverrides"] = state?.dbConfigurationOverrides;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["defaultConfigId"] = state?.defaultConfigId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["instanceMemorySizeInGbs"] = state?.instanceMemorySizeInGbs;
+            resourceInputs["instanceOcpuCount"] = state?.instanceOcpuCount;
+            resourceInputs["isFlexible"] = state?.isFlexible;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbConfigurationOverrides === undefined) && !opts.urn) {
+            if (args?.dbConfigurationOverrides === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbConfigurationOverrides'");
             }
-            if ((!args || args.dbVersion === undefined) && !opts.urn) {
+            if (args?.dbVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbVersion'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["compatibleShapes"] = args ? args.compatibleShapes : undefined;
-            resourceInputs["dbConfigurationOverrides"] = args ? args.dbConfigurationOverrides : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instanceMemorySizeInGbs"] = args ? args.instanceMemorySizeInGbs : undefined;
-            resourceInputs["instanceOcpuCount"] = args ? args.instanceOcpuCount : undefined;
-            resourceInputs["isFlexible"] = args ? args.isFlexible : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["compatibleShapes"] = args?.compatibleShapes;
+            resourceInputs["dbConfigurationOverrides"] = args?.dbConfigurationOverrides;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instanceMemorySizeInGbs"] = args?.instanceMemorySizeInGbs;
+            resourceInputs["instanceOcpuCount"] = args?.instanceOcpuCount;
+            resourceInputs["isFlexible"] = args?.isFlexible;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["configType"] = undefined /*out*/;
             resourceInputs["configurationDetails"] = undefined /*out*/;
             resourceInputs["defaultConfigId"] = undefined /*out*/;

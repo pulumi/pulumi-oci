@@ -68,31 +68,31 @@ export class Verify extends pulumi.CustomResource {
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
      */
-    public readonly cryptoEndpoint!: pulumi.Output<string>;
+    declare public readonly cryptoEndpoint: pulumi.Output<string>;
     /**
      * A Boolean value that indicates whether the signature was verified.
      */
-    public /*out*/ readonly isSignatureValid!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSignatureValid: pulumi.Output<boolean>;
     /**
      * The OCID of the key used to sign the message.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * The OCID of the key version used to sign the message.
      */
-    public readonly keyVersionId!: pulumi.Output<string>;
+    declare public readonly keyVersionId: pulumi.Output<string>;
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      */
-    public readonly message!: pulumi.Output<string>;
+    declare public readonly message: pulumi.Output<string>;
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
-    public readonly messageType!: pulumi.Output<string>;
+    declare public readonly messageType: pulumi.Output<string>;
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message.
      */
-    public readonly signature!: pulumi.Output<string>;
+    declare public readonly signature: pulumi.Output<string>;
     /**
      * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *
@@ -100,7 +100,7 @@ export class Verify extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly signingAlgorithm!: pulumi.Output<string>;
+    declare public readonly signingAlgorithm: pulumi.Output<string>;
 
     /**
      * Create a Verify resource with the given unique name, arguments, and options.
@@ -115,41 +115,41 @@ export class Verify extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VerifyState | undefined;
-            resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
-            resourceInputs["isSignatureValid"] = state ? state.isSignatureValid : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
-            resourceInputs["message"] = state ? state.message : undefined;
-            resourceInputs["messageType"] = state ? state.messageType : undefined;
-            resourceInputs["signature"] = state ? state.signature : undefined;
-            resourceInputs["signingAlgorithm"] = state ? state.signingAlgorithm : undefined;
+            resourceInputs["cryptoEndpoint"] = state?.cryptoEndpoint;
+            resourceInputs["isSignatureValid"] = state?.isSignatureValid;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["keyVersionId"] = state?.keyVersionId;
+            resourceInputs["message"] = state?.message;
+            resourceInputs["messageType"] = state?.messageType;
+            resourceInputs["signature"] = state?.signature;
+            resourceInputs["signingAlgorithm"] = state?.signingAlgorithm;
         } else {
             const args = argsOrState as VerifyArgs | undefined;
-            if ((!args || args.cryptoEndpoint === undefined) && !opts.urn) {
+            if (args?.cryptoEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cryptoEndpoint'");
             }
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.keyVersionId === undefined) && !opts.urn) {
+            if (args?.keyVersionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyVersionId'");
             }
-            if ((!args || args.message === undefined) && !opts.urn) {
+            if (args?.message === undefined && !opts.urn) {
                 throw new Error("Missing required property 'message'");
             }
-            if ((!args || args.signature === undefined) && !opts.urn) {
+            if (args?.signature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signature'");
             }
-            if ((!args || args.signingAlgorithm === undefined) && !opts.urn) {
+            if (args?.signingAlgorithm === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signingAlgorithm'");
             }
-            resourceInputs["cryptoEndpoint"] = args ? args.cryptoEndpoint : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["keyVersionId"] = args ? args.keyVersionId : undefined;
-            resourceInputs["message"] = args ? args.message : undefined;
-            resourceInputs["messageType"] = args ? args.messageType : undefined;
-            resourceInputs["signature"] = args ? args.signature : undefined;
-            resourceInputs["signingAlgorithm"] = args ? args.signingAlgorithm : undefined;
+            resourceInputs["cryptoEndpoint"] = args?.cryptoEndpoint;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["keyVersionId"] = args?.keyVersionId;
+            resourceInputs["message"] = args?.message;
+            resourceInputs["messageType"] = args?.messageType;
+            resourceInputs["signature"] = args?.signature;
+            resourceInputs["signingAlgorithm"] = args?.signingAlgorithm;
             resourceInputs["isSignatureValid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

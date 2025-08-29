@@ -72,51 +72,51 @@ export class Rule extends pulumi.CustomResource {
     /**
      * The unique budget OCID.
      */
-    public readonly budgetId!: pulumi.Output<string>;
+    declare public readonly budgetId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the alert rule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The name of the alert rule. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The message to be sent to the recipients when the alert rule is triggered.
      */
-    public readonly message!: pulumi.Output<string>;
+    declare public readonly message: pulumi.Output<string>;
     /**
      * (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
      */
-    public readonly recipients!: pulumi.Output<string | undefined>;
+    declare public readonly recipients: pulumi.Output<string | undefined>;
     /**
      * The current state of the alert rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      */
-    public readonly threshold!: pulumi.Output<number>;
+    declare public readonly threshold: pulumi.Output<number>;
     /**
      * (Updatable) The type of threshold.
      */
-    public readonly thresholdType!: pulumi.Output<string>;
+    declare public readonly thresholdType: pulumi.Output<string>;
     /**
      * The time when the budget was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the budget was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage). 
      *
@@ -124,11 +124,11 @@ export class Rule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The version of the alert rule. Starts from 1 and increments by 1.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a Rule resource with the given unique name, arguments, and options.
@@ -143,44 +143,44 @@ export class Rule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RuleState | undefined;
-            resourceInputs["budgetId"] = state ? state.budgetId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["message"] = state ? state.message : undefined;
-            resourceInputs["recipients"] = state ? state.recipients : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["threshold"] = state ? state.threshold : undefined;
-            resourceInputs["thresholdType"] = state ? state.thresholdType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["budgetId"] = state?.budgetId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["message"] = state?.message;
+            resourceInputs["recipients"] = state?.recipients;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["threshold"] = state?.threshold;
+            resourceInputs["thresholdType"] = state?.thresholdType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as RuleArgs | undefined;
-            if ((!args || args.budgetId === undefined) && !opts.urn) {
+            if (args?.budgetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'budgetId'");
             }
-            if ((!args || args.threshold === undefined) && !opts.urn) {
+            if (args?.threshold === undefined && !opts.urn) {
                 throw new Error("Missing required property 'threshold'");
             }
-            if ((!args || args.thresholdType === undefined) && !opts.urn) {
+            if (args?.thresholdType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'thresholdType'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["budgetId"] = args ? args.budgetId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["message"] = args ? args.message : undefined;
-            resourceInputs["recipients"] = args ? args.recipients : undefined;
-            resourceInputs["threshold"] = args ? args.threshold : undefined;
-            resourceInputs["thresholdType"] = args ? args.thresholdType : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["budgetId"] = args?.budgetId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["message"] = args?.message;
+            resourceInputs["recipients"] = args?.recipients;
+            resourceInputs["threshold"] = args?.threshold;
+            resourceInputs["thresholdType"] = args?.thresholdType;
+            resourceInputs["type"] = args?.type;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

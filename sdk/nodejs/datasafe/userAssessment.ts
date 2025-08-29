@@ -75,85 +75,85 @@ export class UserAssessment extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the user assessment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the user assessment.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the user assessment.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    public /*out*/ readonly ignoredAssessmentIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly ignoredAssessmentIds: pulumi.Output<string[]>;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    public /*out*/ readonly ignoredTargets!: pulumi.Output<outputs.DataSafe.UserAssessmentIgnoredTarget[]>;
+    declare public /*out*/ readonly ignoredTargets: pulumi.Output<outputs.DataSafe.UserAssessmentIgnoredTarget[]>;
     /**
      * (Updatable) Indicates whether the assessment is scheduled to run.
      */
-    public readonly isAssessmentScheduled!: pulumi.Output<boolean>;
+    declare public readonly isAssessmentScheduled: pulumi.Output<boolean>;
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
-    public /*out*/ readonly isBaseline!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isBaseline: pulumi.Output<boolean>;
     /**
      * Indicates if the user assessment deviates from the baseline.
      */
-    public /*out*/ readonly isDeviatedFromBaseline!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isDeviatedFromBaseline: pulumi.Output<boolean>;
     /**
      * The OCID of the last user assessment baseline against which the latest assessment was compared.
      */
-    public /*out*/ readonly lastComparedBaselineId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastComparedBaselineId: pulumi.Output<string>;
     /**
      * Details about the current state of the user assessment.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
      */
-    public readonly schedule!: pulumi.Output<string>;
+    declare public readonly schedule: pulumi.Output<string>;
     /**
      * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      */
-    public /*out*/ readonly scheduleAssessmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduleAssessmentId: pulumi.Output<string>;
     /**
      * The current state of the user assessment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    public /*out*/ readonly statistics!: pulumi.Output<string>;
+    declare public /*out*/ readonly statistics: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of target database group.
      */
-    public /*out*/ readonly targetDatabaseGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetDatabaseGroupId: pulumi.Output<string>;
     /**
      * The OCID of the target database or target database group on which user assessment is to be run.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * Array of database target OCIDs.
      */
-    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly targetIds: pulumi.Output<string[]>;
     /**
      * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
      *
@@ -161,27 +161,27 @@ export class UserAssessment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetType!: pulumi.Output<string>;
+    declare public readonly targetType: pulumi.Output<string>;
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeLastAssessed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastAssessed: pulumi.Output<string>;
     /**
      * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Indicates whether the user assessment was created by the system or the user.
      */
-    public /*out*/ readonly triggeredBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly triggeredBy: pulumi.Output<string>;
     /**
      * The type of the user assessment. The possible types are:
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a UserAssessment resource with the given unique name, arguments, and options.
@@ -196,49 +196,49 @@ export class UserAssessment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserAssessmentState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ignoredAssessmentIds"] = state ? state.ignoredAssessmentIds : undefined;
-            resourceInputs["ignoredTargets"] = state ? state.ignoredTargets : undefined;
-            resourceInputs["isAssessmentScheduled"] = state ? state.isAssessmentScheduled : undefined;
-            resourceInputs["isBaseline"] = state ? state.isBaseline : undefined;
-            resourceInputs["isDeviatedFromBaseline"] = state ? state.isDeviatedFromBaseline : undefined;
-            resourceInputs["lastComparedBaselineId"] = state ? state.lastComparedBaselineId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
-            resourceInputs["scheduleAssessmentId"] = state ? state.scheduleAssessmentId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["statistics"] = state ? state.statistics : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetDatabaseGroupId"] = state ? state.targetDatabaseGroupId : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
-            resourceInputs["targetType"] = state ? state.targetType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastAssessed"] = state ? state.timeLastAssessed : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["triggeredBy"] = state ? state.triggeredBy : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ignoredAssessmentIds"] = state?.ignoredAssessmentIds;
+            resourceInputs["ignoredTargets"] = state?.ignoredTargets;
+            resourceInputs["isAssessmentScheduled"] = state?.isAssessmentScheduled;
+            resourceInputs["isBaseline"] = state?.isBaseline;
+            resourceInputs["isDeviatedFromBaseline"] = state?.isDeviatedFromBaseline;
+            resourceInputs["lastComparedBaselineId"] = state?.lastComparedBaselineId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["schedule"] = state?.schedule;
+            resourceInputs["scheduleAssessmentId"] = state?.scheduleAssessmentId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["statistics"] = state?.statistics;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetDatabaseGroupId"] = state?.targetDatabaseGroupId;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["targetIds"] = state?.targetIds;
+            resourceInputs["targetType"] = state?.targetType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastAssessed"] = state?.timeLastAssessed;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["triggeredBy"] = state?.triggeredBy;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as UserAssessmentArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAssessmentScheduled"] = args ? args.isAssessmentScheduled : undefined;
-            resourceInputs["schedule"] = args ? args.schedule : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["targetType"] = args ? args.targetType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAssessmentScheduled"] = args?.isAssessmentScheduled;
+            resourceInputs["schedule"] = args?.schedule;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["targetType"] = args?.targetType;
             resourceInputs["ignoredAssessmentIds"] = undefined /*out*/;
             resourceInputs["ignoredTargets"] = undefined /*out*/;
             resourceInputs["isBaseline"] = undefined /*out*/;

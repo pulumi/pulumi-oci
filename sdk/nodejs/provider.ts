@@ -26,48 +26,44 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-     * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
      */
-    public readonly auth!: pulumi.Output<string | undefined>;
+    declare public readonly auth: pulumi.Output<string | undefined>;
     /**
      * (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
      */
-    public readonly configFileProfile!: pulumi.Output<string | undefined>;
+    declare public readonly configFileProfile: pulumi.Output<string | undefined>;
     /**
-     * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    public readonly fingerprint!: pulumi.Output<string | undefined>;
+    declare public readonly fingerprint: pulumi.Output<string | undefined>;
     /**
-     * (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-     * set to 'ApiKey', ignored otherwise.
+     * (Optional) A PEM formatted RSA private key for the user.
+     * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
-    public readonly privateKey!: pulumi.Output<string | undefined>;
+    declare public readonly privateKey: pulumi.Output<string | undefined>;
     /**
      * (Optional) The password used to secure the private key.
      */
-    public readonly privateKeyPassword!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyPassword: pulumi.Output<string | undefined>;
     /**
-     * (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-     * is set to 'ApiKey', ignored otherwise.
+     * (Optional) The path to the user's PEM formatted private key.
+     * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
-    public readonly privateKeyPath!: pulumi.Output<string | undefined>;
+    declare public readonly privateKeyPath: pulumi.Output<string | undefined>;
     /**
      * (Required) The region for API connections (e.g. us-ashburn-1).
      */
-    public readonly region!: pulumi.Output<string | undefined>;
+    declare public readonly region: pulumi.Output<string | undefined>;
     /**
-     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    public readonly tenancyOcid!: pulumi.Output<string | undefined>;
-    public readonly testTimeMaintenanceRebootDue!: pulumi.Output<string | undefined>;
+    declare public readonly tenancyOcid: pulumi.Output<string | undefined>;
+    declare public readonly testTimeMaintenanceRebootDue: pulumi.Output<string | undefined>;
     /**
-     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    public readonly userOcid!: pulumi.Output<string | undefined>;
+    declare public readonly userOcid: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -80,20 +76,20 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["auth"] = args ? args.auth : undefined;
-            resourceInputs["configFileProfile"] = args ? args.configFileProfile : undefined;
-            resourceInputs["disableAutoRetries"] = pulumi.output(args ? args.disableAutoRetries : undefined).apply(JSON.stringify);
-            resourceInputs["fingerprint"] = args ? args.fingerprint : undefined;
-            resourceInputs["ignoreDefinedTags"] = pulumi.output(args ? args.ignoreDefinedTags : undefined).apply(JSON.stringify);
+            resourceInputs["auth"] = args?.auth;
+            resourceInputs["configFileProfile"] = args?.configFileProfile;
+            resourceInputs["disableAutoRetries"] = pulumi.output(args?.disableAutoRetries).apply(JSON.stringify);
+            resourceInputs["fingerprint"] = args?.fingerprint;
+            resourceInputs["ignoreDefinedTags"] = pulumi.output(args?.ignoreDefinedTags).apply(JSON.stringify);
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["privateKeyPassword"] = args?.privateKeyPassword ? pulumi.secret(args.privateKeyPassword) : undefined;
-            resourceInputs["privateKeyPath"] = args ? args.privateKeyPath : undefined;
-            resourceInputs["realmSpecificServiceEndpointTemplateEnabled"] = pulumi.output(args ? args.realmSpecificServiceEndpointTemplateEnabled : undefined).apply(JSON.stringify);
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["retryDurationSeconds"] = pulumi.output(args ? args.retryDurationSeconds : undefined).apply(JSON.stringify);
-            resourceInputs["tenancyOcid"] = args ? args.tenancyOcid : undefined;
-            resourceInputs["testTimeMaintenanceRebootDue"] = args ? args.testTimeMaintenanceRebootDue : undefined;
-            resourceInputs["userOcid"] = args ? args.userOcid : undefined;
+            resourceInputs["privateKeyPath"] = args?.privateKeyPath;
+            resourceInputs["realmSpecificServiceEndpointTemplateEnabled"] = pulumi.output(args?.realmSpecificServiceEndpointTemplateEnabled).apply(JSON.stringify);
+            resourceInputs["region"] = args?.region;
+            resourceInputs["retryDurationSeconds"] = pulumi.output(args?.retryDurationSeconds).apply(JSON.stringify);
+            resourceInputs["tenancyOcid"] = args?.tenancyOcid;
+            resourceInputs["testTimeMaintenanceRebootDue"] = args?.testTimeMaintenanceRebootDue;
+            resourceInputs["userOcid"] = args?.userOcid;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["privateKey", "privateKeyPassword"] };
@@ -116,8 +112,7 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-     * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
      */
     auth?: pulumi.Input<string>;
     /**
@@ -125,19 +120,18 @@ export interface ProviderArgs {
      */
     configFileProfile?: pulumi.Input<string>;
     /**
-     * (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-     * consistency problems but it also introduced performance issues on destroy operations.
+     * (Optional) Disable automatic retries for retriable errors.
+     * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
      */
     disableAutoRetries?: pulumi.Input<boolean>;
     /**
-     * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-     * console. Required if auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     fingerprint?: pulumi.Input<string>;
     ignoreDefinedTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
-     * set to 'ApiKey', ignored otherwise.
+     * (Optional) A PEM formatted RSA private key for the user.
+     * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
     privateKey?: pulumi.Input<string>;
     /**
@@ -145,8 +139,8 @@ export interface ProviderArgs {
      */
     privateKeyPassword?: pulumi.Input<string>;
     /**
-     * (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
-     * is set to 'ApiKey', ignored otherwise.
+     * (Optional) The path to the user's PEM formatted private key.
+     * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
     privateKeyPath?: pulumi.Input<string>;
     /**
@@ -158,20 +152,17 @@ export interface ProviderArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-     * duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
-     * set to true.
+     * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+     * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
      */
     retryDurationSeconds?: pulumi.Input<number>;
     /**
-     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-     * Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     tenancyOcid?: pulumi.Input<string>;
     testTimeMaintenanceRebootDue?: pulumi.Input<string>;
     /**
-     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-     * auth is set to 'ApiKey', ignored otherwise.
+     * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     userOcid?: pulumi.Input<string>;
 }

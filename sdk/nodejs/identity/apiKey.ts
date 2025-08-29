@@ -71,23 +71,23 @@ export class ApiKey extends pulumi.CustomResource {
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly fingerprint: pulumi.Output<string>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveStatus: pulumi.Output<string>;
     /**
      * The public key.  Must be an RSA key in PEM format.
      */
-    public readonly keyValue!: pulumi.Output<string>;
+    declare public readonly keyValue: pulumi.Output<string>;
     /**
      * The API key's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the user.
      *
@@ -95,7 +95,7 @@ export class ApiKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a ApiKey resource with the given unique name, arguments, and options.
@@ -110,22 +110,22 @@ export class ApiKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApiKeyState | undefined;
-            resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
-            resourceInputs["inactiveStatus"] = state ? state.inactiveStatus : undefined;
-            resourceInputs["keyValue"] = state ? state.keyValue : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["fingerprint"] = state?.fingerprint;
+            resourceInputs["inactiveStatus"] = state?.inactiveStatus;
+            resourceInputs["keyValue"] = state?.keyValue;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as ApiKeyArgs | undefined;
-            if ((!args || args.keyValue === undefined) && !opts.urn) {
+            if (args?.keyValue === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyValue'");
             }
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["keyValue"] = args ? args.keyValue : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["keyValue"] = args?.keyValue;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["fingerprint"] = undefined /*out*/;
             resourceInputs["inactiveStatus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

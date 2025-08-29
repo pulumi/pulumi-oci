@@ -66,15 +66,15 @@ export class ManagedInstanceGroupInstallWindowsUpdatesManagement extends pulumi.
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * The type of Windows updates to be applied.
      */
-    public readonly windowsUpdateTypes!: pulumi.Output<string[]>;
+    declare public readonly windowsUpdateTypes: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupInstallWindowsUpdatesManagement resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class ManagedInstanceGroupInstallWindowsUpdatesManagement extends pulumi.
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupInstallWindowsUpdatesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["windowsUpdateTypes"] = state ? state.windowsUpdateTypes : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["windowsUpdateTypes"] = state?.windowsUpdateTypes;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupInstallWindowsUpdatesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.windowsUpdateTypes === undefined) && !opts.urn) {
+            if (args?.windowsUpdateTypes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'windowsUpdateTypes'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["windowsUpdateTypes"] = args ? args.windowsUpdateTypes : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["windowsUpdateTypes"] = args?.windowsUpdateTypes;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupInstallWindowsUpdatesManagement.__pulumiType, name, resourceInputs, opts);

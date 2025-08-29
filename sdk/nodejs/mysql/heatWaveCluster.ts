@@ -64,42 +64,42 @@ export class HeatWaveCluster extends pulumi.CustomResource {
     /**
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      */
-    public /*out*/ readonly clusterNodes!: pulumi.Output<outputs.Mysql.HeatWaveClusterClusterNode[]>;
+    declare public /*out*/ readonly clusterNodes: pulumi.Output<outputs.Mysql.HeatWaveClusterClusterNode[]>;
     /**
      * (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
-    public readonly clusterSize!: pulumi.Output<number>;
+    declare public readonly clusterSize: pulumi.Output<number>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      */
-    public readonly isLakehouseEnabled!: pulumi.Output<boolean>;
+    declare public readonly isLakehouseEnabled: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a HeatWaveCluster resource with the given unique name, arguments, and options.
@@ -114,31 +114,31 @@ export class HeatWaveCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HeatWaveClusterState | undefined;
-            resourceInputs["clusterNodes"] = state ? state.clusterNodes : undefined;
-            resourceInputs["clusterSize"] = state ? state.clusterSize : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["isLakehouseEnabled"] = state ? state.isLakehouseEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["clusterNodes"] = state?.clusterNodes;
+            resourceInputs["clusterSize"] = state?.clusterSize;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["isLakehouseEnabled"] = state?.isLakehouseEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as HeatWaveClusterArgs | undefined;
-            if ((!args || args.clusterSize === undefined) && !opts.urn) {
+            if (args?.clusterSize === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterSize'");
             }
-            if ((!args || args.dbSystemId === undefined) && !opts.urn) {
+            if (args?.dbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbSystemId'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            resourceInputs["clusterSize"] = args ? args.clusterSize : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["isLakehouseEnabled"] = args ? args.isLakehouseEnabled : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["clusterSize"] = args?.clusterSize;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["isLakehouseEnabled"] = args?.isLakehouseEnabled;
+            resourceInputs["shapeName"] = args?.shapeName;
+            resourceInputs["state"] = args?.state;
             resourceInputs["clusterNodes"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

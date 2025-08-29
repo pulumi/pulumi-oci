@@ -77,55 +77,55 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    declare public readonly agentId: pulumi.Output<string>;
     /**
      * (Updatable) The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
      */
-    public readonly connectionUri!: pulumi.Output<string>;
+    declare public readonly connectionUri: pulumi.Output<string>;
     /**
      * (Updatable) The name of the Exadata storage server connector.
      */
-    public readonly connectorName!: pulumi.Output<string>;
+    declare public readonly connectorName: pulumi.Output<string>;
     /**
      * (Updatable) The user credential information.
      */
-    public readonly credentialInfo!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageConnectorCredentialInfo>;
+    declare public readonly credentialInfo: pulumi.Output<outputs.DatabaseManagement.ExternalExadataStorageConnectorCredentialInfo>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
+    declare public /*out*/ readonly exadataInfrastructureId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly internalId: pulumi.Output<string>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      *
@@ -133,23 +133,23 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly storageServerId!: pulumi.Output<string>;
+    declare public readonly storageServerId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ExternalExadataStorageConnector resource with the given unique name, arguments, and options.
@@ -164,48 +164,48 @@ export class ExternalExadataStorageConnector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalExadataStorageConnectorState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["agentId"] = state ? state.agentId : undefined;
-            resourceInputs["connectionUri"] = state ? state.connectionUri : undefined;
-            resourceInputs["connectorName"] = state ? state.connectorName : undefined;
-            resourceInputs["credentialInfo"] = state ? state.credentialInfo : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["internalId"] = state ? state.internalId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageServerId"] = state ? state.storageServerId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["agentId"] = state?.agentId;
+            resourceInputs["connectionUri"] = state?.connectionUri;
+            resourceInputs["connectorName"] = state?.connectorName;
+            resourceInputs["credentialInfo"] = state?.credentialInfo;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["internalId"] = state?.internalId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageServerId"] = state?.storageServerId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ExternalExadataStorageConnectorArgs | undefined;
-            if ((!args || args.agentId === undefined) && !opts.urn) {
+            if (args?.agentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentId'");
             }
-            if ((!args || args.connectionUri === undefined) && !opts.urn) {
+            if (args?.connectionUri === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionUri'");
             }
-            if ((!args || args.connectorName === undefined) && !opts.urn) {
+            if (args?.connectorName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectorName'");
             }
-            if ((!args || args.credentialInfo === undefined) && !opts.urn) {
+            if (args?.credentialInfo === undefined && !opts.urn) {
                 throw new Error("Missing required property 'credentialInfo'");
             }
-            if ((!args || args.storageServerId === undefined) && !opts.urn) {
+            if (args?.storageServerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storageServerId'");
             }
-            resourceInputs["agentId"] = args ? args.agentId : undefined;
-            resourceInputs["connectionUri"] = args ? args.connectionUri : undefined;
-            resourceInputs["connectorName"] = args ? args.connectorName : undefined;
-            resourceInputs["credentialInfo"] = args ? args.credentialInfo : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["storageServerId"] = args ? args.storageServerId : undefined;
+            resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["connectionUri"] = args?.connectionUri;
+            resourceInputs["connectorName"] = args?.connectorName;
+            resourceInputs["credentialInfo"] = args?.credentialInfo;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["storageServerId"] = args?.storageServerId;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["exadataInfrastructureId"] = undefined /*out*/;

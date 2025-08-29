@@ -91,27 +91,27 @@ export class DiscoveryJob extends pulumi.CustomResource {
     /**
      * The OCID of Compartment
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Client who submits discovery job.
      */
-    public readonly discoveryClient!: pulumi.Output<string>;
+    declare public readonly discoveryClient: pulumi.Output<string>;
     /**
      * The request of DiscoveryJob Resource details.
      */
-    public readonly discoveryDetails!: pulumi.Output<outputs.StackMonitoring.DiscoveryJobDiscoveryDetails>;
+    declare public readonly discoveryDetails: pulumi.Output<outputs.StackMonitoring.DiscoveryJobDiscoveryDetails>;
     /**
      * Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      */
-    public readonly discoveryType!: pulumi.Output<string | undefined>;
+    declare public readonly discoveryType: pulumi.Output<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
      *
@@ -119,35 +119,35 @@ export class DiscoveryJob extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shouldPropagateTagsToDiscoveredResources!: pulumi.Output<boolean>;
+    declare public readonly shouldPropagateTagsToDiscoveredResources: pulumi.Output<boolean>;
     /**
      * The current state of the DiscoveryJob Resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Specifies the status of the discovery job
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The short summary of the status of the discovery job
      */
-    public /*out*/ readonly statusMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly statusMessage: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of Tenant
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The time the discovery Job was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The OCID of user in which the job is submitted
      */
-    public /*out*/ readonly userId!: pulumi.Output<string>;
+    declare public /*out*/ readonly userId: pulumi.Output<string>;
 
     /**
      * Create a DiscoveryJob resource with the given unique name, arguments, and options.
@@ -162,35 +162,35 @@ export class DiscoveryJob extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiscoveryJobState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["discoveryClient"] = state ? state.discoveryClient : undefined;
-            resourceInputs["discoveryDetails"] = state ? state.discoveryDetails : undefined;
-            resourceInputs["discoveryType"] = state ? state.discoveryType : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = state ? state.shouldPropagateTagsToDiscoveredResources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["statusMessage"] = state ? state.statusMessage : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryClient"] = state?.discoveryClient;
+            resourceInputs["discoveryDetails"] = state?.discoveryDetails;
+            resourceInputs["discoveryType"] = state?.discoveryType;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = state?.shouldPropagateTagsToDiscoveredResources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["statusMessage"] = state?.statusMessage;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as DiscoveryJobArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.discoveryDetails === undefined) && !opts.urn) {
+            if (args?.discoveryDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'discoveryDetails'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["discoveryClient"] = args ? args.discoveryClient : undefined;
-            resourceInputs["discoveryDetails"] = args ? args.discoveryDetails : undefined;
-            resourceInputs["discoveryType"] = args ? args.discoveryType : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = args ? args.shouldPropagateTagsToDiscoveredResources : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["discoveryClient"] = args?.discoveryClient;
+            resourceInputs["discoveryDetails"] = args?.discoveryDetails;
+            resourceInputs["discoveryType"] = args?.discoveryType;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["shouldPropagateTagsToDiscoveredResources"] = args?.shouldPropagateTagsToDiscoveredResources;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["statusMessage"] = undefined /*out*/;

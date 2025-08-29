@@ -72,20 +72,20 @@ export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) The version of the language in which `condition` of `rules` are composed.
      */
-    public readonly conditionLanguageVersion!: pulumi.Output<string>;
+    declare public readonly conditionLanguageVersion: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The list of routing rules.
      */
-    public readonly rules!: pulumi.Output<outputs.LoadBalancer.LoadBalancerRoutingPolicyRule[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly rules: pulumi.Output<outputs.LoadBalancer.LoadBalancerRoutingPolicyRule[]>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a LoadBalancerRoutingPolicy resource with the given unique name, arguments, and options.
@@ -100,26 +100,26 @@ export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LoadBalancerRoutingPolicyState | undefined;
-            resourceInputs["conditionLanguageVersion"] = state ? state.conditionLanguageVersion : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["conditionLanguageVersion"] = state?.conditionLanguageVersion;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as LoadBalancerRoutingPolicyArgs | undefined;
-            if ((!args || args.conditionLanguageVersion === undefined) && !opts.urn) {
+            if (args?.conditionLanguageVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditionLanguageVersion'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.rules === undefined) && !opts.urn) {
+            if (args?.rules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
-            resourceInputs["conditionLanguageVersion"] = args ? args.conditionLanguageVersion : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["conditionLanguageVersion"] = args?.conditionLanguageVersion;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

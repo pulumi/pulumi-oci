@@ -62,23 +62,23 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
     /**
      * (Updatable) List of addresses.
      */
-    public readonly addresses!: pulumi.Output<string[]>;
+    declare public readonly addresses: pulumi.Output<string[]>;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this Address List belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * Count of total addresses in the AddressList
      */
-    public /*out*/ readonly totalAddresses!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalAddresses: pulumi.Output<number>;
     /**
      * Type of address List. The accepted values are - * FQDN * IP
      *
@@ -86,7 +86,7 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyAddressList resource with the given unique name, arguments, and options.
@@ -101,27 +101,27 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyAddressListState | undefined;
-            resourceInputs["addresses"] = state ? state.addresses : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["totalAddresses"] = state ? state.totalAddresses : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["addresses"] = state?.addresses;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["totalAddresses"] = state?.totalAddresses;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkFirewallPolicyAddressListArgs | undefined;
-            if ((!args || args.addresses === undefined) && !opts.urn) {
+            if (args?.addresses === undefined && !opts.urn) {
                 throw new Error("Missing required property 'addresses'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["addresses"] = args ? args.addresses : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["addresses"] = args?.addresses;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["type"] = args?.type;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["totalAddresses"] = undefined /*out*/;
         }

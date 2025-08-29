@@ -66,27 +66,27 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
     /**
      * The OCID of the AnalyticsInstance.
      */
-    public readonly analyticsInstanceId!: pulumi.Output<string>;
+    declare public readonly analyticsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
      */
-    public readonly caCertificate!: pulumi.Output<string>;
+    declare public readonly caCertificate: pulumi.Output<string>;
     /**
      * Optional description.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      */
-    public readonly hosts!: pulumi.Output<string[]>;
+    declare public readonly hosts: pulumi.Output<string[]>;
     /**
      * (Updatable) Passphrase for the PEM Private key (if any).
      */
-    public readonly passphrase!: pulumi.Output<string | undefined>;
+    declare public readonly passphrase: pulumi.Output<string | undefined>;
     /**
      * (Updatable) PEM Private key for HTTPS connections.
      */
-    public readonly privateKey!: pulumi.Output<string>;
+    declare public readonly privateKey: pulumi.Output<string>;
     /**
      * (Updatable) PEM certificate for HTTPS connections. 
      *
@@ -94,7 +94,7 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publicCertificate!: pulumi.Output<string>;
+    declare public readonly publicCertificate: pulumi.Output<string>;
 
     /**
      * Create a AnalyticsInstanceVanityUrl resource with the given unique name, arguments, and options.
@@ -109,37 +109,37 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnalyticsInstanceVanityUrlState | undefined;
-            resourceInputs["analyticsInstanceId"] = state ? state.analyticsInstanceId : undefined;
-            resourceInputs["caCertificate"] = state ? state.caCertificate : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["hosts"] = state ? state.hosts : undefined;
-            resourceInputs["passphrase"] = state ? state.passphrase : undefined;
-            resourceInputs["privateKey"] = state ? state.privateKey : undefined;
-            resourceInputs["publicCertificate"] = state ? state.publicCertificate : undefined;
+            resourceInputs["analyticsInstanceId"] = state?.analyticsInstanceId;
+            resourceInputs["caCertificate"] = state?.caCertificate;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["hosts"] = state?.hosts;
+            resourceInputs["passphrase"] = state?.passphrase;
+            resourceInputs["privateKey"] = state?.privateKey;
+            resourceInputs["publicCertificate"] = state?.publicCertificate;
         } else {
             const args = argsOrState as AnalyticsInstanceVanityUrlArgs | undefined;
-            if ((!args || args.analyticsInstanceId === undefined) && !opts.urn) {
+            if (args?.analyticsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'analyticsInstanceId'");
             }
-            if ((!args || args.caCertificate === undefined) && !opts.urn) {
+            if (args?.caCertificate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'caCertificate'");
             }
-            if ((!args || args.hosts === undefined) && !opts.urn) {
+            if (args?.hosts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hosts'");
             }
-            if ((!args || args.privateKey === undefined) && !opts.urn) {
+            if (args?.privateKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateKey'");
             }
-            if ((!args || args.publicCertificate === undefined) && !opts.urn) {
+            if (args?.publicCertificate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicCertificate'");
             }
-            resourceInputs["analyticsInstanceId"] = args ? args.analyticsInstanceId : undefined;
-            resourceInputs["caCertificate"] = args ? args.caCertificate : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["hosts"] = args ? args.hosts : undefined;
+            resourceInputs["analyticsInstanceId"] = args?.analyticsInstanceId;
+            resourceInputs["caCertificate"] = args?.caCertificate;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["hosts"] = args?.hosts;
             resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
-            resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
+            resourceInputs["publicCertificate"] = args?.publicCertificate;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["passphrase", "privateKey"] };

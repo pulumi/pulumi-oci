@@ -90,67 +90,67 @@ export class Publication extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The model for upload data for images and icons.
      */
-    public /*out*/ readonly icons!: pulumi.Output<outputs.Marketplace.PublicationIcon[]>;
+    declare public /*out*/ readonly icons: pulumi.Output<outputs.Marketplace.PublicationIcon[]>;
     /**
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
      */
-    public readonly isAgreementAcknowledged!: pulumi.Output<boolean>;
+    declare public readonly isAgreementAcknowledged: pulumi.Output<boolean>;
     /**
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      */
-    public readonly listingType!: pulumi.Output<string>;
+    declare public readonly listingType: pulumi.Output<string>;
     /**
      * (Updatable) A long description of the publication to use in the listing.
      */
-    public readonly longDescription!: pulumi.Output<string>;
+    declare public readonly longDescription: pulumi.Output<string>;
     /**
      * (Updatable) The name of the publication, which is also used in the listing.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A base object for creating a publication package.
      */
-    public readonly packageDetails!: pulumi.Output<outputs.Marketplace.PublicationPackageDetails>;
+    declare public readonly packageDetails: pulumi.Output<outputs.Marketplace.PublicationPackageDetails>;
     /**
      * The listing's package type.
      */
-    public /*out*/ readonly packageType!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageType: pulumi.Output<string>;
     /**
      * (Updatable) A short description of the publication to use in the listing.
      */
-    public readonly shortDescription!: pulumi.Output<string>;
+    declare public readonly shortDescription: pulumi.Output<string>;
     /**
      * The lifecycle state of the publication.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Contact information for getting support from the publisher for the listing.
      */
-    public readonly supportContacts!: pulumi.Output<outputs.Marketplace.PublicationSupportContact[]>;
+    declare public readonly supportContacts: pulumi.Output<outputs.Marketplace.PublicationSupportContact[]>;
     /**
      * The list of operating systems supported by the listing.
      */
-    public /*out*/ readonly supportedOperatingSystems!: pulumi.Output<outputs.Marketplace.PublicationSupportedOperatingSystem[]>;
+    declare public /*out*/ readonly supportedOperatingSystems: pulumi.Output<outputs.Marketplace.PublicationSupportedOperatingSystem[]>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Publication resource with the given unique name, arguments, and options.
@@ -165,52 +165,52 @@ export class Publication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PublicationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["icons"] = state ? state.icons : undefined;
-            resourceInputs["isAgreementAcknowledged"] = state ? state.isAgreementAcknowledged : undefined;
-            resourceInputs["listingType"] = state ? state.listingType : undefined;
-            resourceInputs["longDescription"] = state ? state.longDescription : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["packageDetails"] = state ? state.packageDetails : undefined;
-            resourceInputs["packageType"] = state ? state.packageType : undefined;
-            resourceInputs["shortDescription"] = state ? state.shortDescription : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["supportContacts"] = state ? state.supportContacts : undefined;
-            resourceInputs["supportedOperatingSystems"] = state ? state.supportedOperatingSystems : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["icons"] = state?.icons;
+            resourceInputs["isAgreementAcknowledged"] = state?.isAgreementAcknowledged;
+            resourceInputs["listingType"] = state?.listingType;
+            resourceInputs["longDescription"] = state?.longDescription;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["packageDetails"] = state?.packageDetails;
+            resourceInputs["packageType"] = state?.packageType;
+            resourceInputs["shortDescription"] = state?.shortDescription;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["supportContacts"] = state?.supportContacts;
+            resourceInputs["supportedOperatingSystems"] = state?.supportedOperatingSystems;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as PublicationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.isAgreementAcknowledged === undefined) && !opts.urn) {
+            if (args?.isAgreementAcknowledged === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isAgreementAcknowledged'");
             }
-            if ((!args || args.listingType === undefined) && !opts.urn) {
+            if (args?.listingType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingType'");
             }
-            if ((!args || args.packageDetails === undefined) && !opts.urn) {
+            if (args?.packageDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageDetails'");
             }
-            if ((!args || args.shortDescription === undefined) && !opts.urn) {
+            if (args?.shortDescription === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shortDescription'");
             }
-            if ((!args || args.supportContacts === undefined) && !opts.urn) {
+            if (args?.supportContacts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'supportContacts'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAgreementAcknowledged"] = args ? args.isAgreementAcknowledged : undefined;
-            resourceInputs["listingType"] = args ? args.listingType : undefined;
-            resourceInputs["longDescription"] = args ? args.longDescription : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["packageDetails"] = args ? args.packageDetails : undefined;
-            resourceInputs["shortDescription"] = args ? args.shortDescription : undefined;
-            resourceInputs["supportContacts"] = args ? args.supportContacts : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAgreementAcknowledged"] = args?.isAgreementAcknowledged;
+            resourceInputs["listingType"] = args?.listingType;
+            resourceInputs["longDescription"] = args?.longDescription;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["packageDetails"] = args?.packageDetails;
+            resourceInputs["shortDescription"] = args?.shortDescription;
+            resourceInputs["supportContacts"] = args?.supportContacts;
             resourceInputs["icons"] = undefined /*out*/;
             resourceInputs["packageType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

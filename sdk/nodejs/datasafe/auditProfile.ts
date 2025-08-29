@@ -77,11 +77,11 @@ export class AuditProfile extends pulumi.CustomResource {
     /**
      * Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      */
-    public /*out*/ readonly auditCollectedVolume!: pulumi.Output<string>;
+    declare public /*out*/ readonly auditCollectedVolume: pulumi.Output<string>;
     /**
      * Contains the list of available audit trails on the target database.
      */
-    public /*out*/ readonly auditTrails!: pulumi.Output<outputs.DataSafe.AuditProfileAuditTrail[]>;
+    declare public /*out*/ readonly auditTrails: pulumi.Output<outputs.DataSafe.AuditProfileAuditTrail[]>;
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      *
@@ -89,87 +89,87 @@ export class AuditProfile extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly changeRetentionTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly changeRetentionTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the audit profile.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the audit profile.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates whether audit paid usage settings specified at the target database level override both the global and the target database group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
      */
-    public readonly isOverrideGlobalPaidUsage!: pulumi.Output<boolean>;
+    declare public readonly isOverrideGlobalPaidUsage: pulumi.Output<boolean>;
     /**
      * Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      */
-    public readonly isOverrideGlobalRetentionSetting!: pulumi.Output<boolean>;
+    declare public readonly isOverrideGlobalRetentionSetting: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      */
-    public readonly isPaidUsageEnabled!: pulumi.Output<boolean>;
+    declare public readonly isPaidUsageEnabled: pulumi.Output<boolean>;
     /**
      * Details about the current state of the audit profile in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      */
-    public readonly offlineMonths!: pulumi.Output<number>;
+    declare public readonly offlineMonths: pulumi.Output<number>;
     /**
      * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
      */
-    public /*out*/ readonly offlineMonthsSource!: pulumi.Output<string>;
+    declare public /*out*/ readonly offlineMonthsSource: pulumi.Output<string>;
     /**
      * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      */
-    public readonly onlineMonths!: pulumi.Output<number>;
+    declare public readonly onlineMonths: pulumi.Output<number>;
     /**
      * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
      */
-    public /*out*/ readonly onlineMonthsSource!: pulumi.Output<string>;
+    declare public /*out*/ readonly onlineMonthsSource: pulumi.Output<string>;
     /**
      * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
      */
-    public /*out*/ readonly paidUsageSource!: pulumi.Output<string>;
+    declare public /*out*/ readonly paidUsageSource: pulumi.Output<string>;
     /**
      * The current state of the audit profile.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target database or target database group for which the audit profile is created.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The resource type that is represented by the audit profile.
      */
-    public readonly targetType!: pulumi.Output<string>;
+    declare public readonly targetType: pulumi.Output<string>;
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AuditProfile resource with the given unique name, arguments, and options.
@@ -184,53 +184,53 @@ export class AuditProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditProfileState | undefined;
-            resourceInputs["auditCollectedVolume"] = state ? state.auditCollectedVolume : undefined;
-            resourceInputs["auditTrails"] = state ? state.auditTrails : undefined;
-            resourceInputs["changeRetentionTrigger"] = state ? state.changeRetentionTrigger : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isOverrideGlobalPaidUsage"] = state ? state.isOverrideGlobalPaidUsage : undefined;
-            resourceInputs["isOverrideGlobalRetentionSetting"] = state ? state.isOverrideGlobalRetentionSetting : undefined;
-            resourceInputs["isPaidUsageEnabled"] = state ? state.isPaidUsageEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["offlineMonths"] = state ? state.offlineMonths : undefined;
-            resourceInputs["offlineMonthsSource"] = state ? state.offlineMonthsSource : undefined;
-            resourceInputs["onlineMonths"] = state ? state.onlineMonths : undefined;
-            resourceInputs["onlineMonthsSource"] = state ? state.onlineMonthsSource : undefined;
-            resourceInputs["paidUsageSource"] = state ? state.paidUsageSource : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["targetType"] = state ? state.targetType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["auditCollectedVolume"] = state?.auditCollectedVolume;
+            resourceInputs["auditTrails"] = state?.auditTrails;
+            resourceInputs["changeRetentionTrigger"] = state?.changeRetentionTrigger;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isOverrideGlobalPaidUsage"] = state?.isOverrideGlobalPaidUsage;
+            resourceInputs["isOverrideGlobalRetentionSetting"] = state?.isOverrideGlobalRetentionSetting;
+            resourceInputs["isPaidUsageEnabled"] = state?.isPaidUsageEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["offlineMonths"] = state?.offlineMonths;
+            resourceInputs["offlineMonthsSource"] = state?.offlineMonthsSource;
+            resourceInputs["onlineMonths"] = state?.onlineMonths;
+            resourceInputs["onlineMonthsSource"] = state?.onlineMonthsSource;
+            resourceInputs["paidUsageSource"] = state?.paidUsageSource;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["targetType"] = state?.targetType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AuditProfileArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            if ((!args || args.targetType === undefined) && !opts.urn) {
+            if (args?.targetType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetType'");
             }
-            resourceInputs["changeRetentionTrigger"] = args ? args.changeRetentionTrigger : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isOverrideGlobalPaidUsage"] = args ? args.isOverrideGlobalPaidUsage : undefined;
-            resourceInputs["isOverrideGlobalRetentionSetting"] = args ? args.isOverrideGlobalRetentionSetting : undefined;
-            resourceInputs["isPaidUsageEnabled"] = args ? args.isPaidUsageEnabled : undefined;
-            resourceInputs["offlineMonths"] = args ? args.offlineMonths : undefined;
-            resourceInputs["onlineMonths"] = args ? args.onlineMonths : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["targetType"] = args ? args.targetType : undefined;
+            resourceInputs["changeRetentionTrigger"] = args?.changeRetentionTrigger;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isOverrideGlobalPaidUsage"] = args?.isOverrideGlobalPaidUsage;
+            resourceInputs["isOverrideGlobalRetentionSetting"] = args?.isOverrideGlobalRetentionSetting;
+            resourceInputs["isPaidUsageEnabled"] = args?.isPaidUsageEnabled;
+            resourceInputs["offlineMonths"] = args?.offlineMonths;
+            resourceInputs["onlineMonths"] = args?.onlineMonths;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["targetType"] = args?.targetType;
             resourceInputs["auditCollectedVolume"] = undefined /*out*/;
             resourceInputs["auditTrails"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

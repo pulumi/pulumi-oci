@@ -80,55 +80,55 @@ export class OpsiConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
      */
-    public readonly configItemCustomStatuses!: pulumi.Output<string[] | undefined>;
+    declare public readonly configItemCustomStatuses: pulumi.Output<string[] | undefined>;
     /**
      * Specifies the fields to return in a config item summary.
      */
-    public readonly configItemFields!: pulumi.Output<string[] | undefined>;
+    declare public readonly configItemFields: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
      */
-    public readonly configItems!: pulumi.Output<outputs.Opsi.OpsiConfigurationConfigItem[]>;
+    declare public readonly configItems: pulumi.Output<outputs.Opsi.OpsiConfigurationConfigItem[]>;
     /**
      * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
      */
-    public readonly configItemsApplicableContexts!: pulumi.Output<string[] | undefined>;
+    declare public readonly configItemsApplicableContexts: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of OPSI configuration.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
      */
-    public readonly opsiConfigFields!: pulumi.Output<string[] | undefined>;
+    declare public readonly opsiConfigFields: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) OPSI configuration type.
      */
-    public readonly opsiConfigType!: pulumi.Output<string>;
+    declare public readonly opsiConfigType: pulumi.Output<string>;
     /**
      * OPSI configuration resource lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -136,15 +136,15 @@ export class OpsiConfiguration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OpsiConfiguration resource with the given unique name, arguments, and options.
@@ -159,39 +159,39 @@ export class OpsiConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpsiConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configItemCustomStatuses"] = state ? state.configItemCustomStatuses : undefined;
-            resourceInputs["configItemFields"] = state ? state.configItemFields : undefined;
-            resourceInputs["configItems"] = state ? state.configItems : undefined;
-            resourceInputs["configItemsApplicableContexts"] = state ? state.configItemsApplicableContexts : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["opsiConfigFields"] = state ? state.opsiConfigFields : undefined;
-            resourceInputs["opsiConfigType"] = state ? state.opsiConfigType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configItemCustomStatuses"] = state?.configItemCustomStatuses;
+            resourceInputs["configItemFields"] = state?.configItemFields;
+            resourceInputs["configItems"] = state?.configItems;
+            resourceInputs["configItemsApplicableContexts"] = state?.configItemsApplicableContexts;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["opsiConfigFields"] = state?.opsiConfigFields;
+            resourceInputs["opsiConfigType"] = state?.opsiConfigType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OpsiConfigurationArgs | undefined;
-            if ((!args || args.opsiConfigType === undefined) && !opts.urn) {
+            if (args?.opsiConfigType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'opsiConfigType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configItemCustomStatuses"] = args ? args.configItemCustomStatuses : undefined;
-            resourceInputs["configItemFields"] = args ? args.configItemFields : undefined;
-            resourceInputs["configItems"] = args ? args.configItems : undefined;
-            resourceInputs["configItemsApplicableContexts"] = args ? args.configItemsApplicableContexts : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["opsiConfigFields"] = args ? args.opsiConfigFields : undefined;
-            resourceInputs["opsiConfigType"] = args ? args.opsiConfigType : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configItemCustomStatuses"] = args?.configItemCustomStatuses;
+            resourceInputs["configItemFields"] = args?.configItemFields;
+            resourceInputs["configItems"] = args?.configItems;
+            resourceInputs["configItemsApplicableContexts"] = args?.configItemsApplicableContexts;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["opsiConfigFields"] = args?.opsiConfigFields;
+            resourceInputs["opsiConfigType"] = args?.opsiConfigType;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

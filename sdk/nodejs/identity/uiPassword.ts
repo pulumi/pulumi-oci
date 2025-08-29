@@ -63,19 +63,19 @@ export class UiPassword extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveStatus: pulumi.Output<string>;
     /**
      * The user's password for the Console.
      */
-    public /*out*/ readonly password!: pulumi.Output<string>;
+    declare public /*out*/ readonly password: pulumi.Output<string>;
     /**
      * The password's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the user.
      *
@@ -83,7 +83,7 @@ export class UiPassword extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a UiPassword resource with the given unique name, arguments, and options.
@@ -98,17 +98,17 @@ export class UiPassword extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UiPasswordState | undefined;
-            resourceInputs["inactiveStatus"] = state ? state.inactiveStatus : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["inactiveStatus"] = state?.inactiveStatus;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as UiPasswordArgs | undefined;
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["inactiveStatus"] = undefined /*out*/;
             resourceInputs["password"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

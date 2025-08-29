@@ -32,10 +32,10 @@ export class PrivateEndpointOutboundConnection extends pulumi.CustomResource {
         return obj['__pulumiType'] === PrivateEndpointOutboundConnection.__pulumiType;
     }
 
-    public readonly integrationInstanceId!: pulumi.Output<string>;
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
-    public readonly state!: pulumi.Output<string>;
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly integrationInstanceId: pulumi.Output<string>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
+    declare public readonly state: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
 
     /**
      * Create a PrivateEndpointOutboundConnection resource with the given unique name, arguments, and options.
@@ -50,22 +50,22 @@ export class PrivateEndpointOutboundConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PrivateEndpointOutboundConnectionState | undefined;
-            resourceInputs["integrationInstanceId"] = state ? state.integrationInstanceId : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["integrationInstanceId"] = state?.integrationInstanceId;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
         } else {
             const args = argsOrState as PrivateEndpointOutboundConnectionArgs | undefined;
-            if ((!args || args.integrationInstanceId === undefined) && !opts.urn) {
+            if (args?.integrationInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'integrationInstanceId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["integrationInstanceId"] = args ? args.integrationInstanceId : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["integrationInstanceId"] = args?.integrationInstanceId;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PrivateEndpointOutboundConnection.__pulumiType, name, resourceInputs, opts);

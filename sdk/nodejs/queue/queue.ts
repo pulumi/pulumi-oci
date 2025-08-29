@@ -74,78 +74,78 @@ export class Queue extends pulumi.CustomResource {
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */
-    public readonly channelConsumptionLimit!: pulumi.Output<number>;
+    declare public readonly channelConsumptionLimit: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
-    public readonly customEncryptionKeyId!: pulumi.Output<string>;
+    declare public readonly customEncryptionKeyId: pulumi.Output<string>;
     /**
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      */
-    public readonly deadLetterQueueDeliveryCount!: pulumi.Output<number>;
+    declare public readonly deadLetterQueueDeliveryCount: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name of the queue.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Any additional details about the current state of the queue.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The endpoint to use to consume or publish messages in the queue.
      */
-    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly messagesEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
      */
-    public readonly purgeTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly purgeTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly purgeType!: pulumi.Output<string | undefined>;
+    declare public readonly purgeType: pulumi.Output<string | undefined>;
     /**
      * The retention period of messages in the queue, in seconds.
      */
-    public readonly retentionInSeconds!: pulumi.Output<number>;
+    declare public readonly retentionInSeconds: pulumi.Output<number>;
     /**
      * The current state of the queue.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The default polling timeout of the messages in the queue, in seconds.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      */
-    public readonly visibilityInSeconds!: pulumi.Output<number>;
+    declare public readonly visibilityInSeconds: pulumi.Output<number>;
 
     /**
      * Create a Queue resource with the given unique name, arguments, and options.
@@ -160,44 +160,44 @@ export class Queue extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueueState | undefined;
-            resourceInputs["channelConsumptionLimit"] = state ? state.channelConsumptionLimit : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["customEncryptionKeyId"] = state ? state.customEncryptionKeyId : undefined;
-            resourceInputs["deadLetterQueueDeliveryCount"] = state ? state.deadLetterQueueDeliveryCount : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["messagesEndpoint"] = state ? state.messagesEndpoint : undefined;
-            resourceInputs["purgeTrigger"] = state ? state.purgeTrigger : undefined;
-            resourceInputs["purgeType"] = state ? state.purgeType : undefined;
-            resourceInputs["retentionInSeconds"] = state ? state.retentionInSeconds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["visibilityInSeconds"] = state ? state.visibilityInSeconds : undefined;
+            resourceInputs["channelConsumptionLimit"] = state?.channelConsumptionLimit;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["customEncryptionKeyId"] = state?.customEncryptionKeyId;
+            resourceInputs["deadLetterQueueDeliveryCount"] = state?.deadLetterQueueDeliveryCount;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["messagesEndpoint"] = state?.messagesEndpoint;
+            resourceInputs["purgeTrigger"] = state?.purgeTrigger;
+            resourceInputs["purgeType"] = state?.purgeType;
+            resourceInputs["retentionInSeconds"] = state?.retentionInSeconds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["visibilityInSeconds"] = state?.visibilityInSeconds;
         } else {
             const args = argsOrState as QueueArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["channelConsumptionLimit"] = args ? args.channelConsumptionLimit : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["customEncryptionKeyId"] = args ? args.customEncryptionKeyId : undefined;
-            resourceInputs["deadLetterQueueDeliveryCount"] = args ? args.deadLetterQueueDeliveryCount : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["purgeTrigger"] = args ? args.purgeTrigger : undefined;
-            resourceInputs["purgeType"] = args ? args.purgeType : undefined;
-            resourceInputs["retentionInSeconds"] = args ? args.retentionInSeconds : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["visibilityInSeconds"] = args ? args.visibilityInSeconds : undefined;
+            resourceInputs["channelConsumptionLimit"] = args?.channelConsumptionLimit;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["customEncryptionKeyId"] = args?.customEncryptionKeyId;
+            resourceInputs["deadLetterQueueDeliveryCount"] = args?.deadLetterQueueDeliveryCount;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["purgeTrigger"] = args?.purgeTrigger;
+            resourceInputs["purgeType"] = args?.purgeType;
+            resourceInputs["retentionInSeconds"] = args?.retentionInSeconds;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["visibilityInSeconds"] = args?.visibilityInSeconds;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["messagesEndpoint"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

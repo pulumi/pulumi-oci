@@ -74,63 +74,63 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      */
-    public readonly cccUpgradeScheduleId!: pulumi.Output<string>;
+    declare public readonly cccUpgradeScheduleId: pulumi.Output<string>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A message describing the current connection state in more detail.
      */
-    public readonly connectionDetails!: pulumi.Output<string>;
+    declare public readonly connectionDetails: pulumi.Output<string>;
     /**
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      */
-    public readonly connectionState!: pulumi.Output<string>;
+    declare public readonly connectionState: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    public /*out*/ readonly infrastructureInventories!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory[]>;
+    declare public /*out*/ readonly infrastructureInventories: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory[]>;
     /**
      * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    public /*out*/ readonly infrastructureNetworkConfigurations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration[]>;
+    declare public /*out*/ readonly infrastructureNetworkConfigurations: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration[]>;
     /**
      * A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      */
-    public /*out*/ readonly provisioningFingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly provisioningFingerprint: pulumi.Output<string>;
     /**
      * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      */
-    public /*out*/ readonly provisioningPin!: pulumi.Output<string>;
+    declare public /*out*/ readonly provisioningPin: pulumi.Output<string>;
     /**
      * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      */
-    public /*out*/ readonly shortName!: pulumi.Output<string>;
+    declare public /*out*/ readonly shortName: pulumi.Output<string>;
     /**
      * The current state of the Compute Cloud@Customer infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
      *
@@ -138,23 +138,23 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      */
-    public /*out*/ readonly upgradeInformations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation[]>;
+    declare public /*out*/ readonly upgradeInformations: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation[]>;
 
     /**
      * Create a AtCustomerCccInfrastructure resource with the given unique name, arguments, and options.
@@ -169,46 +169,46 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AtCustomerCccInfrastructureState | undefined;
-            resourceInputs["cccUpgradeScheduleId"] = state ? state.cccUpgradeScheduleId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionDetails"] = state ? state.connectionDetails : undefined;
-            resourceInputs["connectionState"] = state ? state.connectionState : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["infrastructureInventories"] = state ? state.infrastructureInventories : undefined;
-            resourceInputs["infrastructureNetworkConfigurations"] = state ? state.infrastructureNetworkConfigurations : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["provisioningFingerprint"] = state ? state.provisioningFingerprint : undefined;
-            resourceInputs["provisioningPin"] = state ? state.provisioningPin : undefined;
-            resourceInputs["shortName"] = state ? state.shortName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upgradeInformations"] = state ? state.upgradeInformations : undefined;
+            resourceInputs["cccUpgradeScheduleId"] = state?.cccUpgradeScheduleId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionDetails"] = state?.connectionDetails;
+            resourceInputs["connectionState"] = state?.connectionState;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["infrastructureInventories"] = state?.infrastructureInventories;
+            resourceInputs["infrastructureNetworkConfigurations"] = state?.infrastructureNetworkConfigurations;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["provisioningFingerprint"] = state?.provisioningFingerprint;
+            resourceInputs["provisioningPin"] = state?.provisioningPin;
+            resourceInputs["shortName"] = state?.shortName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upgradeInformations"] = state?.upgradeInformations;
         } else {
             const args = argsOrState as AtCustomerCccInfrastructureArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["cccUpgradeScheduleId"] = args ? args.cccUpgradeScheduleId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionDetails"] = args ? args.connectionDetails : undefined;
-            resourceInputs["connectionState"] = args ? args.connectionState : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["cccUpgradeScheduleId"] = args?.cccUpgradeScheduleId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionDetails"] = args?.connectionDetails;
+            resourceInputs["connectionState"] = args?.connectionState;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["infrastructureInventories"] = undefined /*out*/;
             resourceInputs["infrastructureNetworkConfigurations"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

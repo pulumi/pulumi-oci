@@ -71,59 +71,59 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * List of one-off patches for Database Homes.
      */
-    public /*out*/ readonly databaseSoftwareImageIncludedPatches!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly databaseSoftwareImageIncludedPatches: pulumi.Output<string[]>;
     /**
      * List of one-off patches for Database Homes.
      */
-    public readonly databaseSoftwareImageOneOffPatches!: pulumi.Output<string[]>;
+    declare public readonly databaseSoftwareImageOneOffPatches: pulumi.Output<string[]>;
     /**
      * The database version with which the database software image is to be built.
      */
-    public readonly databaseVersion!: pulumi.Output<string>;
+    declare public readonly databaseVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * To what shape the image is meant for.
      */
-    public readonly imageShapeFamily!: pulumi.Output<string>;
+    declare public readonly imageShapeFamily: pulumi.Output<string>;
     /**
      * The type of software image. Can be grid or database.
      */
-    public readonly imageType!: pulumi.Output<string>;
+    declare public readonly imageType: pulumi.Output<string>;
     /**
      * The patches included in the image and the version of the image.
      */
-    public /*out*/ readonly includedPatchesSummary!: pulumi.Output<string>;
+    declare public /*out*/ readonly includedPatchesSummary: pulumi.Output<string>;
     /**
      * True if this Database software image is supported for Upgrade.
      */
-    public /*out*/ readonly isUpgradeSupported!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isUpgradeSupported: pulumi.Output<boolean>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */
-    public readonly lsInventory!: pulumi.Output<string>;
+    declare public readonly lsInventory: pulumi.Output<string>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    public readonly patchSet!: pulumi.Output<string>;
+    declare public readonly patchSet: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      *
@@ -131,19 +131,19 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceDbHomeId!: pulumi.Output<string>;
+    declare public readonly sourceDbHomeId: pulumi.Output<string>;
     /**
      * The current state of the database software image.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the database software image was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a DatabaseSoftwareImage resource with the given unique name, arguments, and options.
@@ -158,43 +158,43 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseSoftwareImageState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseSoftwareImageIncludedPatches"] = state ? state.databaseSoftwareImageIncludedPatches : undefined;
-            resourceInputs["databaseSoftwareImageOneOffPatches"] = state ? state.databaseSoftwareImageOneOffPatches : undefined;
-            resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageShapeFamily"] = state ? state.imageShapeFamily : undefined;
-            resourceInputs["imageType"] = state ? state.imageType : undefined;
-            resourceInputs["includedPatchesSummary"] = state ? state.includedPatchesSummary : undefined;
-            resourceInputs["isUpgradeSupported"] = state ? state.isUpgradeSupported : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lsInventory"] = state ? state.lsInventory : undefined;
-            resourceInputs["patchSet"] = state ? state.patchSet : undefined;
-            resourceInputs["sourceDbHomeId"] = state ? state.sourceDbHomeId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseSoftwareImageIncludedPatches"] = state?.databaseSoftwareImageIncludedPatches;
+            resourceInputs["databaseSoftwareImageOneOffPatches"] = state?.databaseSoftwareImageOneOffPatches;
+            resourceInputs["databaseVersion"] = state?.databaseVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageShapeFamily"] = state?.imageShapeFamily;
+            resourceInputs["imageType"] = state?.imageType;
+            resourceInputs["includedPatchesSummary"] = state?.includedPatchesSummary;
+            resourceInputs["isUpgradeSupported"] = state?.isUpgradeSupported;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lsInventory"] = state?.lsInventory;
+            resourceInputs["patchSet"] = state?.patchSet;
+            resourceInputs["sourceDbHomeId"] = state?.sourceDbHomeId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as DatabaseSoftwareImageArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["databaseSoftwareImageOneOffPatches"] = args ? args.databaseSoftwareImageOneOffPatches : undefined;
-            resourceInputs["databaseVersion"] = args ? args.databaseVersion : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["imageShapeFamily"] = args ? args.imageShapeFamily : undefined;
-            resourceInputs["imageType"] = args ? args.imageType : undefined;
-            resourceInputs["lsInventory"] = args ? args.lsInventory : undefined;
-            resourceInputs["patchSet"] = args ? args.patchSet : undefined;
-            resourceInputs["sourceDbHomeId"] = args ? args.sourceDbHomeId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["databaseSoftwareImageOneOffPatches"] = args?.databaseSoftwareImageOneOffPatches;
+            resourceInputs["databaseVersion"] = args?.databaseVersion;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["imageShapeFamily"] = args?.imageShapeFamily;
+            resourceInputs["imageType"] = args?.imageType;
+            resourceInputs["lsInventory"] = args?.lsInventory;
+            resourceInputs["patchSet"] = args?.patchSet;
+            resourceInputs["sourceDbHomeId"] = args?.sourceDbHomeId;
             resourceInputs["databaseSoftwareImageIncludedPatches"] = undefined /*out*/;
             resourceInputs["includedPatchesSummary"] = undefined /*out*/;
             resourceInputs["isUpgradeSupported"] = undefined /*out*/;

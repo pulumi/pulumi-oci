@@ -62,15 +62,15 @@ export class AlertPolicyRule extends pulumi.CustomResource {
     /**
      * The OCID of the alert policy.
      */
-    public readonly alertPolicyId!: pulumi.Output<string>;
+    declare public readonly alertPolicyId: pulumi.Output<string>;
     /**
      * (Updatable) Describes the alert policy rule.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the alert policy rule.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *
@@ -78,19 +78,19 @@ export class AlertPolicyRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly expression!: pulumi.Output<string>;
+    declare public readonly expression: pulumi.Output<string>;
     /**
      * The unique key of the alert policy rule.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * The current state of the alert policy rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a AlertPolicyRule resource with the given unique name, arguments, and options.
@@ -105,25 +105,25 @@ export class AlertPolicyRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertPolicyRuleState | undefined;
-            resourceInputs["alertPolicyId"] = state ? state.alertPolicyId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["expression"] = state ? state.expression : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["alertPolicyId"] = state?.alertPolicyId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["expression"] = state?.expression;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as AlertPolicyRuleArgs | undefined;
-            if ((!args || args.alertPolicyId === undefined) && !opts.urn) {
+            if (args?.alertPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'alertPolicyId'");
             }
-            if ((!args || args.expression === undefined) && !opts.urn) {
+            if (args?.expression === undefined && !opts.urn) {
                 throw new Error("Missing required property 'expression'");
             }
-            resourceInputs["alertPolicyId"] = args ? args.alertPolicyId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["expression"] = args ? args.expression : undefined;
+            resourceInputs["alertPolicyId"] = args?.alertPolicyId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["expression"] = args?.expression;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

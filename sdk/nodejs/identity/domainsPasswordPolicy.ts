@@ -59,19 +59,19 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedChars!: pulumi.Output<string>;
+    declare public readonly allowedChars: pulumi.Output<string>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -85,7 +85,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      *
@@ -99,7 +99,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly configuredPasswordPolicyRules!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule[]>;
+    declare public /*out*/ readonly configuredPasswordPolicyRules: pulumi.Output<outputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule[]>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -113,7 +113,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) A String that describes the password policy
      *
@@ -126,7 +126,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
      *
@@ -139,7 +139,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly dictionaryDelimiter!: pulumi.Output<string>;
+    declare public readonly dictionaryDelimiter: pulumi.Output<string>;
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      *
@@ -152,7 +152,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly dictionaryLocation!: pulumi.Output<string>;
+    declare public readonly dictionaryLocation: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
      *
@@ -165,7 +165,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly dictionaryWordDisallowed!: pulumi.Output<boolean>;
+    declare public readonly dictionaryWordDisallowed: pulumi.Output<boolean>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      *
@@ -178,7 +178,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedChars!: pulumi.Output<string>;
+    declare public readonly disallowedChars: pulumi.Output<string>;
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      *
@@ -191,7 +191,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedSubstrings!: pulumi.Output<string[]>;
+    declare public readonly disallowedSubstrings: pulumi.Output<string[]>;
     /**
      * (Updatable) List of User attributes whose values are not allowed in the password.
      *
@@ -206,7 +206,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedUserAttributeValues!: pulumi.Output<string[]>;
+    declare public readonly disallowedUserAttributeValues: pulumi.Output<string[]>;
     /**
      * (Updatable) The number of distinct characters between old password and new password
      *
@@ -221,7 +221,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly distinctCharacters!: pulumi.Output<number>;
+    declare public readonly distinctCharacters: pulumi.Output<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -235,7 +235,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -248,7 +248,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      *
@@ -261,7 +261,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly firstNameDisallowed!: pulumi.Output<boolean>;
+    declare public readonly firstNameDisallowed: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      *
@@ -274,7 +274,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly forcePasswordReset!: pulumi.Output<boolean>;
+    declare public readonly forcePasswordReset: pulumi.Output<boolean>;
     /**
      * (Updatable) A list of groups that the password policy belongs to.
      *
@@ -291,7 +291,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly groups!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyGroup[]>;
+    declare public readonly groups: pulumi.Output<outputs.Identity.DomainsPasswordPolicyGroup[]>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -303,11 +303,11 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -319,7 +319,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -333,7 +333,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -346,7 +346,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      *
@@ -359,7 +359,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly lastNameDisallowed!: pulumi.Output<boolean>;
+    declare public readonly lastNameDisallowed: pulumi.Output<boolean>;
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      *
@@ -372,7 +372,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly lockoutDuration!: pulumi.Output<number>;
+    declare public readonly lockoutDuration: pulumi.Output<number>;
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
      *
@@ -385,7 +385,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxIncorrectAttempts!: pulumi.Output<number>;
+    declare public readonly maxIncorrectAttempts: pulumi.Output<number>;
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      *
@@ -399,7 +399,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxLength!: pulumi.Output<number>;
+    declare public readonly maxLength: pulumi.Output<number>;
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      *
@@ -412,7 +412,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxRepeatedChars!: pulumi.Output<number>;
+    declare public readonly maxRepeatedChars: pulumi.Output<number>;
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      *
@@ -425,7 +425,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxSpecialChars!: pulumi.Output<number>;
+    declare public readonly maxSpecialChars: pulumi.Output<number>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -439,7 +439,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsPasswordPolicyMeta[]>;
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      *
@@ -452,7 +452,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minAlphaNumerals!: pulumi.Output<number>;
+    declare public readonly minAlphaNumerals: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      *
@@ -465,7 +465,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minAlphas!: pulumi.Output<number>;
+    declare public readonly minAlphas: pulumi.Output<number>;
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      *
@@ -478,7 +478,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minLength!: pulumi.Output<number>;
+    declare public readonly minLength: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      *
@@ -491,7 +491,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minLowerCase!: pulumi.Output<number>;
+    declare public readonly minLowerCase: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      *
@@ -504,7 +504,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minNumerals!: pulumi.Output<number>;
+    declare public readonly minNumerals: pulumi.Output<number>;
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
      *
@@ -517,7 +517,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minPasswordAge!: pulumi.Output<number>;
+    declare public readonly minPasswordAge: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      *
@@ -530,7 +530,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minSpecialChars!: pulumi.Output<number>;
+    declare public readonly minSpecialChars: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      *
@@ -543,7 +543,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minUniqueChars!: pulumi.Output<number>;
+    declare public readonly minUniqueChars: pulumi.Output<number>;
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      *
@@ -556,7 +556,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minUpperCase!: pulumi.Output<number>;
+    declare public readonly minUpperCase: pulumi.Output<number>;
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      *
@@ -570,7 +570,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The number of passwords that will be kept in history that may not be used as a password
      *
@@ -583,7 +583,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly numPasswordsInHistory!: pulumi.Output<number>;
+    declare public readonly numPasswordsInHistory: pulumi.Output<number>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -597,7 +597,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
      *
@@ -610,7 +610,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly passwordExpireWarning!: pulumi.Output<number>;
+    declare public readonly passwordExpireWarning: pulumi.Output<number>;
     /**
      * (Updatable) The number of days after which the password expires automatically
      *
@@ -623,7 +623,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly passwordExpiresAfter!: pulumi.Output<number>;
+    declare public readonly passwordExpiresAfter: pulumi.Output<number>;
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
      *
@@ -636,7 +636,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly passwordStrength!: pulumi.Output<string>;
+    declare public readonly passwordStrength: pulumi.Output<string>;
     /**
      * (Updatable) Password policy priority
      *
@@ -652,7 +652,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: server
      */
-    public readonly priority!: pulumi.Output<number>;
+    declare public readonly priority: pulumi.Output<number>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      *
@@ -665,11 +665,11 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly requiredChars!: pulumi.Output<string>;
+    declare public readonly requiredChars: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -683,7 +683,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) Indicates that the password must begin with an alphabetic character
      *
@@ -696,7 +696,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly startsWithAlphabet!: pulumi.Output<boolean>;
+    declare public readonly startsWithAlphabet: pulumi.Output<boolean>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -710,7 +710,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsPasswordPolicyTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -724,7 +724,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      *
@@ -741,7 +741,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userNameDisallowed!: pulumi.Output<boolean>;
+    declare public readonly userNameDisallowed: pulumi.Output<boolean>;
 
     /**
      * Create a DomainsPasswordPolicy resource with the given unique name, arguments, and options.
@@ -756,114 +756,114 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsPasswordPolicyState | undefined;
-            resourceInputs["allowedChars"] = state ? state.allowedChars : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["configuredPasswordPolicyRules"] = state ? state.configuredPasswordPolicyRules : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dictionaryDelimiter"] = state ? state.dictionaryDelimiter : undefined;
-            resourceInputs["dictionaryLocation"] = state ? state.dictionaryLocation : undefined;
-            resourceInputs["dictionaryWordDisallowed"] = state ? state.dictionaryWordDisallowed : undefined;
-            resourceInputs["disallowedChars"] = state ? state.disallowedChars : undefined;
-            resourceInputs["disallowedSubstrings"] = state ? state.disallowedSubstrings : undefined;
-            resourceInputs["disallowedUserAttributeValues"] = state ? state.disallowedUserAttributeValues : undefined;
-            resourceInputs["distinctCharacters"] = state ? state.distinctCharacters : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["firstNameDisallowed"] = state ? state.firstNameDisallowed : undefined;
-            resourceInputs["forcePasswordReset"] = state ? state.forcePasswordReset : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["lastNameDisallowed"] = state ? state.lastNameDisallowed : undefined;
-            resourceInputs["lockoutDuration"] = state ? state.lockoutDuration : undefined;
-            resourceInputs["maxIncorrectAttempts"] = state ? state.maxIncorrectAttempts : undefined;
-            resourceInputs["maxLength"] = state ? state.maxLength : undefined;
-            resourceInputs["maxRepeatedChars"] = state ? state.maxRepeatedChars : undefined;
-            resourceInputs["maxSpecialChars"] = state ? state.maxSpecialChars : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["minAlphaNumerals"] = state ? state.minAlphaNumerals : undefined;
-            resourceInputs["minAlphas"] = state ? state.minAlphas : undefined;
-            resourceInputs["minLength"] = state ? state.minLength : undefined;
-            resourceInputs["minLowerCase"] = state ? state.minLowerCase : undefined;
-            resourceInputs["minNumerals"] = state ? state.minNumerals : undefined;
-            resourceInputs["minPasswordAge"] = state ? state.minPasswordAge : undefined;
-            resourceInputs["minSpecialChars"] = state ? state.minSpecialChars : undefined;
-            resourceInputs["minUniqueChars"] = state ? state.minUniqueChars : undefined;
-            resourceInputs["minUpperCase"] = state ? state.minUpperCase : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["numPasswordsInHistory"] = state ? state.numPasswordsInHistory : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["passwordExpireWarning"] = state ? state.passwordExpireWarning : undefined;
-            resourceInputs["passwordExpiresAfter"] = state ? state.passwordExpiresAfter : undefined;
-            resourceInputs["passwordStrength"] = state ? state.passwordStrength : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["requiredChars"] = state ? state.requiredChars : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["startsWithAlphabet"] = state ? state.startsWithAlphabet : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["userNameDisallowed"] = state ? state.userNameDisallowed : undefined;
+            resourceInputs["allowedChars"] = state?.allowedChars;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["configuredPasswordPolicyRules"] = state?.configuredPasswordPolicyRules;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dictionaryDelimiter"] = state?.dictionaryDelimiter;
+            resourceInputs["dictionaryLocation"] = state?.dictionaryLocation;
+            resourceInputs["dictionaryWordDisallowed"] = state?.dictionaryWordDisallowed;
+            resourceInputs["disallowedChars"] = state?.disallowedChars;
+            resourceInputs["disallowedSubstrings"] = state?.disallowedSubstrings;
+            resourceInputs["disallowedUserAttributeValues"] = state?.disallowedUserAttributeValues;
+            resourceInputs["distinctCharacters"] = state?.distinctCharacters;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["firstNameDisallowed"] = state?.firstNameDisallowed;
+            resourceInputs["forcePasswordReset"] = state?.forcePasswordReset;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["lastNameDisallowed"] = state?.lastNameDisallowed;
+            resourceInputs["lockoutDuration"] = state?.lockoutDuration;
+            resourceInputs["maxIncorrectAttempts"] = state?.maxIncorrectAttempts;
+            resourceInputs["maxLength"] = state?.maxLength;
+            resourceInputs["maxRepeatedChars"] = state?.maxRepeatedChars;
+            resourceInputs["maxSpecialChars"] = state?.maxSpecialChars;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["minAlphaNumerals"] = state?.minAlphaNumerals;
+            resourceInputs["minAlphas"] = state?.minAlphas;
+            resourceInputs["minLength"] = state?.minLength;
+            resourceInputs["minLowerCase"] = state?.minLowerCase;
+            resourceInputs["minNumerals"] = state?.minNumerals;
+            resourceInputs["minPasswordAge"] = state?.minPasswordAge;
+            resourceInputs["minSpecialChars"] = state?.minSpecialChars;
+            resourceInputs["minUniqueChars"] = state?.minUniqueChars;
+            resourceInputs["minUpperCase"] = state?.minUpperCase;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["numPasswordsInHistory"] = state?.numPasswordsInHistory;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["passwordExpireWarning"] = state?.passwordExpireWarning;
+            resourceInputs["passwordExpiresAfter"] = state?.passwordExpiresAfter;
+            resourceInputs["passwordStrength"] = state?.passwordStrength;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["requiredChars"] = state?.requiredChars;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["startsWithAlphabet"] = state?.startsWithAlphabet;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["userNameDisallowed"] = state?.userNameDisallowed;
         } else {
             const args = argsOrState as DomainsPasswordPolicyArgs | undefined;
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["allowedChars"] = args ? args.allowedChars : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dictionaryDelimiter"] = args ? args.dictionaryDelimiter : undefined;
-            resourceInputs["dictionaryLocation"] = args ? args.dictionaryLocation : undefined;
-            resourceInputs["dictionaryWordDisallowed"] = args ? args.dictionaryWordDisallowed : undefined;
-            resourceInputs["disallowedChars"] = args ? args.disallowedChars : undefined;
-            resourceInputs["disallowedSubstrings"] = args ? args.disallowedSubstrings : undefined;
-            resourceInputs["disallowedUserAttributeValues"] = args ? args.disallowedUserAttributeValues : undefined;
-            resourceInputs["distinctCharacters"] = args ? args.distinctCharacters : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["firstNameDisallowed"] = args ? args.firstNameDisallowed : undefined;
-            resourceInputs["forcePasswordReset"] = args ? args.forcePasswordReset : undefined;
-            resourceInputs["groups"] = args ? args.groups : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["lastNameDisallowed"] = args ? args.lastNameDisallowed : undefined;
-            resourceInputs["lockoutDuration"] = args ? args.lockoutDuration : undefined;
-            resourceInputs["maxIncorrectAttempts"] = args ? args.maxIncorrectAttempts : undefined;
-            resourceInputs["maxLength"] = args ? args.maxLength : undefined;
-            resourceInputs["maxRepeatedChars"] = args ? args.maxRepeatedChars : undefined;
-            resourceInputs["maxSpecialChars"] = args ? args.maxSpecialChars : undefined;
-            resourceInputs["minAlphaNumerals"] = args ? args.minAlphaNumerals : undefined;
-            resourceInputs["minAlphas"] = args ? args.minAlphas : undefined;
-            resourceInputs["minLength"] = args ? args.minLength : undefined;
-            resourceInputs["minLowerCase"] = args ? args.minLowerCase : undefined;
-            resourceInputs["minNumerals"] = args ? args.minNumerals : undefined;
-            resourceInputs["minPasswordAge"] = args ? args.minPasswordAge : undefined;
-            resourceInputs["minSpecialChars"] = args ? args.minSpecialChars : undefined;
-            resourceInputs["minUniqueChars"] = args ? args.minUniqueChars : undefined;
-            resourceInputs["minUpperCase"] = args ? args.minUpperCase : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["numPasswordsInHistory"] = args ? args.numPasswordsInHistory : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["passwordExpireWarning"] = args ? args.passwordExpireWarning : undefined;
-            resourceInputs["passwordExpiresAfter"] = args ? args.passwordExpiresAfter : undefined;
+            resourceInputs["allowedChars"] = args?.allowedChars;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dictionaryDelimiter"] = args?.dictionaryDelimiter;
+            resourceInputs["dictionaryLocation"] = args?.dictionaryLocation;
+            resourceInputs["dictionaryWordDisallowed"] = args?.dictionaryWordDisallowed;
+            resourceInputs["disallowedChars"] = args?.disallowedChars;
+            resourceInputs["disallowedSubstrings"] = args?.disallowedSubstrings;
+            resourceInputs["disallowedUserAttributeValues"] = args?.disallowedUserAttributeValues;
+            resourceInputs["distinctCharacters"] = args?.distinctCharacters;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["firstNameDisallowed"] = args?.firstNameDisallowed;
+            resourceInputs["forcePasswordReset"] = args?.forcePasswordReset;
+            resourceInputs["groups"] = args?.groups;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["lastNameDisallowed"] = args?.lastNameDisallowed;
+            resourceInputs["lockoutDuration"] = args?.lockoutDuration;
+            resourceInputs["maxIncorrectAttempts"] = args?.maxIncorrectAttempts;
+            resourceInputs["maxLength"] = args?.maxLength;
+            resourceInputs["maxRepeatedChars"] = args?.maxRepeatedChars;
+            resourceInputs["maxSpecialChars"] = args?.maxSpecialChars;
+            resourceInputs["minAlphaNumerals"] = args?.minAlphaNumerals;
+            resourceInputs["minAlphas"] = args?.minAlphas;
+            resourceInputs["minLength"] = args?.minLength;
+            resourceInputs["minLowerCase"] = args?.minLowerCase;
+            resourceInputs["minNumerals"] = args?.minNumerals;
+            resourceInputs["minPasswordAge"] = args?.minPasswordAge;
+            resourceInputs["minSpecialChars"] = args?.minSpecialChars;
+            resourceInputs["minUniqueChars"] = args?.minUniqueChars;
+            resourceInputs["minUpperCase"] = args?.minUpperCase;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["numPasswordsInHistory"] = args?.numPasswordsInHistory;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["passwordExpireWarning"] = args?.passwordExpireWarning;
+            resourceInputs["passwordExpiresAfter"] = args?.passwordExpiresAfter;
             resourceInputs["passwordStrength"] = args?.passwordStrength ? pulumi.secret(args.passwordStrength) : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
-            resourceInputs["requiredChars"] = args ? args.requiredChars : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["startsWithAlphabet"] = args ? args.startsWithAlphabet : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["userNameDisallowed"] = args ? args.userNameDisallowed : undefined;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["requiredChars"] = args?.requiredChars;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["startsWithAlphabet"] = args?.startsWithAlphabet;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["userNameDisallowed"] = args?.userNameDisallowed;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["configuredPasswordPolicyRules"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;

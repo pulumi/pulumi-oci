@@ -117,53 +117,53 @@ export class ClusterNetwork extends pulumi.CustomResource {
      *
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
      */
-    public readonly clusterConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration>;
+    declare public readonly clusterConfiguration: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
-    public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hpcIslandId: pulumi.Output<string>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      *
      * Each cluster network can have one instance pool.
      */
-    public readonly instancePools!: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
+    declare public readonly instancePools: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
     /**
      * The list of network block OCIDs of the HPC island.
      */
-    public /*out*/ readonly networkBlockIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly networkBlockIds: pulumi.Output<string[]>;
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */
-    public readonly placementConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkPlacementConfiguration>;
+    declare public readonly placementConfiguration: pulumi.Output<outputs.Core.ClusterNetworkPlacementConfiguration>;
     /**
      * The current state of the cluster network.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ClusterNetwork resource with the given unique name, arguments, and options.
@@ -178,36 +178,36 @@ export class ClusterNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterNetworkState | undefined;
-            resourceInputs["clusterConfiguration"] = state ? state.clusterConfiguration : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hpcIslandId"] = state ? state.hpcIslandId : undefined;
-            resourceInputs["instancePools"] = state ? state.instancePools : undefined;
-            resourceInputs["networkBlockIds"] = state ? state.networkBlockIds : undefined;
-            resourceInputs["placementConfiguration"] = state ? state.placementConfiguration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["clusterConfiguration"] = state?.clusterConfiguration;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hpcIslandId"] = state?.hpcIslandId;
+            resourceInputs["instancePools"] = state?.instancePools;
+            resourceInputs["networkBlockIds"] = state?.networkBlockIds;
+            resourceInputs["placementConfiguration"] = state?.placementConfiguration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ClusterNetworkArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.instancePools === undefined) && !opts.urn) {
+            if (args?.instancePools === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instancePools'");
             }
-            if ((!args || args.placementConfiguration === undefined) && !opts.urn) {
+            if (args?.placementConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'placementConfiguration'");
             }
-            resourceInputs["clusterConfiguration"] = args ? args.clusterConfiguration : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instancePools"] = args ? args.instancePools : undefined;
-            resourceInputs["placementConfiguration"] = args ? args.placementConfiguration : undefined;
+            resourceInputs["clusterConfiguration"] = args?.clusterConfiguration;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instancePools"] = args?.instancePools;
+            resourceInputs["placementConfiguration"] = args?.placementConfiguration;
             resourceInputs["hpcIslandId"] = undefined /*out*/;
             resourceInputs["networkBlockIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

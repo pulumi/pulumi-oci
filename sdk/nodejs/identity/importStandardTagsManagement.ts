@@ -61,7 +61,7 @@ export class ImportStandardTagsManagement extends pulumi.CustomResource {
     /**
      * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The name of standard tag namespace that will be imported in bulk 
      *
@@ -69,8 +69,8 @@ export class ImportStandardTagsManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly standardTagNamespaceName!: pulumi.Output<string>;
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    declare public readonly standardTagNamespaceName: pulumi.Output<string>;
+    declare public /*out*/ readonly workRequestId: pulumi.Output<string>;
 
     /**
      * Create a ImportStandardTagsManagement resource with the given unique name, arguments, and options.
@@ -85,19 +85,19 @@ export class ImportStandardTagsManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImportStandardTagsManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["standardTagNamespaceName"] = state ? state.standardTagNamespaceName : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["standardTagNamespaceName"] = state?.standardTagNamespaceName;
+            resourceInputs["workRequestId"] = state?.workRequestId;
         } else {
             const args = argsOrState as ImportStandardTagsManagementArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.standardTagNamespaceName === undefined) && !opts.urn) {
+            if (args?.standardTagNamespaceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'standardTagNamespaceName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["standardTagNamespaceName"] = args ? args.standardTagNamespaceName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["standardTagNamespaceName"] = args?.standardTagNamespaceName;
             resourceInputs["workRequestId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

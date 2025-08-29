@@ -75,59 +75,59 @@ export class Session extends pulumi.CustomResource {
     /**
      * The unique identifier (OCID) of the bastion on which to create this session.
      */
-    public readonly bastionId!: pulumi.Output<string>;
+    declare public readonly bastionId: pulumi.Output<string>;
     /**
      * The name of the bastion that is hosting this session.
      */
-    public /*out*/ readonly bastionName!: pulumi.Output<string>;
+    declare public /*out*/ readonly bastionName: pulumi.Output<string>;
     /**
      * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
      */
-    public /*out*/ readonly bastionPublicHostKeyInfo!: pulumi.Output<string>;
+    declare public /*out*/ readonly bastionPublicHostKeyInfo: pulumi.Output<string>;
     /**
      * The username that the session uses to connect to the target resource.
      */
-    public /*out*/ readonly bastionUserName!: pulumi.Output<string>;
+    declare public /*out*/ readonly bastionUserName: pulumi.Output<string>;
     /**
      * (Updatable) The name of the session.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Public key details for a bastion session.
      */
-    public readonly keyDetails!: pulumi.Output<outputs.Bastion.SessionKeyDetails>;
+    declare public readonly keyDetails: pulumi.Output<outputs.Bastion.SessionKeyDetails>;
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      */
-    public readonly keyType!: pulumi.Output<string>;
+    declare public readonly keyType: pulumi.Output<string>;
     /**
      * A message describing the current session state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The amount of time the session can remain active.
      */
-    public readonly sessionTtlInSeconds!: pulumi.Output<number>;
+    declare public readonly sessionTtlInSeconds: pulumi.Output<number>;
     /**
      * The connection message for the session.
      */
-    public /*out*/ readonly sshMetadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly sshMetadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the session.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Details about a bastion session's target resource.
      */
-    public readonly targetResourceDetails!: pulumi.Output<outputs.Bastion.SessionTargetResourceDetails>;
+    declare public readonly targetResourceDetails: pulumi.Output<outputs.Bastion.SessionTargetResourceDetails>;
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Session resource with the given unique name, arguments, and options.
@@ -142,37 +142,37 @@ export class Session extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SessionState | undefined;
-            resourceInputs["bastionId"] = state ? state.bastionId : undefined;
-            resourceInputs["bastionName"] = state ? state.bastionName : undefined;
-            resourceInputs["bastionPublicHostKeyInfo"] = state ? state.bastionPublicHostKeyInfo : undefined;
-            resourceInputs["bastionUserName"] = state ? state.bastionUserName : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["keyDetails"] = state ? state.keyDetails : undefined;
-            resourceInputs["keyType"] = state ? state.keyType : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["sessionTtlInSeconds"] = state ? state.sessionTtlInSeconds : undefined;
-            resourceInputs["sshMetadata"] = state ? state.sshMetadata : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetResourceDetails"] = state ? state.targetResourceDetails : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bastionId"] = state?.bastionId;
+            resourceInputs["bastionName"] = state?.bastionName;
+            resourceInputs["bastionPublicHostKeyInfo"] = state?.bastionPublicHostKeyInfo;
+            resourceInputs["bastionUserName"] = state?.bastionUserName;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["keyDetails"] = state?.keyDetails;
+            resourceInputs["keyType"] = state?.keyType;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["sessionTtlInSeconds"] = state?.sessionTtlInSeconds;
+            resourceInputs["sshMetadata"] = state?.sshMetadata;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetResourceDetails"] = state?.targetResourceDetails;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SessionArgs | undefined;
-            if ((!args || args.bastionId === undefined) && !opts.urn) {
+            if (args?.bastionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bastionId'");
             }
-            if ((!args || args.keyDetails === undefined) && !opts.urn) {
+            if (args?.keyDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyDetails'");
             }
-            if ((!args || args.targetResourceDetails === undefined) && !opts.urn) {
+            if (args?.targetResourceDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetResourceDetails'");
             }
-            resourceInputs["bastionId"] = args ? args.bastionId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["keyDetails"] = args ? args.keyDetails : undefined;
-            resourceInputs["keyType"] = args ? args.keyType : undefined;
-            resourceInputs["sessionTtlInSeconds"] = args ? args.sessionTtlInSeconds : undefined;
-            resourceInputs["targetResourceDetails"] = args ? args.targetResourceDetails : undefined;
+            resourceInputs["bastionId"] = args?.bastionId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["keyDetails"] = args?.keyDetails;
+            resourceInputs["keyType"] = args?.keyType;
+            resourceInputs["sessionTtlInSeconds"] = args?.sessionTtlInSeconds;
+            resourceInputs["targetResourceDetails"] = args?.targetResourceDetails;
             resourceInputs["bastionName"] = undefined /*out*/;
             resourceInputs["bastionPublicHostKeyInfo"] = undefined /*out*/;
             resourceInputs["bastionUserName"] = undefined /*out*/;

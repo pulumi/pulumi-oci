@@ -15,8 +15,7 @@ public final class Config {
 
     private static final com.pulumi.Config config = com.pulumi.Config.of("oci");
 /**
- * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
- * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+ * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
  * 
  */
     public Optional<String> auth() {
@@ -30,16 +29,15 @@ public final class Config {
         return Codegen.stringProp("configFileProfile").config(config).get();
     }
 /**
- * (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
- * consistency problems but it also introduced performance issues on destroy operations.
+ * (Optional) Disable automatic retries for retriable errors.
+ * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
  * 
  */
     public Optional<Boolean> disableAutoRetries() {
         return Codegen.booleanProp("disableAutoRetries").config(config).get();
     }
 /**
- * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
- * console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> fingerprint() {
@@ -49,8 +47,8 @@ public final class Config {
         return Codegen.objectProp("ignoreDefinedTags", TypeShape.<List<String>>builder(List.class).addParameter(String.class).build()).config(config).get();
     }
 /**
- * (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
- * set to &#39;ApiKey&#39;, ignored otherwise.
+ * (Optional) A PEM formatted RSA private key for the user.
+ * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> privateKey() {
@@ -64,8 +62,8 @@ public final class Config {
         return Codegen.stringProp("privateKeyPassword").config(config).get();
     }
 /**
- * (Optional) The path to the user&#39;s PEM formatted private key. A private_key or a private_key_path must be provided if
- * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * (Optional) The path to the user&#39;s PEM formatted private key.
+ * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> privateKeyPath() {
@@ -86,17 +84,15 @@ public final class Config {
         return Codegen.stringProp("region").config(config).get();
     }
 /**
- * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
- * duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
- * is set to true.
+ * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+ * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
  * 
  */
     public Optional<Integer> retryDurationSeconds() {
         return Codegen.integerProp("retryDurationSeconds").config(config).get();
     }
 /**
- * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
- * Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> tenancyOcid() {
@@ -106,8 +102,7 @@ public final class Config {
         return Codegen.stringProp("testTimeMaintenanceRebootDue").config(config).get();
     }
 /**
- * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
- * auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> userOcid() {

@@ -101,59 +101,59 @@ export class CrossConnect extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment to contain the cross-connect.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
      */
-    public readonly crossConnectGroupId!: pulumi.Output<string>;
+    declare public readonly crossConnectGroupId: pulumi.Output<string>;
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      */
-    public readonly customerReferenceName!: pulumi.Output<string>;
+    declare public readonly customerReferenceName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    public readonly farCrossConnectOrCrossConnectGroupId!: pulumi.Output<string>;
+    declare public readonly farCrossConnectOrCrossConnectGroupId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
-    public readonly isActive!: pulumi.Output<boolean | undefined>;
+    declare public readonly isActive: pulumi.Output<boolean | undefined>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
-    public readonly locationName!: pulumi.Output<string>;
+    declare public readonly locationName: pulumi.Output<string>;
     /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
-    public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectMacsecProperties>;
+    declare public readonly macsecProperties: pulumi.Output<outputs.Core.CrossConnectMacsecProperties>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    public readonly nearCrossConnectOrCrossConnectGroupId!: pulumi.Output<string>;
+    declare public readonly nearCrossConnectOrCrossConnectGroupId: pulumi.Output<string>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
-    public /*out*/ readonly ociLogicalDeviceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly ociLogicalDeviceName: pulumi.Output<string>;
     /**
      * The FastConnect device that terminates the physical connection.
      */
-    public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly ociPhysicalDeviceName: pulumi.Output<string>;
     /**
      * A string identifying the meet-me room port for this cross-connect.
      */
-    public /*out*/ readonly portName!: pulumi.Output<string>;
+    declare public /*out*/ readonly portName: pulumi.Output<string>;
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
      *
@@ -161,15 +161,15 @@ export class CrossConnect extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly portSpeedShapeName!: pulumi.Output<string>;
+    declare public readonly portSpeedShapeName: pulumi.Output<string>;
     /**
      * The cross-connect's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a CrossConnect resource with the given unique name, arguments, and options.
@@ -184,46 +184,46 @@ export class CrossConnect extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CrossConnectState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["crossConnectGroupId"] = state ? state.crossConnectGroupId : undefined;
-            resourceInputs["customerReferenceName"] = state ? state.customerReferenceName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["farCrossConnectOrCrossConnectGroupId"] = state ? state.farCrossConnectOrCrossConnectGroupId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isActive"] = state ? state.isActive : undefined;
-            resourceInputs["locationName"] = state ? state.locationName : undefined;
-            resourceInputs["macsecProperties"] = state ? state.macsecProperties : undefined;
-            resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = state ? state.nearCrossConnectOrCrossConnectGroupId : undefined;
-            resourceInputs["ociLogicalDeviceName"] = state ? state.ociLogicalDeviceName : undefined;
-            resourceInputs["ociPhysicalDeviceName"] = state ? state.ociPhysicalDeviceName : undefined;
-            resourceInputs["portName"] = state ? state.portName : undefined;
-            resourceInputs["portSpeedShapeName"] = state ? state.portSpeedShapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["crossConnectGroupId"] = state?.crossConnectGroupId;
+            resourceInputs["customerReferenceName"] = state?.customerReferenceName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["farCrossConnectOrCrossConnectGroupId"] = state?.farCrossConnectOrCrossConnectGroupId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isActive"] = state?.isActive;
+            resourceInputs["locationName"] = state?.locationName;
+            resourceInputs["macsecProperties"] = state?.macsecProperties;
+            resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = state?.nearCrossConnectOrCrossConnectGroupId;
+            resourceInputs["ociLogicalDeviceName"] = state?.ociLogicalDeviceName;
+            resourceInputs["ociPhysicalDeviceName"] = state?.ociPhysicalDeviceName;
+            resourceInputs["portName"] = state?.portName;
+            resourceInputs["portSpeedShapeName"] = state?.portSpeedShapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as CrossConnectArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.locationName === undefined) && !opts.urn) {
+            if (args?.locationName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'locationName'");
             }
-            if ((!args || args.portSpeedShapeName === undefined) && !opts.urn) {
+            if (args?.portSpeedShapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'portSpeedShapeName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["crossConnectGroupId"] = args ? args.crossConnectGroupId : undefined;
-            resourceInputs["customerReferenceName"] = args ? args.customerReferenceName : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["farCrossConnectOrCrossConnectGroupId"] = args ? args.farCrossConnectOrCrossConnectGroupId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isActive"] = args ? args.isActive : undefined;
-            resourceInputs["locationName"] = args ? args.locationName : undefined;
-            resourceInputs["macsecProperties"] = args ? args.macsecProperties : undefined;
-            resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = args ? args.nearCrossConnectOrCrossConnectGroupId : undefined;
-            resourceInputs["portSpeedShapeName"] = args ? args.portSpeedShapeName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["crossConnectGroupId"] = args?.crossConnectGroupId;
+            resourceInputs["customerReferenceName"] = args?.customerReferenceName;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["farCrossConnectOrCrossConnectGroupId"] = args?.farCrossConnectOrCrossConnectGroupId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isActive"] = args?.isActive;
+            resourceInputs["locationName"] = args?.locationName;
+            resourceInputs["macsecProperties"] = args?.macsecProperties;
+            resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = args?.nearCrossConnectOrCrossConnectGroupId;
+            resourceInputs["portSpeedShapeName"] = args?.portSpeedShapeName;
             resourceInputs["ociLogicalDeviceName"] = undefined /*out*/;
             resourceInputs["ociPhysicalDeviceName"] = undefined /*out*/;
             resourceInputs["portName"] = undefined /*out*/;

@@ -67,23 +67,23 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The OCID of the mapped customer compartment.
      */
-    public readonly mappedCompartmentId!: pulumi.Output<string>;
+    declare public readonly mappedCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the mapped customer tenancy.
      */
-    public /*out*/ readonly mappedTenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly mappedTenancyId: pulumi.Output<string>;
     /**
      * The namespace of the workloadMapping.
      *
@@ -91,15 +91,15 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The state of the workloadMapping.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a ClusterWorkloadMapping resource with the given unique name, arguments, and options.
@@ -114,30 +114,30 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterWorkloadMappingState | undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["mappedCompartmentId"] = state ? state.mappedCompartmentId : undefined;
-            resourceInputs["mappedTenancyId"] = state ? state.mappedTenancyId : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["mappedCompartmentId"] = state?.mappedCompartmentId;
+            resourceInputs["mappedTenancyId"] = state?.mappedTenancyId;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ClusterWorkloadMappingArgs | undefined;
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            if ((!args || args.mappedCompartmentId === undefined) && !opts.urn) {
+            if (args?.mappedCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mappedCompartmentId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["mappedCompartmentId"] = args ? args.mappedCompartmentId : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["mappedCompartmentId"] = args?.mappedCompartmentId;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["mappedTenancyId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

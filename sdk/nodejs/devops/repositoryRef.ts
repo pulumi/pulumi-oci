@@ -63,31 +63,31 @@ export class RepositoryRef extends pulumi.CustomResource {
     /**
      * (Updatable) Commit ID pointed to by the new branch.
      */
-    public readonly commitId!: pulumi.Output<string>;
+    declare public readonly commitId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique full reference name inside a repository.
      */
-    public /*out*/ readonly fullRefName!: pulumi.Output<string>;
+    declare public /*out*/ readonly fullRefName: pulumi.Output<string>;
     /**
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      */
-    public readonly objectId!: pulumi.Output<string>;
+    declare public readonly objectId: pulumi.Output<string>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    public readonly refName!: pulumi.Output<string>;
+    declare public readonly refName: pulumi.Output<string>;
     /**
      * (Updatable) The type of reference (BRANCH or TAG).
      */
-    public readonly refType!: pulumi.Output<string>;
+    declare public readonly refType: pulumi.Output<string>;
     /**
      * Unique repository identifier.
      *
@@ -95,7 +95,7 @@ export class RepositoryRef extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repositoryId!: pulumi.Output<string>;
+    declare public readonly repositoryId: pulumi.Output<string>;
 
     /**
      * Create a RepositoryRef resource with the given unique name, arguments, and options.
@@ -110,30 +110,30 @@ export class RepositoryRef extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RepositoryRefState | undefined;
-            resourceInputs["commitId"] = state ? state.commitId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["fullRefName"] = state ? state.fullRefName : undefined;
-            resourceInputs["objectId"] = state ? state.objectId : undefined;
-            resourceInputs["refName"] = state ? state.refName : undefined;
-            resourceInputs["refType"] = state ? state.refType : undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
+            resourceInputs["commitId"] = state?.commitId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["fullRefName"] = state?.fullRefName;
+            resourceInputs["objectId"] = state?.objectId;
+            resourceInputs["refName"] = state?.refName;
+            resourceInputs["refType"] = state?.refType;
+            resourceInputs["repositoryId"] = state?.repositoryId;
         } else {
             const args = argsOrState as RepositoryRefArgs | undefined;
-            if ((!args || args.refName === undefined) && !opts.urn) {
+            if (args?.refName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'refName'");
             }
-            if ((!args || args.refType === undefined) && !opts.urn) {
+            if (args?.refType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'refType'");
             }
-            if ((!args || args.repositoryId === undefined) && !opts.urn) {
+            if (args?.repositoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryId'");
             }
-            resourceInputs["commitId"] = args ? args.commitId : undefined;
-            resourceInputs["objectId"] = args ? args.objectId : undefined;
-            resourceInputs["refName"] = args ? args.refName : undefined;
-            resourceInputs["refType"] = args ? args.refType : undefined;
-            resourceInputs["repositoryId"] = args ? args.repositoryId : undefined;
+            resourceInputs["commitId"] = args?.commitId;
+            resourceInputs["objectId"] = args?.objectId;
+            resourceInputs["refName"] = args?.refName;
+            resourceInputs["refType"] = args?.refType;
+            resourceInputs["repositoryId"] = args?.repositoryId;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["fullRefName"] = undefined /*out*/;

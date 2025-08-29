@@ -57,7 +57,7 @@ export class PurgeCache extends pulumi.CustomResource {
     /**
      * A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
      */
-    public readonly resources!: pulumi.Output<string[] | undefined>;
+    declare public readonly resources: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      *
@@ -65,7 +65,7 @@ export class PurgeCache extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly waasPolicyId!: pulumi.Output<string>;
+    declare public readonly waasPolicyId: pulumi.Output<string>;
 
     /**
      * Create a PurgeCache resource with the given unique name, arguments, and options.
@@ -80,15 +80,15 @@ export class PurgeCache extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PurgeCacheState | undefined;
-            resourceInputs["resources"] = state ? state.resources : undefined;
-            resourceInputs["waasPolicyId"] = state ? state.waasPolicyId : undefined;
+            resourceInputs["resources"] = state?.resources;
+            resourceInputs["waasPolicyId"] = state?.waasPolicyId;
         } else {
             const args = argsOrState as PurgeCacheArgs | undefined;
-            if ((!args || args.waasPolicyId === undefined) && !opts.urn) {
+            if (args?.waasPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'waasPolicyId'");
             }
-            resourceInputs["resources"] = args ? args.resources : undefined;
-            resourceInputs["waasPolicyId"] = args ? args.waasPolicyId : undefined;
+            resourceInputs["resources"] = args?.resources;
+            resourceInputs["waasPolicyId"] = args?.waasPolicyId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PurgeCache.__pulumiType, name, resourceInputs, opts);

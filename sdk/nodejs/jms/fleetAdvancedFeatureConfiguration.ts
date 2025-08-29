@@ -117,43 +117,43 @@ export class FleetAdvancedFeatureConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) AdvancedUsageTracking configuration
      */
-    public readonly advancedUsageTracking!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking>;
+    declare public readonly advancedUsageTracking: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationAdvancedUsageTracking>;
     /**
      * (Updatable) Bucket name required to store JFR and related data.
      */
-    public readonly analyticBucketName!: pulumi.Output<string>;
+    declare public readonly analyticBucketName: pulumi.Output<string>;
     /**
      * (Updatable) Namespace for the Fleet advanced feature.
      */
-    public readonly analyticNamespace!: pulumi.Output<string>;
+    declare public readonly analyticNamespace: pulumi.Output<string>;
     /**
      * (Updatable) CryptoEventAnalysis configuration
      */
-    public readonly cryptoEventAnalysis!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis>;
+    declare public readonly cryptoEventAnalysis: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysis>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * (Updatable) JavaMigrationAnalysis configuration
      */
-    public readonly javaMigrationAnalysis!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis>;
+    declare public readonly javaMigrationAnalysis: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis>;
     /**
      * (Updatable) JfrRecording configuration
      */
-    public readonly jfrRecording!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording>;
+    declare public readonly jfrRecording: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationJfrRecording>;
     /**
      * (Updatable) Enable lifecycle management and set post action configurations.
      */
-    public readonly lcm!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationLcm>;
+    declare public readonly lcm: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationLcm>;
     /**
      * (Updatable) Performance tuning analysis configuration
      */
-    public readonly performanceTuningAnalysis!: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis>;
+    declare public readonly performanceTuningAnalysis: pulumi.Output<outputs.Jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis>;
     /**
      * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeLastModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastModified: pulumi.Output<string>;
 
     /**
      * Create a FleetAdvancedFeatureConfiguration resource with the given unique name, arguments, and options.
@@ -168,30 +168,30 @@ export class FleetAdvancedFeatureConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetAdvancedFeatureConfigurationState | undefined;
-            resourceInputs["advancedUsageTracking"] = state ? state.advancedUsageTracking : undefined;
-            resourceInputs["analyticBucketName"] = state ? state.analyticBucketName : undefined;
-            resourceInputs["analyticNamespace"] = state ? state.analyticNamespace : undefined;
-            resourceInputs["cryptoEventAnalysis"] = state ? state.cryptoEventAnalysis : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["javaMigrationAnalysis"] = state ? state.javaMigrationAnalysis : undefined;
-            resourceInputs["jfrRecording"] = state ? state.jfrRecording : undefined;
-            resourceInputs["lcm"] = state ? state.lcm : undefined;
-            resourceInputs["performanceTuningAnalysis"] = state ? state.performanceTuningAnalysis : undefined;
-            resourceInputs["timeLastModified"] = state ? state.timeLastModified : undefined;
+            resourceInputs["advancedUsageTracking"] = state?.advancedUsageTracking;
+            resourceInputs["analyticBucketName"] = state?.analyticBucketName;
+            resourceInputs["analyticNamespace"] = state?.analyticNamespace;
+            resourceInputs["cryptoEventAnalysis"] = state?.cryptoEventAnalysis;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["javaMigrationAnalysis"] = state?.javaMigrationAnalysis;
+            resourceInputs["jfrRecording"] = state?.jfrRecording;
+            resourceInputs["lcm"] = state?.lcm;
+            resourceInputs["performanceTuningAnalysis"] = state?.performanceTuningAnalysis;
+            resourceInputs["timeLastModified"] = state?.timeLastModified;
         } else {
             const args = argsOrState as FleetAdvancedFeatureConfigurationArgs | undefined;
-            if ((!args || args.fleetId === undefined) && !opts.urn) {
+            if (args?.fleetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fleetId'");
             }
-            resourceInputs["advancedUsageTracking"] = args ? args.advancedUsageTracking : undefined;
-            resourceInputs["analyticBucketName"] = args ? args.analyticBucketName : undefined;
-            resourceInputs["analyticNamespace"] = args ? args.analyticNamespace : undefined;
-            resourceInputs["cryptoEventAnalysis"] = args ? args.cryptoEventAnalysis : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["javaMigrationAnalysis"] = args ? args.javaMigrationAnalysis : undefined;
-            resourceInputs["jfrRecording"] = args ? args.jfrRecording : undefined;
-            resourceInputs["lcm"] = args ? args.lcm : undefined;
-            resourceInputs["performanceTuningAnalysis"] = args ? args.performanceTuningAnalysis : undefined;
+            resourceInputs["advancedUsageTracking"] = args?.advancedUsageTracking;
+            resourceInputs["analyticBucketName"] = args?.analyticBucketName;
+            resourceInputs["analyticNamespace"] = args?.analyticNamespace;
+            resourceInputs["cryptoEventAnalysis"] = args?.cryptoEventAnalysis;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["javaMigrationAnalysis"] = args?.javaMigrationAnalysis;
+            resourceInputs["jfrRecording"] = args?.jfrRecording;
+            resourceInputs["lcm"] = args?.lcm;
+            resourceInputs["performanceTuningAnalysis"] = args?.performanceTuningAnalysis;
             resourceInputs["timeLastModified"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -77,67 +77,67 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      */
-    public /*out*/ readonly databaseCompartments!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly databaseCompartments: pulumi.Output<string[]>;
     /**
      * A list of DB systems.
      */
-    public /*out*/ readonly databaseSystems!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem[]>;
+    declare public /*out*/ readonly databaseSystems: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem[]>;
     /**
      * (Updatable) The list of DB systems in the Exadata infrastructure.
      */
-    public readonly dbSystemIds!: pulumi.Output<string[]>;
+    declare public readonly dbSystemIds: pulumi.Output<string[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The unique key of the discovery request.
      */
-    public readonly discoveryKey!: pulumi.Output<string>;
+    declare public readonly discoveryKey: pulumi.Output<string>;
     /**
      * (Updatable) The name of the Exadata infrastructure.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly internalId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The rack size of the Exadata infrastructure.
      */
-    public /*out*/ readonly rackSize!: pulumi.Output<string>;
+    declare public /*out*/ readonly rackSize: pulumi.Output<string>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The Exadata storage server grid of the Exadata infrastructure.
      */
-    public /*out*/ readonly storageGrids!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid[]>;
+    declare public /*out*/ readonly storageGrids: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid[]>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      *
@@ -145,23 +145,23 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly storageServerNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly storageServerNames: pulumi.Output<string[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ExternalExadataInfrastructure resource with the given unique name, arguments, and options.
@@ -176,46 +176,46 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalExadataInfrastructureState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseCompartments"] = state ? state.databaseCompartments : undefined;
-            resourceInputs["databaseSystems"] = state ? state.databaseSystems : undefined;
-            resourceInputs["dbSystemIds"] = state ? state.dbSystemIds : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["discoveryKey"] = state ? state.discoveryKey : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["internalId"] = state ? state.internalId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["rackSize"] = state ? state.rackSize : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageGrids"] = state ? state.storageGrids : undefined;
-            resourceInputs["storageServerNames"] = state ? state.storageServerNames : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseCompartments"] = state?.databaseCompartments;
+            resourceInputs["databaseSystems"] = state?.databaseSystems;
+            resourceInputs["dbSystemIds"] = state?.dbSystemIds;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryKey"] = state?.discoveryKey;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["internalId"] = state?.internalId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["rackSize"] = state?.rackSize;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageGrids"] = state?.storageGrids;
+            resourceInputs["storageServerNames"] = state?.storageServerNames;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ExternalExadataInfrastructureArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbSystemIds === undefined) && !opts.urn) {
+            if (args?.dbSystemIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbSystemIds'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbSystemIds"] = args ? args.dbSystemIds : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["discoveryKey"] = args ? args.discoveryKey : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["storageServerNames"] = args ? args.storageServerNames : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbSystemIds"] = args?.dbSystemIds;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["discoveryKey"] = args?.discoveryKey;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["storageServerNames"] = args?.storageServerNames;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["databaseCompartments"] = undefined /*out*/;
             resourceInputs["databaseSystems"] = undefined /*out*/;

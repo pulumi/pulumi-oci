@@ -59,7 +59,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: boolean
      */
-    public readonly accountAlwaysTrustScope!: pulumi.Output<boolean>;
+    declare public readonly accountAlwaysTrustScope: pulumi.Output<boolean>;
     /**
      * (Updatable) One or more email domains allowed in a user's email field. If unassigned, any domain is allowed.
      *
@@ -72,7 +72,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedDomains!: pulumi.Output<string[]>;
+    declare public readonly allowedDomains: pulumi.Output<string[]>;
     /**
      * (Updatable) If specified, indicates the set of Urls which can be returned to after successful forgot password flow
      *
@@ -87,7 +87,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * uniqueness: none
      * * caseExact: false
      */
-    public readonly allowedForgotPasswordFlowReturnUrls!: pulumi.Output<string[]>;
+    declare public readonly allowedForgotPasswordFlowReturnUrls: pulumi.Output<string[]>;
     /**
      * (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \"notificationRedirectUrl\" in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      *
@@ -102,15 +102,15 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * uniqueness: none
      * * caseExact: false
      */
-    public readonly allowedNotificationRedirectUrls!: pulumi.Output<string[]>;
+    declare public readonly allowedNotificationRedirectUrls: pulumi.Output<string[]>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Audit Event retention period. If set, overrides default of 30 days after which Audit Events will be purged
      *
@@ -123,11 +123,11 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: integer
      */
-    public readonly auditEventRetentionPeriod!: pulumi.Output<number>;
+    declare public readonly auditEventRetentionPeriod: pulumi.Output<number>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Certificate Validation Config
      *
@@ -142,7 +142,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly certificateValidation!: pulumi.Output<outputs.Identity.DomainsSettingCertificateValidation>;
+    declare public readonly certificateValidation: pulumi.Output<outputs.Identity.DomainsSettingCertificateValidation>;
     /**
      * (Updatable) The attribute to store the cloud account name
      *
@@ -157,7 +157,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly cloudAccountName!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudAccountName: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
      *
@@ -173,7 +173,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly cloudGateCorsSettings!: pulumi.Output<outputs.Identity.DomainsSettingCloudGateCorsSettings>;
+    declare public readonly cloudGateCorsSettings: pulumi.Output<outputs.Identity.DomainsSettingCloudGateCorsSettings>;
     /**
      * (Updatable) If specified, indicates the custom SIM Migrator Url which can be used while SIM to Oracle Identity Cloud Service CloudAccount Migration.
      *
@@ -188,7 +188,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * uniqueness: none
      * * caseExact: false
      */
-    public readonly cloudMigrationCustomUrl!: pulumi.Output<string>;
+    declare public readonly cloudMigrationCustomUrl: pulumi.Output<string>;
     /**
      * (Updatable) CloudAccountMigration: Enable Custom SIM Migrator Url.
      *
@@ -203,7 +203,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly cloudMigrationUrlEnabled!: pulumi.Output<boolean>;
+    declare public readonly cloudMigrationUrlEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Name of the company in different locales
      *
@@ -215,7 +215,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly companyNames!: pulumi.Output<outputs.Identity.DomainsSettingCompanyName[]>;
+    declare public readonly companyNames: pulumi.Output<outputs.Identity.DomainsSettingCompanyName[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -229,7 +229,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) Contact emails used to notify tenants. Can be one or more user or group alias emails.
      *
@@ -242,7 +242,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly contactEmails!: pulumi.Output<string[]>;
+    declare public readonly contactEmails: pulumi.Output<string[]>;
     /**
      * (Updatable) This value indicates whether Customer Service Representatives can login and have readOnly or readWrite access.  A value of 'none' means CSR cannot login to the services.
      *
@@ -253,7 +253,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: string
      */
-    public readonly csrAccess!: pulumi.Output<string>;
+    declare public readonly csrAccess: pulumi.Output<string>;
     /**
      * (Updatable) Indicates if the branding is default or custom
      *
@@ -264,7 +264,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: boolean
      */
-    public readonly customBranding!: pulumi.Output<boolean>;
+    declare public readonly customBranding: pulumi.Output<boolean>;
     /**
      * (Updatable) Storage URL location where the sanitized custom css is located
      *
@@ -279,7 +279,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly customCssLocation!: pulumi.Output<string>;
+    declare public readonly customCssLocation: pulumi.Output<string>;
     /**
      * (Updatable) Storage URL location where the sanitized custom html is located
      *
@@ -294,7 +294,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly customHtmlLocation!: pulumi.Output<string>;
+    declare public readonly customHtmlLocation: pulumi.Output<string>;
     /**
      * (Updatable) Custom translations (JSON String)
      *
@@ -309,7 +309,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly customTranslation!: pulumi.Output<string>;
+    declare public readonly customTranslation: pulumi.Output<string>;
     /**
      * (Updatable) Default name of the Company in different locales
      *
@@ -323,7 +323,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly defaultCompanyNames!: pulumi.Output<outputs.Identity.DomainsSettingDefaultCompanyName[]>;
+    declare public /*out*/ readonly defaultCompanyNames: pulumi.Output<outputs.Identity.DomainsSettingDefaultCompanyName[]>;
     /**
      * (Updatable) References to various images
      *
@@ -337,7 +337,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly defaultImages!: pulumi.Output<outputs.Identity.DomainsSettingDefaultImage[]>;
+    declare public /*out*/ readonly defaultImages: pulumi.Output<outputs.Identity.DomainsSettingDefaultImage[]>;
     /**
      * (Updatable) Default Login text in different locales
      *
@@ -351,7 +351,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly defaultLoginTexts!: pulumi.Output<outputs.Identity.DomainsSettingDefaultLoginText[]>;
+    declare public /*out*/ readonly defaultLoginTexts: pulumi.Output<outputs.Identity.DomainsSettingDefaultLoginText[]>;
     /**
      * (Updatable) **Deprecated Since: 18.3.6**
      *
@@ -362,7 +362,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: string Indicates the default trust scope for all apps
      */
-    public readonly defaultTrustScope!: pulumi.Output<string>;
+    declare public readonly defaultTrustScope: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -376,7 +376,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) The level of diagnostic logging that is currently in effect. A level of 0 (zero) indicates that diagnostic logging is disabled. A level of 1 (one) indicates that diagnostic logging is enabled.
      *
@@ -390,7 +390,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly diagnosticLevel!: pulumi.Output<number>;
+    declare public readonly diagnosticLevel: pulumi.Output<number>;
     /**
      * (Updatable) Controls whether DiagnosticRecords for external search-operations (against SCIM resource-types in the Admin service) identify returned resources.  If true, indicates that for each successful external search-operation at least one DiagnosticRecord will include at least one identifier for each matching resource that is returned in that search-response.  If false, no DiagnosticRecord should be expected to identify returned resources for a search-operation.  The default value is false.
      *
@@ -405,7 +405,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly diagnosticRecordForSearchIdentifiesReturnedResources!: pulumi.Output<boolean>;
+    declare public readonly diagnosticRecordForSearchIdentifiesReturnedResources: pulumi.Output<boolean>;
     /**
      * (Updatable) The end time up to which diagnostic recording is switched on
      *
@@ -419,7 +419,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public /*out*/ readonly diagnosticTracingUpto!: pulumi.Output<string>;
+    declare public /*out*/ readonly diagnosticTracingUpto: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -433,7 +433,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Indicates if Terms of Use is enabled in UI
      *
@@ -448,7 +448,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly enableTermsOfUse!: pulumi.Output<boolean>;
+    declare public readonly enableTermsOfUse: pulumi.Output<boolean>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -461,7 +461,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) Maximum duration for IAM User Principal Session Token expiry
      *
@@ -476,7 +476,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly iamUpstSessionExpiry!: pulumi.Output<number>;
+    declare public readonly iamUpstSessionExpiry: pulumi.Output<number>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -488,11 +488,11 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsSettingIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsSettingIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -504,7 +504,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsSettingIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsSettingIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -518,7 +518,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -531,7 +531,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) References to various images
      *
@@ -543,7 +543,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly images!: pulumi.Output<outputs.Identity.DomainsSettingImage[]>;
+    declare public readonly images: pulumi.Output<outputs.Identity.DomainsSettingImage[]>;
     /**
      * (Updatable) Indicates if 'hosted' option was selected
      *
@@ -558,7 +558,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isHostedPage!: pulumi.Output<boolean>;
+    declare public readonly isHostedPage: pulumi.Output<boolean>;
     /**
      * (Updatable) Tenant issuer.
      *
@@ -573,7 +573,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly issuer!: pulumi.Output<string>;
+    declare public readonly issuer: pulumi.Output<string>;
     /**
      * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -588,7 +588,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly locale!: pulumi.Output<string>;
+    declare public readonly locale: pulumi.Output<string>;
     /**
      * (Updatable) Login text in different locales
      *
@@ -600,7 +600,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly loginTexts!: pulumi.Output<outputs.Identity.DomainsSettingLoginText[]>;
+    declare public readonly loginTexts: pulumi.Output<outputs.Identity.DomainsSettingLoginText[]>;
     /**
      * (Updatable) Limit the maximum return of CMVA for an App
      *
@@ -615,7 +615,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxNoOfAppCmvaToReturn!: pulumi.Output<number>;
+    declare public readonly maxNoOfAppCmvaToReturn: pulumi.Output<number>;
     /**
      * (Updatable) Limit the maximum return of members for an AppRole
      *
@@ -630,7 +630,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxNoOfAppRoleMembersToReturn!: pulumi.Output<number>;
+    declare public readonly maxNoOfAppRoleMembersToReturn: pulumi.Output<number>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -644,7 +644,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSettingMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsSettingMeta[]>;
     /**
      * (Updatable) Database Migration Status
      *
@@ -659,7 +659,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly migrationStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly migrationStatus: pulumi.Output<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -673,7 +673,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) On-Premises provisioning feature toggle.
      *
@@ -688,7 +688,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly onPremisesProvisioning!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly onPremisesProvisioning: pulumi.Output<boolean>;
     /**
      * (Updatable) Preferred written or spoken language used for localized user interfaces
      *
@@ -703,7 +703,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly preferredLanguage!: pulumi.Output<string>;
+    declare public readonly preferredLanguage: pulumi.Output<string>;
     /**
      * (Updatable) Previous Tenant issuer. This is an Oracle Identity Cloud Service internal attribute which is not meant to be directly modified by ID Admin. Even if the request body (Settings) contains this attribute, the actual value will be set according to the Oracle Identity Cloud Service internal logic rather than solely based on the value provided in the request payload.
      *
@@ -718,7 +718,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly prevIssuer!: pulumi.Output<string>;
+    declare public readonly prevIssuer: pulumi.Output<string>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -733,7 +733,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly privacyPolicyUrl!: pulumi.Output<string>;
+    declare public readonly privacyPolicyUrl: pulumi.Output<string>;
     /**
      * (Updatable) Purge Configs for different Resource Types
      *
@@ -747,7 +747,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly purgeConfigs!: pulumi.Output<outputs.Identity.DomainsSettingPurgeConfig[]>;
+    declare public readonly purgeConfigs: pulumi.Output<outputs.Identity.DomainsSettingPurgeConfig[]>;
     /**
      * (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \"password\".
      *
@@ -760,7 +760,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: string
      */
-    public readonly reAuthFactors!: pulumi.Output<string[]>;
+    declare public readonly reAuthFactors: pulumi.Output<string[]>;
     /**
      * (Updatable) Specifies whether re-authentication is required or not when a user changes one of their security factors such as password or email. Default is true to ensure more secure behavior.
      *
@@ -775,11 +775,11 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly reAuthWhenChangingMyAuthenticationFactors!: pulumi.Output<boolean>;
+    declare public readonly reAuthWhenChangingMyAuthenticationFactors: pulumi.Output<boolean>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -793,7 +793,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) By default, a service admin can list all users in stripe. If true, a service admin cannot list other users.
      *
@@ -807,11 +807,11 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: boolean
      */
-    public readonly serviceAdminCannotListOtherUsers!: pulumi.Output<boolean>;
+    declare public readonly serviceAdminCannotListOtherUsers: pulumi.Output<boolean>;
     /**
      * ID of the resource
      */
-    public readonly settingId!: pulumi.Output<string>;
+    declare public readonly settingId: pulumi.Output<string>;
     /**
      * (Updatable) Indicates if access on SigningCert is allowed to public or not
      *
@@ -824,7 +824,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: boolean
      */
-    public readonly signingCertPublicAccess!: pulumi.Output<boolean>;
+    declare public readonly signingCertPublicAccess: pulumi.Output<boolean>;
     /**
      * (Updatable) **Added In:** 20.1.3
      *
@@ -837,7 +837,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none Subject mapping user profile attribute. The input format should be SCIM compliant. This attribute should be of type String and multivalued to false.
      */
-    public readonly subMappingAttr!: pulumi.Output<string>;
+    declare public readonly subMappingAttr: pulumi.Output<string>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -851,7 +851,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsSettingTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsSettingTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -865,7 +865,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) Custom claims associated with the specific tenant
      *
@@ -880,7 +880,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tenantCustomClaims!: pulumi.Output<outputs.Identity.DomainsSettingTenantCustomClaim[]>;
+    declare public readonly tenantCustomClaims: pulumi.Output<outputs.Identity.DomainsSettingTenantCustomClaim[]>;
     /**
      * (Updatable) Terms of Use URL
      *
@@ -895,7 +895,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly termsOfUseUrl!: pulumi.Output<string>;
+    declare public readonly termsOfUseUrl: pulumi.Output<string>;
     /**
      * (Updatable) User's timezone
      *
@@ -914,7 +914,7 @@ export class DomainsSetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
 
     /**
      * Create a DomainsSetting resource with the given unique name, arguments, and options.
@@ -929,136 +929,136 @@ export class DomainsSetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsSettingState | undefined;
-            resourceInputs["accountAlwaysTrustScope"] = state ? state.accountAlwaysTrustScope : undefined;
-            resourceInputs["allowedDomains"] = state ? state.allowedDomains : undefined;
-            resourceInputs["allowedForgotPasswordFlowReturnUrls"] = state ? state.allowedForgotPasswordFlowReturnUrls : undefined;
-            resourceInputs["allowedNotificationRedirectUrls"] = state ? state.allowedNotificationRedirectUrls : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["auditEventRetentionPeriod"] = state ? state.auditEventRetentionPeriod : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["certificateValidation"] = state ? state.certificateValidation : undefined;
-            resourceInputs["cloudAccountName"] = state ? state.cloudAccountName : undefined;
-            resourceInputs["cloudGateCorsSettings"] = state ? state.cloudGateCorsSettings : undefined;
-            resourceInputs["cloudMigrationCustomUrl"] = state ? state.cloudMigrationCustomUrl : undefined;
-            resourceInputs["cloudMigrationUrlEnabled"] = state ? state.cloudMigrationUrlEnabled : undefined;
-            resourceInputs["companyNames"] = state ? state.companyNames : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["contactEmails"] = state ? state.contactEmails : undefined;
-            resourceInputs["csrAccess"] = state ? state.csrAccess : undefined;
-            resourceInputs["customBranding"] = state ? state.customBranding : undefined;
-            resourceInputs["customCssLocation"] = state ? state.customCssLocation : undefined;
-            resourceInputs["customHtmlLocation"] = state ? state.customHtmlLocation : undefined;
-            resourceInputs["customTranslation"] = state ? state.customTranslation : undefined;
-            resourceInputs["defaultCompanyNames"] = state ? state.defaultCompanyNames : undefined;
-            resourceInputs["defaultImages"] = state ? state.defaultImages : undefined;
-            resourceInputs["defaultLoginTexts"] = state ? state.defaultLoginTexts : undefined;
-            resourceInputs["defaultTrustScope"] = state ? state.defaultTrustScope : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["diagnosticLevel"] = state ? state.diagnosticLevel : undefined;
-            resourceInputs["diagnosticRecordForSearchIdentifiesReturnedResources"] = state ? state.diagnosticRecordForSearchIdentifiesReturnedResources : undefined;
-            resourceInputs["diagnosticTracingUpto"] = state ? state.diagnosticTracingUpto : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["enableTermsOfUse"] = state ? state.enableTermsOfUse : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["iamUpstSessionExpiry"] = state ? state.iamUpstSessionExpiry : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["images"] = state ? state.images : undefined;
-            resourceInputs["isHostedPage"] = state ? state.isHostedPage : undefined;
-            resourceInputs["issuer"] = state ? state.issuer : undefined;
-            resourceInputs["locale"] = state ? state.locale : undefined;
-            resourceInputs["loginTexts"] = state ? state.loginTexts : undefined;
-            resourceInputs["maxNoOfAppCmvaToReturn"] = state ? state.maxNoOfAppCmvaToReturn : undefined;
-            resourceInputs["maxNoOfAppRoleMembersToReturn"] = state ? state.maxNoOfAppRoleMembersToReturn : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["migrationStatus"] = state ? state.migrationStatus : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["onPremisesProvisioning"] = state ? state.onPremisesProvisioning : undefined;
-            resourceInputs["preferredLanguage"] = state ? state.preferredLanguage : undefined;
-            resourceInputs["prevIssuer"] = state ? state.prevIssuer : undefined;
-            resourceInputs["privacyPolicyUrl"] = state ? state.privacyPolicyUrl : undefined;
-            resourceInputs["purgeConfigs"] = state ? state.purgeConfigs : undefined;
-            resourceInputs["reAuthFactors"] = state ? state.reAuthFactors : undefined;
-            resourceInputs["reAuthWhenChangingMyAuthenticationFactors"] = state ? state.reAuthWhenChangingMyAuthenticationFactors : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["serviceAdminCannotListOtherUsers"] = state ? state.serviceAdminCannotListOtherUsers : undefined;
-            resourceInputs["settingId"] = state ? state.settingId : undefined;
-            resourceInputs["signingCertPublicAccess"] = state ? state.signingCertPublicAccess : undefined;
-            resourceInputs["subMappingAttr"] = state ? state.subMappingAttr : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["tenantCustomClaims"] = state ? state.tenantCustomClaims : undefined;
-            resourceInputs["termsOfUseUrl"] = state ? state.termsOfUseUrl : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
+            resourceInputs["accountAlwaysTrustScope"] = state?.accountAlwaysTrustScope;
+            resourceInputs["allowedDomains"] = state?.allowedDomains;
+            resourceInputs["allowedForgotPasswordFlowReturnUrls"] = state?.allowedForgotPasswordFlowReturnUrls;
+            resourceInputs["allowedNotificationRedirectUrls"] = state?.allowedNotificationRedirectUrls;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["auditEventRetentionPeriod"] = state?.auditEventRetentionPeriod;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["certificateValidation"] = state?.certificateValidation;
+            resourceInputs["cloudAccountName"] = state?.cloudAccountName;
+            resourceInputs["cloudGateCorsSettings"] = state?.cloudGateCorsSettings;
+            resourceInputs["cloudMigrationCustomUrl"] = state?.cloudMigrationCustomUrl;
+            resourceInputs["cloudMigrationUrlEnabled"] = state?.cloudMigrationUrlEnabled;
+            resourceInputs["companyNames"] = state?.companyNames;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["contactEmails"] = state?.contactEmails;
+            resourceInputs["csrAccess"] = state?.csrAccess;
+            resourceInputs["customBranding"] = state?.customBranding;
+            resourceInputs["customCssLocation"] = state?.customCssLocation;
+            resourceInputs["customHtmlLocation"] = state?.customHtmlLocation;
+            resourceInputs["customTranslation"] = state?.customTranslation;
+            resourceInputs["defaultCompanyNames"] = state?.defaultCompanyNames;
+            resourceInputs["defaultImages"] = state?.defaultImages;
+            resourceInputs["defaultLoginTexts"] = state?.defaultLoginTexts;
+            resourceInputs["defaultTrustScope"] = state?.defaultTrustScope;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["diagnosticLevel"] = state?.diagnosticLevel;
+            resourceInputs["diagnosticRecordForSearchIdentifiesReturnedResources"] = state?.diagnosticRecordForSearchIdentifiesReturnedResources;
+            resourceInputs["diagnosticTracingUpto"] = state?.diagnosticTracingUpto;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["enableTermsOfUse"] = state?.enableTermsOfUse;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["iamUpstSessionExpiry"] = state?.iamUpstSessionExpiry;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["images"] = state?.images;
+            resourceInputs["isHostedPage"] = state?.isHostedPage;
+            resourceInputs["issuer"] = state?.issuer;
+            resourceInputs["locale"] = state?.locale;
+            resourceInputs["loginTexts"] = state?.loginTexts;
+            resourceInputs["maxNoOfAppCmvaToReturn"] = state?.maxNoOfAppCmvaToReturn;
+            resourceInputs["maxNoOfAppRoleMembersToReturn"] = state?.maxNoOfAppRoleMembersToReturn;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["migrationStatus"] = state?.migrationStatus;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["onPremisesProvisioning"] = state?.onPremisesProvisioning;
+            resourceInputs["preferredLanguage"] = state?.preferredLanguage;
+            resourceInputs["prevIssuer"] = state?.prevIssuer;
+            resourceInputs["privacyPolicyUrl"] = state?.privacyPolicyUrl;
+            resourceInputs["purgeConfigs"] = state?.purgeConfigs;
+            resourceInputs["reAuthFactors"] = state?.reAuthFactors;
+            resourceInputs["reAuthWhenChangingMyAuthenticationFactors"] = state?.reAuthWhenChangingMyAuthenticationFactors;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["serviceAdminCannotListOtherUsers"] = state?.serviceAdminCannotListOtherUsers;
+            resourceInputs["settingId"] = state?.settingId;
+            resourceInputs["signingCertPublicAccess"] = state?.signingCertPublicAccess;
+            resourceInputs["subMappingAttr"] = state?.subMappingAttr;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["tenantCustomClaims"] = state?.tenantCustomClaims;
+            resourceInputs["termsOfUseUrl"] = state?.termsOfUseUrl;
+            resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as DomainsSettingArgs | undefined;
-            if ((!args || args.csrAccess === undefined) && !opts.urn) {
+            if (args?.csrAccess === undefined && !opts.urn) {
                 throw new Error("Missing required property 'csrAccess'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.settingId === undefined) && !opts.urn) {
+            if (args?.settingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'settingId'");
             }
-            resourceInputs["accountAlwaysTrustScope"] = args ? args.accountAlwaysTrustScope : undefined;
-            resourceInputs["allowedDomains"] = args ? args.allowedDomains : undefined;
+            resourceInputs["accountAlwaysTrustScope"] = args?.accountAlwaysTrustScope;
+            resourceInputs["allowedDomains"] = args?.allowedDomains;
             resourceInputs["allowedForgotPasswordFlowReturnUrls"] = args?.allowedForgotPasswordFlowReturnUrls ? pulumi.secret(args.allowedForgotPasswordFlowReturnUrls) : undefined;
-            resourceInputs["allowedNotificationRedirectUrls"] = args ? args.allowedNotificationRedirectUrls : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["auditEventRetentionPeriod"] = args ? args.auditEventRetentionPeriod : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["certificateValidation"] = args ? args.certificateValidation : undefined;
-            resourceInputs["cloudGateCorsSettings"] = args ? args.cloudGateCorsSettings : undefined;
-            resourceInputs["cloudMigrationCustomUrl"] = args ? args.cloudMigrationCustomUrl : undefined;
-            resourceInputs["cloudMigrationUrlEnabled"] = args ? args.cloudMigrationUrlEnabled : undefined;
-            resourceInputs["companyNames"] = args ? args.companyNames : undefined;
-            resourceInputs["contactEmails"] = args ? args.contactEmails : undefined;
-            resourceInputs["csrAccess"] = args ? args.csrAccess : undefined;
-            resourceInputs["customBranding"] = args ? args.customBranding : undefined;
-            resourceInputs["customCssLocation"] = args ? args.customCssLocation : undefined;
-            resourceInputs["customHtmlLocation"] = args ? args.customHtmlLocation : undefined;
-            resourceInputs["customTranslation"] = args ? args.customTranslation : undefined;
-            resourceInputs["defaultTrustScope"] = args ? args.defaultTrustScope : undefined;
-            resourceInputs["diagnosticLevel"] = args ? args.diagnosticLevel : undefined;
-            resourceInputs["diagnosticRecordForSearchIdentifiesReturnedResources"] = args ? args.diagnosticRecordForSearchIdentifiesReturnedResources : undefined;
-            resourceInputs["enableTermsOfUse"] = args ? args.enableTermsOfUse : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["iamUpstSessionExpiry"] = args ? args.iamUpstSessionExpiry : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["images"] = args ? args.images : undefined;
-            resourceInputs["isHostedPage"] = args ? args.isHostedPage : undefined;
-            resourceInputs["issuer"] = args ? args.issuer : undefined;
-            resourceInputs["locale"] = args ? args.locale : undefined;
-            resourceInputs["loginTexts"] = args ? args.loginTexts : undefined;
-            resourceInputs["maxNoOfAppCmvaToReturn"] = args ? args.maxNoOfAppCmvaToReturn : undefined;
-            resourceInputs["maxNoOfAppRoleMembersToReturn"] = args ? args.maxNoOfAppRoleMembersToReturn : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["preferredLanguage"] = args ? args.preferredLanguage : undefined;
-            resourceInputs["prevIssuer"] = args ? args.prevIssuer : undefined;
-            resourceInputs["privacyPolicyUrl"] = args ? args.privacyPolicyUrl : undefined;
-            resourceInputs["purgeConfigs"] = args ? args.purgeConfigs : undefined;
-            resourceInputs["reAuthFactors"] = args ? args.reAuthFactors : undefined;
-            resourceInputs["reAuthWhenChangingMyAuthenticationFactors"] = args ? args.reAuthWhenChangingMyAuthenticationFactors : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["serviceAdminCannotListOtherUsers"] = args ? args.serviceAdminCannotListOtherUsers : undefined;
-            resourceInputs["settingId"] = args ? args.settingId : undefined;
-            resourceInputs["signingCertPublicAccess"] = args ? args.signingCertPublicAccess : undefined;
-            resourceInputs["subMappingAttr"] = args ? args.subMappingAttr : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["tenantCustomClaims"] = args ? args.tenantCustomClaims : undefined;
-            resourceInputs["termsOfUseUrl"] = args ? args.termsOfUseUrl : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["allowedNotificationRedirectUrls"] = args?.allowedNotificationRedirectUrls;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["auditEventRetentionPeriod"] = args?.auditEventRetentionPeriod;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["certificateValidation"] = args?.certificateValidation;
+            resourceInputs["cloudGateCorsSettings"] = args?.cloudGateCorsSettings;
+            resourceInputs["cloudMigrationCustomUrl"] = args?.cloudMigrationCustomUrl;
+            resourceInputs["cloudMigrationUrlEnabled"] = args?.cloudMigrationUrlEnabled;
+            resourceInputs["companyNames"] = args?.companyNames;
+            resourceInputs["contactEmails"] = args?.contactEmails;
+            resourceInputs["csrAccess"] = args?.csrAccess;
+            resourceInputs["customBranding"] = args?.customBranding;
+            resourceInputs["customCssLocation"] = args?.customCssLocation;
+            resourceInputs["customHtmlLocation"] = args?.customHtmlLocation;
+            resourceInputs["customTranslation"] = args?.customTranslation;
+            resourceInputs["defaultTrustScope"] = args?.defaultTrustScope;
+            resourceInputs["diagnosticLevel"] = args?.diagnosticLevel;
+            resourceInputs["diagnosticRecordForSearchIdentifiesReturnedResources"] = args?.diagnosticRecordForSearchIdentifiesReturnedResources;
+            resourceInputs["enableTermsOfUse"] = args?.enableTermsOfUse;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["iamUpstSessionExpiry"] = args?.iamUpstSessionExpiry;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["images"] = args?.images;
+            resourceInputs["isHostedPage"] = args?.isHostedPage;
+            resourceInputs["issuer"] = args?.issuer;
+            resourceInputs["locale"] = args?.locale;
+            resourceInputs["loginTexts"] = args?.loginTexts;
+            resourceInputs["maxNoOfAppCmvaToReturn"] = args?.maxNoOfAppCmvaToReturn;
+            resourceInputs["maxNoOfAppRoleMembersToReturn"] = args?.maxNoOfAppRoleMembersToReturn;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["preferredLanguage"] = args?.preferredLanguage;
+            resourceInputs["prevIssuer"] = args?.prevIssuer;
+            resourceInputs["privacyPolicyUrl"] = args?.privacyPolicyUrl;
+            resourceInputs["purgeConfigs"] = args?.purgeConfigs;
+            resourceInputs["reAuthFactors"] = args?.reAuthFactors;
+            resourceInputs["reAuthWhenChangingMyAuthenticationFactors"] = args?.reAuthWhenChangingMyAuthenticationFactors;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["serviceAdminCannotListOtherUsers"] = args?.serviceAdminCannotListOtherUsers;
+            resourceInputs["settingId"] = args?.settingId;
+            resourceInputs["signingCertPublicAccess"] = args?.signingCertPublicAccess;
+            resourceInputs["subMappingAttr"] = args?.subMappingAttr;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["tenantCustomClaims"] = args?.tenantCustomClaims;
+            resourceInputs["termsOfUseUrl"] = args?.termsOfUseUrl;
+            resourceInputs["timezone"] = args?.timezone;
             resourceInputs["cloudAccountName"] = undefined /*out*/;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["defaultCompanyNames"] = undefined /*out*/;

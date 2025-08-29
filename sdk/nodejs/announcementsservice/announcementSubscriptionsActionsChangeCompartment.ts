@@ -62,7 +62,7 @@ export class AnnouncementSubscriptionsActionsChangeCompartment extends pulumi.Cu
     /**
      * The OCID of the announcement subscription.
      */
-    public readonly announcementSubscriptionId!: pulumi.Output<string>;
+    declare public readonly announcementSubscriptionId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
      *
@@ -70,7 +70,7 @@ export class AnnouncementSubscriptionsActionsChangeCompartment extends pulumi.Cu
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
 
     /**
      * Create a AnnouncementSubscriptionsActionsChangeCompartment resource with the given unique name, arguments, and options.
@@ -85,18 +85,18 @@ export class AnnouncementSubscriptionsActionsChangeCompartment extends pulumi.Cu
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnnouncementSubscriptionsActionsChangeCompartmentState | undefined;
-            resourceInputs["announcementSubscriptionId"] = state ? state.announcementSubscriptionId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["announcementSubscriptionId"] = state?.announcementSubscriptionId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
         } else {
             const args = argsOrState as AnnouncementSubscriptionsActionsChangeCompartmentArgs | undefined;
-            if ((!args || args.announcementSubscriptionId === undefined) && !opts.urn) {
+            if (args?.announcementSubscriptionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'announcementSubscriptionId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["announcementSubscriptionId"] = args ? args.announcementSubscriptionId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["announcementSubscriptionId"] = args?.announcementSubscriptionId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AnnouncementSubscriptionsActionsChangeCompartment.__pulumiType, name, resourceInputs, opts);

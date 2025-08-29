@@ -55,19 +55,19 @@ export class BdsInstanceReplaceNodeAction extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * The id of the nodeBackup to use for replacing the node.
      */
-    public readonly nodeBackupId!: pulumi.Output<string>;
+    declare public readonly nodeBackupId: pulumi.Output<string>;
     /**
      * Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
      */
-    public readonly nodeHostName!: pulumi.Output<string>;
+    declare public readonly nodeHostName: pulumi.Output<string>;
     /**
      * Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
      *
@@ -75,7 +75,7 @@ export class BdsInstanceReplaceNodeAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shape!: pulumi.Output<string | undefined>;
+    declare public readonly shape: pulumi.Output<string | undefined>;
 
     /**
      * Create a BdsInstanceReplaceNodeAction resource with the given unique name, arguments, and options.
@@ -90,30 +90,30 @@ export class BdsInstanceReplaceNodeAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceReplaceNodeActionState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["nodeBackupId"] = state ? state.nodeBackupId : undefined;
-            resourceInputs["nodeHostName"] = state ? state.nodeHostName : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["nodeBackupId"] = state?.nodeBackupId;
+            resourceInputs["nodeHostName"] = state?.nodeHostName;
+            resourceInputs["shape"] = state?.shape;
         } else {
             const args = argsOrState as BdsInstanceReplaceNodeActionArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.nodeBackupId === undefined) && !opts.urn) {
+            if (args?.nodeBackupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeBackupId'");
             }
-            if ((!args || args.nodeHostName === undefined) && !opts.urn) {
+            if (args?.nodeHostName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeHostName'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["nodeBackupId"] = args ? args.nodeBackupId : undefined;
-            resourceInputs["nodeHostName"] = args ? args.nodeHostName : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
+            resourceInputs["nodeBackupId"] = args?.nodeBackupId;
+            resourceInputs["nodeHostName"] = args?.nodeHostName;
+            resourceInputs["shape"] = args?.shape;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword"] };

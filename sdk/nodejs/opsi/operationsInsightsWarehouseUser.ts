@@ -72,39 +72,39 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
-    public readonly connectionPassword!: pulumi.Output<string>;
+    declare public readonly connectionPassword: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicate whether user has access to AWR data.
      */
-    public readonly isAwrDataAccess!: pulumi.Output<boolean>;
+    declare public readonly isAwrDataAccess: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicate whether user has access to EM data.
      */
-    public readonly isEmDataAccess!: pulumi.Output<boolean>;
+    declare public readonly isEmDataAccess: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicate whether user has access to OPSI data.
      */
-    public readonly isOpsiDataAccess!: pulumi.Output<boolean>;
+    declare public readonly isOpsiDataAccess: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * OPSI Warehouse OCID
      *
@@ -112,23 +112,23 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
+    declare public readonly operationsInsightsWarehouseId: pulumi.Output<string>;
     /**
      * Possible lifecycle states
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OperationsInsightsWarehouseUser resource with the given unique name, arguments, and options.
@@ -143,43 +143,43 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OperationsInsightsWarehouseUserState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionPassword"] = state ? state.connectionPassword : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAwrDataAccess"] = state ? state.isAwrDataAccess : undefined;
-            resourceInputs["isEmDataAccess"] = state ? state.isEmDataAccess : undefined;
-            resourceInputs["isOpsiDataAccess"] = state ? state.isOpsiDataAccess : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = state ? state.operationsInsightsWarehouseId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionPassword"] = state?.connectionPassword;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAwrDataAccess"] = state?.isAwrDataAccess;
+            resourceInputs["isEmDataAccess"] = state?.isEmDataAccess;
+            resourceInputs["isOpsiDataAccess"] = state?.isOpsiDataAccess;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["operationsInsightsWarehouseId"] = state?.operationsInsightsWarehouseId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OperationsInsightsWarehouseUserArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.connectionPassword === undefined) && !opts.urn) {
+            if (args?.connectionPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionPassword'");
             }
-            if ((!args || args.isAwrDataAccess === undefined) && !opts.urn) {
+            if (args?.isAwrDataAccess === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isAwrDataAccess'");
             }
-            if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
+            if (args?.operationsInsightsWarehouseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["connectionPassword"] = args?.connectionPassword ? pulumi.secret(args.connectionPassword) : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAwrDataAccess"] = args ? args.isAwrDataAccess : undefined;
-            resourceInputs["isEmDataAccess"] = args ? args.isEmDataAccess : undefined;
-            resourceInputs["isOpsiDataAccess"] = args ? args.isOpsiDataAccess : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAwrDataAccess"] = args?.isAwrDataAccess;
+            resourceInputs["isEmDataAccess"] = args?.isEmDataAccess;
+            resourceInputs["isOpsiDataAccess"] = args?.isOpsiDataAccess;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["operationsInsightsWarehouseId"] = args?.operationsInsightsWarehouseId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

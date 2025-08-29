@@ -61,7 +61,7 @@ export class CompareSecurityAssessment extends pulumi.CustomResource {
     /**
      * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
      */
-    public readonly comparisonSecurityAssessmentId!: pulumi.Output<string>;
+    declare public readonly comparisonSecurityAssessmentId: pulumi.Output<string>;
     /**
      * The OCID of the security assessment.
      *
@@ -69,7 +69,7 @@ export class CompareSecurityAssessment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityAssessmentId!: pulumi.Output<string>;
+    declare public readonly securityAssessmentId: pulumi.Output<string>;
 
     /**
      * Create a CompareSecurityAssessment resource with the given unique name, arguments, and options.
@@ -84,18 +84,18 @@ export class CompareSecurityAssessment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CompareSecurityAssessmentState | undefined;
-            resourceInputs["comparisonSecurityAssessmentId"] = state ? state.comparisonSecurityAssessmentId : undefined;
-            resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
+            resourceInputs["comparisonSecurityAssessmentId"] = state?.comparisonSecurityAssessmentId;
+            resourceInputs["securityAssessmentId"] = state?.securityAssessmentId;
         } else {
             const args = argsOrState as CompareSecurityAssessmentArgs | undefined;
-            if ((!args || args.comparisonSecurityAssessmentId === undefined) && !opts.urn) {
+            if (args?.comparisonSecurityAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'comparisonSecurityAssessmentId'");
             }
-            if ((!args || args.securityAssessmentId === undefined) && !opts.urn) {
+            if (args?.securityAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityAssessmentId'");
             }
-            resourceInputs["comparisonSecurityAssessmentId"] = args ? args.comparisonSecurityAssessmentId : undefined;
-            resourceInputs["securityAssessmentId"] = args ? args.securityAssessmentId : undefined;
+            resourceInputs["comparisonSecurityAssessmentId"] = args?.comparisonSecurityAssessmentId;
+            resourceInputs["securityAssessmentId"] = args?.securityAssessmentId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CompareSecurityAssessment.__pulumiType, name, resourceInputs, opts);

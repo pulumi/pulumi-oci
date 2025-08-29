@@ -95,107 +95,107 @@ export class Model extends pulumi.CustomResource {
     /**
      * Average precision of the trained model
      */
-    public /*out*/ readonly averagePrecision!: pulumi.Output<number>;
+    declare public /*out*/ readonly averagePrecision: pulumi.Output<number>;
     /**
      * (Updatable) Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Confidence ratio of the calculation
      */
-    public /*out*/ readonly confidenceThreshold!: pulumi.Output<number>;
+    declare public /*out*/ readonly confidenceThreshold: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A short description of the Model.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Model Identifier
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If It's true, Training is set for recommended epochs needed for quick training.
      */
-    public readonly isQuickMode!: pulumi.Output<boolean>;
+    declare public readonly isQuickMode: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The maximum duration in hours for which the training will run.
      */
-    public readonly maxTrainingDurationInHours!: pulumi.Output<number>;
+    declare public readonly maxTrainingDurationInHours: pulumi.Output<number>;
     /**
      * Complete Training Metrics for successful trained model
      */
-    public /*out*/ readonly metrics!: pulumi.Output<string>;
+    declare public /*out*/ readonly metrics: pulumi.Output<string>;
     /**
      * The  type of the model.
      */
-    public readonly modelType!: pulumi.Output<string>;
+    declare public readonly modelType: pulumi.Output<string>;
     /**
      * Model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * Precision of the trained model
      */
-    public /*out*/ readonly precision!: pulumi.Output<number>;
+    declare public /*out*/ readonly precision: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * Recall of the trained model
      */
-    public /*out*/ readonly recall!: pulumi.Output<number>;
+    declare public /*out*/ readonly recall: pulumi.Output<number>;
     /**
      * The current state of the Model.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Total number of testing Images
      */
-    public /*out*/ readonly testImageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly testImageCount: pulumi.Output<number>;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    public readonly testingDataset!: pulumi.Output<outputs.AiVision.ModelTestingDataset>;
+    declare public readonly testingDataset: pulumi.Output<outputs.AiVision.ModelTestingDataset>;
     /**
      * The time the Model was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Model was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Total number of training Images
      */
-    public /*out*/ readonly totalImageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalImageCount: pulumi.Output<number>;
     /**
      * Total hours actually used for training
      */
-    public /*out*/ readonly trainedDurationInHours!: pulumi.Output<number>;
+    declare public /*out*/ readonly trainedDurationInHours: pulumi.Output<number>;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    public readonly trainingDataset!: pulumi.Output<outputs.AiVision.ModelTrainingDataset>;
+    declare public readonly trainingDataset: pulumi.Output<outputs.AiVision.ModelTrainingDataset>;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    public readonly validationDataset!: pulumi.Output<outputs.AiVision.ModelValidationDataset>;
+    declare public readonly validationDataset: pulumi.Output<outputs.AiVision.ModelValidationDataset>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.
@@ -210,59 +210,59 @@ export class Model extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelState | undefined;
-            resourceInputs["averagePrecision"] = state ? state.averagePrecision : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["confidenceThreshold"] = state ? state.confidenceThreshold : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isQuickMode"] = state ? state.isQuickMode : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maxTrainingDurationInHours"] = state ? state.maxTrainingDurationInHours : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["precision"] = state ? state.precision : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["recall"] = state ? state.recall : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["testImageCount"] = state ? state.testImageCount : undefined;
-            resourceInputs["testingDataset"] = state ? state.testingDataset : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalImageCount"] = state ? state.totalImageCount : undefined;
-            resourceInputs["trainedDurationInHours"] = state ? state.trainedDurationInHours : undefined;
-            resourceInputs["trainingDataset"] = state ? state.trainingDataset : undefined;
-            resourceInputs["validationDataset"] = state ? state.validationDataset : undefined;
+            resourceInputs["averagePrecision"] = state?.averagePrecision;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["confidenceThreshold"] = state?.confidenceThreshold;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isQuickMode"] = state?.isQuickMode;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maxTrainingDurationInHours"] = state?.maxTrainingDurationInHours;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["precision"] = state?.precision;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["recall"] = state?.recall;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["testImageCount"] = state?.testImageCount;
+            resourceInputs["testingDataset"] = state?.testingDataset;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalImageCount"] = state?.totalImageCount;
+            resourceInputs["trainedDurationInHours"] = state?.trainedDurationInHours;
+            resourceInputs["trainingDataset"] = state?.trainingDataset;
+            resourceInputs["validationDataset"] = state?.validationDataset;
         } else {
             const args = argsOrState as ModelArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.modelType === undefined) && !opts.urn) {
+            if (args?.modelType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelType'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            if ((!args || args.trainingDataset === undefined) && !opts.urn) {
+            if (args?.trainingDataset === undefined && !opts.urn) {
                 throw new Error("Missing required property 'trainingDataset'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isQuickMode"] = args ? args.isQuickMode : undefined;
-            resourceInputs["maxTrainingDurationInHours"] = args ? args.maxTrainingDurationInHours : undefined;
-            resourceInputs["modelType"] = args ? args.modelType : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["testingDataset"] = args ? args.testingDataset : undefined;
-            resourceInputs["trainingDataset"] = args ? args.trainingDataset : undefined;
-            resourceInputs["validationDataset"] = args ? args.validationDataset : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isQuickMode"] = args?.isQuickMode;
+            resourceInputs["maxTrainingDurationInHours"] = args?.maxTrainingDurationInHours;
+            resourceInputs["modelType"] = args?.modelType;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["testingDataset"] = args?.testingDataset;
+            resourceInputs["trainingDataset"] = args?.trainingDataset;
+            resourceInputs["validationDataset"] = args?.validationDataset;
             resourceInputs["averagePrecision"] = undefined /*out*/;
             resourceInputs["confidenceThreshold"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

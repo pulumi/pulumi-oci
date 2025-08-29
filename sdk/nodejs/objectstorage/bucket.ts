@@ -85,87 +85,87 @@ export class Bucket extends pulumi.CustomResource {
     /**
      * (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
      */
-    public readonly accessType!: pulumi.Output<string | undefined>;
+    declare public readonly accessType: pulumi.Output<string | undefined>;
     /**
      * The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
      */
-    public /*out*/ readonly approximateCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly approximateCount: pulumi.Output<string>;
     /**
      * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
      */
-    public /*out*/ readonly approximateSize!: pulumi.Output<string>;
+    declare public /*out*/ readonly approximateSize: pulumi.Output<string>;
     /**
      * (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
      */
-    public readonly autoTiering!: pulumi.Output<string>;
+    declare public readonly autoTiering: pulumi.Output<string>;
     /**
      * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      */
-    public /*out*/ readonly bucketId!: pulumi.Output<string>;
+    declare public /*out*/ readonly bucketId: pulumi.Output<string>;
     /**
      * (Updatable) The ID of the compartment in which to create the bucket.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The entity tag (ETag) for the bucket.
      */
-    public /*out*/ readonly etag!: pulumi.Output<string>;
+    declare public /*out*/ readonly etag: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
-    public /*out*/ readonly isReadOnly!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isReadOnly: pulumi.Output<boolean>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly metadata: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Object Storage namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
      */
-    public readonly objectEventsEnabled!: pulumi.Output<boolean>;
+    declare public readonly objectEventsEnabled: pulumi.Output<boolean>;
     /**
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      */
-    public /*out*/ readonly objectLifecyclePolicyEtag!: pulumi.Output<string>;
+    declare public /*out*/ readonly objectLifecyclePolicyEtag: pulumi.Output<string>;
     /**
      * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
      */
-    public /*out*/ readonly replicationEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly replicationEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
      */
-    public readonly retentionRules!: pulumi.Output<outputs.ObjectStorage.BucketRetentionRule[] | undefined>;
+    declare public readonly retentionRules: pulumi.Output<outputs.ObjectStorage.BucketRetentionRule[] | undefined>;
     /**
      * The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
      */
-    public readonly storageTier!: pulumi.Output<string>;
+    declare public readonly storageTier: pulumi.Output<string>;
     /**
      * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
      *
@@ -173,7 +173,7 @@ export class Bucket extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly versioning!: pulumi.Output<string>;
+    declare public readonly versioning: pulumi.Output<string>;
 
     /**
      * Create a Bucket resource with the given unique name, arguments, and options.
@@ -188,49 +188,49 @@ export class Bucket extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BucketState | undefined;
-            resourceInputs["accessType"] = state ? state.accessType : undefined;
-            resourceInputs["approximateCount"] = state ? state.approximateCount : undefined;
-            resourceInputs["approximateSize"] = state ? state.approximateSize : undefined;
-            resourceInputs["autoTiering"] = state ? state.autoTiering : undefined;
-            resourceInputs["bucketId"] = state ? state.bucketId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["etag"] = state ? state.etag : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isReadOnly"] = state ? state.isReadOnly : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["objectEventsEnabled"] = state ? state.objectEventsEnabled : undefined;
-            resourceInputs["objectLifecyclePolicyEtag"] = state ? state.objectLifecyclePolicyEtag : undefined;
-            resourceInputs["replicationEnabled"] = state ? state.replicationEnabled : undefined;
-            resourceInputs["retentionRules"] = state ? state.retentionRules : undefined;
-            resourceInputs["storageTier"] = state ? state.storageTier : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["versioning"] = state ? state.versioning : undefined;
+            resourceInputs["accessType"] = state?.accessType;
+            resourceInputs["approximateCount"] = state?.approximateCount;
+            resourceInputs["approximateSize"] = state?.approximateSize;
+            resourceInputs["autoTiering"] = state?.autoTiering;
+            resourceInputs["bucketId"] = state?.bucketId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["etag"] = state?.etag;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isReadOnly"] = state?.isReadOnly;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["objectEventsEnabled"] = state?.objectEventsEnabled;
+            resourceInputs["objectLifecyclePolicyEtag"] = state?.objectLifecyclePolicyEtag;
+            resourceInputs["replicationEnabled"] = state?.replicationEnabled;
+            resourceInputs["retentionRules"] = state?.retentionRules;
+            resourceInputs["storageTier"] = state?.storageTier;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["versioning"] = state?.versioning;
         } else {
             const args = argsOrState as BucketArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["accessType"] = args ? args.accessType : undefined;
-            resourceInputs["autoTiering"] = args ? args.autoTiering : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["objectEventsEnabled"] = args ? args.objectEventsEnabled : undefined;
-            resourceInputs["retentionRules"] = args ? args.retentionRules : undefined;
-            resourceInputs["storageTier"] = args ? args.storageTier : undefined;
-            resourceInputs["versioning"] = args ? args.versioning : undefined;
+            resourceInputs["accessType"] = args?.accessType;
+            resourceInputs["autoTiering"] = args?.autoTiering;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["objectEventsEnabled"] = args?.objectEventsEnabled;
+            resourceInputs["retentionRules"] = args?.retentionRules;
+            resourceInputs["storageTier"] = args?.storageTier;
+            resourceInputs["versioning"] = args?.versioning;
             resourceInputs["approximateCount"] = undefined /*out*/;
             resourceInputs["approximateSize"] = undefined /*out*/;
             resourceInputs["bucketId"] = undefined /*out*/;

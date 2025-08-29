@@ -62,15 +62,15 @@ export class RunStatement extends pulumi.CustomResource {
     /**
      * The statement code to execute. Example: `println(sc.version)`
      */
-    public readonly code!: pulumi.Output<string>;
+    declare public readonly code: pulumi.Output<string>;
     /**
      * The execution output of a statement.
      */
-    public /*out*/ readonly outputs!: pulumi.Output<outputs.DataFlow.RunStatementOutput[]>;
+    declare public /*out*/ readonly outputs: pulumi.Output<outputs.DataFlow.RunStatementOutput[]>;
     /**
      * The execution progress.
      */
-    public /*out*/ readonly progress!: pulumi.Output<number>;
+    declare public /*out*/ readonly progress: pulumi.Output<number>;
     /**
      * The unique ID for the run 
      *
@@ -78,19 +78,19 @@ export class RunStatement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly runId!: pulumi.Output<string>;
+    declare public readonly runId: pulumi.Output<string>;
     /**
      * The current state of this statement.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCompleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCompleted: pulumi.Output<string>;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a RunStatement resource with the given unique name, arguments, and options.
@@ -105,23 +105,23 @@ export class RunStatement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RunStatementState | undefined;
-            resourceInputs["code"] = state ? state.code : undefined;
-            resourceInputs["outputs"] = state ? state.outputs : undefined;
-            resourceInputs["progress"] = state ? state.progress : undefined;
-            resourceInputs["runId"] = state ? state.runId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCompleted"] = state ? state.timeCompleted : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["code"] = state?.code;
+            resourceInputs["outputs"] = state?.outputs;
+            resourceInputs["progress"] = state?.progress;
+            resourceInputs["runId"] = state?.runId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCompleted"] = state?.timeCompleted;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as RunStatementArgs | undefined;
-            if ((!args || args.code === undefined) && !opts.urn) {
+            if (args?.code === undefined && !opts.urn) {
                 throw new Error("Missing required property 'code'");
             }
-            if ((!args || args.runId === undefined) && !opts.urn) {
+            if (args?.runId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'runId'");
             }
-            resourceInputs["code"] = args ? args.code : undefined;
-            resourceInputs["runId"] = args ? args.runId : undefined;
+            resourceInputs["code"] = args?.code;
+            resourceInputs["runId"] = args?.runId;
             resourceInputs["outputs"] = undefined /*out*/;
             resourceInputs["progress"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

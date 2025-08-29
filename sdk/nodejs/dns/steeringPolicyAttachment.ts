@@ -67,35 +67,35 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the steering policy attachment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The attached domain within the attached zone. `domainName` is case insensitive.
      */
-    public readonly domainName!: pulumi.Output<string>;
+    declare public readonly domainName: pulumi.Output<string>;
     /**
      * The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      */
-    public /*out*/ readonly rtypes!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly rtypes: pulumi.Output<string[]>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    declare public /*out*/ readonly self: pulumi.Output<string>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the attached steering policy.
      */
-    public readonly steeringPolicyId!: pulumi.Output<string>;
+    declare public readonly steeringPolicyId: pulumi.Output<string>;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the attached zone.
      *
@@ -103,7 +103,7 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly zoneId!: pulumi.Output<string>;
+    declare public readonly zoneId: pulumi.Output<string>;
 
     /**
      * Create a SteeringPolicyAttachment resource with the given unique name, arguments, and options.
@@ -118,30 +118,30 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SteeringPolicyAttachmentState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domainName"] = state ? state.domainName : undefined;
-            resourceInputs["rtypes"] = state ? state.rtypes : undefined;
-            resourceInputs["self"] = state ? state.self : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["steeringPolicyId"] = state ? state.steeringPolicyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["zoneId"] = state ? state.zoneId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domainName"] = state?.domainName;
+            resourceInputs["rtypes"] = state?.rtypes;
+            resourceInputs["self"] = state?.self;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["steeringPolicyId"] = state?.steeringPolicyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as SteeringPolicyAttachmentArgs | undefined;
-            if ((!args || args.domainName === undefined) && !opts.urn) {
+            if (args?.domainName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainName'");
             }
-            if ((!args || args.steeringPolicyId === undefined) && !opts.urn) {
+            if (args?.steeringPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'steeringPolicyId'");
             }
-            if ((!args || args.zoneId === undefined) && !opts.urn) {
+            if (args?.zoneId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zoneId'");
             }
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domainName"] = args ? args.domainName : undefined;
-            resourceInputs["steeringPolicyId"] = args ? args.steeringPolicyId : undefined;
-            resourceInputs["zoneId"] = args ? args.zoneId : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domainName"] = args?.domainName;
+            resourceInputs["steeringPolicyId"] = args?.steeringPolicyId;
+            resourceInputs["zoneId"] = args?.zoneId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["rtypes"] = undefined /*out*/;
             resourceInputs["self"] = undefined /*out*/;

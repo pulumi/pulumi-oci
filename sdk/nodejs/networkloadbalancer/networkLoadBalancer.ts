@@ -50,35 +50,35 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
      */
-    public readonly assignedIpv6!: pulumi.Output<string | undefined>;
+    declare public readonly assignedIpv6: pulumi.Output<string | undefined>;
     /**
      * Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
      */
-    public readonly assignedPrivateIpv4!: pulumi.Output<string | undefined>;
+    declare public readonly assignedPrivateIpv4: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Network load balancer identifier, which can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An array of IP addresses.
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress[]>;
+    declare public /*out*/ readonly ipAddresses: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerIpAddress[]>;
     /**
      * (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      */
-    public readonly isPreserveSourceDestination!: pulumi.Output<boolean>;
+    declare public readonly isPreserveSourceDestination: pulumi.Output<boolean>;
     /**
      * Whether the network load balancer has a virtual cloud network-local (private) IP address.
      *
@@ -90,18 +90,18 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly isPrivate!: pulumi.Output<boolean>;
+    declare public readonly isPrivate: pulumi.Output<boolean>;
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
      * Example: `true`
      * Example: `true`
      */
-    public readonly isSymmetricHashEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSymmetricHashEnabled: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
      *
@@ -113,27 +113,27 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      *
      * Example: ["ocid1.nsg.oc1.phx.unique_ID"]
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly networkSecurityGroupIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) IP version associated with the NLB.
      */
-    public readonly nlbIpVersion!: pulumi.Output<string>;
+    declare public readonly nlbIpVersion: pulumi.Output<string>;
     /**
      * An array of reserved Ips.
      */
-    public readonly reservedIps!: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[]>;
+    declare public readonly reservedIps: pulumi.Output<outputs.NetworkLoadBalancer.NetworkLoadBalancerReservedIp[]>;
     /**
      * (Updatable) ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the network load balancer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
      *
@@ -141,19 +141,19 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetIpv6cidr!: pulumi.Output<string | undefined>;
+    declare public readonly subnetIpv6cidr: pulumi.Output<string | undefined>;
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a NetworkLoadBalancer resource with the given unique name, arguments, and options.
@@ -168,53 +168,53 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkLoadBalancerState | undefined;
-            resourceInputs["assignedIpv6"] = state ? state.assignedIpv6 : undefined;
-            resourceInputs["assignedPrivateIpv4"] = state ? state.assignedPrivateIpv4 : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["isPreserveSourceDestination"] = state ? state.isPreserveSourceDestination : undefined;
-            resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
-            resourceInputs["isSymmetricHashEnabled"] = state ? state.isSymmetricHashEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
-            resourceInputs["nlbIpVersion"] = state ? state.nlbIpVersion : undefined;
-            resourceInputs["reservedIps"] = state ? state.reservedIps : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["subnetIpv6cidr"] = state ? state.subnetIpv6cidr : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["assignedIpv6"] = state?.assignedIpv6;
+            resourceInputs["assignedPrivateIpv4"] = state?.assignedPrivateIpv4;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["isPreserveSourceDestination"] = state?.isPreserveSourceDestination;
+            resourceInputs["isPrivate"] = state?.isPrivate;
+            resourceInputs["isSymmetricHashEnabled"] = state?.isSymmetricHashEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["nlbIpVersion"] = state?.nlbIpVersion;
+            resourceInputs["reservedIps"] = state?.reservedIps;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subnetIpv6cidr"] = state?.subnetIpv6cidr;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as NetworkLoadBalancerArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["assignedIpv6"] = args ? args.assignedIpv6 : undefined;
-            resourceInputs["assignedPrivateIpv4"] = args ? args.assignedPrivateIpv4 : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isPreserveSourceDestination"] = args ? args.isPreserveSourceDestination : undefined;
-            resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
-            resourceInputs["isSymmetricHashEnabled"] = args ? args.isSymmetricHashEnabled : undefined;
-            resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
-            resourceInputs["nlbIpVersion"] = args ? args.nlbIpVersion : undefined;
-            resourceInputs["reservedIps"] = args ? args.reservedIps : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["subnetIpv6cidr"] = args ? args.subnetIpv6cidr : undefined;
+            resourceInputs["assignedIpv6"] = args?.assignedIpv6;
+            resourceInputs["assignedPrivateIpv4"] = args?.assignedPrivateIpv4;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isPreserveSourceDestination"] = args?.isPreserveSourceDestination;
+            resourceInputs["isPrivate"] = args?.isPrivate;
+            resourceInputs["isSymmetricHashEnabled"] = args?.isSymmetricHashEnabled;
+            resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["nlbIpVersion"] = args?.nlbIpVersion;
+            resourceInputs["reservedIps"] = args?.reservedIps;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subnetIpv6cidr"] = args?.subnetIpv6cidr;
             resourceInputs["ipAddresses"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

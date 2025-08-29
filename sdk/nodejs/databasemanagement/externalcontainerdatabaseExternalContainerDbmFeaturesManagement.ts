@@ -39,7 +39,7 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
         return obj['__pulumiType'] === ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.__pulumiType;
     }
 
-    public readonly canDisableAllPdbs!: pulumi.Output<boolean | undefined>;
+    declare public readonly canDisableAllPdbs: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -47,16 +47,16 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableExternalContainerDbmFeature!: pulumi.Output<boolean>;
+    declare public readonly enableExternalContainerDbmFeature: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
      */
-    public readonly externalContainerDatabaseId!: pulumi.Output<string>;
-    public readonly feature!: pulumi.Output<string | undefined>;
+    declare public readonly externalContainerDatabaseId: pulumi.Output<string>;
+    declare public readonly feature: pulumi.Output<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails>;
+    declare public readonly featureDetails: pulumi.Output<outputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails>;
 
     /**
      * Create a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -71,24 +71,24 @@ export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement ext
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState | undefined;
-            resourceInputs["canDisableAllPdbs"] = state ? state.canDisableAllPdbs : undefined;
-            resourceInputs["enableExternalContainerDbmFeature"] = state ? state.enableExternalContainerDbmFeature : undefined;
-            resourceInputs["externalContainerDatabaseId"] = state ? state.externalContainerDatabaseId : undefined;
-            resourceInputs["feature"] = state ? state.feature : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["canDisableAllPdbs"] = state?.canDisableAllPdbs;
+            resourceInputs["enableExternalContainerDbmFeature"] = state?.enableExternalContainerDbmFeature;
+            resourceInputs["externalContainerDatabaseId"] = state?.externalContainerDatabaseId;
+            resourceInputs["feature"] = state?.feature;
+            resourceInputs["featureDetails"] = state?.featureDetails;
         } else {
             const args = argsOrState as ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs | undefined;
-            if ((!args || args.enableExternalContainerDbmFeature === undefined) && !opts.urn) {
+            if (args?.enableExternalContainerDbmFeature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableExternalContainerDbmFeature'");
             }
-            if ((!args || args.externalContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalContainerDatabaseId'");
             }
-            resourceInputs["canDisableAllPdbs"] = args ? args.canDisableAllPdbs : undefined;
-            resourceInputs["enableExternalContainerDbmFeature"] = args ? args.enableExternalContainerDbmFeature : undefined;
-            resourceInputs["externalContainerDatabaseId"] = args ? args.externalContainerDatabaseId : undefined;
-            resourceInputs["feature"] = args ? args.feature : undefined;
-            resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["canDisableAllPdbs"] = args?.canDisableAllPdbs;
+            resourceInputs["enableExternalContainerDbmFeature"] = args?.enableExternalContainerDbmFeature;
+            resourceInputs["externalContainerDatabaseId"] = args?.externalContainerDatabaseId;
+            resourceInputs["feature"] = args?.feature;
+            resourceInputs["featureDetails"] = args?.featureDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);

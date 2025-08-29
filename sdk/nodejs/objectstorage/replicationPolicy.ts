@@ -63,23 +63,23 @@ export class ReplicationPolicy extends pulumi.CustomResource {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * @deprecated The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
      */
-    public readonly deleteObjectInDestinationBucket!: pulumi.Output<string | undefined>;
+    declare public readonly deleteObjectInDestinationBucket: pulumi.Output<string | undefined>;
     /**
      * The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      */
-    public readonly destinationBucketName!: pulumi.Output<string>;
+    declare public readonly destinationBucketName: pulumi.Output<string>;
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
      */
-    public readonly destinationRegionName!: pulumi.Output<string>;
+    declare public readonly destinationRegionName: pulumi.Output<string>;
     /**
      * The name of the policy. Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Object Storage namespace used for the request.
      *
@@ -87,23 +87,23 @@ export class ReplicationPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * A human-readable description of the status.
      */
-    public /*out*/ readonly statusMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly statusMessage: pulumi.Output<string>;
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Changes made to the source bucket before this time has been replicated.
      */
-    public /*out*/ readonly timeLastSync!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSync: pulumi.Output<string>;
 
     /**
      * Create a ReplicationPolicy resource with the given unique name, arguments, and options.
@@ -118,36 +118,36 @@ export class ReplicationPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ReplicationPolicyState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["deleteObjectInDestinationBucket"] = state ? state.deleteObjectInDestinationBucket : undefined;
-            resourceInputs["destinationBucketName"] = state ? state.destinationBucketName : undefined;
-            resourceInputs["destinationRegionName"] = state ? state.destinationRegionName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["statusMessage"] = state ? state.statusMessage : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastSync"] = state ? state.timeLastSync : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["deleteObjectInDestinationBucket"] = state?.deleteObjectInDestinationBucket;
+            resourceInputs["destinationBucketName"] = state?.destinationBucketName;
+            resourceInputs["destinationRegionName"] = state?.destinationRegionName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["statusMessage"] = state?.statusMessage;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastSync"] = state?.timeLastSync;
         } else {
             const args = argsOrState as ReplicationPolicyArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.destinationBucketName === undefined) && !opts.urn) {
+            if (args?.destinationBucketName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationBucketName'");
             }
-            if ((!args || args.destinationRegionName === undefined) && !opts.urn) {
+            if (args?.destinationRegionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationRegionName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["deleteObjectInDestinationBucket"] = args ? args.deleteObjectInDestinationBucket : undefined;
-            resourceInputs["destinationBucketName"] = args ? args.destinationBucketName : undefined;
-            resourceInputs["destinationRegionName"] = args ? args.destinationRegionName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["deleteObjectInDestinationBucket"] = args?.deleteObjectInDestinationBucket;
+            resourceInputs["destinationBucketName"] = args?.destinationBucketName;
+            resourceInputs["destinationRegionName"] = args?.destinationRegionName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["statusMessage"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

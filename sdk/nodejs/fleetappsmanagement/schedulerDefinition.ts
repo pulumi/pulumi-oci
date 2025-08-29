@@ -103,83 +103,83 @@ export class SchedulerDefinition extends pulumi.CustomResource {
     /**
      * (Updatable) Action Groups associated with the Schedule.
      */
-    public readonly actionGroups!: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionActionGroup[]>;
+    declare public readonly actionGroups: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionActionGroup[]>;
     /**
      * Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Count of Action Groups affected by the Schedule.
      */
-    public /*out*/ readonly countOfAffectedActionGroups!: pulumi.Output<number>;
+    declare public /*out*/ readonly countOfAffectedActionGroups: pulumi.Output<number>;
     /**
      * Count of Resources affected by the Schedule.
      */
-    public /*out*/ readonly countOfAffectedResources!: pulumi.Output<number>;
+    declare public /*out*/ readonly countOfAffectedResources: pulumi.Output<number>;
     /**
      * Count of Targets affected by the Schedule.
      */
-    public /*out*/ readonly countOfAffectedTargets!: pulumi.Output<number>;
+    declare public /*out*/ readonly countOfAffectedTargets: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * All LifeCycle Operations that are part of the schedule.
      */
-    public /*out*/ readonly lifecycleOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly lifecycleOperations: pulumi.Output<string[]>;
     /**
      * All products that are part of the schedule for PRODUCT ActionGroup Type.
      */
-    public /*out*/ readonly products!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly products: pulumi.Output<string[]>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * (Updatable) Runbooks.
      */
-    public readonly runBooks!: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionRunBook[]>;
+    declare public readonly runBooks: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionRunBook[]>;
     /**
      * (Updatable) Schedule Information.
      */
-    public readonly schedule!: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionSchedule>;
+    declare public readonly schedule: pulumi.Output<outputs.FleetAppsManagement.SchedulerDefinitionSchedule>;
     /**
      * The current state of the SchedulerDefinition.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The scheduled date for the next run of the Job.
      */
-    public /*out*/ readonly timeOfNextRun!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfNextRun: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SchedulerDefinition resource with the given unique name, arguments, and options.
@@ -194,45 +194,45 @@ export class SchedulerDefinition extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SchedulerDefinitionState | undefined;
-            resourceInputs["actionGroups"] = state ? state.actionGroups : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["countOfAffectedActionGroups"] = state ? state.countOfAffectedActionGroups : undefined;
-            resourceInputs["countOfAffectedResources"] = state ? state.countOfAffectedResources : undefined;
-            resourceInputs["countOfAffectedTargets"] = state ? state.countOfAffectedTargets : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleOperations"] = state ? state.lifecycleOperations : undefined;
-            resourceInputs["products"] = state ? state.products : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["runBooks"] = state ? state.runBooks : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfNextRun"] = state ? state.timeOfNextRun : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["actionGroups"] = state?.actionGroups;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["countOfAffectedActionGroups"] = state?.countOfAffectedActionGroups;
+            resourceInputs["countOfAffectedResources"] = state?.countOfAffectedResources;
+            resourceInputs["countOfAffectedTargets"] = state?.countOfAffectedTargets;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleOperations"] = state?.lifecycleOperations;
+            resourceInputs["products"] = state?.products;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["runBooks"] = state?.runBooks;
+            resourceInputs["schedule"] = state?.schedule;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfNextRun"] = state?.timeOfNextRun;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SchedulerDefinitionArgs | undefined;
-            if ((!args || args.actionGroups === undefined) && !opts.urn) {
+            if (args?.actionGroups === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actionGroups'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.schedule === undefined) && !opts.urn) {
+            if (args?.schedule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedule'");
             }
-            resourceInputs["actionGroups"] = args ? args.actionGroups : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["runBooks"] = args ? args.runBooks : undefined;
-            resourceInputs["schedule"] = args ? args.schedule : undefined;
+            resourceInputs["actionGroups"] = args?.actionGroups;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["runBooks"] = args?.runBooks;
+            resourceInputs["schedule"] = args?.schedule;
             resourceInputs["countOfAffectedActionGroups"] = undefined /*out*/;
             resourceInputs["countOfAffectedResources"] = undefined /*out*/;
             resourceInputs["countOfAffectedTargets"] = undefined /*out*/;

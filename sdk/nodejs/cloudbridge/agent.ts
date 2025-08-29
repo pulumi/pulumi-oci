@@ -72,43 +72,43 @@ export class Agent extends pulumi.CustomResource {
     /**
      * Resource principal public key.
      */
-    public /*out*/ readonly agentPubKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly agentPubKey: pulumi.Output<string>;
     /**
      * Agent identifier.
      */
-    public readonly agentType!: pulumi.Output<string>;
+    declare public readonly agentType: pulumi.Output<string>;
     /**
      * Agent identifier.
      */
-    public readonly agentVersion!: pulumi.Output<string>;
+    declare public readonly agentVersion: pulumi.Output<string>;
     /**
      * (Updatable) Compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Agent identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Environment identifier.
      */
-    public readonly environmentId!: pulumi.Output<string>;
+    declare public readonly environmentId: pulumi.Output<string>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The current heartbeat status of the Agent based on its timeLastSyncReceived value.
      */
-    public /*out*/ readonly heartBeatStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly heartBeatStatus: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * OS version.
      *
@@ -116,35 +116,35 @@ export class Agent extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly osVersion!: pulumi.Output<string>;
+    declare public readonly osVersion: pulumi.Output<string>;
     /**
      * List of plugins associated with the agent.
      */
-    public /*out*/ readonly pluginLists!: pulumi.Output<outputs.CloudBridge.AgentPluginList[]>;
+    declare public /*out*/ readonly pluginLists: pulumi.Output<outputs.CloudBridge.AgentPluginList[]>;
     /**
      * The current state of the Agent.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the Agent was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeExpireAgentKeyInMs!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeExpireAgentKeyInMs: pulumi.Output<string>;
     /**
      * The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeLastSyncReceived!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSyncReceived: pulumi.Output<string>;
     /**
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Agent resource with the given unique name, arguments, and options.
@@ -159,52 +159,52 @@ export class Agent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AgentState | undefined;
-            resourceInputs["agentPubKey"] = state ? state.agentPubKey : undefined;
-            resourceInputs["agentType"] = state ? state.agentType : undefined;
-            resourceInputs["agentVersion"] = state ? state.agentVersion : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["environmentId"] = state ? state.environmentId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["heartBeatStatus"] = state ? state.heartBeatStatus : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["osVersion"] = state ? state.osVersion : undefined;
-            resourceInputs["pluginLists"] = state ? state.pluginLists : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeExpireAgentKeyInMs"] = state ? state.timeExpireAgentKeyInMs : undefined;
-            resourceInputs["timeLastSyncReceived"] = state ? state.timeLastSyncReceived : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["agentPubKey"] = state?.agentPubKey;
+            resourceInputs["agentType"] = state?.agentType;
+            resourceInputs["agentVersion"] = state?.agentVersion;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["environmentId"] = state?.environmentId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["heartBeatStatus"] = state?.heartBeatStatus;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["osVersion"] = state?.osVersion;
+            resourceInputs["pluginLists"] = state?.pluginLists;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeExpireAgentKeyInMs"] = state?.timeExpireAgentKeyInMs;
+            resourceInputs["timeLastSyncReceived"] = state?.timeLastSyncReceived;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AgentArgs | undefined;
-            if ((!args || args.agentType === undefined) && !opts.urn) {
+            if (args?.agentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentType'");
             }
-            if ((!args || args.agentVersion === undefined) && !opts.urn) {
+            if (args?.agentVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentVersion'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.environmentId === undefined) && !opts.urn) {
+            if (args?.environmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'environmentId'");
             }
-            if ((!args || args.osVersion === undefined) && !opts.urn) {
+            if (args?.osVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'osVersion'");
             }
-            resourceInputs["agentType"] = args ? args.agentType : undefined;
-            resourceInputs["agentVersion"] = args ? args.agentVersion : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["environmentId"] = args ? args.environmentId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["osVersion"] = args ? args.osVersion : undefined;
+            resourceInputs["agentType"] = args?.agentType;
+            resourceInputs["agentVersion"] = args?.agentVersion;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["environmentId"] = args?.environmentId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["osVersion"] = args?.osVersion;
             resourceInputs["agentPubKey"] = undefined /*out*/;
             resourceInputs["heartBeatStatus"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

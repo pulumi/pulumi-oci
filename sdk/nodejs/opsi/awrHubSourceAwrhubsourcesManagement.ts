@@ -52,7 +52,7 @@ export class AwrHubSourceAwrhubsourcesManagement extends pulumi.CustomResource {
     /**
      * Unique Awr Hub Source identifier
      */
-    public readonly awrHubSourceId!: pulumi.Output<string>;
+    declare public readonly awrHubSourceId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -60,7 +60,7 @@ export class AwrHubSourceAwrhubsourcesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableAwrhubsource!: pulumi.Output<boolean>;
+    declare public readonly enableAwrhubsource: pulumi.Output<boolean>;
 
     /**
      * Create a AwrHubSourceAwrhubsourcesManagement resource with the given unique name, arguments, and options.
@@ -75,18 +75,18 @@ export class AwrHubSourceAwrhubsourcesManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AwrHubSourceAwrhubsourcesManagementState | undefined;
-            resourceInputs["awrHubSourceId"] = state ? state.awrHubSourceId : undefined;
-            resourceInputs["enableAwrhubsource"] = state ? state.enableAwrhubsource : undefined;
+            resourceInputs["awrHubSourceId"] = state?.awrHubSourceId;
+            resourceInputs["enableAwrhubsource"] = state?.enableAwrhubsource;
         } else {
             const args = argsOrState as AwrHubSourceAwrhubsourcesManagementArgs | undefined;
-            if ((!args || args.awrHubSourceId === undefined) && !opts.urn) {
+            if (args?.awrHubSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'awrHubSourceId'");
             }
-            if ((!args || args.enableAwrhubsource === undefined) && !opts.urn) {
+            if (args?.enableAwrhubsource === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableAwrhubsource'");
             }
-            resourceInputs["awrHubSourceId"] = args ? args.awrHubSourceId : undefined;
-            resourceInputs["enableAwrhubsource"] = args ? args.enableAwrhubsource : undefined;
+            resourceInputs["awrHubSourceId"] = args?.awrHubSourceId;
+            resourceInputs["enableAwrhubsource"] = args?.enableAwrhubsource;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AwrHubSourceAwrhubsourcesManagement.__pulumiType, name, resourceInputs, opts);

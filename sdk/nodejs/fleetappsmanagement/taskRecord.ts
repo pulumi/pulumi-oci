@@ -112,23 +112,23 @@ export class TaskRecord extends pulumi.CustomResource {
     /**
      * (Updatable)
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The details of the task.
      */
-    public readonly details!: pulumi.Output<outputs.FleetAppsManagement.TaskRecordDetails>;
+    declare public readonly details: pulumi.Output<outputs.FleetAppsManagement.TaskRecordDetails>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
      *
@@ -136,39 +136,39 @@ export class TaskRecord extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * The current state of the task record.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Task type.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * The version of the task record.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a TaskRecord resource with the given unique name, arguments, and options.
@@ -183,37 +183,37 @@ export class TaskRecord extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TaskRecordState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["details"] = state ? state.details : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["details"] = state?.details;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as TaskRecordArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.details === undefined) && !opts.urn) {
+            if (args?.details === undefined && !opts.urn) {
                 throw new Error("Missing required property 'details'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["details"] = args ? args.details : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["details"] = args?.details;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

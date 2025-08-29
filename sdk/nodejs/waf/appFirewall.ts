@@ -70,47 +70,47 @@ export class AppFirewall extends pulumi.CustomResource {
     /**
      * Type of the WebAppFirewall, as example LOAD_BALANCER.
      */
-    public readonly backendType!: pulumi.Output<string>;
+    declare public readonly backendType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) WebAppFirewall display name, can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * The current state of the WebAppFirewall.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
      *
@@ -118,7 +118,7 @@ export class AppFirewall extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly webAppFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly webAppFirewallPolicyId: pulumi.Output<string>;
 
     /**
      * Create a AppFirewall resource with the given unique name, arguments, and options.
@@ -133,40 +133,40 @@ export class AppFirewall extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppFirewallState | undefined;
-            resourceInputs["backendType"] = state ? state.backendType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["webAppFirewallPolicyId"] = state ? state.webAppFirewallPolicyId : undefined;
+            resourceInputs["backendType"] = state?.backendType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["webAppFirewallPolicyId"] = state?.webAppFirewallPolicyId;
         } else {
             const args = argsOrState as AppFirewallArgs | undefined;
-            if ((!args || args.backendType === undefined) && !opts.urn) {
+            if (args?.backendType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backendType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            if ((!args || args.webAppFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.webAppFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'webAppFirewallPolicyId'");
             }
-            resourceInputs["backendType"] = args ? args.backendType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
-            resourceInputs["webAppFirewallPolicyId"] = args ? args.webAppFirewallPolicyId : undefined;
+            resourceInputs["backendType"] = args?.backendType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
+            resourceInputs["systemTags"] = args?.systemTags;
+            resourceInputs["webAppFirewallPolicyId"] = args?.webAppFirewallPolicyId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

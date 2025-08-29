@@ -72,59 +72,59 @@ export class MaintenanceWindow extends pulumi.CustomResource {
     /**
      * Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
-    public readonly duration!: pulumi.Output<string>;
+    declare public readonly duration: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
-    public readonly isOutage!: pulumi.Output<boolean>;
+    declare public readonly isOutage: pulumi.Output<boolean>;
     /**
      * (Updatable) Is this a recurring maintenance window?
      */
-    public readonly isRecurring!: pulumi.Output<boolean>;
+    declare public readonly isRecurring: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
-    public readonly recurrences!: pulumi.Output<string>;
+    declare public readonly recurrences: pulumi.Output<string>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * The current state of the MaintenanceWindow.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *
@@ -132,11 +132,11 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeScheduleStart!: pulumi.Output<string>;
+    declare public readonly timeScheduleStart: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MaintenanceWindow resource with the given unique name, arguments, and options.
@@ -151,43 +151,43 @@ export class MaintenanceWindow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["duration"] = state ? state.duration : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isOutage"] = state ? state.isOutage : undefined;
-            resourceInputs["isRecurring"] = state ? state.isRecurring : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["recurrences"] = state ? state.recurrences : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeScheduleStart"] = state ? state.timeScheduleStart : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["duration"] = state?.duration;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isOutage"] = state?.isOutage;
+            resourceInputs["isRecurring"] = state?.isRecurring;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["recurrences"] = state?.recurrences;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeScheduleStart"] = state?.timeScheduleStart;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MaintenanceWindowArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.duration === undefined) && !opts.urn) {
+            if (args?.duration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'duration'");
             }
-            if ((!args || args.timeScheduleStart === undefined) && !opts.urn) {
+            if (args?.timeScheduleStart === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeScheduleStart'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["duration"] = args ? args.duration : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isOutage"] = args ? args.isOutage : undefined;
-            resourceInputs["isRecurring"] = args ? args.isRecurring : undefined;
-            resourceInputs["recurrences"] = args ? args.recurrences : undefined;
-            resourceInputs["timeScheduleStart"] = args ? args.timeScheduleStart : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["duration"] = args?.duration;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isOutage"] = args?.isOutage;
+            resourceInputs["isRecurring"] = args?.isRecurring;
+            resourceInputs["recurrences"] = args?.recurrences;
+            resourceInputs["timeScheduleStart"] = args?.timeScheduleStart;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["resourceRegion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

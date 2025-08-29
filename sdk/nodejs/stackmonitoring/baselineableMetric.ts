@@ -64,43 +64,43 @@ export class BaselineableMetric extends pulumi.CustomResource {
     /**
      * (Updatable) metric column name
      */
-    public readonly column!: pulumi.Output<string>;
+    declare public readonly column: pulumi.Output<string>;
     /**
      * (Updatable) OCID of the compartment
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Created user id
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Is the metric created out of box, default false
      */
-    public /*out*/ readonly isOutOfBox!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isOutOfBox: pulumi.Output<boolean>;
     /**
      * last Updated user id
      */
-    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedBy: pulumi.Output<string>;
     /**
      * (Updatable) name of the metric
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) namespace of the metric
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Resource group of the metric
      */
-    public readonly resourceGroup!: pulumi.Output<string>;
+    declare public readonly resourceGroup: pulumi.Output<string>;
     /**
      * (Updatable) Resource type of the metric
      *
@@ -108,27 +108,27 @@ export class BaselineableMetric extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
     /**
      * The current lifecycle state of the metric extension
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * OCID of the tenancy
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * creation date
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * last updated time
      */
-    public /*out*/ readonly timeLastUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastUpdated: pulumi.Output<string>;
 
     /**
      * Create a BaselineableMetric resource with the given unique name, arguments, and options.
@@ -143,39 +143,39 @@ export class BaselineableMetric extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BaselineableMetricState | undefined;
-            resourceInputs["column"] = state ? state.column : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isOutOfBox"] = state ? state.isOutOfBox : undefined;
-            resourceInputs["lastUpdatedBy"] = state ? state.lastUpdatedBy : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["resourceGroup"] = state ? state.resourceGroup : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastUpdated"] = state ? state.timeLastUpdated : undefined;
+            resourceInputs["column"] = state?.column;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isOutOfBox"] = state?.isOutOfBox;
+            resourceInputs["lastUpdatedBy"] = state?.lastUpdatedBy;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["resourceGroup"] = state?.resourceGroup;
+            resourceInputs["resourceType"] = state?.resourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastUpdated"] = state?.timeLastUpdated;
         } else {
             const args = argsOrState as BaselineableMetricArgs | undefined;
-            if ((!args || args.column === undefined) && !opts.urn) {
+            if (args?.column === undefined && !opts.urn) {
                 throw new Error("Missing required property 'column'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["column"] = args ? args.column : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["resourceGroup"] = args ? args.resourceGroup : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["column"] = args?.column;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["resourceGroup"] = args?.resourceGroup;
+            resourceInputs["resourceType"] = args?.resourceType;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;

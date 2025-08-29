@@ -48,75 +48,75 @@ export class Alert extends pulumi.CustomResource {
     /**
      * The OCID of alert.
      */
-    public readonly alertId!: pulumi.Output<string>;
+    declare public readonly alertId: pulumi.Output<string>;
     /**
      * The key of the rule of alert policy that triggered alert.
      */
-    public /*out*/ readonly alertPolicyRuleKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly alertPolicyRuleKey: pulumi.Output<string>;
     /**
      * The display name of the rule of alert policy that triggered alert.
      */
-    public /*out*/ readonly alertPolicyRuleName!: pulumi.Output<string>;
+    declare public /*out*/ readonly alertPolicyRuleName: pulumi.Output<string>;
     /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
-    public /*out*/ readonly alertType!: pulumi.Output<string>;
+    declare public /*out*/ readonly alertType: pulumi.Output<string>;
     /**
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      */
-    public readonly comment!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the alert.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The description of the alert.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The display name of the alert.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    public /*out*/ readonly featureDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly featureDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The operation (event) that triggered alert.
      */
-    public /*out*/ readonly operation!: pulumi.Output<string>;
+    declare public /*out*/ readonly operation: pulumi.Output<string>;
     /**
      * The result of the operation (event) that triggered alert.
      */
-    public /*out*/ readonly operationStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly operationStatus: pulumi.Output<string>;
     /**
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly operationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly operationTime: pulumi.Output<string>;
     /**
      * The OCID of the policy that triggered alert.
      */
-    public /*out*/ readonly policyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly policyId: pulumi.Output<string>;
     /**
      * The resource endpoint that triggered the alert.
      */
-    public /*out*/ readonly resourceName!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceName: pulumi.Output<string>;
     /**
      * Severity level of the alert.
      */
-    public /*out*/ readonly severity!: pulumi.Output<string>;
+    declare public /*out*/ readonly severity: pulumi.Output<string>;
     /**
      * The current state of the alert.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The status of the alert.
      *
@@ -124,27 +124,27 @@ export class Alert extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Array of OCIDs of the target database which are associated with the alert.
      */
-    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly targetIds: pulumi.Output<string[]>;
     /**
      * Array of names of the target database.
      */
-    public /*out*/ readonly targetNames!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly targetNames: pulumi.Output<string[]>;
     /**
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Alert resource with the given unique name, arguments, and options.
@@ -159,41 +159,41 @@ export class Alert extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlertState | undefined;
-            resourceInputs["alertId"] = state ? state.alertId : undefined;
-            resourceInputs["alertPolicyRuleKey"] = state ? state.alertPolicyRuleKey : undefined;
-            resourceInputs["alertPolicyRuleName"] = state ? state.alertPolicyRuleName : undefined;
-            resourceInputs["alertType"] = state ? state.alertType : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["operation"] = state ? state.operation : undefined;
-            resourceInputs["operationStatus"] = state ? state.operationStatus : undefined;
-            resourceInputs["operationTime"] = state ? state.operationTime : undefined;
-            resourceInputs["policyId"] = state ? state.policyId : undefined;
-            resourceInputs["resourceName"] = state ? state.resourceName : undefined;
-            resourceInputs["severity"] = state ? state.severity : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
-            resourceInputs["targetNames"] = state ? state.targetNames : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["alertId"] = state?.alertId;
+            resourceInputs["alertPolicyRuleKey"] = state?.alertPolicyRuleKey;
+            resourceInputs["alertPolicyRuleName"] = state?.alertPolicyRuleName;
+            resourceInputs["alertType"] = state?.alertType;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["featureDetails"] = state?.featureDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["operation"] = state?.operation;
+            resourceInputs["operationStatus"] = state?.operationStatus;
+            resourceInputs["operationTime"] = state?.operationTime;
+            resourceInputs["policyId"] = state?.policyId;
+            resourceInputs["resourceName"] = state?.resourceName;
+            resourceInputs["severity"] = state?.severity;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetIds"] = state?.targetIds;
+            resourceInputs["targetNames"] = state?.targetNames;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AlertArgs | undefined;
-            if ((!args || args.alertId === undefined) && !opts.urn) {
+            if (args?.alertId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'alertId'");
             }
-            resourceInputs["alertId"] = args ? args.alertId : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["alertId"] = args?.alertId;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["status"] = args?.status;
             resourceInputs["alertPolicyRuleKey"] = undefined /*out*/;
             resourceInputs["alertPolicyRuleName"] = undefined /*out*/;
             resourceInputs["alertType"] = undefined /*out*/;

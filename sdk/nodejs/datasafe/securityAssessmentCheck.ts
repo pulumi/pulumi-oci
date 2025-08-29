@@ -67,40 +67,40 @@ export class SecurityAssessmentCheck extends pulumi.CustomResource {
     /**
      * The category to which the check belongs to.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * A unique identifier for the check.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * Provides a recommended approach to take to remediate the check reported.
      */
-    public /*out*/ readonly oneline!: pulumi.Output<string>;
+    declare public /*out*/ readonly oneline: pulumi.Output<string>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.DataSafe.SecurityAssessmentCheckPatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.DataSafe.SecurityAssessmentCheckPatchOperation[] | undefined>;
     /**
      * Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
      */
-    public /*out*/ readonly references!: pulumi.Output<outputs.DataSafe.SecurityAssessmentCheckReference[]>;
+    declare public /*out*/ readonly references: pulumi.Output<outputs.DataSafe.SecurityAssessmentCheckReference[]>;
     /**
      * The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      */
-    public /*out*/ readonly remarks!: pulumi.Output<string>;
+    declare public /*out*/ readonly remarks: pulumi.Output<string>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityAssessmentId!: pulumi.Output<string>;
+    declare public readonly securityAssessmentId: pulumi.Output<string>;
     /**
      * The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
      */
-    public /*out*/ readonly suggestedSeverity!: pulumi.Output<string>;
+    declare public /*out*/ readonly suggestedSeverity: pulumi.Output<string>;
     /**
      * The short title for the check.
      */
-    public /*out*/ readonly title!: pulumi.Output<string>;
+    declare public /*out*/ readonly title: pulumi.Output<string>;
 
     /**
      * Create a SecurityAssessmentCheck resource with the given unique name, arguments, and options.
@@ -115,22 +115,22 @@ export class SecurityAssessmentCheck extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityAssessmentCheckState | undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["oneline"] = state ? state.oneline : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["references"] = state ? state.references : undefined;
-            resourceInputs["remarks"] = state ? state.remarks : undefined;
-            resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
-            resourceInputs["suggestedSeverity"] = state ? state.suggestedSeverity : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["oneline"] = state?.oneline;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["references"] = state?.references;
+            resourceInputs["remarks"] = state?.remarks;
+            resourceInputs["securityAssessmentId"] = state?.securityAssessmentId;
+            resourceInputs["suggestedSeverity"] = state?.suggestedSeverity;
+            resourceInputs["title"] = state?.title;
         } else {
             const args = argsOrState as SecurityAssessmentCheckArgs | undefined;
-            if ((!args || args.securityAssessmentId === undefined) && !opts.urn) {
+            if (args?.securityAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityAssessmentId'");
             }
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["securityAssessmentId"] = args ? args.securityAssessmentId : undefined;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["securityAssessmentId"] = args?.securityAssessmentId;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["oneline"] = undefined /*out*/;

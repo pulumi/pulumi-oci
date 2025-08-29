@@ -111,7 +111,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly accessTokenUrl!: pulumi.Output<string>;
+    declare public readonly accessTokenUrl: pulumi.Output<string>;
     /**
      * (Updatable) Whether account linking is enabled
      *
@@ -125,7 +125,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly accountLinkingEnabled!: pulumi.Output<boolean>;
+    declare public readonly accountLinkingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Admin scope to request
      *
@@ -139,11 +139,11 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly adminScopes!: pulumi.Output<string[]>;
+    declare public readonly adminScopes: pulumi.Output<string[]>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Social IDP Authorization URL
      *
@@ -157,7 +157,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly authzUrl!: pulumi.Output<string>;
+    declare public readonly authzUrl: pulumi.Output<string>;
     /**
      * (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
      *
@@ -173,7 +173,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly autoRedirectEnabled!: pulumi.Output<boolean>;
+    declare public readonly autoRedirectEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the client credential is contained in payload
      *
@@ -189,7 +189,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly clientCredentialInPayload!: pulumi.Output<boolean>;
+    declare public readonly clientCredentialInPayload: pulumi.Output<boolean>;
     /**
      * (Updatable) Social IDP allowed clock skew time
      *
@@ -202,7 +202,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly clockSkewInSeconds!: pulumi.Output<number>;
+    declare public readonly clockSkewInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -216,7 +216,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) Social IDP Client Application Client ID
      *
@@ -230,7 +230,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly consumerKey!: pulumi.Output<string>;
+    declare public readonly consumerKey: pulumi.Output<string>;
     /**
      * (Updatable) Social IDP Client Application Client Secret
      *
@@ -245,7 +245,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly consumerSecret!: pulumi.Output<string>;
+    declare public readonly consumerSecret: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -259,7 +259,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Social IDP description
      *
@@ -273,7 +273,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Discovery URL
      *
@@ -289,7 +289,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly discoveryUrl!: pulumi.Output<string>;
+    declare public readonly discoveryUrl: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -303,7 +303,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Whether the IDP is enabled or not
      *
@@ -317,7 +317,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * (Updatable) ICON URL for social idp
      *
@@ -333,7 +333,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly iconUrl!: pulumi.Output<string>;
+    declare public readonly iconUrl: pulumi.Output<string>;
     /**
      * Id attribute used for account linking
      *
@@ -347,7 +347,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly idAttribute!: pulumi.Output<string>;
+    declare public readonly idAttribute: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -359,11 +359,11 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -375,7 +375,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -389,7 +389,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -402,7 +402,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
      *
@@ -418,7 +418,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly jitProvAssignedGroups!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup[]>;
+    declare public readonly jitProvAssignedGroups: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup[]>;
     /**
      * (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
      *
@@ -434,7 +434,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly jitProvGroupStaticListEnabled!: pulumi.Output<boolean>;
+    declare public readonly jitProvGroupStaticListEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -448,7 +448,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderMeta[]>;
     /**
      * (Updatable) Social provider name
      *
@@ -462,7 +462,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -476,7 +476,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) Social IDP User profile URL
      *
@@ -490,7 +490,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly profileUrl!: pulumi.Output<string>;
+    declare public readonly profileUrl: pulumi.Output<string>;
     /**
      * (Updatable) redirect URL for social idp
      *
@@ -504,7 +504,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly redirectUrl!: pulumi.Output<string>;
+    declare public readonly redirectUrl: pulumi.Output<string>;
     /**
      * (Updatable) Social IDP Refresh token URL
      *
@@ -520,7 +520,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly refreshTokenUrl!: pulumi.Output<string>;
+    declare public readonly refreshTokenUrl: pulumi.Output<string>;
     /**
      * (Updatable) Whether registration is enabled
      *
@@ -534,7 +534,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly registrationEnabled!: pulumi.Output<boolean>;
+    declare public readonly registrationEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Relay Param variable for Social IDP
      *
@@ -550,11 +550,11 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly relayIdpParamMappings!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping[]>;
+    declare public readonly relayIdpParamMappings: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping[]>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -568,7 +568,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) Scope to request
      *
@@ -582,7 +582,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly scopes!: pulumi.Output<string[]>;
+    declare public readonly scopes: pulumi.Output<string[]>;
     /**
      * Service Provider Name
      *
@@ -596,7 +596,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly serviceProviderName!: pulumi.Output<string>;
+    declare public readonly serviceProviderName: pulumi.Output<string>;
     /**
      * (Updatable) Whether show on login
      *
@@ -610,7 +610,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly showOnLogin!: pulumi.Output<boolean>;
+    declare public readonly showOnLogin: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether Social JIT Provisioning is enabled
      *
@@ -626,7 +626,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly socialJitProvisioningEnabled!: pulumi.Output<boolean>;
+    declare public readonly socialJitProvisioningEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Status
      *
@@ -642,7 +642,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -656,7 +656,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsSocialIdentityProviderTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -674,7 +674,7 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
 
     /**
      * Create a DomainsSocialIdentityProvider resource with the given unique name, arguments, and options.
@@ -689,110 +689,110 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsSocialIdentityProviderState | undefined;
-            resourceInputs["accessTokenUrl"] = state ? state.accessTokenUrl : undefined;
-            resourceInputs["accountLinkingEnabled"] = state ? state.accountLinkingEnabled : undefined;
-            resourceInputs["adminScopes"] = state ? state.adminScopes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["authzUrl"] = state ? state.authzUrl : undefined;
-            resourceInputs["autoRedirectEnabled"] = state ? state.autoRedirectEnabled : undefined;
-            resourceInputs["clientCredentialInPayload"] = state ? state.clientCredentialInPayload : undefined;
-            resourceInputs["clockSkewInSeconds"] = state ? state.clockSkewInSeconds : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["consumerKey"] = state ? state.consumerKey : undefined;
-            resourceInputs["consumerSecret"] = state ? state.consumerSecret : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["discoveryUrl"] = state ? state.discoveryUrl : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["iconUrl"] = state ? state.iconUrl : undefined;
-            resourceInputs["idAttribute"] = state ? state.idAttribute : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["jitProvAssignedGroups"] = state ? state.jitProvAssignedGroups : undefined;
-            resourceInputs["jitProvGroupStaticListEnabled"] = state ? state.jitProvGroupStaticListEnabled : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["profileUrl"] = state ? state.profileUrl : undefined;
-            resourceInputs["redirectUrl"] = state ? state.redirectUrl : undefined;
-            resourceInputs["refreshTokenUrl"] = state ? state.refreshTokenUrl : undefined;
-            resourceInputs["registrationEnabled"] = state ? state.registrationEnabled : undefined;
-            resourceInputs["relayIdpParamMappings"] = state ? state.relayIdpParamMappings : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["scopes"] = state ? state.scopes : undefined;
-            resourceInputs["serviceProviderName"] = state ? state.serviceProviderName : undefined;
-            resourceInputs["showOnLogin"] = state ? state.showOnLogin : undefined;
-            resourceInputs["socialJitProvisioningEnabled"] = state ? state.socialJitProvisioningEnabled : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
+            resourceInputs["accessTokenUrl"] = state?.accessTokenUrl;
+            resourceInputs["accountLinkingEnabled"] = state?.accountLinkingEnabled;
+            resourceInputs["adminScopes"] = state?.adminScopes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["authzUrl"] = state?.authzUrl;
+            resourceInputs["autoRedirectEnabled"] = state?.autoRedirectEnabled;
+            resourceInputs["clientCredentialInPayload"] = state?.clientCredentialInPayload;
+            resourceInputs["clockSkewInSeconds"] = state?.clockSkewInSeconds;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["consumerKey"] = state?.consumerKey;
+            resourceInputs["consumerSecret"] = state?.consumerSecret;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["discoveryUrl"] = state?.discoveryUrl;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["iconUrl"] = state?.iconUrl;
+            resourceInputs["idAttribute"] = state?.idAttribute;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["jitProvAssignedGroups"] = state?.jitProvAssignedGroups;
+            resourceInputs["jitProvGroupStaticListEnabled"] = state?.jitProvGroupStaticListEnabled;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["profileUrl"] = state?.profileUrl;
+            resourceInputs["redirectUrl"] = state?.redirectUrl;
+            resourceInputs["refreshTokenUrl"] = state?.refreshTokenUrl;
+            resourceInputs["registrationEnabled"] = state?.registrationEnabled;
+            resourceInputs["relayIdpParamMappings"] = state?.relayIdpParamMappings;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["scopes"] = state?.scopes;
+            resourceInputs["serviceProviderName"] = state?.serviceProviderName;
+            resourceInputs["showOnLogin"] = state?.showOnLogin;
+            resourceInputs["socialJitProvisioningEnabled"] = state?.socialJitProvisioningEnabled;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
         } else {
             const args = argsOrState as DomainsSocialIdentityProviderArgs | undefined;
-            if ((!args || args.accountLinkingEnabled === undefined) && !opts.urn) {
+            if (args?.accountLinkingEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'accountLinkingEnabled'");
             }
-            if ((!args || args.consumerKey === undefined) && !opts.urn) {
+            if (args?.consumerKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'consumerKey'");
             }
-            if ((!args || args.consumerSecret === undefined) && !opts.urn) {
+            if (args?.consumerSecret === undefined && !opts.urn) {
                 throw new Error("Missing required property 'consumerSecret'");
             }
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.registrationEnabled === undefined) && !opts.urn) {
+            if (args?.registrationEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'registrationEnabled'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.serviceProviderName === undefined) && !opts.urn) {
+            if (args?.serviceProviderName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceProviderName'");
             }
-            if ((!args || args.showOnLogin === undefined) && !opts.urn) {
+            if (args?.showOnLogin === undefined && !opts.urn) {
                 throw new Error("Missing required property 'showOnLogin'");
             }
-            resourceInputs["accessTokenUrl"] = args ? args.accessTokenUrl : undefined;
-            resourceInputs["accountLinkingEnabled"] = args ? args.accountLinkingEnabled : undefined;
-            resourceInputs["adminScopes"] = args ? args.adminScopes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["authzUrl"] = args ? args.authzUrl : undefined;
-            resourceInputs["autoRedirectEnabled"] = args ? args.autoRedirectEnabled : undefined;
-            resourceInputs["clientCredentialInPayload"] = args ? args.clientCredentialInPayload : undefined;
-            resourceInputs["clockSkewInSeconds"] = args ? args.clockSkewInSeconds : undefined;
-            resourceInputs["consumerKey"] = args ? args.consumerKey : undefined;
-            resourceInputs["consumerSecret"] = args ? args.consumerSecret : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["discoveryUrl"] = args ? args.discoveryUrl : undefined;
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["iconUrl"] = args ? args.iconUrl : undefined;
-            resourceInputs["idAttribute"] = args ? args.idAttribute : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["jitProvAssignedGroups"] = args ? args.jitProvAssignedGroups : undefined;
-            resourceInputs["jitProvGroupStaticListEnabled"] = args ? args.jitProvGroupStaticListEnabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["profileUrl"] = args ? args.profileUrl : undefined;
-            resourceInputs["redirectUrl"] = args ? args.redirectUrl : undefined;
-            resourceInputs["refreshTokenUrl"] = args ? args.refreshTokenUrl : undefined;
-            resourceInputs["registrationEnabled"] = args ? args.registrationEnabled : undefined;
-            resourceInputs["relayIdpParamMappings"] = args ? args.relayIdpParamMappings : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["scopes"] = args ? args.scopes : undefined;
-            resourceInputs["serviceProviderName"] = args ? args.serviceProviderName : undefined;
-            resourceInputs["showOnLogin"] = args ? args.showOnLogin : undefined;
-            resourceInputs["socialJitProvisioningEnabled"] = args ? args.socialJitProvisioningEnabled : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["accessTokenUrl"] = args?.accessTokenUrl;
+            resourceInputs["accountLinkingEnabled"] = args?.accountLinkingEnabled;
+            resourceInputs["adminScopes"] = args?.adminScopes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["authzUrl"] = args?.authzUrl;
+            resourceInputs["autoRedirectEnabled"] = args?.autoRedirectEnabled;
+            resourceInputs["clientCredentialInPayload"] = args?.clientCredentialInPayload;
+            resourceInputs["clockSkewInSeconds"] = args?.clockSkewInSeconds;
+            resourceInputs["consumerKey"] = args?.consumerKey;
+            resourceInputs["consumerSecret"] = args?.consumerSecret;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["discoveryUrl"] = args?.discoveryUrl;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["iconUrl"] = args?.iconUrl;
+            resourceInputs["idAttribute"] = args?.idAttribute;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["jitProvAssignedGroups"] = args?.jitProvAssignedGroups;
+            resourceInputs["jitProvGroupStaticListEnabled"] = args?.jitProvGroupStaticListEnabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["profileUrl"] = args?.profileUrl;
+            resourceInputs["redirectUrl"] = args?.redirectUrl;
+            resourceInputs["refreshTokenUrl"] = args?.refreshTokenUrl;
+            resourceInputs["registrationEnabled"] = args?.registrationEnabled;
+            resourceInputs["relayIdpParamMappings"] = args?.relayIdpParamMappings;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["scopes"] = args?.scopes;
+            resourceInputs["serviceProviderName"] = args?.serviceProviderName;
+            resourceInputs["showOnLogin"] = args?.showOnLogin;
+            resourceInputs["socialJitProvisioningEnabled"] = args?.socialJitProvisioningEnabled;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["tags"] = args?.tags;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

@@ -56,19 +56,19 @@ export class Certificate extends pulumi.CustomResource {
      * ...
      * -----END CERTIFICATE-----
      */
-    public readonly caCertificate!: pulumi.Output<string>;
+    declare public readonly caCertificate: pulumi.Output<string>;
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      */
-    public readonly certificateName!: pulumi.Output<string>;
+    declare public readonly certificateName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle.
      */
-    public readonly loadBalancerId!: pulumi.Output<string>;
+    declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
      * A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase.
      */
-    public readonly passphrase!: pulumi.Output<string | undefined>;
+    declare public readonly passphrase: pulumi.Output<string | undefined>;
     /**
      * The SSL private key for your certificate, in PEM format.
      *
@@ -82,7 +82,7 @@ export class Certificate extends pulumi.CustomResource {
      * ...
      * -----END RSA PRIVATE KEY-----
      */
-    public readonly privateKey!: pulumi.Output<string>;
+    declare public readonly privateKey: pulumi.Output<string>;
     /**
      * The public certificate, in PEM format, that you received from your SSL certificate provider.
      *
@@ -101,8 +101,8 @@ export class Certificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly publicCertificate!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly publicCertificate: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.
@@ -117,27 +117,27 @@ export class Certificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CertificateState | undefined;
-            resourceInputs["caCertificate"] = state ? state.caCertificate : undefined;
-            resourceInputs["certificateName"] = state ? state.certificateName : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["passphrase"] = state ? state.passphrase : undefined;
-            resourceInputs["privateKey"] = state ? state.privateKey : undefined;
-            resourceInputs["publicCertificate"] = state ? state.publicCertificate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["caCertificate"] = state?.caCertificate;
+            resourceInputs["certificateName"] = state?.certificateName;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["passphrase"] = state?.passphrase;
+            resourceInputs["privateKey"] = state?.privateKey;
+            resourceInputs["publicCertificate"] = state?.publicCertificate;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as CertificateArgs | undefined;
-            if ((!args || args.certificateName === undefined) && !opts.urn) {
+            if (args?.certificateName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateName'");
             }
-            if ((!args || args.loadBalancerId === undefined) && !opts.urn) {
+            if (args?.loadBalancerId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadBalancerId'");
             }
-            resourceInputs["caCertificate"] = args ? args.caCertificate : undefined;
-            resourceInputs["certificateName"] = args ? args.certificateName : undefined;
-            resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
+            resourceInputs["caCertificate"] = args?.caCertificate;
+            resourceInputs["certificateName"] = args?.certificateName;
+            resourceInputs["loadBalancerId"] = args?.loadBalancerId;
             resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
-            resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
+            resourceInputs["publicCertificate"] = args?.publicCertificate;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -50,140 +50,140 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * Cluster version details including bds and odh version information.
      */
-    public readonly bdsClusterVersionSummary!: pulumi.Output<outputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
+    declare public readonly bdsClusterVersionSummary: pulumi.Output<outputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
-    public readonly bootstrapScriptUrl!: pulumi.Output<string>;
+    declare public readonly bootstrapScriptUrl: pulumi.Output<string>;
     /**
      * The information about added Cloud SQL capability
      */
-    public readonly cloudSqlDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[]>;
+    declare public readonly cloudSqlDetails: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[]>;
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * Specific info about a Hadoop cluster
      */
-    public /*out*/ readonly clusterDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceClusterDetail[]>;
+    declare public /*out*/ readonly clusterDetails: pulumi.Output<outputs.BigDataService.BdsInstanceClusterDetail[]>;
     /**
      * Profile of the Big Data Service cluster.
      */
-    public readonly clusterProfile!: pulumi.Output<string>;
+    declare public readonly clusterProfile: pulumi.Output<string>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
-    public readonly clusterPublicKey!: pulumi.Output<string>;
+    declare public readonly clusterPublicKey: pulumi.Output<string>;
     /**
      * Version of the Hadoop distribution
      */
-    public readonly clusterVersion!: pulumi.Output<string>;
+    declare public readonly clusterVersion: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly computeOnlyWorkerNode!: pulumi.Output<outputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly computeOnlyWorkerNode: pulumi.Output<outputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * The user who created the cluster.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Name of the BDS instance
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly edgeNode!: pulumi.Output<outputs.BigDataService.BdsInstanceEdgeNode | undefined>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly edgeNode: pulumi.Output<outputs.BigDataService.BdsInstanceEdgeNode | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */
-    public readonly ignoreExistingNodesShapes!: pulumi.Output<string[] | undefined>;
+    declare public readonly ignoreExistingNodesShapes: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
-    public readonly isCloudSqlConfigured!: pulumi.Output<boolean>;
-    public readonly isForceRemoveEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isCloudSqlConfigured: pulumi.Output<boolean>;
+    declare public readonly isForceRemoveEnabled: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
-    public readonly isForceStopJobs!: pulumi.Output<boolean | undefined>;
+    declare public readonly isForceStopJobs: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
-    public readonly isHighAvailability!: pulumi.Output<boolean>;
+    declare public readonly isHighAvailability: pulumi.Output<boolean>;
     /**
      * Boolean flag specifying whether or not Kafka should be configured.
      */
-    public readonly isKafkaConfigured!: pulumi.Output<boolean | undefined>;
+    declare public readonly isKafkaConfigured: pulumi.Output<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
-    public readonly isSecure!: pulumi.Output<boolean>;
+    declare public readonly isSecure: pulumi.Output<boolean>;
     /**
      * The kafka broker node in the BDS instance
      */
-    public readonly kafkaBrokerNode!: pulumi.Output<outputs.BigDataService.BdsInstanceKafkaBrokerNode | undefined>;
+    declare public readonly kafkaBrokerNode: pulumi.Output<outputs.BigDataService.BdsInstanceKafkaBrokerNode | undefined>;
     /**
      * The user-defined kerberos realm name.
      */
-    public readonly kerberosRealmName!: pulumi.Output<string>;
+    declare public readonly kerberosRealmName: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the Key Management master encryption key.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The master node in the BDS instance
      */
-    public readonly masterNode!: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
+    declare public readonly masterNode: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
     /**
      * (Updatable) Additional configuration of the user's network.
      */
-    public readonly networkConfig!: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
+    declare public readonly networkConfig: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
     /**
      * The list of nodes in the Big Data Service cluster.
      */
-    public /*out*/ readonly nodes!: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
+    declare public /*out*/ readonly nodes: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
     /**
      * Number of nodes that forming the cluster
      */
-    public /*out*/ readonly numberOfNodes!: pulumi.Output<number>;
+    declare public /*out*/ readonly numberOfNodes: pulumi.Output<number>;
     /**
      * Number of nodes that require a maintenance reboot
      */
-    public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot!: pulumi.Output<number>;
+    declare public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot: pulumi.Output<number>;
     /**
      * (Updatable) The version of the patch to be upated.
      */
-    public readonly osPatchVersion!: pulumi.Output<string | undefined>;
+    declare public readonly osPatchVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
-    public readonly removeNode!: pulumi.Output<string | undefined>;
-    public readonly startClusterShapeConfigs!: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
+    declare public readonly removeNode: pulumi.Output<string | undefined>;
+    declare public readonly startClusterShapeConfigs: pulumi.Output<outputs.BigDataService.BdsInstanceStartClusterShapeConfig[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The utility node in the BDS instance
      */
-    public readonly utilNode!: pulumi.Output<outputs.BigDataService.BdsInstanceUtilNode>;
-    public readonly workerNode!: pulumi.Output<outputs.BigDataService.BdsInstanceWorkerNode>;
+    declare public readonly utilNode: pulumi.Output<outputs.BigDataService.BdsInstanceUtilNode>;
+    declare public readonly workerNode: pulumi.Output<outputs.BigDataService.BdsInstanceWorkerNode>;
 
     /**
      * Create a BdsInstance resource with the given unique name, arguments, and options.
@@ -198,107 +198,107 @@ export class BdsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceState | undefined;
-            resourceInputs["bdsClusterVersionSummary"] = state ? state.bdsClusterVersionSummary : undefined;
-            resourceInputs["bootstrapScriptUrl"] = state ? state.bootstrapScriptUrl : undefined;
-            resourceInputs["cloudSqlDetails"] = state ? state.cloudSqlDetails : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["clusterDetails"] = state ? state.clusterDetails : undefined;
-            resourceInputs["clusterProfile"] = state ? state.clusterProfile : undefined;
-            resourceInputs["clusterPublicKey"] = state ? state.clusterPublicKey : undefined;
-            resourceInputs["clusterVersion"] = state ? state.clusterVersion : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeOnlyWorkerNode"] = state ? state.computeOnlyWorkerNode : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["edgeNode"] = state ? state.edgeNode : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ignoreExistingNodesShapes"] = state ? state.ignoreExistingNodesShapes : undefined;
-            resourceInputs["isCloudSqlConfigured"] = state ? state.isCloudSqlConfigured : undefined;
-            resourceInputs["isForceRemoveEnabled"] = state ? state.isForceRemoveEnabled : undefined;
-            resourceInputs["isForceStopJobs"] = state ? state.isForceStopJobs : undefined;
-            resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
-            resourceInputs["isKafkaConfigured"] = state ? state.isKafkaConfigured : undefined;
-            resourceInputs["isSecure"] = state ? state.isSecure : undefined;
-            resourceInputs["kafkaBrokerNode"] = state ? state.kafkaBrokerNode : undefined;
-            resourceInputs["kerberosRealmName"] = state ? state.kerberosRealmName : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["masterNode"] = state ? state.masterNode : undefined;
-            resourceInputs["networkConfig"] = state ? state.networkConfig : undefined;
-            resourceInputs["nodes"] = state ? state.nodes : undefined;
-            resourceInputs["numberOfNodes"] = state ? state.numberOfNodes : undefined;
-            resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state ? state.numberOfNodesRequiringMaintenanceReboot : undefined;
-            resourceInputs["osPatchVersion"] = state ? state.osPatchVersion : undefined;
-            resourceInputs["removeNode"] = state ? state.removeNode : undefined;
-            resourceInputs["startClusterShapeConfigs"] = state ? state.startClusterShapeConfigs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["utilNode"] = state ? state.utilNode : undefined;
-            resourceInputs["workerNode"] = state ? state.workerNode : undefined;
+            resourceInputs["bdsClusterVersionSummary"] = state?.bdsClusterVersionSummary;
+            resourceInputs["bootstrapScriptUrl"] = state?.bootstrapScriptUrl;
+            resourceInputs["cloudSqlDetails"] = state?.cloudSqlDetails;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["clusterDetails"] = state?.clusterDetails;
+            resourceInputs["clusterProfile"] = state?.clusterProfile;
+            resourceInputs["clusterPublicKey"] = state?.clusterPublicKey;
+            resourceInputs["clusterVersion"] = state?.clusterVersion;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeOnlyWorkerNode"] = state?.computeOnlyWorkerNode;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["edgeNode"] = state?.edgeNode;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ignoreExistingNodesShapes"] = state?.ignoreExistingNodesShapes;
+            resourceInputs["isCloudSqlConfigured"] = state?.isCloudSqlConfigured;
+            resourceInputs["isForceRemoveEnabled"] = state?.isForceRemoveEnabled;
+            resourceInputs["isForceStopJobs"] = state?.isForceStopJobs;
+            resourceInputs["isHighAvailability"] = state?.isHighAvailability;
+            resourceInputs["isKafkaConfigured"] = state?.isKafkaConfigured;
+            resourceInputs["isSecure"] = state?.isSecure;
+            resourceInputs["kafkaBrokerNode"] = state?.kafkaBrokerNode;
+            resourceInputs["kerberosRealmName"] = state?.kerberosRealmName;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["masterNode"] = state?.masterNode;
+            resourceInputs["networkConfig"] = state?.networkConfig;
+            resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["numberOfNodes"] = state?.numberOfNodes;
+            resourceInputs["numberOfNodesRequiringMaintenanceReboot"] = state?.numberOfNodesRequiringMaintenanceReboot;
+            resourceInputs["osPatchVersion"] = state?.osPatchVersion;
+            resourceInputs["removeNode"] = state?.removeNode;
+            resourceInputs["startClusterShapeConfigs"] = state?.startClusterShapeConfigs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["utilNode"] = state?.utilNode;
+            resourceInputs["workerNode"] = state?.workerNode;
         } else {
             const args = argsOrState as BdsInstanceArgs | undefined;
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.clusterPublicKey === undefined) && !opts.urn) {
+            if (args?.clusterPublicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterPublicKey'");
             }
-            if ((!args || args.clusterVersion === undefined) && !opts.urn) {
+            if (args?.clusterVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterVersion'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.isHighAvailability === undefined) && !opts.urn) {
+            if (args?.isHighAvailability === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isHighAvailability'");
             }
-            if ((!args || args.isSecure === undefined) && !opts.urn) {
+            if (args?.isSecure === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isSecure'");
             }
-            if ((!args || args.masterNode === undefined) && !opts.urn) {
+            if (args?.masterNode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNode'");
             }
-            if ((!args || args.utilNode === undefined) && !opts.urn) {
+            if (args?.utilNode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'utilNode'");
             }
-            if ((!args || args.workerNode === undefined) && !opts.urn) {
+            if (args?.workerNode === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workerNode'");
             }
-            resourceInputs["bdsClusterVersionSummary"] = args ? args.bdsClusterVersionSummary : undefined;
-            resourceInputs["bootstrapScriptUrl"] = args ? args.bootstrapScriptUrl : undefined;
-            resourceInputs["cloudSqlDetails"] = args ? args.cloudSqlDetails : undefined;
+            resourceInputs["bdsClusterVersionSummary"] = args?.bdsClusterVersionSummary;
+            resourceInputs["bootstrapScriptUrl"] = args?.bootstrapScriptUrl;
+            resourceInputs["cloudSqlDetails"] = args?.cloudSqlDetails;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["clusterProfile"] = args ? args.clusterProfile : undefined;
-            resourceInputs["clusterPublicKey"] = args ? args.clusterPublicKey : undefined;
-            resourceInputs["clusterVersion"] = args ? args.clusterVersion : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeOnlyWorkerNode"] = args ? args.computeOnlyWorkerNode : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["edgeNode"] = args ? args.edgeNode : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ignoreExistingNodesShapes"] = args ? args.ignoreExistingNodesShapes : undefined;
-            resourceInputs["isCloudSqlConfigured"] = args ? args.isCloudSqlConfigured : undefined;
-            resourceInputs["isForceRemoveEnabled"] = args ? args.isForceRemoveEnabled : undefined;
-            resourceInputs["isForceStopJobs"] = args ? args.isForceStopJobs : undefined;
-            resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
-            resourceInputs["isKafkaConfigured"] = args ? args.isKafkaConfigured : undefined;
-            resourceInputs["isSecure"] = args ? args.isSecure : undefined;
-            resourceInputs["kafkaBrokerNode"] = args ? args.kafkaBrokerNode : undefined;
-            resourceInputs["kerberosRealmName"] = args ? args.kerberosRealmName : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["masterNode"] = args ? args.masterNode : undefined;
-            resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
-            resourceInputs["osPatchVersion"] = args ? args.osPatchVersion : undefined;
-            resourceInputs["removeNode"] = args ? args.removeNode : undefined;
-            resourceInputs["startClusterShapeConfigs"] = args ? args.startClusterShapeConfigs : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["utilNode"] = args ? args.utilNode : undefined;
-            resourceInputs["workerNode"] = args ? args.workerNode : undefined;
+            resourceInputs["clusterProfile"] = args?.clusterProfile;
+            resourceInputs["clusterPublicKey"] = args?.clusterPublicKey;
+            resourceInputs["clusterVersion"] = args?.clusterVersion;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeOnlyWorkerNode"] = args?.computeOnlyWorkerNode;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["edgeNode"] = args?.edgeNode;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ignoreExistingNodesShapes"] = args?.ignoreExistingNodesShapes;
+            resourceInputs["isCloudSqlConfigured"] = args?.isCloudSqlConfigured;
+            resourceInputs["isForceRemoveEnabled"] = args?.isForceRemoveEnabled;
+            resourceInputs["isForceStopJobs"] = args?.isForceStopJobs;
+            resourceInputs["isHighAvailability"] = args?.isHighAvailability;
+            resourceInputs["isKafkaConfigured"] = args?.isKafkaConfigured;
+            resourceInputs["isSecure"] = args?.isSecure;
+            resourceInputs["kafkaBrokerNode"] = args?.kafkaBrokerNode;
+            resourceInputs["kerberosRealmName"] = args?.kerberosRealmName;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["masterNode"] = args?.masterNode;
+            resourceInputs["networkConfig"] = args?.networkConfig;
+            resourceInputs["osPatchVersion"] = args?.osPatchVersion;
+            resourceInputs["removeNode"] = args?.removeNode;
+            resourceInputs["startClusterShapeConfigs"] = args?.startClusterShapeConfigs;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["utilNode"] = args?.utilNode;
+            resourceInputs["workerNode"] = args?.workerNode;
             resourceInputs["clusterDetails"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;

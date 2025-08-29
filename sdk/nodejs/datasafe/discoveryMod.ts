@@ -85,103 +85,103 @@ export class DiscoveryMod extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment where the discovery job resource should be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      */
-    public readonly discoveryType!: pulumi.Output<string>;
+    declare public readonly discoveryType: pulumi.Output<string>;
     /**
      * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
      */
-    public readonly isAppDefinedRelationDiscoveryEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAppDefinedRelationDiscoveryEnabled: pulumi.Output<boolean>;
     /**
      * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    public readonly isIncludeAllSchemas!: pulumi.Output<boolean>;
+    declare public readonly isIncludeAllSchemas: pulumi.Output<boolean>;
     /**
      * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    public readonly isIncludeAllSensitiveTypes!: pulumi.Output<boolean>;
+    declare public readonly isIncludeAllSensitiveTypes: pulumi.Output<boolean>;
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      */
-    public readonly isSampleDataCollectionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSampleDataCollectionEnabled: pulumi.Output<boolean>;
     /**
      * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      */
-    public readonly schemasForDiscoveries!: pulumi.Output<string[]>;
+    declare public readonly schemasForDiscoveries: pulumi.Output<string[]>;
     /**
      * The OCID of the sensitive data model.
      */
-    public readonly sensitiveDataModelId!: pulumi.Output<string>;
+    declare public readonly sensitiveDataModelId: pulumi.Output<string>;
     /**
      * The OCIDs of the sensitive type groups to be used by the discovery job. All the sensitive types present in sensitive type group will be used for discovery.
      */
-    public readonly sensitiveTypeGroupIdsForDiscoveries!: pulumi.Output<string[]>;
+    declare public readonly sensitiveTypeGroupIdsForDiscoveries: pulumi.Output<string[]>;
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
-    public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
+    declare public readonly sensitiveTypeIdsForDiscoveries: pulumi.Output<string[]>;
     /**
      * The current state of the discovery job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
      */
-    public readonly tablesForDiscoveries!: pulumi.Output<outputs.DataSafe.DiscoveryModTablesForDiscovery[]>;
+    declare public readonly tablesForDiscoveries: pulumi.Output<outputs.DataSafe.DiscoveryModTablesForDiscovery[]>;
     /**
      * The OCID of the target database associated with the discovery job.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetId: pulumi.Output<string>;
     /**
      * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * The total number of columns scanned by the discovery job.
      */
-    public /*out*/ readonly totalColumnsScanned!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalColumnsScanned: pulumi.Output<string>;
     /**
      * The total number of deleted sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalDeletedSensitiveColumns!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalDeletedSensitiveColumns: pulumi.Output<string>;
     /**
      * The total number of modified sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalModifiedSensitiveColumns!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalModifiedSensitiveColumns: pulumi.Output<string>;
     /**
      * The total number of new sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalNewSensitiveColumns!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalNewSensitiveColumns: pulumi.Output<string>;
     /**
      * The total number of objects (tables and editioning views) scanned by the discovery job.
      */
-    public /*out*/ readonly totalObjectsScanned!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalObjectsScanned: pulumi.Output<string>;
     /**
      * The total number of schemas scanned by the discovery job.
      */
-    public /*out*/ readonly totalSchemasScanned!: pulumi.Output<string>;
+    declare public /*out*/ readonly totalSchemasScanned: pulumi.Output<string>;
 
     /**
      * Create a DiscoveryMod resource with the given unique name, arguments, and options.
@@ -196,53 +196,53 @@ export class DiscoveryMod extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiscoveryModState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["discoveryType"] = state ? state.discoveryType : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAppDefinedRelationDiscoveryEnabled"] = state ? state.isAppDefinedRelationDiscoveryEnabled : undefined;
-            resourceInputs["isIncludeAllSchemas"] = state ? state.isIncludeAllSchemas : undefined;
-            resourceInputs["isIncludeAllSensitiveTypes"] = state ? state.isIncludeAllSensitiveTypes : undefined;
-            resourceInputs["isSampleDataCollectionEnabled"] = state ? state.isSampleDataCollectionEnabled : undefined;
-            resourceInputs["schemasForDiscoveries"] = state ? state.schemasForDiscoveries : undefined;
-            resourceInputs["sensitiveDataModelId"] = state ? state.sensitiveDataModelId : undefined;
-            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = state ? state.sensitiveTypeGroupIdsForDiscoveries : undefined;
-            resourceInputs["sensitiveTypeIdsForDiscoveries"] = state ? state.sensitiveTypeIdsForDiscoveries : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tablesForDiscoveries"] = state ? state.tablesForDiscoveries : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["totalColumnsScanned"] = state ? state.totalColumnsScanned : undefined;
-            resourceInputs["totalDeletedSensitiveColumns"] = state ? state.totalDeletedSensitiveColumns : undefined;
-            resourceInputs["totalModifiedSensitiveColumns"] = state ? state.totalModifiedSensitiveColumns : undefined;
-            resourceInputs["totalNewSensitiveColumns"] = state ? state.totalNewSensitiveColumns : undefined;
-            resourceInputs["totalObjectsScanned"] = state ? state.totalObjectsScanned : undefined;
-            resourceInputs["totalSchemasScanned"] = state ? state.totalSchemasScanned : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryType"] = state?.discoveryType;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAppDefinedRelationDiscoveryEnabled"] = state?.isAppDefinedRelationDiscoveryEnabled;
+            resourceInputs["isIncludeAllSchemas"] = state?.isIncludeAllSchemas;
+            resourceInputs["isIncludeAllSensitiveTypes"] = state?.isIncludeAllSensitiveTypes;
+            resourceInputs["isSampleDataCollectionEnabled"] = state?.isSampleDataCollectionEnabled;
+            resourceInputs["schemasForDiscoveries"] = state?.schemasForDiscoveries;
+            resourceInputs["sensitiveDataModelId"] = state?.sensitiveDataModelId;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = state?.sensitiveTypeGroupIdsForDiscoveries;
+            resourceInputs["sensitiveTypeIdsForDiscoveries"] = state?.sensitiveTypeIdsForDiscoveries;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tablesForDiscoveries"] = state?.tablesForDiscoveries;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["totalColumnsScanned"] = state?.totalColumnsScanned;
+            resourceInputs["totalDeletedSensitiveColumns"] = state?.totalDeletedSensitiveColumns;
+            resourceInputs["totalModifiedSensitiveColumns"] = state?.totalModifiedSensitiveColumns;
+            resourceInputs["totalNewSensitiveColumns"] = state?.totalNewSensitiveColumns;
+            resourceInputs["totalObjectsScanned"] = state?.totalObjectsScanned;
+            resourceInputs["totalSchemasScanned"] = state?.totalSchemasScanned;
         } else {
             const args = argsOrState as DiscoveryModArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.sensitiveDataModelId === undefined) && !opts.urn) {
+            if (args?.sensitiveDataModelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sensitiveDataModelId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["discoveryType"] = args ? args.discoveryType : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAppDefinedRelationDiscoveryEnabled"] = args ? args.isAppDefinedRelationDiscoveryEnabled : undefined;
-            resourceInputs["isIncludeAllSchemas"] = args ? args.isIncludeAllSchemas : undefined;
-            resourceInputs["isIncludeAllSensitiveTypes"] = args ? args.isIncludeAllSensitiveTypes : undefined;
-            resourceInputs["isSampleDataCollectionEnabled"] = args ? args.isSampleDataCollectionEnabled : undefined;
-            resourceInputs["schemasForDiscoveries"] = args ? args.schemasForDiscoveries : undefined;
-            resourceInputs["sensitiveDataModelId"] = args ? args.sensitiveDataModelId : undefined;
-            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = args ? args.sensitiveTypeGroupIdsForDiscoveries : undefined;
-            resourceInputs["sensitiveTypeIdsForDiscoveries"] = args ? args.sensitiveTypeIdsForDiscoveries : undefined;
-            resourceInputs["tablesForDiscoveries"] = args ? args.tablesForDiscoveries : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["discoveryType"] = args?.discoveryType;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAppDefinedRelationDiscoveryEnabled"] = args?.isAppDefinedRelationDiscoveryEnabled;
+            resourceInputs["isIncludeAllSchemas"] = args?.isIncludeAllSchemas;
+            resourceInputs["isIncludeAllSensitiveTypes"] = args?.isIncludeAllSensitiveTypes;
+            resourceInputs["isSampleDataCollectionEnabled"] = args?.isSampleDataCollectionEnabled;
+            resourceInputs["schemasForDiscoveries"] = args?.schemasForDiscoveries;
+            resourceInputs["sensitiveDataModelId"] = args?.sensitiveDataModelId;
+            resourceInputs["sensitiveTypeGroupIdsForDiscoveries"] = args?.sensitiveTypeGroupIdsForDiscoveries;
+            resourceInputs["sensitiveTypeIdsForDiscoveries"] = args?.sensitiveTypeIdsForDiscoveries;
+            resourceInputs["tablesForDiscoveries"] = args?.tablesForDiscoveries;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetId"] = undefined /*out*/;

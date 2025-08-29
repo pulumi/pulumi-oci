@@ -50,15 +50,15 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -72,7 +72,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -100,7 +100,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
      *
@@ -115,7 +115,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly emitLockedMessageWhenUserIsLocked!: pulumi.Output<boolean>;
+    declare public readonly emitLockedMessageWhenUserIsLocked: pulumi.Output<boolean>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -128,7 +128,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -140,11 +140,11 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsIdentitySettingIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsIdentitySettingIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -156,7 +156,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsIdentitySettingIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsIdentitySettingIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -170,7 +170,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -183,11 +183,11 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * ID of the resource
      */
-    public readonly identitySettingId!: pulumi.Output<string>;
+    declare public readonly identitySettingId: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -201,7 +201,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsIdentitySettingMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsIdentitySettingMeta[]>;
     /**
      * (Updatable) Whether to allow users to update their own profile.
      *
@@ -214,7 +214,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly myProfile!: pulumi.Output<outputs.Identity.DomainsIdentitySettingMyProfile>;
+    declare public readonly myProfile: pulumi.Output<outputs.Identity.DomainsIdentitySettingMyProfile>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -228,7 +228,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) A list of Posix Gid settings.
      *
@@ -241,7 +241,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly posixGid!: pulumi.Output<outputs.Identity.DomainsIdentitySettingPosixGid>;
+    declare public readonly posixGid: pulumi.Output<outputs.Identity.DomainsIdentitySettingPosixGid>;
     /**
      * (Updatable) A list of Posix Uid settings.
      *
@@ -254,7 +254,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly posixUid!: pulumi.Output<outputs.Identity.DomainsIdentitySettingPosixUid>;
+    declare public readonly posixUid: pulumi.Output<outputs.Identity.DomainsIdentitySettingPosixUid>;
     /**
      * (Updatable) Indicates whether the primary email is required.
      *
@@ -269,7 +269,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly primaryEmailRequired!: pulumi.Output<boolean>;
+    declare public readonly primaryEmailRequired: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
      *
@@ -284,11 +284,11 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly removeInvalidEmails!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly removeInvalidEmails: pulumi.Output<boolean>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) **Added In:** 2302092332
      *
@@ -301,7 +301,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
      */
-    public readonly returnInactiveOverLockedMessage!: pulumi.Output<boolean>;
+    declare public readonly returnInactiveOverLockedMessage: pulumi.Output<boolean>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -315,7 +315,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -329,7 +329,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsIdentitySettingTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsIdentitySettingTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -343,7 +343,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) A list of tokens and their expiry length.
      *
@@ -355,7 +355,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tokens!: pulumi.Output<outputs.Identity.DomainsIdentitySettingToken[]>;
+    declare public readonly tokens: pulumi.Output<outputs.Identity.DomainsIdentitySettingToken[]>;
     /**
      * (Updatable) Indicates whether a user is allowed to change their own recovery email.
      *
@@ -372,7 +372,7 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userAllowedToSetRecoveryEmail!: pulumi.Output<boolean>;
+    declare public readonly userAllowedToSetRecoveryEmail: pulumi.Output<boolean>;
 
     /**
      * Create a DomainsIdentitySetting resource with the given unique name, arguments, and options.
@@ -387,63 +387,63 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsIdentitySettingState | undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["emitLockedMessageWhenUserIsLocked"] = state ? state.emitLockedMessageWhenUserIsLocked : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["identitySettingId"] = state ? state.identitySettingId : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["myProfile"] = state ? state.myProfile : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["posixGid"] = state ? state.posixGid : undefined;
-            resourceInputs["posixUid"] = state ? state.posixUid : undefined;
-            resourceInputs["primaryEmailRequired"] = state ? state.primaryEmailRequired : undefined;
-            resourceInputs["removeInvalidEmails"] = state ? state.removeInvalidEmails : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["returnInactiveOverLockedMessage"] = state ? state.returnInactiveOverLockedMessage : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["tokens"] = state ? state.tokens : undefined;
-            resourceInputs["userAllowedToSetRecoveryEmail"] = state ? state.userAllowedToSetRecoveryEmail : undefined;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["emitLockedMessageWhenUserIsLocked"] = state?.emitLockedMessageWhenUserIsLocked;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["identitySettingId"] = state?.identitySettingId;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["myProfile"] = state?.myProfile;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["posixGid"] = state?.posixGid;
+            resourceInputs["posixUid"] = state?.posixUid;
+            resourceInputs["primaryEmailRequired"] = state?.primaryEmailRequired;
+            resourceInputs["removeInvalidEmails"] = state?.removeInvalidEmails;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["returnInactiveOverLockedMessage"] = state?.returnInactiveOverLockedMessage;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["tokens"] = state?.tokens;
+            resourceInputs["userAllowedToSetRecoveryEmail"] = state?.userAllowedToSetRecoveryEmail;
         } else {
             const args = argsOrState as DomainsIdentitySettingArgs | undefined;
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.identitySettingId === undefined) && !opts.urn) {
+            if (args?.identitySettingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identitySettingId'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["emitLockedMessageWhenUserIsLocked"] = args ? args.emitLockedMessageWhenUserIsLocked : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["identitySettingId"] = args ? args.identitySettingId : undefined;
-            resourceInputs["myProfile"] = args ? args.myProfile : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["posixGid"] = args ? args.posixGid : undefined;
-            resourceInputs["posixUid"] = args ? args.posixUid : undefined;
-            resourceInputs["primaryEmailRequired"] = args ? args.primaryEmailRequired : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["returnInactiveOverLockedMessage"] = args ? args.returnInactiveOverLockedMessage : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["tokens"] = args ? args.tokens : undefined;
-            resourceInputs["userAllowedToSetRecoveryEmail"] = args ? args.userAllowedToSetRecoveryEmail : undefined;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["emitLockedMessageWhenUserIsLocked"] = args?.emitLockedMessageWhenUserIsLocked;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["identitySettingId"] = args?.identitySettingId;
+            resourceInputs["myProfile"] = args?.myProfile;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["posixGid"] = args?.posixGid;
+            resourceInputs["posixUid"] = args?.posixUid;
+            resourceInputs["primaryEmailRequired"] = args?.primaryEmailRequired;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["returnInactiveOverLockedMessage"] = args?.returnInactiveOverLockedMessage;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["tokens"] = args?.tokens;
+            resourceInputs["userAllowedToSetRecoveryEmail"] = args?.userAllowedToSetRecoveryEmail;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

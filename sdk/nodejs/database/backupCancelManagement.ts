@@ -56,7 +56,7 @@ export class BackupCancelManagement extends pulumi.CustomResource {
     /**
      * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly backupId!: pulumi.Output<string>;
+    declare public readonly backupId: pulumi.Output<string>;
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      *
@@ -64,7 +64,7 @@ export class BackupCancelManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly cancelBackupTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly cancelBackupTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a BackupCancelManagement resource with the given unique name, arguments, and options.
@@ -79,15 +79,15 @@ export class BackupCancelManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackupCancelManagementState | undefined;
-            resourceInputs["backupId"] = state ? state.backupId : undefined;
-            resourceInputs["cancelBackupTrigger"] = state ? state.cancelBackupTrigger : undefined;
+            resourceInputs["backupId"] = state?.backupId;
+            resourceInputs["cancelBackupTrigger"] = state?.cancelBackupTrigger;
         } else {
             const args = argsOrState as BackupCancelManagementArgs | undefined;
-            if ((!args || args.backupId === undefined) && !opts.urn) {
+            if (args?.backupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backupId'");
             }
-            resourceInputs["backupId"] = args ? args.backupId : undefined;
-            resourceInputs["cancelBackupTrigger"] = args ? args.cancelBackupTrigger : undefined;
+            resourceInputs["backupId"] = args?.backupId;
+            resourceInputs["cancelBackupTrigger"] = args?.cancelBackupTrigger;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(BackupCancelManagement.__pulumiType, name, resourceInputs, opts);

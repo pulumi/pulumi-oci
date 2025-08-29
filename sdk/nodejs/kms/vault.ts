@@ -86,79 +86,79 @@ export class Vault extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment where you want to create this vault.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      */
-    public /*out*/ readonly cryptoEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly cryptoEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Metadata required for accessing External Key manager
      */
-    public readonly externalKeyManagerMetadata!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadata>;
+    declare public readonly externalKeyManagerMetadata: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadata>;
     /**
      * Summary about metadata of external key manager to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyManagerMetadataSummaries!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadataSummary[]>;
+    declare public /*out*/ readonly externalKeyManagerMetadataSummaries: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadataSummary[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isPrimary: pulumi.Output<boolean>;
     /**
      * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
      */
-    public /*out*/ readonly isVaultReplicable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isVaultReplicable: pulumi.Output<boolean>;
     /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */
-    public /*out*/ readonly managementEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementEndpoint: pulumi.Output<string>;
     /**
      * Vault replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.VaultReplicaDetail[]>;
+    declare public /*out*/ readonly replicaDetails: pulumi.Output<outputs.Kms.VaultReplicaDetail[]>;
     /**
      * (Updatable) Details where vault was backed up.
      */
-    public readonly restoreFromFile!: pulumi.Output<outputs.Kms.VaultRestoreFromFile | undefined>;
+    declare public readonly restoreFromFile: pulumi.Output<outputs.Kms.VaultRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where vault was backed up
      */
-    public readonly restoreFromObjectStore!: pulumi.Output<outputs.Kms.VaultRestoreFromObjectStore | undefined>;
-    public readonly restoreTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly restoreFromObjectStore: pulumi.Output<outputs.Kms.VaultRestoreFromObjectStore | undefined>;
+    declare public readonly restoreTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
-    public /*out*/ readonly restoredFromVaultId!: pulumi.Output<string>;
+    declare public /*out*/ readonly restoredFromVaultId: pulumi.Output<string>;
     /**
      * The vault's current lifecycle state.  Example: `DELETED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public readonly timeOfDeletion: pulumi.Output<string>;
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      */
-    public readonly vaultType!: pulumi.Output<string>;
+    declare public readonly vaultType: pulumi.Output<string>;
 
     /**
      * Create a Vault resource with the given unique name, arguments, and options.
@@ -173,46 +173,46 @@ export class Vault extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VaultState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalKeyManagerMetadata"] = state ? state.externalKeyManagerMetadata : undefined;
-            resourceInputs["externalKeyManagerMetadataSummaries"] = state ? state.externalKeyManagerMetadataSummaries : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
-            resourceInputs["isVaultReplicable"] = state ? state.isVaultReplicable : undefined;
-            resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
-            resourceInputs["replicaDetails"] = state ? state.replicaDetails : undefined;
-            resourceInputs["restoreFromFile"] = state ? state.restoreFromFile : undefined;
-            resourceInputs["restoreFromObjectStore"] = state ? state.restoreFromObjectStore : undefined;
-            resourceInputs["restoreTrigger"] = state ? state.restoreTrigger : undefined;
-            resourceInputs["restoredFromVaultId"] = state ? state.restoredFromVaultId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
-            resourceInputs["vaultType"] = state ? state.vaultType : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["cryptoEndpoint"] = state?.cryptoEndpoint;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalKeyManagerMetadata"] = state?.externalKeyManagerMetadata;
+            resourceInputs["externalKeyManagerMetadataSummaries"] = state?.externalKeyManagerMetadataSummaries;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isPrimary"] = state?.isPrimary;
+            resourceInputs["isVaultReplicable"] = state?.isVaultReplicable;
+            resourceInputs["managementEndpoint"] = state?.managementEndpoint;
+            resourceInputs["replicaDetails"] = state?.replicaDetails;
+            resourceInputs["restoreFromFile"] = state?.restoreFromFile;
+            resourceInputs["restoreFromObjectStore"] = state?.restoreFromObjectStore;
+            resourceInputs["restoreTrigger"] = state?.restoreTrigger;
+            resourceInputs["restoredFromVaultId"] = state?.restoredFromVaultId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
+            resourceInputs["vaultType"] = state?.vaultType;
         } else {
             const args = argsOrState as VaultArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.vaultType === undefined) && !opts.urn) {
+            if (args?.vaultType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vaultType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalKeyManagerMetadata"] = args ? args.externalKeyManagerMetadata : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["restoreFromFile"] = args ? args.restoreFromFile : undefined;
-            resourceInputs["restoreFromObjectStore"] = args ? args.restoreFromObjectStore : undefined;
-            resourceInputs["restoreTrigger"] = args ? args.restoreTrigger : undefined;
-            resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
-            resourceInputs["vaultType"] = args ? args.vaultType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalKeyManagerMetadata"] = args?.externalKeyManagerMetadata;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["restoreFromFile"] = args?.restoreFromFile;
+            resourceInputs["restoreFromObjectStore"] = args?.restoreFromObjectStore;
+            resourceInputs["restoreTrigger"] = args?.restoreTrigger;
+            resourceInputs["timeOfDeletion"] = args?.timeOfDeletion;
+            resourceInputs["vaultType"] = args?.vaultType;
             resourceInputs["cryptoEndpoint"] = undefined /*out*/;
             resourceInputs["externalKeyManagerMetadataSummaries"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;

@@ -77,51 +77,51 @@ export class NetworkFirewall extends pulumi.CustomResource {
     /**
      * Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * IPv4 address for the Network Firewall.
      */
-    public readonly ipv4address!: pulumi.Output<string>;
+    declare public readonly ipv4address: pulumi.Output<string>;
     /**
      * IPv6 address for the Network Firewall.
      */
-    public readonly ipv6address!: pulumi.Output<string>;
+    declare public readonly ipv6address: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Nat Configuration request to use Nat feature on firewall.
      */
-    public readonly natConfiguration!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
+    declare public readonly natConfiguration: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallNatConfiguration>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * (Updatable) An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[]>;
+    declare public readonly networkSecurityGroupIds: pulumi.Output<string[]>;
     /**
      * The current state of the Network Firewall.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
      *
@@ -129,19 +129,19 @@ export class NetworkFirewall extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewall resource with the given unique name, arguments, and options.
@@ -156,44 +156,44 @@ export class NetworkFirewall extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipv4address"] = state ? state.ipv4address : undefined;
-            resourceInputs["ipv6address"] = state ? state.ipv6address : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["natConfiguration"] = state ? state.natConfiguration : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipv4address"] = state?.ipv4address;
+            resourceInputs["ipv6address"] = state?.ipv6address;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["natConfiguration"] = state?.natConfiguration;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["networkSecurityGroupIds"] = state?.networkSecurityGroupIds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as NetworkFirewallArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipv4address"] = args ? args.ipv4address : undefined;
-            resourceInputs["ipv6address"] = args ? args.ipv6address : undefined;
-            resourceInputs["natConfiguration"] = args ? args.natConfiguration : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipv4address"] = args?.ipv4address;
+            resourceInputs["ipv6address"] = args?.ipv6address;
+            resourceInputs["natConfiguration"] = args?.natConfiguration;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["networkSecurityGroupIds"] = args?.networkSecurityGroupIds;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

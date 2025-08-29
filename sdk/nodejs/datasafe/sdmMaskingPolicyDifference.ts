@@ -72,23 +72,23 @@ export class SdmMaskingPolicyDifference extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      */
-    public readonly differenceType!: pulumi.Output<string>;
+    declare public readonly differenceType: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name for the SDM masking policy difference. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the masking policy. Note that if the masking policy is not associated with an SDM, CreateSdmMaskingPolicyDifference operation won't be allowed. 
      *
@@ -96,27 +96,27 @@ export class SdmMaskingPolicyDifference extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly maskingPolicyId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
     /**
      * The OCID of the sensitive data model associated with the SDM masking policy difference.
      */
-    public /*out*/ readonly sensitiveDataModelId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sensitiveDataModelId: pulumi.Output<string>;
     /**
      * The current state of the SDM masking policy difference.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreationStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreationStarted: pulumi.Output<string>;
 
     /**
      * Create a SdmMaskingPolicyDifference resource with the given unique name, arguments, and options.
@@ -131,31 +131,31 @@ export class SdmMaskingPolicyDifference extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SdmMaskingPolicyDifferenceState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["differenceType"] = state ? state.differenceType : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["sensitiveDataModelId"] = state ? state.sensitiveDataModelId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeCreationStarted"] = state ? state.timeCreationStarted : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["differenceType"] = state?.differenceType;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["sensitiveDataModelId"] = state?.sensitiveDataModelId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeCreationStarted"] = state?.timeCreationStarted;
         } else {
             const args = argsOrState as SdmMaskingPolicyDifferenceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.maskingPolicyId === undefined) && !opts.urn) {
+            if (args?.maskingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPolicyId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["differenceType"] = args ? args.differenceType : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["differenceType"] = args?.differenceType;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
             resourceInputs["sensitiveDataModelId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

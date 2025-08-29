@@ -68,23 +68,23 @@ export class CloudVmClusterIormConfig extends pulumi.CustomResource {
     /**
      * The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly cloudVmClusterId!: pulumi.Output<string>;
+    declare public readonly cloudVmClusterId: pulumi.Output<string>;
     /**
      * (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
      */
-    public readonly dbPlans!: pulumi.Output<outputs.Database.CloudVmClusterIormConfigDbPlan[]>;
+    declare public readonly dbPlans: pulumi.Output<outputs.Database.CloudVmClusterIormConfigDbPlan[]>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Value for the IORM objective Default is "Auto"
      */
-    public readonly objective!: pulumi.Output<string>;
+    declare public readonly objective: pulumi.Output<string>;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a CloudVmClusterIormConfig resource with the given unique name, arguments, and options.
@@ -99,22 +99,22 @@ export class CloudVmClusterIormConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudVmClusterIormConfigState | undefined;
-            resourceInputs["cloudVmClusterId"] = state ? state.cloudVmClusterId : undefined;
-            resourceInputs["dbPlans"] = state ? state.dbPlans : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["objective"] = state ? state.objective : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["cloudVmClusterId"] = state?.cloudVmClusterId;
+            resourceInputs["dbPlans"] = state?.dbPlans;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["objective"] = state?.objective;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as CloudVmClusterIormConfigArgs | undefined;
-            if ((!args || args.cloudVmClusterId === undefined) && !opts.urn) {
+            if (args?.cloudVmClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudVmClusterId'");
             }
-            if ((!args || args.dbPlans === undefined) && !opts.urn) {
+            if (args?.dbPlans === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbPlans'");
             }
-            resourceInputs["cloudVmClusterId"] = args ? args.cloudVmClusterId : undefined;
-            resourceInputs["dbPlans"] = args ? args.dbPlans : undefined;
-            resourceInputs["objective"] = args ? args.objective : undefined;
+            resourceInputs["cloudVmClusterId"] = args?.cloudVmClusterId;
+            resourceInputs["dbPlans"] = args?.dbPlans;
+            resourceInputs["objective"] = args?.objective;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

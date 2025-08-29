@@ -72,31 +72,31 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data ingestion job in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * **DataIngestionJobStatistics**
      */
-    public /*out*/ readonly dataIngestionJobStatistics!: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobStatistic[]>;
+    declare public /*out*/ readonly dataIngestionJobStatistics: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobStatistic[]>;
     /**
      * DataIngestionJob type.
      */
-    public /*out*/ readonly dataIngestionJobTypes!: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobType[]>;
+    declare public /*out*/ readonly dataIngestionJobTypes: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobType[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      */
-    public readonly dataSourceId!: pulumi.Output<string>;
+    declare public readonly dataSourceId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A user-friendly description of the data ingestion job.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -104,28 +104,28 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly knowledgeBaseId!: pulumi.Output<string>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly knowledgeBaseId: pulumi.Output<string>;
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current state of the data ingestion job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the data ingestion job was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the data ingestion job was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AgentDataIngestionJob resource with the given unique name, arguments, and options.
@@ -140,34 +140,34 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AgentDataIngestionJobState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataIngestionJobStatistics"] = state ? state.dataIngestionJobStatistics : undefined;
-            resourceInputs["dataIngestionJobTypes"] = state ? state.dataIngestionJobTypes : undefined;
-            resourceInputs["dataSourceId"] = state ? state.dataSourceId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["knowledgeBaseId"] = state ? state.knowledgeBaseId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataIngestionJobStatistics"] = state?.dataIngestionJobStatistics;
+            resourceInputs["dataIngestionJobTypes"] = state?.dataIngestionJobTypes;
+            resourceInputs["dataSourceId"] = state?.dataSourceId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["knowledgeBaseId"] = state?.knowledgeBaseId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AgentDataIngestionJobArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dataSourceId === undefined) && !opts.urn) {
+            if (args?.dataSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataSourceId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataSourceId"] = args ? args.dataSourceId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataSourceId"] = args?.dataSourceId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["dataIngestionJobStatistics"] = undefined /*out*/;
             resourceInputs["dataIngestionJobTypes"] = undefined /*out*/;
             resourceInputs["knowledgeBaseId"] = undefined /*out*/;

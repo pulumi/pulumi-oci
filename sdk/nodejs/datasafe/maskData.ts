@@ -32,8 +32,8 @@ export class MaskData extends pulumi.CustomResource {
         return obj['__pulumiType'] === MaskData.__pulumiType;
     }
 
-    public readonly maskingPolicyId!: pulumi.Output<string>;
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
 
     /**
      * Create a MaskData resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class MaskData extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaskDataState | undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["targetId"] = state?.targetId;
         } else {
             const args = argsOrState as MaskDataArgs | undefined;
-            if ((!args || args.maskingPolicyId === undefined) && !opts.urn) {
+            if (args?.maskingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPolicyId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["targetId"] = args?.targetId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaskData.__pulumiType, name, resourceInputs, opts);

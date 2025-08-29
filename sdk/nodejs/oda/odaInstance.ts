@@ -75,67 +75,67 @@ export class OdaInstance extends pulumi.CustomResource {
     /**
      * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    public /*out*/ readonly attachmentIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly attachmentIds: pulumi.Output<string[]>;
     /**
      * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      */
-    public /*out*/ readonly attachmentTypes!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly attachmentTypes: pulumi.Output<string[]>;
     /**
      * (Updatable) Identifier of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * URL for the connector's endpoint.
      */
-    public /*out*/ readonly connectorUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly connectorUrl: pulumi.Output<string>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the Digital Assistant instance.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      */
-    public /*out*/ readonly identityAppConsoleUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityAppConsoleUrl: pulumi.Output<string>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      */
-    public /*out*/ readonly identityAppGuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityAppGuid: pulumi.Output<string>;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      */
-    public readonly identityDomain!: pulumi.Output<string>;
+    declare public readonly identityDomain: pulumi.Output<string>;
     /**
      * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      */
-    public /*out*/ readonly importedPackageIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly importedPackageIds: pulumi.Output<string[]>;
     /**
      * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      */
-    public /*out*/ readonly importedPackageNames!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly importedPackageNames: pulumi.Output<string[]>;
     /**
      * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      */
-    public readonly isRoleBasedAccess!: pulumi.Output<boolean>;
+    declare public readonly isRoleBasedAccess: pulumi.Output<boolean>;
     /**
      * The current sub-state of the Digital Assistant instance.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubState: pulumi.Output<string>;
     /**
      * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    public /*out*/ readonly restrictedOperations!: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[]>;
+    declare public /*out*/ readonly restrictedOperations: pulumi.Output<outputs.Oda.OdaInstanceRestrictedOperation[]>;
     /**
      * Shape or size of the instance.
      *
@@ -143,27 +143,27 @@ export class OdaInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shapeName!: pulumi.Output<string>;
+    declare public readonly shapeName: pulumi.Output<string>;
     /**
      * The current state of the Digital Assistant instance.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    declare public /*out*/ readonly stateMessage: pulumi.Output<string>;
     /**
      * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * URL for the Digital Assistant web application that's associated with the instance.
      */
-    public /*out*/ readonly webAppUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly webAppUrl: pulumi.Output<string>;
 
     /**
      * Create a OdaInstance resource with the given unique name, arguments, and options.
@@ -178,45 +178,45 @@ export class OdaInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OdaInstanceState | undefined;
-            resourceInputs["attachmentIds"] = state ? state.attachmentIds : undefined;
-            resourceInputs["attachmentTypes"] = state ? state.attachmentTypes : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectorUrl"] = state ? state.connectorUrl : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["identityAppConsoleUrl"] = state ? state.identityAppConsoleUrl : undefined;
-            resourceInputs["identityAppGuid"] = state ? state.identityAppGuid : undefined;
-            resourceInputs["identityDomain"] = state ? state.identityDomain : undefined;
-            resourceInputs["importedPackageIds"] = state ? state.importedPackageIds : undefined;
-            resourceInputs["importedPackageNames"] = state ? state.importedPackageNames : undefined;
-            resourceInputs["isRoleBasedAccess"] = state ? state.isRoleBasedAccess : undefined;
-            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
-            resourceInputs["restrictedOperations"] = state ? state.restrictedOperations : undefined;
-            resourceInputs["shapeName"] = state ? state.shapeName : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stateMessage"] = state ? state.stateMessage : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["webAppUrl"] = state ? state.webAppUrl : undefined;
+            resourceInputs["attachmentIds"] = state?.attachmentIds;
+            resourceInputs["attachmentTypes"] = state?.attachmentTypes;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectorUrl"] = state?.connectorUrl;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["identityAppConsoleUrl"] = state?.identityAppConsoleUrl;
+            resourceInputs["identityAppGuid"] = state?.identityAppGuid;
+            resourceInputs["identityDomain"] = state?.identityDomain;
+            resourceInputs["importedPackageIds"] = state?.importedPackageIds;
+            resourceInputs["importedPackageNames"] = state?.importedPackageNames;
+            resourceInputs["isRoleBasedAccess"] = state?.isRoleBasedAccess;
+            resourceInputs["lifecycleSubState"] = state?.lifecycleSubState;
+            resourceInputs["restrictedOperations"] = state?.restrictedOperations;
+            resourceInputs["shapeName"] = state?.shapeName;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stateMessage"] = state?.stateMessage;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["webAppUrl"] = state?.webAppUrl;
         } else {
             const args = argsOrState as OdaInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.shapeName === undefined) && !opts.urn) {
+            if (args?.shapeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shapeName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["identityDomain"] = args ? args.identityDomain : undefined;
-            resourceInputs["isRoleBasedAccess"] = args ? args.isRoleBasedAccess : undefined;
-            resourceInputs["shapeName"] = args ? args.shapeName : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["identityDomain"] = args?.identityDomain;
+            resourceInputs["isRoleBasedAccess"] = args?.isRoleBasedAccess;
+            resourceInputs["shapeName"] = args?.shapeName;
+            resourceInputs["state"] = args?.state;
             resourceInputs["attachmentIds"] = undefined /*out*/;
             resourceInputs["attachmentTypes"] = undefined /*out*/;
             resourceInputs["connectorUrl"] = undefined /*out*/;

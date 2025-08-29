@@ -64,19 +64,19 @@ export class CalculateAuditVolumeAvailable extends pulumi.CustomResource {
     /**
      * The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
      */
-    public readonly auditCollectionStartTime!: pulumi.Output<string>;
+    declare public readonly auditCollectionStartTime: pulumi.Output<string>;
     /**
      * The OCID of the audit.
      */
-    public readonly auditProfileId!: pulumi.Output<string>;
+    declare public readonly auditProfileId: pulumi.Output<string>;
     /**
      * List of available audit volumes.
      */
-    public /*out*/ readonly availableAuditVolumes!: pulumi.Output<outputs.DataSafe.CalculateAuditVolumeAvailableAvailableAuditVolume[]>;
+    declare public /*out*/ readonly availableAuditVolumes: pulumi.Output<outputs.DataSafe.CalculateAuditVolumeAvailableAvailableAuditVolume[]>;
     /**
      * Unique name of the database associated to the peer target database.
      */
-    public readonly databaseUniqueName!: pulumi.Output<string>;
+    declare public readonly databaseUniqueName: pulumi.Output<string>;
     /**
      * The trail locations for which the audit data volume has to be calculated.
      *
@@ -84,7 +84,7 @@ export class CalculateAuditVolumeAvailable extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly trailLocations!: pulumi.Output<string[]>;
+    declare public readonly trailLocations: pulumi.Output<string[]>;
 
     /**
      * Create a CalculateAuditVolumeAvailable resource with the given unique name, arguments, and options.
@@ -99,20 +99,20 @@ export class CalculateAuditVolumeAvailable extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CalculateAuditVolumeAvailableState | undefined;
-            resourceInputs["auditCollectionStartTime"] = state ? state.auditCollectionStartTime : undefined;
-            resourceInputs["auditProfileId"] = state ? state.auditProfileId : undefined;
-            resourceInputs["availableAuditVolumes"] = state ? state.availableAuditVolumes : undefined;
-            resourceInputs["databaseUniqueName"] = state ? state.databaseUniqueName : undefined;
-            resourceInputs["trailLocations"] = state ? state.trailLocations : undefined;
+            resourceInputs["auditCollectionStartTime"] = state?.auditCollectionStartTime;
+            resourceInputs["auditProfileId"] = state?.auditProfileId;
+            resourceInputs["availableAuditVolumes"] = state?.availableAuditVolumes;
+            resourceInputs["databaseUniqueName"] = state?.databaseUniqueName;
+            resourceInputs["trailLocations"] = state?.trailLocations;
         } else {
             const args = argsOrState as CalculateAuditVolumeAvailableArgs | undefined;
-            if ((!args || args.auditProfileId === undefined) && !opts.urn) {
+            if (args?.auditProfileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'auditProfileId'");
             }
-            resourceInputs["auditCollectionStartTime"] = args ? args.auditCollectionStartTime : undefined;
-            resourceInputs["auditProfileId"] = args ? args.auditProfileId : undefined;
-            resourceInputs["databaseUniqueName"] = args ? args.databaseUniqueName : undefined;
-            resourceInputs["trailLocations"] = args ? args.trailLocations : undefined;
+            resourceInputs["auditCollectionStartTime"] = args?.auditCollectionStartTime;
+            resourceInputs["auditProfileId"] = args?.auditProfileId;
+            resourceInputs["databaseUniqueName"] = args?.databaseUniqueName;
+            resourceInputs["trailLocations"] = args?.trailLocations;
             resourceInputs["availableAuditVolumes"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

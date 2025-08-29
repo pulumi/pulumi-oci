@@ -50,15 +50,15 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -72,7 +72,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -100,7 +100,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -113,7 +113,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -125,11 +125,11 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -141,7 +141,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -155,7 +155,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -168,7 +168,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) Identifier represents KMSI feature is enabled or not.
      *
@@ -181,7 +181,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly kmsiFeatureEnabled!: pulumi.Output<boolean>;
+    declare public readonly kmsiFeatureEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Identifier represents KMSI to be prompted to user or not.
      *
@@ -194,11 +194,11 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly kmsiPromptEnabled!: pulumi.Output<boolean>;
+    declare public readonly kmsiPromptEnabled: pulumi.Output<boolean>;
     /**
      * ID of the resource
      */
-    public readonly kmsiSettingId!: pulumi.Output<string>;
+    declare public readonly kmsiSettingId: pulumi.Output<string>;
     /**
      * (Updatable) Timestamp of when the KmsiSettings was enabled last time.
      *
@@ -214,7 +214,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly lastEnabledOn!: pulumi.Output<string>;
+    declare public readonly lastEnabledOn: pulumi.Output<string>;
     /**
      * (Updatable) Identifier represents duration in days within which kmsi token must be used.
      *
@@ -229,7 +229,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly lastUsedValidityInDays!: pulumi.Output<number>;
+    declare public readonly lastUsedValidityInDays: pulumi.Output<number>;
     /**
      * (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
      *
@@ -244,7 +244,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly maxAllowedSessions!: pulumi.Output<number>;
+    declare public readonly maxAllowedSessions: pulumi.Output<number>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -258,7 +258,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsKmsiSettingMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsKmsiSettingMeta[]>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -272,11 +272,11 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -290,7 +290,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -304,7 +304,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsKmsiSettingTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsKmsiSettingTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -318,7 +318,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) Identifier represents validity duration in days.
      *
@@ -333,7 +333,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly tokenValidityInDays!: pulumi.Output<number>;
+    declare public readonly tokenValidityInDays: pulumi.Output<number>;
     /**
      * (Updatable) Identifier represents whether user is prompted for ToU or not.
      *
@@ -350,7 +350,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly touPromptDisabled!: pulumi.Output<boolean>;
+    declare public readonly touPromptDisabled: pulumi.Output<boolean>;
 
     /**
      * Create a DomainsKmsiSetting resource with the given unique name, arguments, and options.
@@ -365,60 +365,60 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsKmsiSettingState | undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["kmsiFeatureEnabled"] = state ? state.kmsiFeatureEnabled : undefined;
-            resourceInputs["kmsiPromptEnabled"] = state ? state.kmsiPromptEnabled : undefined;
-            resourceInputs["kmsiSettingId"] = state ? state.kmsiSettingId : undefined;
-            resourceInputs["lastEnabledOn"] = state ? state.lastEnabledOn : undefined;
-            resourceInputs["lastUsedValidityInDays"] = state ? state.lastUsedValidityInDays : undefined;
-            resourceInputs["maxAllowedSessions"] = state ? state.maxAllowedSessions : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["tokenValidityInDays"] = state ? state.tokenValidityInDays : undefined;
-            resourceInputs["touPromptDisabled"] = state ? state.touPromptDisabled : undefined;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["kmsiFeatureEnabled"] = state?.kmsiFeatureEnabled;
+            resourceInputs["kmsiPromptEnabled"] = state?.kmsiPromptEnabled;
+            resourceInputs["kmsiSettingId"] = state?.kmsiSettingId;
+            resourceInputs["lastEnabledOn"] = state?.lastEnabledOn;
+            resourceInputs["lastUsedValidityInDays"] = state?.lastUsedValidityInDays;
+            resourceInputs["maxAllowedSessions"] = state?.maxAllowedSessions;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["tokenValidityInDays"] = state?.tokenValidityInDays;
+            resourceInputs["touPromptDisabled"] = state?.touPromptDisabled;
         } else {
             const args = argsOrState as DomainsKmsiSettingArgs | undefined;
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.kmsiSettingId === undefined) && !opts.urn) {
+            if (args?.kmsiSettingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kmsiSettingId'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["kmsiFeatureEnabled"] = args ? args.kmsiFeatureEnabled : undefined;
-            resourceInputs["kmsiPromptEnabled"] = args ? args.kmsiPromptEnabled : undefined;
-            resourceInputs["kmsiSettingId"] = args ? args.kmsiSettingId : undefined;
-            resourceInputs["lastEnabledOn"] = args ? args.lastEnabledOn : undefined;
-            resourceInputs["lastUsedValidityInDays"] = args ? args.lastUsedValidityInDays : undefined;
-            resourceInputs["maxAllowedSessions"] = args ? args.maxAllowedSessions : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["tokenValidityInDays"] = args ? args.tokenValidityInDays : undefined;
-            resourceInputs["touPromptDisabled"] = args ? args.touPromptDisabled : undefined;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["kmsiFeatureEnabled"] = args?.kmsiFeatureEnabled;
+            resourceInputs["kmsiPromptEnabled"] = args?.kmsiPromptEnabled;
+            resourceInputs["kmsiSettingId"] = args?.kmsiSettingId;
+            resourceInputs["lastEnabledOn"] = args?.lastEnabledOn;
+            resourceInputs["lastUsedValidityInDays"] = args?.lastUsedValidityInDays;
+            resourceInputs["maxAllowedSessions"] = args?.maxAllowedSessions;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["tokenValidityInDays"] = args?.tokenValidityInDays;
+            resourceInputs["touPromptDisabled"] = args?.touPromptDisabled;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

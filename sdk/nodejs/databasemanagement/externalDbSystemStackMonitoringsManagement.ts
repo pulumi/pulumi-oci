@@ -59,19 +59,19 @@ export class ExternalDbSystemStackMonitoringsManagement extends pulumi.CustomRes
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableStackMonitoring!: pulumi.Output<boolean>;
+    declare public readonly enableStackMonitoring: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    public readonly externalDbSystemId!: pulumi.Output<string>;
+    declare public readonly externalDbSystemId: pulumi.Output<string>;
     /**
      * The status of the associated service.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    public readonly metadata!: pulumi.Output<string>;
+    declare public readonly metadata: pulumi.Output<string>;
 
     /**
      * Create a ExternalDbSystemStackMonitoringsManagement resource with the given unique name, arguments, and options.
@@ -86,22 +86,22 @@ export class ExternalDbSystemStackMonitoringsManagement extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalDbSystemStackMonitoringsManagementState | undefined;
-            resourceInputs["enableStackMonitoring"] = state ? state.enableStackMonitoring : undefined;
-            resourceInputs["externalDbSystemId"] = state ? state.externalDbSystemId : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["enableStackMonitoring"] = state?.enableStackMonitoring;
+            resourceInputs["externalDbSystemId"] = state?.externalDbSystemId;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["metadata"] = state?.metadata;
         } else {
             const args = argsOrState as ExternalDbSystemStackMonitoringsManagementArgs | undefined;
-            if ((!args || args.enableStackMonitoring === undefined) && !opts.urn) {
+            if (args?.enableStackMonitoring === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableStackMonitoring'");
             }
-            if ((!args || args.externalDbSystemId === undefined) && !opts.urn) {
+            if (args?.externalDbSystemId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDbSystemId'");
             }
-            resourceInputs["enableStackMonitoring"] = args ? args.enableStackMonitoring : undefined;
-            resourceInputs["externalDbSystemId"] = args ? args.externalDbSystemId : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["enableStackMonitoring"] = args?.enableStackMonitoring;
+            resourceInputs["externalDbSystemId"] = args?.externalDbSystemId;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["metadata"] = args?.metadata;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalDbSystemStackMonitoringsManagement.__pulumiType, name, resourceInputs, opts);

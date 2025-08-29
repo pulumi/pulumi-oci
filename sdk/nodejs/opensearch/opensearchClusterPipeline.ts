@@ -84,95 +84,95 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
     /**
      * The OCID of the compartment to create the pipeline in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
      */
-    public readonly dataPrepperConfigurationBody!: pulumi.Output<string>;
+    declare public readonly dataPrepperConfigurationBody: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name of the cluster pipeline. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The amount of memory in GB, for each pipeline node.
      */
-    public readonly memoryGb!: pulumi.Output<number>;
+    declare public readonly memoryGb: pulumi.Output<number>;
     /**
      * (Updatable) The number of nodes configured for the pipeline.
      */
-    public readonly nodeCount!: pulumi.Output<number>;
+    declare public readonly nodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The pipeline node shape.
      */
-    public readonly nodeShape!: pulumi.Output<string>;
+    declare public readonly nodeShape: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the NSG where the pipeline private endpoint vnic will be attached.
      */
-    public readonly nsgId!: pulumi.Output<string>;
+    declare public readonly nsgId: pulumi.Output<string>;
     /**
      * (Updatable) The number of OCPUs configured for each pipeline node.
      */
-    public readonly ocpuCount!: pulumi.Output<number>;
+    declare public readonly ocpuCount: pulumi.Output<number>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    public readonly opcDryRun!: pulumi.Output<boolean>;
+    declare public readonly opcDryRun: pulumi.Output<boolean>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    public /*out*/ readonly opensearchPipelineFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly opensearchPipelineFqdn: pulumi.Output<string>;
     /**
      * The pipeline's private IP address.
      */
-    public /*out*/ readonly opensearchPipelinePrivateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly opensearchPipelinePrivateIp: pulumi.Output<string>;
     /**
      * (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
      */
-    public readonly pipelineConfigurationBody!: pulumi.Output<string>;
+    declare public readonly pipelineConfigurationBody: pulumi.Output<string>;
     /**
      * The current state of the pipeline.
      */
-    public /*out*/ readonly pipelineMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly pipelineMode: pulumi.Output<string>;
     /**
      * (Updatable) The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
      */
-    public readonly reverseConnectionEndpoints!: pulumi.Output<outputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint[]>;
+    declare public readonly reverseConnectionEndpoints: pulumi.Output<outputs.Opensearch.OpensearchClusterPipelineReverseConnectionEndpoint[]>;
     /**
      * The current state of the cluster backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's subnet is located.
      */
-    public readonly subnetCompartmentId!: pulumi.Output<string>;
+    declare public readonly subnetCompartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the pipeline's subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the cluster pipeline was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The amount of time in milliseconds since the pipeline was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The OCID for the compartment where the pipeline's VCN is located.
      */
-    public readonly vcnCompartmentId!: pulumi.Output<string>;
+    declare public readonly vcnCompartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the pipeline's VCN.
      *
@@ -180,7 +180,7 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a OpensearchClusterPipeline resource with the given unique name, arguments, and options.
@@ -195,70 +195,70 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OpensearchClusterPipelineState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataPrepperConfigurationBody"] = state ? state.dataPrepperConfigurationBody : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["memoryGb"] = state ? state.memoryGb : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["nodeShape"] = state ? state.nodeShape : undefined;
-            resourceInputs["nsgId"] = state ? state.nsgId : undefined;
-            resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
-            resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
-            resourceInputs["opensearchPipelineFqdn"] = state ? state.opensearchPipelineFqdn : undefined;
-            resourceInputs["opensearchPipelinePrivateIp"] = state ? state.opensearchPipelinePrivateIp : undefined;
-            resourceInputs["pipelineConfigurationBody"] = state ? state.pipelineConfigurationBody : undefined;
-            resourceInputs["pipelineMode"] = state ? state.pipelineMode : undefined;
-            resourceInputs["reverseConnectionEndpoints"] = state ? state.reverseConnectionEndpoints : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetCompartmentId"] = state ? state.subnetCompartmentId : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vcnCompartmentId"] = state ? state.vcnCompartmentId : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataPrepperConfigurationBody"] = state?.dataPrepperConfigurationBody;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["memoryGb"] = state?.memoryGb;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["nodeShape"] = state?.nodeShape;
+            resourceInputs["nsgId"] = state?.nsgId;
+            resourceInputs["ocpuCount"] = state?.ocpuCount;
+            resourceInputs["opcDryRun"] = state?.opcDryRun;
+            resourceInputs["opensearchPipelineFqdn"] = state?.opensearchPipelineFqdn;
+            resourceInputs["opensearchPipelinePrivateIp"] = state?.opensearchPipelinePrivateIp;
+            resourceInputs["pipelineConfigurationBody"] = state?.pipelineConfigurationBody;
+            resourceInputs["pipelineMode"] = state?.pipelineMode;
+            resourceInputs["reverseConnectionEndpoints"] = state?.reverseConnectionEndpoints;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetCompartmentId"] = state?.subnetCompartmentId;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vcnCompartmentId"] = state?.vcnCompartmentId;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as OpensearchClusterPipelineArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dataPrepperConfigurationBody === undefined) && !opts.urn) {
+            if (args?.dataPrepperConfigurationBody === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataPrepperConfigurationBody'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.memoryGb === undefined) && !opts.urn) {
+            if (args?.memoryGb === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memoryGb'");
             }
-            if ((!args || args.nodeCount === undefined) && !opts.urn) {
+            if (args?.nodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeCount'");
             }
-            if ((!args || args.ocpuCount === undefined) && !opts.urn) {
+            if (args?.ocpuCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ocpuCount'");
             }
-            if ((!args || args.pipelineConfigurationBody === undefined) && !opts.urn) {
+            if (args?.pipelineConfigurationBody === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pipelineConfigurationBody'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataPrepperConfigurationBody"] = args ? args.dataPrepperConfigurationBody : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["memoryGb"] = args ? args.memoryGb : undefined;
-            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
-            resourceInputs["nodeShape"] = args ? args.nodeShape : undefined;
-            resourceInputs["nsgId"] = args ? args.nsgId : undefined;
-            resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
-            resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
-            resourceInputs["pipelineConfigurationBody"] = args ? args.pipelineConfigurationBody : undefined;
-            resourceInputs["reverseConnectionEndpoints"] = args ? args.reverseConnectionEndpoints : undefined;
-            resourceInputs["subnetCompartmentId"] = args ? args.subnetCompartmentId : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["vcnCompartmentId"] = args ? args.vcnCompartmentId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataPrepperConfigurationBody"] = args?.dataPrepperConfigurationBody;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["memoryGb"] = args?.memoryGb;
+            resourceInputs["nodeCount"] = args?.nodeCount;
+            resourceInputs["nodeShape"] = args?.nodeShape;
+            resourceInputs["nsgId"] = args?.nsgId;
+            resourceInputs["ocpuCount"] = args?.ocpuCount;
+            resourceInputs["opcDryRun"] = args?.opcDryRun;
+            resourceInputs["pipelineConfigurationBody"] = args?.pipelineConfigurationBody;
+            resourceInputs["reverseConnectionEndpoints"] = args?.reverseConnectionEndpoints;
+            resourceInputs["subnetCompartmentId"] = args?.subnetCompartmentId;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["vcnCompartmentId"] = args?.vcnCompartmentId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["opensearchPipelineFqdn"] = undefined /*out*/;
             resourceInputs["opensearchPipelinePrivateIp"] = undefined /*out*/;
             resourceInputs["pipelineMode"] = undefined /*out*/;

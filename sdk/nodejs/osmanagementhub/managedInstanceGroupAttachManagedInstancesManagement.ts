@@ -66,15 +66,15 @@ export class ManagedInstanceGroupAttachManagedInstancesManagement extends pulumi
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the group.
      */
-    public readonly managedInstances!: pulumi.Output<string[]>;
+    declare public readonly managedInstances: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupAttachManagedInstancesManagement resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class ManagedInstanceGroupAttachManagedInstancesManagement extends pulumi
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupAttachManagedInstancesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["managedInstances"] = state ? state.managedInstances : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["managedInstances"] = state?.managedInstances;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupAttachManagedInstancesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.managedInstances === undefined) && !opts.urn) {
+            if (args?.managedInstances === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstances'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["managedInstances"] = args ? args.managedInstances : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["managedInstances"] = args?.managedInstances;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupAttachManagedInstancesManagement.__pulumiType, name, resourceInputs, opts);

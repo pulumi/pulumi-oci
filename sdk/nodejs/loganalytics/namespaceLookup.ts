@@ -92,99 +92,99 @@ export class NamespaceLookup extends pulumi.CustomResource {
     /**
      * The active edit version.
      */
-    public /*out*/ readonly activeEditVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly activeEditVersion: pulumi.Output<string>;
     /**
      * The canonical link.
      */
-    public /*out*/ readonly canonicalLink!: pulumi.Output<string>;
+    declare public /*out*/ readonly canonicalLink: pulumi.Output<string>;
     /**
      * (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
      */
-    public readonly categories!: pulumi.Output<outputs.LogAnalytics.NamespaceLookupCategory[]>;
+    declare public readonly categories: pulumi.Output<outputs.LogAnalytics.NamespaceLookupCategory[]>;
     /**
      * The character encoding of the uploaded file.
      */
-    public readonly charEncoding!: pulumi.Output<string | undefined>;
+    declare public readonly charEncoding: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The default match value.
      */
-    public readonly defaultMatchValue!: pulumi.Output<string | undefined>;
+    declare public readonly defaultMatchValue: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The lookup description.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * The edit version.
      */
-    public /*out*/ readonly editVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly editVersion: pulumi.Output<string>;
     /**
      * (Updatable) The lookup fields.
      */
-    public readonly fields!: pulumi.Output<outputs.LogAnalytics.NamespaceLookupField[]>;
+    declare public readonly fields: pulumi.Output<outputs.LogAnalytics.NamespaceLookupField[]>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A flag indicating if the lookup is custom (user-defined) or built in.
      */
-    public /*out*/ readonly isBuiltIn!: pulumi.Output<string>;
+    declare public /*out*/ readonly isBuiltIn: pulumi.Output<string>;
     /**
      * A flag indicating whether or not the new lookup should be hidden.
      */
-    public readonly isHidden!: pulumi.Output<boolean>;
+    declare public readonly isHidden: pulumi.Output<boolean>;
     /**
      * The lookup display name.
      */
-    public /*out*/ readonly lookupDisplayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly lookupDisplayName: pulumi.Output<string>;
     /**
      * The lookup OCID.
      */
-    public /*out*/ readonly lookupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lookupId: pulumi.Output<string>;
     /**
      * The name of the lookup to operate on.
      */
-    public readonly lookupName!: pulumi.Output<string>;
+    declare public readonly lookupName: pulumi.Output<string>;
     /**
      * The lookup reference as an integer.
      */
-    public /*out*/ readonly lookupReference!: pulumi.Output<string>;
+    declare public /*out*/ readonly lookupReference: pulumi.Output<string>;
     /**
      * The lookup reference as a string.
      */
-    public /*out*/ readonly lookupReferenceString!: pulumi.Output<string>;
+    declare public /*out*/ readonly lookupReferenceString: pulumi.Output<string>;
     /**
      * (Updatable) The maximum number of matches.
      */
-    public readonly maxMatches!: pulumi.Output<string | undefined>;
+    declare public readonly maxMatches: pulumi.Output<string | undefined>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * AutoLookups
      */
-    public /*out*/ readonly referringSources!: pulumi.Output<outputs.LogAnalytics.NamespaceLookupReferringSource[]>;
+    declare public /*out*/ readonly referringSources: pulumi.Output<outputs.LogAnalytics.NamespaceLookupReferringSource[]>;
     /**
      * Path to the file containing data for lookup creation.
      */
-    public readonly registerLookupFile!: pulumi.Output<string>;
+    declare public readonly registerLookupFile: pulumi.Output<string>;
     /**
      * StatusSummary
      */
-    public /*out*/ readonly statusSummaries!: pulumi.Output<outputs.LogAnalytics.NamespaceLookupStatusSummary[]>;
+    declare public /*out*/ readonly statusSummaries: pulumi.Output<outputs.LogAnalytics.NamespaceLookupStatusSummary[]>;
     /**
      * The last updated date.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The lookup type. Valid values are Lookup, Dictionary or Module.
      *
@@ -192,7 +192,7 @@ export class NamespaceLookup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NamespaceLookup resource with the given unique name, arguments, and options.
@@ -207,59 +207,59 @@ export class NamespaceLookup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceLookupState | undefined;
-            resourceInputs["activeEditVersion"] = state ? state.activeEditVersion : undefined;
-            resourceInputs["canonicalLink"] = state ? state.canonicalLink : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["charEncoding"] = state ? state.charEncoding : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["defaultMatchValue"] = state ? state.defaultMatchValue : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["editVersion"] = state ? state.editVersion : undefined;
-            resourceInputs["fields"] = state ? state.fields : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isBuiltIn"] = state ? state.isBuiltIn : undefined;
-            resourceInputs["isHidden"] = state ? state.isHidden : undefined;
-            resourceInputs["lookupDisplayName"] = state ? state.lookupDisplayName : undefined;
-            resourceInputs["lookupId"] = state ? state.lookupId : undefined;
-            resourceInputs["lookupName"] = state ? state.lookupName : undefined;
-            resourceInputs["lookupReference"] = state ? state.lookupReference : undefined;
-            resourceInputs["lookupReferenceString"] = state ? state.lookupReferenceString : undefined;
-            resourceInputs["maxMatches"] = state ? state.maxMatches : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["referringSources"] = state ? state.referringSources : undefined;
-            resourceInputs["registerLookupFile"] = state ? state.registerLookupFile : undefined;
-            resourceInputs["statusSummaries"] = state ? state.statusSummaries : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["activeEditVersion"] = state?.activeEditVersion;
+            resourceInputs["canonicalLink"] = state?.canonicalLink;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["charEncoding"] = state?.charEncoding;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["defaultMatchValue"] = state?.defaultMatchValue;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["editVersion"] = state?.editVersion;
+            resourceInputs["fields"] = state?.fields;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isBuiltIn"] = state?.isBuiltIn;
+            resourceInputs["isHidden"] = state?.isHidden;
+            resourceInputs["lookupDisplayName"] = state?.lookupDisplayName;
+            resourceInputs["lookupId"] = state?.lookupId;
+            resourceInputs["lookupName"] = state?.lookupName;
+            resourceInputs["lookupReference"] = state?.lookupReference;
+            resourceInputs["lookupReferenceString"] = state?.lookupReferenceString;
+            resourceInputs["maxMatches"] = state?.maxMatches;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["referringSources"] = state?.referringSources;
+            resourceInputs["registerLookupFile"] = state?.registerLookupFile;
+            resourceInputs["statusSummaries"] = state?.statusSummaries;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NamespaceLookupArgs | undefined;
-            if ((!args || args.lookupName === undefined) && !opts.urn) {
+            if (args?.lookupName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lookupName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.registerLookupFile === undefined) && !opts.urn) {
+            if (args?.registerLookupFile === undefined && !opts.urn) {
                 throw new Error("Missing required property 'registerLookupFile'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["charEncoding"] = args ? args.charEncoding : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["defaultMatchValue"] = args ? args.defaultMatchValue : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["fields"] = args ? args.fields : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isHidden"] = args ? args.isHidden : undefined;
-            resourceInputs["lookupName"] = args ? args.lookupName : undefined;
-            resourceInputs["maxMatches"] = args ? args.maxMatches : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["registerLookupFile"] = args ? args.registerLookupFile : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["charEncoding"] = args?.charEncoding;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["defaultMatchValue"] = args?.defaultMatchValue;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["fields"] = args?.fields;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isHidden"] = args?.isHidden;
+            resourceInputs["lookupName"] = args?.lookupName;
+            resourceInputs["maxMatches"] = args?.maxMatches;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["registerLookupFile"] = args?.registerLookupFile;
+            resourceInputs["type"] = args?.type;
             resourceInputs["activeEditVersion"] = undefined /*out*/;
             resourceInputs["canonicalLink"] = undefined /*out*/;
             resourceInputs["editVersion"] = undefined /*out*/;

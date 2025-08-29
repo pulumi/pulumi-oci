@@ -76,73 +76,73 @@ export class Budget extends pulumi.CustomResource {
     /**
      * The actual spend in currency for the current budget cycle.
      */
-    public /*out*/ readonly actualSpend!: pulumi.Output<number>;
+    declare public /*out*/ readonly actualSpend: pulumi.Output<number>;
     /**
      * The total number of alert rules in the budget.
      */
-    public /*out*/ readonly alertRuleCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly alertRuleCount: pulumi.Output<number>;
     /**
      * (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
      */
-    public readonly amount!: pulumi.Output<number>;
+    declare public readonly amount: pulumi.Output<number>;
     /**
      * (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      */
-    public readonly budgetProcessingPeriodStartOffset!: pulumi.Output<number>;
+    declare public readonly budgetProcessingPeriodStartOffset: pulumi.Output<number>;
     /**
      * The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the budget.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    public readonly endDate!: pulumi.Output<string>;
+    declare public readonly endDate: pulumi.Output<string>;
     /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
-    public /*out*/ readonly forecastedSpend!: pulumi.Output<number>;
+    declare public /*out*/ readonly forecastedSpend: pulumi.Output<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
-    public readonly processingPeriodType!: pulumi.Output<string>;
+    declare public readonly processingPeriodType: pulumi.Output<string>;
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      */
-    public readonly resetPeriod!: pulumi.Output<string>;
+    declare public readonly resetPeriod: pulumi.Output<string>;
     /**
      * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    public readonly startDate!: pulumi.Output<string>;
+    declare public readonly startDate: pulumi.Output<string>;
     /**
      * The current state of the budget.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
      * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
-    public readonly targetCompartmentId!: pulumi.Output<string>;
+    declare public readonly targetCompartmentId: pulumi.Output<string>;
     /**
      * The type of target on which the budget is applied.
      */
-    public readonly targetType!: pulumi.Output<string>;
+    declare public readonly targetType: pulumi.Output<string>;
     /**
      * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
      *
@@ -150,23 +150,23 @@ export class Budget extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targets!: pulumi.Output<string[]>;
+    declare public readonly targets: pulumi.Output<string[]>;
     /**
      * The time that the budget was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time that the budget spend was last computed.
      */
-    public /*out*/ readonly timeSpendComputed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeSpendComputed: pulumi.Output<string>;
     /**
      * The time that the budget was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The version of the budget. Starts from 1 and increments by 1.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    declare public /*out*/ readonly version: pulumi.Output<number>;
 
     /**
      * Create a Budget resource with the given unique name, arguments, and options.
@@ -181,53 +181,53 @@ export class Budget extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BudgetState | undefined;
-            resourceInputs["actualSpend"] = state ? state.actualSpend : undefined;
-            resourceInputs["alertRuleCount"] = state ? state.alertRuleCount : undefined;
-            resourceInputs["amount"] = state ? state.amount : undefined;
-            resourceInputs["budgetProcessingPeriodStartOffset"] = state ? state.budgetProcessingPeriodStartOffset : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endDate"] = state ? state.endDate : undefined;
-            resourceInputs["forecastedSpend"] = state ? state.forecastedSpend : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["processingPeriodType"] = state ? state.processingPeriodType : undefined;
-            resourceInputs["resetPeriod"] = state ? state.resetPeriod : undefined;
-            resourceInputs["startDate"] = state ? state.startDate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetCompartmentId"] = state ? state.targetCompartmentId : undefined;
-            resourceInputs["targetType"] = state ? state.targetType : undefined;
-            resourceInputs["targets"] = state ? state.targets : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeSpendComputed"] = state ? state.timeSpendComputed : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["actualSpend"] = state?.actualSpend;
+            resourceInputs["alertRuleCount"] = state?.alertRuleCount;
+            resourceInputs["amount"] = state?.amount;
+            resourceInputs["budgetProcessingPeriodStartOffset"] = state?.budgetProcessingPeriodStartOffset;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endDate"] = state?.endDate;
+            resourceInputs["forecastedSpend"] = state?.forecastedSpend;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["processingPeriodType"] = state?.processingPeriodType;
+            resourceInputs["resetPeriod"] = state?.resetPeriod;
+            resourceInputs["startDate"] = state?.startDate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetCompartmentId"] = state?.targetCompartmentId;
+            resourceInputs["targetType"] = state?.targetType;
+            resourceInputs["targets"] = state?.targets;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeSpendComputed"] = state?.timeSpendComputed;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as BudgetArgs | undefined;
-            if ((!args || args.amount === undefined) && !opts.urn) {
+            if (args?.amount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'amount'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.resetPeriod === undefined) && !opts.urn) {
+            if (args?.resetPeriod === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resetPeriod'");
             }
-            resourceInputs["amount"] = args ? args.amount : undefined;
-            resourceInputs["budgetProcessingPeriodStartOffset"] = args ? args.budgetProcessingPeriodStartOffset : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["endDate"] = args ? args.endDate : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["processingPeriodType"] = args ? args.processingPeriodType : undefined;
-            resourceInputs["resetPeriod"] = args ? args.resetPeriod : undefined;
-            resourceInputs["startDate"] = args ? args.startDate : undefined;
-            resourceInputs["targetCompartmentId"] = args ? args.targetCompartmentId : undefined;
-            resourceInputs["targetType"] = args ? args.targetType : undefined;
-            resourceInputs["targets"] = args ? args.targets : undefined;
+            resourceInputs["amount"] = args?.amount;
+            resourceInputs["budgetProcessingPeriodStartOffset"] = args?.budgetProcessingPeriodStartOffset;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["endDate"] = args?.endDate;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["processingPeriodType"] = args?.processingPeriodType;
+            resourceInputs["resetPeriod"] = args?.resetPeriod;
+            resourceInputs["startDate"] = args?.startDate;
+            resourceInputs["targetCompartmentId"] = args?.targetCompartmentId;
+            resourceInputs["targetType"] = args?.targetType;
+            resourceInputs["targets"] = args?.targets;
             resourceInputs["actualSpend"] = undefined /*out*/;
             resourceInputs["alertRuleCount"] = undefined /*out*/;
             resourceInputs["forecastedSpend"] = undefined /*out*/;

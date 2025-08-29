@@ -64,43 +64,43 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      */
-    public readonly defaultRegion!: pulumi.Output<string>;
+    declare public readonly defaultRegion: pulumi.Output<string>;
     /**
      * Identity domain OCID , where user is present. For default domain , this field will be optional.
      */
-    public readonly domainOcid!: pulumi.Output<string>;
+    declare public readonly domainOcid: pulumi.Output<string>;
     /**
      * The fingerprint that corresponds to the public API key requested.
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly fingerprint: pulumi.Output<string>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
      */
-    public readonly keyAlias!: pulumi.Output<string>;
+    declare public readonly keyAlias: pulumi.Output<string>;
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
      */
-    public readonly passphrase!: pulumi.Output<string>;
+    declare public readonly passphrase: pulumi.Output<string>;
     /**
      * The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      */
-    public /*out*/ readonly pemfilepath!: pulumi.Output<string>;
+    declare public /*out*/ readonly pemfilepath: pulumi.Output<string>;
     /**
      * The current status of the API key.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of your tenancy.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      *
@@ -108,7 +108,7 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceApiKey resource with the given unique name, arguments, and options.
@@ -123,37 +123,37 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceApiKeyState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["defaultRegion"] = state ? state.defaultRegion : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
-            resourceInputs["keyAlias"] = state ? state.keyAlias : undefined;
-            resourceInputs["passphrase"] = state ? state.passphrase : undefined;
-            resourceInputs["pemfilepath"] = state ? state.pemfilepath : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["defaultRegion"] = state?.defaultRegion;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["fingerprint"] = state?.fingerprint;
+            resourceInputs["keyAlias"] = state?.keyAlias;
+            resourceInputs["passphrase"] = state?.passphrase;
+            resourceInputs["pemfilepath"] = state?.pemfilepath;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as BdsInstanceApiKeyArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.keyAlias === undefined) && !opts.urn) {
+            if (args?.keyAlias === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyAlias'");
             }
-            if ((!args || args.passphrase === undefined) && !opts.urn) {
+            if (args?.passphrase === undefined && !opts.urn) {
                 throw new Error("Missing required property 'passphrase'");
             }
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["defaultRegion"] = args ? args.defaultRegion : undefined;
-            resourceInputs["domainOcid"] = args ? args.domainOcid : undefined;
-            resourceInputs["keyAlias"] = args ? args.keyAlias : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
+            resourceInputs["defaultRegion"] = args?.defaultRegion;
+            resourceInputs["domainOcid"] = args?.domainOcid;
+            resourceInputs["keyAlias"] = args?.keyAlias;
             resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["fingerprint"] = undefined /*out*/;
             resourceInputs["pemfilepath"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

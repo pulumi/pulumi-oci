@@ -72,67 +72,67 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
     /**
      * This field controls if the data asset references will be included during import.
      */
-    public readonly areDataAssetReferencesIncluded!: pulumi.Output<boolean>;
+    declare public readonly areDataAssetReferencesIncluded: pulumi.Output<boolean>;
     /**
      * Name of the Object Storage bucket where the object will be imported from.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * Name of the user who initiated import request.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly errorMessages: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of the zip file to be imported.
      */
-    public readonly fileName!: pulumi.Output<string>;
+    declare public readonly fileName: pulumi.Output<string>;
     /**
      * Import Objects Conflict resolution.
      */
-    public readonly importConflictResolution!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportConflictResolution>;
+    declare public readonly importConflictResolution: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportConflictResolution>;
     /**
      * The array of imported object details.
      */
-    public /*out*/ readonly importedObjects!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportedObject[]>;
+    declare public /*out*/ readonly importedObjects: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportedObject[]>;
     /**
      * Import object request key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * Name of the import request.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Key of the object inside which all the objects will be imported
      */
-    public readonly objectKeyForImport!: pulumi.Output<string>;
+    declare public readonly objectKeyForImport: pulumi.Output<string>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    public readonly objectStorageRegion!: pulumi.Output<string>;
+    declare public readonly objectStorageRegion: pulumi.Output<string>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    public readonly objectStorageTenancyId!: pulumi.Output<string>;
+    declare public readonly objectStorageTenancyId: pulumi.Output<string>;
     /**
      * Import Objects request status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Time at which the request was completely processed.
      */
-    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeEndedInMillis: pulumi.Output<string>;
     /**
      * Time at which the request started getting processed.
      */
-    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStartedInMillis: pulumi.Output<string>;
     /**
      * Number of objects that are imported.
      */
-    public /*out*/ readonly totalImportedObjectCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalImportedObjectCount: pulumi.Output<number>;
     /**
      * The workspace ID.
      *
@@ -140,7 +140,7 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceImportRequest resource with the given unique name, arguments, and options.
@@ -155,42 +155,42 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceImportRequestState | undefined;
-            resourceInputs["areDataAssetReferencesIncluded"] = state ? state.areDataAssetReferencesIncluded : undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["errorMessages"] = state ? state.errorMessages : undefined;
-            resourceInputs["fileName"] = state ? state.fileName : undefined;
-            resourceInputs["importConflictResolution"] = state ? state.importConflictResolution : undefined;
-            resourceInputs["importedObjects"] = state ? state.importedObjects : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objectKeyForImport"] = state ? state.objectKeyForImport : undefined;
-            resourceInputs["objectStorageRegion"] = state ? state.objectStorageRegion : undefined;
-            resourceInputs["objectStorageTenancyId"] = state ? state.objectStorageTenancyId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeEndedInMillis"] = state ? state.timeEndedInMillis : undefined;
-            resourceInputs["timeStartedInMillis"] = state ? state.timeStartedInMillis : undefined;
-            resourceInputs["totalImportedObjectCount"] = state ? state.totalImportedObjectCount : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["areDataAssetReferencesIncluded"] = state?.areDataAssetReferencesIncluded;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["errorMessages"] = state?.errorMessages;
+            resourceInputs["fileName"] = state?.fileName;
+            resourceInputs["importConflictResolution"] = state?.importConflictResolution;
+            resourceInputs["importedObjects"] = state?.importedObjects;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objectKeyForImport"] = state?.objectKeyForImport;
+            resourceInputs["objectStorageRegion"] = state?.objectStorageRegion;
+            resourceInputs["objectStorageTenancyId"] = state?.objectStorageTenancyId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeEndedInMillis"] = state?.timeEndedInMillis;
+            resourceInputs["timeStartedInMillis"] = state?.timeStartedInMillis;
+            resourceInputs["totalImportedObjectCount"] = state?.totalImportedObjectCount;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceImportRequestArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.fileName === undefined) && !opts.urn) {
+            if (args?.fileName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileName'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["areDataAssetReferencesIncluded"] = args ? args.areDataAssetReferencesIncluded : undefined;
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["fileName"] = args ? args.fileName : undefined;
-            resourceInputs["importConflictResolution"] = args ? args.importConflictResolution : undefined;
-            resourceInputs["objectKeyForImport"] = args ? args.objectKeyForImport : undefined;
-            resourceInputs["objectStorageRegion"] = args ? args.objectStorageRegion : undefined;
-            resourceInputs["objectStorageTenancyId"] = args ? args.objectStorageTenancyId : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["areDataAssetReferencesIncluded"] = args?.areDataAssetReferencesIncluded;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["fileName"] = args?.fileName;
+            resourceInputs["importConflictResolution"] = args?.importConflictResolution;
+            resourceInputs["objectKeyForImport"] = args?.objectKeyForImport;
+            resourceInputs["objectStorageRegion"] = args?.objectStorageRegion;
+            resourceInputs["objectStorageTenancyId"] = args?.objectStorageTenancyId;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["errorMessages"] = undefined /*out*/;
             resourceInputs["importedObjects"] = undefined /*out*/;

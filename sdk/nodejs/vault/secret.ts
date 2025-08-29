@@ -50,103 +50,103 @@ export class Secret extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment where you want to create the secret.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The version number of the secret version that's currently in use.
      */
-    public /*out*/ readonly currentVersionNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentVersionNumber: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A brief description of the secret. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
      */
-    public readonly enableAutoGeneration!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableAutoGeneration: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The value of this flag determines whether or not secret content will be generated automatically.
      */
-    public /*out*/ readonly isAutoGenerationEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAutoGenerationEnabled: pulumi.Output<boolean>;
     /**
      * A Boolean value that indicates whether the secret is a source or replica secret.
      */
-    public /*out*/ readonly isReplica!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isReplica: pulumi.Output<boolean>;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly lastRotationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastRotationTime: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly nextRotationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextRotationTime: pulumi.Output<string>;
     /**
      * (Updatable) Defines the configuration that enables cross-region secret replication.
      */
-    public readonly replicationConfig!: pulumi.Output<outputs.Vault.SecretReplicationConfig | undefined>;
+    declare public readonly replicationConfig: pulumi.Output<outputs.Vault.SecretReplicationConfig | undefined>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */
-    public readonly rotationConfig!: pulumi.Output<outputs.Vault.SecretRotationConfig>;
+    declare public readonly rotationConfig: pulumi.Output<outputs.Vault.SecretRotationConfig>;
     /**
      * Additional information about the status of the secret rotation
      */
-    public /*out*/ readonly rotationStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly rotationStatus: pulumi.Output<string>;
     /**
      * (Updatable) The content of the secret and metadata to help identify it.
      */
-    public readonly secretContent!: pulumi.Output<outputs.Vault.SecretSecretContent>;
+    declare public readonly secretContent: pulumi.Output<outputs.Vault.SecretSecretContent>;
     /**
      * (Updatable) Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
      */
-    public readonly secretGenerationContext!: pulumi.Output<outputs.Vault.SecretSecretGenerationContext>;
+    declare public readonly secretGenerationContext: pulumi.Output<outputs.Vault.SecretSecretGenerationContext>;
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    public readonly secretName!: pulumi.Output<string>;
+    declare public readonly secretName: pulumi.Output<string>;
     /**
      * (Updatable) A list of rules to control how the secret is used and managed.
      */
-    public readonly secretRules!: pulumi.Output<outputs.Vault.SecretSecretRule[]>;
+    declare public readonly secretRules: pulumi.Output<outputs.Vault.SecretSecretRule[]>;
     /**
      * Details for the source that the source secret has.
      */
-    public /*out*/ readonly sourceRegionInformations!: pulumi.Output<outputs.Vault.SecretSourceRegionInformation[]>;
+    declare public /*out*/ readonly sourceRegionInformations: pulumi.Output<outputs.Vault.SecretSourceRegionInformation[]>;
     /**
      * The current lifecycle state of the secret.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfCurrentVersionExpiry!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfCurrentVersionExpiry: pulumi.Output<string>;
     /**
      * An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfDeletion: pulumi.Output<string>;
     /**
      * The OCID of the vault where you want to create the secret.
      *
@@ -154,7 +154,7 @@ export class Secret extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    declare public readonly vaultId: pulumi.Output<string>;
 
     /**
      * Create a Secret resource with the given unique name, arguments, and options.
@@ -169,60 +169,60 @@ export class Secret extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecretState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["currentVersionNumber"] = state ? state.currentVersionNumber : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enableAutoGeneration"] = state ? state.enableAutoGeneration : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoGenerationEnabled"] = state ? state.isAutoGenerationEnabled : undefined;
-            resourceInputs["isReplica"] = state ? state.isReplica : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["lastRotationTime"] = state ? state.lastRotationTime : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["nextRotationTime"] = state ? state.nextRotationTime : undefined;
-            resourceInputs["replicationConfig"] = state ? state.replicationConfig : undefined;
-            resourceInputs["rotationConfig"] = state ? state.rotationConfig : undefined;
-            resourceInputs["rotationStatus"] = state ? state.rotationStatus : undefined;
-            resourceInputs["secretContent"] = state ? state.secretContent : undefined;
-            resourceInputs["secretGenerationContext"] = state ? state.secretGenerationContext : undefined;
-            resourceInputs["secretName"] = state ? state.secretName : undefined;
-            resourceInputs["secretRules"] = state ? state.secretRules : undefined;
-            resourceInputs["sourceRegionInformations"] = state ? state.sourceRegionInformations : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfCurrentVersionExpiry"] = state ? state.timeOfCurrentVersionExpiry : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["currentVersionNumber"] = state?.currentVersionNumber;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enableAutoGeneration"] = state?.enableAutoGeneration;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoGenerationEnabled"] = state?.isAutoGenerationEnabled;
+            resourceInputs["isReplica"] = state?.isReplica;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["lastRotationTime"] = state?.lastRotationTime;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["nextRotationTime"] = state?.nextRotationTime;
+            resourceInputs["replicationConfig"] = state?.replicationConfig;
+            resourceInputs["rotationConfig"] = state?.rotationConfig;
+            resourceInputs["rotationStatus"] = state?.rotationStatus;
+            resourceInputs["secretContent"] = state?.secretContent;
+            resourceInputs["secretGenerationContext"] = state?.secretGenerationContext;
+            resourceInputs["secretName"] = state?.secretName;
+            resourceInputs["secretRules"] = state?.secretRules;
+            resourceInputs["sourceRegionInformations"] = state?.sourceRegionInformations;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfCurrentVersionExpiry"] = state?.timeOfCurrentVersionExpiry;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
+            resourceInputs["vaultId"] = state?.vaultId;
         } else {
             const args = argsOrState as SecretArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.secretName === undefined) && !opts.urn) {
+            if (args?.secretName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'secretName'");
             }
-            if ((!args || args.vaultId === undefined) && !opts.urn) {
+            if (args?.vaultId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vaultId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enableAutoGeneration"] = args ? args.enableAutoGeneration : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["replicationConfig"] = args ? args.replicationConfig : undefined;
-            resourceInputs["rotationConfig"] = args ? args.rotationConfig : undefined;
-            resourceInputs["secretContent"] = args ? args.secretContent : undefined;
-            resourceInputs["secretGenerationContext"] = args ? args.secretGenerationContext : undefined;
-            resourceInputs["secretName"] = args ? args.secretName : undefined;
-            resourceInputs["secretRules"] = args ? args.secretRules : undefined;
-            resourceInputs["vaultId"] = args ? args.vaultId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enableAutoGeneration"] = args?.enableAutoGeneration;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["replicationConfig"] = args?.replicationConfig;
+            resourceInputs["rotationConfig"] = args?.rotationConfig;
+            resourceInputs["secretContent"] = args?.secretContent;
+            resourceInputs["secretGenerationContext"] = args?.secretGenerationContext;
+            resourceInputs["secretName"] = args?.secretName;
+            resourceInputs["secretRules"] = args?.secretRules;
+            resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["currentVersionNumber"] = undefined /*out*/;
             resourceInputs["isAutoGenerationEnabled"] = undefined /*out*/;
             resourceInputs["isReplica"] = undefined /*out*/;

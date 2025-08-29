@@ -67,40 +67,40 @@ export class LogAnalyticsEntityType extends pulumi.CustomResource {
     /**
      * Log analytics entity type category. Category will be used for grouping and filtering.
      */
-    public readonly category!: pulumi.Output<string>;
+    declare public readonly category: pulumi.Output<string>;
     /**
      * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
      */
-    public /*out*/ readonly cloudType!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudType: pulumi.Output<string>;
     /**
      * Internal name for the log analytics entity type.
      */
-    public /*out*/ readonly internalName!: pulumi.Output<string>;
-    public /*out*/ readonly managementAgentEligibilityStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly internalName: pulumi.Output<string>;
+    declare public /*out*/ readonly managementAgentEligibilityStatus: pulumi.Output<string>;
     /**
      * Log analytics entity type name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * Log analytics entity type property definition.
      */
-    public readonly properties!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsEntityTypeProperty[]>;
+    declare public readonly properties: pulumi.Output<outputs.LogAnalytics.LogAnalyticsEntityTypeProperty[]>;
     /**
      * The current lifecycle state of the log analytics entity type.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Time the log analytics entity type was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsEntityType resource with the given unique name, arguments, and options.
@@ -115,25 +115,25 @@ export class LogAnalyticsEntityType extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsEntityTypeState | undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["cloudType"] = state ? state.cloudType : undefined;
-            resourceInputs["internalName"] = state ? state.internalName : undefined;
-            resourceInputs["managementAgentEligibilityStatus"] = state ? state.managementAgentEligibilityStatus : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["cloudType"] = state?.cloudType;
+            resourceInputs["internalName"] = state?.internalName;
+            resourceInputs["managementAgentEligibilityStatus"] = state?.managementAgentEligibilityStatus;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as LogAnalyticsEntityTypeArgs | undefined;
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["category"] = args ? args.category : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
+            resourceInputs["category"] = args?.category;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["properties"] = args?.properties;
             resourceInputs["cloudType"] = undefined /*out*/;
             resourceInputs["internalName"] = undefined /*out*/;
             resourceInputs["managementAgentEligibilityStatus"] = undefined /*out*/;

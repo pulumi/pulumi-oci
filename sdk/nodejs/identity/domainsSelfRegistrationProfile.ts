@@ -58,7 +58,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none A Boolean value that indicates whether Account verification email is required to be sent before login or not
      */
-    public readonly activationEmailRequired!: pulumi.Output<boolean>;
+    declare public readonly activationEmailRequired: pulumi.Output<boolean>;
     /**
      * (Updatable) A Boolean value that indicates whether the profile is enabled or not
      *
@@ -72,7 +72,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * (Updatable) Text to be displayed on UI after doing self registration
      *
@@ -87,7 +87,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly afterSubmitTexts!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText[]>;
+    declare public readonly afterSubmitTexts: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText[]>;
     /**
      * (Updatable) A Multivalue String value for Email domains which are valid for this profile
      *
@@ -101,19 +101,19 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedEmailDomains!: pulumi.Output<string[]>;
+    declare public readonly allowedEmailDomains: pulumi.Output<string[]>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -127,7 +127,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean value that indicates whether the consent text is present.
      *
@@ -141,7 +141,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly consentTextPresent!: pulumi.Output<boolean>;
+    declare public readonly consentTextPresent: pulumi.Output<boolean>;
     /**
      * (Updatable) Consent text
      *
@@ -156,7 +156,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly consentTexts!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileConsentText[]>;
+    declare public readonly consentTexts: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileConsentText[]>;
     /**
      * (Updatable) Default groups assigned to the user
      *
@@ -169,7 +169,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: request
      * * type: complex
      */
-    public readonly defaultGroups!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileDefaultGroup[]>;
+    declare public readonly defaultGroups: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileDefaultGroup[]>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -183,7 +183,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) A Multivalue String Value for Email domains to be handled as exceptions
      *
@@ -197,7 +197,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedEmailDomains!: pulumi.Output<string[]>;
+    declare public readonly disallowedEmailDomains: pulumi.Output<string[]>;
     /**
      * (Updatable) Registration page name
      *
@@ -212,7 +212,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly displayNames!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileDisplayName[]>;
+    declare public readonly displayNames: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileDisplayName[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -226,7 +226,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) Email template
      *
@@ -238,7 +238,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: request
      * * type: complex
      */
-    public readonly emailTemplate!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileEmailTemplate>;
+    declare public readonly emailTemplate: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileEmailTemplate>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -250,7 +250,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    declare public readonly externalId: pulumi.Output<string>;
     /**
      * (Updatable) References to footer logo
      *
@@ -262,7 +262,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: default
      * * type: reference
      */
-    public readonly footerLogo!: pulumi.Output<string>;
+    declare public readonly footerLogo: pulumi.Output<string>;
     /**
      * (Updatable) Footer text
      *
@@ -277,7 +277,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly footerTexts!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileFooterText[]>;
+    declare public readonly footerTexts: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileFooterText[]>;
     /**
      * (Updatable) Reference to header logo
      *
@@ -289,7 +289,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: default
      * * type: reference
      */
-    public readonly headerLogo!: pulumi.Output<string>;
+    declare public readonly headerLogo: pulumi.Output<string>;
     /**
      * (Updatable) Header text
      *
@@ -304,7 +304,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly headerTexts!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileHeaderText[]>;
+    declare public readonly headerTexts: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileHeaderText[]>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -316,11 +316,11 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -332,7 +332,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -346,7 +346,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -359,7 +359,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -373,7 +373,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileMeta[]>;
     /**
      * (Updatable) Name of the profile
      *
@@ -387,7 +387,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Number of days redirect URL is valid
      *
@@ -400,7 +400,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly numberOfDaysRedirectUrlIsValid!: pulumi.Output<number>;
+    declare public readonly numberOfDaysRedirectUrlIsValid: pulumi.Output<number>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -414,7 +414,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in \"pending verification\" state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in \"verified\" state, this link will be used to verify user's email.
      *
@@ -428,11 +428,11 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly redirectUrl!: pulumi.Output<string>;
+    declare public readonly redirectUrl: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -446,7 +446,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) A Boolean value that indicates whether the profile should be displayed on login page
      *
@@ -460,7 +460,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly showOnLoginPage!: pulumi.Output<boolean>;
+    declare public readonly showOnLoginPage: pulumi.Output<boolean>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -474,7 +474,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -488,7 +488,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -500,7 +500,7 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none User Attributes
      */
-    public readonly userAttributes!: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileUserAttribute[]>;
+    declare public readonly userAttributes: pulumi.Output<outputs.Identity.DomainsSelfRegistrationProfileUserAttribute[]>;
 
     /**
      * Create a DomainsSelfRegistrationProfile resource with the given unique name, arguments, and options.
@@ -515,100 +515,100 @@ export class DomainsSelfRegistrationProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsSelfRegistrationProfileState | undefined;
-            resourceInputs["activationEmailRequired"] = state ? state.activationEmailRequired : undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["afterSubmitTexts"] = state ? state.afterSubmitTexts : undefined;
-            resourceInputs["allowedEmailDomains"] = state ? state.allowedEmailDomains : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["consentTextPresent"] = state ? state.consentTextPresent : undefined;
-            resourceInputs["consentTexts"] = state ? state.consentTexts : undefined;
-            resourceInputs["defaultGroups"] = state ? state.defaultGroups : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["disallowedEmailDomains"] = state ? state.disallowedEmailDomains : undefined;
-            resourceInputs["displayNames"] = state ? state.displayNames : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["emailTemplate"] = state ? state.emailTemplate : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["footerLogo"] = state ? state.footerLogo : undefined;
-            resourceInputs["footerTexts"] = state ? state.footerTexts : undefined;
-            resourceInputs["headerLogo"] = state ? state.headerLogo : undefined;
-            resourceInputs["headerTexts"] = state ? state.headerTexts : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["numberOfDaysRedirectUrlIsValid"] = state ? state.numberOfDaysRedirectUrlIsValid : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["redirectUrl"] = state ? state.redirectUrl : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["showOnLoginPage"] = state ? state.showOnLoginPage : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["userAttributes"] = state ? state.userAttributes : undefined;
+            resourceInputs["activationEmailRequired"] = state?.activationEmailRequired;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["afterSubmitTexts"] = state?.afterSubmitTexts;
+            resourceInputs["allowedEmailDomains"] = state?.allowedEmailDomains;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["consentTextPresent"] = state?.consentTextPresent;
+            resourceInputs["consentTexts"] = state?.consentTexts;
+            resourceInputs["defaultGroups"] = state?.defaultGroups;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["disallowedEmailDomains"] = state?.disallowedEmailDomains;
+            resourceInputs["displayNames"] = state?.displayNames;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["emailTemplate"] = state?.emailTemplate;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["footerLogo"] = state?.footerLogo;
+            resourceInputs["footerTexts"] = state?.footerTexts;
+            resourceInputs["headerLogo"] = state?.headerLogo;
+            resourceInputs["headerTexts"] = state?.headerTexts;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["numberOfDaysRedirectUrlIsValid"] = state?.numberOfDaysRedirectUrlIsValid;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["redirectUrl"] = state?.redirectUrl;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["showOnLoginPage"] = state?.showOnLoginPage;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["userAttributes"] = state?.userAttributes;
         } else {
             const args = argsOrState as DomainsSelfRegistrationProfileArgs | undefined;
-            if ((!args || args.activationEmailRequired === undefined) && !opts.urn) {
+            if (args?.activationEmailRequired === undefined && !opts.urn) {
                 throw new Error("Missing required property 'activationEmailRequired'");
             }
-            if ((!args || args.consentTextPresent === undefined) && !opts.urn) {
+            if (args?.consentTextPresent === undefined && !opts.urn) {
                 throw new Error("Missing required property 'consentTextPresent'");
             }
-            if ((!args || args.displayNames === undefined) && !opts.urn) {
+            if (args?.displayNames === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayNames'");
             }
-            if ((!args || args.emailTemplate === undefined) && !opts.urn) {
+            if (args?.emailTemplate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'emailTemplate'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.numberOfDaysRedirectUrlIsValid === undefined) && !opts.urn) {
+            if (args?.numberOfDaysRedirectUrlIsValid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'numberOfDaysRedirectUrlIsValid'");
             }
-            if ((!args || args.redirectUrl === undefined) && !opts.urn) {
+            if (args?.redirectUrl === undefined && !opts.urn) {
                 throw new Error("Missing required property 'redirectUrl'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.showOnLoginPage === undefined) && !opts.urn) {
+            if (args?.showOnLoginPage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'showOnLoginPage'");
             }
-            resourceInputs["activationEmailRequired"] = args ? args.activationEmailRequired : undefined;
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["afterSubmitTexts"] = args ? args.afterSubmitTexts : undefined;
-            resourceInputs["allowedEmailDomains"] = args ? args.allowedEmailDomains : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["consentTextPresent"] = args ? args.consentTextPresent : undefined;
-            resourceInputs["consentTexts"] = args ? args.consentTexts : undefined;
-            resourceInputs["defaultGroups"] = args ? args.defaultGroups : undefined;
-            resourceInputs["disallowedEmailDomains"] = args ? args.disallowedEmailDomains : undefined;
-            resourceInputs["displayNames"] = args ? args.displayNames : undefined;
-            resourceInputs["emailTemplate"] = args ? args.emailTemplate : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["footerLogo"] = args ? args.footerLogo : undefined;
-            resourceInputs["footerTexts"] = args ? args.footerTexts : undefined;
-            resourceInputs["headerLogo"] = args ? args.headerLogo : undefined;
-            resourceInputs["headerTexts"] = args ? args.headerTexts : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["numberOfDaysRedirectUrlIsValid"] = args ? args.numberOfDaysRedirectUrlIsValid : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["redirectUrl"] = args ? args.redirectUrl : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["showOnLoginPage"] = args ? args.showOnLoginPage : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["userAttributes"] = args ? args.userAttributes : undefined;
+            resourceInputs["activationEmailRequired"] = args?.activationEmailRequired;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["afterSubmitTexts"] = args?.afterSubmitTexts;
+            resourceInputs["allowedEmailDomains"] = args?.allowedEmailDomains;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["consentTextPresent"] = args?.consentTextPresent;
+            resourceInputs["consentTexts"] = args?.consentTexts;
+            resourceInputs["defaultGroups"] = args?.defaultGroups;
+            resourceInputs["disallowedEmailDomains"] = args?.disallowedEmailDomains;
+            resourceInputs["displayNames"] = args?.displayNames;
+            resourceInputs["emailTemplate"] = args?.emailTemplate;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["footerLogo"] = args?.footerLogo;
+            resourceInputs["footerTexts"] = args?.footerTexts;
+            resourceInputs["headerLogo"] = args?.headerLogo;
+            resourceInputs["headerTexts"] = args?.headerTexts;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["numberOfDaysRedirectUrlIsValid"] = args?.numberOfDaysRedirectUrlIsValid;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["redirectUrl"] = args?.redirectUrl;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["showOnLoginPage"] = args?.showOnLoginPage;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["userAttributes"] = args?.userAttributes;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

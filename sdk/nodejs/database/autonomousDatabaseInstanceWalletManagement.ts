@@ -57,11 +57,11 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
     /**
      * (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
      * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
-    public readonly gracePeriod!: pulumi.Output<number>;
+    declare public readonly gracePeriod: pulumi.Output<number>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      *
@@ -69,15 +69,15 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shouldRotate!: pulumi.Output<boolean | undefined>;
+    declare public readonly shouldRotate: pulumi.Output<boolean | undefined>;
     /**
      * The current lifecycle state of the Autonomous Database wallet.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the wallet was last rotated.
      */
-    public /*out*/ readonly timeRotated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRotated: pulumi.Output<string>;
 
     /**
      * Create a AutonomousDatabaseInstanceWalletManagement resource with the given unique name, arguments, and options.
@@ -92,19 +92,19 @@ export class AutonomousDatabaseInstanceWalletManagement extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseInstanceWalletManagementState | undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["gracePeriod"] = state ? state.gracePeriod : undefined;
-            resourceInputs["shouldRotate"] = state ? state.shouldRotate : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeRotated"] = state ? state.timeRotated : undefined;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["gracePeriod"] = state?.gracePeriod;
+            resourceInputs["shouldRotate"] = state?.shouldRotate;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeRotated"] = state?.timeRotated;
         } else {
             const args = argsOrState as AutonomousDatabaseInstanceWalletManagementArgs | undefined;
-            if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["gracePeriod"] = args ? args.gracePeriod : undefined;
-            resourceInputs["shouldRotate"] = args ? args.shouldRotate : undefined;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["gracePeriod"] = args?.gracePeriod;
+            resourceInputs["shouldRotate"] = args?.shouldRotate;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeRotated"] = undefined /*out*/;
         }

@@ -80,78 +80,78 @@ export class StorageObject extends pulumi.CustomResource {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
      */
-    public readonly cacheControl!: pulumi.Output<string | undefined>;
+    declare public readonly cacheControl: pulumi.Output<string | undefined>;
     /**
      * The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      */
-    public readonly content!: pulumi.Output<string | undefined>;
+    declare public readonly content: pulumi.Output<string | undefined>;
     /**
      * The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
      */
-    public readonly contentDisposition!: pulumi.Output<string | undefined>;
+    declare public readonly contentDisposition: pulumi.Output<string | undefined>;
     /**
      * The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
      */
-    public readonly contentEncoding!: pulumi.Output<string | undefined>;
+    declare public readonly contentEncoding: pulumi.Output<string | undefined>;
     /**
      * The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
      */
-    public readonly contentLanguage!: pulumi.Output<string | undefined>;
+    declare public readonly contentLanguage: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The content length of the body.
      */
-    public /*out*/ readonly contentLength!: pulumi.Output<string>;
+    declare public /*out*/ readonly contentLength: pulumi.Output<string>;
     /**
      * (Updatable) The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      *
      * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      */
-    public readonly contentMd5!: pulumi.Output<string>;
+    declare public readonly contentMd5: pulumi.Output<string>;
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      */
-    public readonly contentType!: pulumi.Output<string>;
+    declare public readonly contentType: pulumi.Output<string>;
     /**
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
      */
-    public readonly deleteAllObjectVersions!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteAllObjectVersions: pulumi.Output<boolean | undefined>;
     /**
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly metadata: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    public readonly opcSseKmsKeyId!: pulumi.Output<string>;
+    declare public readonly opcSseKmsKeyId: pulumi.Output<string>;
     /**
      * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      */
-    public readonly source!: pulumi.Output<string | undefined>;
+    declare public readonly source: pulumi.Output<string | undefined>;
     /**
      * Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
-    public readonly sourceUriDetails!: pulumi.Output<outputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly sourceUriDetails: pulumi.Output<outputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      */
-    public readonly storageTier!: pulumi.Output<string>;
-    public /*out*/ readonly versionId!: pulumi.Output<string>;
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    declare public readonly storageTier: pulumi.Output<string>;
+    declare public /*out*/ readonly versionId: pulumi.Output<string>;
+    declare public /*out*/ readonly workRequestId: pulumi.Output<string>;
 
     /**
      * Create a StorageObject resource with the given unique name, arguments, and options.
@@ -166,53 +166,53 @@ export class StorageObject extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StorageObjectState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["cacheControl"] = state ? state.cacheControl : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["contentDisposition"] = state ? state.contentDisposition : undefined;
-            resourceInputs["contentEncoding"] = state ? state.contentEncoding : undefined;
-            resourceInputs["contentLanguage"] = state ? state.contentLanguage : undefined;
-            resourceInputs["contentLength"] = state ? state.contentLength : undefined;
-            resourceInputs["contentMd5"] = state ? state.contentMd5 : undefined;
-            resourceInputs["contentType"] = state ? state.contentType : undefined;
-            resourceInputs["deleteAllObjectVersions"] = state ? state.deleteAllObjectVersions : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["opcSseKmsKeyId"] = state ? state.opcSseKmsKeyId : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceUriDetails"] = state ? state.sourceUriDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageTier"] = state ? state.storageTier : undefined;
-            resourceInputs["versionId"] = state ? state.versionId : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["cacheControl"] = state?.cacheControl;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["contentDisposition"] = state?.contentDisposition;
+            resourceInputs["contentEncoding"] = state?.contentEncoding;
+            resourceInputs["contentLanguage"] = state?.contentLanguage;
+            resourceInputs["contentLength"] = state?.contentLength;
+            resourceInputs["contentMd5"] = state?.contentMd5;
+            resourceInputs["contentType"] = state?.contentType;
+            resourceInputs["deleteAllObjectVersions"] = state?.deleteAllObjectVersions;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["opcSseKmsKeyId"] = state?.opcSseKmsKeyId;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceUriDetails"] = state?.sourceUriDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageTier"] = state?.storageTier;
+            resourceInputs["versionId"] = state?.versionId;
+            resourceInputs["workRequestId"] = state?.workRequestId;
         } else {
             const args = argsOrState as StorageObjectArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.object === undefined) && !opts.urn) {
+            if (args?.object === undefined && !opts.urn) {
                 throw new Error("Missing required property 'object'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["cacheControl"] = args ? args.cacheControl : undefined;
-            resourceInputs["content"] = args ? args.content : undefined;
-            resourceInputs["contentDisposition"] = args ? args.contentDisposition : undefined;
-            resourceInputs["contentEncoding"] = args ? args.contentEncoding : undefined;
-            resourceInputs["contentLanguage"] = args ? args.contentLanguage : undefined;
-            resourceInputs["contentMd5"] = args ? args.contentMd5 : undefined;
-            resourceInputs["contentType"] = args ? args.contentType : undefined;
-            resourceInputs["deleteAllObjectVersions"] = args ? args.deleteAllObjectVersions : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
-            resourceInputs["opcSseKmsKeyId"] = args ? args.opcSseKmsKeyId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourceUriDetails"] = args ? args.sourceUriDetails : undefined;
-            resourceInputs["storageTier"] = args ? args.storageTier : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["cacheControl"] = args?.cacheControl;
+            resourceInputs["content"] = args?.content;
+            resourceInputs["contentDisposition"] = args?.contentDisposition;
+            resourceInputs["contentEncoding"] = args?.contentEncoding;
+            resourceInputs["contentLanguage"] = args?.contentLanguage;
+            resourceInputs["contentMd5"] = args?.contentMd5;
+            resourceInputs["contentType"] = args?.contentType;
+            resourceInputs["deleteAllObjectVersions"] = args?.deleteAllObjectVersions;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["object"] = args?.object;
+            resourceInputs["opcSseKmsKeyId"] = args?.opcSseKmsKeyId;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceUriDetails"] = args?.sourceUriDetails;
+            resourceInputs["storageTier"] = args?.storageTier;
             resourceInputs["contentLength"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["versionId"] = undefined /*out*/;

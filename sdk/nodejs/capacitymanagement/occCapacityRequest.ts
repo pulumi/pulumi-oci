@@ -51,63 +51,63 @@ export class OccCapacityRequest extends pulumi.CustomResource {
     /**
      * The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
      */
-    public readonly dateExpectedCapacityHandover!: pulumi.Output<string>;
+    declare public readonly dateExpectedCapacityHandover: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Meaningful text about the capacity request.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * A list of different resources requested by the user.
      */
-    public readonly details!: pulumi.Output<outputs.CapacityManagement.OccCapacityRequestDetail[]>;
+    declare public readonly details: pulumi.Output<outputs.CapacityManagement.OccCapacityRequestDetail[]>;
     /**
      * (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      */
-    public readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The OCID of the availability catalog against which capacity request is made.
      */
-    public readonly occAvailabilityCatalogId!: pulumi.Output<string>;
+    declare public readonly occAvailabilityCatalogId: pulumi.Output<string>;
     /**
      * The OCID of the customer group to which this customer belongs to.
      */
-    public /*out*/ readonly occCustomerGroupId!: pulumi.Output<string>;
+    declare public /*out*/ readonly occCustomerGroupId: pulumi.Output<string>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.CapacityManagement.OccCapacityRequestPatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.CapacityManagement.OccCapacityRequestPatchOperation[] | undefined>;
     /**
      * The name of the region for which the capacity request is made.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * (Updatable) The subset of request states available for creating the capacity request.
      */
-    public readonly requestState!: pulumi.Output<string>;
+    declare public readonly requestState: pulumi.Output<string>;
     /**
      * Type of Capacity Request(New or Transfer)
      *
@@ -115,23 +115,23 @@ export class OccCapacityRequest extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly requestType!: pulumi.Output<string>;
+    declare public readonly requestType: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the capacity request was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the capacity request was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OccCapacityRequest resource with the given unique name, arguments, and options.
@@ -146,64 +146,64 @@ export class OccCapacityRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OccCapacityRequestState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dateExpectedCapacityHandover"] = state ? state.dateExpectedCapacityHandover : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["details"] = state ? state.details : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["occAvailabilityCatalogId"] = state ? state.occAvailabilityCatalogId : undefined;
-            resourceInputs["occCustomerGroupId"] = state ? state.occCustomerGroupId : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["requestState"] = state ? state.requestState : undefined;
-            resourceInputs["requestType"] = state ? state.requestType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dateExpectedCapacityHandover"] = state?.dateExpectedCapacityHandover;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["details"] = state?.details;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["occAvailabilityCatalogId"] = state?.occAvailabilityCatalogId;
+            resourceInputs["occCustomerGroupId"] = state?.occCustomerGroupId;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["requestState"] = state?.requestState;
+            resourceInputs["requestType"] = state?.requestType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OccCapacityRequestArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dateExpectedCapacityHandover === undefined) && !opts.urn) {
+            if (args?.dateExpectedCapacityHandover === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dateExpectedCapacityHandover'");
             }
-            if ((!args || args.details === undefined) && !opts.urn) {
+            if (args?.details === undefined && !opts.urn) {
                 throw new Error("Missing required property 'details'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.occAvailabilityCatalogId === undefined) && !opts.urn) {
+            if (args?.occAvailabilityCatalogId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'occAvailabilityCatalogId'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
+            if (args?.region === undefined && !opts.urn) {
                 throw new Error("Missing required property 'region'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dateExpectedCapacityHandover"] = args ? args.dateExpectedCapacityHandover : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["details"] = args ? args.details : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = args ? args.lifecycleDetails : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["occAvailabilityCatalogId"] = args ? args.occAvailabilityCatalogId : undefined;
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["requestState"] = args ? args.requestState : undefined;
-            resourceInputs["requestType"] = args ? args.requestType : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dateExpectedCapacityHandover"] = args?.dateExpectedCapacityHandover;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["details"] = args?.details;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["lifecycleDetails"] = args?.lifecycleDetails;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["occAvailabilityCatalogId"] = args?.occAvailabilityCatalogId;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["requestState"] = args?.requestState;
+            resourceInputs["requestType"] = args?.requestType;
             resourceInputs["occCustomerGroupId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

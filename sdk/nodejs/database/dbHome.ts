@@ -60,84 +60,84 @@ export class DbHome extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Details for creating a database.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase>;
+    declare public readonly database: pulumi.Output<outputs.Database.DbHomeDatabase>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public readonly databaseSoftwareImageId!: pulumi.Output<string>;
+    declare public readonly databaseSoftwareImageId: pulumi.Output<string>;
     /**
      * The location of the Oracle Database Home.
      */
-    public /*out*/ readonly dbHomeLocation!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbHomeLocation: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    declare public readonly dbSystemId: pulumi.Output<string>;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-provided name of the Database Home.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly enableDatabaseDelete!: pulumi.Output<boolean | undefined>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly enableDatabaseDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
-    public readonly isDesupportedVersion!: pulumi.Output<boolean>;
+    declare public readonly isDesupportedVersion: pulumi.Output<boolean>;
     /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      */
-    public readonly isUnifiedAuditingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isUnifiedAuditingEnabled: pulumi.Output<boolean>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public readonly kmsKeyVersionId!: pulumi.Output<string>;
+    declare public readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastPatchHistoryEntryId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * The current state of the Database Home.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Database Home was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      *
@@ -145,7 +145,7 @@ export class DbHome extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vmClusterId!: pulumi.Output<string>;
+    declare public readonly vmClusterId: pulumi.Output<string>;
 
     /**
      * Create a DbHome resource with the given unique name, arguments, and options.
@@ -160,43 +160,43 @@ export class DbHome extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbHomeState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["database"] = state ? state.database : undefined;
-            resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
-            resourceInputs["dbHomeLocation"] = state ? state.dbHomeLocation : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enableDatabaseDelete"] = state ? state.enableDatabaseDelete : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isDesupportedVersion"] = state ? state.isDesupportedVersion : undefined;
-            resourceInputs["isUnifiedAuditingEnabled"] = state ? state.isUnifiedAuditingEnabled : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["lastPatchHistoryEntryId"] = state ? state.lastPatchHistoryEntryId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["database"] = state?.database;
+            resourceInputs["databaseSoftwareImageId"] = state?.databaseSoftwareImageId;
+            resourceInputs["dbHomeLocation"] = state?.dbHomeLocation;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enableDatabaseDelete"] = state?.enableDatabaseDelete;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isDesupportedVersion"] = state?.isDesupportedVersion;
+            resourceInputs["isUnifiedAuditingEnabled"] = state?.isUnifiedAuditingEnabled;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["lastPatchHistoryEntryId"] = state?.lastPatchHistoryEntryId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vmClusterId"] = state?.vmClusterId;
         } else {
             const args = argsOrState as DbHomeArgs | undefined;
-            resourceInputs["database"] = args ? args.database : undefined;
-            resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
-            resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["enableDatabaseDelete"] = args ? args.enableDatabaseDelete : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isDesupportedVersion"] = args ? args.isDesupportedVersion : undefined;
-            resourceInputs["isUnifiedAuditingEnabled"] = args ? args.isUnifiedAuditingEnabled : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["vmClusterId"] = args ? args.vmClusterId : undefined;
+            resourceInputs["database"] = args?.database;
+            resourceInputs["databaseSoftwareImageId"] = args?.databaseSoftwareImageId;
+            resourceInputs["dbSystemId"] = args?.dbSystemId;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["enableDatabaseDelete"] = args?.enableDatabaseDelete;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isDesupportedVersion"] = args?.isDesupportedVersion;
+            resourceInputs["isUnifiedAuditingEnabled"] = args?.isUnifiedAuditingEnabled;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["vmClusterId"] = args?.vmClusterId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dbHomeLocation"] = undefined /*out*/;
             resourceInputs["lastPatchHistoryEntryId"] = undefined /*out*/;

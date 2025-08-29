@@ -66,92 +66,92 @@ export class SecurityAssessmentFinding extends pulumi.CustomResource {
     /**
      * The OCID of the assessment that generated this finding.
      */
-    public /*out*/ readonly assessmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly assessmentId: pulumi.Output<string>;
     /**
      * The category to which the finding belongs to.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      */
-    public /*out*/ readonly details!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly details: pulumi.Output<string[]>;
     /**
      * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
      */
-    public /*out*/ readonly hasTargetDbRiskLevelChanged!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly hasTargetDbRiskLevelChanged: pulumi.Output<boolean>;
     /**
      * Determines if this risk level was modified by user.
      */
-    public /*out*/ readonly isRiskModified!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRiskModified: pulumi.Output<boolean>;
     /**
      * Indicates whether a given finding is marked as topFinding or not.
      */
-    public /*out*/ readonly isTopFinding!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isTopFinding: pulumi.Output<boolean>;
     /**
      * User provided reason for accepting or modifying this finding if they choose to do so.
      */
-    public /*out*/ readonly justification!: pulumi.Output<string>;
+    declare public /*out*/ readonly justification: pulumi.Output<string>;
     /**
      * The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * Details about the current state of the finding.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Provides a recommended approach to take to remediate the finding reported.
      */
-    public /*out*/ readonly oneline!: pulumi.Output<string>;
+    declare public /*out*/ readonly oneline: pulumi.Output<string>;
     /**
      * The severity of the finding as determined by security assessment. This cannot be modified by user.
      */
-    public /*out*/ readonly oracleDefinedSeverity!: pulumi.Output<string>;
+    declare public /*out*/ readonly oracleDefinedSeverity: pulumi.Output<string>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.DataSafe.SecurityAssessmentFindingPatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.DataSafe.SecurityAssessmentFindingPatchOperation[] | undefined>;
     /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      */
-    public /*out*/ readonly references!: pulumi.Output<outputs.DataSafe.SecurityAssessmentFindingReference[]>;
+    declare public /*out*/ readonly references: pulumi.Output<outputs.DataSafe.SecurityAssessmentFindingReference[]>;
     /**
      * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      */
-    public /*out*/ readonly remarks!: pulumi.Output<string>;
+    declare public /*out*/ readonly remarks: pulumi.Output<string>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityAssessmentId!: pulumi.Output<string>;
+    declare public readonly securityAssessmentId: pulumi.Output<string>;
     /**
      * The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
      */
-    public /*out*/ readonly severity!: pulumi.Output<string>;
+    declare public /*out*/ readonly severity: pulumi.Output<string>;
     /**
      * The current state of the finding.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      */
-    public /*out*/ readonly summary!: pulumi.Output<string>;
+    declare public /*out*/ readonly summary: pulumi.Output<string>;
     /**
      * The OCID of the target database.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly targetId: pulumi.Output<string>;
     /**
      * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The time until which the change in severity(deferred / modified) of this finding is valid.
      */
-    public /*out*/ readonly timeValidUntil!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeValidUntil: pulumi.Output<string>;
     /**
      * The short title for the finding.
      */
-    public /*out*/ readonly title!: pulumi.Output<string>;
+    declare public /*out*/ readonly title: pulumi.Output<string>;
 
     /**
      * Create a SecurityAssessmentFinding resource with the given unique name, arguments, and options.
@@ -166,35 +166,35 @@ export class SecurityAssessmentFinding extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityAssessmentFindingState | undefined;
-            resourceInputs["assessmentId"] = state ? state.assessmentId : undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["details"] = state ? state.details : undefined;
-            resourceInputs["hasTargetDbRiskLevelChanged"] = state ? state.hasTargetDbRiskLevelChanged : undefined;
-            resourceInputs["isRiskModified"] = state ? state.isRiskModified : undefined;
-            resourceInputs["isTopFinding"] = state ? state.isTopFinding : undefined;
-            resourceInputs["justification"] = state ? state.justification : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["oneline"] = state ? state.oneline : undefined;
-            resourceInputs["oracleDefinedSeverity"] = state ? state.oracleDefinedSeverity : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["references"] = state ? state.references : undefined;
-            resourceInputs["remarks"] = state ? state.remarks : undefined;
-            resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
-            resourceInputs["severity"] = state ? state.severity : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["summary"] = state ? state.summary : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeValidUntil"] = state ? state.timeValidUntil : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
+            resourceInputs["assessmentId"] = state?.assessmentId;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["details"] = state?.details;
+            resourceInputs["hasTargetDbRiskLevelChanged"] = state?.hasTargetDbRiskLevelChanged;
+            resourceInputs["isRiskModified"] = state?.isRiskModified;
+            resourceInputs["isTopFinding"] = state?.isTopFinding;
+            resourceInputs["justification"] = state?.justification;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["oneline"] = state?.oneline;
+            resourceInputs["oracleDefinedSeverity"] = state?.oracleDefinedSeverity;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["references"] = state?.references;
+            resourceInputs["remarks"] = state?.remarks;
+            resourceInputs["securityAssessmentId"] = state?.securityAssessmentId;
+            resourceInputs["severity"] = state?.severity;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["summary"] = state?.summary;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeValidUntil"] = state?.timeValidUntil;
+            resourceInputs["title"] = state?.title;
         } else {
             const args = argsOrState as SecurityAssessmentFindingArgs | undefined;
-            if ((!args || args.securityAssessmentId === undefined) && !opts.urn) {
+            if (args?.securityAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityAssessmentId'");
             }
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["securityAssessmentId"] = args ? args.securityAssessmentId : undefined;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["securityAssessmentId"] = args?.securityAssessmentId;
             resourceInputs["assessmentId"] = undefined /*out*/;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["details"] = undefined /*out*/;

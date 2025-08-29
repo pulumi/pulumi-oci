@@ -19,8 +19,7 @@ namespace Pulumi.Oci
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         [Output("auth")]
         public Output<string?> Auth { get; private set; } = null!;
@@ -32,15 +31,14 @@ namespace Pulumi.Oci
         public Output<string?> ConfigFileProfile { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-        /// console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("fingerprint")]
         public Output<string?> Fingerprint { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-        /// set to 'ApiKey', ignored otherwise.
+        /// (Optional) A PEM formatted RSA private key for the user.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("privateKey")]
         public Output<string?> PrivateKey { get; private set; } = null!;
@@ -52,8 +50,8 @@ namespace Pulumi.Oci
         public Output<string?> PrivateKeyPassword { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The path to the user's PEM formatted private key.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("privateKeyPath")]
         public Output<string?> PrivateKeyPath { get; private set; } = null!;
@@ -65,8 +63,7 @@ namespace Pulumi.Oci
         public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-        /// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("tenancyOcid")]
         public Output<string?> TenancyOcid { get; private set; } = null!;
@@ -75,8 +72,7 @@ namespace Pulumi.Oci
         public Output<string?> TestTimeMaintenanceRebootDue { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("userOcid")]
         public Output<string?> UserOcid { get; private set; } = null!;
@@ -121,8 +117,7 @@ namespace Pulumi.Oci
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         [Input("auth")]
         public Input<string>? Auth { get; set; }
@@ -134,15 +129,14 @@ namespace Pulumi.Oci
         public Input<string>? ConfigFileProfile { get; set; }
 
         /// <summary>
-        /// (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-        /// consistency problems but it also introduced performance issues on destroy operations.
+        /// (Optional) Disable automatic retries for retriable errors.
+        /// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
         /// </summary>
         [Input("disableAutoRetries", json: true)]
         public Input<bool>? DisableAutoRetries { get; set; }
 
         /// <summary>
-        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-        /// console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
@@ -159,8 +153,8 @@ namespace Pulumi.Oci
         private Input<string>? _privateKey;
 
         /// <summary>
-        /// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-        /// set to 'ApiKey', ignored otherwise.
+        /// (Optional) A PEM formatted RSA private key for the user.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public Input<string>? PrivateKey
         {
@@ -189,8 +183,8 @@ namespace Pulumi.Oci
         }
 
         /// <summary>
-        /// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The path to the user's PEM formatted private key.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("privateKeyPath")]
         public Input<string>? PrivateKeyPath { get; set; }
@@ -208,16 +202,14 @@ namespace Pulumi.Oci
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-        /// duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-        /// is set to true.
+        /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+        /// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         /// </summary>
         [Input("retryDurationSeconds", json: true)]
         public Input<int>? RetryDurationSeconds { get; set; }
 
         /// <summary>
-        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-        /// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("tenancyOcid")]
         public Input<string>? TenancyOcid { get; set; }
@@ -226,8 +218,7 @@ namespace Pulumi.Oci
         public Input<string>? TestTimeMaintenanceRebootDue { get; set; }
 
         /// <summary>
-        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("userOcid")]
         public Input<string>? UserOcid { get; set; }

@@ -69,31 +69,31 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
      */
-    public readonly drgId!: pulumi.Output<string>;
+    declare public readonly drgId: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      */
-    public /*out*/ readonly isCrossTenancyPeering!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCrossTenancyPeering: pulumi.Output<boolean>;
     /**
      * The OCID of the RPC you want to peer with.
      */
-    public readonly peerId!: pulumi.Output<string>;
+    declare public readonly peerId: pulumi.Output<string>;
     /**
      * The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
      *
@@ -101,23 +101,23 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly peerRegionName!: pulumi.Output<string>;
+    declare public readonly peerRegionName: pulumi.Output<string>;
     /**
      * If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
      */
-    public /*out*/ readonly peerTenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly peerTenancyId: pulumi.Output<string>;
     /**
      * Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
      */
-    public /*out*/ readonly peeringStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly peeringStatus: pulumi.Output<string>;
     /**
      * The RPC's current lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a RemotePeeringConnection resource with the given unique name, arguments, and options.
@@ -132,33 +132,33 @@ export class RemotePeeringConnection extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RemotePeeringConnectionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["drgId"] = state ? state.drgId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCrossTenancyPeering"] = state ? state.isCrossTenancyPeering : undefined;
-            resourceInputs["peerId"] = state ? state.peerId : undefined;
-            resourceInputs["peerRegionName"] = state ? state.peerRegionName : undefined;
-            resourceInputs["peerTenancyId"] = state ? state.peerTenancyId : undefined;
-            resourceInputs["peeringStatus"] = state ? state.peeringStatus : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["drgId"] = state?.drgId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCrossTenancyPeering"] = state?.isCrossTenancyPeering;
+            resourceInputs["peerId"] = state?.peerId;
+            resourceInputs["peerRegionName"] = state?.peerRegionName;
+            resourceInputs["peerTenancyId"] = state?.peerTenancyId;
+            resourceInputs["peeringStatus"] = state?.peeringStatus;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as RemotePeeringConnectionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.drgId === undefined) && !opts.urn) {
+            if (args?.drgId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'drgId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["drgId"] = args ? args.drgId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["peerId"] = args ? args.peerId : undefined;
-            resourceInputs["peerRegionName"] = args ? args.peerRegionName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["drgId"] = args?.drgId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["peerId"] = args?.peerId;
+            resourceInputs["peerRegionName"] = args?.peerRegionName;
             resourceInputs["isCrossTenancyPeering"] = undefined /*out*/;
             resourceInputs["peerTenancyId"] = undefined /*out*/;
             resourceInputs["peeringStatus"] = undefined /*out*/;

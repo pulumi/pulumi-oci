@@ -80,63 +80,63 @@ export class UnifiedAuditPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Lists the audit policy provisioning conditions.
      */
-    public readonly conditions!: pulumi.Output<outputs.DataSafe.UnifiedAuditPolicyCondition[]>;
+    declare public readonly conditions: pulumi.Output<outputs.DataSafe.UnifiedAuditPolicyCondition[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the unified audit policy in Data Safe.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the unified audit policy in Data Safe. The name is modifiable and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Indicates on whom the audit policy is enabled.
      */
-    public /*out*/ readonly enabledEntities!: pulumi.Output<string>;
+    declare public /*out*/ readonly enabledEntities: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the unified audit policy is seeded or not.
      */
-    public /*out*/ readonly isSeeded!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSeeded: pulumi.Output<boolean>;
     /**
      * The details of the current state of the unified audit policy in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the security policy corresponding to the unified audit policy.
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    declare public readonly securityPolicyId: pulumi.Output<string>;
     /**
      * The current state of the unified audit policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether the unified audit policy has been enabled or disabled.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the unified audit policy was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The last date and time the unified audit policy was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The OCID of the associated unified audit policy definition.
      *
@@ -144,7 +144,7 @@ export class UnifiedAuditPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly unifiedAuditPolicyDefinitionId!: pulumi.Output<string>;
+    declare public readonly unifiedAuditPolicyDefinitionId: pulumi.Output<string>;
 
     /**
      * Create a UnifiedAuditPolicy resource with the given unique name, arguments, and options.
@@ -159,48 +159,48 @@ export class UnifiedAuditPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnifiedAuditPolicyState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["conditions"] = state ? state.conditions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enabledEntities"] = state ? state.enabledEntities : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isSeeded"] = state ? state.isSeeded : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["unifiedAuditPolicyDefinitionId"] = state ? state.unifiedAuditPolicyDefinitionId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["conditions"] = state?.conditions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enabledEntities"] = state?.enabledEntities;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSeeded"] = state?.isSeeded;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["securityPolicyId"] = state?.securityPolicyId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["unifiedAuditPolicyDefinitionId"] = state?.unifiedAuditPolicyDefinitionId;
         } else {
             const args = argsOrState as UnifiedAuditPolicyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.conditions === undefined) && !opts.urn) {
+            if (args?.conditions === undefined && !opts.urn) {
                 throw new Error("Missing required property 'conditions'");
             }
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+            if (args?.securityPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityPolicyId'");
             }
-            if ((!args || args.status === undefined) && !opts.urn) {
+            if (args?.status === undefined && !opts.urn) {
                 throw new Error("Missing required property 'status'");
             }
-            if ((!args || args.unifiedAuditPolicyDefinitionId === undefined) && !opts.urn) {
+            if (args?.unifiedAuditPolicyDefinitionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unifiedAuditPolicyDefinitionId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["conditions"] = args ? args.conditions : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["unifiedAuditPolicyDefinitionId"] = args ? args.unifiedAuditPolicyDefinitionId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["conditions"] = args?.conditions;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["securityPolicyId"] = args?.securityPolicyId;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["unifiedAuditPolicyDefinitionId"] = args?.unifiedAuditPolicyDefinitionId;
             resourceInputs["enabledEntities"] = undefined /*out*/;
             resourceInputs["isSeeded"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

@@ -34,26 +34,26 @@ export class VirtualNetwork extends pulumi.CustomResource {
         return obj['__pulumiType'] === VirtualNetwork.__pulumiType;
     }
 
-    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[]>;
-    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VirtualNetworkByoipv6cidrDetail[]>;
-    public readonly cidrBlock!: pulumi.Output<string>;
-    public readonly cidrBlocks!: pulumi.Output<string[]>;
-    public readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly dnsLabel!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
-    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
-    public readonly isIpv6enabled!: pulumi.Output<boolean>;
-    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly vcnDomainName!: pulumi.Output<string>;
+    declare public /*out*/ readonly byoipv6cidrBlocks: pulumi.Output<string[]>;
+    declare public readonly byoipv6cidrDetails: pulumi.Output<outputs.Core.VirtualNetworkByoipv6cidrDetail[]>;
+    declare public readonly cidrBlock: pulumi.Output<string>;
+    declare public readonly cidrBlocks: pulumi.Output<string[]>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultDhcpOptionsId: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultRouteTableId: pulumi.Output<string>;
+    declare public /*out*/ readonly defaultSecurityListId: pulumi.Output<string>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly displayName: pulumi.Output<string>;
+    declare public readonly dnsLabel: pulumi.Output<string>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly ipv6cidrBlocks: pulumi.Output<string[]>;
+    declare public readonly ipv6privateCidrBlocks: pulumi.Output<string[]>;
+    declare public readonly isIpv6enabled: pulumi.Output<boolean>;
+    declare public readonly isOracleGuaAllocationEnabled: pulumi.Output<boolean>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public /*out*/ readonly vcnDomainName: pulumi.Output<string>;
 
     /**
      * Create a VirtualNetwork resource with the given unique name, arguments, and options.
@@ -68,43 +68,43 @@ export class VirtualNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VirtualNetworkState | undefined;
-            resourceInputs["byoipv6cidrBlocks"] = state ? state.byoipv6cidrBlocks : undefined;
-            resourceInputs["byoipv6cidrDetails"] = state ? state.byoipv6cidrDetails : undefined;
-            resourceInputs["cidrBlock"] = state ? state.cidrBlock : undefined;
-            resourceInputs["cidrBlocks"] = state ? state.cidrBlocks : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["defaultDhcpOptionsId"] = state ? state.defaultDhcpOptionsId : undefined;
-            resourceInputs["defaultRouteTableId"] = state ? state.defaultRouteTableId : undefined;
-            resourceInputs["defaultSecurityListId"] = state ? state.defaultSecurityListId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsLabel"] = state ? state.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ipv6cidrBlocks"] = state ? state.ipv6cidrBlocks : undefined;
-            resourceInputs["ipv6privateCidrBlocks"] = state ? state.ipv6privateCidrBlocks : undefined;
-            resourceInputs["isIpv6enabled"] = state ? state.isIpv6enabled : undefined;
-            resourceInputs["isOracleGuaAllocationEnabled"] = state ? state.isOracleGuaAllocationEnabled : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnDomainName"] = state ? state.vcnDomainName : undefined;
+            resourceInputs["byoipv6cidrBlocks"] = state?.byoipv6cidrBlocks;
+            resourceInputs["byoipv6cidrDetails"] = state?.byoipv6cidrDetails;
+            resourceInputs["cidrBlock"] = state?.cidrBlock;
+            resourceInputs["cidrBlocks"] = state?.cidrBlocks;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["defaultDhcpOptionsId"] = state?.defaultDhcpOptionsId;
+            resourceInputs["defaultRouteTableId"] = state?.defaultRouteTableId;
+            resourceInputs["defaultSecurityListId"] = state?.defaultSecurityListId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsLabel"] = state?.dnsLabel;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ipv6cidrBlocks"] = state?.ipv6cidrBlocks;
+            resourceInputs["ipv6privateCidrBlocks"] = state?.ipv6privateCidrBlocks;
+            resourceInputs["isIpv6enabled"] = state?.isIpv6enabled;
+            resourceInputs["isOracleGuaAllocationEnabled"] = state?.isOracleGuaAllocationEnabled;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnDomainName"] = state?.vcnDomainName;
         } else {
             const args = argsOrState as VirtualNetworkArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["byoipv6cidrDetails"] = args ? args.byoipv6cidrDetails : undefined;
-            resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
-            resourceInputs["cidrBlocks"] = args ? args.cidrBlocks : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsLabel"] = args ? args.dnsLabel : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ipv6privateCidrBlocks"] = args ? args.ipv6privateCidrBlocks : undefined;
-            resourceInputs["isIpv6enabled"] = args ? args.isIpv6enabled : undefined;
-            resourceInputs["isOracleGuaAllocationEnabled"] = args ? args.isOracleGuaAllocationEnabled : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
+            resourceInputs["byoipv6cidrDetails"] = args?.byoipv6cidrDetails;
+            resourceInputs["cidrBlock"] = args?.cidrBlock;
+            resourceInputs["cidrBlocks"] = args?.cidrBlocks;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsLabel"] = args?.dnsLabel;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ipv6privateCidrBlocks"] = args?.ipv6privateCidrBlocks;
+            resourceInputs["isIpv6enabled"] = args?.isIpv6enabled;
+            resourceInputs["isOracleGuaAllocationEnabled"] = args?.isOracleGuaAllocationEnabled;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["byoipv6cidrBlocks"] = undefined /*out*/;
             resourceInputs["defaultDhcpOptionsId"] = undefined /*out*/;
             resourceInputs["defaultRouteTableId"] = undefined /*out*/;

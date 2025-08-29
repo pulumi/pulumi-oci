@@ -77,55 +77,55 @@ export class SensitiveType extends pulumi.CustomResource {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column comments.
      */
-    public readonly commentPattern!: pulumi.Output<string>;
+    declare public readonly commentPattern: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column data values.
      */
-    public readonly dataPattern!: pulumi.Output<string>;
+    declare public readonly dataPattern: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      */
-    public readonly defaultMaskingFormatId!: pulumi.Output<string>;
+    declare public readonly defaultMaskingFormatId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the sensitive type.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      */
-    public readonly entityType!: pulumi.Output<string>;
+    declare public readonly entityType: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
      */
-    public /*out*/ readonly isCommon!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCommon: pulumi.Output<boolean>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */
-    public readonly namePattern!: pulumi.Output<string>;
+    declare public readonly namePattern: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the parent sensitive category.
      */
-    public readonly parentCategoryId!: pulumi.Output<string>;
+    declare public readonly parentCategoryId: pulumi.Output<string>;
     /**
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      */
-    public readonly searchType!: pulumi.Output<string>;
+    declare public readonly searchType: pulumi.Output<string>;
     /**
      * (Updatable) The short name of the sensitive type.
      *
@@ -133,27 +133,27 @@ export class SensitiveType extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shortName!: pulumi.Output<string>;
+    declare public readonly shortName: pulumi.Output<string>;
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      */
-    public /*out*/ readonly source!: pulumi.Output<string>;
+    declare public /*out*/ readonly source: pulumi.Output<string>;
     /**
      * The current state of the sensitive type.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a SensitiveType resource with the given unique name, arguments, and options.
@@ -168,46 +168,46 @@ export class SensitiveType extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SensitiveTypeState | undefined;
-            resourceInputs["commentPattern"] = state ? state.commentPattern : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataPattern"] = state ? state.dataPattern : undefined;
-            resourceInputs["defaultMaskingFormatId"] = state ? state.defaultMaskingFormatId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["entityType"] = state ? state.entityType : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCommon"] = state ? state.isCommon : undefined;
-            resourceInputs["namePattern"] = state ? state.namePattern : undefined;
-            resourceInputs["parentCategoryId"] = state ? state.parentCategoryId : undefined;
-            resourceInputs["searchType"] = state ? state.searchType : undefined;
-            resourceInputs["shortName"] = state ? state.shortName : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["commentPattern"] = state?.commentPattern;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataPattern"] = state?.dataPattern;
+            resourceInputs["defaultMaskingFormatId"] = state?.defaultMaskingFormatId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["entityType"] = state?.entityType;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCommon"] = state?.isCommon;
+            resourceInputs["namePattern"] = state?.namePattern;
+            resourceInputs["parentCategoryId"] = state?.parentCategoryId;
+            resourceInputs["searchType"] = state?.searchType;
+            resourceInputs["shortName"] = state?.shortName;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as SensitiveTypeArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.entityType === undefined) && !opts.urn) {
+            if (args?.entityType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityType'");
             }
-            resourceInputs["commentPattern"] = args ? args.commentPattern : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dataPattern"] = args ? args.dataPattern : undefined;
-            resourceInputs["defaultMaskingFormatId"] = args ? args.defaultMaskingFormatId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["entityType"] = args ? args.entityType : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["namePattern"] = args ? args.namePattern : undefined;
-            resourceInputs["parentCategoryId"] = args ? args.parentCategoryId : undefined;
-            resourceInputs["searchType"] = args ? args.searchType : undefined;
-            resourceInputs["shortName"] = args ? args.shortName : undefined;
+            resourceInputs["commentPattern"] = args?.commentPattern;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dataPattern"] = args?.dataPattern;
+            resourceInputs["defaultMaskingFormatId"] = args?.defaultMaskingFormatId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["entityType"] = args?.entityType;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["namePattern"] = args?.namePattern;
+            resourceInputs["parentCategoryId"] = args?.parentCategoryId;
+            resourceInputs["searchType"] = args?.searchType;
+            resourceInputs["shortName"] = args?.shortName;
             resourceInputs["isCommon"] = undefined /*out*/;
             resourceInputs["source"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

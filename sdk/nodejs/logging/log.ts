@@ -82,35 +82,35 @@ export class Log extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Log object configuration.
      */
-    public readonly configuration!: pulumi.Output<outputs.Logging.LogConfiguration>;
+    declare public readonly configuration: pulumi.Output<outputs.Logging.LogConfiguration>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) OCID of a log group to work with.
      */
-    public readonly logGroupId!: pulumi.Output<string>;
+    declare public readonly logGroupId: pulumi.Output<string>;
     /**
      * The logType that the log object is for, whether custom or service.
      */
-    public readonly logType!: pulumi.Output<string>;
+    declare public readonly logType: pulumi.Output<string>;
     /**
      * (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      *
@@ -118,23 +118,23 @@ export class Log extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionDuration!: pulumi.Output<number>;
+    declare public readonly retentionDuration: pulumi.Output<number>;
     /**
      * The pipeline state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the tenancy.
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * Time the resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time the resource was last modified.
      */
-    public /*out*/ readonly timeLastModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastModified: pulumi.Output<string>;
 
     /**
      * Create a Log resource with the given unique name, arguments, and options.
@@ -149,38 +149,38 @@ export class Log extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configuration"] = state ? state.configuration : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["logGroupId"] = state ? state.logGroupId : undefined;
-            resourceInputs["logType"] = state ? state.logType : undefined;
-            resourceInputs["retentionDuration"] = state ? state.retentionDuration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastModified"] = state ? state.timeLastModified : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configuration"] = state?.configuration;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["logGroupId"] = state?.logGroupId;
+            resourceInputs["logType"] = state?.logType;
+            resourceInputs["retentionDuration"] = state?.retentionDuration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastModified"] = state?.timeLastModified;
         } else {
             const args = argsOrState as LogArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.logGroupId === undefined) && !opts.urn) {
+            if (args?.logGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'logGroupId'");
             }
-            if ((!args || args.logType === undefined) && !opts.urn) {
+            if (args?.logType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'logType'");
             }
-            resourceInputs["configuration"] = args ? args.configuration : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["logGroupId"] = args ? args.logGroupId : undefined;
-            resourceInputs["logType"] = args ? args.logType : undefined;
-            resourceInputs["retentionDuration"] = args ? args.retentionDuration : undefined;
+            resourceInputs["configuration"] = args?.configuration;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["logGroupId"] = args?.logGroupId;
+            resourceInputs["logType"] = args?.logType;
+            resourceInputs["retentionDuration"] = args?.retentionDuration;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["tenancyId"] = undefined /*out*/;

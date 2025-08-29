@@ -50,43 +50,43 @@ export class MlApplicationInstance extends pulumi.CustomResource {
     /**
      * AuthN/Z configuration for online prediction
      */
-    public readonly authConfiguration!: pulumi.Output<outputs.DataScience.MlApplicationInstanceAuthConfiguration>;
+    declare public readonly authConfiguration: pulumi.Output<outputs.DataScience.MlApplicationInstanceAuthConfiguration>;
     /**
      * (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
      */
-    public readonly configurations!: pulumi.Output<outputs.DataScience.MlApplicationInstanceConfiguration[]>;
+    declare public readonly configurations: pulumi.Output<outputs.DataScience.MlApplicationInstanceConfiguration[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of MlApplicationInstance. System will generate displayName when not provided.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Defines whether the MlApplicationInstance will be created in ACTIVE (true value) or INACTIVE (false value) lifecycle state.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
      */
-    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubstate: pulumi.Output<string>;
     /**
      * The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
      */
-    public readonly mlApplicationId!: pulumi.Output<string>;
+    declare public readonly mlApplicationId: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
      *
@@ -94,35 +94,35 @@ export class MlApplicationInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly mlApplicationImplementationId!: pulumi.Output<string>;
+    declare public readonly mlApplicationImplementationId: pulumi.Output<string>;
     /**
      * The name of Ml Application Implementation (based on mlApplicationImplementationId)
      */
-    public /*out*/ readonly mlApplicationImplementationName!: pulumi.Output<string>;
+    declare public /*out*/ readonly mlApplicationImplementationName: pulumi.Output<string>;
     /**
      * The name of ML Application (based on mlApplicationId).
      */
-    public /*out*/ readonly mlApplicationName!: pulumi.Output<string>;
+    declare public /*out*/ readonly mlApplicationName: pulumi.Output<string>;
     /**
      * Prediction endpoint related information.
      */
-    public /*out*/ readonly predictionEndpointDetails!: pulumi.Output<outputs.DataScience.MlApplicationInstancePredictionEndpointDetail[]>;
+    declare public /*out*/ readonly predictionEndpointDetails: pulumi.Output<outputs.DataScience.MlApplicationInstancePredictionEndpointDetail[]>;
     /**
      * The current state of the MlApplicationInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the MlApplication was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time of last MlApplicationInstance update in the format defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MlApplicationInstance resource with the given unique name, arguments, and options.
@@ -137,44 +137,44 @@ export class MlApplicationInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MlApplicationInstanceState | undefined;
-            resourceInputs["authConfiguration"] = state ? state.authConfiguration : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurations"] = state ? state.configurations : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubstate"] = state ? state.lifecycleSubstate : undefined;
-            resourceInputs["mlApplicationId"] = state ? state.mlApplicationId : undefined;
-            resourceInputs["mlApplicationImplementationId"] = state ? state.mlApplicationImplementationId : undefined;
-            resourceInputs["mlApplicationImplementationName"] = state ? state.mlApplicationImplementationName : undefined;
-            resourceInputs["mlApplicationName"] = state ? state.mlApplicationName : undefined;
-            resourceInputs["predictionEndpointDetails"] = state ? state.predictionEndpointDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["authConfiguration"] = state?.authConfiguration;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurations"] = state?.configurations;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubstate"] = state?.lifecycleSubstate;
+            resourceInputs["mlApplicationId"] = state?.mlApplicationId;
+            resourceInputs["mlApplicationImplementationId"] = state?.mlApplicationImplementationId;
+            resourceInputs["mlApplicationImplementationName"] = state?.mlApplicationImplementationName;
+            resourceInputs["mlApplicationName"] = state?.mlApplicationName;
+            resourceInputs["predictionEndpointDetails"] = state?.predictionEndpointDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MlApplicationInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.mlApplicationId === undefined) && !opts.urn) {
+            if (args?.mlApplicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mlApplicationId'");
             }
-            if ((!args || args.mlApplicationImplementationId === undefined) && !opts.urn) {
+            if (args?.mlApplicationImplementationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mlApplicationImplementationId'");
             }
-            resourceInputs["authConfiguration"] = args ? args.authConfiguration : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configurations"] = args ? args.configurations : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["mlApplicationId"] = args ? args.mlApplicationId : undefined;
-            resourceInputs["mlApplicationImplementationId"] = args ? args.mlApplicationImplementationId : undefined;
+            resourceInputs["authConfiguration"] = args?.authConfiguration;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configurations"] = args?.configurations;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["mlApplicationId"] = args?.mlApplicationId;
+            resourceInputs["mlApplicationImplementationId"] = args?.mlApplicationImplementationId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubstate"] = undefined /*out*/;
             resourceInputs["mlApplicationImplementationName"] = undefined /*out*/;

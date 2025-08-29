@@ -39,22 +39,22 @@ export class ExternalContainerDatabaseManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === ExternalContainerDatabaseManagement.__pulumiType;
     }
 
-    public readonly enableManagement!: pulumi.Output<boolean>;
+    declare public readonly enableManagement: pulumi.Output<boolean>;
     /**
      * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly externalContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalContainerDatabaseId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
+    declare public readonly externalDatabaseConnectorId: pulumi.Output<string>;
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
 
     /**
      * Create a ExternalContainerDatabaseManagement resource with the given unique name, arguments, and options.
@@ -69,25 +69,25 @@ export class ExternalContainerDatabaseManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalContainerDatabaseManagementState | undefined;
-            resourceInputs["enableManagement"] = state ? state.enableManagement : undefined;
-            resourceInputs["externalContainerDatabaseId"] = state ? state.externalContainerDatabaseId : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = state ? state.externalDatabaseConnectorId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
+            resourceInputs["enableManagement"] = state?.enableManagement;
+            resourceInputs["externalContainerDatabaseId"] = state?.externalContainerDatabaseId;
+            resourceInputs["externalDatabaseConnectorId"] = state?.externalDatabaseConnectorId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
         } else {
             const args = argsOrState as ExternalContainerDatabaseManagementArgs | undefined;
-            if ((!args || args.enableManagement === undefined) && !opts.urn) {
+            if (args?.enableManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableManagement'");
             }
-            if ((!args || args.externalContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalContainerDatabaseId'");
             }
-            if ((!args || args.externalDatabaseConnectorId === undefined) && !opts.urn) {
+            if (args?.externalDatabaseConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDatabaseConnectorId'");
             }
-            resourceInputs["enableManagement"] = args ? args.enableManagement : undefined;
-            resourceInputs["externalContainerDatabaseId"] = args ? args.externalContainerDatabaseId : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = args ? args.externalDatabaseConnectorId : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["enableManagement"] = args?.enableManagement;
+            resourceInputs["externalContainerDatabaseId"] = args?.externalContainerDatabaseId;
+            resourceInputs["externalDatabaseConnectorId"] = args?.externalDatabaseConnectorId;
+            resourceInputs["licenseModel"] = args?.licenseModel;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalContainerDatabaseManagement.__pulumiType, name, resourceInputs, opts);

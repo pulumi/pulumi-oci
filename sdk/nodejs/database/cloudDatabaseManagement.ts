@@ -69,49 +69,49 @@ export class CloudDatabaseManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === CloudDatabaseManagement.__pulumiType;
     }
 
-    public readonly credentialdetails!: pulumi.Output<outputs.Database.CloudDatabaseManagementCredentialdetails>;
+    declare public readonly credentialdetails: pulumi.Output<outputs.Database.CloudDatabaseManagementCredentialdetails>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * (Updatable) Use this flag to enable/disable database management
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableManagement!: pulumi.Output<boolean>;
+    declare public readonly enableManagement: pulumi.Output<boolean>;
     /**
      * (Updatable) Specifies database management type
      * enum:
      * - `BASIC`
      * - `ADVANCED`
      */
-    public readonly managementType!: pulumi.Output<string>;
+    declare public readonly managementType: pulumi.Output<string>;
     /**
      * The port used to connect to the database.
      */
-    public readonly port!: pulumi.Output<number | undefined>;
+    declare public readonly port: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    public readonly privateEndPointId!: pulumi.Output<string>;
+    declare public readonly privateEndPointId: pulumi.Output<string>;
     /**
      * Protocol used by the database connection.
      */
-    public readonly protocol!: pulumi.Output<string | undefined>;
+    declare public readonly protocol: pulumi.Output<string | undefined>;
     /**
      * The role of the user that will be connecting to the database.
      */
-    public readonly role!: pulumi.Output<string | undefined>;
+    declare public readonly role: pulumi.Output<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
-    public readonly serviceName!: pulumi.Output<string>;
+    declare public readonly serviceName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public readonly sslSecretId!: pulumi.Output<string | undefined>;
+    declare public readonly sslSecretId: pulumi.Output<string | undefined>;
 
     /**
      * Create a CloudDatabaseManagement resource with the given unique name, arguments, and options.
@@ -126,46 +126,46 @@ export class CloudDatabaseManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudDatabaseManagementState | undefined;
-            resourceInputs["credentialdetails"] = state ? state.credentialdetails : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["enableManagement"] = state ? state.enableManagement : undefined;
-            resourceInputs["managementType"] = state ? state.managementType : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["privateEndPointId"] = state ? state.privateEndPointId : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["serviceName"] = state ? state.serviceName : undefined;
-            resourceInputs["sslSecretId"] = state ? state.sslSecretId : undefined;
+            resourceInputs["credentialdetails"] = state?.credentialdetails;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["enableManagement"] = state?.enableManagement;
+            resourceInputs["managementType"] = state?.managementType;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["privateEndPointId"] = state?.privateEndPointId;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["serviceName"] = state?.serviceName;
+            resourceInputs["sslSecretId"] = state?.sslSecretId;
         } else {
             const args = argsOrState as CloudDatabaseManagementArgs | undefined;
-            if ((!args || args.credentialdetails === undefined) && !opts.urn) {
+            if (args?.credentialdetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'credentialdetails'");
             }
-            if ((!args || args.databaseId === undefined) && !opts.urn) {
+            if (args?.databaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseId'");
             }
-            if ((!args || args.enableManagement === undefined) && !opts.urn) {
+            if (args?.enableManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableManagement'");
             }
-            if ((!args || args.managementType === undefined) && !opts.urn) {
+            if (args?.managementType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementType'");
             }
-            if ((!args || args.privateEndPointId === undefined) && !opts.urn) {
+            if (args?.privateEndPointId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateEndPointId'");
             }
-            if ((!args || args.serviceName === undefined) && !opts.urn) {
+            if (args?.serviceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceName'");
             }
-            resourceInputs["credentialdetails"] = args ? args.credentialdetails : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["enableManagement"] = args ? args.enableManagement : undefined;
-            resourceInputs["managementType"] = args ? args.managementType : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["privateEndPointId"] = args ? args.privateEndPointId : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
-            resourceInputs["serviceName"] = args ? args.serviceName : undefined;
-            resourceInputs["sslSecretId"] = args ? args.sslSecretId : undefined;
+            resourceInputs["credentialdetails"] = args?.credentialdetails;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["enableManagement"] = args?.enableManagement;
+            resourceInputs["managementType"] = args?.managementType;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["privateEndPointId"] = args?.privateEndPointId;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["role"] = args?.role;
+            resourceInputs["serviceName"] = args?.serviceName;
+            resourceInputs["sslSecretId"] = args?.sslSecretId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudDatabaseManagement.__pulumiType, name, resourceInputs, opts);

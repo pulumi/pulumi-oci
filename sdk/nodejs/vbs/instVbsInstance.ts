@@ -70,35 +70,35 @@ export class InstVbsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment Identifier. It can only be the root compartment
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Display Name
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      */
-    public readonly idcsAccessToken!: pulumi.Output<string>;
+    declare public readonly idcsAccessToken: pulumi.Output<string>;
     /**
      * (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      */
-    public readonly isResourceUsageAgreementGranted!: pulumi.Output<boolean>;
+    declare public readonly isResourceUsageAgreementGranted: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecyleDetails: pulumi.Output<string>;
     /**
      * Service Instance Name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      *
@@ -106,27 +106,27 @@ export class InstVbsInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceCompartmentId!: pulumi.Output<string>;
+    declare public readonly resourceCompartmentId: pulumi.Output<string>;
     /**
      * The current state of the VbsInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the VbsInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the VbsInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Public web URL for accessing the VBS service instance
      */
-    public /*out*/ readonly vbsAccessUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly vbsAccessUrl: pulumi.Output<string>;
 
     /**
      * Create a InstVbsInstance resource with the given unique name, arguments, and options.
@@ -141,36 +141,36 @@ export class InstVbsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstVbsInstanceState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
-            resourceInputs["isResourceUsageAgreementGranted"] = state ? state.isResourceUsageAgreementGranted : undefined;
-            resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["resourceCompartmentId"] = state ? state.resourceCompartmentId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vbsAccessUrl"] = state ? state.vbsAccessUrl : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["idcsAccessToken"] = state?.idcsAccessToken;
+            resourceInputs["isResourceUsageAgreementGranted"] = state?.isResourceUsageAgreementGranted;
+            resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["resourceCompartmentId"] = state?.resourceCompartmentId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vbsAccessUrl"] = state?.vbsAccessUrl;
         } else {
             const args = argsOrState as InstVbsInstanceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = args ? args.idcsAccessToken : undefined;
-            resourceInputs["isResourceUsageAgreementGranted"] = args ? args.isResourceUsageAgreementGranted : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["resourceCompartmentId"] = args ? args.resourceCompartmentId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["idcsAccessToken"] = args?.idcsAccessToken;
+            resourceInputs["isResourceUsageAgreementGranted"] = args?.isResourceUsageAgreementGranted;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["resourceCompartmentId"] = args?.resourceCompartmentId;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

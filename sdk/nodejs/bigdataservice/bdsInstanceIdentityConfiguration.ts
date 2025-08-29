@@ -72,43 +72,43 @@ export class BdsInstanceIdentityConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
      */
-    public readonly activateIamUserSyncConfigurationTrigger!: pulumi.Output<string | undefined>;
+    declare public readonly activateIamUserSyncConfigurationTrigger: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
      */
-    public readonly activateUpstConfigurationTrigger!: pulumi.Output<string | undefined>;
+    declare public readonly activateUpstConfigurationTrigger: pulumi.Output<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * Identity domain confidential application ID for the identity config, required for creating identity configuration
      */
-    public readonly confidentialApplicationId!: pulumi.Output<string>;
+    declare public readonly confidentialApplicationId: pulumi.Output<string>;
     /**
      * Display name of the identity configuration, required for creating identity configuration.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Details for activating/updating an IAM user sync configuration
      */
-    public readonly iamUserSyncConfigurationDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails>;
+    declare public readonly iamUserSyncConfigurationDetails: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails>;
     /**
      * Information about the IAM user sync configuration.
      */
-    public /*out*/ readonly iamUserSyncConfigurations!: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfiguration[]>;
+    declare public /*out*/ readonly iamUserSyncConfigurations: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfiguration[]>;
     /**
      * Identity domain OCID to use for identity config, required for creating identity configuration
      */
-    public readonly identityDomainId!: pulumi.Output<string>;
+    declare public readonly identityDomainId: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
      */
-    public readonly refreshConfidentialApplicationTrigger!: pulumi.Output<string | undefined>;
+    declare public readonly refreshConfidentialApplicationTrigger: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
      *
@@ -116,27 +116,27 @@ export class BdsInstanceIdentityConfiguration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly refreshUpstTokenExchangeKeytabTrigger!: pulumi.Output<string | undefined>;
+    declare public readonly refreshUpstTokenExchangeKeytabTrigger: pulumi.Output<string | undefined>;
     /**
      * Lifecycle state of the UPST config
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Details for activating/updating UPST config on the cluster
      */
-    public readonly upstConfigurationDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails>;
+    declare public readonly upstConfigurationDetails: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails>;
     /**
      * Information about the UPST configuration.
      */
-    public /*out*/ readonly upstConfigurations!: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfiguration[]>;
+    declare public /*out*/ readonly upstConfigurations: pulumi.Output<outputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfiguration[]>;
 
     /**
      * Create a BdsInstanceIdentityConfiguration resource with the given unique name, arguments, and options.
@@ -151,50 +151,50 @@ export class BdsInstanceIdentityConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceIdentityConfigurationState | undefined;
-            resourceInputs["activateIamUserSyncConfigurationTrigger"] = state ? state.activateIamUserSyncConfigurationTrigger : undefined;
-            resourceInputs["activateUpstConfigurationTrigger"] = state ? state.activateUpstConfigurationTrigger : undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["confidentialApplicationId"] = state ? state.confidentialApplicationId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["iamUserSyncConfigurationDetails"] = state ? state.iamUserSyncConfigurationDetails : undefined;
-            resourceInputs["iamUserSyncConfigurations"] = state ? state.iamUserSyncConfigurations : undefined;
-            resourceInputs["identityDomainId"] = state ? state.identityDomainId : undefined;
-            resourceInputs["refreshConfidentialApplicationTrigger"] = state ? state.refreshConfidentialApplicationTrigger : undefined;
-            resourceInputs["refreshUpstTokenExchangeKeytabTrigger"] = state ? state.refreshUpstTokenExchangeKeytabTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upstConfigurationDetails"] = state ? state.upstConfigurationDetails : undefined;
-            resourceInputs["upstConfigurations"] = state ? state.upstConfigurations : undefined;
+            resourceInputs["activateIamUserSyncConfigurationTrigger"] = state?.activateIamUserSyncConfigurationTrigger;
+            resourceInputs["activateUpstConfigurationTrigger"] = state?.activateUpstConfigurationTrigger;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["confidentialApplicationId"] = state?.confidentialApplicationId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["iamUserSyncConfigurationDetails"] = state?.iamUserSyncConfigurationDetails;
+            resourceInputs["iamUserSyncConfigurations"] = state?.iamUserSyncConfigurations;
+            resourceInputs["identityDomainId"] = state?.identityDomainId;
+            resourceInputs["refreshConfidentialApplicationTrigger"] = state?.refreshConfidentialApplicationTrigger;
+            resourceInputs["refreshUpstTokenExchangeKeytabTrigger"] = state?.refreshUpstTokenExchangeKeytabTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upstConfigurationDetails"] = state?.upstConfigurationDetails;
+            resourceInputs["upstConfigurations"] = state?.upstConfigurations;
         } else {
             const args = argsOrState as BdsInstanceIdentityConfigurationArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.confidentialApplicationId === undefined) && !opts.urn) {
+            if (args?.confidentialApplicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'confidentialApplicationId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.identityDomainId === undefined) && !opts.urn) {
+            if (args?.identityDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identityDomainId'");
             }
-            resourceInputs["activateIamUserSyncConfigurationTrigger"] = args ? args.activateIamUserSyncConfigurationTrigger : undefined;
-            resourceInputs["activateUpstConfigurationTrigger"] = args ? args.activateUpstConfigurationTrigger : undefined;
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["activateIamUserSyncConfigurationTrigger"] = args?.activateIamUserSyncConfigurationTrigger;
+            resourceInputs["activateUpstConfigurationTrigger"] = args?.activateUpstConfigurationTrigger;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["confidentialApplicationId"] = args ? args.confidentialApplicationId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["iamUserSyncConfigurationDetails"] = args ? args.iamUserSyncConfigurationDetails : undefined;
-            resourceInputs["identityDomainId"] = args ? args.identityDomainId : undefined;
-            resourceInputs["refreshConfidentialApplicationTrigger"] = args ? args.refreshConfidentialApplicationTrigger : undefined;
-            resourceInputs["refreshUpstTokenExchangeKeytabTrigger"] = args ? args.refreshUpstTokenExchangeKeytabTrigger : undefined;
-            resourceInputs["upstConfigurationDetails"] = args ? args.upstConfigurationDetails : undefined;
+            resourceInputs["confidentialApplicationId"] = args?.confidentialApplicationId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["iamUserSyncConfigurationDetails"] = args?.iamUserSyncConfigurationDetails;
+            resourceInputs["identityDomainId"] = args?.identityDomainId;
+            resourceInputs["refreshConfidentialApplicationTrigger"] = args?.refreshConfidentialApplicationTrigger;
+            resourceInputs["refreshUpstTokenExchangeKeytabTrigger"] = args?.refreshUpstTokenExchangeKeytabTrigger;
+            resourceInputs["upstConfigurationDetails"] = args?.upstConfigurationDetails;
             resourceInputs["iamUserSyncConfigurations"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

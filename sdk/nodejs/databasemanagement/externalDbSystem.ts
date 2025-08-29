@@ -76,63 +76,63 @@ export class ExternalDbSystem extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The details required to enable Database Management for an external DB system.
      */
-    public readonly databaseManagementConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDatabaseManagementConfig>;
+    declare public readonly databaseManagementConfig: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemDatabaseManagementConfig>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      */
-    public readonly dbSystemDiscoveryId!: pulumi.Output<string>;
+    declare public readonly dbSystemDiscoveryId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
-    public /*out*/ readonly discoveryAgentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly discoveryAgentId: pulumi.Output<string>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
-    public /*out*/ readonly homeDirectory!: pulumi.Output<string>;
+    declare public /*out*/ readonly homeDirectory: pulumi.Output<string>;
     /**
      * Indicates whether the DB system is a cluster DB system or not.
      */
-    public /*out*/ readonly isCluster!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCluster: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The details of the associated service that will be enabled or disabled for an external DB System.
      */
-    public readonly stackMonitoringConfig!: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
+    declare public readonly stackMonitoringConfig: pulumi.Output<outputs.DatabaseManagement.ExternalDbSystemStackMonitoringConfig>;
     /**
      * The current lifecycle state of the external DB system resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the external DB system was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the external DB system was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ExternalDbSystem resource with the given unique name, arguments, and options.
@@ -147,36 +147,36 @@ export class ExternalDbSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalDbSystemState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseManagementConfig"] = state ? state.databaseManagementConfig : undefined;
-            resourceInputs["dbSystemDiscoveryId"] = state ? state.dbSystemDiscoveryId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["discoveryAgentId"] = state ? state.discoveryAgentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["homeDirectory"] = state ? state.homeDirectory : undefined;
-            resourceInputs["isCluster"] = state ? state.isCluster : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["stackMonitoringConfig"] = state ? state.stackMonitoringConfig : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseManagementConfig"] = state?.databaseManagementConfig;
+            resourceInputs["dbSystemDiscoveryId"] = state?.dbSystemDiscoveryId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryAgentId"] = state?.discoveryAgentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["homeDirectory"] = state?.homeDirectory;
+            resourceInputs["isCluster"] = state?.isCluster;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["stackMonitoringConfig"] = state?.stackMonitoringConfig;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ExternalDbSystemArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbSystemDiscoveryId === undefined) && !opts.urn) {
+            if (args?.dbSystemDiscoveryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbSystemDiscoveryId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["databaseManagementConfig"] = args ? args.databaseManagementConfig : undefined;
-            resourceInputs["dbSystemDiscoveryId"] = args ? args.dbSystemDiscoveryId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["stackMonitoringConfig"] = args ? args.stackMonitoringConfig : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["databaseManagementConfig"] = args?.databaseManagementConfig;
+            resourceInputs["dbSystemDiscoveryId"] = args?.dbSystemDiscoveryId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["stackMonitoringConfig"] = args?.stackMonitoringConfig;
             resourceInputs["discoveryAgentId"] = undefined /*out*/;
             resourceInputs["homeDirectory"] = undefined /*out*/;
             resourceInputs["isCluster"] = undefined /*out*/;

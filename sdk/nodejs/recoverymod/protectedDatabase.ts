@@ -79,81 +79,81 @@ export class ProtectedDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the protected database.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the protected database.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      */
-    public readonly databaseSize!: pulumi.Output<string>;
+    declare public readonly databaseSize: pulumi.Output<string>;
     /**
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
      */
-    public readonly dbUniqueName!: pulumi.Output<string>;
+    declare public readonly dbUniqueName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
      * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
      * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
      */
-    public readonly deletionSchedule!: pulumi.Output<string>;
+    declare public readonly deletionSchedule: pulumi.Output<string>;
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates the protection status of the database.
      */
-    public /*out*/ readonly health!: pulumi.Output<string>;
+    declare public /*out*/ readonly health: pulumi.Output<string>;
     /**
      * A message describing the current health of the protected database.
      */
-    public /*out*/ readonly healthDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly healthDetails: pulumi.Output<string>;
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
      */
-    public /*out*/ readonly isReadOnlyResource!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isReadOnlyResource: pulumi.Output<boolean>;
     /**
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      */
-    public readonly isRedoLogsShipped!: pulumi.Output<boolean>;
+    declare public readonly isRedoLogsShipped: pulumi.Output<boolean>;
     /**
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Backup performance and storage utilization metrics for the protected database.
      */
-    public /*out*/ readonly metrics!: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseMetric[]>;
+    declare public /*out*/ readonly metrics: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseMetric[]>;
     /**
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
      */
-    public /*out*/ readonly policyLockedDateTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly policyLockedDateTime: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the protection policy associated with the protected database.
      */
-    public readonly protectionPolicyId!: pulumi.Output<string>;
+    declare public readonly protectionPolicyId: pulumi.Output<string>;
     /**
      * (Updatable) List of recovery service subnet resources associated with the protected database.
      */
-    public readonly recoveryServiceSubnets!: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet[]>;
+    declare public readonly recoveryServiceSubnets: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseRecoveryServiceSubnet[]>;
     /**
      * The current state of the Protected Database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
      *
@@ -161,23 +161,23 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscriptionId!: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      */
-    public /*out*/ readonly vpcUserName!: pulumi.Output<string>;
+    declare public /*out*/ readonly vpcUserName: pulumi.Output<string>;
 
     /**
      * Create a ProtectedDatabase resource with the given unique name, arguments, and options.
@@ -192,63 +192,63 @@ export class ProtectedDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProtectedDatabaseState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseSize"] = state ? state.databaseSize : undefined;
-            resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deletionSchedule"] = state ? state.deletionSchedule : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["health"] = state ? state.health : undefined;
-            resourceInputs["healthDetails"] = state ? state.healthDetails : undefined;
-            resourceInputs["isReadOnlyResource"] = state ? state.isReadOnlyResource : undefined;
-            resourceInputs["isRedoLogsShipped"] = state ? state.isRedoLogsShipped : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["policyLockedDateTime"] = state ? state.policyLockedDateTime : undefined;
-            resourceInputs["protectionPolicyId"] = state ? state.protectionPolicyId : undefined;
-            resourceInputs["recoveryServiceSubnets"] = state ? state.recoveryServiceSubnets : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["vpcUserName"] = state ? state.vpcUserName : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseSize"] = state?.databaseSize;
+            resourceInputs["dbUniqueName"] = state?.dbUniqueName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deletionSchedule"] = state?.deletionSchedule;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["health"] = state?.health;
+            resourceInputs["healthDetails"] = state?.healthDetails;
+            resourceInputs["isReadOnlyResource"] = state?.isReadOnlyResource;
+            resourceInputs["isRedoLogsShipped"] = state?.isRedoLogsShipped;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["policyLockedDateTime"] = state?.policyLockedDateTime;
+            resourceInputs["protectionPolicyId"] = state?.protectionPolicyId;
+            resourceInputs["recoveryServiceSubnets"] = state?.recoveryServiceSubnets;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vpcUserName"] = state?.vpcUserName;
         } else {
             const args = argsOrState as ProtectedDatabaseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbUniqueName === undefined) && !opts.urn) {
+            if (args?.dbUniqueName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbUniqueName'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.protectionPolicyId === undefined) && !opts.urn) {
+            if (args?.protectionPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protectionPolicyId'");
             }
-            if ((!args || args.recoveryServiceSubnets === undefined) && !opts.urn) {
+            if (args?.recoveryServiceSubnets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recoveryServiceSubnets'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["databaseSize"] = args ? args.databaseSize : undefined;
-            resourceInputs["dbUniqueName"] = args ? args.dbUniqueName : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deletionSchedule"] = args ? args.deletionSchedule : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isRedoLogsShipped"] = args ? args.isRedoLogsShipped : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["databaseSize"] = args?.databaseSize;
+            resourceInputs["dbUniqueName"] = args?.dbUniqueName;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deletionSchedule"] = args?.deletionSchedule;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isRedoLogsShipped"] = args?.isRedoLogsShipped;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["protectionPolicyId"] = args ? args.protectionPolicyId : undefined;
-            resourceInputs["recoveryServiceSubnets"] = args ? args.recoveryServiceSubnets : undefined;
-            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
+            resourceInputs["protectionPolicyId"] = args?.protectionPolicyId;
+            resourceInputs["recoveryServiceSubnets"] = args?.recoveryServiceSubnets;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["health"] = undefined /*out*/;
             resourceInputs["healthDetails"] = undefined /*out*/;
             resourceInputs["isReadOnlyResource"] = undefined /*out*/;

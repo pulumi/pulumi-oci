@@ -73,59 +73,59 @@ export class AgentDependency extends pulumi.CustomResource {
     /**
      * (Updatable) Object storage bucket where the dependency is uploaded.
      */
-    public readonly bucket!: pulumi.Output<string>;
+    declare public readonly bucket: pulumi.Output<string>;
     /**
      * The checksum associated with the dependency object returned by Object Storage.
      */
-    public /*out*/ readonly checksum!: pulumi.Output<string>;
+    declare public /*out*/ readonly checksum: pulumi.Output<string>;
     /**
      * (Updatable) Compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
      */
-    public readonly dependencyName!: pulumi.Output<string>;
+    declare public readonly dependencyName: pulumi.Output<string>;
     /**
      * (Updatable) Version of the Agent dependency.
      */
-    public readonly dependencyVersion!: pulumi.Output<string>;
+    declare public readonly dependencyVersion: pulumi.Output<string>;
     /**
      * (Updatable) Description about the Agent dependency.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Display name of the Agent dependency.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The eTag associated with the dependency object returned by Object Storage.
      */
-    public /*out*/ readonly eTag!: pulumi.Output<string>;
+    declare public /*out*/ readonly eTag: pulumi.Output<string>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Object storage namespace associated with the customer's tenancy.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Name of the dependency object uploaded by the customer.
      */
-    public readonly object!: pulumi.Output<string>;
+    declare public readonly object: pulumi.Output<string>;
     /**
      * The current state of AgentDependency.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
      *
@@ -133,11 +133,11 @@ export class AgentDependency extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a AgentDependency resource with the given unique name, arguments, and options.
@@ -152,53 +152,53 @@ export class AgentDependency extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AgentDependencyState | undefined;
-            resourceInputs["bucket"] = state ? state.bucket : undefined;
-            resourceInputs["checksum"] = state ? state.checksum : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["dependencyName"] = state ? state.dependencyName : undefined;
-            resourceInputs["dependencyVersion"] = state ? state.dependencyVersion : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["eTag"] = state ? state.eTag : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["object"] = state ? state.object : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["bucket"] = state?.bucket;
+            resourceInputs["checksum"] = state?.checksum;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["dependencyName"] = state?.dependencyName;
+            resourceInputs["dependencyVersion"] = state?.dependencyVersion;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["eTag"] = state?.eTag;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["object"] = state?.object;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as AgentDependencyArgs | undefined;
-            if ((!args || args.bucket === undefined) && !opts.urn) {
+            if (args?.bucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bucket'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dependencyName === undefined) && !opts.urn) {
+            if (args?.dependencyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dependencyName'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.object === undefined) && !opts.urn) {
+            if (args?.object === undefined && !opts.urn) {
                 throw new Error("Missing required property 'object'");
             }
-            resourceInputs["bucket"] = args ? args.bucket : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["dependencyName"] = args ? args.dependencyName : undefined;
-            resourceInputs["dependencyVersion"] = args ? args.dependencyVersion : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["object"] = args ? args.object : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
+            resourceInputs["bucket"] = args?.bucket;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["dependencyName"] = args?.dependencyName;
+            resourceInputs["dependencyVersion"] = args?.dependencyVersion;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["object"] = args?.object;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["checksum"] = undefined /*out*/;
             resourceInputs["eTag"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

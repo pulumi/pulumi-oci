@@ -56,7 +56,7 @@ export class ClusterStartCredentialRotationManagement extends pulumi.CustomResou
     /**
      * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
      */
-    public readonly autoCompletionDelayDuration!: pulumi.Output<string>;
+    declare public readonly autoCompletionDelayDuration: pulumi.Output<string>;
     /**
      * The OCID of the cluster.
      *
@@ -64,7 +64,7 @@ export class ClusterStartCredentialRotationManagement extends pulumi.CustomResou
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
 
     /**
      * Create a ClusterStartCredentialRotationManagement resource with the given unique name, arguments, and options.
@@ -79,18 +79,18 @@ export class ClusterStartCredentialRotationManagement extends pulumi.CustomResou
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterStartCredentialRotationManagementState | undefined;
-            resourceInputs["autoCompletionDelayDuration"] = state ? state.autoCompletionDelayDuration : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
+            resourceInputs["autoCompletionDelayDuration"] = state?.autoCompletionDelayDuration;
+            resourceInputs["clusterId"] = state?.clusterId;
         } else {
             const args = argsOrState as ClusterStartCredentialRotationManagementArgs | undefined;
-            if ((!args || args.autoCompletionDelayDuration === undefined) && !opts.urn) {
+            if (args?.autoCompletionDelayDuration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autoCompletionDelayDuration'");
             }
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            resourceInputs["autoCompletionDelayDuration"] = args ? args.autoCompletionDelayDuration : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
+            resourceInputs["autoCompletionDelayDuration"] = args?.autoCompletionDelayDuration;
+            resourceInputs["clusterId"] = args?.clusterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterStartCredentialRotationManagement.__pulumiType, name, resourceInputs, opts);

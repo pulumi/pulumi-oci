@@ -75,47 +75,47 @@ export class Usage extends pulumi.CustomResource {
     /**
      * The compartment depth level.
      */
-    public readonly compartmentDepth!: pulumi.Output<number>;
+    declare public readonly compartmentDepth: pulumi.Output<number>;
     /**
      * The filter object for query usage.
      */
-    public readonly filter!: pulumi.Output<string | undefined>;
+    declare public readonly filter: pulumi.Output<string | undefined>;
     /**
      * Forecast configuration of usage/cost.
      */
-    public readonly forecast!: pulumi.Output<outputs.MeteringComputation.UsageForecast>;
+    declare public readonly forecast: pulumi.Output<outputs.MeteringComputation.UsageForecast>;
     /**
      * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
      */
-    public readonly granularity!: pulumi.Output<string>;
+    declare public readonly granularity: pulumi.Output<string>;
     /**
      * Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
      */
-    public readonly groupBies!: pulumi.Output<string[]>;
+    declare public readonly groupBies: pulumi.Output<string[]>;
     /**
      * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
      */
-    public readonly groupByTags!: pulumi.Output<outputs.MeteringComputation.UsageGroupByTag[]>;
+    declare public readonly groupByTags: pulumi.Output<outputs.MeteringComputation.UsageGroupByTag[]>;
     /**
      * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      */
-    public readonly isAggregateByTime!: pulumi.Output<boolean>;
+    declare public readonly isAggregateByTime: pulumi.Output<boolean>;
     /**
      * A list of usage items.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.MeteringComputation.UsageItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.MeteringComputation.UsageItem[]>;
     /**
      * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
      */
-    public readonly queryType!: pulumi.Output<string>;
+    declare public readonly queryType: pulumi.Output<string>;
     /**
      * Tenant ID.
      */
-    public readonly tenantId!: pulumi.Output<string>;
+    declare public readonly tenantId: pulumi.Output<string>;
     /**
      * The usage end time.
      */
-    public readonly timeUsageEnded!: pulumi.Output<string>;
+    declare public readonly timeUsageEnded: pulumi.Output<string>;
     /**
      * The usage start time.
      *
@@ -123,7 +123,7 @@ export class Usage extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeUsageStarted!: pulumi.Output<string>;
+    declare public readonly timeUsageStarted: pulumi.Output<string>;
 
     /**
      * Create a Usage resource with the given unique name, arguments, and options.
@@ -138,43 +138,43 @@ export class Usage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsageState | undefined;
-            resourceInputs["compartmentDepth"] = state ? state.compartmentDepth : undefined;
-            resourceInputs["filter"] = state ? state.filter : undefined;
-            resourceInputs["forecast"] = state ? state.forecast : undefined;
-            resourceInputs["granularity"] = state ? state.granularity : undefined;
-            resourceInputs["groupBies"] = state ? state.groupBies : undefined;
-            resourceInputs["groupByTags"] = state ? state.groupByTags : undefined;
-            resourceInputs["isAggregateByTime"] = state ? state.isAggregateByTime : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["queryType"] = state ? state.queryType : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["timeUsageEnded"] = state ? state.timeUsageEnded : undefined;
-            resourceInputs["timeUsageStarted"] = state ? state.timeUsageStarted : undefined;
+            resourceInputs["compartmentDepth"] = state?.compartmentDepth;
+            resourceInputs["filter"] = state?.filter;
+            resourceInputs["forecast"] = state?.forecast;
+            resourceInputs["granularity"] = state?.granularity;
+            resourceInputs["groupBies"] = state?.groupBies;
+            resourceInputs["groupByTags"] = state?.groupByTags;
+            resourceInputs["isAggregateByTime"] = state?.isAggregateByTime;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["queryType"] = state?.queryType;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["timeUsageEnded"] = state?.timeUsageEnded;
+            resourceInputs["timeUsageStarted"] = state?.timeUsageStarted;
         } else {
             const args = argsOrState as UsageArgs | undefined;
-            if ((!args || args.granularity === undefined) && !opts.urn) {
+            if (args?.granularity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'granularity'");
             }
-            if ((!args || args.tenantId === undefined) && !opts.urn) {
+            if (args?.tenantId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tenantId'");
             }
-            if ((!args || args.timeUsageEnded === undefined) && !opts.urn) {
+            if (args?.timeUsageEnded === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeUsageEnded'");
             }
-            if ((!args || args.timeUsageStarted === undefined) && !opts.urn) {
+            if (args?.timeUsageStarted === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeUsageStarted'");
             }
-            resourceInputs["compartmentDepth"] = args ? args.compartmentDepth : undefined;
-            resourceInputs["filter"] = args ? args.filter : undefined;
-            resourceInputs["forecast"] = args ? args.forecast : undefined;
-            resourceInputs["granularity"] = args ? args.granularity : undefined;
-            resourceInputs["groupBies"] = args ? args.groupBies : undefined;
-            resourceInputs["groupByTags"] = args ? args.groupByTags : undefined;
-            resourceInputs["isAggregateByTime"] = args ? args.isAggregateByTime : undefined;
-            resourceInputs["queryType"] = args ? args.queryType : undefined;
-            resourceInputs["tenantId"] = args ? args.tenantId : undefined;
-            resourceInputs["timeUsageEnded"] = args ? args.timeUsageEnded : undefined;
-            resourceInputs["timeUsageStarted"] = args ? args.timeUsageStarted : undefined;
+            resourceInputs["compartmentDepth"] = args?.compartmentDepth;
+            resourceInputs["filter"] = args?.filter;
+            resourceInputs["forecast"] = args?.forecast;
+            resourceInputs["granularity"] = args?.granularity;
+            resourceInputs["groupBies"] = args?.groupBies;
+            resourceInputs["groupByTags"] = args?.groupByTags;
+            resourceInputs["isAggregateByTime"] = args?.isAggregateByTime;
+            resourceInputs["queryType"] = args?.queryType;
+            resourceInputs["tenantId"] = args?.tenantId;
+            resourceInputs["timeUsageEnded"] = args?.timeUsageEnded;
+            resourceInputs["timeUsageStarted"] = args?.timeUsageStarted;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

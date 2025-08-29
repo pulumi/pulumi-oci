@@ -88,85 +88,85 @@ export class Vtap extends pulumi.CustomResource {
     /**
      * (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    public readonly captureFilterId!: pulumi.Output<string>;
+    declare public readonly captureFilterId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
      */
-    public readonly encapsulationProtocol!: pulumi.Output<string>;
+    declare public readonly encapsulationProtocol: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
      * * `TRUE` directs the VTAP to start mirroring traffic.
      * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
-    public readonly isVtapEnabled!: pulumi.Output<boolean>;
+    declare public readonly isVtapEnabled: pulumi.Output<boolean>;
     /**
      * The VTAP's current running state.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * (Updatable) The maximum size of the packets to be included in the filter.
      */
-    public readonly maxPacketSize!: pulumi.Output<number>;
+    declare public readonly maxPacketSize: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    declare public readonly sourceId: pulumi.Output<string>;
     /**
      * (Updatable) The IP Address of the source private endpoint.
      */
-    public readonly sourcePrivateEndpointIp!: pulumi.Output<string>;
+    declare public readonly sourcePrivateEndpointIp: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      */
-    public readonly sourcePrivateEndpointSubnetId!: pulumi.Output<string>;
+    declare public readonly sourcePrivateEndpointSubnetId: pulumi.Output<string>;
     /**
      * (Updatable) The source type for the VTAP.
      */
-    public readonly sourceType!: pulumi.Output<string>;
+    declare public readonly sourceType: pulumi.Output<string>;
     /**
      * The VTAP's administrative lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * (Updatable) The IP address of the destination resource where mirrored packets are sent.
      */
-    public readonly targetIp!: pulumi.Output<string>;
+    declare public readonly targetIp: pulumi.Output<string>;
     /**
      * (Updatable) The target type for the VTAP.
      */
-    public readonly targetType!: pulumi.Output<string>;
+    declare public readonly targetType: pulumi.Output<string>;
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      */
-    public readonly trafficMode!: pulumi.Output<string>;
+    declare public readonly trafficMode: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
     /**
      * (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
      *
@@ -174,7 +174,7 @@ export class Vtap extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vxlanNetworkIdentifier!: pulumi.Output<string>;
+    declare public readonly vxlanNetworkIdentifier: pulumi.Output<string>;
 
     /**
      * Create a Vtap resource with the given unique name, arguments, and options.
@@ -189,59 +189,59 @@ export class Vtap extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VtapState | undefined;
-            resourceInputs["captureFilterId"] = state ? state.captureFilterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["encapsulationProtocol"] = state ? state.encapsulationProtocol : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isVtapEnabled"] = state ? state.isVtapEnabled : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["maxPacketSize"] = state ? state.maxPacketSize : undefined;
-            resourceInputs["sourceId"] = state ? state.sourceId : undefined;
-            resourceInputs["sourcePrivateEndpointIp"] = state ? state.sourcePrivateEndpointIp : undefined;
-            resourceInputs["sourcePrivateEndpointSubnetId"] = state ? state.sourcePrivateEndpointSubnetId : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["targetIp"] = state ? state.targetIp : undefined;
-            resourceInputs["targetType"] = state ? state.targetType : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["trafficMode"] = state ? state.trafficMode : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
-            resourceInputs["vxlanNetworkIdentifier"] = state ? state.vxlanNetworkIdentifier : undefined;
+            resourceInputs["captureFilterId"] = state?.captureFilterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["encapsulationProtocol"] = state?.encapsulationProtocol;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isVtapEnabled"] = state?.isVtapEnabled;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["maxPacketSize"] = state?.maxPacketSize;
+            resourceInputs["sourceId"] = state?.sourceId;
+            resourceInputs["sourcePrivateEndpointIp"] = state?.sourcePrivateEndpointIp;
+            resourceInputs["sourcePrivateEndpointSubnetId"] = state?.sourcePrivateEndpointSubnetId;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["targetIp"] = state?.targetIp;
+            resourceInputs["targetType"] = state?.targetType;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["trafficMode"] = state?.trafficMode;
+            resourceInputs["vcnId"] = state?.vcnId;
+            resourceInputs["vxlanNetworkIdentifier"] = state?.vxlanNetworkIdentifier;
         } else {
             const args = argsOrState as VtapArgs | undefined;
-            if ((!args || args.captureFilterId === undefined) && !opts.urn) {
+            if (args?.captureFilterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'captureFilterId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.sourceId === undefined) && !opts.urn) {
+            if (args?.sourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["captureFilterId"] = args ? args.captureFilterId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["encapsulationProtocol"] = args ? args.encapsulationProtocol : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isVtapEnabled"] = args ? args.isVtapEnabled : undefined;
-            resourceInputs["maxPacketSize"] = args ? args.maxPacketSize : undefined;
-            resourceInputs["sourceId"] = args ? args.sourceId : undefined;
-            resourceInputs["sourcePrivateEndpointIp"] = args ? args.sourcePrivateEndpointIp : undefined;
-            resourceInputs["sourcePrivateEndpointSubnetId"] = args ? args.sourcePrivateEndpointSubnetId : undefined;
-            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["targetIp"] = args ? args.targetIp : undefined;
-            resourceInputs["targetType"] = args ? args.targetType : undefined;
-            resourceInputs["trafficMode"] = args ? args.trafficMode : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
-            resourceInputs["vxlanNetworkIdentifier"] = args ? args.vxlanNetworkIdentifier : undefined;
+            resourceInputs["captureFilterId"] = args?.captureFilterId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["encapsulationProtocol"] = args?.encapsulationProtocol;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isVtapEnabled"] = args?.isVtapEnabled;
+            resourceInputs["maxPacketSize"] = args?.maxPacketSize;
+            resourceInputs["sourceId"] = args?.sourceId;
+            resourceInputs["sourcePrivateEndpointIp"] = args?.sourcePrivateEndpointIp;
+            resourceInputs["sourcePrivateEndpointSubnetId"] = args?.sourcePrivateEndpointSubnetId;
+            resourceInputs["sourceType"] = args?.sourceType;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["targetIp"] = args?.targetIp;
+            resourceInputs["targetType"] = args?.targetType;
+            resourceInputs["trafficMode"] = args?.trafficMode;
+            resourceInputs["vcnId"] = args?.vcnId;
+            resourceInputs["vxlanNetworkIdentifier"] = args?.vxlanNetworkIdentifier;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

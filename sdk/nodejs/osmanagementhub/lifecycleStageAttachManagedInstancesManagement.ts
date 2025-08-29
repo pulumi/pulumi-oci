@@ -50,11 +50,11 @@ export class LifecycleStageAttachManagedInstancesManagement extends pulumi.Custo
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    declare public readonly lifecycleStageId: pulumi.Output<string>;
     /**
      * The details about the managed instances.
      */
-    public readonly managedInstanceDetails!: pulumi.Output<outputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails>;
+    declare public readonly managedInstanceDetails: pulumi.Output<outputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails>;
 
     /**
      * Create a LifecycleStageAttachManagedInstancesManagement resource with the given unique name, arguments, and options.
@@ -69,18 +69,18 @@ export class LifecycleStageAttachManagedInstancesManagement extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LifecycleStageAttachManagedInstancesManagementState | undefined;
-            resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
-            resourceInputs["managedInstanceDetails"] = state ? state.managedInstanceDetails : undefined;
+            resourceInputs["lifecycleStageId"] = state?.lifecycleStageId;
+            resourceInputs["managedInstanceDetails"] = state?.managedInstanceDetails;
         } else {
             const args = argsOrState as LifecycleStageAttachManagedInstancesManagementArgs | undefined;
-            if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
+            if (args?.lifecycleStageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
-            if ((!args || args.managedInstanceDetails === undefined) && !opts.urn) {
+            if (args?.managedInstanceDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceDetails'");
             }
-            resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
-            resourceInputs["managedInstanceDetails"] = args ? args.managedInstanceDetails : undefined;
+            resourceInputs["lifecycleStageId"] = args?.lifecycleStageId;
+            resourceInputs["managedInstanceDetails"] = args?.managedInstanceDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LifecycleStageAttachManagedInstancesManagement.__pulumiType, name, resourceInputs, opts);

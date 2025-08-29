@@ -57,15 +57,15 @@ export class RepositoryProtectedBranchManagement extends pulumi.CustomResource {
     /**
      * Name of a branch to protect.
      */
-    public readonly branchName!: pulumi.Output<string>;
+    declare public readonly branchName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Level of protection to add on a branch.
      */
-    public readonly protectionLevels!: pulumi.Output<string[]>;
+    declare public readonly protectionLevels: pulumi.Output<string[]>;
     /**
      * Unique repository identifier.
      *
@@ -73,7 +73,7 @@ export class RepositoryProtectedBranchManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repositoryId!: pulumi.Output<string>;
+    declare public readonly repositoryId: pulumi.Output<string>;
 
     /**
      * Create a RepositoryProtectedBranchManagement resource with the given unique name, arguments, and options.
@@ -88,21 +88,21 @@ export class RepositoryProtectedBranchManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RepositoryProtectedBranchManagementState | undefined;
-            resourceInputs["branchName"] = state ? state.branchName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["protectionLevels"] = state ? state.protectionLevels : undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
+            resourceInputs["branchName"] = state?.branchName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["protectionLevels"] = state?.protectionLevels;
+            resourceInputs["repositoryId"] = state?.repositoryId;
         } else {
             const args = argsOrState as RepositoryProtectedBranchManagementArgs | undefined;
-            if ((!args || args.branchName === undefined) && !opts.urn) {
+            if (args?.branchName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'branchName'");
             }
-            if ((!args || args.repositoryId === undefined) && !opts.urn) {
+            if (args?.repositoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryId'");
             }
-            resourceInputs["branchName"] = args ? args.branchName : undefined;
-            resourceInputs["protectionLevels"] = args ? args.protectionLevels : undefined;
-            resourceInputs["repositoryId"] = args ? args.repositoryId : undefined;
+            resourceInputs["branchName"] = args?.branchName;
+            resourceInputs["protectionLevels"] = args?.protectionLevels;
+            resourceInputs["repositoryId"] = args?.repositoryId;
             resourceInputs["freeformTags"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -52,36 +52,36 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
      * * NO_DECRYPT - Matching traffic is not decrypted.
      * * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
      */
-    public readonly condition!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
+    declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleCondition>;
     /**
      * (Updatable) The name of the decryption profile to use.
      */
-    public readonly decryptionProfile!: pulumi.Output<string | undefined>;
+    declare public readonly decryptionProfile: pulumi.Output<string | undefined>;
     /**
      * Name for the decryption rule, must be unique within the policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this decryption rule belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      */
-    public readonly position!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition>;
-    public readonly priorityOrder!: pulumi.Output<string | undefined>;
+    declare public readonly position: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition>;
+    declare public readonly priorityOrder: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      */
-    public readonly secret!: pulumi.Output<string | undefined>;
+    declare public readonly secret: pulumi.Output<string | undefined>;
 
     /**
      * Create a NetworkFirewallPolicyDecryptionRule resource with the given unique name, arguments, and options.
@@ -96,34 +96,34 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyDecryptionRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["condition"] = state ? state.condition : undefined;
-            resourceInputs["decryptionProfile"] = state ? state.decryptionProfile : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["position"] = state ? state.position : undefined;
-            resourceInputs["priorityOrder"] = state ? state.priorityOrder : undefined;
-            resourceInputs["secret"] = state ? state.secret : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["condition"] = state?.condition;
+            resourceInputs["decryptionProfile"] = state?.decryptionProfile;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["position"] = state?.position;
+            resourceInputs["priorityOrder"] = state?.priorityOrder;
+            resourceInputs["secret"] = state?.secret;
         } else {
             const args = argsOrState as NetworkFirewallPolicyDecryptionRuleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.condition === undefined) && !opts.urn) {
+            if (args?.condition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'condition'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["condition"] = args ? args.condition : undefined;
-            resourceInputs["decryptionProfile"] = args ? args.decryptionProfile : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["position"] = args ? args.position : undefined;
-            resourceInputs["priorityOrder"] = args ? args.priorityOrder : undefined;
-            resourceInputs["secret"] = args ? args.secret : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["condition"] = args?.condition;
+            resourceInputs["decryptionProfile"] = args?.decryptionProfile;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["position"] = args?.position;
+            resourceInputs["priorityOrder"] = args?.priorityOrder;
+            resourceInputs["secret"] = args?.secret;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

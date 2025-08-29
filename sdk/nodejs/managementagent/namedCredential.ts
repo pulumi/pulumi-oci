@@ -106,43 +106,43 @@ export class NamedCredential extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the Named Credential.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The Management Agent parent resource to associate this named credential with.  This is the ManagementAgent resource OCID.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    declare public readonly managementAgentId: pulumi.Output<string>;
     /**
      * Identifier for Named Credential. This is unique for the Management Agent.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Properties for the named credential
      */
-    public readonly properties!: pulumi.Output<outputs.ManagementAgent.NamedCredentialProperty[]>;
+    declare public readonly properties: pulumi.Output<outputs.ManagementAgent.NamedCredentialProperty[]>;
     /**
      * The current state of the named credential
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Named Credential was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Named Credential data was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The type of the Named Credential.
      *
@@ -150,7 +150,7 @@ export class NamedCredential extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NamedCredential resource with the given unique name, arguments, and options.
@@ -165,35 +165,35 @@ export class NamedCredential extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamedCredentialState | undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NamedCredentialArgs | undefined;
-            if ((!args || args.managementAgentId === undefined) && !opts.urn) {
+            if (args?.managementAgentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementAgentId'");
             }
-            if ((!args || args.properties === undefined) && !opts.urn) {
+            if (args?.properties === undefined && !opts.urn) {
                 throw new Error("Missing required property 'properties'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["properties"] = args ? args.properties : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["properties"] = args?.properties;
+            resourceInputs["type"] = args?.type;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

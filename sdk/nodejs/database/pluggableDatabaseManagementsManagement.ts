@@ -64,23 +64,23 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementConnectionString[]>;
+    declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementConnectionString[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    public /*out*/ readonly containerDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly containerDatabaseId: pulumi.Output<string>;
     /**
      * Data for the credential used to connect to the database.
      */
-    public readonly credentialDetails!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementCredentialDetails>;
+    declare public readonly credentialDetails: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementCredentialDetails>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -88,67 +88,67 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enablePluggabledatabasemanagement!: pulumi.Output<boolean>;
+    declare public readonly enablePluggabledatabasemanagement: pulumi.Output<boolean>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRestricted: pulumi.Output<boolean>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    public /*out*/ readonly openMode!: pulumi.Output<string>;
+    declare public /*out*/ readonly openMode: pulumi.Output<string>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    public /*out*/ readonly pdbName!: pulumi.Output<string>;
+    declare public /*out*/ readonly pdbName: pulumi.Output<string>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly pluggableDatabaseId!: pulumi.Output<string>;
+    declare public readonly pluggableDatabaseId: pulumi.Output<string>;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig[]>;
+    declare public /*out*/ readonly pluggableDatabaseManagementConfigs: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig[]>;
     /**
      * The port used to connect to the pluggable database.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    public readonly privateEndPointId!: pulumi.Output<string>;
+    declare public readonly privateEndPointId: pulumi.Output<string>;
     /**
      * Protocol used by the database connection.
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * The role of the user that will be connecting to the pluggable database.
      */
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly role: pulumi.Output<string>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
-    public readonly serviceName!: pulumi.Output<string>;
+    declare public readonly serviceName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public readonly sslSecretId!: pulumi.Output<string>;
+    declare public readonly sslSecretId: pulumi.Output<string>;
     /**
      * The current state of the pluggable database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the pluggable database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a PluggableDatabaseManagementsManagement resource with the given unique name, arguments, and options.
@@ -163,53 +163,53 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PluggableDatabaseManagementsManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
-            resourceInputs["containerDatabaseId"] = state ? state.containerDatabaseId : undefined;
-            resourceInputs["credentialDetails"] = state ? state.credentialDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["enablePluggabledatabasemanagement"] = state ? state.enablePluggabledatabasemanagement : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isRestricted"] = state ? state.isRestricted : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["openMode"] = state ? state.openMode : undefined;
-            resourceInputs["pdbName"] = state ? state.pdbName : undefined;
-            resourceInputs["pluggableDatabaseId"] = state ? state.pluggableDatabaseId : undefined;
-            resourceInputs["pluggableDatabaseManagementConfigs"] = state ? state.pluggableDatabaseManagementConfigs : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["privateEndPointId"] = state ? state.privateEndPointId : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
-            resourceInputs["serviceName"] = state ? state.serviceName : undefined;
-            resourceInputs["sslSecretId"] = state ? state.sslSecretId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionStrings"] = state?.connectionStrings;
+            resourceInputs["containerDatabaseId"] = state?.containerDatabaseId;
+            resourceInputs["credentialDetails"] = state?.credentialDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["enablePluggabledatabasemanagement"] = state?.enablePluggabledatabasemanagement;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isRestricted"] = state?.isRestricted;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["openMode"] = state?.openMode;
+            resourceInputs["pdbName"] = state?.pdbName;
+            resourceInputs["pluggableDatabaseId"] = state?.pluggableDatabaseId;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = state?.pluggableDatabaseManagementConfigs;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["privateEndPointId"] = state?.privateEndPointId;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["role"] = state?.role;
+            resourceInputs["serviceName"] = state?.serviceName;
+            resourceInputs["sslSecretId"] = state?.sslSecretId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as PluggableDatabaseManagementsManagementArgs | undefined;
-            if ((!args || args.credentialDetails === undefined) && !opts.urn) {
+            if (args?.credentialDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'credentialDetails'");
             }
-            if ((!args || args.enablePluggabledatabasemanagement === undefined) && !opts.urn) {
+            if (args?.enablePluggabledatabasemanagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enablePluggabledatabasemanagement'");
             }
-            if ((!args || args.pluggableDatabaseId === undefined) && !opts.urn) {
+            if (args?.pluggableDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pluggableDatabaseId'");
             }
-            if ((!args || args.privateEndPointId === undefined) && !opts.urn) {
+            if (args?.privateEndPointId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privateEndPointId'");
             }
-            if ((!args || args.serviceName === undefined) && !opts.urn) {
+            if (args?.serviceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceName'");
             }
-            resourceInputs["credentialDetails"] = args ? args.credentialDetails : undefined;
-            resourceInputs["enablePluggabledatabasemanagement"] = args ? args.enablePluggabledatabasemanagement : undefined;
-            resourceInputs["pluggableDatabaseId"] = args ? args.pluggableDatabaseId : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["privateEndPointId"] = args ? args.privateEndPointId : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
-            resourceInputs["serviceName"] = args ? args.serviceName : undefined;
-            resourceInputs["sslSecretId"] = args ? args.sslSecretId : undefined;
+            resourceInputs["credentialDetails"] = args?.credentialDetails;
+            resourceInputs["enablePluggabledatabasemanagement"] = args?.enablePluggabledatabasemanagement;
+            resourceInputs["pluggableDatabaseId"] = args?.pluggableDatabaseId;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["privateEndPointId"] = args?.privateEndPointId;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["role"] = args?.role;
+            resourceInputs["serviceName"] = args?.serviceName;
+            resourceInputs["sslSecretId"] = args?.sslSecretId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["containerDatabaseId"] = undefined /*out*/;

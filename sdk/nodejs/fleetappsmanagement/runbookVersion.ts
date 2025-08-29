@@ -201,64 +201,64 @@ export class RunbookVersion extends pulumi.CustomResource {
         return obj['__pulumiType'] === RunbookVersion.__pulumiType;
     }
 
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Execution Workflow details.
      */
-    public readonly executionWorkflowDetails!: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
+    declare public readonly executionWorkflowDetails: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists
      * for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The groups of the runbook.
      */
-    public readonly groups!: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionGroup[]>;
-    public /*out*/ readonly isLatest!: pulumi.Output<boolean>;
+    declare public readonly groups: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionGroup[]>;
+    declare public /*out*/ readonly isLatest: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide
      * actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The name of the task
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Rollback Workflow details.
      */
-    public readonly rollbackWorkflowDetails!: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails>;
+    declare public readonly rollbackWorkflowDetails: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails>;
     /**
      * The OCID of the resource.
      */
-    public readonly runbookId!: pulumi.Output<string>;
+    declare public readonly runbookId: pulumi.Output<string>;
     /**
      * The current state of the FleetResource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A set of tasks to execute in the runbook.
      */
-    public readonly tasks!: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionTask[]>;
+    declare public readonly tasks: pulumi.Output<outputs.FleetAppsManagement.RunbookVersionTask[]>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a RunbookVersion resource with the given unique name, arguments, and options.
@@ -273,42 +273,42 @@ export class RunbookVersion extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RunbookVersionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["executionWorkflowDetails"] = state ? state.executionWorkflowDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["isLatest"] = state ? state.isLatest : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rollbackWorkflowDetails"] = state ? state.rollbackWorkflowDetails : undefined;
-            resourceInputs["runbookId"] = state ? state.runbookId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tasks"] = state ? state.tasks : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["executionWorkflowDetails"] = state?.executionWorkflowDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["isLatest"] = state?.isLatest;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rollbackWorkflowDetails"] = state?.rollbackWorkflowDetails;
+            resourceInputs["runbookId"] = state?.runbookId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tasks"] = state?.tasks;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as RunbookVersionArgs | undefined;
-            if ((!args || args.executionWorkflowDetails === undefined) && !opts.urn) {
+            if (args?.executionWorkflowDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'executionWorkflowDetails'");
             }
-            if ((!args || args.groups === undefined) && !opts.urn) {
+            if (args?.groups === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groups'");
             }
-            if ((!args || args.runbookId === undefined) && !opts.urn) {
+            if (args?.runbookId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'runbookId'");
             }
-            if ((!args || args.tasks === undefined) && !opts.urn) {
+            if (args?.tasks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tasks'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["executionWorkflowDetails"] = args ? args.executionWorkflowDetails : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["groups"] = args ? args.groups : undefined;
-            resourceInputs["rollbackWorkflowDetails"] = args ? args.rollbackWorkflowDetails : undefined;
-            resourceInputs["runbookId"] = args ? args.runbookId : undefined;
-            resourceInputs["tasks"] = args ? args.tasks : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["executionWorkflowDetails"] = args?.executionWorkflowDetails;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["groups"] = args?.groups;
+            resourceInputs["rollbackWorkflowDetails"] = args?.rollbackWorkflowDetails;
+            resourceInputs["runbookId"] = args?.runbookId;
+            resourceInputs["tasks"] = args?.tasks;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["isLatest"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

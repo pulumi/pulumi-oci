@@ -50,59 +50,59 @@ export class ManagedDatabase extends pulumi.CustomResource {
     /**
      * The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The operating system of database.
      */
-    public /*out*/ readonly databasePlatformName!: pulumi.Output<string>;
+    declare public /*out*/ readonly databasePlatformName: pulumi.Output<string>;
     /**
      * The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      */
-    public /*out*/ readonly databaseStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseStatus: pulumi.Output<string>;
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      */
-    public /*out*/ readonly databaseSubType!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseSubType: pulumi.Output<string>;
     /**
      * The type of Oracle Database installation.
      */
-    public /*out*/ readonly databaseType!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseType: pulumi.Output<string>;
     /**
      * The Oracle Database version.
      */
-    public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseVersion: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
      */
-    public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbSystemId: pulumi.Output<string>;
     /**
      * The list of feature configurations
      */
-    public /*out*/ readonly dbmgmtFeatureConfigs!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig[]>;
+    declare public /*out*/ readonly dbmgmtFeatureConfigs: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseDbmgmtFeatureConfig[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The infrastructure used to deploy the Oracle Database.
      */
-    public /*out*/ readonly deploymentType!: pulumi.Output<string>;
+    declare public /*out*/ readonly deploymentType: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether the Oracle Database is part of a cluster.
      */
-    public /*out*/ readonly isCluster!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCluster: pulumi.Output<boolean>;
     /**
      * A list of Managed Database Groups that the Managed Database belongs to.
      */
-    public /*out*/ readonly managedDatabaseGroups!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseManagedDatabaseGroup[]>;
+    declare public /*out*/ readonly managedDatabaseGroups: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseManagedDatabaseGroup[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      *
@@ -110,35 +110,35 @@ export class ManagedDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly managedDatabaseId!: pulumi.Output<string>;
+    declare public readonly managedDatabaseId: pulumi.Output<string>;
     /**
      * The management option used when enabling Database Management.
      */
-    public /*out*/ readonly managementOption!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementOption: pulumi.Output<string>;
     /**
      * The name of the Managed Database.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      */
-    public /*out*/ readonly parentContainerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentContainerId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      */
-    public /*out*/ readonly storageSystemId!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageSystemId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Managed Database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The workload type of the Autonomous Database.
      */
-    public /*out*/ readonly workloadType!: pulumi.Output<string>;
+    declare public /*out*/ readonly workloadType: pulumi.Output<string>;
 
     /**
      * Create a ManagedDatabase resource with the given unique name, arguments, and options.
@@ -153,36 +153,36 @@ export class ManagedDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedDatabaseState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databasePlatformName"] = state ? state.databasePlatformName : undefined;
-            resourceInputs["databaseStatus"] = state ? state.databaseStatus : undefined;
-            resourceInputs["databaseSubType"] = state ? state.databaseSubType : undefined;
-            resourceInputs["databaseType"] = state ? state.databaseType : undefined;
-            resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
-            resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
-            resourceInputs["dbmgmtFeatureConfigs"] = state ? state.dbmgmtFeatureConfigs : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCluster"] = state ? state.isCluster : undefined;
-            resourceInputs["managedDatabaseGroups"] = state ? state.managedDatabaseGroups : undefined;
-            resourceInputs["managedDatabaseId"] = state ? state.managedDatabaseId : undefined;
-            resourceInputs["managementOption"] = state ? state.managementOption : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parentContainerId"] = state ? state.parentContainerId : undefined;
-            resourceInputs["storageSystemId"] = state ? state.storageSystemId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["workloadType"] = state ? state.workloadType : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databasePlatformName"] = state?.databasePlatformName;
+            resourceInputs["databaseStatus"] = state?.databaseStatus;
+            resourceInputs["databaseSubType"] = state?.databaseSubType;
+            resourceInputs["databaseType"] = state?.databaseType;
+            resourceInputs["databaseVersion"] = state?.databaseVersion;
+            resourceInputs["dbSystemId"] = state?.dbSystemId;
+            resourceInputs["dbmgmtFeatureConfigs"] = state?.dbmgmtFeatureConfigs;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCluster"] = state?.isCluster;
+            resourceInputs["managedDatabaseGroups"] = state?.managedDatabaseGroups;
+            resourceInputs["managedDatabaseId"] = state?.managedDatabaseId;
+            resourceInputs["managementOption"] = state?.managementOption;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parentContainerId"] = state?.parentContainerId;
+            resourceInputs["storageSystemId"] = state?.storageSystemId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["workloadType"] = state?.workloadType;
         } else {
             const args = argsOrState as ManagedDatabaseArgs | undefined;
-            if ((!args || args.managedDatabaseId === undefined) && !opts.urn) {
+            if (args?.managedDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedDatabaseId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["managedDatabaseId"] = args ? args.managedDatabaseId : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["managedDatabaseId"] = args?.managedDatabaseId;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databasePlatformName"] = undefined /*out*/;

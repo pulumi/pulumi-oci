@@ -55,59 +55,59 @@ export class Recommendation extends pulumi.CustomResource {
     /**
      * The unique OCID associated with the category.
      */
-    public /*out*/ readonly categoryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly categoryId: pulumi.Output<string>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Text describing the recommendation.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The estimated cost savings, in dollars, for the recommendation.
      */
-    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedCostSaving: pulumi.Output<number>;
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly extendedMetadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The level of importance assigned to the recommendation.
      */
-    public /*out*/ readonly importance!: pulumi.Output<string>;
+    declare public /*out*/ readonly importance: pulumi.Output<string>;
     /**
      * The name of the profile level.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    public readonly recommendationId!: pulumi.Output<string>;
+    declare public readonly recommendationId: pulumi.Output<string>;
     /**
      * An array of `ResourceCount` objects grouped by the status of the resource actions.
      */
-    public /*out*/ readonly resourceCounts!: pulumi.Output<outputs.Optimizer.RecommendationResourceCount[]>;
+    declare public /*out*/ readonly resourceCounts: pulumi.Output<outputs.Optimizer.RecommendationResourceCount[]>;
     /**
      * The recommendation's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The status of the recommendation.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      */
-    public /*out*/ readonly supportedLevels!: pulumi.Output<outputs.Optimizer.RecommendationSupportedLevel[]>;
+    declare public /*out*/ readonly supportedLevels: pulumi.Output<outputs.Optimizer.RecommendationSupportedLevel[]>;
     /**
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      */
-    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStatusBegin: pulumi.Output<string>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -117,11 +117,11 @@ export class Recommendation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStatusEnd!: pulumi.Output<string>;
+    declare public readonly timeStatusEnd: pulumi.Output<string>;
     /**
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Recommendation resource with the given unique name, arguments, and options.
@@ -136,33 +136,33 @@ export class Recommendation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecommendationState | undefined;
-            resourceInputs["categoryId"] = state ? state.categoryId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["estimatedCostSaving"] = state ? state.estimatedCostSaving : undefined;
-            resourceInputs["extendedMetadata"] = state ? state.extendedMetadata : undefined;
-            resourceInputs["importance"] = state ? state.importance : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["recommendationId"] = state ? state.recommendationId : undefined;
-            resourceInputs["resourceCounts"] = state ? state.resourceCounts : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["supportedLevels"] = state ? state.supportedLevels : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeStatusBegin"] = state ? state.timeStatusBegin : undefined;
-            resourceInputs["timeStatusEnd"] = state ? state.timeStatusEnd : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["categoryId"] = state?.categoryId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["estimatedCostSaving"] = state?.estimatedCostSaving;
+            resourceInputs["extendedMetadata"] = state?.extendedMetadata;
+            resourceInputs["importance"] = state?.importance;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["recommendationId"] = state?.recommendationId;
+            resourceInputs["resourceCounts"] = state?.resourceCounts;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["supportedLevels"] = state?.supportedLevels;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeStatusBegin"] = state?.timeStatusBegin;
+            resourceInputs["timeStatusEnd"] = state?.timeStatusEnd;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as RecommendationArgs | undefined;
-            if ((!args || args.recommendationId === undefined) && !opts.urn) {
+            if (args?.recommendationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recommendationId'");
             }
-            if ((!args || args.status === undefined) && !opts.urn) {
+            if (args?.status === undefined && !opts.urn) {
                 throw new Error("Missing required property 'status'");
             }
-            resourceInputs["recommendationId"] = args ? args.recommendationId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["timeStatusEnd"] = args ? args.timeStatusEnd : undefined;
+            resourceInputs["recommendationId"] = args?.recommendationId;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["timeStatusEnd"] = args?.timeStatusEnd;
             resourceInputs["categoryId"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;

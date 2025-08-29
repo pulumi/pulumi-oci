@@ -91,38 +91,38 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
     /**
      * The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicyLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicyLock[]>;
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
-    public readonly policyPrefix!: pulumi.Output<string>;
+    declare public readonly policyPrefix: pulumi.Output<string>;
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      *
      * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
      */
-    public readonly schedules!: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicySchedule[]>;
+    declare public readonly schedules: pulumi.Output<outputs.FileStorage.FilesystemSnapshotPolicySchedule[]>;
     /**
      * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -130,15 +130,15 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a FilesystemSnapshotPolicy resource with the given unique name, arguments, and options.
@@ -153,36 +153,36 @@ export class FilesystemSnapshotPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FilesystemSnapshotPolicyState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["policyPrefix"] = state ? state.policyPrefix : undefined;
-            resourceInputs["schedules"] = state ? state.schedules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["policyPrefix"] = state?.policyPrefix;
+            resourceInputs["schedules"] = state?.schedules;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as FilesystemSnapshotPolicyArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["policyPrefix"] = args ? args.policyPrefix : undefined;
-            resourceInputs["schedules"] = args ? args.schedules : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["policyPrefix"] = args?.policyPrefix;
+            resourceInputs["schedules"] = args?.schedules;
+            resourceInputs["state"] = args?.state;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

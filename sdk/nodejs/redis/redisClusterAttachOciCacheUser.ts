@@ -56,7 +56,7 @@ export class RedisClusterAttachOciCacheUser extends pulumi.CustomResource {
     /**
      * List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
      */
-    public readonly ociCacheUsers!: pulumi.Output<string[]>;
+    declare public readonly ociCacheUsers: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      *
@@ -64,7 +64,7 @@ export class RedisClusterAttachOciCacheUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly redisClusterId!: pulumi.Output<string>;
+    declare public readonly redisClusterId: pulumi.Output<string>;
 
     /**
      * Create a RedisClusterAttachOciCacheUser resource with the given unique name, arguments, and options.
@@ -79,18 +79,18 @@ export class RedisClusterAttachOciCacheUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterAttachOciCacheUserState | undefined;
-            resourceInputs["ociCacheUsers"] = state ? state.ociCacheUsers : undefined;
-            resourceInputs["redisClusterId"] = state ? state.redisClusterId : undefined;
+            resourceInputs["ociCacheUsers"] = state?.ociCacheUsers;
+            resourceInputs["redisClusterId"] = state?.redisClusterId;
         } else {
             const args = argsOrState as RedisClusterAttachOciCacheUserArgs | undefined;
-            if ((!args || args.ociCacheUsers === undefined) && !opts.urn) {
+            if (args?.ociCacheUsers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ociCacheUsers'");
             }
-            if ((!args || args.redisClusterId === undefined) && !opts.urn) {
+            if (args?.redisClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'redisClusterId'");
             }
-            resourceInputs["ociCacheUsers"] = args ? args.ociCacheUsers : undefined;
-            resourceInputs["redisClusterId"] = args ? args.redisClusterId : undefined;
+            resourceInputs["ociCacheUsers"] = args?.ociCacheUsers;
+            resourceInputs["redisClusterId"] = args?.redisClusterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RedisClusterAttachOciCacheUser.__pulumiType, name, resourceInputs, opts);

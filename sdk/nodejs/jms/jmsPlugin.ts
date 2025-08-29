@@ -69,27 +69,27 @@ export class JmsPlugin extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    declare public readonly agentId: pulumi.Output<string>;
     /**
      * The agent type.
      */
-    public /*out*/ readonly agentType!: pulumi.Output<string>;
+    declare public /*out*/ readonly agentType: pulumi.Output<string>;
     /**
      * The availability status.
      */
-    public /*out*/ readonly availabilityStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityStatus: pulumi.Output<string>;
     /**
      * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      */
-    public readonly fleetId!: pulumi.Output<string>;
+    declare public readonly fleetId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).) 
      *
@@ -97,43 +97,43 @@ export class JmsPlugin extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The hostname of the agent.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostname: pulumi.Output<string>;
     /**
      * The architecture of the operating system of the plugin.
      */
-    public /*out*/ readonly osArchitecture!: pulumi.Output<string>;
+    declare public /*out*/ readonly osArchitecture: pulumi.Output<string>;
     /**
      * The distribution of the operating system of the plugin.
      */
-    public /*out*/ readonly osDistribution!: pulumi.Output<string>;
+    declare public /*out*/ readonly osDistribution: pulumi.Output<string>;
     /**
      * The operating system family for the plugin.
      */
-    public /*out*/ readonly osFamily!: pulumi.Output<string>;
+    declare public /*out*/ readonly osFamily: pulumi.Output<string>;
     /**
      * The version of the plugin.
      */
-    public /*out*/ readonly pluginVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly pluginVersion: pulumi.Output<string>;
     /**
      * The lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      */
-    public /*out*/ readonly timeLastSeen!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSeen: pulumi.Output<string>;
     /**
      * The date and time the plugin was registered.
      */
-    public /*out*/ readonly timeRegistered!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRegistered: pulumi.Output<string>;
 
     /**
      * Create a JmsPlugin resource with the given unique name, arguments, and options.
@@ -148,35 +148,35 @@ export class JmsPlugin extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JmsPluginState | undefined;
-            resourceInputs["agentId"] = state ? state.agentId : undefined;
-            resourceInputs["agentType"] = state ? state.agentType : undefined;
-            resourceInputs["availabilityStatus"] = state ? state.availabilityStatus : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["fleetId"] = state ? state.fleetId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["osArchitecture"] = state ? state.osArchitecture : undefined;
-            resourceInputs["osDistribution"] = state ? state.osDistribution : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["pluginVersion"] = state ? state.pluginVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeLastSeen"] = state ? state.timeLastSeen : undefined;
-            resourceInputs["timeRegistered"] = state ? state.timeRegistered : undefined;
+            resourceInputs["agentId"] = state?.agentId;
+            resourceInputs["agentType"] = state?.agentType;
+            resourceInputs["availabilityStatus"] = state?.availabilityStatus;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["fleetId"] = state?.fleetId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["osArchitecture"] = state?.osArchitecture;
+            resourceInputs["osDistribution"] = state?.osDistribution;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["pluginVersion"] = state?.pluginVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeLastSeen"] = state?.timeLastSeen;
+            resourceInputs["timeRegistered"] = state?.timeRegistered;
         } else {
             const args = argsOrState as JmsPluginArgs | undefined;
-            if ((!args || args.agentId === undefined) && !opts.urn) {
+            if (args?.agentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["agentId"] = args ? args.agentId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["fleetId"] = args ? args.fleetId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["fleetId"] = args?.fleetId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["agentType"] = undefined /*out*/;
             resourceInputs["availabilityStatus"] = undefined /*out*/;
             resourceInputs["hostname"] = undefined /*out*/;

@@ -75,79 +75,79 @@ export class ProductLicense extends pulumi.CustomResource {
     /**
      * The number of active license records associated with the product license.
      */
-    public /*out*/ readonly activeLicenseRecordCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly activeLicenseRecordCount: pulumi.Output<number>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of the product license.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The image details associated with the product license.
      */
-    public readonly images!: pulumi.Output<outputs.LicenseManager.ProductLicenseImage[]>;
+    declare public readonly images: pulumi.Output<outputs.LicenseManager.ProductLicenseImage[]>;
     /**
      * Specifies whether or not the product license is oversubscribed.
      */
-    public /*out*/ readonly isOverSubscribed!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isOverSubscribed: pulumi.Output<boolean>;
     /**
      * Specifies if the license unit count is unlimited.
      */
-    public /*out*/ readonly isUnlimited!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isUnlimited: pulumi.Output<boolean>;
     /**
      * Specifies if the product license vendor is Oracle or a third party.
      */
-    public readonly isVendorOracle!: pulumi.Output<boolean>;
+    declare public readonly isVendorOracle: pulumi.Output<boolean>;
     /**
      * The product license unit.
      */
-    public readonly licenseUnit!: pulumi.Output<string>;
+    declare public readonly licenseUnit: pulumi.Output<string>;
     /**
      * The current product license state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The current product license status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * Status description for the current product license status.
      */
-    public /*out*/ readonly statusDescription!: pulumi.Output<string>;
+    declare public /*out*/ readonly statusDescription: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      */
-    public /*out*/ readonly totalActiveLicenseUnitCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalActiveLicenseUnitCount: pulumi.Output<number>;
     /**
      * The number of license records associated with the product license.
      */
-    public /*out*/ readonly totalLicenseRecordCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalLicenseRecordCount: pulumi.Output<number>;
     /**
      * The number of license units consumed. Updated after each allocation run.
      */
-    public /*out*/ readonly totalLicenseUnitsConsumed!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalLicenseUnitsConsumed: pulumi.Output<number>;
     /**
      * The product license vendor name, for example: Microsoft, RHEL, and so on. 
      *
@@ -155,7 +155,7 @@ export class ProductLicense extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    declare public readonly vendorName: pulumi.Output<string>;
 
     /**
      * Create a ProductLicense resource with the given unique name, arguments, and options.
@@ -170,48 +170,48 @@ export class ProductLicense extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProductLicenseState | undefined;
-            resourceInputs["activeLicenseRecordCount"] = state ? state.activeLicenseRecordCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["images"] = state ? state.images : undefined;
-            resourceInputs["isOverSubscribed"] = state ? state.isOverSubscribed : undefined;
-            resourceInputs["isUnlimited"] = state ? state.isUnlimited : undefined;
-            resourceInputs["isVendorOracle"] = state ? state.isVendorOracle : undefined;
-            resourceInputs["licenseUnit"] = state ? state.licenseUnit : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["statusDescription"] = state ? state.statusDescription : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalActiveLicenseUnitCount"] = state ? state.totalActiveLicenseUnitCount : undefined;
-            resourceInputs["totalLicenseRecordCount"] = state ? state.totalLicenseRecordCount : undefined;
-            resourceInputs["totalLicenseUnitsConsumed"] = state ? state.totalLicenseUnitsConsumed : undefined;
-            resourceInputs["vendorName"] = state ? state.vendorName : undefined;
+            resourceInputs["activeLicenseRecordCount"] = state?.activeLicenseRecordCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["images"] = state?.images;
+            resourceInputs["isOverSubscribed"] = state?.isOverSubscribed;
+            resourceInputs["isUnlimited"] = state?.isUnlimited;
+            resourceInputs["isVendorOracle"] = state?.isVendorOracle;
+            resourceInputs["licenseUnit"] = state?.licenseUnit;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["statusDescription"] = state?.statusDescription;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalActiveLicenseUnitCount"] = state?.totalActiveLicenseUnitCount;
+            resourceInputs["totalLicenseRecordCount"] = state?.totalLicenseRecordCount;
+            resourceInputs["totalLicenseUnitsConsumed"] = state?.totalLicenseUnitsConsumed;
+            resourceInputs["vendorName"] = state?.vendorName;
         } else {
             const args = argsOrState as ProductLicenseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.isVendorOracle === undefined) && !opts.urn) {
+            if (args?.isVendorOracle === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isVendorOracle'");
             }
-            if ((!args || args.licenseUnit === undefined) && !opts.urn) {
+            if (args?.licenseUnit === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseUnit'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["images"] = args ? args.images : undefined;
-            resourceInputs["isVendorOracle"] = args ? args.isVendorOracle : undefined;
-            resourceInputs["licenseUnit"] = args ? args.licenseUnit : undefined;
-            resourceInputs["vendorName"] = args ? args.vendorName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["images"] = args?.images;
+            resourceInputs["isVendorOracle"] = args?.isVendorOracle;
+            resourceInputs["licenseUnit"] = args?.licenseUnit;
+            resourceInputs["vendorName"] = args?.vendorName;
             resourceInputs["activeLicenseRecordCount"] = undefined /*out*/;
             resourceInputs["isOverSubscribed"] = undefined /*out*/;
             resourceInputs["isUnlimited"] = undefined /*out*/;

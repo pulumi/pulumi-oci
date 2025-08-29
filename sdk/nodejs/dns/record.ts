@@ -66,39 +66,39 @@ export class Record extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
      */
-    public readonly compartmentId!: pulumi.Output<string | undefined>;
+    declare public readonly compartmentId: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name where the record can be located. Domain value is case insensitive.
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isProtected: pulumi.Output<boolean>;
     /**
      * (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
-    public readonly rdata!: pulumi.Output<string | undefined>;
+    declare public readonly rdata: pulumi.Output<string | undefined>;
     /**
      * A unique identifier for the record within its zone.
      */
-    public /*out*/ readonly recordHash!: pulumi.Output<string>;
+    declare public /*out*/ readonly recordHash: pulumi.Output<string>;
     /**
      * The latest version of the record's zone in which its RRSet differs from the preceding version.
      */
-    public /*out*/ readonly rrsetVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly rrsetVersion: pulumi.Output<string>;
     /**
      * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    public readonly rtype!: pulumi.Output<string>;
+    declare public readonly rtype: pulumi.Output<string>;
     /**
      * (Updatable) The Time To Live for the record, in seconds.
      */
-    public readonly ttl!: pulumi.Output<number | undefined>;
+    declare public readonly ttl: pulumi.Output<number | undefined>;
     /**
      * The name or OCID of the target zone.
      *
@@ -108,7 +108,7 @@ export class Record extends pulumi.CustomResource {
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    public readonly zoneNameOrId!: pulumi.Output<string>;
+    declare public readonly zoneNameOrId: pulumi.Output<string>;
 
     /**
      * Create a Record resource with the given unique name, arguments, and options.
@@ -123,32 +123,32 @@ export class Record extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecordState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["isProtected"] = state ? state.isProtected : undefined;
-            resourceInputs["rdata"] = state ? state.rdata : undefined;
-            resourceInputs["recordHash"] = state ? state.recordHash : undefined;
-            resourceInputs["rrsetVersion"] = state ? state.rrsetVersion : undefined;
-            resourceInputs["rtype"] = state ? state.rtype : undefined;
-            resourceInputs["ttl"] = state ? state.ttl : undefined;
-            resourceInputs["zoneNameOrId"] = state ? state.zoneNameOrId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["isProtected"] = state?.isProtected;
+            resourceInputs["rdata"] = state?.rdata;
+            resourceInputs["recordHash"] = state?.recordHash;
+            resourceInputs["rrsetVersion"] = state?.rrsetVersion;
+            resourceInputs["rtype"] = state?.rtype;
+            resourceInputs["ttl"] = state?.ttl;
+            resourceInputs["zoneNameOrId"] = state?.zoneNameOrId;
         } else {
             const args = argsOrState as RecordArgs | undefined;
-            if ((!args || args.domain === undefined) && !opts.urn) {
+            if (args?.domain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.rtype === undefined) && !opts.urn) {
+            if (args?.rtype === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rtype'");
             }
-            if ((!args || args.zoneNameOrId === undefined) && !opts.urn) {
+            if (args?.zoneNameOrId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'zoneNameOrId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["rdata"] = args ? args.rdata : undefined;
-            resourceInputs["rtype"] = args ? args.rtype : undefined;
-            resourceInputs["ttl"] = args ? args.ttl : undefined;
-            resourceInputs["zoneNameOrId"] = args ? args.zoneNameOrId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["rdata"] = args?.rdata;
+            resourceInputs["rtype"] = args?.rtype;
+            resourceInputs["ttl"] = args?.ttl;
+            resourceInputs["zoneNameOrId"] = args?.zoneNameOrId;
             resourceInputs["isProtected"] = undefined /*out*/;
             resourceInputs["recordHash"] = undefined /*out*/;
             resourceInputs["rrsetVersion"] = undefined /*out*/;

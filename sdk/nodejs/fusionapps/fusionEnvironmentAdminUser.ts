@@ -66,27 +66,27 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
     /**
      * The email address for the administrator.
      */
-    public readonly emailAddress!: pulumi.Output<string>;
+    declare public readonly emailAddress: pulumi.Output<string>;
     /**
      * The administrator's first name.
      */
-    public readonly firstName!: pulumi.Output<string>;
+    declare public readonly firstName: pulumi.Output<string>;
     /**
      * unique FusionEnvironment identifier
      */
-    public readonly fusionEnvironmentId!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentId: pulumi.Output<string>;
     /**
      * A page of AdminUserSummary objects.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.FusionApps.FusionEnvironmentAdminUserItem[]>;
+    declare public /*out*/ readonly items: pulumi.Output<outputs.FusionApps.FusionEnvironmentAdminUserItem[]>;
     /**
      * The administrator's last name.
      */
-    public readonly lastName!: pulumi.Output<string>;
+    declare public readonly lastName: pulumi.Output<string>;
     /**
      * The password for the administrator.
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * The username for the administrator.
      *
@@ -94,7 +94,7 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a FusionEnvironmentAdminUser resource with the given unique name, arguments, and options.
@@ -109,36 +109,36 @@ export class FusionEnvironmentAdminUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentAdminUserState | undefined;
-            resourceInputs["emailAddress"] = state ? state.emailAddress : undefined;
-            resourceInputs["firstName"] = state ? state.firstName : undefined;
-            resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["lastName"] = state ? state.lastName : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["emailAddress"] = state?.emailAddress;
+            resourceInputs["firstName"] = state?.firstName;
+            resourceInputs["fusionEnvironmentId"] = state?.fusionEnvironmentId;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["lastName"] = state?.lastName;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as FusionEnvironmentAdminUserArgs | undefined;
-            if ((!args || args.emailAddress === undefined) && !opts.urn) {
+            if (args?.emailAddress === undefined && !opts.urn) {
                 throw new Error("Missing required property 'emailAddress'");
             }
-            if ((!args || args.firstName === undefined) && !opts.urn) {
+            if (args?.firstName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'firstName'");
             }
-            if ((!args || args.fusionEnvironmentId === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentId'");
             }
-            if ((!args || args.lastName === undefined) && !opts.urn) {
+            if (args?.lastName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lastName'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["emailAddress"] = args ? args.emailAddress : undefined;
-            resourceInputs["firstName"] = args ? args.firstName : undefined;
-            resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
-            resourceInputs["lastName"] = args ? args.lastName : undefined;
+            resourceInputs["emailAddress"] = args?.emailAddress;
+            resourceInputs["firstName"] = args?.firstName;
+            resourceInputs["fusionEnvironmentId"] = args?.fusionEnvironmentId;
+            resourceInputs["lastName"] = args?.lastName;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["username"] = args?.username;
             resourceInputs["items"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -95,67 +95,67 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     /**
      * user name of the authorized user.
      */
-    public readonly adminUser!: pulumi.Output<string>;
+    declare public readonly adminUser: pulumi.Output<string>;
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
-    public readonly capacity!: pulumi.Output<outputs.Analytics.AnalyticsInstanceCapacity>;
+    declare public readonly capacity: pulumi.Output<outputs.Analytics.AnalyticsInstanceCapacity>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Optional description.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * domain id for which the user is authorized.
      */
-    public readonly domainId!: pulumi.Output<string>;
+    declare public readonly domainId: pulumi.Output<string>;
     /**
      * (Updatable) Email address receiving notifications.
      */
-    public readonly emailNotification!: pulumi.Output<string>;
+    declare public readonly emailNotification: pulumi.Output<string>;
     /**
      * The feature set of an Analytics instance.
      */
-    public readonly featureBundle!: pulumi.Output<string>;
+    declare public readonly featureBundle: pulumi.Output<string>;
     /**
      * Analytics feature set.
      */
-    public readonly featureSet!: pulumi.Output<string>;
+    declare public readonly featureSet: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
-    public readonly idcsAccessToken!: pulumi.Output<string | undefined>;
+    declare public readonly idcsAccessToken: pulumi.Output<string | undefined>;
     /**
      * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
-    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The license used for the service.
      */
-    public readonly licenseType!: pulumi.Output<string>;
+    declare public readonly licenseType: pulumi.Output<string>;
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Base representation of a network endpoint.
      */
-    public readonly networkEndpointDetails!: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
+    declare public readonly networkEndpointDetails: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
     /**
      * URL of the Analytics service.
      */
-    public /*out*/ readonly serviceUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceUrl: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -163,23 +163,23 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Analytics instance update channel.
      */
-    public readonly updateChannel!: pulumi.Output<string>;
+    declare public readonly updateChannel: pulumi.Output<string>;
 
     /**
      * Create a AnalyticsInstance resource with the given unique name, arguments, and options.
@@ -194,58 +194,58 @@ export class AnalyticsInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AnalyticsInstanceState | undefined;
-            resourceInputs["adminUser"] = state ? state.adminUser : undefined;
-            resourceInputs["capacity"] = state ? state.capacity : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["domainId"] = state ? state.domainId : undefined;
-            resourceInputs["emailNotification"] = state ? state.emailNotification : undefined;
-            resourceInputs["featureBundle"] = state ? state.featureBundle : undefined;
-            resourceInputs["featureSet"] = state ? state.featureSet : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["licenseType"] = state ? state.licenseType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkEndpointDetails"] = state ? state.networkEndpointDetails : undefined;
-            resourceInputs["serviceUrl"] = state ? state.serviceUrl : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["updateChannel"] = state ? state.updateChannel : undefined;
+            resourceInputs["adminUser"] = state?.adminUser;
+            resourceInputs["capacity"] = state?.capacity;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["domainId"] = state?.domainId;
+            resourceInputs["emailNotification"] = state?.emailNotification;
+            resourceInputs["featureBundle"] = state?.featureBundle;
+            resourceInputs["featureSet"] = state?.featureSet;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["idcsAccessToken"] = state?.idcsAccessToken;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["licenseType"] = state?.licenseType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
+            resourceInputs["serviceUrl"] = state?.serviceUrl;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["updateChannel"] = state?.updateChannel;
         } else {
             const args = argsOrState as AnalyticsInstanceArgs | undefined;
-            if ((!args || args.capacity === undefined) && !opts.urn) {
+            if (args?.capacity === undefined && !opts.urn) {
                 throw new Error("Missing required property 'capacity'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.featureSet === undefined) && !opts.urn) {
+            if (args?.featureSet === undefined && !opts.urn) {
                 throw new Error("Missing required property 'featureSet'");
             }
-            if ((!args || args.licenseType === undefined) && !opts.urn) {
+            if (args?.licenseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseType'");
             }
-            resourceInputs["adminUser"] = args ? args.adminUser : undefined;
-            resourceInputs["capacity"] = args ? args.capacity : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["domainId"] = args ? args.domainId : undefined;
-            resourceInputs["emailNotification"] = args ? args.emailNotification : undefined;
-            resourceInputs["featureBundle"] = args ? args.featureBundle : undefined;
-            resourceInputs["featureSet"] = args ? args.featureSet : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["adminUser"] = args?.adminUser;
+            resourceInputs["capacity"] = args?.capacity;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["domainId"] = args?.domainId;
+            resourceInputs["emailNotification"] = args?.emailNotification;
+            resourceInputs["featureBundle"] = args?.featureBundle;
+            resourceInputs["featureSet"] = args?.featureSet;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["licenseType"] = args ? args.licenseType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkEndpointDetails"] = args ? args.networkEndpointDetails : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["updateChannel"] = args ? args.updateChannel : undefined;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["licenseType"] = args?.licenseType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["updateChannel"] = args?.updateChannel;
             resourceInputs["serviceUrl"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

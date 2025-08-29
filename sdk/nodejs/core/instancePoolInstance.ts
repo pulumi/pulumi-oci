@@ -63,32 +63,32 @@ export class InstancePoolInstance extends pulumi.CustomResource {
         return obj['__pulumiType'] === InstancePoolInstance.__pulumiType;
     }
 
-    public readonly autoTerminateInstanceOnDelete!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoTerminateInstanceOnDelete: pulumi.Output<boolean | undefined>;
     /**
      * The availability domain the instance is running in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
-    public readonly decrementSizeOnDelete!: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
+    declare public readonly decrementSizeOnDelete: pulumi.Output<boolean | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The fault domain the instance is running in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly faultDomain: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      */
-    public /*out*/ readonly instanceConfigurationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceConfigurationId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
-    public readonly instanceId!: pulumi.Output<string>;
+    declare public readonly instanceId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      *
@@ -96,27 +96,27 @@ export class InstancePoolInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly instancePoolId!: pulumi.Output<string>;
+    declare public readonly instancePoolId: pulumi.Output<string>;
     /**
      * The load balancer backends that are configured for the instance pool instance.
      */
-    public /*out*/ readonly loadBalancerBackends!: pulumi.Output<outputs.Core.InstancePoolInstanceLoadBalancerBackend[]>;
+    declare public /*out*/ readonly loadBalancerBackends: pulumi.Output<outputs.Core.InstancePoolInstanceLoadBalancerBackend[]>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    public /*out*/ readonly region!: pulumi.Output<string>;
+    declare public /*out*/ readonly region: pulumi.Output<string>;
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
      * The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a InstancePoolInstance resource with the given unique name, arguments, and options.
@@ -131,32 +131,32 @@ export class InstancePoolInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstancePoolInstanceState | undefined;
-            resourceInputs["autoTerminateInstanceOnDelete"] = state ? state.autoTerminateInstanceOnDelete : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["decrementSizeOnDelete"] = state ? state.decrementSizeOnDelete : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["instanceConfigurationId"] = state ? state.instanceConfigurationId : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["instancePoolId"] = state ? state.instancePoolId : undefined;
-            resourceInputs["loadBalancerBackends"] = state ? state.loadBalancerBackends : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["autoTerminateInstanceOnDelete"] = state?.autoTerminateInstanceOnDelete;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["decrementSizeOnDelete"] = state?.decrementSizeOnDelete;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["instanceConfigurationId"] = state?.instanceConfigurationId;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["instancePoolId"] = state?.instancePoolId;
+            resourceInputs["loadBalancerBackends"] = state?.loadBalancerBackends;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as InstancePoolInstanceArgs | undefined;
-            if ((!args || args.instanceId === undefined) && !opts.urn) {
+            if (args?.instanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceId'");
             }
-            if ((!args || args.instancePoolId === undefined) && !opts.urn) {
+            if (args?.instancePoolId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instancePoolId'");
             }
-            resourceInputs["autoTerminateInstanceOnDelete"] = args ? args.autoTerminateInstanceOnDelete : undefined;
-            resourceInputs["decrementSizeOnDelete"] = args ? args.decrementSizeOnDelete : undefined;
-            resourceInputs["instanceId"] = args ? args.instanceId : undefined;
-            resourceInputs["instancePoolId"] = args ? args.instancePoolId : undefined;
+            resourceInputs["autoTerminateInstanceOnDelete"] = args?.autoTerminateInstanceOnDelete;
+            resourceInputs["decrementSizeOnDelete"] = args?.decrementSizeOnDelete;
+            resourceInputs["instanceId"] = args?.instanceId;
+            resourceInputs["instancePoolId"] = args?.instancePoolId;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;

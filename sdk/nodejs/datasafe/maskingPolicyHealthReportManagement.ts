@@ -56,37 +56,37 @@ export class MaskingPolicyHealthReportManagement extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains the masking report.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Description for the pre-masking report,
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * The display name of the pre-masking report,
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the masking policy.
      */
-    public readonly maskingPolicyId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
     /**
      * The current state of the pre-masking report.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the target database masked.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The date and time the pre-masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the pre-masking report was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MaskingPolicyHealthReportManagement resource with the given unique name, arguments, and options.
@@ -101,21 +101,21 @@ export class MaskingPolicyHealthReportManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaskingPolicyHealthReportManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MaskingPolicyHealthReportManagementArgs | undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;

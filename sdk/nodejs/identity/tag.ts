@@ -96,19 +96,19 @@ export class Tag extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description you assign to the tag during creation.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates whether the tag is enabled for cost tracking.
      */
-    public readonly isCostTracking!: pulumi.Output<boolean>;
+    declare public readonly isCostTracking: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      *
@@ -116,23 +116,23 @@ export class Tag extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isRetired!: pulumi.Output<boolean>;
+    declare public readonly isRetired: pulumi.Output<boolean>;
     /**
      * The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the tag namespace.
      */
-    public readonly tagNamespaceId!: pulumi.Output<string>;
+    declare public readonly tagNamespaceId: pulumi.Output<string>;
     /**
      * Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      *
@@ -140,7 +140,7 @@ export class Tag extends pulumi.CustomResource {
      *
      * To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
      */
-    public readonly validator!: pulumi.Output<outputs.Identity.TagValidator | undefined>;
+    declare public readonly validator: pulumi.Output<outputs.Identity.TagValidator | undefined>;
 
     /**
      * Create a Tag resource with the given unique name, arguments, and options.
@@ -155,32 +155,32 @@ export class Tag extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TagState | undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCostTracking"] = state ? state.isCostTracking : undefined;
-            resourceInputs["isRetired"] = state ? state.isRetired : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tagNamespaceId"] = state ? state.tagNamespaceId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["validator"] = state ? state.validator : undefined;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCostTracking"] = state?.isCostTracking;
+            resourceInputs["isRetired"] = state?.isRetired;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tagNamespaceId"] = state?.tagNamespaceId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["validator"] = state?.validator;
         } else {
             const args = argsOrState as TagArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.tagNamespaceId === undefined) && !opts.urn) {
+            if (args?.tagNamespaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tagNamespaceId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isCostTracking"] = args ? args.isCostTracking : undefined;
-            resourceInputs["isRetired"] = args ? args.isRetired : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["tagNamespaceId"] = args ? args.tagNamespaceId : undefined;
-            resourceInputs["validator"] = args ? args.validator : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isCostTracking"] = args?.isCostTracking;
+            resourceInputs["isRetired"] = args?.isRetired;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["tagNamespaceId"] = args?.tagNamespaceId;
+            resourceInputs["validator"] = args?.validator;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

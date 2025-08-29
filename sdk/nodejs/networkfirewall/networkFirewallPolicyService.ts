@@ -67,19 +67,19 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
     /**
      * Name of the service
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this service belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) List of port-ranges to be used.
      */
-    public readonly portRanges!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange[]>;
+    declare public readonly portRanges: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange[]>;
     /**
      * Describes the type of Service. The accepted values are 
      *
@@ -87,7 +87,7 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyService resource with the given unique name, arguments, and options.
@@ -102,26 +102,26 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyServiceState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["portRanges"] = state ? state.portRanges : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["portRanges"] = state?.portRanges;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkFirewallPolicyServiceArgs | undefined;
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.portRanges === undefined) && !opts.urn) {
+            if (args?.portRanges === undefined && !opts.urn) {
                 throw new Error("Missing required property 'portRanges'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["portRanges"] = args ? args.portRanges : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["portRanges"] = args?.portRanges;
+            resourceInputs["type"] = args?.type;
             resourceInputs["parentResourceId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

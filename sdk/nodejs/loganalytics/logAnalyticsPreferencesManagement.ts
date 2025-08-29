@@ -61,7 +61,7 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
     /**
      * An array of tenant preference details.
      */
-    public readonly items!: pulumi.Output<outputs.LogAnalytics.LogAnalyticsPreferencesManagementItem[] | undefined>;
+    declare public readonly items: pulumi.Output<outputs.LogAnalytics.LogAnalyticsPreferencesManagementItem[] | undefined>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -69,7 +69,7 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsPreferencesManagement resource with the given unique name, arguments, and options.
@@ -84,15 +84,15 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsPreferencesManagementState | undefined;
-            resourceInputs["items"] = state ? state.items : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["items"] = state?.items;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as LogAnalyticsPreferencesManagementArgs | undefined;
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["items"] = args ? args.items : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["items"] = args?.items;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogAnalyticsPreferencesManagement.__pulumiType, name, resourceInputs, opts);

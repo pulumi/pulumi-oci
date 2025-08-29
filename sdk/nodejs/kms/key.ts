@@ -55,98 +55,98 @@ export class Key extends pulumi.CustomResource {
     /**
      * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
      */
-    public readonly autoKeyRotationDetails!: pulumi.Output<outputs.Kms.KeyAutoKeyRotationDetails>;
+    declare public readonly autoKeyRotationDetails: pulumi.Output<outputs.Kms.KeyAutoKeyRotationDetails>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      */
-    public /*out*/ readonly currentKeyVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentKeyVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      */
-    public readonly desiredState!: pulumi.Output<string>;
+    declare public readonly desiredState: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A reference to the key on external key manager.
      */
-    public readonly externalKeyReference!: pulumi.Output<outputs.Kms.KeyExternalKeyReference>;
+    declare public readonly externalKeyReference: pulumi.Output<outputs.Kms.KeyExternalKeyReference>;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyExternalKeyReferenceDetail[]>;
+    declare public /*out*/ readonly externalKeyReferenceDetails: pulumi.Output<outputs.Kms.KeyExternalKeyReferenceDetail[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
      */
-    public readonly isAutoRotationEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoRotationEnabled: pulumi.Output<boolean>;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isPrimary: pulumi.Output<boolean>;
     /**
      * The cryptographic properties of a key.
      */
-    public readonly keyShape!: pulumi.Output<outputs.Kms.KeyKeyShape>;
+    declare public readonly keyShape: pulumi.Output<outputs.Kms.KeyKeyShape>;
     /**
      * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
      */
-    public readonly managementEndpoint!: pulumi.Output<string>;
+    declare public readonly managementEndpoint: pulumi.Output<string>;
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    declare public readonly protectionMode: pulumi.Output<string>;
     /**
      * Key replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyReplicaDetail[]>;
+    declare public /*out*/ readonly replicaDetails: pulumi.Output<outputs.Kms.KeyReplicaDetail[]>;
     /**
      * (Updatable) Details where key was backed up.
      */
-    public readonly restoreFromFile!: pulumi.Output<outputs.Kms.KeyRestoreFromFile | undefined>;
+    declare public readonly restoreFromFile: pulumi.Output<outputs.Kms.KeyRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where key was backed up
      */
-    public readonly restoreFromObjectStore!: pulumi.Output<outputs.Kms.KeyRestoreFromObjectStore | undefined>;
+    declare public readonly restoreFromObjectStore: pulumi.Output<outputs.Kms.KeyRestoreFromObjectStore | undefined>;
     /**
      * (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      */
-    public readonly restoreTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly restoreTrigger: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the key from which this key was restored.
      */
-    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly restoredFromKeyId: pulumi.Output<string>;
     /**
      * The key's current lifecycle state.  Example: `ENABLED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public readonly timeOfDeletion: pulumi.Output<string>;
     /**
      * The OCID of the vault that contains this key.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vaultId: pulumi.Output<string>;
 
     /**
      * Create a Key resource with the given unique name, arguments, and options.
@@ -161,58 +161,58 @@ export class Key extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyState | undefined;
-            resourceInputs["autoKeyRotationDetails"] = state ? state.autoKeyRotationDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["currentKeyVersion"] = state ? state.currentKeyVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["desiredState"] = state ? state.desiredState : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["externalKeyReference"] = state ? state.externalKeyReference : undefined;
-            resourceInputs["externalKeyReferenceDetails"] = state ? state.externalKeyReferenceDetails : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoRotationEnabled"] = state ? state.isAutoRotationEnabled : undefined;
-            resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
-            resourceInputs["keyShape"] = state ? state.keyShape : undefined;
-            resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
-            resourceInputs["protectionMode"] = state ? state.protectionMode : undefined;
-            resourceInputs["replicaDetails"] = state ? state.replicaDetails : undefined;
-            resourceInputs["restoreFromFile"] = state ? state.restoreFromFile : undefined;
-            resourceInputs["restoreFromObjectStore"] = state ? state.restoreFromObjectStore : undefined;
-            resourceInputs["restoreTrigger"] = state ? state.restoreTrigger : undefined;
-            resourceInputs["restoredFromKeyId"] = state ? state.restoredFromKeyId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
-            resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["autoKeyRotationDetails"] = state?.autoKeyRotationDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["currentKeyVersion"] = state?.currentKeyVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["desiredState"] = state?.desiredState;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["externalKeyReference"] = state?.externalKeyReference;
+            resourceInputs["externalKeyReferenceDetails"] = state?.externalKeyReferenceDetails;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoRotationEnabled"] = state?.isAutoRotationEnabled;
+            resourceInputs["isPrimary"] = state?.isPrimary;
+            resourceInputs["keyShape"] = state?.keyShape;
+            resourceInputs["managementEndpoint"] = state?.managementEndpoint;
+            resourceInputs["protectionMode"] = state?.protectionMode;
+            resourceInputs["replicaDetails"] = state?.replicaDetails;
+            resourceInputs["restoreFromFile"] = state?.restoreFromFile;
+            resourceInputs["restoreFromObjectStore"] = state?.restoreFromObjectStore;
+            resourceInputs["restoreTrigger"] = state?.restoreTrigger;
+            resourceInputs["restoredFromKeyId"] = state?.restoredFromKeyId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
+            resourceInputs["vaultId"] = state?.vaultId;
         } else {
             const args = argsOrState as KeyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.keyShape === undefined) && !opts.urn) {
+            if (args?.keyShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyShape'");
             }
-            if ((!args || args.managementEndpoint === undefined) && !opts.urn) {
+            if (args?.managementEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementEndpoint'");
             }
-            resourceInputs["autoKeyRotationDetails"] = args ? args.autoKeyRotationDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["desiredState"] = args ? args.desiredState : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalKeyReference"] = args ? args.externalKeyReference : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoRotationEnabled"] = args ? args.isAutoRotationEnabled : undefined;
-            resourceInputs["keyShape"] = args ? args.keyShape : undefined;
-            resourceInputs["managementEndpoint"] = args ? args.managementEndpoint : undefined;
-            resourceInputs["protectionMode"] = args ? args.protectionMode : undefined;
-            resourceInputs["restoreFromFile"] = args ? args.restoreFromFile : undefined;
-            resourceInputs["restoreFromObjectStore"] = args ? args.restoreFromObjectStore : undefined;
-            resourceInputs["restoreTrigger"] = args ? args.restoreTrigger : undefined;
-            resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
+            resourceInputs["autoKeyRotationDetails"] = args?.autoKeyRotationDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["desiredState"] = args?.desiredState;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalKeyReference"] = args?.externalKeyReference;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoRotationEnabled"] = args?.isAutoRotationEnabled;
+            resourceInputs["keyShape"] = args?.keyShape;
+            resourceInputs["managementEndpoint"] = args?.managementEndpoint;
+            resourceInputs["protectionMode"] = args?.protectionMode;
+            resourceInputs["restoreFromFile"] = args?.restoreFromFile;
+            resourceInputs["restoreFromObjectStore"] = args?.restoreFromObjectStore;
+            resourceInputs["restoreTrigger"] = args?.restoreTrigger;
+            resourceInputs["timeOfDeletion"] = args?.timeOfDeletion;
             resourceInputs["currentKeyVersion"] = undefined /*out*/;
             resourceInputs["externalKeyReferenceDetails"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;

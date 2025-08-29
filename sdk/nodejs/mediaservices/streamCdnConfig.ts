@@ -90,56 +90,56 @@ export class StreamCdnConfig extends pulumi.CustomResource {
     /**
      * The compartment ID of the lock.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Base fields of the StreamCdnConfig configuration object.
      */
-    public readonly config!: pulumi.Output<outputs.MediaServices.StreamCdnConfigConfig>;
+    declare public readonly config: pulumi.Output<outputs.MediaServices.StreamCdnConfigConfig>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Distribution Channel Identifier.
      */
-    public readonly distributionChannelId!: pulumi.Output<string>;
+    declare public readonly distributionChannelId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Whether publishing to CDN is enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecyleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.MediaServices.StreamCdnConfigLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.MediaServices.StreamCdnConfigLock[]>;
     /**
      * The current state of the CDN Configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the CDN Config was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the CDN Config was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a StreamCdnConfig resource with the given unique name, arguments, and options.
@@ -154,39 +154,39 @@ export class StreamCdnConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StreamCdnConfigState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["distributionChannelId"] = state ? state.distributionChannelId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["lifecyleDetails"] = state ? state.lifecyleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["distributionChannelId"] = state?.distributionChannelId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as StreamCdnConfigArgs | undefined;
-            if ((!args || args.config === undefined) && !opts.urn) {
+            if (args?.config === undefined && !opts.urn) {
                 throw new Error("Missing required property 'config'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.distributionChannelId === undefined) && !opts.urn) {
+            if (args?.distributionChannelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'distributionChannelId'");
             }
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["distributionChannelId"] = args ? args.distributionChannelId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["distributionChannelId"] = args?.distributionChannelId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecyleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

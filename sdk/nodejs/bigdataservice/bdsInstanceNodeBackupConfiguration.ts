@@ -71,39 +71,39 @@ export class BdsInstanceNodeBackupConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
-    public readonly backupType!: pulumi.Output<string>;
+    declare public readonly backupType: pulumi.Output<string>;
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
      */
-    public readonly levelTypeDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceNodeBackupConfigurationLevelTypeDetails>;
+    declare public readonly levelTypeDetails: pulumi.Output<outputs.BigDataService.BdsInstanceNodeBackupConfigurationLevelTypeDetails>;
     /**
      * (Updatable) Number of backup copies to retain.
      */
-    public readonly numberOfBackupsToRetain!: pulumi.Output<number>;
+    declare public readonly numberOfBackupsToRetain: pulumi.Output<number>;
     /**
      * (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
      */
-    public readonly schedule!: pulumi.Output<string>;
+    declare public readonly schedule: pulumi.Output<string>;
     /**
      * The state of the NodeBackupConfiguration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The time zone of the execution schedule, in IANA time zone database name format
      *
@@ -111,7 +111,7 @@ export class BdsInstanceNodeBackupConfiguration extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceNodeBackupConfiguration resource with the given unique name, arguments, and options.
@@ -126,34 +126,34 @@ export class BdsInstanceNodeBackupConfiguration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceNodeBackupConfigurationState | undefined;
-            resourceInputs["backupType"] = state ? state.backupType : undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["levelTypeDetails"] = state ? state.levelTypeDetails : undefined;
-            resourceInputs["numberOfBackupsToRetain"] = state ? state.numberOfBackupsToRetain : undefined;
-            resourceInputs["schedule"] = state ? state.schedule : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
+            resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["levelTypeDetails"] = state?.levelTypeDetails;
+            resourceInputs["numberOfBackupsToRetain"] = state?.numberOfBackupsToRetain;
+            resourceInputs["schedule"] = state?.schedule;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as BdsInstanceNodeBackupConfigurationArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.levelTypeDetails === undefined) && !opts.urn) {
+            if (args?.levelTypeDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'levelTypeDetails'");
             }
-            if ((!args || args.schedule === undefined) && !opts.urn) {
+            if (args?.schedule === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedule'");
             }
-            resourceInputs["backupType"] = args ? args.backupType : undefined;
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["levelTypeDetails"] = args ? args.levelTypeDetails : undefined;
-            resourceInputs["numberOfBackupsToRetain"] = args ? args.numberOfBackupsToRetain : undefined;
-            resourceInputs["schedule"] = args ? args.schedule : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["backupType"] = args?.backupType;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["levelTypeDetails"] = args?.levelTypeDetails;
+            resourceInputs["numberOfBackupsToRetain"] = args?.numberOfBackupsToRetain;
+            resourceInputs["schedule"] = args?.schedule;
+            resourceInputs["timezone"] = args?.timezone;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

@@ -61,31 +61,31 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Service Attachment Display name, can be renamed
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * unique FusionEnvironment identifier
      */
-    public readonly fusionEnvironmentId!: pulumi.Output<string>;
+    declare public readonly fusionEnvironmentId: pulumi.Output<string>;
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
      */
-    public /*out*/ readonly isSkuBased!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSkuBased: pulumi.Output<boolean>;
     /**
      * The service instance OCID of the instance being attached
      */
-    public readonly serviceInstanceId!: pulumi.Output<string>;
+    declare public readonly serviceInstanceId: pulumi.Output<string>;
     /**
      * Type of the ServiceInstance being attached.
      *
@@ -93,23 +93,23 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly serviceInstanceType!: pulumi.Output<string>;
+    declare public readonly serviceInstanceType: pulumi.Output<string>;
     /**
      * Public URL
      */
-    public /*out*/ readonly serviceUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceUrl: pulumi.Output<string>;
     /**
      * The current state of the ServiceInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a FusionEnvironmentServiceAttachment resource with the given unique name, arguments, and options.
@@ -124,33 +124,33 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FusionEnvironmentServiceAttachmentState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["fusionEnvironmentId"] = state ? state.fusionEnvironmentId : undefined;
-            resourceInputs["isSkuBased"] = state ? state.isSkuBased : undefined;
-            resourceInputs["serviceInstanceId"] = state ? state.serviceInstanceId : undefined;
-            resourceInputs["serviceInstanceType"] = state ? state.serviceInstanceType : undefined;
-            resourceInputs["serviceUrl"] = state ? state.serviceUrl : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["fusionEnvironmentId"] = state?.fusionEnvironmentId;
+            resourceInputs["isSkuBased"] = state?.isSkuBased;
+            resourceInputs["serviceInstanceId"] = state?.serviceInstanceId;
+            resourceInputs["serviceInstanceType"] = state?.serviceInstanceType;
+            resourceInputs["serviceUrl"] = state?.serviceUrl;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as FusionEnvironmentServiceAttachmentArgs | undefined;
-            if ((!args || args.fusionEnvironmentId === undefined) && !opts.urn) {
+            if (args?.fusionEnvironmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fusionEnvironmentId'");
             }
-            if ((!args || args.serviceInstanceId === undefined) && !opts.urn) {
+            if (args?.serviceInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceInstanceId'");
             }
-            if ((!args || args.serviceInstanceType === undefined) && !opts.urn) {
+            if (args?.serviceInstanceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceInstanceType'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["fusionEnvironmentId"] = args ? args.fusionEnvironmentId : undefined;
-            resourceInputs["serviceInstanceId"] = args ? args.serviceInstanceId : undefined;
-            resourceInputs["serviceInstanceType"] = args ? args.serviceInstanceType : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["fusionEnvironmentId"] = args?.fusionEnvironmentId;
+            resourceInputs["serviceInstanceId"] = args?.serviceInstanceId;
+            resourceInputs["serviceInstanceType"] = args?.serviceInstanceType;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;

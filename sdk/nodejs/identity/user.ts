@@ -100,54 +100,54 @@ export class User extends pulumi.CustomResource {
     /**
      * Properties indicating how the user is allowed to authenticate.
      */
-    public /*out*/ readonly capabilities!: pulumi.Output<outputs.Identity.UserCapability[]>;
+    declare public /*out*/ readonly capabilities: pulumi.Output<outputs.Identity.UserCapability[]>;
     /**
      * The OCID of the tenancy containing the user.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * DB username of the DB credential. Has to be unique across the tenancy.
      */
-    public /*out*/ readonly dbUserName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbUserName: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The email you assign to the user. Has to be unique across the tenancy.
      */
-    public readonly email!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
     /**
      * Whether the email address has been validated.
      */
-    public /*out*/ readonly emailVerified!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly emailVerified: pulumi.Output<boolean>;
     /**
      * Identifier of the user in the identity provider
      */
-    public /*out*/ readonly externalIdentifier!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalIdentifier: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
      */
-    public /*out*/ readonly identityProviderId!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityProviderId: pulumi.Output<string>;
     /**
      * Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
      * * bit 0: SUSPENDED (reserved for future use)
      * * bit 1: DISABLED (reserved for future use)
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveState: pulumi.Output<string>;
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    public /*out*/ readonly lastSuccessfulLoginTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastSuccessfulLoginTime: pulumi.Output<string>;
     /**
      * The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
      *
@@ -155,19 +155,19 @@ export class User extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    public /*out*/ readonly previousSuccessfulLoginTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly previousSuccessfulLoginTime: pulumi.Output<string>;
     /**
      * The user's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.
@@ -182,33 +182,33 @@ export class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserState | undefined;
-            resourceInputs["capabilities"] = state ? state.capabilities : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbUserName"] = state ? state.dbUserName : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["emailVerified"] = state ? state.emailVerified : undefined;
-            resourceInputs["externalIdentifier"] = state ? state.externalIdentifier : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["identityProviderId"] = state ? state.identityProviderId : undefined;
-            resourceInputs["inactiveState"] = state ? state.inactiveState : undefined;
-            resourceInputs["lastSuccessfulLoginTime"] = state ? state.lastSuccessfulLoginTime : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["previousSuccessfulLoginTime"] = state ? state.previousSuccessfulLoginTime : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["capabilities"] = state?.capabilities;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbUserName"] = state?.dbUserName;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["emailVerified"] = state?.emailVerified;
+            resourceInputs["externalIdentifier"] = state?.externalIdentifier;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["identityProviderId"] = state?.identityProviderId;
+            resourceInputs["inactiveState"] = state?.inactiveState;
+            resourceInputs["lastSuccessfulLoginTime"] = state?.lastSuccessfulLoginTime;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["previousSuccessfulLoginTime"] = state?.previousSuccessfulLoginTime;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
             resourceInputs["capabilities"] = undefined /*out*/;
             resourceInputs["dbUserName"] = undefined /*out*/;
             resourceInputs["emailVerified"] = undefined /*out*/;

@@ -66,27 +66,27 @@ export class GeneratedKey extends pulumi.CustomResource {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    public readonly associatedData!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly associatedData: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The encrypted data encryption key generated from a master encryption key.
      */
-    public /*out*/ readonly ciphertext!: pulumi.Output<string>;
+    declare public /*out*/ readonly ciphertext: pulumi.Output<string>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
-    public readonly cryptoEndpoint!: pulumi.Output<string>;
+    declare public readonly cryptoEndpoint: pulumi.Output<string>;
     /**
      * If true, the generated key is also returned unencrypted.
      */
-    public readonly includePlaintextKey!: pulumi.Output<boolean>;
+    declare public readonly includePlaintextKey: pulumi.Output<boolean>;
     /**
      * The OCID of the master encryption key to encrypt the generated data encryption key with.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    declare public readonly keyId: pulumi.Output<string>;
     /**
      * The cryptographic properties of a key.
      */
-    public readonly keyShape!: pulumi.Output<outputs.Kms.GeneratedKeyKeyShape>;
+    declare public readonly keyShape: pulumi.Output<outputs.Kms.GeneratedKeyKeyShape>;
     /**
      * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
      *
@@ -94,15 +94,15 @@ export class GeneratedKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly loggingContext!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly loggingContext: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    public /*out*/ readonly plaintext!: pulumi.Output<string>;
+    declare public /*out*/ readonly plaintext: pulumi.Output<string>;
     /**
      * The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
-    public /*out*/ readonly plaintextChecksum!: pulumi.Output<string>;
+    declare public /*out*/ readonly plaintextChecksum: pulumi.Output<string>;
 
     /**
      * Create a GeneratedKey resource with the given unique name, arguments, and options.
@@ -117,35 +117,35 @@ export class GeneratedKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GeneratedKeyState | undefined;
-            resourceInputs["associatedData"] = state ? state.associatedData : undefined;
-            resourceInputs["ciphertext"] = state ? state.ciphertext : undefined;
-            resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
-            resourceInputs["includePlaintextKey"] = state ? state.includePlaintextKey : undefined;
-            resourceInputs["keyId"] = state ? state.keyId : undefined;
-            resourceInputs["keyShape"] = state ? state.keyShape : undefined;
-            resourceInputs["loggingContext"] = state ? state.loggingContext : undefined;
-            resourceInputs["plaintext"] = state ? state.plaintext : undefined;
-            resourceInputs["plaintextChecksum"] = state ? state.plaintextChecksum : undefined;
+            resourceInputs["associatedData"] = state?.associatedData;
+            resourceInputs["ciphertext"] = state?.ciphertext;
+            resourceInputs["cryptoEndpoint"] = state?.cryptoEndpoint;
+            resourceInputs["includePlaintextKey"] = state?.includePlaintextKey;
+            resourceInputs["keyId"] = state?.keyId;
+            resourceInputs["keyShape"] = state?.keyShape;
+            resourceInputs["loggingContext"] = state?.loggingContext;
+            resourceInputs["plaintext"] = state?.plaintext;
+            resourceInputs["plaintextChecksum"] = state?.plaintextChecksum;
         } else {
             const args = argsOrState as GeneratedKeyArgs | undefined;
-            if ((!args || args.cryptoEndpoint === undefined) && !opts.urn) {
+            if (args?.cryptoEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cryptoEndpoint'");
             }
-            if ((!args || args.includePlaintextKey === undefined) && !opts.urn) {
+            if (args?.includePlaintextKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'includePlaintextKey'");
             }
-            if ((!args || args.keyId === undefined) && !opts.urn) {
+            if (args?.keyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyId'");
             }
-            if ((!args || args.keyShape === undefined) && !opts.urn) {
+            if (args?.keyShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keyShape'");
             }
-            resourceInputs["associatedData"] = args ? args.associatedData : undefined;
-            resourceInputs["cryptoEndpoint"] = args ? args.cryptoEndpoint : undefined;
-            resourceInputs["includePlaintextKey"] = args ? args.includePlaintextKey : undefined;
-            resourceInputs["keyId"] = args ? args.keyId : undefined;
-            resourceInputs["keyShape"] = args ? args.keyShape : undefined;
-            resourceInputs["loggingContext"] = args ? args.loggingContext : undefined;
+            resourceInputs["associatedData"] = args?.associatedData;
+            resourceInputs["cryptoEndpoint"] = args?.cryptoEndpoint;
+            resourceInputs["includePlaintextKey"] = args?.includePlaintextKey;
+            resourceInputs["keyId"] = args?.keyId;
+            resourceInputs["keyShape"] = args?.keyShape;
+            resourceInputs["loggingContext"] = args?.loggingContext;
             resourceInputs["ciphertext"] = undefined /*out*/;
             resourceInputs["plaintext"] = undefined /*out*/;
             resourceInputs["plaintextChecksum"] = undefined /*out*/;

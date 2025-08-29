@@ -62,11 +62,11 @@ export class AutonomousContainerDatabaseSnapshotStandby extends pulumi.CustomRes
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly autonomousContainerDatabaseId: pulumi.Output<string>;
     /**
      * type of connection strings when converting database to snapshot mode
      */
-    public readonly connectionStringsType!: pulumi.Output<string>;
+    declare public readonly connectionStringsType: pulumi.Output<string>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
      *
@@ -74,7 +74,7 @@ export class AutonomousContainerDatabaseSnapshotStandby extends pulumi.CustomRes
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly role: pulumi.Output<string>;
 
     /**
      * Create a AutonomousContainerDatabaseSnapshotStandby resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class AutonomousContainerDatabaseSnapshotStandby extends pulumi.CustomRes
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousContainerDatabaseSnapshotStandbyState | undefined;
-            resourceInputs["autonomousContainerDatabaseId"] = state ? state.autonomousContainerDatabaseId : undefined;
-            resourceInputs["connectionStringsType"] = state ? state.connectionStringsType : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
+            resourceInputs["autonomousContainerDatabaseId"] = state?.autonomousContainerDatabaseId;
+            resourceInputs["connectionStringsType"] = state?.connectionStringsType;
+            resourceInputs["role"] = state?.role;
         } else {
             const args = argsOrState as AutonomousContainerDatabaseSnapshotStandbyArgs | undefined;
-            if ((!args || args.autonomousContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousContainerDatabaseId'");
             }
-            if ((!args || args.role === undefined) && !opts.urn) {
+            if (args?.role === undefined && !opts.urn) {
                 throw new Error("Missing required property 'role'");
             }
-            resourceInputs["autonomousContainerDatabaseId"] = args ? args.autonomousContainerDatabaseId : undefined;
-            resourceInputs["connectionStringsType"] = args ? args.connectionStringsType : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
+            resourceInputs["autonomousContainerDatabaseId"] = args?.autonomousContainerDatabaseId;
+            resourceInputs["connectionStringsType"] = args?.connectionStringsType;
+            resourceInputs["role"] = args?.role;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousContainerDatabaseSnapshotStandby.__pulumiType, name, resourceInputs, opts);

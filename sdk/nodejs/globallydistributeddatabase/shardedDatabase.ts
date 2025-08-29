@@ -51,176 +51,176 @@ export class ShardedDatabase extends pulumi.CustomResource {
         return obj['__pulumiType'] === ShardedDatabase.__pulumiType;
     }
 
-    public readonly caSignedCertificate!: pulumi.Output<string | undefined>;
+    declare public readonly caSignedCertificate: pulumi.Output<string | undefined>;
     /**
      * Collection of ATP-Dedicated catalogs that needs to be created.
      */
-    public readonly catalogDetails!: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetail[]>;
+    declare public readonly catalogDetails: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetail[]>;
     /**
      * The character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
      */
-    public readonly characterSet!: pulumi.Output<string>;
+    declare public readonly characterSet: pulumi.Output<string>;
     /**
      * The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
      */
-    public readonly chunks!: pulumi.Output<number>;
+    declare public readonly chunks: pulumi.Output<number>;
     /**
      * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production. All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
      */
-    public readonly clusterCertificateCommonName!: pulumi.Output<string>;
+    declare public readonly clusterCertificateCommonName: pulumi.Output<string>;
     /**
      * (Updatable) Identifier of the compartment where sharded database is to be created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Gsms. Could be set to any integer value.
      */
-    public readonly configureGsmsTrigger!: pulumi.Output<number | undefined>;
-    public readonly configureGsmsTriggerIsLatestGsmImage!: pulumi.Output<boolean | undefined>;
-    public readonly configureGsmsTriggerOldGsmNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly configureGsmsTrigger: pulumi.Output<number | undefined>;
+    declare public readonly configureGsmsTriggerIsLatestGsmImage: pulumi.Output<boolean | undefined>;
+    declare public readonly configureGsmsTriggerOldGsmNames: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
      */
-    public readonly configureShardingTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly configureShardingTrigger: pulumi.Output<number | undefined>;
     /**
      * Details of sharded database connection String.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseConnectionString[]>;
+    declare public /*out*/ readonly connectionStrings: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseConnectionString[]>;
     /**
      * The database deployment type.
      */
-    public readonly dbDeploymentType!: pulumi.Output<string>;
+    declare public readonly dbDeploymentType: pulumi.Output<string>;
     /**
      * Oracle Database version of the Autonomous Container Database.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * Possible workload types.
      */
-    public readonly dbWorkload!: pulumi.Output<string>;
+    declare public readonly dbWorkload: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Oracle sharded database display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    public readonly downloadGsmCertificateSigningRequestTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly downloadGsmCertificateSigningRequestTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
      */
-    public readonly generateGsmCertificateSigningRequestTrigger!: pulumi.Output<number | undefined>;
-    public readonly generateWalletPassword!: pulumi.Output<string | undefined>;
+    declare public readonly generateGsmCertificateSigningRequestTrigger: pulumi.Output<number | undefined>;
+    declare public readonly generateWalletPassword: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
      */
-    public readonly generateWalletTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly generateWalletTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
      */
-    public readonly getConnectionStringTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly getConnectionStringTrigger: pulumi.Output<number | undefined>;
     /**
      * Details of GSM instances for the sharded database.
      */
-    public /*out*/ readonly gsms!: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseGsm[]>;
-    public /*out*/ readonly lifecycleState!: pulumi.Output<string>;
+    declare public /*out*/ readonly gsms: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseGsm[]>;
+    declare public /*out*/ readonly lifecycleState: pulumi.Output<string>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * The listener port number for sharded database.
      */
-    public readonly listenerPort!: pulumi.Output<number>;
+    declare public readonly listenerPort: pulumi.Output<number>;
     /**
      * The TLS listener port number for sharded database.
      */
-    public readonly listenerPortTls!: pulumi.Output<number>;
+    declare public readonly listenerPortTls: pulumi.Output<number>;
     /**
      * The national character set for the new shard database being created. Use database api ListAutonomousDatabaseCharacterSets to get the list of allowed national character set for autonomous dedicated database. See documentation: https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets
      */
-    public readonly ncharacterSet!: pulumi.Output<string>;
+    declare public readonly ncharacterSet: pulumi.Output<string>;
     /**
      * Ons port local for sharded database.
      */
-    public readonly onsPortLocal!: pulumi.Output<number>;
+    declare public readonly onsPortLocal: pulumi.Output<number>;
     /**
      * Ons remote port for sharded database.
      */
-    public readonly onsPortRemote!: pulumi.Output<number>;
+    declare public readonly onsPortRemote: pulumi.Output<number>;
     /**
      * (Updatable)
      */
-    public readonly patchOperations!: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabasePatchOperation[] | undefined>;
+    declare public readonly patchOperations: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabasePatchOperation[] | undefined>;
     /**
      * Unique name prefix for the sharded databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
-    public readonly prefix!: pulumi.Output<string>;
+    declare public readonly prefix: pulumi.Output<string>;
     /**
      * The OCID of private endpoint being used by the sharded database.
      */
-    public /*out*/ readonly privateEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateEndpoint: pulumi.Output<string>;
     /**
      * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
      */
-    public readonly replicationFactor!: pulumi.Output<number>;
+    declare public readonly replicationFactor: pulumi.Output<number>;
     /**
      * The Replication method for sharded database.
      */
-    public readonly replicationMethod!: pulumi.Output<string>;
+    declare public readonly replicationMethod: pulumi.Output<string>;
     /**
      * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
      */
-    public readonly replicationUnit!: pulumi.Output<number>;
+    declare public readonly replicationUnit: pulumi.Output<number>;
     /**
      * Collection of ATP-Dedicated shards that needs to be created.
      */
-    public readonly shardDetails!: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseShardDetail[]>;
-    public /*out*/ readonly shardedDatabaseId!: pulumi.Output<string>;
+    declare public readonly shardDetails: pulumi.Output<outputs.GloballyDistributedDatabase.ShardedDatabaseShardDetail[]>;
+    declare public /*out*/ readonly shardedDatabaseId: pulumi.Output<string>;
     /**
      * Sharding Method.
      */
-    public readonly shardingMethod!: pulumi.Output<string>;
+    declare public readonly shardingMethod: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Start Database. Could be set to any integer value.
      */
-    public readonly startDatabaseTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly startDatabaseTrigger: pulumi.Output<number | undefined>;
     /**
      * Lifecycle states for sharded databases.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
      */
-    public readonly stopDatabaseTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly stopDatabaseTrigger: pulumi.Output<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the the Sharded Database was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Timezone associated with the sharded database.
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
      */
-    public readonly uploadSignedCertificateAndGenerateWalletTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly uploadSignedCertificateAndGenerateWalletTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
@@ -228,7 +228,7 @@ export class ShardedDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly validateNetworkTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly validateNetworkTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a ShardedDatabase resource with the given unique name, arguments, and options.
@@ -243,138 +243,138 @@ export class ShardedDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ShardedDatabaseState | undefined;
-            resourceInputs["caSignedCertificate"] = state ? state.caSignedCertificate : undefined;
-            resourceInputs["catalogDetails"] = state ? state.catalogDetails : undefined;
-            resourceInputs["characterSet"] = state ? state.characterSet : undefined;
-            resourceInputs["chunks"] = state ? state.chunks : undefined;
-            resourceInputs["clusterCertificateCommonName"] = state ? state.clusterCertificateCommonName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configureGsmsTrigger"] = state ? state.configureGsmsTrigger : undefined;
-            resourceInputs["configureGsmsTriggerIsLatestGsmImage"] = state ? state.configureGsmsTriggerIsLatestGsmImage : undefined;
-            resourceInputs["configureGsmsTriggerOldGsmNames"] = state ? state.configureGsmsTriggerOldGsmNames : undefined;
-            resourceInputs["configureShardingTrigger"] = state ? state.configureShardingTrigger : undefined;
-            resourceInputs["connectionStrings"] = state ? state.connectionStrings : undefined;
-            resourceInputs["dbDeploymentType"] = state ? state.dbDeploymentType : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["dbWorkload"] = state ? state.dbWorkload : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = state ? state.downloadGsmCertificateSigningRequestTrigger : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["generateGsmCertificateSigningRequestTrigger"] = state ? state.generateGsmCertificateSigningRequestTrigger : undefined;
-            resourceInputs["generateWalletPassword"] = state ? state.generateWalletPassword : undefined;
-            resourceInputs["generateWalletTrigger"] = state ? state.generateWalletTrigger : undefined;
-            resourceInputs["getConnectionStringTrigger"] = state ? state.getConnectionStringTrigger : undefined;
-            resourceInputs["gsms"] = state ? state.gsms : undefined;
-            resourceInputs["lifecycleState"] = state ? state.lifecycleState : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
-            resourceInputs["listenerPortTls"] = state ? state.listenerPortTls : undefined;
-            resourceInputs["ncharacterSet"] = state ? state.ncharacterSet : undefined;
-            resourceInputs["onsPortLocal"] = state ? state.onsPortLocal : undefined;
-            resourceInputs["onsPortRemote"] = state ? state.onsPortRemote : undefined;
-            resourceInputs["patchOperations"] = state ? state.patchOperations : undefined;
-            resourceInputs["prefix"] = state ? state.prefix : undefined;
-            resourceInputs["privateEndpoint"] = state ? state.privateEndpoint : undefined;
-            resourceInputs["replicationFactor"] = state ? state.replicationFactor : undefined;
-            resourceInputs["replicationMethod"] = state ? state.replicationMethod : undefined;
-            resourceInputs["replicationUnit"] = state ? state.replicationUnit : undefined;
-            resourceInputs["shardDetails"] = state ? state.shardDetails : undefined;
-            resourceInputs["shardedDatabaseId"] = state ? state.shardedDatabaseId : undefined;
-            resourceInputs["shardingMethod"] = state ? state.shardingMethod : undefined;
-            resourceInputs["startDatabaseTrigger"] = state ? state.startDatabaseTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stopDatabaseTrigger"] = state ? state.stopDatabaseTrigger : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["uploadSignedCertificateAndGenerateWalletTrigger"] = state ? state.uploadSignedCertificateAndGenerateWalletTrigger : undefined;
-            resourceInputs["validateNetworkTrigger"] = state ? state.validateNetworkTrigger : undefined;
+            resourceInputs["caSignedCertificate"] = state?.caSignedCertificate;
+            resourceInputs["catalogDetails"] = state?.catalogDetails;
+            resourceInputs["characterSet"] = state?.characterSet;
+            resourceInputs["chunks"] = state?.chunks;
+            resourceInputs["clusterCertificateCommonName"] = state?.clusterCertificateCommonName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configureGsmsTrigger"] = state?.configureGsmsTrigger;
+            resourceInputs["configureGsmsTriggerIsLatestGsmImage"] = state?.configureGsmsTriggerIsLatestGsmImage;
+            resourceInputs["configureGsmsTriggerOldGsmNames"] = state?.configureGsmsTriggerOldGsmNames;
+            resourceInputs["configureShardingTrigger"] = state?.configureShardingTrigger;
+            resourceInputs["connectionStrings"] = state?.connectionStrings;
+            resourceInputs["dbDeploymentType"] = state?.dbDeploymentType;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["dbWorkload"] = state?.dbWorkload;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = state?.downloadGsmCertificateSigningRequestTrigger;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["generateGsmCertificateSigningRequestTrigger"] = state?.generateGsmCertificateSigningRequestTrigger;
+            resourceInputs["generateWalletPassword"] = state?.generateWalletPassword;
+            resourceInputs["generateWalletTrigger"] = state?.generateWalletTrigger;
+            resourceInputs["getConnectionStringTrigger"] = state?.getConnectionStringTrigger;
+            resourceInputs["gsms"] = state?.gsms;
+            resourceInputs["lifecycleState"] = state?.lifecycleState;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["listenerPort"] = state?.listenerPort;
+            resourceInputs["listenerPortTls"] = state?.listenerPortTls;
+            resourceInputs["ncharacterSet"] = state?.ncharacterSet;
+            resourceInputs["onsPortLocal"] = state?.onsPortLocal;
+            resourceInputs["onsPortRemote"] = state?.onsPortRemote;
+            resourceInputs["patchOperations"] = state?.patchOperations;
+            resourceInputs["prefix"] = state?.prefix;
+            resourceInputs["privateEndpoint"] = state?.privateEndpoint;
+            resourceInputs["replicationFactor"] = state?.replicationFactor;
+            resourceInputs["replicationMethod"] = state?.replicationMethod;
+            resourceInputs["replicationUnit"] = state?.replicationUnit;
+            resourceInputs["shardDetails"] = state?.shardDetails;
+            resourceInputs["shardedDatabaseId"] = state?.shardedDatabaseId;
+            resourceInputs["shardingMethod"] = state?.shardingMethod;
+            resourceInputs["startDatabaseTrigger"] = state?.startDatabaseTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["stopDatabaseTrigger"] = state?.stopDatabaseTrigger;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["uploadSignedCertificateAndGenerateWalletTrigger"] = state?.uploadSignedCertificateAndGenerateWalletTrigger;
+            resourceInputs["validateNetworkTrigger"] = state?.validateNetworkTrigger;
         } else {
             const args = argsOrState as ShardedDatabaseArgs | undefined;
-            if ((!args || args.catalogDetails === undefined) && !opts.urn) {
+            if (args?.catalogDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'catalogDetails'");
             }
-            if ((!args || args.characterSet === undefined) && !opts.urn) {
+            if (args?.characterSet === undefined && !opts.urn) {
                 throw new Error("Missing required property 'characterSet'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbDeploymentType === undefined) && !opts.urn) {
+            if (args?.dbDeploymentType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbDeploymentType'");
             }
-            if ((!args || args.dbVersion === undefined) && !opts.urn) {
+            if (args?.dbVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbVersion'");
             }
-            if ((!args || args.dbWorkload === undefined) && !opts.urn) {
+            if (args?.dbWorkload === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbWorkload'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.listenerPort === undefined) && !opts.urn) {
+            if (args?.listenerPort === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listenerPort'");
             }
-            if ((!args || args.listenerPortTls === undefined) && !opts.urn) {
+            if (args?.listenerPortTls === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listenerPortTls'");
             }
-            if ((!args || args.ncharacterSet === undefined) && !opts.urn) {
+            if (args?.ncharacterSet === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ncharacterSet'");
             }
-            if ((!args || args.onsPortLocal === undefined) && !opts.urn) {
+            if (args?.onsPortLocal === undefined && !opts.urn) {
                 throw new Error("Missing required property 'onsPortLocal'");
             }
-            if ((!args || args.onsPortRemote === undefined) && !opts.urn) {
+            if (args?.onsPortRemote === undefined && !opts.urn) {
                 throw new Error("Missing required property 'onsPortRemote'");
             }
-            if ((!args || args.prefix === undefined) && !opts.urn) {
+            if (args?.prefix === undefined && !opts.urn) {
                 throw new Error("Missing required property 'prefix'");
             }
-            if ((!args || args.shardDetails === undefined) && !opts.urn) {
+            if (args?.shardDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shardDetails'");
             }
-            if ((!args || args.shardingMethod === undefined) && !opts.urn) {
+            if (args?.shardingMethod === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shardingMethod'");
             }
-            resourceInputs["caSignedCertificate"] = args ? args.caSignedCertificate : undefined;
-            resourceInputs["catalogDetails"] = args ? args.catalogDetails : undefined;
-            resourceInputs["characterSet"] = args ? args.characterSet : undefined;
-            resourceInputs["chunks"] = args ? args.chunks : undefined;
-            resourceInputs["clusterCertificateCommonName"] = args ? args.clusterCertificateCommonName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configureGsmsTrigger"] = args ? args.configureGsmsTrigger : undefined;
-            resourceInputs["configureGsmsTriggerIsLatestGsmImage"] = args ? args.configureGsmsTriggerIsLatestGsmImage : undefined;
-            resourceInputs["configureGsmsTriggerOldGsmNames"] = args ? args.configureGsmsTriggerOldGsmNames : undefined;
-            resourceInputs["configureShardingTrigger"] = args ? args.configureShardingTrigger : undefined;
-            resourceInputs["dbDeploymentType"] = args ? args.dbDeploymentType : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["dbWorkload"] = args ? args.dbWorkload : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = args ? args.downloadGsmCertificateSigningRequestTrigger : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["generateGsmCertificateSigningRequestTrigger"] = args ? args.generateGsmCertificateSigningRequestTrigger : undefined;
+            resourceInputs["caSignedCertificate"] = args?.caSignedCertificate;
+            resourceInputs["catalogDetails"] = args?.catalogDetails;
+            resourceInputs["characterSet"] = args?.characterSet;
+            resourceInputs["chunks"] = args?.chunks;
+            resourceInputs["clusterCertificateCommonName"] = args?.clusterCertificateCommonName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configureGsmsTrigger"] = args?.configureGsmsTrigger;
+            resourceInputs["configureGsmsTriggerIsLatestGsmImage"] = args?.configureGsmsTriggerIsLatestGsmImage;
+            resourceInputs["configureGsmsTriggerOldGsmNames"] = args?.configureGsmsTriggerOldGsmNames;
+            resourceInputs["configureShardingTrigger"] = args?.configureShardingTrigger;
+            resourceInputs["dbDeploymentType"] = args?.dbDeploymentType;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["dbWorkload"] = args?.dbWorkload;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["downloadGsmCertificateSigningRequestTrigger"] = args?.downloadGsmCertificateSigningRequestTrigger;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["generateGsmCertificateSigningRequestTrigger"] = args?.generateGsmCertificateSigningRequestTrigger;
             resourceInputs["generateWalletPassword"] = args?.generateWalletPassword ? pulumi.secret(args.generateWalletPassword) : undefined;
-            resourceInputs["generateWalletTrigger"] = args ? args.generateWalletTrigger : undefined;
-            resourceInputs["getConnectionStringTrigger"] = args ? args.getConnectionStringTrigger : undefined;
-            resourceInputs["listenerPort"] = args ? args.listenerPort : undefined;
-            resourceInputs["listenerPortTls"] = args ? args.listenerPortTls : undefined;
-            resourceInputs["ncharacterSet"] = args ? args.ncharacterSet : undefined;
-            resourceInputs["onsPortLocal"] = args ? args.onsPortLocal : undefined;
-            resourceInputs["onsPortRemote"] = args ? args.onsPortRemote : undefined;
-            resourceInputs["patchOperations"] = args ? args.patchOperations : undefined;
-            resourceInputs["prefix"] = args ? args.prefix : undefined;
-            resourceInputs["replicationFactor"] = args ? args.replicationFactor : undefined;
-            resourceInputs["replicationMethod"] = args ? args.replicationMethod : undefined;
-            resourceInputs["replicationUnit"] = args ? args.replicationUnit : undefined;
-            resourceInputs["shardDetails"] = args ? args.shardDetails : undefined;
-            resourceInputs["shardingMethod"] = args ? args.shardingMethod : undefined;
-            resourceInputs["startDatabaseTrigger"] = args ? args.startDatabaseTrigger : undefined;
-            resourceInputs["stopDatabaseTrigger"] = args ? args.stopDatabaseTrigger : undefined;
-            resourceInputs["uploadSignedCertificateAndGenerateWalletTrigger"] = args ? args.uploadSignedCertificateAndGenerateWalletTrigger : undefined;
-            resourceInputs["validateNetworkTrigger"] = args ? args.validateNetworkTrigger : undefined;
+            resourceInputs["generateWalletTrigger"] = args?.generateWalletTrigger;
+            resourceInputs["getConnectionStringTrigger"] = args?.getConnectionStringTrigger;
+            resourceInputs["listenerPort"] = args?.listenerPort;
+            resourceInputs["listenerPortTls"] = args?.listenerPortTls;
+            resourceInputs["ncharacterSet"] = args?.ncharacterSet;
+            resourceInputs["onsPortLocal"] = args?.onsPortLocal;
+            resourceInputs["onsPortRemote"] = args?.onsPortRemote;
+            resourceInputs["patchOperations"] = args?.patchOperations;
+            resourceInputs["prefix"] = args?.prefix;
+            resourceInputs["replicationFactor"] = args?.replicationFactor;
+            resourceInputs["replicationMethod"] = args?.replicationMethod;
+            resourceInputs["replicationUnit"] = args?.replicationUnit;
+            resourceInputs["shardDetails"] = args?.shardDetails;
+            resourceInputs["shardingMethod"] = args?.shardingMethod;
+            resourceInputs["startDatabaseTrigger"] = args?.startDatabaseTrigger;
+            resourceInputs["stopDatabaseTrigger"] = args?.stopDatabaseTrigger;
+            resourceInputs["uploadSignedCertificateAndGenerateWalletTrigger"] = args?.uploadSignedCertificateAndGenerateWalletTrigger;
+            resourceInputs["validateNetworkTrigger"] = args?.validateNetworkTrigger;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["gsms"] = undefined /*out*/;
             resourceInputs["lifecycleState"] = undefined /*out*/;

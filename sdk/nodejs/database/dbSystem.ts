@@ -90,33 +90,33 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * The availability domain where the DB system is located.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly backupNetworkNsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      *
      * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      */
-    public readonly backupSubnetId!: pulumi.Output<string>;
+    declare public readonly backupSubnetId: pulumi.Output<string>;
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The number of compute servers for the DB system.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
      */
-    public readonly computeModel!: pulumi.Output<string>;
+    declare public readonly computeModel: pulumi.Output<string>;
     /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -132,49 +132,49 @@ export class DbSystem extends pulumi.CustomResource {
      *
      * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      */
-    public readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DbSystemDataCollectionOptions>;
+    declare public readonly dataCollectionOptions: pulumi.Output<outputs.Database.DbSystemDataCollectionOptions>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      */
-    public readonly dataStoragePercentage!: pulumi.Output<number>;
+    declare public readonly dataStoragePercentage: pulumi.Output<number>;
     /**
      * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    declare public readonly dataStorageSizeInGb: pulumi.Output<number>;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      */
-    public readonly databaseEdition!: pulumi.Output<string>;
+    declare public readonly databaseEdition: pulumi.Output<string>;
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly dbHome!: pulumi.Output<outputs.Database.DbSystemDbHome>;
+    declare public readonly dbHome: pulumi.Output<outputs.Database.DbSystemDbHome>;
     /**
      * The DB system options.
      */
-    public readonly dbSystemOptions!: pulumi.Output<outputs.Database.DbSystemDbSystemOptions>;
+    declare public readonly dbSystemOptions: pulumi.Output<outputs.Database.DbSystemDbSystemOptions>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
      */
-    public readonly diskRedundancy!: pulumi.Output<string>;
+    declare public readonly diskRedundancy: pulumi.Output<string>;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      */
-    public readonly domain!: pulumi.Output<string>;
+    declare public readonly domain: pulumi.Output<string>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -186,11 +186,11 @@ export class DbSystem extends pulumi.CustomResource {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    public readonly faultDomains!: pulumi.Output<string[]>;
+    declare public readonly faultDomains: pulumi.Output<string[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
      *
@@ -198,104 +198,104 @@ export class DbSystem extends pulumi.CustomResource {
      *
      * **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    declare public readonly hostname: pulumi.Output<string>;
     /**
      * The IORM settings of the Exadata DB system.
      */
-    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.DbSystemIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemIormConfigCach[]>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      */
-    public readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
+    declare public readonly kmsKeyVersionId: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    public /*out*/ readonly lastMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastMaintenanceRunId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastPatchHistoryEntryId: pulumi.Output<string>;
     /**
      * (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The port number configured for the listener on the DB system.
      */
-    public /*out*/ readonly listenerPort!: pulumi.Output<number>;
+    declare public /*out*/ readonly listenerPort: pulumi.Output<number>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.DbSystemMaintenanceWindowDetails | undefined>;
+    declare public readonly maintenanceWindowDetails: pulumi.Output<outputs.Database.DbSystemMaintenanceWindowDetails | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.DbSystemMaintenanceWindow[]>;
+    declare public /*out*/ readonly maintenanceWindows: pulumi.Output<outputs.Database.DbSystemMaintenanceWindow[]>;
     /**
      * Memory allocated to the DB system, in gigabytes.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
     /**
      * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
-    public readonly nodeCount!: pulumi.Output<number>;
+    declare public readonly nodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
      * The most recent OS Patch Version applied on the DB system.
      */
-    public /*out*/ readonly osVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly osVersion: pulumi.Output<string>;
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly pointInTimeDataDiskCloneTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly pointInTimeDataDiskCloneTimestamp: pulumi.Output<string>;
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      */
-    public readonly privateIp!: pulumi.Output<string>;
+    declare public readonly privateIp: pulumi.Output<string>;
     /**
      * A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
      */
-    public readonly privateIpV6!: pulumi.Output<string>;
+    declare public readonly privateIpV6: pulumi.Output<string>;
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      */
-    public readonly recoStorageSizeInGb!: pulumi.Output<number>;
+    declare public readonly recoStorageSizeInGb: pulumi.Output<number>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    public /*out*/ readonly scanDnsName!: pulumi.Output<string>;
+    declare public /*out*/ readonly scanDnsName: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      */
-    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scanDnsRecordId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly scanIpIds: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    public /*out*/ readonly scanIpv6ids!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly scanIpv6ids: pulumi.Output<string[]>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    public readonly securityAttributes!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
@@ -303,31 +303,31 @@ export class DbSystem extends pulumi.CustomResource {
      *
      * To get a list of shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public readonly sourceDbSystemId!: pulumi.Output<string>;
+    declare public readonly sourceDbSystemId: pulumi.Output<string>;
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
      */
-    public readonly sparseDiskgroup!: pulumi.Output<boolean>;
+    declare public readonly sparseDiskgroup: pulumi.Output<boolean>;
     /**
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      */
-    public readonly sshPublicKeys!: pulumi.Output<string[]>;
+    declare public readonly sshPublicKeys: pulumi.Output<string[]>;
     /**
      * The current state of the DB system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */
-    public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
+    declare public readonly storageVolumePerformanceMode: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      *
@@ -337,15 +337,15 @@ export class DbSystem extends pulumi.CustomResource {
      *
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the DB system was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
@@ -353,23 +353,23 @@ export class DbSystem extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
     /**
      * The Oracle Database version of the DB system.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
      */
-    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly vipIds: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    public /*out*/ readonly vipv6ids!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly vipv6ids: pulumi.Output<string[]>;
     /**
      * The OCID of the zone the DB system is associated with.
      */
-    public /*out*/ readonly zoneId!: pulumi.Output<string>;
+    declare public /*out*/ readonly zoneId: pulumi.Output<string>;
 
     /**
      * Create a DbSystem resource with the given unique name, arguments, and options.
@@ -384,128 +384,128 @@ export class DbSystem extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbSystemState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
-            resourceInputs["backupSubnetId"] = state ? state.backupSubnetId : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
-            resourceInputs["dataStoragePercentage"] = state ? state.dataStoragePercentage : undefined;
-            resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
-            resourceInputs["databaseEdition"] = state ? state.databaseEdition : undefined;
-            resourceInputs["dbHome"] = state ? state.dbHome : undefined;
-            resourceInputs["dbSystemOptions"] = state ? state.dbSystemOptions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["diskRedundancy"] = state ? state.diskRedundancy : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["faultDomains"] = state ? state.faultDomains : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["iormConfigCaches"] = state ? state.iormConfigCaches : undefined;
-            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
-            resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
-            resourceInputs["lastPatchHistoryEntryId"] = state ? state.lastPatchHistoryEntryId : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
-            resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
-            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
-            resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["osVersion"] = state ? state.osVersion : undefined;
-            resourceInputs["pointInTimeDataDiskCloneTimestamp"] = state ? state.pointInTimeDataDiskCloneTimestamp : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["privateIpV6"] = state ? state.privateIpV6 : undefined;
-            resourceInputs["recoStorageSizeInGb"] = state ? state.recoStorageSizeInGb : undefined;
-            resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
-            resourceInputs["scanDnsRecordId"] = state ? state.scanDnsRecordId : undefined;
-            resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
-            resourceInputs["scanIpv6ids"] = state ? state.scanIpv6ids : undefined;
-            resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceDbSystemId"] = state ? state.sourceDbSystemId : undefined;
-            resourceInputs["sparseDiskgroup"] = state ? state.sparseDiskgroup : undefined;
-            resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageVolumePerformanceMode"] = state ? state.storageVolumePerformanceMode : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["vipIds"] = state ? state.vipIds : undefined;
-            resourceInputs["vipv6ids"] = state ? state.vipv6ids : undefined;
-            resourceInputs["zoneId"] = state ? state.zoneId : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = state?.backupNetworkNsgIds;
+            resourceInputs["backupSubnetId"] = state?.backupSubnetId;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["dataCollectionOptions"] = state?.dataCollectionOptions;
+            resourceInputs["dataStoragePercentage"] = state?.dataStoragePercentage;
+            resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["databaseEdition"] = state?.databaseEdition;
+            resourceInputs["dbHome"] = state?.dbHome;
+            resourceInputs["dbSystemOptions"] = state?.dbSystemOptions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["diskRedundancy"] = state?.diskRedundancy;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["faultDomains"] = state?.faultDomains;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["iormConfigCaches"] = state?.iormConfigCaches;
+            resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
+            resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
+            resourceInputs["lastPatchHistoryEntryId"] = state?.lastPatchHistoryEntryId;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["listenerPort"] = state?.listenerPort;
+            resourceInputs["maintenanceWindowDetails"] = state?.maintenanceWindowDetails;
+            resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
+            resourceInputs["nodeCount"] = state?.nodeCount;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["osVersion"] = state?.osVersion;
+            resourceInputs["pointInTimeDataDiskCloneTimestamp"] = state?.pointInTimeDataDiskCloneTimestamp;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["privateIpV6"] = state?.privateIpV6;
+            resourceInputs["recoStorageSizeInGb"] = state?.recoStorageSizeInGb;
+            resourceInputs["scanDnsName"] = state?.scanDnsName;
+            resourceInputs["scanDnsRecordId"] = state?.scanDnsRecordId;
+            resourceInputs["scanIpIds"] = state?.scanIpIds;
+            resourceInputs["scanIpv6ids"] = state?.scanIpv6ids;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceDbSystemId"] = state?.sourceDbSystemId;
+            resourceInputs["sparseDiskgroup"] = state?.sparseDiskgroup;
+            resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageVolumePerformanceMode"] = state?.storageVolumePerformanceMode;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["vipIds"] = state?.vipIds;
+            resourceInputs["vipv6ids"] = state?.vipv6ids;
+            resourceInputs["zoneId"] = state?.zoneId;
         } else {
             const args = argsOrState as DbSystemArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbHome === undefined) && !opts.urn) {
+            if (args?.dbHome === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbHome'");
             }
-            if ((!args || args.hostname === undefined) && !opts.urn) {
+            if (args?.hostname === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostname'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.sshPublicKeys === undefined) && !opts.urn) {
+            if (args?.sshPublicKeys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sshPublicKeys'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
-            resourceInputs["backupSubnetId"] = args ? args.backupSubnetId : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
-            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
-            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
-            resourceInputs["dataStoragePercentage"] = args ? args.dataStoragePercentage : undefined;
-            resourceInputs["dataStorageSizeInGb"] = args ? args.dataStorageSizeInGb : undefined;
-            resourceInputs["databaseEdition"] = args ? args.databaseEdition : undefined;
-            resourceInputs["dbHome"] = args ? args.dbHome : undefined;
-            resourceInputs["dbSystemOptions"] = args ? args.dbSystemOptions : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["diskRedundancy"] = args ? args.diskRedundancy : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["faultDomains"] = args ? args.faultDomains : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
-            resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
-            resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["privateIp"] = args ? args.privateIp : undefined;
-            resourceInputs["privateIpV6"] = args ? args.privateIpV6 : undefined;
-            resourceInputs["recoStorageSizeInGb"] = args ? args.recoStorageSizeInGb : undefined;
-            resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourceDbSystemId"] = args ? args.sourceDbSystemId : undefined;
-            resourceInputs["sparseDiskgroup"] = args ? args.sparseDiskgroup : undefined;
-            resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
-            resourceInputs["storageVolumePerformanceMode"] = args ? args.storageVolumePerformanceMode : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupNetworkNsgIds"] = args?.backupNetworkNsgIds;
+            resourceInputs["backupSubnetId"] = args?.backupSubnetId;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["computeModel"] = args?.computeModel;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
+            resourceInputs["dataCollectionOptions"] = args?.dataCollectionOptions;
+            resourceInputs["dataStoragePercentage"] = args?.dataStoragePercentage;
+            resourceInputs["dataStorageSizeInGb"] = args?.dataStorageSizeInGb;
+            resourceInputs["databaseEdition"] = args?.databaseEdition;
+            resourceInputs["dbHome"] = args?.dbHome;
+            resourceInputs["dbSystemOptions"] = args?.dbSystemOptions;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["diskRedundancy"] = args?.diskRedundancy;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["faultDomains"] = args?.faultDomains;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["kmsKeyVersionId"] = args?.kmsKeyVersionId;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["maintenanceWindowDetails"] = args?.maintenanceWindowDetails;
+            resourceInputs["nodeCount"] = args?.nodeCount;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["privateIp"] = args?.privateIp;
+            resourceInputs["privateIpV6"] = args?.privateIpV6;
+            resourceInputs["recoStorageSizeInGb"] = args?.recoStorageSizeInGb;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceDbSystemId"] = args?.sourceDbSystemId;
+            resourceInputs["sparseDiskgroup"] = args?.sparseDiskgroup;
+            resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
+            resourceInputs["storageVolumePerformanceMode"] = args?.storageVolumePerformanceMode;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["iormConfigCaches"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lastPatchHistoryEntryId"] = undefined /*out*/;

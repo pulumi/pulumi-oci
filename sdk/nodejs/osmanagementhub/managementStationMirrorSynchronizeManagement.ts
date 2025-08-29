@@ -60,7 +60,7 @@ export class ManagementStationMirrorSynchronizeManagement extends pulumi.CustomR
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
     /**
      * Unique Software Source identifier
      *
@@ -68,7 +68,7 @@ export class ManagementStationMirrorSynchronizeManagement extends pulumi.CustomR
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly mirrorId!: pulumi.Output<string>;
+    declare public readonly mirrorId: pulumi.Output<string>;
 
     /**
      * Create a ManagementStationMirrorSynchronizeManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ManagementStationMirrorSynchronizeManagement extends pulumi.CustomR
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementStationMirrorSynchronizeManagementState | undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
-            resourceInputs["mirrorId"] = state ? state.mirrorId : undefined;
+            resourceInputs["managementStationId"] = state?.managementStationId;
+            resourceInputs["mirrorId"] = state?.mirrorId;
         } else {
             const args = argsOrState as ManagementStationMirrorSynchronizeManagementArgs | undefined;
-            if ((!args || args.managementStationId === undefined) && !opts.urn) {
+            if (args?.managementStationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementStationId'");
             }
-            if ((!args || args.mirrorId === undefined) && !opts.urn) {
+            if (args?.mirrorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mirrorId'");
             }
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
-            resourceInputs["mirrorId"] = args ? args.mirrorId : undefined;
+            resourceInputs["managementStationId"] = args?.managementStationId;
+            resourceInputs["mirrorId"] = args?.mirrorId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagementStationMirrorSynchronizeManagement.__pulumiType, name, resourceInputs, opts);

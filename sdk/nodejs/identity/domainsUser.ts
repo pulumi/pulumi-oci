@@ -62,7 +62,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly active!: pulumi.Output<boolean>;
+    declare public readonly active: pulumi.Output<boolean>;
     /**
      * (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
      *
@@ -77,19 +77,19 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly addresses!: pulumi.Output<outputs.Identity.DomainsUserAddress[]>;
+    declare public readonly addresses: pulumi.Output<outputs.Identity.DomainsUserAddress[]>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -103,7 +103,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -117,7 +117,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) Description of the user
      *
@@ -134,7 +134,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Display name
      *
@@ -151,7 +151,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -165,7 +165,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute representing emails
      *
@@ -180,7 +180,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly emails!: pulumi.Output<outputs.Identity.DomainsUserEmail[]>;
+    declare public readonly emails: pulumi.Output<outputs.Identity.DomainsUserEmail[]>;
     /**
      * (Updatable) A list of entitlements for the User that represent a thing the User has.
      *
@@ -193,7 +193,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly entitlements!: pulumi.Output<outputs.Identity.DomainsUserEntitlement[]>;
+    declare public readonly entitlements: pulumi.Output<outputs.Identity.DomainsUserEntitlement[]>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -209,8 +209,8 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
-    public readonly forceDelete!: pulumi.Output<boolean | undefined>;
+    declare public readonly externalId: pulumi.Output<string>;
+    declare public readonly forceDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
      *
@@ -224,7 +224,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly groups!: pulumi.Output<outputs.Identity.DomainsUserGroup[]>;
+    declare public /*out*/ readonly groups: pulumi.Output<outputs.Identity.DomainsUserGroup[]>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -236,11 +236,11 @@ export class DomainsUser extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsUserIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -252,7 +252,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsUserIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsUserIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -266,7 +266,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -279,7 +279,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) User's instant messaging addresses
      *
@@ -293,7 +293,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly ims!: pulumi.Output<outputs.Identity.DomainsUserIm[]>;
+    declare public readonly ims: pulumi.Output<outputs.Identity.DomainsUserIm[]>;
     /**
      * (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -309,7 +309,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly locale!: pulumi.Output<string>;
+    declare public readonly locale: pulumi.Output<string>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -323,7 +323,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsUserMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsUserMeta[]>;
     /**
      * (Updatable) A complex attribute that contains attributes representing the name
      *
@@ -337,7 +337,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly name!: pulumi.Output<outputs.Identity.DomainsUserName>;
+    declare public readonly name: pulumi.Output<outputs.Identity.DomainsUserName>;
     /**
      * (Updatable) Nick name
      *
@@ -354,7 +354,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly nickName!: pulumi.Output<string>;
+    declare public readonly nickName: pulumi.Output<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -368,7 +368,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) Password attribute. Max length for password is controlled via Password Policy.
      *
@@ -385,7 +385,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * (Updatable) Phone numbers
      *
@@ -400,7 +400,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly phoneNumbers!: pulumi.Output<outputs.Identity.DomainsUserPhoneNumber[]>;
+    declare public readonly phoneNumbers: pulumi.Output<outputs.Identity.DomainsUserPhoneNumber[]>;
     /**
      * (Updatable) URLs of photos for the User
      *
@@ -414,7 +414,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly photos!: pulumi.Output<outputs.Identity.DomainsUserPhoto[]>;
+    declare public readonly photos: pulumi.Output<outputs.Identity.DomainsUserPhoto[]>;
     /**
      * (Updatable) User's preferred written or spoken language used for localized user interfaces
      *
@@ -430,7 +430,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly preferredLanguage!: pulumi.Output<string>;
+    declare public readonly preferredLanguage: pulumi.Output<string>;
     /**
      * (Updatable) A fully-qualified URL to a page representing the User's online profile
      *
@@ -447,11 +447,11 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: reference
      * * uniqueness: none
      */
-    public readonly profileUrl!: pulumi.Output<string>;
+    declare public readonly profileUrl: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
      *
@@ -464,7 +464,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly roles!: pulumi.Output<outputs.Identity.DomainsUserRole[]>;
+    declare public readonly roles: pulumi.Output<outputs.Identity.DomainsUserRole[]>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -478,7 +478,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -492,7 +492,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsUserTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsUserTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -506,7 +506,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) User's timezone
      *
@@ -524,7 +524,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly timezone!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
     /**
      * (Updatable) Title
      *
@@ -541,87 +541,87 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly title!: pulumi.Output<string>;
+    declare public readonly title: pulumi.Output<string>;
     /**
      * (Updatable) Enterprise User
      */
-    public readonly urnietfparamsscimschemasextensionenterprise20user!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user>;
+    declare public readonly urnietfparamsscimschemasextensionenterprise20user: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20user>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionOciTags: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags>;
     /**
      * (Updatable) This extension defines attributes to manage user's risk score.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionadaptiveUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionadaptiveUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser>;
     /**
      * (Updatable) User's Capabilities
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser>;
     /**
      * (Updatable) The database credentials user extension.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser>;
     /**
      * (Updatable) DB User extension
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbUserUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser[]>;
+    declare public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbUserUsers: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser[]>;
     /**
      * (Updatable) Kerberos User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionkerberosUserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionkerberosUserUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser>;
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionmfaUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionmfaUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser>;
     /**
      * (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser[]>;
+    declare public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser[]>;
     /**
      * (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionpasswordlessUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionpasswordlessUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser>;
     /**
      * (Updatable) POSIX User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionposixUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionposixUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser>;
     /**
      * (Updatable) This extension defines the attributes used to store the security questions of a user.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser>;
     /**
      * (Updatable) Controls whether a user can update themselves or not via User related APIs
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionselfChangeUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser>;
     /**
      * (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser>;
     /**
      * (Updatable) SFF Auth Keys User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsffUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionsffUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser>;
     /**
      * (Updatable) Social User extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsocialAccountUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionsocialAccountUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser>;
     /**
      * (Updatable) Terms Of Use extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser>;
     /**
      * (Updatable) User's credentials
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[]>;
+    declare public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser[]>;
     /**
      * (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionuserStateUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionuserStateUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser>;
     /**
      * (Updatable) Oracle Identity Cloud Service User
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionuserUser!: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionuserUser: pulumi.Output<outputs.Identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser>;
     /**
      * (Updatable) User name
      *
@@ -638,7 +638,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly userName!: pulumi.Output<string>;
+    declare public readonly userName: pulumi.Output<string>;
     /**
      * (Updatable) Used to identify the organization-to-user relationship
      *
@@ -655,7 +655,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly userType!: pulumi.Output<string>;
+    declare public readonly userType: pulumi.Output<string>;
     /**
      * (Updatable) A list of certificates issued to the User.
      *
@@ -668,7 +668,7 @@ export class DomainsUser extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly x509certificates!: pulumi.Output<outputs.Identity.DomainsUserX509certificate[]>;
+    declare public readonly x509certificates: pulumi.Output<outputs.Identity.DomainsUserX509certificate[]>;
 
     /**
      * Create a DomainsUser resource with the given unique name, arguments, and options.
@@ -683,126 +683,126 @@ export class DomainsUser extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsUserState | undefined;
-            resourceInputs["active"] = state ? state.active : undefined;
-            resourceInputs["addresses"] = state ? state.addresses : undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["emails"] = state ? state.emails : undefined;
-            resourceInputs["entitlements"] = state ? state.entitlements : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["forceDelete"] = state ? state.forceDelete : undefined;
-            resourceInputs["groups"] = state ? state.groups : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["ims"] = state ? state.ims : undefined;
-            resourceInputs["locale"] = state ? state.locale : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nickName"] = state ? state.nickName : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["phoneNumbers"] = state ? state.phoneNumbers : undefined;
-            resourceInputs["photos"] = state ? state.photos : undefined;
-            resourceInputs["preferredLanguage"] = state ? state.preferredLanguage : undefined;
-            resourceInputs["profileUrl"] = state ? state.profileUrl : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["title"] = state ? state.title : undefined;
-            resourceInputs["urnietfparamsscimschemasextensionenterprise20user"] = state ? state.urnietfparamsscimschemasextensionenterprise20user : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = state ? state.urnietfparamsscimschemasoracleidcsextensionOciTags : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionadaptiveUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionadaptiveUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbUserUsers"] = state ? state.urnietfparamsscimschemasoracleidcsextensiondbUserUsers : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionmfaUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionmfaUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers"] = state ? state.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionposixUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionselfChangeUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsffUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionsffUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"] = state ? state.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserStateUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionuserStateUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserUser"] = state ? state.urnietfparamsscimschemasoracleidcsextensionuserUser : undefined;
-            resourceInputs["userName"] = state ? state.userName : undefined;
-            resourceInputs["userType"] = state ? state.userType : undefined;
-            resourceInputs["x509certificates"] = state ? state.x509certificates : undefined;
+            resourceInputs["active"] = state?.active;
+            resourceInputs["addresses"] = state?.addresses;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["emails"] = state?.emails;
+            resourceInputs["entitlements"] = state?.entitlements;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["forceDelete"] = state?.forceDelete;
+            resourceInputs["groups"] = state?.groups;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["ims"] = state?.ims;
+            resourceInputs["locale"] = state?.locale;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nickName"] = state?.nickName;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["phoneNumbers"] = state?.phoneNumbers;
+            resourceInputs["photos"] = state?.photos;
+            resourceInputs["preferredLanguage"] = state?.preferredLanguage;
+            resourceInputs["profileUrl"] = state?.profileUrl;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["title"] = state?.title;
+            resourceInputs["urnietfparamsscimschemasextensionenterprise20user"] = state?.urnietfparamsscimschemasextensionenterprise20user;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = state?.urnietfparamsscimschemasoracleidcsextensionOciTags;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionadaptiveUser"] = state?.urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"] = state?.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"] = state?.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbUserUsers"] = state?.urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"] = state?.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionmfaUser"] = state?.urnietfparamsscimschemasoracleidcsextensionmfaUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers"] = state?.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"] = state?.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixUser"] = state?.urnietfparamsscimschemasoracleidcsextensionposixUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"] = state?.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = state?.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"] = state?.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsffUser"] = state?.urnietfparamsscimschemasoracleidcsextensionsffUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"] = state?.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"] = state?.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers"] = state?.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserStateUser"] = state?.urnietfparamsscimschemasoracleidcsextensionuserStateUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserUser"] = state?.urnietfparamsscimschemasoracleidcsextensionuserUser;
+            resourceInputs["userName"] = state?.userName;
+            resourceInputs["userType"] = state?.userType;
+            resourceInputs["x509certificates"] = state?.x509certificates;
         } else {
             const args = argsOrState as DomainsUserArgs | undefined;
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            if ((!args || args.userName === undefined) && !opts.urn) {
+            if (args?.userName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userName'");
             }
-            resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["addresses"] = args ? args.addresses : undefined;
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["emails"] = args ? args.emails : undefined;
-            resourceInputs["entitlements"] = args ? args.entitlements : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["forceDelete"] = args ? args.forceDelete : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["ims"] = args ? args.ims : undefined;
-            resourceInputs["locale"] = args ? args.locale : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nickName"] = args ? args.nickName : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
+            resourceInputs["active"] = args?.active;
+            resourceInputs["addresses"] = args?.addresses;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["emails"] = args?.emails;
+            resourceInputs["entitlements"] = args?.entitlements;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["forceDelete"] = args?.forceDelete;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["ims"] = args?.ims;
+            resourceInputs["locale"] = args?.locale;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nickName"] = args?.nickName;
+            resourceInputs["ocid"] = args?.ocid;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["phoneNumbers"] = args ? args.phoneNumbers : undefined;
-            resourceInputs["photos"] = args ? args.photos : undefined;
-            resourceInputs["preferredLanguage"] = args ? args.preferredLanguage : undefined;
-            resourceInputs["profileUrl"] = args ? args.profileUrl : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
-            resourceInputs["title"] = args ? args.title : undefined;
-            resourceInputs["urnietfparamsscimschemasextensionenterprise20user"] = args ? args.urnietfparamsscimschemasextensionenterprise20user : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = args ? args.urnietfparamsscimschemasoracleidcsextensionOciTags : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionadaptiveUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionadaptiveUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionmfaUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionmfaUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionposixUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionselfChangeUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsffUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionsffUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserStateUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionuserStateUser : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserUser"] = args ? args.urnietfparamsscimschemasoracleidcsextensionuserUser : undefined;
-            resourceInputs["userName"] = args ? args.userName : undefined;
-            resourceInputs["userType"] = args ? args.userType : undefined;
-            resourceInputs["x509certificates"] = args ? args.x509certificates : undefined;
+            resourceInputs["phoneNumbers"] = args?.phoneNumbers;
+            resourceInputs["photos"] = args?.photos;
+            resourceInputs["preferredLanguage"] = args?.preferredLanguage;
+            resourceInputs["profileUrl"] = args?.profileUrl;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timezone"] = args?.timezone;
+            resourceInputs["title"] = args?.title;
+            resourceInputs["urnietfparamsscimschemasextensionenterprise20user"] = args?.urnietfparamsscimschemasextensionenterprise20user;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = args?.urnietfparamsscimschemasoracleidcsextensionOciTags;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionadaptiveUser"] = args?.urnietfparamsscimschemasoracleidcsextensionadaptiveUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser"] = args?.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser"] = args?.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionkerberosUserUser"] = args?.urnietfparamsscimschemasoracleidcsextensionkerberosUserUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionmfaUser"] = args?.urnietfparamsscimschemasoracleidcsextensionmfaUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionpasswordlessUser"] = args?.urnietfparamsscimschemasoracleidcsextensionpasswordlessUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixUser"] = args?.urnietfparamsscimschemasoracleidcsextensionposixUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser"] = args?.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = args?.urnietfparamsscimschemasoracleidcsextensionselfChangeUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser"] = args?.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsffUser"] = args?.urnietfparamsscimschemasoracleidcsextensionsffUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionsocialAccountUser"] = args?.urnietfparamsscimschemasoracleidcsextensionsocialAccountUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser"] = args?.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserStateUser"] = args?.urnietfparamsscimschemasoracleidcsextensionuserStateUser;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionuserUser"] = args?.urnietfparamsscimschemasoracleidcsextensionuserUser;
+            resourceInputs["userName"] = args?.userName;
+            resourceInputs["userType"] = args?.userType;
+            resourceInputs["x509certificates"] = args?.x509certificates;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

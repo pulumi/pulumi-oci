@@ -59,19 +59,19 @@ export class AutonomousVmClusterSslCertificateManagement extends pulumi.CustomRe
     /**
      * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousVmClusterId!: pulumi.Output<string>;
+    declare public readonly autonomousVmClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      */
-    public readonly caBundleId!: pulumi.Output<string>;
+    declare public readonly caBundleId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      */
-    public readonly certificateAuthorityId!: pulumi.Output<string>;
+    declare public readonly certificateAuthorityId: pulumi.Output<string>;
     /**
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
      */
-    public readonly certificateGenerationType!: pulumi.Output<string>;
+    declare public readonly certificateGenerationType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
      *
@@ -79,7 +79,7 @@ export class AutonomousVmClusterSslCertificateManagement extends pulumi.CustomRe
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly certificateId!: pulumi.Output<string>;
+    declare public readonly certificateId: pulumi.Output<string>;
 
     /**
      * Create a AutonomousVmClusterSslCertificateManagement resource with the given unique name, arguments, and options.
@@ -94,24 +94,24 @@ export class AutonomousVmClusterSslCertificateManagement extends pulumi.CustomRe
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousVmClusterSslCertificateManagementState | undefined;
-            resourceInputs["autonomousVmClusterId"] = state ? state.autonomousVmClusterId : undefined;
-            resourceInputs["caBundleId"] = state ? state.caBundleId : undefined;
-            resourceInputs["certificateAuthorityId"] = state ? state.certificateAuthorityId : undefined;
-            resourceInputs["certificateGenerationType"] = state ? state.certificateGenerationType : undefined;
-            resourceInputs["certificateId"] = state ? state.certificateId : undefined;
+            resourceInputs["autonomousVmClusterId"] = state?.autonomousVmClusterId;
+            resourceInputs["caBundleId"] = state?.caBundleId;
+            resourceInputs["certificateAuthorityId"] = state?.certificateAuthorityId;
+            resourceInputs["certificateGenerationType"] = state?.certificateGenerationType;
+            resourceInputs["certificateId"] = state?.certificateId;
         } else {
             const args = argsOrState as AutonomousVmClusterSslCertificateManagementArgs | undefined;
-            if ((!args || args.autonomousVmClusterId === undefined) && !opts.urn) {
+            if (args?.autonomousVmClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousVmClusterId'");
             }
-            if ((!args || args.certificateGenerationType === undefined) && !opts.urn) {
+            if (args?.certificateGenerationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateGenerationType'");
             }
-            resourceInputs["autonomousVmClusterId"] = args ? args.autonomousVmClusterId : undefined;
-            resourceInputs["caBundleId"] = args ? args.caBundleId : undefined;
-            resourceInputs["certificateAuthorityId"] = args ? args.certificateAuthorityId : undefined;
-            resourceInputs["certificateGenerationType"] = args ? args.certificateGenerationType : undefined;
-            resourceInputs["certificateId"] = args ? args.certificateId : undefined;
+            resourceInputs["autonomousVmClusterId"] = args?.autonomousVmClusterId;
+            resourceInputs["caBundleId"] = args?.caBundleId;
+            resourceInputs["certificateAuthorityId"] = args?.certificateAuthorityId;
+            resourceInputs["certificateGenerationType"] = args?.certificateGenerationType;
+            resourceInputs["certificateId"] = args?.certificateId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AutonomousVmClusterSslCertificateManagement.__pulumiType, name, resourceInputs, opts);

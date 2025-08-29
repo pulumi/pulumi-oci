@@ -102,44 +102,44 @@ export class OutboundConnector extends pulumi.CustomResource {
     /**
      * The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The LDAP Distinguished Name of the bind account.
      */
-    public readonly bindDistinguishedName!: pulumi.Output<string>;
+    declare public readonly bindDistinguishedName: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The account type of this outbound connector.
      */
-    public readonly connectorType!: pulumi.Output<string>;
+    declare public readonly connectorType: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Array of server endpoints to use when connecting with the LDAP bind account.
      */
-    public readonly endpoints!: pulumi.Output<outputs.FileStorage.OutboundConnectorEndpoint[]>;
+    declare public readonly endpoints: pulumi.Output<outputs.FileStorage.OutboundConnectorEndpoint[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.OutboundConnectorLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.OutboundConnectorLock[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      */
-    public readonly passwordSecretId!: pulumi.Output<string>;
+    declare public readonly passwordSecretId: pulumi.Output<string>;
     /**
      * Version of the password secret in the Vault to use.
      *
@@ -147,19 +147,19 @@ export class OutboundConnector extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly passwordSecretVersion!: pulumi.Output<number>;
+    declare public readonly passwordSecretVersion: pulumi.Output<number>;
     /**
      * The current state of this outbound connector.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a OutboundConnector resource with the given unique name, arguments, and options.
@@ -174,50 +174,50 @@ export class OutboundConnector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutboundConnectorState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["bindDistinguishedName"] = state ? state.bindDistinguishedName : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectorType"] = state ? state.connectorType : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["endpoints"] = state ? state.endpoints : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["passwordSecretId"] = state ? state.passwordSecretId : undefined;
-            resourceInputs["passwordSecretVersion"] = state ? state.passwordSecretVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["bindDistinguishedName"] = state?.bindDistinguishedName;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectorType"] = state?.connectorType;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["endpoints"] = state?.endpoints;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["passwordSecretId"] = state?.passwordSecretId;
+            resourceInputs["passwordSecretVersion"] = state?.passwordSecretVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as OutboundConnectorArgs | undefined;
-            if ((!args || args.availabilityDomain === undefined) && !opts.urn) {
+            if (args?.availabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityDomain'");
             }
-            if ((!args || args.bindDistinguishedName === undefined) && !opts.urn) {
+            if (args?.bindDistinguishedName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bindDistinguishedName'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.connectorType === undefined) && !opts.urn) {
+            if (args?.connectorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectorType'");
             }
-            if ((!args || args.endpoints === undefined) && !opts.urn) {
+            if (args?.endpoints === undefined && !opts.urn) {
                 throw new Error("Missing required property 'endpoints'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["bindDistinguishedName"] = args ? args.bindDistinguishedName : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectorType"] = args ? args.connectorType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["endpoints"] = args ? args.endpoints : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["passwordSecretId"] = args ? args.passwordSecretId : undefined;
-            resourceInputs["passwordSecretVersion"] = args ? args.passwordSecretVersion : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["bindDistinguishedName"] = args?.bindDistinguishedName;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectorType"] = args?.connectorType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["endpoints"] = args?.endpoints;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["passwordSecretId"] = args?.passwordSecretId;
+            resourceInputs["passwordSecretVersion"] = args?.passwordSecretVersion;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

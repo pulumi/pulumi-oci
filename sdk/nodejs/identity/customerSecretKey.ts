@@ -70,27 +70,27 @@ export class CustomerSecretKey extends pulumi.CustomResource {
     /**
      * (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveState: pulumi.Output<string>;
     /**
      * The secret key.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * The secret key's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeExpires!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeExpires: pulumi.Output<string>;
     /**
      * The OCID of the user.
      *
@@ -98,7 +98,7 @@ export class CustomerSecretKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a CustomerSecretKey resource with the given unique name, arguments, and options.
@@ -113,23 +113,23 @@ export class CustomerSecretKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CustomerSecretKeyState | undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["inactiveState"] = state ? state.inactiveState : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeExpires"] = state ? state.timeExpires : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["inactiveState"] = state?.inactiveState;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeExpires"] = state?.timeExpires;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as CustomerSecretKeyArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["inactiveState"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

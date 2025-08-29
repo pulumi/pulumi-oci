@@ -58,15 +58,15 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The list of categories to be assigned to the resource.
      */
-    public readonly resourceCategories!: pulumi.Output<string[]>;
+    declare public readonly resourceCategories: pulumi.Output<string[]>;
     /**
      * The resource unique identifier for which catagories are managed.
      */
-    public readonly resourceId!: pulumi.Output<string>;
+    declare public readonly resourceId: pulumi.Output<string>;
     /**
      * The resource type of the resource for which categories are managed.
      *
@@ -74,7 +74,7 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly resourceType!: pulumi.Output<string>;
+    declare public readonly resourceType: pulumi.Output<string>;
 
     /**
      * Create a LogAnalyticsResourceCategoriesManagement resource with the given unique name, arguments, and options.
@@ -89,28 +89,28 @@ export class LogAnalyticsResourceCategoriesManagement extends pulumi.CustomResou
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LogAnalyticsResourceCategoriesManagementState | undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["resourceCategories"] = state ? state.resourceCategories : undefined;
-            resourceInputs["resourceId"] = state ? state.resourceId : undefined;
-            resourceInputs["resourceType"] = state ? state.resourceType : undefined;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["resourceCategories"] = state?.resourceCategories;
+            resourceInputs["resourceId"] = state?.resourceId;
+            resourceInputs["resourceType"] = state?.resourceType;
         } else {
             const args = argsOrState as LogAnalyticsResourceCategoriesManagementArgs | undefined;
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.resourceCategories === undefined) && !opts.urn) {
+            if (args?.resourceCategories === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceCategories'");
             }
-            if ((!args || args.resourceId === undefined) && !opts.urn) {
+            if (args?.resourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceId'");
             }
-            if ((!args || args.resourceType === undefined) && !opts.urn) {
+            if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["resourceCategories"] = args ? args.resourceCategories : undefined;
-            resourceInputs["resourceId"] = args ? args.resourceId : undefined;
-            resourceInputs["resourceType"] = args ? args.resourceType : undefined;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["resourceCategories"] = args?.resourceCategories;
+            resourceInputs["resourceId"] = args?.resourceId;
+            resourceInputs["resourceType"] = args?.resourceType;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogAnalyticsResourceCategoriesManagement.__pulumiType, name, resourceInputs, opts);

@@ -8,8 +8,7 @@ declare var exports: any;
 const __config = new pulumi.Config("oci");
 
 /**
- * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
- * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+ * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
  */
 export declare const auth: string | undefined;
 Object.defineProperty(exports, "auth", {
@@ -31,8 +30,8 @@ Object.defineProperty(exports, "configFileProfile", {
 });
 
 /**
- * (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
- * consistency problems but it also introduced performance issues on destroy operations.
+ * (Optional) Disable automatic retries for retriable errors.
+ * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
  */
 export declare const disableAutoRetries: boolean | undefined;
 Object.defineProperty(exports, "disableAutoRetries", {
@@ -43,8 +42,7 @@ Object.defineProperty(exports, "disableAutoRetries", {
 });
 
 /**
- * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
- * console. Required if auth is set to 'ApiKey', ignored otherwise.
+ * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const fingerprint: string | undefined;
 Object.defineProperty(exports, "fingerprint", {
@@ -63,8 +61,8 @@ Object.defineProperty(exports, "ignoreDefinedTags", {
 });
 
 /**
- * (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
- * set to 'ApiKey', ignored otherwise.
+ * (Optional) A PEM formatted RSA private key for the user.
+ * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const privateKey: string | undefined;
 Object.defineProperty(exports, "privateKey", {
@@ -86,8 +84,8 @@ Object.defineProperty(exports, "privateKeyPassword", {
 });
 
 /**
- * (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
- * is set to 'ApiKey', ignored otherwise.
+ * (Optional) The path to the user's PEM formatted private key.
+ * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const privateKeyPath: string | undefined;
 Object.defineProperty(exports, "privateKeyPath", {
@@ -120,9 +118,8 @@ Object.defineProperty(exports, "region", {
 });
 
 /**
- * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
- * duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
- * set to true.
+ * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+ * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
  */
 export declare const retryDurationSeconds: number | undefined;
 Object.defineProperty(exports, "retryDurationSeconds", {
@@ -133,8 +130,7 @@ Object.defineProperty(exports, "retryDurationSeconds", {
 });
 
 /**
- * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
- * Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+ * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const tenancyOcid: string | undefined;
 Object.defineProperty(exports, "tenancyOcid", {
@@ -153,8 +149,7 @@ Object.defineProperty(exports, "testTimeMaintenanceRebootDue", {
 });
 
 /**
- * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
- * auth is set to 'ApiKey', ignored otherwise.
+ * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const userOcid: string | undefined;
 Object.defineProperty(exports, "userOcid", {

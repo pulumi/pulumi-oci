@@ -149,112 +149,112 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
     /**
      * The application key.
      */
-    public readonly applicationKey!: pulumi.Output<string>;
+    declare public readonly applicationKey: pulumi.Output<string>;
     /**
      * (Updatable) The authorization mode for the task.
      */
-    public readonly authMode!: pulumi.Output<string>;
+    declare public readonly authMode: pulumi.Output<string>;
     /**
      * (Updatable) The information about the configuration provider.
      */
-    public readonly configProviderDelegate!: pulumi.Output<string>;
+    declare public readonly configProviderDelegate: pulumi.Output<string>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The end time in milliseconds.
      */
-    public readonly endTimeMillis!: pulumi.Output<string>;
+    declare public readonly endTimeMillis: pulumi.Output<string>;
     /**
      * (Updatable) The expected duration of the task execution.
      */
-    public readonly expectedDuration!: pulumi.Output<number>;
+    declare public readonly expectedDuration: pulumi.Output<number>;
     /**
      * (Updatable) The expected duration unit of the task execution.
      */
-    public readonly expectedDurationUnit!: pulumi.Output<string>;
+    declare public readonly expectedDurationUnit: pulumi.Output<string>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    public readonly identifier!: pulumi.Output<string>;
+    declare public readonly identifier: pulumi.Output<string>;
     /**
      * (Updatable) Whether the backfill is enabled.
      */
-    public readonly isBackfillEnabled!: pulumi.Output<boolean>;
+    declare public readonly isBackfillEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the same task can be executed concurrently.
      */
-    public readonly isConcurrentAllowed!: pulumi.Output<boolean>;
+    declare public readonly isConcurrentAllowed: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether the task schedule is enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    declare public readonly isEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * The last run details for the task run.
      */
-    public /*out*/ readonly lastRunDetails!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail[]>;
+    declare public /*out*/ readonly lastRunDetails: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail[]>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata[]>;
     /**
      * The type of the object.
      */
-    public /*out*/ readonly modelType!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelType: pulumi.Output<string>;
     /**
      * (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly nextRunTimeMillis!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly nextRunTimeMillis: pulumi.Output<string>;
     /**
      * (Updatable) The number of retries.
      */
-    public readonly numberOfRetries!: pulumi.Output<number>;
+    declare public readonly numberOfRetries: pulumi.Output<number>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    public readonly objectStatus!: pulumi.Output<number>;
+    declare public readonly objectStatus: pulumi.Output<number>;
     /**
      * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    public readonly objectVersion!: pulumi.Output<number>;
+    declare public readonly objectVersion: pulumi.Output<number>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    public readonly parentRef!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef>;
+    declare public readonly parentRef: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleParentRef>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    public readonly registryMetadata!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata>;
+    declare public readonly registryMetadata: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleRegistryMetadata>;
     /**
      * The number of retry attempts.
      */
-    public /*out*/ readonly retryAttempts!: pulumi.Output<number>;
+    declare public /*out*/ readonly retryAttempts: pulumi.Output<number>;
     /**
      * (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
      */
-    public readonly retryDelay!: pulumi.Output<number>;
+    declare public readonly retryDelay: pulumi.Output<number>;
     /**
      * (Updatable) The unit for the retry delay.
      */
-    public readonly retryDelayUnit!: pulumi.Output<string>;
+    declare public readonly retryDelayUnit: pulumi.Output<string>;
     /**
      * (Updatable) The schedule object
      */
-    public readonly scheduleRef!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef>;
+    declare public readonly scheduleRef: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleScheduleRef>;
     /**
      * (Updatable) The start time in milliseconds.
      */
-    public readonly startTimeMillis!: pulumi.Output<string>;
+    declare public readonly startTimeMillis: pulumi.Output<string>;
     /**
      * The workspace ID.
      *
@@ -262,7 +262,7 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workspaceId!: pulumi.Output<string>;
+    declare public readonly workspaceId: pulumi.Output<string>;
 
     /**
      * Create a WorkspaceApplicationTaskSchedule resource with the given unique name, arguments, and options.
@@ -277,71 +277,71 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WorkspaceApplicationTaskScheduleState | undefined;
-            resourceInputs["applicationKey"] = state ? state.applicationKey : undefined;
-            resourceInputs["authMode"] = state ? state.authMode : undefined;
-            resourceInputs["configProviderDelegate"] = state ? state.configProviderDelegate : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["endTimeMillis"] = state ? state.endTimeMillis : undefined;
-            resourceInputs["expectedDuration"] = state ? state.expectedDuration : undefined;
-            resourceInputs["expectedDurationUnit"] = state ? state.expectedDurationUnit : undefined;
-            resourceInputs["identifier"] = state ? state.identifier : undefined;
-            resourceInputs["isBackfillEnabled"] = state ? state.isBackfillEnabled : undefined;
-            resourceInputs["isConcurrentAllowed"] = state ? state.isConcurrentAllowed : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["lastRunDetails"] = state ? state.lastRunDetails : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nextRunTimeMillis"] = state ? state.nextRunTimeMillis : undefined;
-            resourceInputs["numberOfRetries"] = state ? state.numberOfRetries : undefined;
-            resourceInputs["objectStatus"] = state ? state.objectStatus : undefined;
-            resourceInputs["objectVersion"] = state ? state.objectVersion : undefined;
-            resourceInputs["parentRef"] = state ? state.parentRef : undefined;
-            resourceInputs["registryMetadata"] = state ? state.registryMetadata : undefined;
-            resourceInputs["retryAttempts"] = state ? state.retryAttempts : undefined;
-            resourceInputs["retryDelay"] = state ? state.retryDelay : undefined;
-            resourceInputs["retryDelayUnit"] = state ? state.retryDelayUnit : undefined;
-            resourceInputs["scheduleRef"] = state ? state.scheduleRef : undefined;
-            resourceInputs["startTimeMillis"] = state ? state.startTimeMillis : undefined;
-            resourceInputs["workspaceId"] = state ? state.workspaceId : undefined;
+            resourceInputs["applicationKey"] = state?.applicationKey;
+            resourceInputs["authMode"] = state?.authMode;
+            resourceInputs["configProviderDelegate"] = state?.configProviderDelegate;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["endTimeMillis"] = state?.endTimeMillis;
+            resourceInputs["expectedDuration"] = state?.expectedDuration;
+            resourceInputs["expectedDurationUnit"] = state?.expectedDurationUnit;
+            resourceInputs["identifier"] = state?.identifier;
+            resourceInputs["isBackfillEnabled"] = state?.isBackfillEnabled;
+            resourceInputs["isConcurrentAllowed"] = state?.isConcurrentAllowed;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["lastRunDetails"] = state?.lastRunDetails;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nextRunTimeMillis"] = state?.nextRunTimeMillis;
+            resourceInputs["numberOfRetries"] = state?.numberOfRetries;
+            resourceInputs["objectStatus"] = state?.objectStatus;
+            resourceInputs["objectVersion"] = state?.objectVersion;
+            resourceInputs["parentRef"] = state?.parentRef;
+            resourceInputs["registryMetadata"] = state?.registryMetadata;
+            resourceInputs["retryAttempts"] = state?.retryAttempts;
+            resourceInputs["retryDelay"] = state?.retryDelay;
+            resourceInputs["retryDelayUnit"] = state?.retryDelayUnit;
+            resourceInputs["scheduleRef"] = state?.scheduleRef;
+            resourceInputs["startTimeMillis"] = state?.startTimeMillis;
+            resourceInputs["workspaceId"] = state?.workspaceId;
         } else {
             const args = argsOrState as WorkspaceApplicationTaskScheduleArgs | undefined;
-            if ((!args || args.applicationKey === undefined) && !opts.urn) {
+            if (args?.applicationKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationKey'");
             }
-            if ((!args || args.identifier === undefined) && !opts.urn) {
+            if (args?.identifier === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identifier'");
             }
-            if ((!args || args.workspaceId === undefined) && !opts.urn) {
+            if (args?.workspaceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workspaceId'");
             }
-            resourceInputs["applicationKey"] = args ? args.applicationKey : undefined;
-            resourceInputs["authMode"] = args ? args.authMode : undefined;
-            resourceInputs["configProviderDelegate"] = args ? args.configProviderDelegate : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["endTimeMillis"] = args ? args.endTimeMillis : undefined;
-            resourceInputs["expectedDuration"] = args ? args.expectedDuration : undefined;
-            resourceInputs["expectedDurationUnit"] = args ? args.expectedDurationUnit : undefined;
-            resourceInputs["identifier"] = args ? args.identifier : undefined;
-            resourceInputs["isBackfillEnabled"] = args ? args.isBackfillEnabled : undefined;
-            resourceInputs["isConcurrentAllowed"] = args ? args.isConcurrentAllowed : undefined;
-            resourceInputs["isEnabled"] = args ? args.isEnabled : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nextRunTimeMillis"] = args ? args.nextRunTimeMillis : undefined;
-            resourceInputs["numberOfRetries"] = args ? args.numberOfRetries : undefined;
-            resourceInputs["objectStatus"] = args ? args.objectStatus : undefined;
-            resourceInputs["objectVersion"] = args ? args.objectVersion : undefined;
-            resourceInputs["parentRef"] = args ? args.parentRef : undefined;
-            resourceInputs["registryMetadata"] = args ? args.registryMetadata : undefined;
-            resourceInputs["retryDelay"] = args ? args.retryDelay : undefined;
-            resourceInputs["retryDelayUnit"] = args ? args.retryDelayUnit : undefined;
-            resourceInputs["scheduleRef"] = args ? args.scheduleRef : undefined;
-            resourceInputs["startTimeMillis"] = args ? args.startTimeMillis : undefined;
-            resourceInputs["workspaceId"] = args ? args.workspaceId : undefined;
+            resourceInputs["applicationKey"] = args?.applicationKey;
+            resourceInputs["authMode"] = args?.authMode;
+            resourceInputs["configProviderDelegate"] = args?.configProviderDelegate;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["endTimeMillis"] = args?.endTimeMillis;
+            resourceInputs["expectedDuration"] = args?.expectedDuration;
+            resourceInputs["expectedDurationUnit"] = args?.expectedDurationUnit;
+            resourceInputs["identifier"] = args?.identifier;
+            resourceInputs["isBackfillEnabled"] = args?.isBackfillEnabled;
+            resourceInputs["isConcurrentAllowed"] = args?.isConcurrentAllowed;
+            resourceInputs["isEnabled"] = args?.isEnabled;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nextRunTimeMillis"] = args?.nextRunTimeMillis;
+            resourceInputs["numberOfRetries"] = args?.numberOfRetries;
+            resourceInputs["objectStatus"] = args?.objectStatus;
+            resourceInputs["objectVersion"] = args?.objectVersion;
+            resourceInputs["parentRef"] = args?.parentRef;
+            resourceInputs["registryMetadata"] = args?.registryMetadata;
+            resourceInputs["retryDelay"] = args?.retryDelay;
+            resourceInputs["retryDelayUnit"] = args?.retryDelayUnit;
+            resourceInputs["scheduleRef"] = args?.scheduleRef;
+            resourceInputs["startTimeMillis"] = args?.startTimeMillis;
+            resourceInputs["workspaceId"] = args?.workspaceId;
             resourceInputs["lastRunDetails"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["modelType"] = undefined /*out*/;

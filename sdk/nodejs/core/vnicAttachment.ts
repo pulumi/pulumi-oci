@@ -81,23 +81,23 @@ export class VnicAttachment extends pulumi.CustomResource {
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    public readonly createVnicDetails!: pulumi.Output<outputs.Core.VnicAttachmentCreateVnicDetails>;
+    declare public readonly createVnicDetails: pulumi.Output<outputs.Core.VnicAttachmentCreateVnicDetails>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The OCID of the instance.
      */
-    public readonly instanceId!: pulumi.Output<string>;
+    declare public readonly instanceId: pulumi.Output<string>;
     /**
      * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
      *
@@ -105,31 +105,31 @@ export class VnicAttachment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly nicIndex!: pulumi.Output<number>;
+    declare public readonly nicIndex: pulumi.Output<number>;
     /**
      * The current state of the VNIC attachment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the subnet to create the VNIC in.
      */
-    public /*out*/ readonly subnetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      */
-    public /*out*/ readonly vlanId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vlanId: pulumi.Output<string>;
     /**
      * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      */
-    public /*out*/ readonly vlanTag!: pulumi.Output<number>;
+    declare public /*out*/ readonly vlanTag: pulumi.Output<number>;
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
      */
-    public /*out*/ readonly vnicId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vnicId: pulumi.Output<string>;
 
     /**
      * Create a VnicAttachment resource with the given unique name, arguments, and options.
@@ -144,30 +144,30 @@ export class VnicAttachment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VnicAttachmentState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createVnicDetails"] = state ? state.createVnicDetails : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["nicIndex"] = state ? state.nicIndex : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vlanId"] = state ? state.vlanId : undefined;
-            resourceInputs["vlanTag"] = state ? state.vlanTag : undefined;
-            resourceInputs["vnicId"] = state ? state.vnicId : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createVnicDetails"] = state?.createVnicDetails;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["nicIndex"] = state?.nicIndex;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vlanId"] = state?.vlanId;
+            resourceInputs["vlanTag"] = state?.vlanTag;
+            resourceInputs["vnicId"] = state?.vnicId;
         } else {
             const args = argsOrState as VnicAttachmentArgs | undefined;
-            if ((!args || args.createVnicDetails === undefined) && !opts.urn) {
+            if (args?.createVnicDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'createVnicDetails'");
             }
-            if ((!args || args.instanceId === undefined) && !opts.urn) {
+            if (args?.instanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceId'");
             }
-            resourceInputs["createVnicDetails"] = args ? args.createVnicDetails : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["instanceId"] = args ? args.instanceId : undefined;
-            resourceInputs["nicIndex"] = args ? args.nicIndex : undefined;
+            resourceInputs["createVnicDetails"] = args?.createVnicDetails;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["instanceId"] = args?.instanceId;
+            resourceInputs["nicIndex"] = args?.nicIndex;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

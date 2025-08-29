@@ -32,9 +32,9 @@ export class NamespaceMetadata extends pulumi.CustomResource {
         return obj['__pulumiType'] === NamespaceMetadata.__pulumiType;
     }
 
-    public readonly defaultS3compartmentId!: pulumi.Output<string>;
-    public readonly defaultSwiftCompartmentId!: pulumi.Output<string>;
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly defaultS3compartmentId: pulumi.Output<string>;
+    declare public readonly defaultSwiftCompartmentId: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a NamespaceMetadata resource with the given unique name, arguments, and options.
@@ -49,17 +49,17 @@ export class NamespaceMetadata extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceMetadataState | undefined;
-            resourceInputs["defaultS3compartmentId"] = state ? state.defaultS3compartmentId : undefined;
-            resourceInputs["defaultSwiftCompartmentId"] = state ? state.defaultSwiftCompartmentId : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["defaultS3compartmentId"] = state?.defaultS3compartmentId;
+            resourceInputs["defaultSwiftCompartmentId"] = state?.defaultSwiftCompartmentId;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceMetadataArgs | undefined;
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["defaultS3compartmentId"] = args ? args.defaultS3compartmentId : undefined;
-            resourceInputs["defaultSwiftCompartmentId"] = args ? args.defaultSwiftCompartmentId : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["defaultS3compartmentId"] = args?.defaultS3compartmentId;
+            resourceInputs["defaultSwiftCompartmentId"] = args?.defaultSwiftCompartmentId;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NamespaceMetadata.__pulumiType, name, resourceInputs, opts);

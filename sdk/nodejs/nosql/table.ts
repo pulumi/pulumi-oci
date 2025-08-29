@@ -74,75 +74,75 @@ export class Table extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment Identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
      */
-    public readonly ddlStatement!: pulumi.Output<string>;
+    declare public readonly ddlStatement: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * True if table can be reclaimed after an idle period.
      */
-    public readonly isAutoReclaimable!: pulumi.Output<boolean>;
+    declare public readonly isAutoReclaimable: pulumi.Output<boolean>;
     /**
      * True if this table is currently a member of a replication set.
      */
-    public /*out*/ readonly isMultiRegion!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMultiRegion: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
      */
-    public /*out*/ readonly localReplicaInitializationInPercent!: pulumi.Output<number>;
+    declare public /*out*/ readonly localReplicaInitializationInPercent: pulumi.Output<number>;
     /**
      * Table name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * An array of Replica listing this table's replicas, if any
      */
-    public /*out*/ readonly replicas!: pulumi.Output<outputs.Nosql.TableReplica[]>;
+    declare public /*out*/ readonly replicas: pulumi.Output<outputs.Nosql.TableReplica[]>;
     /**
      * The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      */
-    public /*out*/ readonly schemaState!: pulumi.Output<string>;
+    declare public /*out*/ readonly schemaState: pulumi.Output<string>;
     /**
      * The table schema information as a JSON object.
      */
-    public /*out*/ readonly schemas!: pulumi.Output<outputs.Nosql.TableSchema[]>;
+    declare public /*out*/ readonly schemas: pulumi.Output<outputs.Nosql.TableSchema[]>;
     /**
      * The state of a table.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
      */
-    public readonly tableLimits!: pulumi.Output<outputs.Nosql.TableTableLimits>;
+    declare public readonly tableLimits: pulumi.Output<outputs.Nosql.TableTableLimits>;
     /**
      * The time the the table was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfExpiration: pulumi.Output<string>;
     /**
      * The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a Table resource with the given unique name, arguments, and options.
@@ -157,39 +157,39 @@ export class Table extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TableState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["ddlStatement"] = state ? state.ddlStatement : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoReclaimable"] = state ? state.isAutoReclaimable : undefined;
-            resourceInputs["isMultiRegion"] = state ? state.isMultiRegion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["localReplicaInitializationInPercent"] = state ? state.localReplicaInitializationInPercent : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["replicas"] = state ? state.replicas : undefined;
-            resourceInputs["schemaState"] = state ? state.schemaState : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tableLimits"] = state ? state.tableLimits : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfExpiration"] = state ? state.timeOfExpiration : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["ddlStatement"] = state?.ddlStatement;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoReclaimable"] = state?.isAutoReclaimable;
+            resourceInputs["isMultiRegion"] = state?.isMultiRegion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["localReplicaInitializationInPercent"] = state?.localReplicaInitializationInPercent;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["replicas"] = state?.replicas;
+            resourceInputs["schemaState"] = state?.schemaState;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tableLimits"] = state?.tableLimits;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfExpiration"] = state?.timeOfExpiration;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as TableArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.ddlStatement === undefined) && !opts.urn) {
+            if (args?.ddlStatement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ddlStatement'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["ddlStatement"] = args ? args.ddlStatement : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoReclaimable"] = args ? args.isAutoReclaimable : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["tableLimits"] = args ? args.tableLimits : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["ddlStatement"] = args?.ddlStatement;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoReclaimable"] = args?.isAutoReclaimable;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["tableLimits"] = args?.tableLimits;
             resourceInputs["isMultiRegion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["localReplicaInitializationInPercent"] = undefined /*out*/;

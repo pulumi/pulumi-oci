@@ -63,19 +63,19 @@ export class ModelCustomMetadataArtifact extends pulumi.CustomResource {
     /**
      * (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
      */
-    public readonly contentDisposition!: pulumi.Output<string>;
+    declare public readonly contentDisposition: pulumi.Output<string>;
     /**
      * (Updatable) The content length of the body.
      */
-    public readonly contentLength!: pulumi.Output<string>;
+    declare public readonly contentLength: pulumi.Output<string>;
     /**
      * The name of the model metadatum in the metadata.
      */
-    public readonly metadatumKeyName!: pulumi.Output<string>;
+    declare public readonly metadatumKeyName: pulumi.Output<string>;
     /**
      * (Updatable) The model custom metadata artifact to upload.
      */
-    public readonly modelCustomMetadatumArtifact!: pulumi.Output<string>;
+    declare public readonly modelCustomMetadatumArtifact: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      *
@@ -83,7 +83,7 @@ export class ModelCustomMetadataArtifact extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly modelId!: pulumi.Output<string>;
+    declare public readonly modelId: pulumi.Output<string>;
 
     /**
      * Create a ModelCustomMetadataArtifact resource with the given unique name, arguments, and options.
@@ -98,30 +98,30 @@ export class ModelCustomMetadataArtifact extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelCustomMetadataArtifactState | undefined;
-            resourceInputs["contentDisposition"] = state ? state.contentDisposition : undefined;
-            resourceInputs["contentLength"] = state ? state.contentLength : undefined;
-            resourceInputs["metadatumKeyName"] = state ? state.metadatumKeyName : undefined;
-            resourceInputs["modelCustomMetadatumArtifact"] = state ? state.modelCustomMetadatumArtifact : undefined;
-            resourceInputs["modelId"] = state ? state.modelId : undefined;
+            resourceInputs["contentDisposition"] = state?.contentDisposition;
+            resourceInputs["contentLength"] = state?.contentLength;
+            resourceInputs["metadatumKeyName"] = state?.metadatumKeyName;
+            resourceInputs["modelCustomMetadatumArtifact"] = state?.modelCustomMetadatumArtifact;
+            resourceInputs["modelId"] = state?.modelId;
         } else {
             const args = argsOrState as ModelCustomMetadataArtifactArgs | undefined;
-            if ((!args || args.contentLength === undefined) && !opts.urn) {
+            if (args?.contentLength === undefined && !opts.urn) {
                 throw new Error("Missing required property 'contentLength'");
             }
-            if ((!args || args.metadatumKeyName === undefined) && !opts.urn) {
+            if (args?.metadatumKeyName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'metadatumKeyName'");
             }
-            if ((!args || args.modelCustomMetadatumArtifact === undefined) && !opts.urn) {
+            if (args?.modelCustomMetadatumArtifact === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelCustomMetadatumArtifact'");
             }
-            if ((!args || args.modelId === undefined) && !opts.urn) {
+            if (args?.modelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelId'");
             }
-            resourceInputs["contentDisposition"] = args ? args.contentDisposition : undefined;
-            resourceInputs["contentLength"] = args ? args.contentLength : undefined;
-            resourceInputs["metadatumKeyName"] = args ? args.metadatumKeyName : undefined;
-            resourceInputs["modelCustomMetadatumArtifact"] = args ? args.modelCustomMetadatumArtifact : undefined;
-            resourceInputs["modelId"] = args ? args.modelId : undefined;
+            resourceInputs["contentDisposition"] = args?.contentDisposition;
+            resourceInputs["contentLength"] = args?.contentLength;
+            resourceInputs["metadatumKeyName"] = args?.metadatumKeyName;
+            resourceInputs["modelCustomMetadatumArtifact"] = args?.modelCustomMetadatumArtifact;
+            resourceInputs["modelId"] = args?.modelId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ModelCustomMetadataArtifact.__pulumiType, name, resourceInputs, opts);

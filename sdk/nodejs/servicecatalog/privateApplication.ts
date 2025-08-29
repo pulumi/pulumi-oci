@@ -76,39 +76,39 @@ export class PrivateApplication extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name of the private application.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      */
-    public readonly logoFileBase64encoded!: pulumi.Output<string>;
+    declare public readonly logoFileBase64encoded: pulumi.Output<string>;
     /**
      * The model for uploaded binary data, like logos and images.
      */
-    public /*out*/ readonly logos!: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationLogo[]>;
+    declare public /*out*/ readonly logos: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationLogo[]>;
     /**
      * (Updatable) A long description of the private application.
      */
-    public readonly longDescription!: pulumi.Output<string>;
+    declare public readonly longDescription: pulumi.Output<string>;
     /**
      * A base object for creating a private application package.
      */
-    public readonly packageDetails!: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationPackageDetails>;
+    declare public readonly packageDetails: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationPackageDetails>;
     /**
      * Type of packages within this private application.
      */
-    public /*out*/ readonly packageType!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageType: pulumi.Output<string>;
     /**
      * (Updatable) A short description of the private application.
      *
@@ -116,19 +116,19 @@ export class PrivateApplication extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shortDescription!: pulumi.Output<string>;
+    declare public readonly shortDescription: pulumi.Output<string>;
     /**
      * The lifecycle state of the private application.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a PrivateApplication resource with the given unique name, arguments, and options.
@@ -143,41 +143,41 @@ export class PrivateApplication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PrivateApplicationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["logoFileBase64encoded"] = state ? state.logoFileBase64encoded : undefined;
-            resourceInputs["logos"] = state ? state.logos : undefined;
-            resourceInputs["longDescription"] = state ? state.longDescription : undefined;
-            resourceInputs["packageDetails"] = state ? state.packageDetails : undefined;
-            resourceInputs["packageType"] = state ? state.packageType : undefined;
-            resourceInputs["shortDescription"] = state ? state.shortDescription : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["logoFileBase64encoded"] = state?.logoFileBase64encoded;
+            resourceInputs["logos"] = state?.logos;
+            resourceInputs["longDescription"] = state?.longDescription;
+            resourceInputs["packageDetails"] = state?.packageDetails;
+            resourceInputs["packageType"] = state?.packageType;
+            resourceInputs["shortDescription"] = state?.shortDescription;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as PrivateApplicationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.packageDetails === undefined) && !opts.urn) {
+            if (args?.packageDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'packageDetails'");
             }
-            if ((!args || args.shortDescription === undefined) && !opts.urn) {
+            if (args?.shortDescription === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shortDescription'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["logoFileBase64encoded"] = args ? args.logoFileBase64encoded : undefined;
-            resourceInputs["longDescription"] = args ? args.longDescription : undefined;
-            resourceInputs["packageDetails"] = args ? args.packageDetails : undefined;
-            resourceInputs["shortDescription"] = args ? args.shortDescription : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["logoFileBase64encoded"] = args?.logoFileBase64encoded;
+            resourceInputs["longDescription"] = args?.longDescription;
+            resourceInputs["packageDetails"] = args?.packageDetails;
+            resourceInputs["shortDescription"] = args?.shortDescription;
             resourceInputs["logos"] = undefined /*out*/;
             resourceInputs["packageType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

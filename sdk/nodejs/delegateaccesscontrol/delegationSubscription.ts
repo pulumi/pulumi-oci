@@ -68,35 +68,35 @@ export class DelegationSubscription extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the Delegation Control.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Description of the Delegation Subscription.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Display name
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
      * Unique identifier of the Service Provider.
      */
-    public readonly serviceProviderId!: pulumi.Output<string>;
+    declare public readonly serviceProviderId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Service Provider.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Subscribed Service Provider Service Type.
      *
@@ -104,19 +104,19 @@ export class DelegationSubscription extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subscribedServiceType!: pulumi.Output<string>;
+    declare public readonly subscribedServiceType: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Time when the Service Provider was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time when the Service Provider was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a DelegationSubscription resource with the given unique name, arguments, and options.
@@ -131,35 +131,35 @@ export class DelegationSubscription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DelegationSubscriptionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleStateDetails"] = state ? state.lifecycleStateDetails : undefined;
-            resourceInputs["serviceProviderId"] = state ? state.serviceProviderId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subscribedServiceType"] = state ? state.subscribedServiceType : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
+            resourceInputs["serviceProviderId"] = state?.serviceProviderId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subscribedServiceType"] = state?.subscribedServiceType;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as DelegationSubscriptionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.serviceProviderId === undefined) && !opts.urn) {
+            if (args?.serviceProviderId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceProviderId'");
             }
-            if ((!args || args.subscribedServiceType === undefined) && !opts.urn) {
+            if (args?.subscribedServiceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subscribedServiceType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["serviceProviderId"] = args ? args.serviceProviderId : undefined;
-            resourceInputs["subscribedServiceType"] = args ? args.subscribedServiceType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["serviceProviderId"] = args?.serviceProviderId;
+            resourceInputs["subscribedServiceType"] = args?.subscribedServiceType;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

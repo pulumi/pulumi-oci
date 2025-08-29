@@ -79,39 +79,39 @@ export class BuildRun extends pulumi.CustomResource {
     /**
      * Outputs from the build.
      */
-    public /*out*/ readonly buildOutputs!: pulumi.Output<outputs.DevOps.BuildRunBuildOutput[]>;
+    declare public /*out*/ readonly buildOutputs: pulumi.Output<outputs.DevOps.BuildRunBuildOutput[]>;
     /**
      * The OCID of the build pipeline.
      */
-    public readonly buildPipelineId!: pulumi.Output<string>;
+    declare public readonly buildPipelineId: pulumi.Output<string>;
     /**
      * Specifies list of arguments passed along with the build run.
      */
-    public readonly buildRunArguments!: pulumi.Output<outputs.DevOps.BuildRunBuildRunArguments>;
+    declare public readonly buildRunArguments: pulumi.Output<outputs.DevOps.BuildRunBuildRunArguments>;
     /**
      * The run progress details of a build run.
      */
-    public /*out*/ readonly buildRunProgresses!: pulumi.Output<outputs.DevOps.BuildRunBuildRunProgress[]>;
+    declare public /*out*/ readonly buildRunProgresses: pulumi.Output<outputs.DevOps.BuildRunBuildRunProgress[]>;
     /**
      * The source from which the build run is triggered.
      */
-    public /*out*/ readonly buildRunSources!: pulumi.Output<outputs.DevOps.BuildRunBuildRunSource[]>;
+    declare public /*out*/ readonly buildRunSources: pulumi.Output<outputs.DevOps.BuildRunBuildRunSource[]>;
     /**
      * Commit details that need to be used for the build run.
      */
-    public readonly commitInfo!: pulumi.Output<outputs.DevOps.BuildRunCommitInfo>;
+    declare public readonly commitInfo: pulumi.Output<outputs.DevOps.BuildRunCommitInfo>;
     /**
      * The OCID of the compartment where the build is running.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      *
@@ -119,31 +119,31 @@ export class BuildRun extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the DevOps project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    declare public /*out*/ readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the build run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a BuildRun resource with the given unique name, arguments, and options.
@@ -158,33 +158,33 @@ export class BuildRun extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BuildRunState | undefined;
-            resourceInputs["buildOutputs"] = state ? state.buildOutputs : undefined;
-            resourceInputs["buildPipelineId"] = state ? state.buildPipelineId : undefined;
-            resourceInputs["buildRunArguments"] = state ? state.buildRunArguments : undefined;
-            resourceInputs["buildRunProgresses"] = state ? state.buildRunProgresses : undefined;
-            resourceInputs["buildRunSources"] = state ? state.buildRunSources : undefined;
-            resourceInputs["commitInfo"] = state ? state.commitInfo : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["buildOutputs"] = state?.buildOutputs;
+            resourceInputs["buildPipelineId"] = state?.buildPipelineId;
+            resourceInputs["buildRunArguments"] = state?.buildRunArguments;
+            resourceInputs["buildRunProgresses"] = state?.buildRunProgresses;
+            resourceInputs["buildRunSources"] = state?.buildRunSources;
+            resourceInputs["commitInfo"] = state?.commitInfo;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BuildRunArgs | undefined;
-            if ((!args || args.buildPipelineId === undefined) && !opts.urn) {
+            if (args?.buildPipelineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'buildPipelineId'");
             }
-            resourceInputs["buildPipelineId"] = args ? args.buildPipelineId : undefined;
-            resourceInputs["buildRunArguments"] = args ? args.buildRunArguments : undefined;
-            resourceInputs["commitInfo"] = args ? args.commitInfo : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["buildPipelineId"] = args?.buildPipelineId;
+            resourceInputs["buildRunArguments"] = args?.buildRunArguments;
+            resourceInputs["commitInfo"] = args?.commitInfo;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["buildOutputs"] = undefined /*out*/;
             resourceInputs["buildRunProgresses"] = undefined /*out*/;
             resourceInputs["buildRunSources"] = undefined /*out*/;

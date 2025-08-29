@@ -84,71 +84,71 @@ export class Fleet extends pulumi.CustomResource {
     /**
      * The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateApplicationCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly approximateApplicationCount: pulumi.Output<number>;
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateInstallationCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly approximateInstallationCount: pulumi.Output<number>;
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateJavaServerCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly approximateJavaServerCount: pulumi.Output<number>;
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateJreCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly approximateJreCount: pulumi.Output<number>;
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
-    public /*out*/ readonly approximateManagedInstanceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly approximateManagedInstanceCount: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    public readonly inventoryLog!: pulumi.Output<outputs.Jms.FleetInventoryLog>;
+    declare public readonly inventoryLog: pulumi.Output<outputs.Jms.FleetInventoryLog>;
     /**
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      */
-    public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAdvancedFeaturesEnabled: pulumi.Output<boolean>;
     /**
      * Whether or not export setting is enabled in this Fleet.
      */
-    public /*out*/ readonly isExportSettingEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isExportSettingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */
-    public readonly operationLog!: pulumi.Output<outputs.Jms.FleetOperationLog>;
+    declare public readonly operationLog: pulumi.Output<outputs.Jms.FleetOperationLog>;
     /**
      * The lifecycle state of the Fleet.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Fleet resource with the given unique name, arguments, and options.
@@ -163,42 +163,42 @@ export class Fleet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FleetState | undefined;
-            resourceInputs["approximateApplicationCount"] = state ? state.approximateApplicationCount : undefined;
-            resourceInputs["approximateInstallationCount"] = state ? state.approximateInstallationCount : undefined;
-            resourceInputs["approximateJavaServerCount"] = state ? state.approximateJavaServerCount : undefined;
-            resourceInputs["approximateJreCount"] = state ? state.approximateJreCount : undefined;
-            resourceInputs["approximateManagedInstanceCount"] = state ? state.approximateManagedInstanceCount : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inventoryLog"] = state ? state.inventoryLog : undefined;
-            resourceInputs["isAdvancedFeaturesEnabled"] = state ? state.isAdvancedFeaturesEnabled : undefined;
-            resourceInputs["isExportSettingEnabled"] = state ? state.isExportSettingEnabled : undefined;
-            resourceInputs["operationLog"] = state ? state.operationLog : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["approximateApplicationCount"] = state?.approximateApplicationCount;
+            resourceInputs["approximateInstallationCount"] = state?.approximateInstallationCount;
+            resourceInputs["approximateJavaServerCount"] = state?.approximateJavaServerCount;
+            resourceInputs["approximateJreCount"] = state?.approximateJreCount;
+            resourceInputs["approximateManagedInstanceCount"] = state?.approximateManagedInstanceCount;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inventoryLog"] = state?.inventoryLog;
+            resourceInputs["isAdvancedFeaturesEnabled"] = state?.isAdvancedFeaturesEnabled;
+            resourceInputs["isExportSettingEnabled"] = state?.isExportSettingEnabled;
+            resourceInputs["operationLog"] = state?.operationLog;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as FleetArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.inventoryLog === undefined) && !opts.urn) {
+            if (args?.inventoryLog === undefined && !opts.urn) {
                 throw new Error("Missing required property 'inventoryLog'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inventoryLog"] = args ? args.inventoryLog : undefined;
-            resourceInputs["isAdvancedFeaturesEnabled"] = args ? args.isAdvancedFeaturesEnabled : undefined;
-            resourceInputs["operationLog"] = args ? args.operationLog : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inventoryLog"] = args?.inventoryLog;
+            resourceInputs["isAdvancedFeaturesEnabled"] = args?.isAdvancedFeaturesEnabled;
+            resourceInputs["operationLog"] = args?.operationLog;
             resourceInputs["approximateApplicationCount"] = undefined /*out*/;
             resourceInputs["approximateInstallationCount"] = undefined /*out*/;
             resourceInputs["approximateJavaServerCount"] = undefined /*out*/;

@@ -111,103 +111,103 @@ export class BuildPipelineStage extends pulumi.CustomResource {
     /**
      * The OCID of the build pipeline.
      */
-    public readonly buildPipelineId!: pulumi.Output<string>;
+    declare public readonly buildPipelineId: pulumi.Output<string>;
     /**
      * (Updatable) The collection containing the predecessors of a stage.
      */
-    public readonly buildPipelineStagePredecessorCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildPipelineStagePredecessorCollection>;
+    declare public readonly buildPipelineStagePredecessorCollection: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildPipelineStagePredecessorCollection>;
     /**
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      */
-    public readonly buildPipelineStageType!: pulumi.Output<string>;
+    declare public readonly buildPipelineStageType: pulumi.Output<string>;
     /**
      * (Updatable) The information about build runner.
      */
-    public readonly buildRunnerShapeConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
+    declare public readonly buildRunnerShapeConfig: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
     /**
      * (Updatable) Collection of build sources.
      */
-    public readonly buildSourceCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildSourceCollection>;
+    declare public readonly buildSourceCollection: pulumi.Output<outputs.DevOps.BuildPipelineStageBuildSourceCollection>;
     /**
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      */
-    public readonly buildSpecFile!: pulumi.Output<string>;
+    declare public readonly buildSpecFile: pulumi.Output<string>;
     /**
      * The OCID of the compartment where the pipeline is created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      */
-    public readonly deliverArtifactCollection!: pulumi.Output<outputs.DevOps.BuildPipelineStageDeliverArtifactCollection>;
+    declare public readonly deliverArtifactCollection: pulumi.Output<outputs.DevOps.BuildPipelineStageDeliverArtifactCollection>;
     /**
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      */
-    public readonly deployPipelineId!: pulumi.Output<string>;
+    declare public readonly deployPipelineId: pulumi.Output<string>;
     /**
      * (Updatable) Optional description about the stage.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Image name for the build environment
      */
-    public readonly image!: pulumi.Output<string>;
+    declare public readonly image: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      */
-    public readonly isPassAllParametersEnabled!: pulumi.Output<boolean>;
+    declare public readonly isPassAllParametersEnabled: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
-    public readonly primaryBuildSource!: pulumi.Output<string>;
+    declare public readonly primaryBuildSource: pulumi.Output<string>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    public readonly privateAccessConfig!: pulumi.Output<outputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
+    declare public readonly privateAccessConfig: pulumi.Output<outputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
     /**
      * The OCID of the DevOps project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    declare public /*out*/ readonly projectId: pulumi.Output<string>;
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      */
-    public readonly stageExecutionTimeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly stageExecutionTimeoutInSeconds: pulumi.Output<number>;
     /**
      * The current state of the stage.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.BuildPipelineStageWaitCriteria>;
+    declare public readonly waitCriteria: pulumi.Output<outputs.DevOps.BuildPipelineStageWaitCriteria>;
 
     /**
      * Create a BuildPipelineStage resource with the given unique name, arguments, and options.
@@ -222,60 +222,60 @@ export class BuildPipelineStage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BuildPipelineStageState | undefined;
-            resourceInputs["buildPipelineId"] = state ? state.buildPipelineId : undefined;
-            resourceInputs["buildPipelineStagePredecessorCollection"] = state ? state.buildPipelineStagePredecessorCollection : undefined;
-            resourceInputs["buildPipelineStageType"] = state ? state.buildPipelineStageType : undefined;
-            resourceInputs["buildRunnerShapeConfig"] = state ? state.buildRunnerShapeConfig : undefined;
-            resourceInputs["buildSourceCollection"] = state ? state.buildSourceCollection : undefined;
-            resourceInputs["buildSpecFile"] = state ? state.buildSpecFile : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deliverArtifactCollection"] = state ? state.deliverArtifactCollection : undefined;
-            resourceInputs["deployPipelineId"] = state ? state.deployPipelineId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["image"] = state ? state.image : undefined;
-            resourceInputs["isPassAllParametersEnabled"] = state ? state.isPassAllParametersEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["primaryBuildSource"] = state ? state.primaryBuildSource : undefined;
-            resourceInputs["privateAccessConfig"] = state ? state.privateAccessConfig : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["stageExecutionTimeoutInSeconds"] = state ? state.stageExecutionTimeoutInSeconds : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["waitCriteria"] = state ? state.waitCriteria : undefined;
+            resourceInputs["buildPipelineId"] = state?.buildPipelineId;
+            resourceInputs["buildPipelineStagePredecessorCollection"] = state?.buildPipelineStagePredecessorCollection;
+            resourceInputs["buildPipelineStageType"] = state?.buildPipelineStageType;
+            resourceInputs["buildRunnerShapeConfig"] = state?.buildRunnerShapeConfig;
+            resourceInputs["buildSourceCollection"] = state?.buildSourceCollection;
+            resourceInputs["buildSpecFile"] = state?.buildSpecFile;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deliverArtifactCollection"] = state?.deliverArtifactCollection;
+            resourceInputs["deployPipelineId"] = state?.deployPipelineId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["image"] = state?.image;
+            resourceInputs["isPassAllParametersEnabled"] = state?.isPassAllParametersEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["primaryBuildSource"] = state?.primaryBuildSource;
+            resourceInputs["privateAccessConfig"] = state?.privateAccessConfig;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["stageExecutionTimeoutInSeconds"] = state?.stageExecutionTimeoutInSeconds;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["waitCriteria"] = state?.waitCriteria;
         } else {
             const args = argsOrState as BuildPipelineStageArgs | undefined;
-            if ((!args || args.buildPipelineId === undefined) && !opts.urn) {
+            if (args?.buildPipelineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'buildPipelineId'");
             }
-            if ((!args || args.buildPipelineStagePredecessorCollection === undefined) && !opts.urn) {
+            if (args?.buildPipelineStagePredecessorCollection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'buildPipelineStagePredecessorCollection'");
             }
-            if ((!args || args.buildPipelineStageType === undefined) && !opts.urn) {
+            if (args?.buildPipelineStageType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'buildPipelineStageType'");
             }
-            resourceInputs["buildPipelineId"] = args ? args.buildPipelineId : undefined;
-            resourceInputs["buildPipelineStagePredecessorCollection"] = args ? args.buildPipelineStagePredecessorCollection : undefined;
-            resourceInputs["buildPipelineStageType"] = args ? args.buildPipelineStageType : undefined;
-            resourceInputs["buildRunnerShapeConfig"] = args ? args.buildRunnerShapeConfig : undefined;
-            resourceInputs["buildSourceCollection"] = args ? args.buildSourceCollection : undefined;
-            resourceInputs["buildSpecFile"] = args ? args.buildSpecFile : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deliverArtifactCollection"] = args ? args.deliverArtifactCollection : undefined;
-            resourceInputs["deployPipelineId"] = args ? args.deployPipelineId : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["image"] = args ? args.image : undefined;
-            resourceInputs["isPassAllParametersEnabled"] = args ? args.isPassAllParametersEnabled : undefined;
-            resourceInputs["primaryBuildSource"] = args ? args.primaryBuildSource : undefined;
-            resourceInputs["privateAccessConfig"] = args ? args.privateAccessConfig : undefined;
-            resourceInputs["stageExecutionTimeoutInSeconds"] = args ? args.stageExecutionTimeoutInSeconds : undefined;
-            resourceInputs["waitCriteria"] = args ? args.waitCriteria : undefined;
+            resourceInputs["buildPipelineId"] = args?.buildPipelineId;
+            resourceInputs["buildPipelineStagePredecessorCollection"] = args?.buildPipelineStagePredecessorCollection;
+            resourceInputs["buildPipelineStageType"] = args?.buildPipelineStageType;
+            resourceInputs["buildRunnerShapeConfig"] = args?.buildRunnerShapeConfig;
+            resourceInputs["buildSourceCollection"] = args?.buildSourceCollection;
+            resourceInputs["buildSpecFile"] = args?.buildSpecFile;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deliverArtifactCollection"] = args?.deliverArtifactCollection;
+            resourceInputs["deployPipelineId"] = args?.deployPipelineId;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["image"] = args?.image;
+            resourceInputs["isPassAllParametersEnabled"] = args?.isPassAllParametersEnabled;
+            resourceInputs["primaryBuildSource"] = args?.primaryBuildSource;
+            resourceInputs["privateAccessConfig"] = args?.privateAccessConfig;
+            resourceInputs["stageExecutionTimeoutInSeconds"] = args?.stageExecutionTimeoutInSeconds;
+            resourceInputs["waitCriteria"] = args?.waitCriteria;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["projectId"] = undefined /*out*/;

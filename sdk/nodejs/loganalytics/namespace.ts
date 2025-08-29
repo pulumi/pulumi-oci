@@ -61,15 +61,15 @@ export class Namespace extends pulumi.CustomResource {
     /**
      * The OCID of the root compartment i.e. OCID of the tenancy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
      */
-    public readonly isOnboarded!: pulumi.Output<boolean>;
+    declare public readonly isOnboarded: pulumi.Output<boolean>;
     /**
      * The Log Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a Namespace resource with the given unique name, arguments, and options.
@@ -84,23 +84,23 @@ export class Namespace extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isOnboarded"] = state ? state.isOnboarded : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isOnboarded"] = state?.isOnboarded;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.isOnboarded === undefined) && !opts.urn) {
+            if (args?.isOnboarded === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isOnboarded'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isOnboarded"] = args ? args.isOnboarded : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isOnboarded"] = args?.isOnboarded;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Namespace.__pulumiType, name, resourceInputs, opts);

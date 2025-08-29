@@ -32,12 +32,12 @@ export class ModelArtifactImport extends pulumi.CustomResource {
         return obj['__pulumiType'] === ModelArtifactImport.__pulumiType;
     }
 
-    public readonly artifactSourceType!: pulumi.Output<string>;
-    public readonly destinationBucket!: pulumi.Output<string>;
-    public readonly destinationObjectName!: pulumi.Output<string>;
-    public readonly destinationRegion!: pulumi.Output<string>;
-    public readonly modelId!: pulumi.Output<string>;
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly artifactSourceType: pulumi.Output<string>;
+    declare public readonly destinationBucket: pulumi.Output<string>;
+    declare public readonly destinationObjectName: pulumi.Output<string>;
+    declare public readonly destinationRegion: pulumi.Output<string>;
+    declare public readonly modelId: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a ModelArtifactImport resource with the given unique name, arguments, and options.
@@ -52,38 +52,38 @@ export class ModelArtifactImport extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelArtifactImportState | undefined;
-            resourceInputs["artifactSourceType"] = state ? state.artifactSourceType : undefined;
-            resourceInputs["destinationBucket"] = state ? state.destinationBucket : undefined;
-            resourceInputs["destinationObjectName"] = state ? state.destinationObjectName : undefined;
-            resourceInputs["destinationRegion"] = state ? state.destinationRegion : undefined;
-            resourceInputs["modelId"] = state ? state.modelId : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["artifactSourceType"] = state?.artifactSourceType;
+            resourceInputs["destinationBucket"] = state?.destinationBucket;
+            resourceInputs["destinationObjectName"] = state?.destinationObjectName;
+            resourceInputs["destinationRegion"] = state?.destinationRegion;
+            resourceInputs["modelId"] = state?.modelId;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as ModelArtifactImportArgs | undefined;
-            if ((!args || args.artifactSourceType === undefined) && !opts.urn) {
+            if (args?.artifactSourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'artifactSourceType'");
             }
-            if ((!args || args.destinationBucket === undefined) && !opts.urn) {
+            if (args?.destinationBucket === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationBucket'");
             }
-            if ((!args || args.destinationObjectName === undefined) && !opts.urn) {
+            if (args?.destinationObjectName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationObjectName'");
             }
-            if ((!args || args.destinationRegion === undefined) && !opts.urn) {
+            if (args?.destinationRegion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destinationRegion'");
             }
-            if ((!args || args.modelId === undefined) && !opts.urn) {
+            if (args?.modelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelId'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["artifactSourceType"] = args ? args.artifactSourceType : undefined;
-            resourceInputs["destinationBucket"] = args ? args.destinationBucket : undefined;
-            resourceInputs["destinationObjectName"] = args ? args.destinationObjectName : undefined;
-            resourceInputs["destinationRegion"] = args ? args.destinationRegion : undefined;
-            resourceInputs["modelId"] = args ? args.modelId : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["artifactSourceType"] = args?.artifactSourceType;
+            resourceInputs["destinationBucket"] = args?.destinationBucket;
+            resourceInputs["destinationObjectName"] = args?.destinationObjectName;
+            resourceInputs["destinationRegion"] = args?.destinationRegion;
+            resourceInputs["modelId"] = args?.modelId;
+            resourceInputs["namespace"] = args?.namespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ModelArtifactImport.__pulumiType, name, resourceInputs, opts);

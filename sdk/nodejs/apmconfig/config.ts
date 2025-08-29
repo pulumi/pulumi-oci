@@ -115,111 +115,111 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) The version of the referenced agent bundle.
      */
-    public readonly agentVersion!: pulumi.Output<string>;
+    declare public readonly agentVersion: pulumi.Output<string>;
     /**
      * (Updatable) The APM Domain ID the request is intended for.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) The directory owned by runAsUser.
      */
-    public readonly attachInstallDir!: pulumi.Output<string>;
+    declare public readonly attachInstallDir: pulumi.Output<string>;
     /**
      * (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
      */
-    public readonly config!: pulumi.Output<outputs.ApmConfig.ConfigConfig>;
+    declare public readonly config: pulumi.Output<outputs.ApmConfig.ConfigConfig>;
     /**
      * (Updatable) The type of configuration item.
      */
-    public readonly configType!: pulumi.Output<string>;
+    declare public readonly configType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional string that describes what the options are intended or used for.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A list of dimensions for the metric. This variable should not be used.
      */
-    public readonly dimensions!: pulumi.Output<outputs.ApmConfig.ConfigDimension[]>;
+    declare public readonly dimensions: pulumi.Output<outputs.ApmConfig.ConfigDimension[]>;
     /**
      * (Updatable) The name by which a configuration entity is displayed to the end user.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    public /*out*/ readonly etag!: pulumi.Output<string>;
+    declare public /*out*/ readonly etag: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
-    public readonly filterId!: pulumi.Output<string>;
+    declare public readonly filterId: pulumi.Output<string>;
     /**
      * (Updatable) The string that defines the Span Filter expression.
      */
-    public readonly filterText!: pulumi.Output<string>;
+    declare public readonly filterText: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * The list of configuration items that reference the span filter.
      */
-    public readonly inUseBies!: pulumi.Output<outputs.ApmConfig.ConfigInUseBy[]>;
+    declare public readonly inUseBies: pulumi.Output<outputs.ApmConfig.ConfigInUseBy[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    declare public readonly managementAgentId: pulumi.Output<string>;
     /**
      * The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
      */
-    public /*out*/ readonly matchAgentsWithAttributeKeys!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly matchAgentsWithAttributeKeys: pulumi.Output<string[]>;
     /**
      * The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
      */
-    public readonly matchAgentsWithAttributeValue!: pulumi.Output<string>;
+    declare public readonly matchAgentsWithAttributeValue: pulumi.Output<string>;
     /**
      * (Updatable) The list of metrics in this group.
      */
-    public readonly metrics!: pulumi.Output<outputs.ApmConfig.ConfigMetric[]>;
+    declare public readonly metrics: pulumi.Output<outputs.ApmConfig.ConfigMetric[]>;
     /**
      * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    public readonly opcDryRun!: pulumi.Output<string>;
+    declare public readonly opcDryRun: pulumi.Output<string>;
     /**
      * (Updatable) The options are stored here as JSON.
      */
-    public readonly options!: pulumi.Output<string>;
+    declare public readonly options: pulumi.Output<string>;
     /**
      * (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
      */
-    public readonly overrides!: pulumi.Output<outputs.ApmConfig.ConfigOverrides>;
+    declare public readonly overrides: pulumi.Output<outputs.ApmConfig.ConfigOverrides>;
     /**
      * (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
      */
-    public readonly processFilters!: pulumi.Output<string[]>;
+    declare public readonly processFilters: pulumi.Output<string[]>;
     /**
      * (Updatable)
      */
-    public readonly rules!: pulumi.Output<outputs.ApmConfig.ConfigRule[]>;
+    declare public readonly rules: pulumi.Output<outputs.ApmConfig.ConfigRule[]>;
     /**
      * (Updatable) The OS user that should be used to discover Java processes.
      */
-    public readonly runAsUser!: pulumi.Output<string>;
+    declare public readonly runAsUser: pulumi.Output<string>;
     /**
      * (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
      *
@@ -227,19 +227,19 @@ export class Config extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly serviceName!: pulumi.Output<string>;
+    declare public readonly serviceName: pulumi.Output<string>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    public /*out*/ readonly updatedBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly updatedBy: pulumi.Output<string>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.
@@ -254,70 +254,70 @@ export class Config extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
-            resourceInputs["agentVersion"] = state ? state.agentVersion : undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["attachInstallDir"] = state ? state.attachInstallDir : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["configType"] = state ? state.configType : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["etag"] = state ? state.etag : undefined;
-            resourceInputs["filterId"] = state ? state.filterId : undefined;
-            resourceInputs["filterText"] = state ? state.filterText : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["inUseBies"] = state ? state.inUseBies : undefined;
-            resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
-            resourceInputs["matchAgentsWithAttributeKeys"] = state ? state.matchAgentsWithAttributeKeys : undefined;
-            resourceInputs["matchAgentsWithAttributeValue"] = state ? state.matchAgentsWithAttributeValue : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
-            resourceInputs["options"] = state ? state.options : undefined;
-            resourceInputs["overrides"] = state ? state.overrides : undefined;
-            resourceInputs["processFilters"] = state ? state.processFilters : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["runAsUser"] = state ? state.runAsUser : undefined;
-            resourceInputs["serviceName"] = state ? state.serviceName : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["updatedBy"] = state ? state.updatedBy : undefined;
+            resourceInputs["agentVersion"] = state?.agentVersion;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["attachInstallDir"] = state?.attachInstallDir;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["configType"] = state?.configType;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["etag"] = state?.etag;
+            resourceInputs["filterId"] = state?.filterId;
+            resourceInputs["filterText"] = state?.filterText;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["inUseBies"] = state?.inUseBies;
+            resourceInputs["managementAgentId"] = state?.managementAgentId;
+            resourceInputs["matchAgentsWithAttributeKeys"] = state?.matchAgentsWithAttributeKeys;
+            resourceInputs["matchAgentsWithAttributeValue"] = state?.matchAgentsWithAttributeValue;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["opcDryRun"] = state?.opcDryRun;
+            resourceInputs["options"] = state?.options;
+            resourceInputs["overrides"] = state?.overrides;
+            resourceInputs["processFilters"] = state?.processFilters;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["runAsUser"] = state?.runAsUser;
+            resourceInputs["serviceName"] = state?.serviceName;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["updatedBy"] = state?.updatedBy;
         } else {
             const args = argsOrState as ConfigArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            if ((!args || args.configType === undefined) && !opts.urn) {
+            if (args?.configType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configType'");
             }
-            resourceInputs["agentVersion"] = args ? args.agentVersion : undefined;
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["attachInstallDir"] = args ? args.attachInstallDir : undefined;
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["configType"] = args ? args.configType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["filterId"] = args ? args.filterId : undefined;
-            resourceInputs["filterText"] = args ? args.filterText : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["inUseBies"] = args ? args.inUseBies : undefined;
-            resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
-            resourceInputs["matchAgentsWithAttributeValue"] = args ? args.matchAgentsWithAttributeValue : undefined;
-            resourceInputs["metrics"] = args ? args.metrics : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
-            resourceInputs["options"] = args ? args.options : undefined;
-            resourceInputs["overrides"] = args ? args.overrides : undefined;
-            resourceInputs["processFilters"] = args ? args.processFilters : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["runAsUser"] = args ? args.runAsUser : undefined;
-            resourceInputs["serviceName"] = args ? args.serviceName : undefined;
+            resourceInputs["agentVersion"] = args?.agentVersion;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["attachInstallDir"] = args?.attachInstallDir;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["configType"] = args?.configType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["filterId"] = args?.filterId;
+            resourceInputs["filterText"] = args?.filterText;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["inUseBies"] = args?.inUseBies;
+            resourceInputs["managementAgentId"] = args?.managementAgentId;
+            resourceInputs["matchAgentsWithAttributeValue"] = args?.matchAgentsWithAttributeValue;
+            resourceInputs["metrics"] = args?.metrics;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["opcDryRun"] = args?.opcDryRun;
+            resourceInputs["options"] = args?.options;
+            resourceInputs["overrides"] = args?.overrides;
+            resourceInputs["processFilters"] = args?.processFilters;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["runAsUser"] = args?.runAsUser;
+            resourceInputs["serviceName"] = args?.serviceName;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["etag"] = undefined /*out*/;
             resourceInputs["matchAgentsWithAttributeKeys"] = undefined /*out*/;

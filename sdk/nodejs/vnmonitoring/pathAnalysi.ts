@@ -104,35 +104,35 @@ export class PathAnalysi extends pulumi.CustomResource {
     /**
      * The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
      */
-    public readonly cacheControl!: pulumi.Output<string>;
+    declare public readonly cacheControl: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly destinationEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiDestinationEndpoint>;
+    declare public readonly destinationEndpoint: pulumi.Output<outputs.VnMonitoring.PathAnalysiDestinationEndpoint>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
      */
-    public readonly pathAnalyzerTestId!: pulumi.Output<string>;
+    declare public readonly pathAnalyzerTestId: pulumi.Output<string>;
     /**
      * The IP protocol to used for the path analysis.
      */
-    public readonly protocol!: pulumi.Output<number>;
+    declare public readonly protocol: pulumi.Output<number>;
     /**
      * Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
      */
-    public readonly protocolParameters!: pulumi.Output<outputs.VnMonitoring.PathAnalysiProtocolParameters>;
+    declare public readonly protocolParameters: pulumi.Output<outputs.VnMonitoring.PathAnalysiProtocolParameters>;
     /**
      * Defines the query options required for a `PathAnalyzerTest` resource.
      */
-    public readonly queryOptions!: pulumi.Output<outputs.VnMonitoring.PathAnalysiQueryOptions>;
+    declare public readonly queryOptions: pulumi.Output<outputs.VnMonitoring.PathAnalysiQueryOptions>;
     /**
      * Information describing a source or destination in a `PathAnalyzerTest` resource.
      */
-    public readonly sourceEndpoint!: pulumi.Output<outputs.VnMonitoring.PathAnalysiSourceEndpoint>;
+    declare public readonly sourceEndpoint: pulumi.Output<outputs.VnMonitoring.PathAnalysiSourceEndpoint>;
     /**
      * The type of the `PathAnalysis` query.
      *
@@ -140,7 +140,7 @@ export class PathAnalysi extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a PathAnalysi resource with the given unique name, arguments, and options.
@@ -155,29 +155,29 @@ export class PathAnalysi extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PathAnalysiState | undefined;
-            resourceInputs["cacheControl"] = state ? state.cacheControl : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["destinationEndpoint"] = state ? state.destinationEndpoint : undefined;
-            resourceInputs["pathAnalyzerTestId"] = state ? state.pathAnalyzerTestId : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["protocolParameters"] = state ? state.protocolParameters : undefined;
-            resourceInputs["queryOptions"] = state ? state.queryOptions : undefined;
-            resourceInputs["sourceEndpoint"] = state ? state.sourceEndpoint : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["cacheControl"] = state?.cacheControl;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["destinationEndpoint"] = state?.destinationEndpoint;
+            resourceInputs["pathAnalyzerTestId"] = state?.pathAnalyzerTestId;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["protocolParameters"] = state?.protocolParameters;
+            resourceInputs["queryOptions"] = state?.queryOptions;
+            resourceInputs["sourceEndpoint"] = state?.sourceEndpoint;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as PathAnalysiArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["cacheControl"] = args ? args.cacheControl : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["destinationEndpoint"] = args ? args.destinationEndpoint : undefined;
-            resourceInputs["pathAnalyzerTestId"] = args ? args.pathAnalyzerTestId : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["protocolParameters"] = args ? args.protocolParameters : undefined;
-            resourceInputs["queryOptions"] = args ? args.queryOptions : undefined;
-            resourceInputs["sourceEndpoint"] = args ? args.sourceEndpoint : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["cacheControl"] = args?.cacheControl;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["destinationEndpoint"] = args?.destinationEndpoint;
+            resourceInputs["pathAnalyzerTestId"] = args?.pathAnalyzerTestId;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["protocolParameters"] = args?.protocolParameters;
+            resourceInputs["queryOptions"] = args?.queryOptions;
+            resourceInputs["sourceEndpoint"] = args?.sourceEndpoint;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PathAnalysi.__pulumiType, name, resourceInputs, opts);

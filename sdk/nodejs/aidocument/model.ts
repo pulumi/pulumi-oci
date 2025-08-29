@@ -52,116 +52,116 @@ export class Model extends pulumi.CustomResource {
     /**
      * (Updatable) The compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
      */
-    public readonly componentModels!: pulumi.Output<outputs.AiDocument.ModelComponentModel[]>;
+    declare public readonly componentModels: pulumi.Output<outputs.AiDocument.ModelComponentModel[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) An optional description of the model.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A human-friendly name for the model, which can be changed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Number of replicas required for this model.
      */
-    public readonly inferenceUnits!: pulumi.Output<number>;
+    declare public readonly inferenceUnits: pulumi.Output<number>;
     /**
      * Set to true when the model is created by using multiple key value extraction models.
      */
-    public /*out*/ readonly isComposedModel!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isComposedModel: pulumi.Output<boolean>;
     /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
-    public readonly isQuickMode!: pulumi.Output<boolean>;
+    declare public readonly isQuickMode: pulumi.Output<boolean>;
     /**
      * The collection of labels used to train the custom model.
      */
-    public /*out*/ readonly labels!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly labels: pulumi.Output<string[]>;
     /**
      * The document language for model training, abbreviated according to the BCP 47 syntax.
      */
-    public readonly language!: pulumi.Output<string>;
+    declare public readonly language: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.AiDocument.ModelLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.AiDocument.ModelLock[]>;
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
-    public readonly maxTrainingTimeInHours!: pulumi.Output<number>;
+    declare public readonly maxTrainingTimeInHours: pulumi.Output<number>;
     /**
      * Trained Model Metrics.
      */
-    public /*out*/ readonly metrics!: pulumi.Output<outputs.AiDocument.ModelMetric[]>;
-    public readonly modelId!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly metrics: pulumi.Output<outputs.AiDocument.ModelMetric[]>;
+    declare public readonly modelId: pulumi.Output<string | undefined>;
     /**
      * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
      */
-    public readonly modelSubType!: pulumi.Output<outputs.AiDocument.ModelModelSubType>;
+    declare public readonly modelSubType: pulumi.Output<outputs.AiDocument.ModelModelSubType>;
     /**
      * The type of the Document model.
      */
-    public readonly modelType!: pulumi.Output<string>;
+    declare public readonly modelType: pulumi.Output<string>;
     /**
      * The model version
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    declare public readonly modelVersion: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The current state of the model.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The tenancy id of the model.
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    public readonly testingDataset!: pulumi.Output<outputs.AiDocument.ModelTestingDataset>;
+    declare public readonly testingDataset: pulumi.Output<outputs.AiDocument.ModelTestingDataset>;
     /**
      * When the model was created, as an RFC3339 datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * When the model was updated, as an RFC3339 datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The total hours actually used for model training.
      */
-    public /*out*/ readonly trainedTimeInHours!: pulumi.Output<number>;
+    declare public /*out*/ readonly trainedTimeInHours: pulumi.Output<number>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    public readonly trainingDataset!: pulumi.Output<outputs.AiDocument.ModelTrainingDataset>;
+    declare public readonly trainingDataset: pulumi.Output<outputs.AiDocument.ModelTrainingDataset>;
     /**
      * The base entity which is the input for creating and training a model.
      */
-    public readonly validationDataset!: pulumi.Output<outputs.AiDocument.ModelValidationDataset>;
+    declare public readonly validationDataset: pulumi.Output<outputs.AiDocument.ModelValidationDataset>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.
@@ -176,65 +176,65 @@ export class Model extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentModels"] = state ? state.componentModels : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inferenceUnits"] = state ? state.inferenceUnits : undefined;
-            resourceInputs["isComposedModel"] = state ? state.isComposedModel : undefined;
-            resourceInputs["isQuickMode"] = state ? state.isQuickMode : undefined;
-            resourceInputs["labels"] = state ? state.labels : undefined;
-            resourceInputs["language"] = state ? state.language : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["maxTrainingTimeInHours"] = state ? state.maxTrainingTimeInHours : undefined;
-            resourceInputs["metrics"] = state ? state.metrics : undefined;
-            resourceInputs["modelId"] = state ? state.modelId : undefined;
-            resourceInputs["modelSubType"] = state ? state.modelSubType : undefined;
-            resourceInputs["modelType"] = state ? state.modelType : undefined;
-            resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["testingDataset"] = state ? state.testingDataset : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["trainedTimeInHours"] = state ? state.trainedTimeInHours : undefined;
-            resourceInputs["trainingDataset"] = state ? state.trainingDataset : undefined;
-            resourceInputs["validationDataset"] = state ? state.validationDataset : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentModels"] = state?.componentModels;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inferenceUnits"] = state?.inferenceUnits;
+            resourceInputs["isComposedModel"] = state?.isComposedModel;
+            resourceInputs["isQuickMode"] = state?.isQuickMode;
+            resourceInputs["labels"] = state?.labels;
+            resourceInputs["language"] = state?.language;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["maxTrainingTimeInHours"] = state?.maxTrainingTimeInHours;
+            resourceInputs["metrics"] = state?.metrics;
+            resourceInputs["modelId"] = state?.modelId;
+            resourceInputs["modelSubType"] = state?.modelSubType;
+            resourceInputs["modelType"] = state?.modelType;
+            resourceInputs["modelVersion"] = state?.modelVersion;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["testingDataset"] = state?.testingDataset;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["trainedTimeInHours"] = state?.trainedTimeInHours;
+            resourceInputs["trainingDataset"] = state?.trainingDataset;
+            resourceInputs["validationDataset"] = state?.validationDataset;
         } else {
             const args = argsOrState as ModelArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.modelType === undefined) && !opts.urn) {
+            if (args?.modelType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelType'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["componentModels"] = args ? args.componentModels : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inferenceUnits"] = args ? args.inferenceUnits : undefined;
-            resourceInputs["isQuickMode"] = args ? args.isQuickMode : undefined;
-            resourceInputs["language"] = args ? args.language : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["maxTrainingTimeInHours"] = args ? args.maxTrainingTimeInHours : undefined;
-            resourceInputs["modelId"] = args ? args.modelId : undefined;
-            resourceInputs["modelSubType"] = args ? args.modelSubType : undefined;
-            resourceInputs["modelType"] = args ? args.modelType : undefined;
-            resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["testingDataset"] = args ? args.testingDataset : undefined;
-            resourceInputs["trainingDataset"] = args ? args.trainingDataset : undefined;
-            resourceInputs["validationDataset"] = args ? args.validationDataset : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["componentModels"] = args?.componentModels;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inferenceUnits"] = args?.inferenceUnits;
+            resourceInputs["isQuickMode"] = args?.isQuickMode;
+            resourceInputs["language"] = args?.language;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["maxTrainingTimeInHours"] = args?.maxTrainingTimeInHours;
+            resourceInputs["modelId"] = args?.modelId;
+            resourceInputs["modelSubType"] = args?.modelSubType;
+            resourceInputs["modelType"] = args?.modelType;
+            resourceInputs["modelVersion"] = args?.modelVersion;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["testingDataset"] = args?.testingDataset;
+            resourceInputs["trainingDataset"] = args?.trainingDataset;
+            resourceInputs["validationDataset"] = args?.validationDataset;
             resourceInputs["isComposedModel"] = undefined /*out*/;
             resourceInputs["labels"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

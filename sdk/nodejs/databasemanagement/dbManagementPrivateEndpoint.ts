@@ -71,43 +71,43 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the private endpoint.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      */
-    public readonly isCluster!: pulumi.Output<boolean>;
+    declare public readonly isCluster: pulumi.Output<boolean>;
     /**
      * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
      */
-    public readonly isDnsResolutionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isDnsResolutionEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The display name of the Database Management private endpoint.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * The IP addresses assigned to the Database Management private endpoint.
      */
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Database Management private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      *
@@ -115,19 +115,19 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    public /*out*/ readonly vcnId!: pulumi.Output<string>;
+    declare public /*out*/ readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a DbManagementPrivateEndpoint resource with the given unique name, arguments, and options.
@@ -142,37 +142,37 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DbManagementPrivateEndpointState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isCluster"] = state ? state.isCluster : undefined;
-            resourceInputs["isDnsResolutionEnabled"] = state ? state.isDnsResolutionEnabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isCluster"] = state?.isCluster;
+            resourceInputs["isDnsResolutionEnabled"] = state?.isDnsResolutionEnabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as DbManagementPrivateEndpointArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isCluster"] = args ? args.isCluster : undefined;
-            resourceInputs["isDnsResolutionEnabled"] = args ? args.isDnsResolutionEnabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isCluster"] = args?.isCluster;
+            resourceInputs["isDnsResolutionEnabled"] = args?.isDnsResolutionEnabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;

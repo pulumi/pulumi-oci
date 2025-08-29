@@ -74,43 +74,43 @@ export class ScheduledAction extends pulumi.CustomResource {
     /**
      * (Updatable) The list of action members in a scheduled action.
      */
-    public readonly actionMembers!: pulumi.Output<outputs.Database.ScheduledActionActionMember[]>;
+    declare public readonly actionMembers: pulumi.Output<outputs.Database.ScheduledActionActionMember[]>;
     /**
      * The order of the scheduled action.
      */
-    public /*out*/ readonly actionOrder!: pulumi.Output<number>;
+    declare public /*out*/ readonly actionOrder: pulumi.Output<number>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    public readonly actionParams!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly actionParams: pulumi.Output<{[key: string]: string}>;
     /**
      * The type of the scheduled action being performed
      */
-    public readonly actionType!: pulumi.Output<string>;
+    declare public readonly actionType: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The display name of the Scheduled Action.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * The estimated patching time for the scheduled action.
      */
-    public /*out*/ readonly estimatedTimeInMins!: pulumi.Output<number>;
+    declare public /*out*/ readonly estimatedTimeInMins: pulumi.Output<number>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Plan.
      */
-    public readonly schedulingPlanId!: pulumi.Output<string>;
+    declare public readonly schedulingPlanId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
      *
@@ -118,23 +118,23 @@ export class ScheduledAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly schedulingWindowId!: pulumi.Output<string>;
+    declare public readonly schedulingWindowId: pulumi.Output<string>;
     /**
      * The current state of the Scheduled Action. Valid states are CREATING, NEEDS_ATTENTION, AVAILABLE, UPDATING, FAILED, DELETING and DELETED.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Scheduled Action Resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Scheduled Action Resource was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ScheduledAction resource with the given unique name, arguments, and options.
@@ -149,43 +149,43 @@ export class ScheduledAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduledActionState | undefined;
-            resourceInputs["actionMembers"] = state ? state.actionMembers : undefined;
-            resourceInputs["actionOrder"] = state ? state.actionOrder : undefined;
-            resourceInputs["actionParams"] = state ? state.actionParams : undefined;
-            resourceInputs["actionType"] = state ? state.actionType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedTimeInMins"] = state ? state.estimatedTimeInMins : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["schedulingPlanId"] = state ? state.schedulingPlanId : undefined;
-            resourceInputs["schedulingWindowId"] = state ? state.schedulingWindowId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["actionMembers"] = state?.actionMembers;
+            resourceInputs["actionOrder"] = state?.actionOrder;
+            resourceInputs["actionParams"] = state?.actionParams;
+            resourceInputs["actionType"] = state?.actionType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedTimeInMins"] = state?.estimatedTimeInMins;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["schedulingPlanId"] = state?.schedulingPlanId;
+            resourceInputs["schedulingWindowId"] = state?.schedulingWindowId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ScheduledActionArgs | undefined;
-            if ((!args || args.actionType === undefined) && !opts.urn) {
+            if (args?.actionType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actionType'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.schedulingPlanId === undefined) && !opts.urn) {
+            if (args?.schedulingPlanId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedulingPlanId'");
             }
-            if ((!args || args.schedulingWindowId === undefined) && !opts.urn) {
+            if (args?.schedulingWindowId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schedulingWindowId'");
             }
-            resourceInputs["actionMembers"] = args ? args.actionMembers : undefined;
-            resourceInputs["actionParams"] = args ? args.actionParams : undefined;
-            resourceInputs["actionType"] = args ? args.actionType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["schedulingPlanId"] = args ? args.schedulingPlanId : undefined;
-            resourceInputs["schedulingWindowId"] = args ? args.schedulingWindowId : undefined;
+            resourceInputs["actionMembers"] = args?.actionMembers;
+            resourceInputs["actionParams"] = args?.actionParams;
+            resourceInputs["actionType"] = args?.actionType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["schedulingPlanId"] = args?.schedulingPlanId;
+            resourceInputs["schedulingWindowId"] = args?.schedulingWindowId;
             resourceInputs["actionOrder"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["estimatedTimeInMins"] = undefined /*out*/;

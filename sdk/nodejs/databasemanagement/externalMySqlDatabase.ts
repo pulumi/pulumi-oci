@@ -60,7 +60,7 @@ export class ExternalMySqlDatabase extends pulumi.CustomResource {
     /**
      * OCID of compartment for the External MySQL Database.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Name of the External MySQL Database.
      *
@@ -68,11 +68,11 @@ export class ExternalMySqlDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly dbName!: pulumi.Output<string>;
+    declare public readonly dbName: pulumi.Output<string>;
     /**
      * OCID of External MySQL Database.
      */
-    public /*out*/ readonly externalDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a ExternalMySqlDatabase resource with the given unique name, arguments, and options.
@@ -87,19 +87,19 @@ export class ExternalMySqlDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalMySqlDatabaseState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbName"] = state ? state.dbName : undefined;
-            resourceInputs["externalDatabaseId"] = state ? state.externalDatabaseId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbName"] = state?.dbName;
+            resourceInputs["externalDatabaseId"] = state?.externalDatabaseId;
         } else {
             const args = argsOrState as ExternalMySqlDatabaseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbName === undefined) && !opts.urn) {
+            if (args?.dbName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbName'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbName"] = args ? args.dbName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbName"] = args?.dbName;
             resourceInputs["externalDatabaseId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

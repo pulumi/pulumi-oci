@@ -130,95 +130,95 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * The OCID of the cluster to which this node pool is attached.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * The OCID of the compartment in which the node pool exists.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
-    public readonly initialNodeLabels!: pulumi.Output<outputs.ContainerEngine.NodePoolInitialNodeLabel[]>;
+    declare public readonly initialNodeLabels: pulumi.Output<outputs.ContainerEngine.NodePoolInitialNodeLabel[]>;
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      */
-    public readonly kubernetesVersion!: pulumi.Output<string>;
+    declare public readonly kubernetesVersion: pulumi.Output<string>;
     /**
      * Details about the state of the node.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
-    public readonly nodeConfigDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    declare public readonly nodeConfigDetails: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails>;
     /**
      * (Updatable) Node Eviction Details configuration
      */
-    public readonly nodeEvictionNodePoolSettings!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
+    declare public readonly nodeEvictionNodePoolSettings: pulumi.Output<outputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    public readonly nodeImageId!: pulumi.Output<string>;
+    declare public readonly nodeImageId: pulumi.Output<string>;
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      *
      * @deprecated The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    public readonly nodeImageName!: pulumi.Output<string>;
+    declare public readonly nodeImageName: pulumi.Output<string>;
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    public readonly nodeMetadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly nodeMetadata: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
-    public readonly nodePoolCyclingDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
+    declare public readonly nodePoolCyclingDetails: pulumi.Output<outputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
-    public readonly nodeShape!: pulumi.Output<string>;
+    declare public readonly nodeShape: pulumi.Output<string>;
     /**
      * (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      */
-    public readonly nodeShapeConfig!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeShapeConfig>;
+    declare public readonly nodeShapeConfig: pulumi.Output<outputs.ContainerEngine.NodePoolNodeShapeConfig>;
     /**
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      */
-    public readonly nodeSourceDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSourceDetails>;
+    declare public readonly nodeSourceDetails: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSourceDetails>;
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      */
-    public /*out*/ readonly nodeSources!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSource[]>;
+    declare public /*out*/ readonly nodeSources: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSource[]>;
     /**
      * The nodes in the node pool.
      */
-    public /*out*/ readonly nodes!: pulumi.Output<outputs.ContainerEngine.NodePoolNode[]>;
+    declare public /*out*/ readonly nodes: pulumi.Output<outputs.ContainerEngine.NodePoolNode[]>;
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
-    public readonly quantityPerSubnet!: pulumi.Output<number>;
+    declare public readonly quantityPerSubnet: pulumi.Output<number>;
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
-    public readonly sshPublicKey!: pulumi.Output<string>;
+    declare public readonly sshPublicKey: pulumi.Output<string>;
     /**
      * The state of the nodepool.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
      *
@@ -226,7 +226,7 @@ export class NodePool extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetIds!: pulumi.Output<string[]>;
+    declare public readonly subnetIds: pulumi.Output<string[]>;
 
     /**
      * Create a NodePool resource with the given unique name, arguments, and options.
@@ -241,59 +241,59 @@ export class NodePool extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NodePoolState | undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["initialNodeLabels"] = state ? state.initialNodeLabels : undefined;
-            resourceInputs["kubernetesVersion"] = state ? state.kubernetesVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nodeConfigDetails"] = state ? state.nodeConfigDetails : undefined;
-            resourceInputs["nodeEvictionNodePoolSettings"] = state ? state.nodeEvictionNodePoolSettings : undefined;
-            resourceInputs["nodeImageId"] = state ? state.nodeImageId : undefined;
-            resourceInputs["nodeImageName"] = state ? state.nodeImageName : undefined;
-            resourceInputs["nodeMetadata"] = state ? state.nodeMetadata : undefined;
-            resourceInputs["nodePoolCyclingDetails"] = state ? state.nodePoolCyclingDetails : undefined;
-            resourceInputs["nodeShape"] = state ? state.nodeShape : undefined;
-            resourceInputs["nodeShapeConfig"] = state ? state.nodeShapeConfig : undefined;
-            resourceInputs["nodeSourceDetails"] = state ? state.nodeSourceDetails : undefined;
-            resourceInputs["nodeSources"] = state ? state.nodeSources : undefined;
-            resourceInputs["nodes"] = state ? state.nodes : undefined;
-            resourceInputs["quantityPerSubnet"] = state ? state.quantityPerSubnet : undefined;
-            resourceInputs["sshPublicKey"] = state ? state.sshPublicKey : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetIds"] = state ? state.subnetIds : undefined;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["initialNodeLabels"] = state?.initialNodeLabels;
+            resourceInputs["kubernetesVersion"] = state?.kubernetesVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nodeConfigDetails"] = state?.nodeConfigDetails;
+            resourceInputs["nodeEvictionNodePoolSettings"] = state?.nodeEvictionNodePoolSettings;
+            resourceInputs["nodeImageId"] = state?.nodeImageId;
+            resourceInputs["nodeImageName"] = state?.nodeImageName;
+            resourceInputs["nodeMetadata"] = state?.nodeMetadata;
+            resourceInputs["nodePoolCyclingDetails"] = state?.nodePoolCyclingDetails;
+            resourceInputs["nodeShape"] = state?.nodeShape;
+            resourceInputs["nodeShapeConfig"] = state?.nodeShapeConfig;
+            resourceInputs["nodeSourceDetails"] = state?.nodeSourceDetails;
+            resourceInputs["nodeSources"] = state?.nodeSources;
+            resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["quantityPerSubnet"] = state?.quantityPerSubnet;
+            resourceInputs["sshPublicKey"] = state?.sshPublicKey;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetIds"] = state?.subnetIds;
         } else {
             const args = argsOrState as NodePoolArgs | undefined;
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.nodeShape === undefined) && !opts.urn) {
+            if (args?.nodeShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeShape'");
             }
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["initialNodeLabels"] = args ? args.initialNodeLabels : undefined;
-            resourceInputs["kubernetesVersion"] = args ? args.kubernetesVersion : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nodeConfigDetails"] = args ? args.nodeConfigDetails : undefined;
-            resourceInputs["nodeEvictionNodePoolSettings"] = args ? args.nodeEvictionNodePoolSettings : undefined;
-            resourceInputs["nodeImageId"] = args ? args.nodeImageId : undefined;
-            resourceInputs["nodeImageName"] = args ? args.nodeImageName : undefined;
-            resourceInputs["nodeMetadata"] = args ? args.nodeMetadata : undefined;
-            resourceInputs["nodePoolCyclingDetails"] = args ? args.nodePoolCyclingDetails : undefined;
-            resourceInputs["nodeShape"] = args ? args.nodeShape : undefined;
-            resourceInputs["nodeShapeConfig"] = args ? args.nodeShapeConfig : undefined;
-            resourceInputs["nodeSourceDetails"] = args ? args.nodeSourceDetails : undefined;
-            resourceInputs["quantityPerSubnet"] = args ? args.quantityPerSubnet : undefined;
-            resourceInputs["sshPublicKey"] = args ? args.sshPublicKey : undefined;
-            resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["initialNodeLabels"] = args?.initialNodeLabels;
+            resourceInputs["kubernetesVersion"] = args?.kubernetesVersion;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nodeConfigDetails"] = args?.nodeConfigDetails;
+            resourceInputs["nodeEvictionNodePoolSettings"] = args?.nodeEvictionNodePoolSettings;
+            resourceInputs["nodeImageId"] = args?.nodeImageId;
+            resourceInputs["nodeImageName"] = args?.nodeImageName;
+            resourceInputs["nodeMetadata"] = args?.nodeMetadata;
+            resourceInputs["nodePoolCyclingDetails"] = args?.nodePoolCyclingDetails;
+            resourceInputs["nodeShape"] = args?.nodeShape;
+            resourceInputs["nodeShapeConfig"] = args?.nodeShapeConfig;
+            resourceInputs["nodeSourceDetails"] = args?.nodeSourceDetails;
+            resourceInputs["quantityPerSubnet"] = args?.quantityPerSubnet;
+            resourceInputs["sshPublicKey"] = args?.sshPublicKey;
+            resourceInputs["subnetIds"] = args?.subnetIds;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nodeSources"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;

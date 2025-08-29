@@ -50,55 +50,55 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * (Updatable) The details of the contents of the certificate and certificate metadata.
      */
-    public readonly certificateConfig!: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateConfig>;
+    declare public readonly certificateConfig: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateConfig>;
     /**
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      */
-    public /*out*/ readonly certificateProfileType!: pulumi.Output<string>;
+    declare public /*out*/ readonly certificateProfileType: pulumi.Output<string>;
     /**
      * The details of the certificate revocation list (CRL).
      */
-    public /*out*/ readonly certificateRevocationListDetails!: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRevocationListDetail[]>;
+    declare public /*out*/ readonly certificateRevocationListDetails: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRevocationListDetail[]>;
     /**
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
      */
-    public readonly certificateRules!: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRule[] | undefined>;
+    declare public readonly certificateRules: pulumi.Output<outputs.CertificatesManagement.CertificateCertificateRule[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the certificate.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The origin of the certificate.
      */
-    public /*out*/ readonly configType!: pulumi.Output<string>;
+    declare public /*out*/ readonly configType: pulumi.Output<string>;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
-    public /*out*/ readonly currentVersions!: pulumi.Output<outputs.CertificatesManagement.CertificateCurrentVersion[]>;
+    declare public /*out*/ readonly currentVersions: pulumi.Output<outputs.CertificatesManagement.CertificateCurrentVersion[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the certificate authority (CA) that issued the certificate.
      */
-    public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
+    declare public /*out*/ readonly issuerCertificateAuthorityId: pulumi.Output<string>;
     /**
      * The algorithm used to create key pairs.
      */
-    public /*out*/ readonly keyAlgorithm!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyAlgorithm: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the certificate.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. 
      *
@@ -106,27 +106,27 @@ export class Certificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The algorithm used to sign the public key certificate.
      */
-    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string>;
+    declare public /*out*/ readonly signatureAlgorithm: pulumi.Output<string>;
     /**
      * The current lifecycle state of the certificate.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    public /*out*/ readonly subjects!: pulumi.Output<outputs.CertificatesManagement.CertificateSubject[]>;
+    declare public /*out*/ readonly subjects: pulumi.Output<outputs.CertificatesManagement.CertificateSubject[]>;
     /**
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfDeletion: pulumi.Output<string>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.
@@ -141,40 +141,40 @@ export class Certificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CertificateState | undefined;
-            resourceInputs["certificateConfig"] = state ? state.certificateConfig : undefined;
-            resourceInputs["certificateProfileType"] = state ? state.certificateProfileType : undefined;
-            resourceInputs["certificateRevocationListDetails"] = state ? state.certificateRevocationListDetails : undefined;
-            resourceInputs["certificateRules"] = state ? state.certificateRules : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configType"] = state ? state.configType : undefined;
-            resourceInputs["currentVersions"] = state ? state.currentVersions : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["issuerCertificateAuthorityId"] = state ? state.issuerCertificateAuthorityId : undefined;
-            resourceInputs["keyAlgorithm"] = state ? state.keyAlgorithm : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["signatureAlgorithm"] = state ? state.signatureAlgorithm : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subjects"] = state ? state.subjects : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfDeletion"] = state ? state.timeOfDeletion : undefined;
+            resourceInputs["certificateConfig"] = state?.certificateConfig;
+            resourceInputs["certificateProfileType"] = state?.certificateProfileType;
+            resourceInputs["certificateRevocationListDetails"] = state?.certificateRevocationListDetails;
+            resourceInputs["certificateRules"] = state?.certificateRules;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configType"] = state?.configType;
+            resourceInputs["currentVersions"] = state?.currentVersions;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["issuerCertificateAuthorityId"] = state?.issuerCertificateAuthorityId;
+            resourceInputs["keyAlgorithm"] = state?.keyAlgorithm;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["signatureAlgorithm"] = state?.signatureAlgorithm;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subjects"] = state?.subjects;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfDeletion"] = state?.timeOfDeletion;
         } else {
             const args = argsOrState as CertificateArgs | undefined;
-            if ((!args || args.certificateConfig === undefined) && !opts.urn) {
+            if (args?.certificateConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateConfig'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["certificateConfig"] = args ? args.certificateConfig : undefined;
-            resourceInputs["certificateRules"] = args ? args.certificateRules : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["certificateConfig"] = args?.certificateConfig;
+            resourceInputs["certificateRules"] = args?.certificateRules;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
             resourceInputs["certificateProfileType"] = undefined /*out*/;
             resourceInputs["certificateRevocationListDetails"] = undefined /*out*/;
             resourceInputs["configType"] = undefined /*out*/;

@@ -92,55 +92,55 @@ export class MlApplicationImplementation extends pulumi.CustomResource {
     /**
      * (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
      */
-    public readonly allowedMigrationDestinations!: pulumi.Output<string[]>;
+    declare public readonly allowedMigrationDestinations: pulumi.Output<string[]>;
     /**
      * List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
      */
-    public /*out*/ readonly applicationComponents!: pulumi.Output<outputs.DataScience.MlApplicationImplementationApplicationComponent[]>;
+    declare public /*out*/ readonly applicationComponents: pulumi.Output<outputs.DataScience.MlApplicationImplementationApplicationComponent[]>;
     /**
      * (Updatable) The OCID of the compartment where ML Application Implementation is created.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
      */
-    public /*out*/ readonly configurationSchemas!: pulumi.Output<outputs.DataScience.MlApplicationImplementationConfigurationSchema[]>;
+    declare public /*out*/ readonly configurationSchemas: pulumi.Output<outputs.DataScience.MlApplicationImplementationConfigurationSchema[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * short description of the argument
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Configuration of Logging for ML Application Implementation.
      */
-    public readonly logging!: pulumi.Output<outputs.DataScience.MlApplicationImplementationLogging>;
+    declare public readonly logging: pulumi.Output<outputs.DataScience.MlApplicationImplementationLogging>;
     /**
      * The OCID of the ML Application implemented by this ML Application Implementation
      */
-    public readonly mlApplicationId!: pulumi.Output<string>;
+    declare public readonly mlApplicationId: pulumi.Output<string>;
     /**
      * The name of ML Application (based on mlApplicationId)
      */
-    public /*out*/ readonly mlApplicationName!: pulumi.Output<string>;
+    declare public /*out*/ readonly mlApplicationName: pulumi.Output<string>;
     /**
      * (Updatable) Configuration of The ML Application Package to upload.
      */
-    public readonly mlApplicationPackage!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly mlApplicationPackage: pulumi.Output<{[key: string]: string}>;
     /**
      * List of ML Application package arguments provided during ML Application package upload.
      */
-    public /*out*/ readonly mlApplicationPackageArguments!: pulumi.Output<outputs.DataScience.MlApplicationImplementationMlApplicationPackageArgument[]>;
+    declare public /*out*/ readonly mlApplicationPackageArguments: pulumi.Output<outputs.DataScience.MlApplicationImplementationMlApplicationPackageArgument[]>;
     /**
      * ML Application Implementation name which is unique for given ML Application.
      *
@@ -148,31 +148,31 @@ export class MlApplicationImplementation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
      */
-    public readonly opcMlAppPackageArgs!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly opcMlAppPackageArgs: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
      */
-    public /*out*/ readonly packageVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageVersion: pulumi.Output<string>;
     /**
      * The current state of the MlApplicationImplementation.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time of last MlApplicationImplementation update in the format defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MlApplicationImplementation resource with the given unique name, arguments, and options.
@@ -187,43 +187,43 @@ export class MlApplicationImplementation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MlApplicationImplementationState | undefined;
-            resourceInputs["allowedMigrationDestinations"] = state ? state.allowedMigrationDestinations : undefined;
-            resourceInputs["applicationComponents"] = state ? state.applicationComponents : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configurationSchemas"] = state ? state.configurationSchemas : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["logging"] = state ? state.logging : undefined;
-            resourceInputs["mlApplicationId"] = state ? state.mlApplicationId : undefined;
-            resourceInputs["mlApplicationName"] = state ? state.mlApplicationName : undefined;
-            resourceInputs["mlApplicationPackage"] = state ? state.mlApplicationPackage : undefined;
-            resourceInputs["mlApplicationPackageArguments"] = state ? state.mlApplicationPackageArguments : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["opcMlAppPackageArgs"] = state ? state.opcMlAppPackageArgs : undefined;
-            resourceInputs["packageVersion"] = state ? state.packageVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["allowedMigrationDestinations"] = state?.allowedMigrationDestinations;
+            resourceInputs["applicationComponents"] = state?.applicationComponents;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configurationSchemas"] = state?.configurationSchemas;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logging"] = state?.logging;
+            resourceInputs["mlApplicationId"] = state?.mlApplicationId;
+            resourceInputs["mlApplicationName"] = state?.mlApplicationName;
+            resourceInputs["mlApplicationPackage"] = state?.mlApplicationPackage;
+            resourceInputs["mlApplicationPackageArguments"] = state?.mlApplicationPackageArguments;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["opcMlAppPackageArgs"] = state?.opcMlAppPackageArgs;
+            resourceInputs["packageVersion"] = state?.packageVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MlApplicationImplementationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.mlApplicationId === undefined) && !opts.urn) {
+            if (args?.mlApplicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mlApplicationId'");
             }
-            resourceInputs["allowedMigrationDestinations"] = args ? args.allowedMigrationDestinations : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["logging"] = args ? args.logging : undefined;
-            resourceInputs["mlApplicationId"] = args ? args.mlApplicationId : undefined;
-            resourceInputs["mlApplicationPackage"] = args ? args.mlApplicationPackage : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["opcMlAppPackageArgs"] = args ? args.opcMlAppPackageArgs : undefined;
+            resourceInputs["allowedMigrationDestinations"] = args?.allowedMigrationDestinations;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["logging"] = args?.logging;
+            resourceInputs["mlApplicationId"] = args?.mlApplicationId;
+            resourceInputs["mlApplicationPackage"] = args?.mlApplicationPackage;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["opcMlAppPackageArgs"] = args?.opcMlAppPackageArgs;
             resourceInputs["applicationComponents"] = undefined /*out*/;
             resourceInputs["configurationSchemas"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;

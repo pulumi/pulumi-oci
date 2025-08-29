@@ -60,7 +60,7 @@ export class ProfileDetachSoftwareSourcesManagement extends pulumi.CustomResourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the profile.
      *
@@ -68,7 +68,7 @@ export class ProfileDetachSoftwareSourcesManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSources!: pulumi.Output<string[]>;
+    declare public readonly softwareSources: pulumi.Output<string[]>;
 
     /**
      * Create a ProfileDetachSoftwareSourcesManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ProfileDetachSoftwareSourcesManagement extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileDetachSoftwareSourcesManagementState | undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
-            resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
+            resourceInputs["profileId"] = state?.profileId;
+            resourceInputs["softwareSources"] = state?.softwareSources;
         } else {
             const args = argsOrState as ProfileDetachSoftwareSourcesManagementArgs | undefined;
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            if ((!args || args.softwareSources === undefined) && !opts.urn) {
+            if (args?.softwareSources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSources'");
             }
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
-            resourceInputs["softwareSources"] = args ? args.softwareSources : undefined;
+            resourceInputs["profileId"] = args?.profileId;
+            resourceInputs["softwareSources"] = args?.softwareSources;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProfileDetachSoftwareSourcesManagement.__pulumiType, name, resourceInputs, opts);

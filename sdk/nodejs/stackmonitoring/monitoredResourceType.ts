@@ -85,55 +85,55 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
      */
-    public /*out*/ readonly additionalNamespaceMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalNamespaceMap: pulumi.Output<{[key: string]: string}>;
     /**
      * Availability metrics details.
      */
-    public /*out*/ readonly availabilityMetricsConfigs!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig[]>;
+    declare public /*out*/ readonly availabilityMetricsConfigs: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig[]>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A friendly description.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Monitored resource type display name.
      */
-    public readonly displayName!: pulumi.Output<string | undefined>;
+    declare public readonly displayName: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Specific resource mapping configurations for Agent Extension Handlers.
      */
-    public /*out*/ readonly handlerConfigs!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeHandlerConfig[]>;
+    declare public /*out*/ readonly handlerConfigs: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeHandlerConfig[]>;
     /**
      * If boolean flag is true, then the resource type cannot be modified or deleted.
      */
-    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
     /**
      * (Updatable) The metadata details for resource type.
      */
-    public readonly metadata!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeMetadata>;
+    declare public readonly metadata: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeMetadata>;
     /**
      * (Updatable) Metric namespace for resource type.
      */
-    public readonly metricNamespace!: pulumi.Output<string>;
+    declare public readonly metricNamespace: pulumi.Output<string>;
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * (Updatable) Resource Category to indicate the kind of resource type.
      */
-    public readonly resourceCategory!: pulumi.Output<string>;
+    declare public readonly resourceCategory: pulumi.Output<string>;
     /**
      * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
@@ -141,27 +141,27 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceType!: pulumi.Output<string>;
+    declare public readonly sourceType: pulumi.Output<string>;
     /**
      * Lifecycle state of the monitored resource type.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MonitoredResourceType resource with the given unique name, arguments, and options.
@@ -176,40 +176,40 @@ export class MonitoredResourceType extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MonitoredResourceTypeState | undefined;
-            resourceInputs["additionalNamespaceMap"] = state ? state.additionalNamespaceMap : undefined;
-            resourceInputs["availabilityMetricsConfigs"] = state ? state.availabilityMetricsConfigs : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["handlerConfigs"] = state ? state.handlerConfigs : undefined;
-            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["metricNamespace"] = state ? state.metricNamespace : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
-            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["additionalNamespaceMap"] = state?.additionalNamespaceMap;
+            resourceInputs["availabilityMetricsConfigs"] = state?.availabilityMetricsConfigs;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["handlerConfigs"] = state?.handlerConfigs;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["metricNamespace"] = state?.metricNamespace;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["resourceCategory"] = state?.resourceCategory;
+            resourceInputs["sourceType"] = state?.sourceType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MonitoredResourceTypeArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["metricNamespace"] = args ? args.metricNamespace : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
-            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["metricNamespace"] = args?.metricNamespace;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["resourceCategory"] = args?.resourceCategory;
+            resourceInputs["sourceType"] = args?.sourceType;
             resourceInputs["additionalNamespaceMap"] = undefined /*out*/;
             resourceInputs["availabilityMetricsConfigs"] = undefined /*out*/;
             resourceInputs["handlerConfigs"] = undefined /*out*/;

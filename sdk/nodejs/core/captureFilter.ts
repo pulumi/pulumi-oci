@@ -142,39 +142,39 @@ export class CaptureFilter extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Indicates which service will use this capture filter
      */
-    public readonly filterType!: pulumi.Output<string>;
+    declare public readonly filterType: pulumi.Output<string>;
     /**
      * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
      */
-    public readonly flowLogCaptureFilterRules!: pulumi.Output<outputs.Core.CaptureFilterFlowLogCaptureFilterRule[]>;
+    declare public readonly flowLogCaptureFilterRules: pulumi.Output<outputs.Core.CaptureFilterFlowLogCaptureFilterRule[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The capture filter's current administrative state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The set of rules governing what traffic a VTAP mirrors.
      */
-    public readonly vtapCaptureFilterRules!: pulumi.Output<outputs.Core.CaptureFilterVtapCaptureFilterRule[]>;
+    declare public readonly vtapCaptureFilterRules: pulumi.Output<outputs.Core.CaptureFilterVtapCaptureFilterRule[]>;
 
     /**
      * Create a CaptureFilter resource with the given unique name, arguments, and options.
@@ -189,30 +189,30 @@ export class CaptureFilter extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CaptureFilterState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["filterType"] = state ? state.filterType : undefined;
-            resourceInputs["flowLogCaptureFilterRules"] = state ? state.flowLogCaptureFilterRules : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vtapCaptureFilterRules"] = state ? state.vtapCaptureFilterRules : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["filterType"] = state?.filterType;
+            resourceInputs["flowLogCaptureFilterRules"] = state?.flowLogCaptureFilterRules;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vtapCaptureFilterRules"] = state?.vtapCaptureFilterRules;
         } else {
             const args = argsOrState as CaptureFilterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.filterType === undefined) && !opts.urn) {
+            if (args?.filterType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filterType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["filterType"] = args ? args.filterType : undefined;
-            resourceInputs["flowLogCaptureFilterRules"] = args ? args.flowLogCaptureFilterRules : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["vtapCaptureFilterRules"] = args ? args.vtapCaptureFilterRules : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["filterType"] = args?.filterType;
+            resourceInputs["flowLogCaptureFilterRules"] = args?.flowLogCaptureFilterRules;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["vtapCaptureFilterRules"] = args?.vtapCaptureFilterRules;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

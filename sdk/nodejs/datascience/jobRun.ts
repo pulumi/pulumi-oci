@@ -154,75 +154,75 @@ export class JobRun extends pulumi.CustomResource {
     /**
      * If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
      */
-    public readonly asynchronous!: pulumi.Output<boolean | undefined>;
+    declare public readonly asynchronous: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The job configuration details
      */
-    public readonly jobConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    declare public readonly jobConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobConfigurationOverrideDetails>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    public readonly jobEnvironmentConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
+    declare public readonly jobEnvironmentConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobEnvironmentConfigurationOverrideDetails>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
-    public readonly jobId!: pulumi.Output<string>;
+    declare public readonly jobId: pulumi.Output<string>;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    public /*out*/ readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationDetail[]>;
+    declare public /*out*/ readonly jobInfrastructureConfigurationDetails: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationDetail[]>;
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    public readonly jobInfrastructureConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    declare public readonly jobInfrastructureConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
     /**
      * Logging configuration for resource.
      */
-    public readonly jobLogConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    declare public readonly jobLogConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
     /**
      * The job node configuration details
      */
-    public readonly jobNodeConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
+    declare public readonly jobNodeConfigurationOverrideDetails: pulumi.Output<outputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
-    public /*out*/ readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
+    declare public /*out*/ readonly jobStorageMountConfigurationDetailsLists: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
     /**
      * The state details of the node group.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Customer logging details for job run.
      */
-    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
+    declare public /*out*/ readonly logDetails: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
     /**
      * Collection of NodeGroupDetails
      */
-    public /*out*/ readonly nodeGroupDetailsLists!: pulumi.Output<outputs.DataScience.JobRunNodeGroupDetailsList[]>;
+    declare public /*out*/ readonly nodeGroupDetailsLists: pulumi.Output<outputs.DataScience.JobRunNodeGroupDetailsList[]>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    declare public readonly opcParentRptUrl: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
      *
@@ -230,23 +230,23 @@ export class JobRun extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * The state of the job run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
     /**
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
 
     /**
      * Create a JobRun resource with the given unique name, arguments, and options.
@@ -261,53 +261,53 @@ export class JobRun extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JobRunState | undefined;
-            resourceInputs["asynchronous"] = state ? state.asynchronous : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["jobConfigurationOverrideDetails"] = state ? state.jobConfigurationOverrideDetails : undefined;
-            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = state ? state.jobEnvironmentConfigurationOverrideDetails : undefined;
-            resourceInputs["jobId"] = state ? state.jobId : undefined;
-            resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
-            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = state ? state.jobInfrastructureConfigurationOverrideDetails : undefined;
-            resourceInputs["jobLogConfigurationOverrideDetails"] = state ? state.jobLogConfigurationOverrideDetails : undefined;
-            resourceInputs["jobNodeConfigurationOverrideDetails"] = state ? state.jobNodeConfigurationOverrideDetails : undefined;
-            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["logDetails"] = state ? state.logDetails : undefined;
-            resourceInputs["nodeGroupDetailsLists"] = state ? state.nodeGroupDetailsLists : undefined;
-            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
+            resourceInputs["asynchronous"] = state?.asynchronous;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["jobConfigurationOverrideDetails"] = state?.jobConfigurationOverrideDetails;
+            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = state?.jobEnvironmentConfigurationOverrideDetails;
+            resourceInputs["jobId"] = state?.jobId;
+            resourceInputs["jobInfrastructureConfigurationDetails"] = state?.jobInfrastructureConfigurationDetails;
+            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = state?.jobInfrastructureConfigurationOverrideDetails;
+            resourceInputs["jobLogConfigurationOverrideDetails"] = state?.jobLogConfigurationOverrideDetails;
+            resourceInputs["jobNodeConfigurationOverrideDetails"] = state?.jobNodeConfigurationOverrideDetails;
+            resourceInputs["jobStorageMountConfigurationDetailsLists"] = state?.jobStorageMountConfigurationDetailsLists;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logDetails"] = state?.logDetails;
+            resourceInputs["nodeGroupDetailsLists"] = state?.nodeGroupDetailsLists;
+            resourceInputs["opcParentRptUrl"] = state?.opcParentRptUrl;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeStarted"] = state?.timeStarted;
         } else {
             const args = argsOrState as JobRunArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.jobId === undefined) && !opts.urn) {
+            if (args?.jobId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'jobId'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["asynchronous"] = args ? args.asynchronous : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["jobConfigurationOverrideDetails"] = args ? args.jobConfigurationOverrideDetails : undefined;
-            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = args ? args.jobEnvironmentConfigurationOverrideDetails : undefined;
-            resourceInputs["jobId"] = args ? args.jobId : undefined;
-            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = args ? args.jobInfrastructureConfigurationOverrideDetails : undefined;
-            resourceInputs["jobLogConfigurationOverrideDetails"] = args ? args.jobLogConfigurationOverrideDetails : undefined;
-            resourceInputs["jobNodeConfigurationOverrideDetails"] = args ? args.jobNodeConfigurationOverrideDetails : undefined;
-            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["asynchronous"] = args?.asynchronous;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["jobConfigurationOverrideDetails"] = args?.jobConfigurationOverrideDetails;
+            resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = args?.jobEnvironmentConfigurationOverrideDetails;
+            resourceInputs["jobId"] = args?.jobId;
+            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = args?.jobInfrastructureConfigurationOverrideDetails;
+            resourceInputs["jobLogConfigurationOverrideDetails"] = args?.jobLogConfigurationOverrideDetails;
+            resourceInputs["jobNodeConfigurationOverrideDetails"] = args?.jobNodeConfigurationOverrideDetails;
+            resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
+            resourceInputs["projectId"] = args?.projectId;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["jobInfrastructureConfigurationDetails"] = undefined /*out*/;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = undefined /*out*/;

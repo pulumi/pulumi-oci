@@ -50,63 +50,63 @@ export class ScheduledQuery extends pulumi.CustomResource {
     /**
      * (Updatable) The APM Domain ID for the intended request.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not create or modify the resource  and is used only to perform validation on the submitted data.
      */
-    public readonly opcDryRun!: pulumi.Output<string>;
+    declare public readonly opcDryRun: pulumi.Output<string>;
     /**
      * (Updatable) Description for the scheduled query.
      */
-    public readonly scheduledQueryDescription!: pulumi.Output<string>;
+    declare public readonly scheduledQueryDescription: pulumi.Output<string>;
     /**
      * Scheduled query instances.
      */
-    public /*out*/ readonly scheduledQueryInstances!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledQueryInstances: pulumi.Output<string>;
     /**
      * (Updatable) Maximum runtime for the scheduled query in seconds.
      */
-    public readonly scheduledQueryMaximumRuntimeInSeconds!: pulumi.Output<string>;
+    declare public readonly scheduledQueryMaximumRuntimeInSeconds: pulumi.Output<string>;
     /**
      * (Updatable) Name of the scheduled query.
      */
-    public readonly scheduledQueryName!: pulumi.Output<string>;
+    declare public readonly scheduledQueryName: pulumi.Output<string>;
     /**
      * Next run for the scheduled query.
      */
-    public /*out*/ readonly scheduledQueryNextRunInMs!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduledQueryNextRunInMs: pulumi.Output<string>;
     /**
      * (Updatable) Definition of the scheduled query processing configuration.
      */
-    public readonly scheduledQueryProcessingConfiguration!: pulumi.Output<outputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration>;
+    declare public readonly scheduledQueryProcessingConfiguration: pulumi.Output<outputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration>;
     /**
      * (Updatable) Processing sub type of the scheduled query.
      */
-    public readonly scheduledQueryProcessingSubType!: pulumi.Output<string>;
+    declare public readonly scheduledQueryProcessingSubType: pulumi.Output<string>;
     /**
      * (Updatable) Type of the scheduled query.
      */
-    public readonly scheduledQueryProcessingType!: pulumi.Output<string>;
+    declare public readonly scheduledQueryProcessingType: pulumi.Output<string>;
     /**
      * (Updatable) Retention criteria for the scheduled query.
      */
-    public readonly scheduledQueryRetentionCriteria!: pulumi.Output<string>;
+    declare public readonly scheduledQueryRetentionCriteria: pulumi.Output<string>;
     /**
      * (Updatable) Retention period for the scheduled query in milliseconds.
      */
-    public readonly scheduledQueryRetentionPeriodInMs!: pulumi.Output<string>;
+    declare public readonly scheduledQueryRetentionPeriodInMs: pulumi.Output<string>;
     /**
      * (Updatable) Schedule for the scheduled query.
      */
-    public readonly scheduledQuerySchedule!: pulumi.Output<string>;
+    declare public readonly scheduledQuerySchedule: pulumi.Output<string>;
     /**
      * (Updatable) Scheduled query to be run. 
      *
@@ -114,15 +114,15 @@ export class ScheduledQuery extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly scheduledQueryText!: pulumi.Output<string>;
+    declare public readonly scheduledQueryText: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Scheduled Query.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
 
     /**
      * Create a ScheduledQuery resource with the given unique name, arguments, and options.
@@ -137,43 +137,43 @@ export class ScheduledQuery extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduledQueryState | undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
-            resourceInputs["scheduledQueryDescription"] = state ? state.scheduledQueryDescription : undefined;
-            resourceInputs["scheduledQueryInstances"] = state ? state.scheduledQueryInstances : undefined;
-            resourceInputs["scheduledQueryMaximumRuntimeInSeconds"] = state ? state.scheduledQueryMaximumRuntimeInSeconds : undefined;
-            resourceInputs["scheduledQueryName"] = state ? state.scheduledQueryName : undefined;
-            resourceInputs["scheduledQueryNextRunInMs"] = state ? state.scheduledQueryNextRunInMs : undefined;
-            resourceInputs["scheduledQueryProcessingConfiguration"] = state ? state.scheduledQueryProcessingConfiguration : undefined;
-            resourceInputs["scheduledQueryProcessingSubType"] = state ? state.scheduledQueryProcessingSubType : undefined;
-            resourceInputs["scheduledQueryProcessingType"] = state ? state.scheduledQueryProcessingType : undefined;
-            resourceInputs["scheduledQueryRetentionCriteria"] = state ? state.scheduledQueryRetentionCriteria : undefined;
-            resourceInputs["scheduledQueryRetentionPeriodInMs"] = state ? state.scheduledQueryRetentionPeriodInMs : undefined;
-            resourceInputs["scheduledQuerySchedule"] = state ? state.scheduledQuerySchedule : undefined;
-            resourceInputs["scheduledQueryText"] = state ? state.scheduledQueryText : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["opcDryRun"] = state?.opcDryRun;
+            resourceInputs["scheduledQueryDescription"] = state?.scheduledQueryDescription;
+            resourceInputs["scheduledQueryInstances"] = state?.scheduledQueryInstances;
+            resourceInputs["scheduledQueryMaximumRuntimeInSeconds"] = state?.scheduledQueryMaximumRuntimeInSeconds;
+            resourceInputs["scheduledQueryName"] = state?.scheduledQueryName;
+            resourceInputs["scheduledQueryNextRunInMs"] = state?.scheduledQueryNextRunInMs;
+            resourceInputs["scheduledQueryProcessingConfiguration"] = state?.scheduledQueryProcessingConfiguration;
+            resourceInputs["scheduledQueryProcessingSubType"] = state?.scheduledQueryProcessingSubType;
+            resourceInputs["scheduledQueryProcessingType"] = state?.scheduledQueryProcessingType;
+            resourceInputs["scheduledQueryRetentionCriteria"] = state?.scheduledQueryRetentionCriteria;
+            resourceInputs["scheduledQueryRetentionPeriodInMs"] = state?.scheduledQueryRetentionPeriodInMs;
+            resourceInputs["scheduledQuerySchedule"] = state?.scheduledQuerySchedule;
+            resourceInputs["scheduledQueryText"] = state?.scheduledQueryText;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
         } else {
             const args = argsOrState as ScheduledQueryArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
-            resourceInputs["scheduledQueryDescription"] = args ? args.scheduledQueryDescription : undefined;
-            resourceInputs["scheduledQueryMaximumRuntimeInSeconds"] = args ? args.scheduledQueryMaximumRuntimeInSeconds : undefined;
-            resourceInputs["scheduledQueryName"] = args ? args.scheduledQueryName : undefined;
-            resourceInputs["scheduledQueryProcessingConfiguration"] = args ? args.scheduledQueryProcessingConfiguration : undefined;
-            resourceInputs["scheduledQueryProcessingSubType"] = args ? args.scheduledQueryProcessingSubType : undefined;
-            resourceInputs["scheduledQueryProcessingType"] = args ? args.scheduledQueryProcessingType : undefined;
-            resourceInputs["scheduledQueryRetentionCriteria"] = args ? args.scheduledQueryRetentionCriteria : undefined;
-            resourceInputs["scheduledQueryRetentionPeriodInMs"] = args ? args.scheduledQueryRetentionPeriodInMs : undefined;
-            resourceInputs["scheduledQuerySchedule"] = args ? args.scheduledQuerySchedule : undefined;
-            resourceInputs["scheduledQueryText"] = args ? args.scheduledQueryText : undefined;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["opcDryRun"] = args?.opcDryRun;
+            resourceInputs["scheduledQueryDescription"] = args?.scheduledQueryDescription;
+            resourceInputs["scheduledQueryMaximumRuntimeInSeconds"] = args?.scheduledQueryMaximumRuntimeInSeconds;
+            resourceInputs["scheduledQueryName"] = args?.scheduledQueryName;
+            resourceInputs["scheduledQueryProcessingConfiguration"] = args?.scheduledQueryProcessingConfiguration;
+            resourceInputs["scheduledQueryProcessingSubType"] = args?.scheduledQueryProcessingSubType;
+            resourceInputs["scheduledQueryProcessingType"] = args?.scheduledQueryProcessingType;
+            resourceInputs["scheduledQueryRetentionCriteria"] = args?.scheduledQueryRetentionCriteria;
+            resourceInputs["scheduledQueryRetentionPeriodInMs"] = args?.scheduledQueryRetentionPeriodInMs;
+            resourceInputs["scheduledQuerySchedule"] = args?.scheduledQuerySchedule;
+            resourceInputs["scheduledQueryText"] = args?.scheduledQueryText;
             resourceInputs["scheduledQueryInstances"] = undefined /*out*/;
             resourceInputs["scheduledQueryNextRunInMs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

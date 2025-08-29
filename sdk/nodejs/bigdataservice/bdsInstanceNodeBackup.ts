@@ -64,30 +64,30 @@ export class BdsInstanceNodeBackup extends pulumi.CustomResource {
         return obj['__pulumiType'] === BdsInstanceNodeBackup.__pulumiType;
     }
 
-    public readonly backupConfigId!: pulumi.Output<string | undefined>;
+    declare public readonly backupConfigId: pulumi.Output<string | undefined>;
     /**
      * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      */
-    public readonly backupType!: pulumi.Output<string>;
+    declare public readonly backupType: pulumi.Output<string>;
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Details of the type of level used to trigger the creation of a new node backup.
      */
-    public readonly levelTypeDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceNodeBackupLevelTypeDetails>;
-    public readonly nodeInstanceId!: pulumi.Output<string>;
+    declare public readonly levelTypeDetails: pulumi.Output<outputs.BigDataService.BdsInstanceNodeBackupLevelTypeDetails>;
+    declare public readonly nodeInstanceId: pulumi.Output<string>;
     /**
      * The state of the NodeBackup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the NodeBackup was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceNodeBackup resource with the given unique name, arguments, and options.
@@ -102,32 +102,32 @@ export class BdsInstanceNodeBackup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceNodeBackupState | undefined;
-            resourceInputs["backupConfigId"] = state ? state.backupConfigId : undefined;
-            resourceInputs["backupType"] = state ? state.backupType : undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["levelTypeDetails"] = state ? state.levelTypeDetails : undefined;
-            resourceInputs["nodeInstanceId"] = state ? state.nodeInstanceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["backupConfigId"] = state?.backupConfigId;
+            resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["levelTypeDetails"] = state?.levelTypeDetails;
+            resourceInputs["nodeInstanceId"] = state?.nodeInstanceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BdsInstanceNodeBackupArgs | undefined;
-            if ((!args || args.backupType === undefined) && !opts.urn) {
+            if (args?.backupType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'backupType'");
             }
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.levelTypeDetails === undefined) && !opts.urn) {
+            if (args?.levelTypeDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'levelTypeDetails'");
             }
-            resourceInputs["backupConfigId"] = args ? args.backupConfigId : undefined;
-            resourceInputs["backupType"] = args ? args.backupType : undefined;
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["levelTypeDetails"] = args ? args.levelTypeDetails : undefined;
-            resourceInputs["nodeInstanceId"] = args ? args.nodeInstanceId : undefined;
+            resourceInputs["backupConfigId"] = args?.backupConfigId;
+            resourceInputs["backupType"] = args?.backupType;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["levelTypeDetails"] = args?.levelTypeDetails;
+            resourceInputs["nodeInstanceId"] = args?.nodeInstanceId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;

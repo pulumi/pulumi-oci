@@ -114,219 +114,219 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly activatedStorageCount: pulumi.Output<number>;
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
-    public readonly activationFile!: pulumi.Output<string | undefined>;
+    declare public readonly activationFile: pulumi.Output<string | undefined>;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    public /*out*/ readonly additionalComputeCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly additionalComputeCount: pulumi.Output<number>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    public /*out*/ readonly additionalComputeSystemModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly additionalComputeSystemModel: pulumi.Output<string>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly additionalStorageCount!: pulumi.Output<number>;
+    declare public readonly additionalStorageCount: pulumi.Output<number>;
     /**
      * (Updatable) The CIDR block for the Exadata administration network.
      */
-    public readonly adminNetworkCidr!: pulumi.Output<string>;
+    declare public readonly adminNetworkCidr: pulumi.Output<string>;
     /**
      * The name of the availability domain that the Exadata infrastructure is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The IP address for the first control plane server.
      */
-    public readonly cloudControlPlaneServer1!: pulumi.Output<string>;
+    declare public readonly cloudControlPlaneServer1: pulumi.Output<string>;
     /**
      * (Updatable) The IP address for the second control plane server.
      */
-    public readonly cloudControlPlaneServer2!: pulumi.Output<string>;
+    declare public readonly cloudControlPlaneServer2: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    public readonly computeCount!: pulumi.Output<number>;
+    declare public readonly computeCount: pulumi.Output<number>;
     /**
      * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    declare public /*out*/ readonly computeModel: pulumi.Output<string>;
     /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      */
-    public readonly contacts!: pulumi.Output<outputs.Database.ExadataInfrastructureContact[] | undefined>;
+    declare public readonly contacts: pulumi.Output<outputs.Database.ExadataInfrastructureContact[] | undefined>;
     /**
      * (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
      */
-    public readonly corporateProxy!: pulumi.Output<string>;
+    declare public readonly corporateProxy: pulumi.Output<string>;
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
-    public readonly createAsync!: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly cpusEnabled: pulumi.Output<number>;
+    declare public readonly createAsync: pulumi.Output<boolean | undefined>;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    public /*out*/ readonly csiNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly csiNumber: pulumi.Output<string>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dataStorageSizeInTbs: pulumi.Output<number>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    public readonly databaseServerType!: pulumi.Output<string>;
+    declare public readonly databaseServerType: pulumi.Output<string>;
     /**
      * The local node storage allocated in GBs.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbNodeStorageSizeInGbs: pulumi.Output<number>;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbServerVersion: pulumi.Output<string>;
     /**
      * Details of the file system configuration of the Exadata infrastructure.
      */
-    public /*out*/ readonly definedFileSystemConfigurations!: pulumi.Output<outputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration[]>;
+    declare public /*out*/ readonly definedFileSystemConfigurations: pulumi.Output<outputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    public readonly dnsServers!: pulumi.Output<string[]>;
+    declare public readonly dnsServers: pulumi.Output<string[]>;
     /**
      * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
      */
-    public /*out*/ readonly exascaleConfigs!: pulumi.Output<outputs.Database.ExadataInfrastructureExascaleConfig[]>;
+    declare public /*out*/ readonly exascaleConfigs: pulumi.Output<outputs.Database.ExadataInfrastructureExascaleConfig[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The gateway for the control plane network.
      */
-    public readonly gateway!: pulumi.Output<string>;
+    declare public readonly gateway: pulumi.Output<string>;
     /**
      * (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
      */
-    public readonly infiniBandNetworkCidr!: pulumi.Output<string>;
+    declare public readonly infiniBandNetworkCidr: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    public readonly isCpsOfflineReportEnabled!: pulumi.Output<boolean>;
+    declare public readonly isCpsOfflineReportEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      */
-    public readonly isMultiRackDeployment!: pulumi.Output<boolean>;
+    declare public readonly isMultiRackDeployment: pulumi.Output<boolean>;
     /**
      * If true, the infrastructure is using granular maintenance scheduling preference.
      */
-    public /*out*/ readonly isSchedulingPolicyAssociated!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSchedulingPolicyAssociated: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    public /*out*/ readonly maintenanceSloStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceSloStatus: pulumi.Output<string>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public readonly maintenanceWindow!: pulumi.Output<outputs.Database.ExadataInfrastructureMaintenanceWindow>;
+    declare public readonly maintenanceWindow: pulumi.Output<outputs.Database.ExadataInfrastructureMaintenanceWindow>;
     /**
      * The total number of CPU cores available.
      */
-    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxCpuCount: pulumi.Output<number>;
     /**
      * The total available DATA disk group size.
      */
-    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDataStorageInTbs: pulumi.Output<number>;
     /**
      * The total local node storage available in GBs.
      */
-    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxDbNodeStorageInGbs: pulumi.Output<number>;
     /**
      * The total memory available in GBs.
      */
-    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxMemoryInGbs: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    public /*out*/ readonly monthlyDbServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly monthlyDbServerVersion: pulumi.Output<string>;
     /**
      * (Updatable) The base64 encoded Multi-Rack configuration json file.
      */
-    public readonly multiRackConfigurationFile!: pulumi.Output<string | undefined>;
+    declare public readonly multiRackConfigurationFile: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The netmask for the control plane network.
      */
-    public readonly netmask!: pulumi.Output<string>;
+    declare public readonly netmask: pulumi.Output<string>;
     /**
      * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
-    public readonly networkBondingModeDetails!: pulumi.Output<outputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
+    declare public readonly networkBondingModeDetails: pulumi.Output<outputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    public readonly ntpServers!: pulumi.Output<string[]>;
+    declare public readonly ntpServers: pulumi.Output<string[]>;
     /**
      * The serial number for the Exadata infrastructure.
      */
-    public /*out*/ readonly rackSerialNumber!: pulumi.Output<string>;
+    declare public /*out*/ readonly rackSerialNumber: pulumi.Output<string>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    public readonly shape!: pulumi.Output<string>;
+    declare public readonly shape: pulumi.Output<string>;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The number of storage servers for the Exadata infrastructure.
      */
-    public readonly storageCount!: pulumi.Output<number>;
+    declare public readonly storageCount: pulumi.Output<number>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    public readonly storageServerType!: pulumi.Output<string>;
+    declare public readonly storageServerType: pulumi.Output<string>;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageServerVersion: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    declare public readonly timeZone: pulumi.Output<string>;
 
     /**
      * Create a ExadataInfrastructure resource with the given unique name, arguments, and options.
@@ -341,126 +341,126 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExadataInfrastructureState | undefined;
-            resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
-            resourceInputs["activationFile"] = state ? state.activationFile : undefined;
-            resourceInputs["additionalComputeCount"] = state ? state.additionalComputeCount : undefined;
-            resourceInputs["additionalComputeSystemModel"] = state ? state.additionalComputeSystemModel : undefined;
-            resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
-            resourceInputs["adminNetworkCidr"] = state ? state.adminNetworkCidr : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["cloudControlPlaneServer1"] = state ? state.cloudControlPlaneServer1 : undefined;
-            resourceInputs["cloudControlPlaneServer2"] = state ? state.cloudControlPlaneServer2 : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
-            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
-            resourceInputs["contacts"] = state ? state.contacts : undefined;
-            resourceInputs["corporateProxy"] = state ? state.corporateProxy : undefined;
-            resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
-            resourceInputs["createAsync"] = state ? state.createAsync : undefined;
-            resourceInputs["csiNumber"] = state ? state.csiNumber : undefined;
-            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
-            resourceInputs["databaseServerType"] = state ? state.databaseServerType : undefined;
-            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
-            resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
-            resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
-            resourceInputs["exascaleConfigs"] = state ? state.exascaleConfigs : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gateway"] = state ? state.gateway : undefined;
-            resourceInputs["infiniBandNetworkCidr"] = state ? state.infiniBandNetworkCidr : undefined;
-            resourceInputs["isCpsOfflineReportEnabled"] = state ? state.isCpsOfflineReportEnabled : undefined;
-            resourceInputs["isMultiRackDeployment"] = state ? state.isMultiRackDeployment : undefined;
-            resourceInputs["isSchedulingPolicyAssociated"] = state ? state.isSchedulingPolicyAssociated : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceSloStatus"] = state ? state.maintenanceSloStatus : undefined;
-            resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
-            resourceInputs["maxCpuCount"] = state ? state.maxCpuCount : undefined;
-            resourceInputs["maxDataStorageInTbs"] = state ? state.maxDataStorageInTbs : undefined;
-            resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
-            resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
-            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
-            resourceInputs["monthlyDbServerVersion"] = state ? state.monthlyDbServerVersion : undefined;
-            resourceInputs["multiRackConfigurationFile"] = state ? state.multiRackConfigurationFile : undefined;
-            resourceInputs["netmask"] = state ? state.netmask : undefined;
-            resourceInputs["networkBondingModeDetails"] = state ? state.networkBondingModeDetails : undefined;
-            resourceInputs["ntpServers"] = state ? state.ntpServers : undefined;
-            resourceInputs["rackSerialNumber"] = state ? state.rackSerialNumber : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageCount"] = state ? state.storageCount : undefined;
-            resourceInputs["storageServerType"] = state ? state.storageServerType : undefined;
-            resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
+            resourceInputs["activatedStorageCount"] = state?.activatedStorageCount;
+            resourceInputs["activationFile"] = state?.activationFile;
+            resourceInputs["additionalComputeCount"] = state?.additionalComputeCount;
+            resourceInputs["additionalComputeSystemModel"] = state?.additionalComputeSystemModel;
+            resourceInputs["additionalStorageCount"] = state?.additionalStorageCount;
+            resourceInputs["adminNetworkCidr"] = state?.adminNetworkCidr;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["cloudControlPlaneServer1"] = state?.cloudControlPlaneServer1;
+            resourceInputs["cloudControlPlaneServer2"] = state?.cloudControlPlaneServer2;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeCount"] = state?.computeCount;
+            resourceInputs["computeModel"] = state?.computeModel;
+            resourceInputs["contacts"] = state?.contacts;
+            resourceInputs["corporateProxy"] = state?.corporateProxy;
+            resourceInputs["cpusEnabled"] = state?.cpusEnabled;
+            resourceInputs["createAsync"] = state?.createAsync;
+            resourceInputs["csiNumber"] = state?.csiNumber;
+            resourceInputs["dataStorageSizeInTbs"] = state?.dataStorageSizeInTbs;
+            resourceInputs["databaseServerType"] = state?.databaseServerType;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state?.dbNodeStorageSizeInGbs;
+            resourceInputs["dbServerVersion"] = state?.dbServerVersion;
+            resourceInputs["definedFileSystemConfigurations"] = state?.definedFileSystemConfigurations;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["dnsServers"] = state?.dnsServers;
+            resourceInputs["exascaleConfigs"] = state?.exascaleConfigs;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gateway"] = state?.gateway;
+            resourceInputs["infiniBandNetworkCidr"] = state?.infiniBandNetworkCidr;
+            resourceInputs["isCpsOfflineReportEnabled"] = state?.isCpsOfflineReportEnabled;
+            resourceInputs["isMultiRackDeployment"] = state?.isMultiRackDeployment;
+            resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceSloStatus"] = state?.maintenanceSloStatus;
+            resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
+            resourceInputs["maxCpuCount"] = state?.maxCpuCount;
+            resourceInputs["maxDataStorageInTbs"] = state?.maxDataStorageInTbs;
+            resourceInputs["maxDbNodeStorageInGbs"] = state?.maxDbNodeStorageInGbs;
+            resourceInputs["maxMemoryInGbs"] = state?.maxMemoryInGbs;
+            resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["monthlyDbServerVersion"] = state?.monthlyDbServerVersion;
+            resourceInputs["multiRackConfigurationFile"] = state?.multiRackConfigurationFile;
+            resourceInputs["netmask"] = state?.netmask;
+            resourceInputs["networkBondingModeDetails"] = state?.networkBondingModeDetails;
+            resourceInputs["ntpServers"] = state?.ntpServers;
+            resourceInputs["rackSerialNumber"] = state?.rackSerialNumber;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageCount"] = state?.storageCount;
+            resourceInputs["storageServerType"] = state?.storageServerType;
+            resourceInputs["storageServerVersion"] = state?.storageServerVersion;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeZone"] = state?.timeZone;
         } else {
             const args = argsOrState as ExadataInfrastructureArgs | undefined;
-            if ((!args || args.adminNetworkCidr === undefined) && !opts.urn) {
+            if (args?.adminNetworkCidr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'adminNetworkCidr'");
             }
-            if ((!args || args.cloudControlPlaneServer1 === undefined) && !opts.urn) {
+            if (args?.cloudControlPlaneServer1 === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudControlPlaneServer1'");
             }
-            if ((!args || args.cloudControlPlaneServer2 === undefined) && !opts.urn) {
+            if (args?.cloudControlPlaneServer2 === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudControlPlaneServer2'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.dnsServers === undefined) && !opts.urn) {
+            if (args?.dnsServers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dnsServers'");
             }
-            if ((!args || args.gateway === undefined) && !opts.urn) {
+            if (args?.gateway === undefined && !opts.urn) {
                 throw new Error("Missing required property 'gateway'");
             }
-            if ((!args || args.infiniBandNetworkCidr === undefined) && !opts.urn) {
+            if (args?.infiniBandNetworkCidr === undefined && !opts.urn) {
                 throw new Error("Missing required property 'infiniBandNetworkCidr'");
             }
-            if ((!args || args.netmask === undefined) && !opts.urn) {
+            if (args?.netmask === undefined && !opts.urn) {
                 throw new Error("Missing required property 'netmask'");
             }
-            if ((!args || args.ntpServers === undefined) && !opts.urn) {
+            if (args?.ntpServers === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ntpServers'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
+            if (args?.shape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'shape'");
             }
-            if ((!args || args.timeZone === undefined) && !opts.urn) {
+            if (args?.timeZone === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeZone'");
             }
-            resourceInputs["activationFile"] = args ? args.activationFile : undefined;
-            resourceInputs["additionalStorageCount"] = args ? args.additionalStorageCount : undefined;
-            resourceInputs["adminNetworkCidr"] = args ? args.adminNetworkCidr : undefined;
-            resourceInputs["cloudControlPlaneServer1"] = args ? args.cloudControlPlaneServer1 : undefined;
-            resourceInputs["cloudControlPlaneServer2"] = args ? args.cloudControlPlaneServer2 : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
-            resourceInputs["contacts"] = args ? args.contacts : undefined;
-            resourceInputs["corporateProxy"] = args ? args.corporateProxy : undefined;
-            resourceInputs["createAsync"] = args ? args.createAsync : undefined;
-            resourceInputs["databaseServerType"] = args ? args.databaseServerType : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["dnsServers"] = args ? args.dnsServers : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gateway"] = args ? args.gateway : undefined;
-            resourceInputs["infiniBandNetworkCidr"] = args ? args.infiniBandNetworkCidr : undefined;
-            resourceInputs["isCpsOfflineReportEnabled"] = args ? args.isCpsOfflineReportEnabled : undefined;
-            resourceInputs["isMultiRackDeployment"] = args ? args.isMultiRackDeployment : undefined;
-            resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
-            resourceInputs["multiRackConfigurationFile"] = args ? args.multiRackConfigurationFile : undefined;
-            resourceInputs["netmask"] = args ? args.netmask : undefined;
-            resourceInputs["networkBondingModeDetails"] = args ? args.networkBondingModeDetails : undefined;
-            resourceInputs["ntpServers"] = args ? args.ntpServers : undefined;
-            resourceInputs["shape"] = args ? args.shape : undefined;
-            resourceInputs["storageCount"] = args ? args.storageCount : undefined;
-            resourceInputs["storageServerType"] = args ? args.storageServerType : undefined;
-            resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["activationFile"] = args?.activationFile;
+            resourceInputs["additionalStorageCount"] = args?.additionalStorageCount;
+            resourceInputs["adminNetworkCidr"] = args?.adminNetworkCidr;
+            resourceInputs["cloudControlPlaneServer1"] = args?.cloudControlPlaneServer1;
+            resourceInputs["cloudControlPlaneServer2"] = args?.cloudControlPlaneServer2;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeCount"] = args?.computeCount;
+            resourceInputs["contacts"] = args?.contacts;
+            resourceInputs["corporateProxy"] = args?.corporateProxy;
+            resourceInputs["createAsync"] = args?.createAsync;
+            resourceInputs["databaseServerType"] = args?.databaseServerType;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["dnsServers"] = args?.dnsServers;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gateway"] = args?.gateway;
+            resourceInputs["infiniBandNetworkCidr"] = args?.infiniBandNetworkCidr;
+            resourceInputs["isCpsOfflineReportEnabled"] = args?.isCpsOfflineReportEnabled;
+            resourceInputs["isMultiRackDeployment"] = args?.isMultiRackDeployment;
+            resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
+            resourceInputs["multiRackConfigurationFile"] = args?.multiRackConfigurationFile;
+            resourceInputs["netmask"] = args?.netmask;
+            resourceInputs["networkBondingModeDetails"] = args?.networkBondingModeDetails;
+            resourceInputs["ntpServers"] = args?.ntpServers;
+            resourceInputs["shape"] = args?.shape;
+            resourceInputs["storageCount"] = args?.storageCount;
+            resourceInputs["storageServerType"] = args?.storageServerType;
+            resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["activatedStorageCount"] = undefined /*out*/;
             resourceInputs["additionalComputeCount"] = undefined /*out*/;
             resourceInputs["additionalComputeSystemModel"] = undefined /*out*/;

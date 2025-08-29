@@ -60,7 +60,7 @@ export class ProfileAttachLifecycleStageManagement extends pulumi.CustomResource
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    declare public readonly lifecycleStageId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      *
@@ -68,7 +68,7 @@ export class ProfileAttachLifecycleStageManagement extends pulumi.CustomResource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
 
     /**
      * Create a ProfileAttachLifecycleStageManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ProfileAttachLifecycleStageManagement extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileAttachLifecycleStageManagementState | undefined;
-            resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
+            resourceInputs["lifecycleStageId"] = state?.lifecycleStageId;
+            resourceInputs["profileId"] = state?.profileId;
         } else {
             const args = argsOrState as ProfileAttachLifecycleStageManagementArgs | undefined;
-            if ((!args || args.lifecycleStageId === undefined) && !opts.urn) {
+            if (args?.lifecycleStageId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'lifecycleStageId'");
             }
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
+            resourceInputs["lifecycleStageId"] = args?.lifecycleStageId;
+            resourceInputs["profileId"] = args?.profileId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProfileAttachLifecycleStageManagement.__pulumiType, name, resourceInputs, opts);

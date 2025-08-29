@@ -76,81 +76,81 @@ export class BackupDestination extends pulumi.CustomResource {
     /**
      * List of databases associated with the backup destination.
      */
-    public /*out*/ readonly associatedDatabases!: pulumi.Output<outputs.Database.BackupDestinationAssociatedDatabase[]>;
+    declare public /*out*/ readonly associatedDatabases: pulumi.Output<outputs.Database.BackupDestinationAssociatedDatabase[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The connection string for connecting to the Recovery Appliance.
      */
-    public readonly connectionString!: pulumi.Output<string | undefined>;
+    declare public readonly connectionString: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-provided name of the backup destination.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      *
      * @deprecated The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
      */
-    public readonly localMountPointPath!: pulumi.Output<string>;
+    declare public readonly localMountPointPath: pulumi.Output<string>;
     /**
      * Mount type details for backup destination.
      */
-    public readonly mountTypeDetails!: pulumi.Output<outputs.Database.BackupDestinationMountTypeDetails>;
+    declare public readonly mountTypeDetails: pulumi.Output<outputs.Database.BackupDestinationMountTypeDetails>;
     /**
      * NFS Mount type for backup destination.
      */
-    public /*out*/ readonly nfsMountType!: pulumi.Output<string>;
+    declare public /*out*/ readonly nfsMountType: pulumi.Output<string>;
     /**
      * Specifies the directory on which to mount the file system
      */
-    public /*out*/ readonly nfsServerExport!: pulumi.Output<string>;
+    declare public /*out*/ readonly nfsServerExport: pulumi.Output<string>;
     /**
      * Host names or IP addresses for NFS Auto mount.
      */
-    public /*out*/ readonly nfsServers!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly nfsServers: pulumi.Output<string[]>;
     /**
      * The current lifecycle state of the backup destination.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the total storage size and the utilized storage size of the backup destination are updated.
      */
-    public /*out*/ readonly timeAtWhichStorageDetailsAreUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAtWhichStorageDetailsAreUpdated: pulumi.Output<string>;
     /**
      * The date and time the backup destination was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The total storage size of the backup destination in GBs, rounded to the nearest integer.
      */
-    public /*out*/ readonly totalStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalStorageSizeInGbs: pulumi.Output<number>;
     /**
      * Type of the backup destination.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
      */
-    public /*out*/ readonly utilizedStorageSizeInGbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly utilizedStorageSizeInGbs: pulumi.Output<number>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      *
@@ -158,7 +158,7 @@ export class BackupDestination extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vpcUsers!: pulumi.Output<string[] | undefined>;
+    declare public readonly vpcUsers: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a BackupDestination resource with the given unique name, arguments, and options.
@@ -173,46 +173,46 @@ export class BackupDestination extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackupDestinationState | undefined;
-            resourceInputs["associatedDatabases"] = state ? state.associatedDatabases : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionString"] = state ? state.connectionString : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["localMountPointPath"] = state ? state.localMountPointPath : undefined;
-            resourceInputs["mountTypeDetails"] = state ? state.mountTypeDetails : undefined;
-            resourceInputs["nfsMountType"] = state ? state.nfsMountType : undefined;
-            resourceInputs["nfsServerExport"] = state ? state.nfsServerExport : undefined;
-            resourceInputs["nfsServers"] = state ? state.nfsServers : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = state ? state.timeAtWhichStorageDetailsAreUpdated : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["utilizedStorageSizeInGbs"] = state ? state.utilizedStorageSizeInGbs : undefined;
-            resourceInputs["vpcUsers"] = state ? state.vpcUsers : undefined;
+            resourceInputs["associatedDatabases"] = state?.associatedDatabases;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionString"] = state?.connectionString;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["localMountPointPath"] = state?.localMountPointPath;
+            resourceInputs["mountTypeDetails"] = state?.mountTypeDetails;
+            resourceInputs["nfsMountType"] = state?.nfsMountType;
+            resourceInputs["nfsServerExport"] = state?.nfsServerExport;
+            resourceInputs["nfsServers"] = state?.nfsServers;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = state?.timeAtWhichStorageDetailsAreUpdated;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["totalStorageSizeInGbs"] = state?.totalStorageSizeInGbs;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["utilizedStorageSizeInGbs"] = state?.utilizedStorageSizeInGbs;
+            resourceInputs["vpcUsers"] = state?.vpcUsers;
         } else {
             const args = argsOrState as BackupDestinationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionString"] = args ? args.connectionString : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["localMountPointPath"] = args ? args.localMountPointPath : undefined;
-            resourceInputs["mountTypeDetails"] = args ? args.mountTypeDetails : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["vpcUsers"] = args ? args.vpcUsers : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionString"] = args?.connectionString;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["localMountPointPath"] = args?.localMountPointPath;
+            resourceInputs["mountTypeDetails"] = args?.mountTypeDetails;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["vpcUsers"] = args?.vpcUsers;
             resourceInputs["associatedDatabases"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nfsMountType"] = undefined /*out*/;

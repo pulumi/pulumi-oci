@@ -67,19 +67,19 @@ export class ManagedInstanceInstallWindowsUpdatesManagement extends pulumi.Custo
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    public readonly managedInstanceId!: pulumi.Output<string>;
+    declare public readonly managedInstanceId: pulumi.Output<string>;
     /**
      * The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
      */
-    public readonly windowsUpdateNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly windowsUpdateNames: pulumi.Output<string[] | undefined>;
     /**
      * The types of Windows updates to be installed.
      */
-    public readonly windowsUpdateTypes!: pulumi.Output<string[] | undefined>;
+    declare public readonly windowsUpdateTypes: pulumi.Output<string[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceInstallWindowsUpdatesManagement resource with the given unique name, arguments, and options.
@@ -94,19 +94,19 @@ export class ManagedInstanceInstallWindowsUpdatesManagement extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceInstallWindowsUpdatesManagementState | undefined;
-            resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
-            resourceInputs["windowsUpdateNames"] = state ? state.windowsUpdateNames : undefined;
-            resourceInputs["windowsUpdateTypes"] = state ? state.windowsUpdateTypes : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceId"] = state?.managedInstanceId;
+            resourceInputs["windowsUpdateNames"] = state?.windowsUpdateNames;
+            resourceInputs["windowsUpdateTypes"] = state?.windowsUpdateTypes;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceInstallWindowsUpdatesManagementArgs | undefined;
-            if ((!args || args.managedInstanceId === undefined) && !opts.urn) {
+            if (args?.managedInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceId'");
             }
-            resourceInputs["managedInstanceId"] = args ? args.managedInstanceId : undefined;
-            resourceInputs["windowsUpdateNames"] = args ? args.windowsUpdateNames : undefined;
-            resourceInputs["windowsUpdateTypes"] = args ? args.windowsUpdateTypes : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceId"] = args?.managedInstanceId;
+            resourceInputs["windowsUpdateNames"] = args?.windowsUpdateNames;
+            resourceInputs["windowsUpdateTypes"] = args?.windowsUpdateTypes;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceInstallWindowsUpdatesManagement.__pulumiType, name, resourceInputs, opts);

@@ -69,35 +69,35 @@ export class Index extends pulumi.CustomResource {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      */
-    public readonly isIfNotExists!: pulumi.Output<boolean>;
+    declare public readonly isIfNotExists: pulumi.Output<boolean>;
     /**
      * A set of keys for a secondary index.
      */
-    public readonly keys!: pulumi.Output<outputs.Nosql.IndexKey[]>;
+    declare public readonly keys: pulumi.Output<outputs.Nosql.IndexKey[]>;
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Index name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The state of an index.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * the OCID of the table to which this index belongs.
      */
-    public /*out*/ readonly tableId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tableId: pulumi.Output<string>;
     /**
      * The name of the table to which this index belongs.
      */
-    public /*out*/ readonly tableName!: pulumi.Output<string>;
+    declare public /*out*/ readonly tableName: pulumi.Output<string>;
     /**
      * A table name within the compartment, or a table OCID.
      *
@@ -105,7 +105,7 @@ export class Index extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
-    public readonly tableNameOrId!: pulumi.Output<string>;
+    declare public readonly tableNameOrId: pulumi.Output<string>;
 
     /**
      * Create a Index resource with the given unique name, arguments, and options.
@@ -120,28 +120,28 @@ export class Index extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IndexState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isIfNotExists"] = state ? state.isIfNotExists : undefined;
-            resourceInputs["keys"] = state ? state.keys : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tableId"] = state ? state.tableId : undefined;
-            resourceInputs["tableName"] = state ? state.tableName : undefined;
-            resourceInputs["tableNameOrId"] = state ? state.tableNameOrId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isIfNotExists"] = state?.isIfNotExists;
+            resourceInputs["keys"] = state?.keys;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tableId"] = state?.tableId;
+            resourceInputs["tableName"] = state?.tableName;
+            resourceInputs["tableNameOrId"] = state?.tableNameOrId;
         } else {
             const args = argsOrState as IndexArgs | undefined;
-            if ((!args || args.keys === undefined) && !opts.urn) {
+            if (args?.keys === undefined && !opts.urn) {
                 throw new Error("Missing required property 'keys'");
             }
-            if ((!args || args.tableNameOrId === undefined) && !opts.urn) {
+            if (args?.tableNameOrId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tableNameOrId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isIfNotExists"] = args ? args.isIfNotExists : undefined;
-            resourceInputs["keys"] = args ? args.keys : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["tableNameOrId"] = args ? args.tableNameOrId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isIfNotExists"] = args?.isIfNotExists;
+            resourceInputs["keys"] = args?.keys;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["tableNameOrId"] = args?.tableNameOrId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["tableId"] = undefined /*out*/;

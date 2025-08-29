@@ -60,114 +60,114 @@ export class ManagementAgent extends pulumi.CustomResource {
     /**
      * The current availability status of managementAgent
      */
-    public /*out*/ readonly availabilityStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityStatus: pulumi.Output<string>;
     /**
      * Compartment owning this DataSource.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * list of dataSources associated with the agent
      */
-    public /*out*/ readonly dataSourceLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceList[]>;
-    public /*out*/ readonly dataSourceSummaryLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceSummaryList[]>;
+    declare public /*out*/ readonly dataSourceLists: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceList[]>;
+    declare public /*out*/ readonly dataSourceSummaryLists: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceSummaryList[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly deployPluginsIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly deployPluginsIds: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) New displayName of Agent.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Management Agent host machine name
      */
-    public /*out*/ readonly host!: pulumi.Output<string>;
+    declare public /*out*/ readonly host: pulumi.Output<string>;
     /**
      * Host resource ocid
      */
-    public /*out*/ readonly hostId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hostId: pulumi.Output<string>;
     /**
      * agent install key identifier
      */
-    public /*out*/ readonly installKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly installKeyId: pulumi.Output<string>;
     /**
      * Path where Management Agent is installed
      */
-    public /*out*/ readonly installPath!: pulumi.Output<string>;
+    declare public /*out*/ readonly installPath: pulumi.Output<string>;
     /**
      * The install type, either AGENT or GATEWAY
      */
-    public /*out*/ readonly installType!: pulumi.Output<string>;
+    declare public /*out*/ readonly installType: pulumi.Output<string>;
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      */
-    public /*out*/ readonly isAgentAutoUpgradable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isAgentAutoUpgradable: pulumi.Output<boolean>;
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
-    public /*out*/ readonly isCustomerDeployed!: pulumi.Output<boolean>;
-    public /*out*/ readonly latestSupportedVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly isCustomerDeployed: pulumi.Output<boolean>;
+    declare public /*out*/ readonly latestSupportedVersion: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Unique Management Agent identifier
      */
-    public readonly managedAgentId!: pulumi.Output<string>;
+    declare public readonly managedAgentId: pulumi.Output<string>;
     /**
      * Additional properties for this Management Agent
      */
-    public /*out*/ readonly managementAgentProperties!: pulumi.Output<outputs.ManagementAgent.ManagementAgentManagementAgentProperty[]>;
+    declare public /*out*/ readonly managementAgentProperties: pulumi.Output<outputs.ManagementAgent.ManagementAgentManagementAgentProperty[]>;
     /**
      * Platform Name
      */
-    public /*out*/ readonly platformName!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformName: pulumi.Output<string>;
     /**
      * Platform Type
      */
-    public /*out*/ readonly platformType!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformType: pulumi.Output<string>;
     /**
      * Platform Version
      */
-    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformVersion: pulumi.Output<string>;
     /**
      * list of managementAgentPlugins associated with the agent
      */
-    public /*out*/ readonly pluginLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentPluginList[]>;
+    declare public /*out*/ readonly pluginLists: pulumi.Output<outputs.ManagementAgent.ManagementAgentPluginList[]>;
     /**
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      */
-    public /*out*/ readonly resourceArtifactVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceArtifactVersion: pulumi.Output<string>;
     /**
      * The current state of managementAgent
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeLastHeartbeat!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastHeartbeat: pulumi.Output<string>;
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Management Agent Version
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a ManagementAgent resource with the given unique name, arguments, and options.
@@ -182,46 +182,46 @@ export class ManagementAgent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagementAgentState | undefined;
-            resourceInputs["availabilityStatus"] = state ? state.availabilityStatus : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dataSourceLists"] = state ? state.dataSourceLists : undefined;
-            resourceInputs["dataSourceSummaryLists"] = state ? state.dataSourceSummaryLists : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deployPluginsIds"] = state ? state.deployPluginsIds : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["hostId"] = state ? state.hostId : undefined;
-            resourceInputs["installKeyId"] = state ? state.installKeyId : undefined;
-            resourceInputs["installPath"] = state ? state.installPath : undefined;
-            resourceInputs["installType"] = state ? state.installType : undefined;
-            resourceInputs["isAgentAutoUpgradable"] = state ? state.isAgentAutoUpgradable : undefined;
-            resourceInputs["isCustomerDeployed"] = state ? state.isCustomerDeployed : undefined;
-            resourceInputs["latestSupportedVersion"] = state ? state.latestSupportedVersion : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["managedAgentId"] = state ? state.managedAgentId : undefined;
-            resourceInputs["managementAgentProperties"] = state ? state.managementAgentProperties : undefined;
-            resourceInputs["platformName"] = state ? state.platformName : undefined;
-            resourceInputs["platformType"] = state ? state.platformType : undefined;
-            resourceInputs["platformVersion"] = state ? state.platformVersion : undefined;
-            resourceInputs["pluginLists"] = state ? state.pluginLists : undefined;
-            resourceInputs["resourceArtifactVersion"] = state ? state.resourceArtifactVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastHeartbeat"] = state ? state.timeLastHeartbeat : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["availabilityStatus"] = state?.availabilityStatus;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dataSourceLists"] = state?.dataSourceLists;
+            resourceInputs["dataSourceSummaryLists"] = state?.dataSourceSummaryLists;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deployPluginsIds"] = state?.deployPluginsIds;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["hostId"] = state?.hostId;
+            resourceInputs["installKeyId"] = state?.installKeyId;
+            resourceInputs["installPath"] = state?.installPath;
+            resourceInputs["installType"] = state?.installType;
+            resourceInputs["isAgentAutoUpgradable"] = state?.isAgentAutoUpgradable;
+            resourceInputs["isCustomerDeployed"] = state?.isCustomerDeployed;
+            resourceInputs["latestSupportedVersion"] = state?.latestSupportedVersion;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["managedAgentId"] = state?.managedAgentId;
+            resourceInputs["managementAgentProperties"] = state?.managementAgentProperties;
+            resourceInputs["platformName"] = state?.platformName;
+            resourceInputs["platformType"] = state?.platformType;
+            resourceInputs["platformVersion"] = state?.platformVersion;
+            resourceInputs["pluginLists"] = state?.pluginLists;
+            resourceInputs["resourceArtifactVersion"] = state?.resourceArtifactVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastHeartbeat"] = state?.timeLastHeartbeat;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as ManagementAgentArgs | undefined;
-            if ((!args || args.managedAgentId === undefined) && !opts.urn) {
+            if (args?.managedAgentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedAgentId'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deployPluginsIds"] = args ? args.deployPluginsIds : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["managedAgentId"] = args ? args.managedAgentId : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deployPluginsIds"] = args?.deployPluginsIds;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["managedAgentId"] = args?.managedAgentId;
             resourceInputs["availabilityStatus"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dataSourceLists"] = undefined /*out*/;

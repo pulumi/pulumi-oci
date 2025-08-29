@@ -77,35 +77,35 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
      * * INSPECT - Inspect the traffic.
      * * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
-    public readonly condition!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
+    declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    public readonly position!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition>;
+    declare public readonly position: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition>;
     /**
      * The priority order in which this rule should be evaluated
      */
-    public /*out*/ readonly priorityOrder!: pulumi.Output<string>;
+    declare public /*out*/ readonly priorityOrder: pulumi.Output<string>;
     /**
      * (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
      */
-    public readonly profile!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile>;
+    declare public readonly profile: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile>;
     /**
      * (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
      * * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
@@ -114,7 +114,7 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyTunnelInspectionRule resource with the given unique name, arguments, and options.
@@ -129,33 +129,33 @@ export class NetworkFirewallPolicyTunnelInspectionRule extends pulumi.CustomReso
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyTunnelInspectionRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["condition"] = state ? state.condition : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["position"] = state ? state.position : undefined;
-            resourceInputs["priorityOrder"] = state ? state.priorityOrder : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["condition"] = state?.condition;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["position"] = state?.position;
+            resourceInputs["priorityOrder"] = state?.priorityOrder;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["protocol"] = state?.protocol;
         } else {
             const args = argsOrState as NetworkFirewallPolicyTunnelInspectionRuleArgs | undefined;
-            if ((!args || args.condition === undefined) && !opts.urn) {
+            if (args?.condition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'condition'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["condition"] = args ? args.condition : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["position"] = args ? args.position : undefined;
-            resourceInputs["profile"] = args ? args.profile : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["condition"] = args?.condition;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["position"] = args?.position;
+            resourceInputs["profile"] = args?.profile;
+            resourceInputs["protocol"] = args?.protocol;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["priorityOrder"] = undefined /*out*/;
         }

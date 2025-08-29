@@ -34,8 +34,7 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _auth = new __Value<string?>(() => __config.Get("auth"));
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         public static string? Auth
         {
@@ -55,8 +54,8 @@ namespace Pulumi.Oci
 
         private static readonly __Value<bool?> _disableAutoRetries = new __Value<bool?>(() => __config.GetBoolean("disableAutoRetries"));
         /// <summary>
-        /// (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-        /// consistency problems but it also introduced performance issues on destroy operations.
+        /// (Optional) Disable automatic retries for retriable errors.
+        /// Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
         /// </summary>
         public static bool? DisableAutoRetries
         {
@@ -66,8 +65,7 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _fingerprint = new __Value<string?>(() => __config.Get("fingerprint"));
         /// <summary>
-        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-        /// console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? Fingerprint
         {
@@ -84,8 +82,8 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _privateKey = new __Value<string?>(() => __config.Get("privateKey"));
         /// <summary>
-        /// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-        /// set to 'ApiKey', ignored otherwise.
+        /// (Optional) A PEM formatted RSA private key for the user.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? PrivateKey
         {
@@ -105,8 +103,8 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _privateKeyPath = new __Value<string?>(() => __config.Get("privateKeyPath"));
         /// <summary>
-        /// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The path to the user's PEM formatted private key.
+        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? PrivateKeyPath
         {
@@ -136,9 +134,8 @@ namespace Pulumi.Oci
 
         private static readonly __Value<int?> _retryDurationSeconds = new __Value<int?>(() => __config.GetInt32("retryDurationSeconds"));
         /// <summary>
-        /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-        /// duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-        /// is set to true.
+        /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+        /// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         /// </summary>
         public static int? RetryDurationSeconds
         {
@@ -148,8 +145,7 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _tenancyOcid = new __Value<string?>(() => __config.Get("tenancyOcid"));
         /// <summary>
-        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-        /// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? TenancyOcid
         {
@@ -166,8 +162,7 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _userOcid = new __Value<string?>(() => __config.Get("userOcid"));
         /// <summary>
-        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-        /// auth is set to 'ApiKey', ignored otherwise.
+        /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? UserOcid
         {

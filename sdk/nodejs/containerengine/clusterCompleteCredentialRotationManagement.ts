@@ -59,7 +59,7 @@ export class ClusterCompleteCredentialRotationManagement extends pulumi.CustomRe
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
 
     /**
      * Create a ClusterCompleteCredentialRotationManagement resource with the given unique name, arguments, and options.
@@ -74,13 +74,13 @@ export class ClusterCompleteCredentialRotationManagement extends pulumi.CustomRe
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterCompleteCredentialRotationManagementState | undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
+            resourceInputs["clusterId"] = state?.clusterId;
         } else {
             const args = argsOrState as ClusterCompleteCredentialRotationManagementArgs | undefined;
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
+            resourceInputs["clusterId"] = args?.clusterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterCompleteCredentialRotationManagement.__pulumiType, name, resourceInputs, opts);

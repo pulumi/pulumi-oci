@@ -98,103 +98,103 @@ export class Cluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === Cluster.__pulumiType;
     }
 
-    public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly actualEsxiHostsCount: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      */
-    public readonly computeAvailabilityDomain!: pulumi.Output<string>;
+    declare public readonly computeAvailabilityDomain: pulumi.Output<string>;
     /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
-    public readonly datastores!: pulumi.Output<outputs.Ocvp.ClusterDatastore[]>;
+    declare public readonly datastores: pulumi.Output<outputs.Ocvp.ClusterDatastore[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
      *
      * **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
      */
-    public readonly esxiHostsCount!: pulumi.Output<number>;
+    declare public readonly esxiHostsCount: pulumi.Output<number>;
     /**
      * (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    public readonly esxiSoftwareVersion!: pulumi.Output<string>;
+    declare public readonly esxiSoftwareVersion: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    public readonly initialCommitment!: pulumi.Output<string>;
+    declare public readonly initialCommitment: pulumi.Output<string>;
     /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
-    public readonly initialHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly initialHostOcpuCount: pulumi.Output<number>;
     /**
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
-    public readonly initialHostShapeName!: pulumi.Output<string>;
+    declare public readonly initialHostShapeName: pulumi.Output<string>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      */
-    public readonly instanceDisplayNamePrefix!: pulumi.Output<string>;
+    declare public readonly instanceDisplayNamePrefix: pulumi.Output<string>;
     /**
      * Indicates whether shielded instance is enabled for this Cluster.
      */
-    public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean>;
+    declare public readonly isShieldedInstanceEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
      */
-    public readonly networkConfiguration!: pulumi.Output<outputs.Ocvp.ClusterNetworkConfiguration>;
+    declare public readonly networkConfiguration: pulumi.Output<outputs.Ocvp.ClusterNetworkConfiguration>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
      */
-    public readonly sddcId!: pulumi.Output<string>;
+    declare public readonly sddcId: pulumi.Output<string>;
     /**
      * The current state of the Cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The vSphere licenses to use when upgrading the Cluster.
      */
-    public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.ClusterUpgradeLicense[]>;
+    declare public /*out*/ readonly upgradeLicenses: pulumi.Output<outputs.Ocvp.ClusterUpgradeLicense[]>;
     /**
      * (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    public readonly vmwareSoftwareVersion!: pulumi.Output<string>;
+    declare public readonly vmwareSoftwareVersion: pulumi.Output<string>;
     /**
      * vSphere Cluster types.
      */
-    public /*out*/ readonly vsphereType!: pulumi.Output<string>;
+    declare public /*out*/ readonly vsphereType: pulumi.Output<string>;
     /**
      * The links to binary objects needed to upgrade vSphere.
      */
-    public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.ClusterVsphereUpgradeObject[]>;
+    declare public /*out*/ readonly vsphereUpgradeObjects: pulumi.Output<outputs.Ocvp.ClusterVsphereUpgradeObject[]>;
     /**
      * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
      *
@@ -202,7 +202,7 @@ export class Cluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workloadNetworkCidr!: pulumi.Output<string>;
+    declare public readonly workloadNetworkCidr: pulumi.Output<string>;
 
     /**
      * Create a Cluster resource with the given unique name, arguments, and options.
@@ -217,62 +217,62 @@ export class Cluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
-            resourceInputs["actualEsxiHostsCount"] = state ? state.actualEsxiHostsCount : undefined;
-            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
-            resourceInputs["datastores"] = state ? state.datastores : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["esxiHostsCount"] = state ? state.esxiHostsCount : undefined;
-            resourceInputs["esxiSoftwareVersion"] = state ? state.esxiSoftwareVersion : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["initialCommitment"] = state ? state.initialCommitment : undefined;
-            resourceInputs["initialHostOcpuCount"] = state ? state.initialHostOcpuCount : undefined;
-            resourceInputs["initialHostShapeName"] = state ? state.initialHostShapeName : undefined;
-            resourceInputs["instanceDisplayNamePrefix"] = state ? state.instanceDisplayNamePrefix : undefined;
-            resourceInputs["isShieldedInstanceEnabled"] = state ? state.isShieldedInstanceEnabled : undefined;
-            resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
-            resourceInputs["sddcId"] = state ? state.sddcId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["upgradeLicenses"] = state ? state.upgradeLicenses : undefined;
-            resourceInputs["vmwareSoftwareVersion"] = state ? state.vmwareSoftwareVersion : undefined;
-            resourceInputs["vsphereType"] = state ? state.vsphereType : undefined;
-            resourceInputs["vsphereUpgradeObjects"] = state ? state.vsphereUpgradeObjects : undefined;
-            resourceInputs["workloadNetworkCidr"] = state ? state.workloadNetworkCidr : undefined;
+            resourceInputs["actualEsxiHostsCount"] = state?.actualEsxiHostsCount;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
+            resourceInputs["datastores"] = state?.datastores;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["esxiHostsCount"] = state?.esxiHostsCount;
+            resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["initialCommitment"] = state?.initialCommitment;
+            resourceInputs["initialHostOcpuCount"] = state?.initialHostOcpuCount;
+            resourceInputs["initialHostShapeName"] = state?.initialHostShapeName;
+            resourceInputs["instanceDisplayNamePrefix"] = state?.instanceDisplayNamePrefix;
+            resourceInputs["isShieldedInstanceEnabled"] = state?.isShieldedInstanceEnabled;
+            resourceInputs["networkConfiguration"] = state?.networkConfiguration;
+            resourceInputs["sddcId"] = state?.sddcId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["upgradeLicenses"] = state?.upgradeLicenses;
+            resourceInputs["vmwareSoftwareVersion"] = state?.vmwareSoftwareVersion;
+            resourceInputs["vsphereType"] = state?.vsphereType;
+            resourceInputs["vsphereUpgradeObjects"] = state?.vsphereUpgradeObjects;
+            resourceInputs["workloadNetworkCidr"] = state?.workloadNetworkCidr;
         } else {
             const args = argsOrState as ClusterArgs | undefined;
-            if ((!args || args.computeAvailabilityDomain === undefined) && !opts.urn) {
+            if (args?.computeAvailabilityDomain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'computeAvailabilityDomain'");
             }
-            if ((!args || args.esxiHostsCount === undefined) && !opts.urn) {
+            if (args?.esxiHostsCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'esxiHostsCount'");
             }
-            if ((!args || args.networkConfiguration === undefined) && !opts.urn) {
+            if (args?.networkConfiguration === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkConfiguration'");
             }
-            if ((!args || args.sddcId === undefined) && !opts.urn) {
+            if (args?.sddcId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sddcId'");
             }
-            resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
-            resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
-            resourceInputs["datastores"] = args ? args.datastores : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["esxiHostsCount"] = args ? args.esxiHostsCount : undefined;
-            resourceInputs["esxiSoftwareVersion"] = args ? args.esxiSoftwareVersion : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["initialCommitment"] = args ? args.initialCommitment : undefined;
-            resourceInputs["initialHostOcpuCount"] = args ? args.initialHostOcpuCount : undefined;
-            resourceInputs["initialHostShapeName"] = args ? args.initialHostShapeName : undefined;
-            resourceInputs["instanceDisplayNamePrefix"] = args ? args.instanceDisplayNamePrefix : undefined;
-            resourceInputs["isShieldedInstanceEnabled"] = args ? args.isShieldedInstanceEnabled : undefined;
-            resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
-            resourceInputs["sddcId"] = args ? args.sddcId : undefined;
-            resourceInputs["vmwareSoftwareVersion"] = args ? args.vmwareSoftwareVersion : undefined;
-            resourceInputs["workloadNetworkCidr"] = args ? args.workloadNetworkCidr : undefined;
+            resourceInputs["capacityReservationId"] = args?.capacityReservationId;
+            resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
+            resourceInputs["datastores"] = args?.datastores;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["esxiHostsCount"] = args?.esxiHostsCount;
+            resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["initialCommitment"] = args?.initialCommitment;
+            resourceInputs["initialHostOcpuCount"] = args?.initialHostOcpuCount;
+            resourceInputs["initialHostShapeName"] = args?.initialHostShapeName;
+            resourceInputs["instanceDisplayNamePrefix"] = args?.instanceDisplayNamePrefix;
+            resourceInputs["isShieldedInstanceEnabled"] = args?.isShieldedInstanceEnabled;
+            resourceInputs["networkConfiguration"] = args?.networkConfiguration;
+            resourceInputs["sddcId"] = args?.sddcId;
+            resourceInputs["vmwareSoftwareVersion"] = args?.vmwareSoftwareVersion;
+            resourceInputs["workloadNetworkCidr"] = args?.workloadNetworkCidr;
             resourceInputs["actualEsxiHostsCount"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

@@ -73,44 +73,44 @@ export class KeyStore extends pulumi.CustomResource {
     /**
      * List of databases associated with the key store.
      */
-    public /*out*/ readonly associatedDatabases!: pulumi.Output<outputs.Database.KeyStoreAssociatedDatabase[]>;
+    declare public /*out*/ readonly associatedDatabases: pulumi.Output<outputs.Database.KeyStoreAssociatedDatabase[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly confirmDetailsTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly confirmDetailsTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the key store. The name does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current state of the key store.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the key store was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) Key store type details.
      */
-    public readonly typeDetails!: pulumi.Output<outputs.Database.KeyStoreTypeDetails>;
+    declare public readonly typeDetails: pulumi.Output<outputs.Database.KeyStoreTypeDetails>;
 
     /**
      * Create a KeyStore resource with the given unique name, arguments, and options.
@@ -125,34 +125,34 @@ export class KeyStore extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KeyStoreState | undefined;
-            resourceInputs["associatedDatabases"] = state ? state.associatedDatabases : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["confirmDetailsTrigger"] = state ? state.confirmDetailsTrigger : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["typeDetails"] = state ? state.typeDetails : undefined;
+            resourceInputs["associatedDatabases"] = state?.associatedDatabases;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["confirmDetailsTrigger"] = state?.confirmDetailsTrigger;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["typeDetails"] = state?.typeDetails;
         } else {
             const args = argsOrState as KeyStoreArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.typeDetails === undefined) && !opts.urn) {
+            if (args?.typeDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'typeDetails'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["confirmDetailsTrigger"] = args ? args.confirmDetailsTrigger : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["typeDetails"] = args ? args.typeDetails : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["confirmDetailsTrigger"] = args?.confirmDetailsTrigger;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["typeDetails"] = args?.typeDetails;
             resourceInputs["associatedDatabases"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

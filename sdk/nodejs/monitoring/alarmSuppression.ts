@@ -93,15 +93,15 @@ export class AlarmSuppression extends pulumi.CustomResource {
     /**
      * The target of the alarm suppression.
      */
-    public readonly alarmSuppressionTarget!: pulumi.Output<outputs.Monitoring.AlarmSuppressionAlarmSuppressionTarget>;
+    declare public readonly alarmSuppressionTarget: pulumi.Output<outputs.Monitoring.AlarmSuppressionAlarmSuppressionTarget>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -109,43 +109,43 @@ export class AlarmSuppression extends pulumi.CustomResource {
      *
      * Example: `Planned outage due to change IT-1234.`
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
      *
      * This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    public readonly dimensions!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly dimensions: pulumi.Output<{[key: string]: string}>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
      *
      * Defaut: `DIMENSION`
      */
-    public readonly level!: pulumi.Output<string>;
+    declare public readonly level: pulumi.Output<string>;
     /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
      */
-    public readonly suppressionConditions!: pulumi.Output<outputs.Monitoring.AlarmSuppressionSuppressionCondition[]>;
+    declare public readonly suppressionConditions: pulumi.Output<outputs.Monitoring.AlarmSuppressionSuppressionCondition[]>;
     /**
      * The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */
-    public readonly timeSuppressFrom!: pulumi.Output<string>;
+    declare public readonly timeSuppressFrom: pulumi.Output<string>;
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
      *
@@ -153,11 +153,11 @@ export class AlarmSuppression extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeSuppressUntil!: pulumi.Output<string>;
+    declare public readonly timeSuppressUntil: pulumi.Output<string>;
     /**
      * The date and time the alarm suppression was last updated (deleted). Format defined by RFC3339.  Example: `2018-02-03T01:02:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AlarmSuppression resource with the given unique name, arguments, and options.
@@ -172,44 +172,44 @@ export class AlarmSuppression extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AlarmSuppressionState | undefined;
-            resourceInputs["alarmSuppressionTarget"] = state ? state.alarmSuppressionTarget : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dimensions"] = state ? state.dimensions : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["level"] = state ? state.level : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["suppressionConditions"] = state ? state.suppressionConditions : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeSuppressFrom"] = state ? state.timeSuppressFrom : undefined;
-            resourceInputs["timeSuppressUntil"] = state ? state.timeSuppressUntil : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["alarmSuppressionTarget"] = state?.alarmSuppressionTarget;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dimensions"] = state?.dimensions;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["level"] = state?.level;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["suppressionConditions"] = state?.suppressionConditions;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeSuppressFrom"] = state?.timeSuppressFrom;
+            resourceInputs["timeSuppressUntil"] = state?.timeSuppressUntil;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AlarmSuppressionArgs | undefined;
-            if ((!args || args.alarmSuppressionTarget === undefined) && !opts.urn) {
+            if (args?.alarmSuppressionTarget === undefined && !opts.urn) {
                 throw new Error("Missing required property 'alarmSuppressionTarget'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.timeSuppressFrom === undefined) && !opts.urn) {
+            if (args?.timeSuppressFrom === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeSuppressFrom'");
             }
-            if ((!args || args.timeSuppressUntil === undefined) && !opts.urn) {
+            if (args?.timeSuppressUntil === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeSuppressUntil'");
             }
-            resourceInputs["alarmSuppressionTarget"] = args ? args.alarmSuppressionTarget : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dimensions"] = args ? args.dimensions : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["level"] = args ? args.level : undefined;
-            resourceInputs["suppressionConditions"] = args ? args.suppressionConditions : undefined;
-            resourceInputs["timeSuppressFrom"] = args ? args.timeSuppressFrom : undefined;
-            resourceInputs["timeSuppressUntil"] = args ? args.timeSuppressUntil : undefined;
+            resourceInputs["alarmSuppressionTarget"] = args?.alarmSuppressionTarget;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dimensions"] = args?.dimensions;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["level"] = args?.level;
+            resourceInputs["suppressionConditions"] = args?.suppressionConditions;
+            resourceInputs["timeSuppressFrom"] = args?.timeSuppressFrom;
+            resourceInputs["timeSuppressUntil"] = args?.timeSuppressUntil;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

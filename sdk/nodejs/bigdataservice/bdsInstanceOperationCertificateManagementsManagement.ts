@@ -64,19 +64,19 @@ export class BdsInstanceOperationCertificateManagementsManagement extends pulumi
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded password for the cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      */
-    public readonly enableOperationCertificateManagement!: pulumi.Output<boolean>;
+    declare public readonly enableOperationCertificateManagement: pulumi.Output<boolean>;
     /**
      * List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
      */
-    public readonly hostCertDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail[]>;
+    declare public readonly hostCertDetails: pulumi.Output<outputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail[]>;
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
      *
@@ -84,19 +84,19 @@ export class BdsInstanceOperationCertificateManagementsManagement extends pulumi
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly renewOperationCertificateManagement!: pulumi.Output<boolean>;
+    declare public readonly renewOperationCertificateManagement: pulumi.Output<boolean>;
     /**
      * Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
      */
-    public readonly rootCertificate!: pulumi.Output<string>;
+    declare public readonly rootCertificate: pulumi.Output<string>;
     /**
      * Base-64 encoded password for CA certificate's private key. This value can be empty.
      */
-    public readonly serverKeyPassword!: pulumi.Output<string>;
+    declare public readonly serverKeyPassword: pulumi.Output<string>;
     /**
      * List of services for which certificate needs to be enabled.
      */
-    public readonly services!: pulumi.Output<string[]>;
+    declare public readonly services: pulumi.Output<string[]>;
 
     /**
      * Create a BdsInstanceOperationCertificateManagementsManagement resource with the given unique name, arguments, and options.
@@ -111,39 +111,39 @@ export class BdsInstanceOperationCertificateManagementsManagement extends pulumi
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceOperationCertificateManagementsManagementState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["enableOperationCertificateManagement"] = state ? state.enableOperationCertificateManagement : undefined;
-            resourceInputs["hostCertDetails"] = state ? state.hostCertDetails : undefined;
-            resourceInputs["renewOperationCertificateManagement"] = state ? state.renewOperationCertificateManagement : undefined;
-            resourceInputs["rootCertificate"] = state ? state.rootCertificate : undefined;
-            resourceInputs["serverKeyPassword"] = state ? state.serverKeyPassword : undefined;
-            resourceInputs["services"] = state ? state.services : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["enableOperationCertificateManagement"] = state?.enableOperationCertificateManagement;
+            resourceInputs["hostCertDetails"] = state?.hostCertDetails;
+            resourceInputs["renewOperationCertificateManagement"] = state?.renewOperationCertificateManagement;
+            resourceInputs["rootCertificate"] = state?.rootCertificate;
+            resourceInputs["serverKeyPassword"] = state?.serverKeyPassword;
+            resourceInputs["services"] = state?.services;
         } else {
             const args = argsOrState as BdsInstanceOperationCertificateManagementsManagementArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.enableOperationCertificateManagement === undefined) && !opts.urn) {
+            if (args?.enableOperationCertificateManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableOperationCertificateManagement'");
             }
-            if ((!args || args.renewOperationCertificateManagement === undefined) && !opts.urn) {
+            if (args?.renewOperationCertificateManagement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'renewOperationCertificateManagement'");
             }
-            if ((!args || args.services === undefined) && !opts.urn) {
+            if (args?.services === undefined && !opts.urn) {
                 throw new Error("Missing required property 'services'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["enableOperationCertificateManagement"] = args ? args.enableOperationCertificateManagement : undefined;
-            resourceInputs["hostCertDetails"] = args ? args.hostCertDetails : undefined;
-            resourceInputs["renewOperationCertificateManagement"] = args ? args.renewOperationCertificateManagement : undefined;
-            resourceInputs["rootCertificate"] = args ? args.rootCertificate : undefined;
+            resourceInputs["enableOperationCertificateManagement"] = args?.enableOperationCertificateManagement;
+            resourceInputs["hostCertDetails"] = args?.hostCertDetails;
+            resourceInputs["renewOperationCertificateManagement"] = args?.renewOperationCertificateManagement;
+            resourceInputs["rootCertificate"] = args?.rootCertificate;
             resourceInputs["serverKeyPassword"] = args?.serverKeyPassword ? pulumi.secret(args.serverKeyPassword) : undefined;
-            resourceInputs["services"] = args ? args.services : undefined;
+            resourceInputs["services"] = args?.services;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["clusterAdminPassword", "serverKeyPassword"] };

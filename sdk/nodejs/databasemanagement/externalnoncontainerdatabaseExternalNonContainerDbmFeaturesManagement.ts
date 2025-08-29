@@ -46,15 +46,15 @@ export class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManageme
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableExternalNonContainerDbmFeature!: pulumi.Output<boolean>;
+    declare public readonly enableExternalNonContainerDbmFeature: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external non-container database.
      */
-    public readonly externalNonContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalNonContainerDatabaseId: pulumi.Output<string>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    public readonly featureDetails!: pulumi.Output<outputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails>;
+    declare public readonly featureDetails: pulumi.Output<outputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails>;
 
     /**
      * Create a ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement resource with the given unique name, arguments, and options.
@@ -69,20 +69,20 @@ export class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManageme
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState | undefined;
-            resourceInputs["enableExternalNonContainerDbmFeature"] = state ? state.enableExternalNonContainerDbmFeature : undefined;
-            resourceInputs["externalNonContainerDatabaseId"] = state ? state.externalNonContainerDatabaseId : undefined;
-            resourceInputs["featureDetails"] = state ? state.featureDetails : undefined;
+            resourceInputs["enableExternalNonContainerDbmFeature"] = state?.enableExternalNonContainerDbmFeature;
+            resourceInputs["externalNonContainerDatabaseId"] = state?.externalNonContainerDatabaseId;
+            resourceInputs["featureDetails"] = state?.featureDetails;
         } else {
             const args = argsOrState as ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs | undefined;
-            if ((!args || args.enableExternalNonContainerDbmFeature === undefined) && !opts.urn) {
+            if (args?.enableExternalNonContainerDbmFeature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableExternalNonContainerDbmFeature'");
             }
-            if ((!args || args.externalNonContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalNonContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalNonContainerDatabaseId'");
             }
-            resourceInputs["enableExternalNonContainerDbmFeature"] = args ? args.enableExternalNonContainerDbmFeature : undefined;
-            resourceInputs["externalNonContainerDatabaseId"] = args ? args.externalNonContainerDatabaseId : undefined;
-            resourceInputs["featureDetails"] = args ? args.featureDetails : undefined;
+            resourceInputs["enableExternalNonContainerDbmFeature"] = args?.enableExternalNonContainerDbmFeature;
+            resourceInputs["externalNonContainerDatabaseId"] = args?.externalNonContainerDatabaseId;
+            resourceInputs["featureDetails"] = args?.featureDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.__pulumiType, name, resourceInputs, opts);

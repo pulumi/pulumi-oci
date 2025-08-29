@@ -57,7 +57,7 @@ export class SetSecurityAssessmentBaselineManagement extends pulumi.CustomResour
         return obj['__pulumiType'] === SetSecurityAssessmentBaselineManagement.__pulumiType;
     }
 
-    public /*out*/ readonly assessmentIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly assessmentIds: pulumi.Output<string[]>;
     /**
      * The compartment OCID of the target.
      *
@@ -65,12 +65,12 @@ export class SetSecurityAssessmentBaselineManagement extends pulumi.CustomResour
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly securityAssessmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public /*out*/ readonly securityAssessmentId: pulumi.Output<string>;
     /**
      * The target OCID for which SA needs to be set as baseline.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
 
     /**
      * Create a SetSecurityAssessmentBaselineManagement resource with the given unique name, arguments, and options.
@@ -85,20 +85,20 @@ export class SetSecurityAssessmentBaselineManagement extends pulumi.CustomResour
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SetSecurityAssessmentBaselineManagementState | undefined;
-            resourceInputs["assessmentIds"] = state ? state.assessmentIds : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
+            resourceInputs["assessmentIds"] = state?.assessmentIds;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["securityAssessmentId"] = state?.securityAssessmentId;
+            resourceInputs["targetId"] = state?.targetId;
         } else {
             const args = argsOrState as SetSecurityAssessmentBaselineManagementArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["assessmentIds"] = undefined /*out*/;
             resourceInputs["securityAssessmentId"] = undefined /*out*/;
         }

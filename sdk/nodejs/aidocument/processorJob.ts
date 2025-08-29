@@ -98,47 +98,47 @@ export class ProcessorJob extends pulumi.CustomResource {
     /**
      * The compartment identifier.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The display name of the processor job.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The location of the inputs.
      */
-    public readonly inputLocation!: pulumi.Output<outputs.AiDocument.ProcessorJobInputLocation>;
+    declare public readonly inputLocation: pulumi.Output<outputs.AiDocument.ProcessorJobInputLocation>;
     /**
      * The detailed status of FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The object storage location where to store analysis results.
      */
-    public readonly outputLocation!: pulumi.Output<outputs.AiDocument.ProcessorJobOutputLocation>;
+    declare public readonly outputLocation: pulumi.Output<outputs.AiDocument.ProcessorJobOutputLocation>;
     /**
      * How much progress the operation has made, compared to the total amount of work to be performed.
      */
-    public /*out*/ readonly percentComplete!: pulumi.Output<number>;
+    declare public /*out*/ readonly percentComplete: pulumi.Output<number>;
     /**
      * The configuration of a processor.
      */
-    public readonly processorConfig!: pulumi.Output<outputs.AiDocument.ProcessorJobProcessorConfig>;
+    declare public readonly processorConfig: pulumi.Output<outputs.AiDocument.ProcessorJobProcessorConfig>;
     /**
      * The current state of the processor job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The job acceptance time.
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
     /**
      * The job finish time.
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * The job start time.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
 
     /**
      * Create a ProcessorJob resource with the given unique name, arguments, and options.
@@ -153,36 +153,36 @@ export class ProcessorJob extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProcessorJobState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["inputLocation"] = state ? state.inputLocation : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["outputLocation"] = state ? state.outputLocation : undefined;
-            resourceInputs["percentComplete"] = state ? state.percentComplete : undefined;
-            resourceInputs["processorConfig"] = state ? state.processorConfig : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["inputLocation"] = state?.inputLocation;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["outputLocation"] = state?.outputLocation;
+            resourceInputs["percentComplete"] = state?.percentComplete;
+            resourceInputs["processorConfig"] = state?.processorConfig;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeStarted"] = state?.timeStarted;
         } else {
             const args = argsOrState as ProcessorJobArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.inputLocation === undefined) && !opts.urn) {
+            if (args?.inputLocation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'inputLocation'");
             }
-            if ((!args || args.outputLocation === undefined) && !opts.urn) {
+            if (args?.outputLocation === undefined && !opts.urn) {
                 throw new Error("Missing required property 'outputLocation'");
             }
-            if ((!args || args.processorConfig === undefined) && !opts.urn) {
+            if (args?.processorConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'processorConfig'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["inputLocation"] = args ? args.inputLocation : undefined;
-            resourceInputs["outputLocation"] = args ? args.outputLocation : undefined;
-            resourceInputs["processorConfig"] = args ? args.processorConfig : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["inputLocation"] = args?.inputLocation;
+            resourceInputs["outputLocation"] = args?.outputLocation;
+            resourceInputs["processorConfig"] = args?.processorConfig;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["percentComplete"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

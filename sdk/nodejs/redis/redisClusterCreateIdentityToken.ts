@@ -59,23 +59,23 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Generated Identity token
      */
-    public /*out*/ readonly identityToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly identityToken: pulumi.Output<string>;
     /**
      * User public key pair
      */
-    public readonly publicKey!: pulumi.Output<string>;
+    declare public readonly publicKey: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      */
-    public readonly redisClusterId!: pulumi.Output<string>;
+    declare public readonly redisClusterId: pulumi.Output<string>;
     /**
      * Redis User generating identity token.
      *
@@ -83,7 +83,7 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly redisUser!: pulumi.Output<string>;
+    declare public readonly redisUser: pulumi.Output<string>;
 
     /**
      * Create a RedisClusterCreateIdentityToken resource with the given unique name, arguments, and options.
@@ -98,28 +98,28 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RedisClusterCreateIdentityTokenState | undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["identityToken"] = state ? state.identityToken : undefined;
-            resourceInputs["publicKey"] = state ? state.publicKey : undefined;
-            resourceInputs["redisClusterId"] = state ? state.redisClusterId : undefined;
-            resourceInputs["redisUser"] = state ? state.redisUser : undefined;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["identityToken"] = state?.identityToken;
+            resourceInputs["publicKey"] = state?.publicKey;
+            resourceInputs["redisClusterId"] = state?.redisClusterId;
+            resourceInputs["redisUser"] = state?.redisUser;
         } else {
             const args = argsOrState as RedisClusterCreateIdentityTokenArgs | undefined;
-            if ((!args || args.publicKey === undefined) && !opts.urn) {
+            if (args?.publicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicKey'");
             }
-            if ((!args || args.redisClusterId === undefined) && !opts.urn) {
+            if (args?.redisClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'redisClusterId'");
             }
-            if ((!args || args.redisUser === undefined) && !opts.urn) {
+            if (args?.redisUser === undefined && !opts.urn) {
                 throw new Error("Missing required property 'redisUser'");
             }
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["publicKey"] = args ? args.publicKey : undefined;
-            resourceInputs["redisClusterId"] = args ? args.redisClusterId : undefined;
-            resourceInputs["redisUser"] = args ? args.redisUser : undefined;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["publicKey"] = args?.publicKey;
+            resourceInputs["redisClusterId"] = args?.redisClusterId;
+            resourceInputs["redisUser"] = args?.redisUser;
             resourceInputs["identityToken"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

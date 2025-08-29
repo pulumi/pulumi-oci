@@ -138,35 +138,35 @@ export class SecurityList extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Rules for allowing egress IP packets.
      */
-    public readonly egressSecurityRules!: pulumi.Output<outputs.Core.SecurityListEgressSecurityRule[] | undefined>;
+    declare public readonly egressSecurityRules: pulumi.Output<outputs.Core.SecurityListEgressSecurityRule[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Rules for allowing ingress IP packets.
      */
-    public readonly ingressSecurityRules!: pulumi.Output<outputs.Core.SecurityListIngressSecurityRule[] | undefined>;
+    declare public readonly ingressSecurityRules: pulumi.Output<outputs.Core.SecurityListIngressSecurityRule[] | undefined>;
     /**
      * The security list's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      *
@@ -174,7 +174,7 @@ export class SecurityList extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a SecurityList resource with the given unique name, arguments, and options.
@@ -189,30 +189,30 @@ export class SecurityList extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityListState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["egressSecurityRules"] = state ? state.egressSecurityRules : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ingressSecurityRules"] = state ? state.ingressSecurityRules : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["egressSecurityRules"] = state?.egressSecurityRules;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ingressSecurityRules"] = state?.ingressSecurityRules;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as SecurityListArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["egressSecurityRules"] = args ? args.egressSecurityRules : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["ingressSecurityRules"] = args ? args.ingressSecurityRules : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["egressSecurityRules"] = args?.egressSecurityRules;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["ingressSecurityRules"] = args?.ingressSecurityRules;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

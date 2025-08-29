@@ -56,15 +56,15 @@ export class NamespaceStorageEnableDisableArchiving extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableArchivingTenant!: pulumi.Output<boolean>;
+    declare public readonly enableArchivingTenant: pulumi.Output<boolean>;
     /**
      * A human-readable success string.
      */
-    public /*out*/ readonly message!: pulumi.Output<string>;
+    declare public /*out*/ readonly message: pulumi.Output<string>;
     /**
      * The Logging Analytics namespace used for the request.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
 
     /**
      * Create a NamespaceStorageEnableDisableArchiving resource with the given unique name, arguments, and options.
@@ -79,19 +79,19 @@ export class NamespaceStorageEnableDisableArchiving extends pulumi.CustomResourc
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NamespaceStorageEnableDisableArchivingState | undefined;
-            resourceInputs["enableArchivingTenant"] = state ? state.enableArchivingTenant : undefined;
-            resourceInputs["message"] = state ? state.message : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
+            resourceInputs["enableArchivingTenant"] = state?.enableArchivingTenant;
+            resourceInputs["message"] = state?.message;
+            resourceInputs["namespace"] = state?.namespace;
         } else {
             const args = argsOrState as NamespaceStorageEnableDisableArchivingArgs | undefined;
-            if ((!args || args.enableArchivingTenant === undefined) && !opts.urn) {
+            if (args?.enableArchivingTenant === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableArchivingTenant'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            resourceInputs["enableArchivingTenant"] = args ? args.enableArchivingTenant : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
+            resourceInputs["enableArchivingTenant"] = args?.enableArchivingTenant;
+            resourceInputs["namespace"] = args?.namespace;
             resourceInputs["message"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

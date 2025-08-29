@@ -67,19 +67,19 @@ export class OneoffPatch extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    declare public readonly dbVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * One-off patch name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
      *
@@ -87,51 +87,51 @@ export class OneoffPatch extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly downloadOneoffPatchTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly downloadOneoffPatchTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * List of one-off patches for Database Homes.
      */
-    public readonly oneOffPatches!: pulumi.Output<string[]>;
+    declare public readonly oneOffPatches: pulumi.Output<string[]>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    public readonly releaseUpdate!: pulumi.Output<string>;
+    declare public readonly releaseUpdate: pulumi.Output<string>;
     /**
      * SHA-256 checksum of the one-off patch.
      */
-    public /*out*/ readonly sha256sum!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha256sum: pulumi.Output<string>;
     /**
      * The size of one-off patch in kilobytes.
      */
-    public /*out*/ readonly sizeInKbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly sizeInKbs: pulumi.Output<number>;
     /**
      * The current state of the one-off patch.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time one-off patch was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time until which the one-off patch will be available for download.
      */
-    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfExpiration: pulumi.Output<string>;
     /**
      * The date and time one-off patch was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OneoffPatch resource with the given unique name, arguments, and options.
@@ -146,44 +146,44 @@ export class OneoffPatch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OneoffPatchState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["downloadOneoffPatchTrigger"] = state ? state.downloadOneoffPatchTrigger : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["oneOffPatches"] = state ? state.oneOffPatches : undefined;
-            resourceInputs["releaseUpdate"] = state ? state.releaseUpdate : undefined;
-            resourceInputs["sha256sum"] = state ? state.sha256sum : undefined;
-            resourceInputs["sizeInKbs"] = state ? state.sizeInKbs : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeOfExpiration"] = state ? state.timeOfExpiration : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["downloadOneoffPatchTrigger"] = state?.downloadOneoffPatchTrigger;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["oneOffPatches"] = state?.oneOffPatches;
+            resourceInputs["releaseUpdate"] = state?.releaseUpdate;
+            resourceInputs["sha256sum"] = state?.sha256sum;
+            resourceInputs["sizeInKbs"] = state?.sizeInKbs;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeOfExpiration"] = state?.timeOfExpiration;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OneoffPatchArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dbVersion === undefined) && !opts.urn) {
+            if (args?.dbVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dbVersion'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.releaseUpdate === undefined) && !opts.urn) {
+            if (args?.releaseUpdate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'releaseUpdate'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["downloadOneoffPatchTrigger"] = args ? args.downloadOneoffPatchTrigger : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["oneOffPatches"] = args ? args.oneOffPatches : undefined;
-            resourceInputs["releaseUpdate"] = args ? args.releaseUpdate : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["dbVersion"] = args?.dbVersion;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["downloadOneoffPatchTrigger"] = args?.downloadOneoffPatchTrigger;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["oneOffPatches"] = args?.oneOffPatches;
+            resourceInputs["releaseUpdate"] = args?.releaseUpdate;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["sha256sum"] = undefined /*out*/;
             resourceInputs["sizeInKbs"] = undefined /*out*/;

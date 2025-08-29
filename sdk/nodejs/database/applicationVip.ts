@@ -64,43 +64,43 @@ export class ApplicationVip extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      */
-    public readonly cloudVmClusterId!: pulumi.Output<string>;
+    declare public readonly cloudVmClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      */
-    public readonly dbNodeId!: pulumi.Output<string>;
+    declare public readonly dbNodeId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The hostname of the application virtual IP (VIP) address.
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    declare public readonly hostnameLabel: pulumi.Output<string>;
     /**
      * The application virtual IP (VIP) IPv4 address.
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    declare public readonly ipAddress: pulumi.Output<string>;
     /**
      * The application virtual IP (VIP) IPv6 address.
      */
-    public readonly ipv6address!: pulumi.Output<string>;
+    declare public readonly ipv6address: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The current lifecycle state of the application virtual IP (VIP) address.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      *
@@ -108,11 +108,11 @@ export class ApplicationVip extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The date and time when the create operation for the application virtual IP (VIP) address completed.
      */
-    public /*out*/ readonly timeAssigned!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAssigned: pulumi.Output<string>;
 
     /**
      * Create a ApplicationVip resource with the given unique name, arguments, and options.
@@ -127,35 +127,35 @@ export class ApplicationVip extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ApplicationVipState | undefined;
-            resourceInputs["cloudVmClusterId"] = state ? state.cloudVmClusterId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["dbNodeId"] = state ? state.dbNodeId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostnameLabel"] = state ? state.hostnameLabel : undefined;
-            resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
-            resourceInputs["ipv6address"] = state ? state.ipv6address : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["timeAssigned"] = state ? state.timeAssigned : undefined;
+            resourceInputs["cloudVmClusterId"] = state?.cloudVmClusterId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["dbNodeId"] = state?.dbNodeId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostnameLabel"] = state?.hostnameLabel;
+            resourceInputs["ipAddress"] = state?.ipAddress;
+            resourceInputs["ipv6address"] = state?.ipv6address;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["timeAssigned"] = state?.timeAssigned;
         } else {
             const args = argsOrState as ApplicationVipArgs | undefined;
-            if ((!args || args.cloudVmClusterId === undefined) && !opts.urn) {
+            if (args?.cloudVmClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloudVmClusterId'");
             }
-            if ((!args || args.hostnameLabel === undefined) && !opts.urn) {
+            if (args?.hostnameLabel === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostnameLabel'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["cloudVmClusterId"] = args ? args.cloudVmClusterId : undefined;
-            resourceInputs["dbNodeId"] = args ? args.dbNodeId : undefined;
-            resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
-            resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
-            resourceInputs["ipv6address"] = args ? args.ipv6address : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["cloudVmClusterId"] = args?.cloudVmClusterId;
+            resourceInputs["dbNodeId"] = args?.dbNodeId;
+            resourceInputs["hostnameLabel"] = args?.hostnameLabel;
+            resourceInputs["ipAddress"] = args?.ipAddress;
+            resourceInputs["ipv6address"] = args?.ipv6address;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;

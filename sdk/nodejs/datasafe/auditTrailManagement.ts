@@ -70,91 +70,91 @@ export class AuditTrailManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly auditCollectionStartTime!: pulumi.Output<string | undefined>;
+    declare public readonly auditCollectionStartTime: pulumi.Output<string | undefined>;
     /**
      * The OCID of the  parent audit.
      */
-    public /*out*/ readonly auditProfileId!: pulumi.Output<string>;
+    declare public /*out*/ readonly auditProfileId: pulumi.Output<string>;
     /**
      * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
      */
-    public readonly canUpdateLastArchiveTimeOnTarget!: pulumi.Output<boolean>;
+    declare public readonly canUpdateLastArchiveTimeOnTarget: pulumi.Output<boolean>;
     /**
      * The OCID of the compartment that contains the target.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the audit trail.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
      */
-    public readonly isAutoPurgeEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoPurgeEnabled: pulumi.Output<boolean>;
     /**
      * Details about the current state of the audit trail in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when set to true triggers Resume.
      */
-    public readonly resumeTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly resumeTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) An optional property when set to true triggers Start.
      */
-    public readonly startTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly startTrigger: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The target state for the Audit Trail Management. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The current sub-state of the audit trail.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when set to true triggers Stop.
      */
-    public readonly stopTrigger!: pulumi.Output<boolean | undefined>;
+    declare public readonly stopTrigger: pulumi.Output<boolean | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The OCID of the target.
      */
-    public readonly targetId!: pulumi.Output<string | undefined>;
+    declare public readonly targetId: pulumi.Output<string | undefined>;
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastCollected!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastCollected: pulumi.Output<string>;
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
-    public readonly trailLocation!: pulumi.Output<string | undefined>;
+    declare public readonly trailLocation: pulumi.Output<string | undefined>;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    declare public /*out*/ readonly workRequestId: pulumi.Output<string>;
 
     /**
      * Create a AuditTrailManagement resource with the given unique name, arguments, and options.
@@ -169,44 +169,44 @@ export class AuditTrailManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuditTrailManagementState | undefined;
-            resourceInputs["auditCollectionStartTime"] = state ? state.auditCollectionStartTime : undefined;
-            resourceInputs["auditProfileId"] = state ? state.auditProfileId : undefined;
-            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = state ? state.canUpdateLastArchiveTimeOnTarget : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isAutoPurgeEnabled"] = state ? state.isAutoPurgeEnabled : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["resumeTrigger"] = state ? state.resumeTrigger : undefined;
-            resourceInputs["startTrigger"] = state ? state.startTrigger : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["stopTrigger"] = state ? state.stopTrigger : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastCollected"] = state ? state.timeLastCollected : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["trailLocation"] = state ? state.trailLocation : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
+            resourceInputs["auditCollectionStartTime"] = state?.auditCollectionStartTime;
+            resourceInputs["auditProfileId"] = state?.auditProfileId;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = state?.canUpdateLastArchiveTimeOnTarget;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isAutoPurgeEnabled"] = state?.isAutoPurgeEnabled;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["resumeTrigger"] = state?.resumeTrigger;
+            resourceInputs["startTrigger"] = state?.startTrigger;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["stopTrigger"] = state?.stopTrigger;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastCollected"] = state?.timeLastCollected;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["trailLocation"] = state?.trailLocation;
+            resourceInputs["workRequestId"] = state?.workRequestId;
         } else {
             const args = argsOrState as AuditTrailManagementArgs | undefined;
-            resourceInputs["auditCollectionStartTime"] = args ? args.auditCollectionStartTime : undefined;
-            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = args ? args.canUpdateLastArchiveTimeOnTarget : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoPurgeEnabled"] = args ? args.isAutoPurgeEnabled : undefined;
-            resourceInputs["resumeTrigger"] = args ? args.resumeTrigger : undefined;
-            resourceInputs["startTrigger"] = args ? args.startTrigger : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["stopTrigger"] = args ? args.stopTrigger : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
-            resourceInputs["trailLocation"] = args ? args.trailLocation : undefined;
+            resourceInputs["auditCollectionStartTime"] = args?.auditCollectionStartTime;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = args?.canUpdateLastArchiveTimeOnTarget;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoPurgeEnabled"] = args?.isAutoPurgeEnabled;
+            resourceInputs["resumeTrigger"] = args?.resumeTrigger;
+            resourceInputs["startTrigger"] = args?.startTrigger;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["stopTrigger"] = args?.stopTrigger;
+            resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["trailLocation"] = args?.trailLocation;
             resourceInputs["auditProfileId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;

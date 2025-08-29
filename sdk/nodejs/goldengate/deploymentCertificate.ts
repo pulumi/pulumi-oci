@@ -62,31 +62,31 @@ export class DeploymentCertificate extends pulumi.CustomResource {
     /**
      * The Certificate authority key id.
      */
-    public /*out*/ readonly authorityKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly authorityKeyId: pulumi.Output<string>;
     /**
      * The base64 encoded content of the PEM file containing the SSL certificate.
      */
-    public readonly certificateContent!: pulumi.Output<string>;
+    declare public readonly certificateContent: pulumi.Output<string>;
     /**
      * A unique Deployment identifier.
      */
-    public readonly deploymentId!: pulumi.Output<string>;
+    declare public readonly deploymentId: pulumi.Output<string>;
     /**
      * Indicates if the certificate is ca.
      */
-    public /*out*/ readonly isCa!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isCa: pulumi.Output<boolean>;
     /**
      * Whether to override locks (if any exist).
      */
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * Indicates if the certificate is self signed.
      */
-    public /*out*/ readonly isSelfSigned!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSelfSigned: pulumi.Output<boolean>;
     /**
      * The Certificate issuer.
      */
-    public /*out*/ readonly issuer!: pulumi.Output<string>;
+    declare public /*out*/ readonly issuer: pulumi.Output<string>;
     /**
      * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
      *
@@ -94,59 +94,59 @@ export class DeploymentCertificate extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * The Certificate md5Hash.
      */
-    public /*out*/ readonly md5hash!: pulumi.Output<string>;
+    declare public /*out*/ readonly md5hash: pulumi.Output<string>;
     /**
      * The Certificate public key.
      */
-    public /*out*/ readonly publicKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKey: pulumi.Output<string>;
     /**
      * The Certificate public key algorithm.
      */
-    public /*out*/ readonly publicKeyAlgorithm!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKeyAlgorithm: pulumi.Output<string>;
     /**
      * The Certificate public key size.
      */
-    public /*out*/ readonly publicKeySize!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKeySize: pulumi.Output<string>;
     /**
      * The Certificate serial.
      */
-    public /*out*/ readonly serial!: pulumi.Output<string>;
+    declare public /*out*/ readonly serial: pulumi.Output<string>;
     /**
      * The Certificate sha1 hash.
      */
-    public /*out*/ readonly sha1hash!: pulumi.Output<string>;
+    declare public /*out*/ readonly sha1hash: pulumi.Output<string>;
     /**
      * Possible certificate lifecycle states.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The Certificate subject.
      */
-    public /*out*/ readonly subject!: pulumi.Output<string>;
+    declare public /*out*/ readonly subject: pulumi.Output<string>;
     /**
      * The Certificate subject key id.
      */
-    public /*out*/ readonly subjectKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly subjectKeyId: pulumi.Output<string>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeValidFrom!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeValidFrom: pulumi.Output<string>;
     /**
      * The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeValidTo!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeValidTo: pulumi.Output<string>;
     /**
      * The Certificate version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a DeploymentCertificate resource with the given unique name, arguments, and options.
@@ -161,42 +161,42 @@ export class DeploymentCertificate extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentCertificateState | undefined;
-            resourceInputs["authorityKeyId"] = state ? state.authorityKeyId : undefined;
-            resourceInputs["certificateContent"] = state ? state.certificateContent : undefined;
-            resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
-            resourceInputs["isCa"] = state ? state.isCa : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["isSelfSigned"] = state ? state.isSelfSigned : undefined;
-            resourceInputs["issuer"] = state ? state.issuer : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["md5hash"] = state ? state.md5hash : undefined;
-            resourceInputs["publicKey"] = state ? state.publicKey : undefined;
-            resourceInputs["publicKeyAlgorithm"] = state ? state.publicKeyAlgorithm : undefined;
-            resourceInputs["publicKeySize"] = state ? state.publicKeySize : undefined;
-            resourceInputs["serial"] = state ? state.serial : undefined;
-            resourceInputs["sha1hash"] = state ? state.sha1hash : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subject"] = state ? state.subject : undefined;
-            resourceInputs["subjectKeyId"] = state ? state.subjectKeyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeValidFrom"] = state ? state.timeValidFrom : undefined;
-            resourceInputs["timeValidTo"] = state ? state.timeValidTo : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["authorityKeyId"] = state?.authorityKeyId;
+            resourceInputs["certificateContent"] = state?.certificateContent;
+            resourceInputs["deploymentId"] = state?.deploymentId;
+            resourceInputs["isCa"] = state?.isCa;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["isSelfSigned"] = state?.isSelfSigned;
+            resourceInputs["issuer"] = state?.issuer;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["md5hash"] = state?.md5hash;
+            resourceInputs["publicKey"] = state?.publicKey;
+            resourceInputs["publicKeyAlgorithm"] = state?.publicKeyAlgorithm;
+            resourceInputs["publicKeySize"] = state?.publicKeySize;
+            resourceInputs["serial"] = state?.serial;
+            resourceInputs["sha1hash"] = state?.sha1hash;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subject"] = state?.subject;
+            resourceInputs["subjectKeyId"] = state?.subjectKeyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeValidFrom"] = state?.timeValidFrom;
+            resourceInputs["timeValidTo"] = state?.timeValidTo;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as DeploymentCertificateArgs | undefined;
-            if ((!args || args.certificateContent === undefined) && !opts.urn) {
+            if (args?.certificateContent === undefined && !opts.urn) {
                 throw new Error("Missing required property 'certificateContent'");
             }
-            if ((!args || args.deploymentId === undefined) && !opts.urn) {
+            if (args?.deploymentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'deploymentId'");
             }
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            resourceInputs["certificateContent"] = args ? args.certificateContent : undefined;
-            resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
+            resourceInputs["certificateContent"] = args?.certificateContent;
+            resourceInputs["deploymentId"] = args?.deploymentId;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["key"] = args?.key;
             resourceInputs["authorityKeyId"] = undefined /*out*/;
             resourceInputs["isCa"] = undefined /*out*/;
             resourceInputs["isSelfSigned"] = undefined /*out*/;

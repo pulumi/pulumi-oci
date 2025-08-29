@@ -75,47 +75,47 @@ export class OccAvailabilityCatalog extends pulumi.CustomResource {
     /**
      * The base 64 encoded string corresponding to the catalog file contents.
      */
-    public readonly base64encodedCatalogDetails!: pulumi.Output<string>;
+    declare public readonly base64encodedCatalogDetails: pulumi.Output<string>;
     /**
      * The different states associated with the availability catalog.
      */
-    public /*out*/ readonly catalogState!: pulumi.Output<string>;
+    declare public /*out*/ readonly catalogState: pulumi.Output<string>;
     /**
      * Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Additional information about the availability catalog.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Details about capacity available for different resources in catalog.
      */
-    public /*out*/ readonly details!: pulumi.Output<outputs.CapacityManagement.OccAvailabilityCatalogDetail[]>;
+    declare public /*out*/ readonly details: pulumi.Output<outputs.CapacityManagement.OccAvailabilityCatalogDetail[]>;
     /**
      * (Updatable) The display name of the availability catalog.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
      */
-    public readonly metadataDetails!: pulumi.Output<outputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails>;
+    declare public readonly metadataDetails: pulumi.Output<outputs.CapacityManagement.OccAvailabilityCatalogMetadataDetails>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    declare public readonly namespace: pulumi.Output<string>;
     /**
      * The OCID of the customer group.
      *
@@ -123,23 +123,23 @@ export class OccAvailabilityCatalog extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly occCustomerGroupId!: pulumi.Output<string>;
+    declare public readonly occCustomerGroupId: pulumi.Output<string>;
     /**
      * The current lifecycle state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the availability catalog was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the availability catalog was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a OccAvailabilityCatalog resource with the given unique name, arguments, and options.
@@ -154,48 +154,48 @@ export class OccAvailabilityCatalog extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OccAvailabilityCatalogState | undefined;
-            resourceInputs["base64encodedCatalogDetails"] = state ? state.base64encodedCatalogDetails : undefined;
-            resourceInputs["catalogState"] = state ? state.catalogState : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["details"] = state ? state.details : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["metadataDetails"] = state ? state.metadataDetails : undefined;
-            resourceInputs["namespace"] = state ? state.namespace : undefined;
-            resourceInputs["occCustomerGroupId"] = state ? state.occCustomerGroupId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["base64encodedCatalogDetails"] = state?.base64encodedCatalogDetails;
+            resourceInputs["catalogState"] = state?.catalogState;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["details"] = state?.details;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["metadataDetails"] = state?.metadataDetails;
+            resourceInputs["namespace"] = state?.namespace;
+            resourceInputs["occCustomerGroupId"] = state?.occCustomerGroupId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as OccAvailabilityCatalogArgs | undefined;
-            if ((!args || args.base64encodedCatalogDetails === undefined) && !opts.urn) {
+            if (args?.base64encodedCatalogDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'base64encodedCatalogDetails'");
             }
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.namespace === undefined) && !opts.urn) {
+            if (args?.namespace === undefined && !opts.urn) {
                 throw new Error("Missing required property 'namespace'");
             }
-            if ((!args || args.occCustomerGroupId === undefined) && !opts.urn) {
+            if (args?.occCustomerGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'occCustomerGroupId'");
             }
-            resourceInputs["base64encodedCatalogDetails"] = args ? args.base64encodedCatalogDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["metadataDetails"] = args ? args.metadataDetails : undefined;
-            resourceInputs["namespace"] = args ? args.namespace : undefined;
-            resourceInputs["occCustomerGroupId"] = args ? args.occCustomerGroupId : undefined;
+            resourceInputs["base64encodedCatalogDetails"] = args?.base64encodedCatalogDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["metadataDetails"] = args?.metadataDetails;
+            resourceInputs["namespace"] = args?.namespace;
+            resourceInputs["occCustomerGroupId"] = args?.occCustomerGroupId;
             resourceInputs["catalogState"] = undefined /*out*/;
             resourceInputs["details"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

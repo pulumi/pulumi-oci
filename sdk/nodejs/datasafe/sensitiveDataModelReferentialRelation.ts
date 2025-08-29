@@ -79,23 +79,23 @@ export class SensitiveDataModelReferentialRelation extends pulumi.CustomResource
     /**
      * columnsInfo object has details of column group with schema details.
      */
-    public readonly child!: pulumi.Output<outputs.DataSafe.SensitiveDataModelReferentialRelationChild>;
+    declare public readonly child: pulumi.Output<outputs.DataSafe.SensitiveDataModelReferentialRelationChild>;
     /**
      * Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
      */
-    public readonly isSensitive!: pulumi.Output<boolean>;
+    declare public readonly isSensitive: pulumi.Output<boolean>;
     /**
      * The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    declare public /*out*/ readonly key: pulumi.Output<string>;
     /**
      * columnsInfo object has details of column group with schema details.
      */
-    public readonly parent!: pulumi.Output<outputs.DataSafe.SensitiveDataModelReferentialRelationParent>;
+    declare public readonly parent: pulumi.Output<outputs.DataSafe.SensitiveDataModelReferentialRelationParent>;
     /**
      * The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    public readonly relationType!: pulumi.Output<string>;
+    declare public readonly relationType: pulumi.Output<string>;
     /**
      * The OCID of the sensitive data model.
      *
@@ -103,11 +103,11 @@ export class SensitiveDataModelReferentialRelation extends pulumi.CustomResource
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveDataModelId!: pulumi.Output<string>;
+    declare public readonly sensitiveDataModelId: pulumi.Output<string>;
     /**
      * The current state of the referential relation.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a SensitiveDataModelReferentialRelation resource with the given unique name, arguments, and options.
@@ -122,32 +122,32 @@ export class SensitiveDataModelReferentialRelation extends pulumi.CustomResource
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SensitiveDataModelReferentialRelationState | undefined;
-            resourceInputs["child"] = state ? state.child : undefined;
-            resourceInputs["isSensitive"] = state ? state.isSensitive : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["parent"] = state ? state.parent : undefined;
-            resourceInputs["relationType"] = state ? state.relationType : undefined;
-            resourceInputs["sensitiveDataModelId"] = state ? state.sensitiveDataModelId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["child"] = state?.child;
+            resourceInputs["isSensitive"] = state?.isSensitive;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["parent"] = state?.parent;
+            resourceInputs["relationType"] = state?.relationType;
+            resourceInputs["sensitiveDataModelId"] = state?.sensitiveDataModelId;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as SensitiveDataModelReferentialRelationArgs | undefined;
-            if ((!args || args.child === undefined) && !opts.urn) {
+            if (args?.child === undefined && !opts.urn) {
                 throw new Error("Missing required property 'child'");
             }
-            if ((!args || args.parent === undefined) && !opts.urn) {
+            if (args?.parent === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parent'");
             }
-            if ((!args || args.relationType === undefined) && !opts.urn) {
+            if (args?.relationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'relationType'");
             }
-            if ((!args || args.sensitiveDataModelId === undefined) && !opts.urn) {
+            if (args?.sensitiveDataModelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sensitiveDataModelId'");
             }
-            resourceInputs["child"] = args ? args.child : undefined;
-            resourceInputs["isSensitive"] = args ? args.isSensitive : undefined;
-            resourceInputs["parent"] = args ? args.parent : undefined;
-            resourceInputs["relationType"] = args ? args.relationType : undefined;
-            resourceInputs["sensitiveDataModelId"] = args ? args.sensitiveDataModelId : undefined;
+            resourceInputs["child"] = args?.child;
+            resourceInputs["isSensitive"] = args?.isSensitive;
+            resourceInputs["parent"] = args?.parent;
+            resourceInputs["relationType"] = args?.relationType;
+            resourceInputs["sensitiveDataModelId"] = args?.sensitiveDataModelId;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

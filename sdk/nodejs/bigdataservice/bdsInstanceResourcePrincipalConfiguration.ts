@@ -62,43 +62,43 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
     /**
      * The OCID of the cluster.
      */
-    public readonly bdsInstanceId!: pulumi.Output<string>;
+    declare public readonly bdsInstanceId: pulumi.Output<string>;
     /**
      * Base-64 encoded Cluster Admin Password for cluster admin user.
      */
-    public readonly clusterAdminPassword!: pulumi.Output<string>;
+    declare public readonly clusterAdminPassword: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
      */
-    public readonly forceRefreshResourcePrincipalTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly forceRefreshResourcePrincipalTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Life span in hours for the resource principal session token.
      */
-    public readonly sessionTokenLifeSpanDurationInHours!: pulumi.Output<number>;
+    declare public readonly sessionTokenLifeSpanDurationInHours: pulumi.Output<number>;
     /**
      * The state of the ResourcePrincipalConfiguration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeTokenExpiry!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeTokenExpiry: pulumi.Output<string>;
     /**
      * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeTokenRefreshed!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeTokenRefreshed: pulumi.Output<string>;
     /**
      * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a BdsInstanceResourcePrincipalConfiguration resource with the given unique name, arguments, and options.
@@ -113,32 +113,32 @@ export class BdsInstanceResourcePrincipalConfiguration extends pulumi.CustomReso
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BdsInstanceResourcePrincipalConfigurationState | undefined;
-            resourceInputs["bdsInstanceId"] = state ? state.bdsInstanceId : undefined;
-            resourceInputs["clusterAdminPassword"] = state ? state.clusterAdminPassword : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["forceRefreshResourcePrincipalTrigger"] = state ? state.forceRefreshResourcePrincipalTrigger : undefined;
-            resourceInputs["sessionTokenLifeSpanDurationInHours"] = state ? state.sessionTokenLifeSpanDurationInHours : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeTokenExpiry"] = state ? state.timeTokenExpiry : undefined;
-            resourceInputs["timeTokenRefreshed"] = state ? state.timeTokenRefreshed : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["bdsInstanceId"] = state?.bdsInstanceId;
+            resourceInputs["clusterAdminPassword"] = state?.clusterAdminPassword;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["forceRefreshResourcePrincipalTrigger"] = state?.forceRefreshResourcePrincipalTrigger;
+            resourceInputs["sessionTokenLifeSpanDurationInHours"] = state?.sessionTokenLifeSpanDurationInHours;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeTokenExpiry"] = state?.timeTokenExpiry;
+            resourceInputs["timeTokenRefreshed"] = state?.timeTokenRefreshed;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as BdsInstanceResourcePrincipalConfigurationArgs | undefined;
-            if ((!args || args.bdsInstanceId === undefined) && !opts.urn) {
+            if (args?.bdsInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bdsInstanceId'");
             }
-            if ((!args || args.clusterAdminPassword === undefined) && !opts.urn) {
+            if (args?.clusterAdminPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterAdminPassword'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            resourceInputs["bdsInstanceId"] = args ? args.bdsInstanceId : undefined;
+            resourceInputs["bdsInstanceId"] = args?.bdsInstanceId;
             resourceInputs["clusterAdminPassword"] = args?.clusterAdminPassword ? pulumi.secret(args.clusterAdminPassword) : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["forceRefreshResourcePrincipalTrigger"] = args ? args.forceRefreshResourcePrincipalTrigger : undefined;
-            resourceInputs["sessionTokenLifeSpanDurationInHours"] = args ? args.sessionTokenLifeSpanDurationInHours : undefined;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["forceRefreshResourcePrincipalTrigger"] = args?.forceRefreshResourcePrincipalTrigger;
+            resourceInputs["sessionTokenLifeSpanDurationInHours"] = args?.sessionTokenLifeSpanDurationInHours;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeTokenExpiry"] = undefined /*out*/;

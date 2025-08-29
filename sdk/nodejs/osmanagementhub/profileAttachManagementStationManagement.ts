@@ -60,7 +60,7 @@ export class ProfileAttachManagementStationManagement extends pulumi.CustomResou
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station that the instance will be associated with.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      *
@@ -68,7 +68,7 @@ export class ProfileAttachManagementStationManagement extends pulumi.CustomResou
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
 
     /**
      * Create a ProfileAttachManagementStationManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ProfileAttachManagementStationManagement extends pulumi.CustomResou
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileAttachManagementStationManagementState | undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
+            resourceInputs["managementStationId"] = state?.managementStationId;
+            resourceInputs["profileId"] = state?.profileId;
         } else {
             const args = argsOrState as ProfileAttachManagementStationManagementArgs | undefined;
-            if ((!args || args.managementStationId === undefined) && !opts.urn) {
+            if (args?.managementStationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managementStationId'");
             }
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
+            resourceInputs["managementStationId"] = args?.managementStationId;
+            resourceInputs["profileId"] = args?.profileId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ProfileAttachManagementStationManagement.__pulumiType, name, resourceInputs, opts);

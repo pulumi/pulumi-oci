@@ -81,51 +81,51 @@ export class Policy extends pulumi.CustomResource {
     /**
      * @deprecated The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly ETag!: pulumi.Output<string>;
+    declare public /*out*/ readonly ETag: pulumi.Output<string>;
     /**
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    declare public /*out*/ readonly inactiveState: pulumi.Output<string>;
     /**
      * @deprecated The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly lastUpdateETag!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdateETag: pulumi.Output<string>;
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * @deprecated The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly policyHash!: pulumi.Output<string>;
+    declare public /*out*/ readonly policyHash: pulumi.Output<string>;
     /**
      * The policy's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
      */
-    public readonly statements!: pulumi.Output<string[]>;
+    declare public readonly statements: pulumi.Output<string[]>;
     /**
      * Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
      *
@@ -133,7 +133,7 @@ export class Policy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly versionDate!: pulumi.Output<string>;
+    declare public readonly versionDate: pulumi.Output<string>;
 
     /**
      * Create a Policy resource with the given unique name, arguments, and options.
@@ -148,37 +148,37 @@ export class Policy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PolicyState | undefined;
-            resourceInputs["ETag"] = state ? state.ETag : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inactiveState"] = state ? state.inactiveState : undefined;
-            resourceInputs["lastUpdateETag"] = state ? state.lastUpdateETag : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["policyHash"] = state ? state.policyHash : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["statements"] = state ? state.statements : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["versionDate"] = state ? state.versionDate : undefined;
+            resourceInputs["ETag"] = state?.ETag;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inactiveState"] = state?.inactiveState;
+            resourceInputs["lastUpdateETag"] = state?.lastUpdateETag;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["policyHash"] = state?.policyHash;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["statements"] = state?.statements;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["versionDate"] = state?.versionDate;
         } else {
             const args = argsOrState as PolicyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            if ((!args || args.statements === undefined) && !opts.urn) {
+            if (args?.statements === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statements'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["statements"] = args ? args.statements : undefined;
-            resourceInputs["versionDate"] = args ? args.versionDate : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["statements"] = args?.statements;
+            resourceInputs["versionDate"] = args?.versionDate;
             resourceInputs["ETag"] = undefined /*out*/;
             resourceInputs["inactiveState"] = undefined /*out*/;
             resourceInputs["lastUpdateETag"] = undefined /*out*/;

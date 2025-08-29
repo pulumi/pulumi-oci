@@ -71,15 +71,15 @@ export class OdaPrivateEndpointScanProxy extends pulumi.CustomResource {
     /**
      * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly odaPrivateEndpointId!: pulumi.Output<string>;
+    declare public readonly odaPrivateEndpointId: pulumi.Output<string>;
     /**
      * The protocol used for communication between client, scanProxy and RAC's scan listeners
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
      */
-    public readonly scanListenerInfos!: pulumi.Output<outputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo[]>;
+    declare public readonly scanListenerInfos: pulumi.Output<outputs.Oda.OdaPrivateEndpointScanProxyScanListenerInfo[]>;
     /**
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs 
      *
@@ -87,15 +87,15 @@ export class OdaPrivateEndpointScanProxy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly scanListenerType!: pulumi.Output<string>;
+    declare public readonly scanListenerType: pulumi.Output<string>;
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a OdaPrivateEndpointScanProxy resource with the given unique name, arguments, and options.
@@ -110,30 +110,30 @@ export class OdaPrivateEndpointScanProxy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OdaPrivateEndpointScanProxyState | undefined;
-            resourceInputs["odaPrivateEndpointId"] = state ? state.odaPrivateEndpointId : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["scanListenerInfos"] = state ? state.scanListenerInfos : undefined;
-            resourceInputs["scanListenerType"] = state ? state.scanListenerType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["odaPrivateEndpointId"] = state?.odaPrivateEndpointId;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["scanListenerInfos"] = state?.scanListenerInfos;
+            resourceInputs["scanListenerType"] = state?.scanListenerType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as OdaPrivateEndpointScanProxyArgs | undefined;
-            if ((!args || args.odaPrivateEndpointId === undefined) && !opts.urn) {
+            if (args?.odaPrivateEndpointId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'odaPrivateEndpointId'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            if ((!args || args.scanListenerInfos === undefined) && !opts.urn) {
+            if (args?.scanListenerInfos === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scanListenerInfos'");
             }
-            if ((!args || args.scanListenerType === undefined) && !opts.urn) {
+            if (args?.scanListenerType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scanListenerType'");
             }
-            resourceInputs["odaPrivateEndpointId"] = args ? args.odaPrivateEndpointId : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["scanListenerInfos"] = args ? args.scanListenerInfos : undefined;
-            resourceInputs["scanListenerType"] = args ? args.scanListenerType : undefined;
+            resourceInputs["odaPrivateEndpointId"] = args?.odaPrivateEndpointId;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["scanListenerInfos"] = args?.scanListenerInfos;
+            resourceInputs["scanListenerType"] = args?.scanListenerType;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }

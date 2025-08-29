@@ -84,19 +84,19 @@ export class Configuration extends pulumi.CustomResource {
     /**
      * (Updatable) The tenancy's OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The service environment type.
      */
-    public readonly environment!: pulumi.Output<string>;
+    declare public readonly environment: pulumi.Output<string>;
     /**
      * (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    public readonly isOpcDryRun!: pulumi.Output<boolean>;
+    declare public readonly isOpcDryRun: pulumi.Output<boolean>;
     /**
      * (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
      */
-    public readonly kmsKey!: pulumi.Output<outputs.Nosql.ConfigurationKmsKey>;
+    declare public readonly kmsKey: pulumi.Output<outputs.Nosql.ConfigurationKmsKey>;
 
     /**
      * Create a Configuration resource with the given unique name, arguments, and options.
@@ -111,22 +111,22 @@ export class Configuration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigurationState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["environment"] = state ? state.environment : undefined;
-            resourceInputs["isOpcDryRun"] = state ? state.isOpcDryRun : undefined;
-            resourceInputs["kmsKey"] = state ? state.kmsKey : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["environment"] = state?.environment;
+            resourceInputs["isOpcDryRun"] = state?.isOpcDryRun;
+            resourceInputs["kmsKey"] = state?.kmsKey;
         } else {
             const args = argsOrState as ConfigurationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.environment === undefined) && !opts.urn) {
+            if (args?.environment === undefined && !opts.urn) {
                 throw new Error("Missing required property 'environment'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["environment"] = args ? args.environment : undefined;
-            resourceInputs["isOpcDryRun"] = args ? args.isOpcDryRun : undefined;
-            resourceInputs["kmsKey"] = args ? args.kmsKey : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["environment"] = args?.environment;
+            resourceInputs["isOpcDryRun"] = args?.isOpcDryRun;
+            resourceInputs["kmsKey"] = args?.kmsKey;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Configuration.__pulumiType, name, resourceInputs, opts);

@@ -61,27 +61,27 @@ export class AgentPlugin extends pulumi.CustomResource {
     /**
      * Unique Agent identifier path parameter.
      */
-    public readonly agentId!: pulumi.Output<string>;
+    declare public readonly agentId: pulumi.Output<string>;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) State to which the customer wants the plugin to move to.
      */
-    public readonly desiredState!: pulumi.Output<string>;
+    declare public readonly desiredState: pulumi.Output<string>;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Plugin identifier, which can be renamed.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Unique plugin identifier path parameter.
      *
@@ -89,27 +89,27 @@ export class AgentPlugin extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly pluginName!: pulumi.Output<string>;
+    declare public readonly pluginName: pulumi.Output<string>;
     /**
      * Plugin version.
      */
-    public /*out*/ readonly pluginVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly pluginVersion: pulumi.Output<string>;
     /**
      * The current state of the plugin.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when the Agent was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a AgentPlugin resource with the given unique name, arguments, and options.
@@ -124,29 +124,29 @@ export class AgentPlugin extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AgentPluginState | undefined;
-            resourceInputs["agentId"] = state ? state.agentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["desiredState"] = state ? state.desiredState : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["pluginName"] = state ? state.pluginName : undefined;
-            resourceInputs["pluginVersion"] = state ? state.pluginVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["agentId"] = state?.agentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["desiredState"] = state?.desiredState;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["pluginName"] = state?.pluginName;
+            resourceInputs["pluginVersion"] = state?.pluginVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as AgentPluginArgs | undefined;
-            if ((!args || args.agentId === undefined) && !opts.urn) {
+            if (args?.agentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentId'");
             }
-            if ((!args || args.pluginName === undefined) && !opts.urn) {
+            if (args?.pluginName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pluginName'");
             }
-            resourceInputs["agentId"] = args ? args.agentId : undefined;
-            resourceInputs["desiredState"] = args ? args.desiredState : undefined;
-            resourceInputs["pluginName"] = args ? args.pluginName : undefined;
+            resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["desiredState"] = args?.desiredState;
+            resourceInputs["pluginName"] = args?.pluginName;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

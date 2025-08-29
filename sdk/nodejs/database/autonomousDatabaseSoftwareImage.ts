@@ -66,39 +66,39 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
     /**
      * One-off patches included in the Autonomous Database Software Image
      */
-    public /*out*/ readonly autonomousDsiOneOffPatches!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly autonomousDsiOneOffPatches: pulumi.Output<string[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The database version with which the Autonomous Database Software Image is to be built.
      */
-    public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseVersion: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * To what shape the image is meant for.
      */
-    public readonly imageShapeFamily!: pulumi.Output<string>;
+    declare public readonly imageShapeFamily: pulumi.Output<string>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The Release Updates.
      */
-    public /*out*/ readonly releaseUpdate!: pulumi.Output<string>;
+    declare public /*out*/ readonly releaseUpdate: pulumi.Output<string>;
     /**
      * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
      *
@@ -106,19 +106,19 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceCdbId!: pulumi.Output<string>;
+    declare public readonly sourceCdbId: pulumi.Output<string>;
     /**
      * The current state of the Autonomous Database Software Image.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the Autonomous Database Software Image was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a AutonomousDatabaseSoftwareImage resource with the given unique name, arguments, and options.
@@ -133,39 +133,39 @@ export class AutonomousDatabaseSoftwareImage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseSoftwareImageState | undefined;
-            resourceInputs["autonomousDsiOneOffPatches"] = state ? state.autonomousDsiOneOffPatches : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["databaseVersion"] = state ? state.databaseVersion : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["imageShapeFamily"] = state ? state.imageShapeFamily : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["releaseUpdate"] = state ? state.releaseUpdate : undefined;
-            resourceInputs["sourceCdbId"] = state ? state.sourceCdbId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["autonomousDsiOneOffPatches"] = state?.autonomousDsiOneOffPatches;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["databaseVersion"] = state?.databaseVersion;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["imageShapeFamily"] = state?.imageShapeFamily;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["releaseUpdate"] = state?.releaseUpdate;
+            resourceInputs["sourceCdbId"] = state?.sourceCdbId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as AutonomousDatabaseSoftwareImageArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.imageShapeFamily === undefined) && !opts.urn) {
+            if (args?.imageShapeFamily === undefined && !opts.urn) {
                 throw new Error("Missing required property 'imageShapeFamily'");
             }
-            if ((!args || args.sourceCdbId === undefined) && !opts.urn) {
+            if (args?.sourceCdbId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceCdbId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["imageShapeFamily"] = args ? args.imageShapeFamily : undefined;
-            resourceInputs["sourceCdbId"] = args ? args.sourceCdbId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["imageShapeFamily"] = args?.imageShapeFamily;
+            resourceInputs["sourceCdbId"] = args?.sourceCdbId;
             resourceInputs["autonomousDsiOneOffPatches"] = undefined /*out*/;
             resourceInputs["databaseVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

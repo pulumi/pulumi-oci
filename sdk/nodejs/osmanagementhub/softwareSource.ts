@@ -50,75 +50,75 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * (Updatable) Advanced repository options for the software source
      */
-    public readonly advancedRepoOptions!: pulumi.Output<string>;
+    declare public readonly advancedRepoOptions: pulumi.Output<string>;
     /**
      * The architecture type supported by the third-party software source.
      */
-    public readonly archType!: pulumi.Output<string>;
+    declare public readonly archType: pulumi.Output<string>;
     /**
      * Availability of the software source (for non-OCI environments).
      */
-    public /*out*/ readonly availability!: pulumi.Output<string>;
+    declare public /*out*/ readonly availability: pulumi.Output<string>;
     /**
      * Availability of the software source (for Oracle Cloud Infrastructure environments).
      */
-    public /*out*/ readonly availabilityAtOci!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityAtOci: pulumi.Output<string>;
     /**
      * The yum repository checksum type used by this software source.
      */
-    public /*out*/ readonly checksumType!: pulumi.Output<string>;
+    declare public /*out*/ readonly checksumType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      */
-    public readonly customSoftwareSourceFilter!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
+    declare public readonly customSoftwareSourceFilter: pulumi.Output<outputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Fingerprint of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyFingerprint!: pulumi.Output<string>;
+    declare public /*out*/ readonly gpgKeyFingerprint: pulumi.Output<string>;
     /**
      * ID of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly gpgKeyId: pulumi.Output<string>;
     /**
      * (Updatable) URI of the GPG key for this software source.
      */
-    public readonly gpgKeyUrl!: pulumi.Output<string>;
+    declare public readonly gpgKeyUrl: pulumi.Output<string>;
     /**
      * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
      */
-    public readonly isAutoResolveDependencies!: pulumi.Output<boolean>;
+    declare public readonly isAutoResolveDependencies: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      */
-    public readonly isAutomaticallyUpdated!: pulumi.Output<boolean>;
+    declare public readonly isAutomaticallyUpdated: pulumi.Output<boolean>;
     /**
      * Indicates whether the service should create the software source from a list of packages provided by the user.
      */
-    public readonly isCreatedFromPackageList!: pulumi.Output<boolean>;
+    declare public readonly isCreatedFromPackageList: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether signature verification should be done for the software source.
      */
-    public readonly isGpgCheckEnabled!: pulumi.Output<boolean>;
+    declare public readonly isGpgCheckEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
      * * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
@@ -127,83 +127,83 @@ export class SoftwareSource extends pulumi.CustomResource {
      * * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
      * * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
      */
-    public readonly isLatestContentOnly!: pulumi.Output<boolean>;
+    declare public readonly isLatestContentOnly: pulumi.Output<boolean>;
     /**
      * Indicates whether the software source is required for the Autonomous Linux service.
      */
-    public /*out*/ readonly isMandatoryForAutonomousLinux!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMandatoryForAutonomousLinux: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether this software source can be synced to a management station
      */
-    public readonly isMirrorSyncAllowed!: pulumi.Output<boolean>;
+    declare public readonly isMirrorSyncAllowed: pulumi.Output<boolean>;
     /**
      * (Updatable) Whether SSL validation needs to be turned on
      */
-    public readonly isSslVerifyEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSslVerifyEnabled: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
      */
-    public readonly originSoftwareSourceId!: pulumi.Output<string>;
+    declare public readonly originSoftwareSourceId: pulumi.Output<string>;
     /**
      * The OS family for the third-party software source.
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    declare public readonly osFamily: pulumi.Output<string>;
     /**
      * Number of packages the software source contains.
      */
-    public /*out*/ readonly packageCount!: pulumi.Output<string>;
+    declare public /*out*/ readonly packageCount: pulumi.Output<string>;
     /**
      * A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
      */
-    public readonly packages!: pulumi.Output<string[]>;
+    declare public readonly packages: pulumi.Output<string[]>;
     /**
      * The repository ID for the software source.
      */
-    public /*out*/ readonly repoId!: pulumi.Output<string>;
+    declare public /*out*/ readonly repoId: pulumi.Output<string>;
     /**
      * The size of the software source in bytes (B).
      */
-    public /*out*/ readonly size!: pulumi.Output<number>;
+    declare public /*out*/ readonly size: pulumi.Output<number>;
     /**
      * The creation type of a software source.
      */
-    public readonly softwareSourceSubType!: pulumi.Output<string>;
+    declare public readonly softwareSourceSubType: pulumi.Output<string>;
     /**
      * (Updatable) Type of software source.
      */
-    public readonly softwareSourceType!: pulumi.Output<string>;
+    declare public readonly softwareSourceType: pulumi.Output<string>;
     /**
      * The version to assign to this custom software source.
      */
-    public readonly softwareSourceVersion!: pulumi.Output<string>;
+    declare public readonly softwareSourceVersion: pulumi.Output<string>;
     /**
      * The current state of the software source.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time the metadata for this software source was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeMetadataUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMetadataUpdated: pulumi.Output<string>;
     /**
      * (Updatable) URL for the third-party software source.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * Name of the vendor providing the software source.
      */
-    public /*out*/ readonly vendorName!: pulumi.Output<string>;
+    declare public /*out*/ readonly vendorName: pulumi.Output<string>;
     /**
      * (Updatable) List of vendor software sources.
      */
-    public readonly vendorSoftwareSources!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceVendorSoftwareSource[]>;
+    declare public readonly vendorSoftwareSources: pulumi.Output<outputs.OsManagementHub.SoftwareSourceVendorSoftwareSource[]>;
 
     /**
      * Create a SoftwareSource resource with the given unique name, arguments, and options.
@@ -218,76 +218,76 @@ export class SoftwareSource extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceState | undefined;
-            resourceInputs["advancedRepoOptions"] = state ? state.advancedRepoOptions : undefined;
-            resourceInputs["archType"] = state ? state.archType : undefined;
-            resourceInputs["availability"] = state ? state.availability : undefined;
-            resourceInputs["availabilityAtOci"] = state ? state.availabilityAtOci : undefined;
-            resourceInputs["checksumType"] = state ? state.checksumType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["customSoftwareSourceFilter"] = state ? state.customSoftwareSourceFilter : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gpgKeyFingerprint"] = state ? state.gpgKeyFingerprint : undefined;
-            resourceInputs["gpgKeyId"] = state ? state.gpgKeyId : undefined;
-            resourceInputs["gpgKeyUrl"] = state ? state.gpgKeyUrl : undefined;
-            resourceInputs["isAutoResolveDependencies"] = state ? state.isAutoResolveDependencies : undefined;
-            resourceInputs["isAutomaticallyUpdated"] = state ? state.isAutomaticallyUpdated : undefined;
-            resourceInputs["isCreatedFromPackageList"] = state ? state.isCreatedFromPackageList : undefined;
-            resourceInputs["isGpgCheckEnabled"] = state ? state.isGpgCheckEnabled : undefined;
-            resourceInputs["isLatestContentOnly"] = state ? state.isLatestContentOnly : undefined;
-            resourceInputs["isMandatoryForAutonomousLinux"] = state ? state.isMandatoryForAutonomousLinux : undefined;
-            resourceInputs["isMirrorSyncAllowed"] = state ? state.isMirrorSyncAllowed : undefined;
-            resourceInputs["isSslVerifyEnabled"] = state ? state.isSslVerifyEnabled : undefined;
-            resourceInputs["originSoftwareSourceId"] = state ? state.originSoftwareSourceId : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["packageCount"] = state ? state.packageCount : undefined;
-            resourceInputs["packages"] = state ? state.packages : undefined;
-            resourceInputs["repoId"] = state ? state.repoId : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["softwareSourceSubType"] = state ? state.softwareSourceSubType : undefined;
-            resourceInputs["softwareSourceType"] = state ? state.softwareSourceType : undefined;
-            resourceInputs["softwareSourceVersion"] = state ? state.softwareSourceVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeMetadataUpdated"] = state ? state.timeMetadataUpdated : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["vendorName"] = state ? state.vendorName : undefined;
-            resourceInputs["vendorSoftwareSources"] = state ? state.vendorSoftwareSources : undefined;
+            resourceInputs["advancedRepoOptions"] = state?.advancedRepoOptions;
+            resourceInputs["archType"] = state?.archType;
+            resourceInputs["availability"] = state?.availability;
+            resourceInputs["availabilityAtOci"] = state?.availabilityAtOci;
+            resourceInputs["checksumType"] = state?.checksumType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["customSoftwareSourceFilter"] = state?.customSoftwareSourceFilter;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gpgKeyFingerprint"] = state?.gpgKeyFingerprint;
+            resourceInputs["gpgKeyId"] = state?.gpgKeyId;
+            resourceInputs["gpgKeyUrl"] = state?.gpgKeyUrl;
+            resourceInputs["isAutoResolveDependencies"] = state?.isAutoResolveDependencies;
+            resourceInputs["isAutomaticallyUpdated"] = state?.isAutomaticallyUpdated;
+            resourceInputs["isCreatedFromPackageList"] = state?.isCreatedFromPackageList;
+            resourceInputs["isGpgCheckEnabled"] = state?.isGpgCheckEnabled;
+            resourceInputs["isLatestContentOnly"] = state?.isLatestContentOnly;
+            resourceInputs["isMandatoryForAutonomousLinux"] = state?.isMandatoryForAutonomousLinux;
+            resourceInputs["isMirrorSyncAllowed"] = state?.isMirrorSyncAllowed;
+            resourceInputs["isSslVerifyEnabled"] = state?.isSslVerifyEnabled;
+            resourceInputs["originSoftwareSourceId"] = state?.originSoftwareSourceId;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["packageCount"] = state?.packageCount;
+            resourceInputs["packages"] = state?.packages;
+            resourceInputs["repoId"] = state?.repoId;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["softwareSourceSubType"] = state?.softwareSourceSubType;
+            resourceInputs["softwareSourceType"] = state?.softwareSourceType;
+            resourceInputs["softwareSourceVersion"] = state?.softwareSourceVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeMetadataUpdated"] = state?.timeMetadataUpdated;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["vendorName"] = state?.vendorName;
+            resourceInputs["vendorSoftwareSources"] = state?.vendorSoftwareSources;
         } else {
             const args = argsOrState as SoftwareSourceArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.softwareSourceType === undefined) && !opts.urn) {
+            if (args?.softwareSourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceType'");
             }
-            resourceInputs["advancedRepoOptions"] = args ? args.advancedRepoOptions : undefined;
-            resourceInputs["archType"] = args ? args.archType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["customSoftwareSourceFilter"] = args ? args.customSoftwareSourceFilter : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["gpgKeyUrl"] = args ? args.gpgKeyUrl : undefined;
-            resourceInputs["isAutoResolveDependencies"] = args ? args.isAutoResolveDependencies : undefined;
-            resourceInputs["isAutomaticallyUpdated"] = args ? args.isAutomaticallyUpdated : undefined;
-            resourceInputs["isCreatedFromPackageList"] = args ? args.isCreatedFromPackageList : undefined;
-            resourceInputs["isGpgCheckEnabled"] = args ? args.isGpgCheckEnabled : undefined;
-            resourceInputs["isLatestContentOnly"] = args ? args.isLatestContentOnly : undefined;
-            resourceInputs["isMirrorSyncAllowed"] = args ? args.isMirrorSyncAllowed : undefined;
-            resourceInputs["isSslVerifyEnabled"] = args ? args.isSslVerifyEnabled : undefined;
-            resourceInputs["originSoftwareSourceId"] = args ? args.originSoftwareSourceId : undefined;
-            resourceInputs["osFamily"] = args ? args.osFamily : undefined;
-            resourceInputs["packages"] = args ? args.packages : undefined;
-            resourceInputs["softwareSourceSubType"] = args ? args.softwareSourceSubType : undefined;
-            resourceInputs["softwareSourceType"] = args ? args.softwareSourceType : undefined;
-            resourceInputs["softwareSourceVersion"] = args ? args.softwareSourceVersion : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["vendorSoftwareSources"] = args ? args.vendorSoftwareSources : undefined;
+            resourceInputs["advancedRepoOptions"] = args?.advancedRepoOptions;
+            resourceInputs["archType"] = args?.archType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["customSoftwareSourceFilter"] = args?.customSoftwareSourceFilter;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["gpgKeyUrl"] = args?.gpgKeyUrl;
+            resourceInputs["isAutoResolveDependencies"] = args?.isAutoResolveDependencies;
+            resourceInputs["isAutomaticallyUpdated"] = args?.isAutomaticallyUpdated;
+            resourceInputs["isCreatedFromPackageList"] = args?.isCreatedFromPackageList;
+            resourceInputs["isGpgCheckEnabled"] = args?.isGpgCheckEnabled;
+            resourceInputs["isLatestContentOnly"] = args?.isLatestContentOnly;
+            resourceInputs["isMirrorSyncAllowed"] = args?.isMirrorSyncAllowed;
+            resourceInputs["isSslVerifyEnabled"] = args?.isSslVerifyEnabled;
+            resourceInputs["originSoftwareSourceId"] = args?.originSoftwareSourceId;
+            resourceInputs["osFamily"] = args?.osFamily;
+            resourceInputs["packages"] = args?.packages;
+            resourceInputs["softwareSourceSubType"] = args?.softwareSourceSubType;
+            resourceInputs["softwareSourceType"] = args?.softwareSourceType;
+            resourceInputs["softwareSourceVersion"] = args?.softwareSourceVersion;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["vendorSoftwareSources"] = args?.vendorSoftwareSources;
             resourceInputs["availability"] = undefined /*out*/;
             resourceInputs["availabilityAtOci"] = undefined /*out*/;
             resourceInputs["checksumType"] = undefined /*out*/;

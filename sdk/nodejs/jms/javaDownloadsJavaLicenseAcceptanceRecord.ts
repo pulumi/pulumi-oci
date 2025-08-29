@@ -62,27 +62,27 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
     /**
      * The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * An authorized principal.
      */
-    public /*out*/ readonly createdBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy[]>;
+    declare public /*out*/ readonly createdBies: pulumi.Output<outputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * An authorized principal.
      */
-    public /*out*/ readonly lastUpdatedBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy[]>;
+    declare public /*out*/ readonly lastUpdatedBies: pulumi.Output<outputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy[]>;
     /**
      * (Updatable) Status of license acceptance.
      */
-    public readonly licenseAcceptanceStatus!: pulumi.Output<string>;
+    declare public readonly licenseAcceptanceStatus: pulumi.Output<string>;
     /**
      * License type for the Java version.
      *
@@ -90,23 +90,23 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly licenseType!: pulumi.Output<string>;
+    declare public readonly licenseType: pulumi.Output<string>;
     /**
      * The current state of the JavaLicenseAcceptanceRecord.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeAccepted: pulumi.Output<string>;
     /**
      * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    public /*out*/ readonly timeLastUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastUpdated: pulumi.Output<string>;
 
     /**
      * Create a JavaDownloadsJavaLicenseAcceptanceRecord resource with the given unique name, arguments, and options.
@@ -121,32 +121,32 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JavaDownloadsJavaLicenseAcceptanceRecordState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBies"] = state ? state.createdBies : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lastUpdatedBies"] = state ? state.lastUpdatedBies : undefined;
-            resourceInputs["licenseAcceptanceStatus"] = state ? state.licenseAcceptanceStatus : undefined;
-            resourceInputs["licenseType"] = state ? state.licenseType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
-            resourceInputs["timeLastUpdated"] = state ? state.timeLastUpdated : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBies"] = state?.createdBies;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lastUpdatedBies"] = state?.lastUpdatedBies;
+            resourceInputs["licenseAcceptanceStatus"] = state?.licenseAcceptanceStatus;
+            resourceInputs["licenseType"] = state?.licenseType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeAccepted"] = state?.timeAccepted;
+            resourceInputs["timeLastUpdated"] = state?.timeLastUpdated;
         } else {
             const args = argsOrState as JavaDownloadsJavaLicenseAcceptanceRecordArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.licenseAcceptanceStatus === undefined) && !opts.urn) {
+            if (args?.licenseAcceptanceStatus === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseAcceptanceStatus'");
             }
-            if ((!args || args.licenseType === undefined) && !opts.urn) {
+            if (args?.licenseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'licenseType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["licenseAcceptanceStatus"] = args ? args.licenseAcceptanceStatus : undefined;
-            resourceInputs["licenseType"] = args ? args.licenseType : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["licenseAcceptanceStatus"] = args?.licenseAcceptanceStatus;
+            resourceInputs["licenseType"] = args?.licenseType;
             resourceInputs["createdBies"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["lastUpdatedBies"] = undefined /*out*/;

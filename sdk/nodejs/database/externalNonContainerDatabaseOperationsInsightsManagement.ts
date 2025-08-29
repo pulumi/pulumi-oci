@@ -61,15 +61,15 @@ export class ExternalNonContainerDatabaseOperationsInsightsManagement extends pu
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableOperationsInsights!: pulumi.Output<boolean>;
+    declare public readonly enableOperationsInsights: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    public readonly externalDatabaseConnectorId!: pulumi.Output<string>;
+    declare public readonly externalDatabaseConnectorId: pulumi.Output<string>;
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly externalNonContainerDatabaseId!: pulumi.Output<string>;
+    declare public readonly externalNonContainerDatabaseId: pulumi.Output<string>;
 
     /**
      * Create a ExternalNonContainerDatabaseOperationsInsightsManagement resource with the given unique name, arguments, and options.
@@ -84,23 +84,23 @@ export class ExternalNonContainerDatabaseOperationsInsightsManagement extends pu
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ExternalNonContainerDatabaseOperationsInsightsManagementState | undefined;
-            resourceInputs["enableOperationsInsights"] = state ? state.enableOperationsInsights : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = state ? state.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalNonContainerDatabaseId"] = state ? state.externalNonContainerDatabaseId : undefined;
+            resourceInputs["enableOperationsInsights"] = state?.enableOperationsInsights;
+            resourceInputs["externalDatabaseConnectorId"] = state?.externalDatabaseConnectorId;
+            resourceInputs["externalNonContainerDatabaseId"] = state?.externalNonContainerDatabaseId;
         } else {
             const args = argsOrState as ExternalNonContainerDatabaseOperationsInsightsManagementArgs | undefined;
-            if ((!args || args.enableOperationsInsights === undefined) && !opts.urn) {
+            if (args?.enableOperationsInsights === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableOperationsInsights'");
             }
-            if ((!args || args.externalDatabaseConnectorId === undefined) && !opts.urn) {
+            if (args?.externalDatabaseConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalDatabaseConnectorId'");
             }
-            if ((!args || args.externalNonContainerDatabaseId === undefined) && !opts.urn) {
+            if (args?.externalNonContainerDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'externalNonContainerDatabaseId'");
             }
-            resourceInputs["enableOperationsInsights"] = args ? args.enableOperationsInsights : undefined;
-            resourceInputs["externalDatabaseConnectorId"] = args ? args.externalDatabaseConnectorId : undefined;
-            resourceInputs["externalNonContainerDatabaseId"] = args ? args.externalNonContainerDatabaseId : undefined;
+            resourceInputs["enableOperationsInsights"] = args?.enableOperationsInsights;
+            resourceInputs["externalDatabaseConnectorId"] = args?.externalDatabaseConnectorId;
+            resourceInputs["externalNonContainerDatabaseId"] = args?.externalNonContainerDatabaseId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ExternalNonContainerDatabaseOperationsInsightsManagement.__pulumiType, name, resourceInputs, opts);

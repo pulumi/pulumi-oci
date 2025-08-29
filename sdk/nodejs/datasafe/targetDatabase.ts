@@ -121,71 +121,71 @@ export class TargetDatabase extends pulumi.CustomResource {
     /**
      * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
-    public /*out*/ readonly associatedResourceIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly associatedResourceIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The OCID of the compartment in which to create the Data Safe target database.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Types of connection supported by Data Safe.
      */
-    public readonly connectionOption!: pulumi.Output<outputs.DataSafe.TargetDatabaseConnectionOption>;
+    declare public readonly connectionOption: pulumi.Output<outputs.DataSafe.TargetDatabaseConnectionOption>;
     /**
      * (Updatable) The database credentials required for Data Safe to connect to the database.
      */
-    public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
+    declare public readonly credentials: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
-    public readonly databaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabaseDatabaseDetails>;
+    declare public readonly databaseDetails: pulumi.Output<outputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description of the target database in Data Safe.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the current state of the peer target database in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The details of the database to be registered as a peer target database.
      */
-    public readonly peerTargetDatabaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail[]>;
+    declare public readonly peerTargetDatabaseDetails: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabaseDetail[]>;
     /**
      * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
      */
-    public /*out*/ readonly peerTargetDatabases!: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabase[]>;
+    declare public /*out*/ readonly peerTargetDatabases: pulumi.Output<outputs.DataSafe.TargetDatabasePeerTargetDatabase[]>;
     /**
      * The current state of the target database in Data Safe.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time of the target database update in Data Safe.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    public readonly tlsConfig!: pulumi.Output<outputs.DataSafe.TargetDatabaseTlsConfig>;
+    declare public readonly tlsConfig: pulumi.Output<outputs.DataSafe.TargetDatabaseTlsConfig>;
 
     /**
      * Create a TargetDatabase resource with the given unique name, arguments, and options.
@@ -200,41 +200,41 @@ export class TargetDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TargetDatabaseState | undefined;
-            resourceInputs["associatedResourceIds"] = state ? state.associatedResourceIds : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["connectionOption"] = state ? state.connectionOption : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["databaseDetails"] = state ? state.databaseDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["peerTargetDatabaseDetails"] = state ? state.peerTargetDatabaseDetails : undefined;
-            resourceInputs["peerTargetDatabases"] = state ? state.peerTargetDatabases : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["tlsConfig"] = state ? state.tlsConfig : undefined;
+            resourceInputs["associatedResourceIds"] = state?.associatedResourceIds;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["connectionOption"] = state?.connectionOption;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["databaseDetails"] = state?.databaseDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["peerTargetDatabaseDetails"] = state?.peerTargetDatabaseDetails;
+            resourceInputs["peerTargetDatabases"] = state?.peerTargetDatabases;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["tlsConfig"] = state?.tlsConfig;
         } else {
             const args = argsOrState as TargetDatabaseArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.databaseDetails === undefined) && !opts.urn) {
+            if (args?.databaseDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseDetails'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["connectionOption"] = args ? args.connectionOption : undefined;
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["databaseDetails"] = args ? args.databaseDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["peerTargetDatabaseDetails"] = args ? args.peerTargetDatabaseDetails : undefined;
-            resourceInputs["tlsConfig"] = args ? args.tlsConfig : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["connectionOption"] = args?.connectionOption;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["databaseDetails"] = args?.databaseDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["peerTargetDatabaseDetails"] = args?.peerTargetDatabaseDetails;
+            resourceInputs["tlsConfig"] = args?.tlsConfig;
             resourceInputs["associatedResourceIds"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["peerTargetDatabases"] = undefined /*out*/;

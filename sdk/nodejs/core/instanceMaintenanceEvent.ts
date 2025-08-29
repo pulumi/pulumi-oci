@@ -48,15 +48,15 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
     /**
      * Additional details of the maintenance in the form of json.
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly additionalDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
      */
-    public readonly alternativeResolutionAction!: pulumi.Output<string>;
+    declare public readonly alternativeResolutionAction: pulumi.Output<string>;
     /**
      * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
      */
-    public /*out*/ readonly alternativeResolutionActions!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly alternativeResolutionActions: pulumi.Output<string[]>;
     /**
      * (Updatable) This field is only applicable when setting the alternativeResolutionAction.
      *
@@ -64,87 +64,87 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
      *
      * In cases where the local storage will be lost, this parameter must be set or the request will fail.
      */
-    public readonly canDeleteLocalStorage!: pulumi.Output<boolean>;
+    declare public readonly canDeleteLocalStorage: pulumi.Output<boolean>;
     /**
      * Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
      */
-    public /*out*/ readonly canReschedule!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly canReschedule: pulumi.Output<boolean>;
     /**
      * The OCID of the compartment that contains the instance.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * A unique identifier that will group Instances that have a relationship with one another and must be scheduled together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance perspective will have a matching correlationToken.
      */
-    public /*out*/ readonly correlationToken!: pulumi.Output<string>;
+    declare public /*out*/ readonly correlationToken: pulumi.Output<string>;
     /**
      * The creator of the maintenance event.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * It is the descriptive information about the maintenance taking place on the customer instance.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
      */
-    public /*out*/ readonly estimatedDuration!: pulumi.Output<string>;
+    declare public /*out*/ readonly estimatedDuration: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
      */
-    public /*out*/ readonly instanceAction!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceAction: pulumi.Output<string>;
     /**
      * The OCID of the instance.
      */
-    public /*out*/ readonly instanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceId: pulumi.Output<string>;
     /**
      * The OCID of the instance maintenance event.
      */
-    public readonly instanceMaintenanceEventId!: pulumi.Output<string>;
+    declare public readonly instanceMaintenanceEventId: pulumi.Output<string>;
     /**
      * This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      */
-    public /*out*/ readonly maintenanceCategory!: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceCategory: pulumi.Output<string>;
     /**
      * This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
      */
-    public /*out*/ readonly maintenanceReason!: pulumi.Output<string>;
+    declare public /*out*/ readonly maintenanceReason: pulumi.Output<string>;
     /**
      * The duration of the time window Maintenance is scheduled to begin within.
      */
-    public /*out*/ readonly startWindowDuration!: pulumi.Output<string>;
+    declare public /*out*/ readonly startWindowDuration: pulumi.Output<string>;
     /**
      * The current state of the maintenance event.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time at which the Maintenance actually finished.
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeFinished: pulumi.Output<string>;
     /**
      * It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
      */
-    public /*out*/ readonly timeHardDueDate!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeHardDueDate: pulumi.Output<string>;
     /**
      * The time at which the Maintenance actually started.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeStarted: pulumi.Output<string>;
     /**
      * (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
      *
@@ -154,7 +154,7 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeWindowStart!: pulumi.Output<string>;
+    declare public readonly timeWindowStart: pulumi.Output<string>;
 
     /**
      * Create a InstanceMaintenanceEvent resource with the given unique name, arguments, and options.
@@ -169,43 +169,43 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstanceMaintenanceEventState | undefined;
-            resourceInputs["additionalDetails"] = state ? state.additionalDetails : undefined;
-            resourceInputs["alternativeResolutionAction"] = state ? state.alternativeResolutionAction : undefined;
-            resourceInputs["alternativeResolutionActions"] = state ? state.alternativeResolutionActions : undefined;
-            resourceInputs["canDeleteLocalStorage"] = state ? state.canDeleteLocalStorage : undefined;
-            resourceInputs["canReschedule"] = state ? state.canReschedule : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["correlationToken"] = state ? state.correlationToken : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["estimatedDuration"] = state ? state.estimatedDuration : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["instanceAction"] = state ? state.instanceAction : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["instanceMaintenanceEventId"] = state ? state.instanceMaintenanceEventId : undefined;
-            resourceInputs["maintenanceCategory"] = state ? state.maintenanceCategory : undefined;
-            resourceInputs["maintenanceReason"] = state ? state.maintenanceReason : undefined;
-            resourceInputs["startWindowDuration"] = state ? state.startWindowDuration : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
-            resourceInputs["timeHardDueDate"] = state ? state.timeHardDueDate : undefined;
-            resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
-            resourceInputs["timeWindowStart"] = state ? state.timeWindowStart : undefined;
+            resourceInputs["additionalDetails"] = state?.additionalDetails;
+            resourceInputs["alternativeResolutionAction"] = state?.alternativeResolutionAction;
+            resourceInputs["alternativeResolutionActions"] = state?.alternativeResolutionActions;
+            resourceInputs["canDeleteLocalStorage"] = state?.canDeleteLocalStorage;
+            resourceInputs["canReschedule"] = state?.canReschedule;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["correlationToken"] = state?.correlationToken;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["estimatedDuration"] = state?.estimatedDuration;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["instanceAction"] = state?.instanceAction;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["instanceMaintenanceEventId"] = state?.instanceMaintenanceEventId;
+            resourceInputs["maintenanceCategory"] = state?.maintenanceCategory;
+            resourceInputs["maintenanceReason"] = state?.maintenanceReason;
+            resourceInputs["startWindowDuration"] = state?.startWindowDuration;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeFinished"] = state?.timeFinished;
+            resourceInputs["timeHardDueDate"] = state?.timeHardDueDate;
+            resourceInputs["timeStarted"] = state?.timeStarted;
+            resourceInputs["timeWindowStart"] = state?.timeWindowStart;
         } else {
             const args = argsOrState as InstanceMaintenanceEventArgs | undefined;
-            if ((!args || args.instanceMaintenanceEventId === undefined) && !opts.urn) {
+            if (args?.instanceMaintenanceEventId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'instanceMaintenanceEventId'");
             }
-            resourceInputs["alternativeResolutionAction"] = args ? args.alternativeResolutionAction : undefined;
-            resourceInputs["canDeleteLocalStorage"] = args ? args.canDeleteLocalStorage : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["instanceMaintenanceEventId"] = args ? args.instanceMaintenanceEventId : undefined;
-            resourceInputs["timeWindowStart"] = args ? args.timeWindowStart : undefined;
+            resourceInputs["alternativeResolutionAction"] = args?.alternativeResolutionAction;
+            resourceInputs["canDeleteLocalStorage"] = args?.canDeleteLocalStorage;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["instanceMaintenanceEventId"] = args?.instanceMaintenanceEventId;
+            resourceInputs["timeWindowStart"] = args?.timeWindowStart;
             resourceInputs["additionalDetails"] = undefined /*out*/;
             resourceInputs["alternativeResolutionActions"] = undefined /*out*/;
             resourceInputs["canReschedule"] = undefined /*out*/;

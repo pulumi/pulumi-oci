@@ -61,11 +61,11 @@ export class CatalogAssociation extends pulumi.CustomResource {
     /**
      * Identifier of the entity being associated with service catalog.
      */
-    public readonly entityId!: pulumi.Output<string>;
+    declare public readonly entityId: pulumi.Output<string>;
     /**
      * The type of the entity that is associated with the service catalog.
      */
-    public readonly entityType!: pulumi.Output<string>;
+    declare public readonly entityType: pulumi.Output<string>;
     /**
      * Identifier of the service catalog.
      *
@@ -73,11 +73,11 @@ export class CatalogAssociation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly serviceCatalogId!: pulumi.Output<string>;
+    declare public readonly serviceCatalogId: pulumi.Output<string>;
     /**
      * Timestamp of when the resource was associated with service catalog.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a CatalogAssociation resource with the given unique name, arguments, and options.
@@ -92,21 +92,21 @@ export class CatalogAssociation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CatalogAssociationState | undefined;
-            resourceInputs["entityId"] = state ? state.entityId : undefined;
-            resourceInputs["entityType"] = state ? state.entityType : undefined;
-            resourceInputs["serviceCatalogId"] = state ? state.serviceCatalogId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["entityId"] = state?.entityId;
+            resourceInputs["entityType"] = state?.entityType;
+            resourceInputs["serviceCatalogId"] = state?.serviceCatalogId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as CatalogAssociationArgs | undefined;
-            if ((!args || args.entityId === undefined) && !opts.urn) {
+            if (args?.entityId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityId'");
             }
-            if ((!args || args.serviceCatalogId === undefined) && !opts.urn) {
+            if (args?.serviceCatalogId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceCatalogId'");
             }
-            resourceInputs["entityId"] = args ? args.entityId : undefined;
-            resourceInputs["entityType"] = args ? args.entityType : undefined;
-            resourceInputs["serviceCatalogId"] = args ? args.serviceCatalogId : undefined;
+            resourceInputs["entityId"] = args?.entityId;
+            resourceInputs["entityType"] = args?.entityType;
+            resourceInputs["serviceCatalogId"] = args?.serviceCatalogId;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

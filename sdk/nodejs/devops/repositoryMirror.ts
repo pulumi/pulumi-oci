@@ -61,7 +61,7 @@ export class RepositoryMirror extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly repositoryId!: pulumi.Output<string>;
+    declare public readonly repositoryId: pulumi.Output<string>;
 
     /**
      * Create a RepositoryMirror resource with the given unique name, arguments, and options.
@@ -76,13 +76,13 @@ export class RepositoryMirror extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RepositoryMirrorState | undefined;
-            resourceInputs["repositoryId"] = state ? state.repositoryId : undefined;
+            resourceInputs["repositoryId"] = state?.repositoryId;
         } else {
             const args = argsOrState as RepositoryMirrorArgs | undefined;
-            if ((!args || args.repositoryId === undefined) && !opts.urn) {
+            if (args?.repositoryId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'repositoryId'");
             }
-            resourceInputs["repositoryId"] = args ? args.repositoryId : undefined;
+            resourceInputs["repositoryId"] = args?.repositoryId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RepositoryMirror.__pulumiType, name, resourceInputs, opts);

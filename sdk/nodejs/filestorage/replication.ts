@@ -103,68 +103,68 @@ export class Replication extends pulumi.CustomResource {
     /**
      * The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Percentage progress of the current replication cycle.
      */
-    public /*out*/ readonly deltaProgress!: pulumi.Output<string>;
+    declare public /*out*/ readonly deltaProgress: pulumi.Output<string>;
     /**
      * The current state of the snapshot during replication operations.
      */
-    public /*out*/ readonly deltaStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly deltaStatus: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
      */
-    public /*out*/ readonly lastSnapshotId!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastSnapshotId: pulumi.Output<string>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.FileStorage.ReplicationLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.FileStorage.ReplicationLock[]>;
     /**
      * The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      */
-    public /*out*/ readonly recoveryPointTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly recoveryPointTime: pulumi.Output<string>;
     /**
      * (Updatable) Duration in minutes between replication snapshots.
      */
-    public readonly replicationInterval!: pulumi.Output<string>;
+    declare public readonly replicationInterval: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
      */
-    public /*out*/ readonly replicationTargetId!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicationTargetId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    declare public readonly sourceId: pulumi.Output<string>;
     /**
      * The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
      *
@@ -172,11 +172,11 @@ export class Replication extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targetId!: pulumi.Output<string>;
+    declare public readonly targetId: pulumi.Output<string>;
     /**
      * The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a Replication resource with the given unique name, arguments, and options.
@@ -191,45 +191,45 @@ export class Replication extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ReplicationState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deltaProgress"] = state ? state.deltaProgress : undefined;
-            resourceInputs["deltaStatus"] = state ? state.deltaStatus : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["lastSnapshotId"] = state ? state.lastSnapshotId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["recoveryPointTime"] = state ? state.recoveryPointTime : undefined;
-            resourceInputs["replicationInterval"] = state ? state.replicationInterval : undefined;
-            resourceInputs["replicationTargetId"] = state ? state.replicationTargetId : undefined;
-            resourceInputs["sourceId"] = state ? state.sourceId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetId"] = state ? state.targetId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deltaProgress"] = state?.deltaProgress;
+            resourceInputs["deltaStatus"] = state?.deltaStatus;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["lastSnapshotId"] = state?.lastSnapshotId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["recoveryPointTime"] = state?.recoveryPointTime;
+            resourceInputs["replicationInterval"] = state?.replicationInterval;
+            resourceInputs["replicationTargetId"] = state?.replicationTargetId;
+            resourceInputs["sourceId"] = state?.sourceId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ReplicationArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.sourceId === undefined) && !opts.urn) {
+            if (args?.sourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sourceId'");
             }
-            if ((!args || args.targetId === undefined) && !opts.urn) {
+            if (args?.targetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["replicationInterval"] = args ? args.replicationInterval : undefined;
-            resourceInputs["sourceId"] = args ? args.sourceId : undefined;
-            resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["replicationInterval"] = args?.replicationInterval;
+            resourceInputs["sourceId"] = args?.sourceId;
+            resourceInputs["targetId"] = args?.targetId;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["deltaProgress"] = undefined /*out*/;
             resourceInputs["deltaStatus"] = undefined /*out*/;

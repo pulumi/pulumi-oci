@@ -75,35 +75,35 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
      * (Updatable) action:
      * * DIPP_SRC_NAT - Dynamic-ip-port source NAT.
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * (Updatable) Match criteria used in NAT Rule used on the firewall policy.
      */
-    public readonly condition!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
+    declare public readonly condition: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyNatRuleCondition>;
     /**
      * (Updatable) Description of a NAT rule. This field can be used to add additional info.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name for the NAT rule, must be unique within the policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    public readonly networkFirewallPolicyId!: pulumi.Output<string>;
+    declare public readonly networkFirewallPolicyId: pulumi.Output<string>;
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentResourceId: pulumi.Output<string>;
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    public readonly position!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition>;
+    declare public readonly position: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyNatRulePosition>;
     /**
      * The priority order in which this rule should be evaluated
      */
-    public /*out*/ readonly priorityOrder!: pulumi.Output<string>;
+    declare public /*out*/ readonly priorityOrder: pulumi.Output<string>;
     /**
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.
@@ -112,7 +112,7 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NetworkFirewallPolicyNatRule resource with the given unique name, arguments, and options.
@@ -127,36 +127,36 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkFirewallPolicyNatRuleState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["condition"] = state ? state.condition : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = state ? state.networkFirewallPolicyId : undefined;
-            resourceInputs["parentResourceId"] = state ? state.parentResourceId : undefined;
-            resourceInputs["position"] = state ? state.position : undefined;
-            resourceInputs["priorityOrder"] = state ? state.priorityOrder : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["condition"] = state?.condition;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFirewallPolicyId"] = state?.networkFirewallPolicyId;
+            resourceInputs["parentResourceId"] = state?.parentResourceId;
+            resourceInputs["position"] = state?.position;
+            resourceInputs["priorityOrder"] = state?.priorityOrder;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NetworkFirewallPolicyNatRuleArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.condition === undefined) && !opts.urn) {
+            if (args?.condition === undefined && !opts.urn) {
                 throw new Error("Missing required property 'condition'");
             }
-            if ((!args || args.networkFirewallPolicyId === undefined) && !opts.urn) {
+            if (args?.networkFirewallPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkFirewallPolicyId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["condition"] = args ? args.condition : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFirewallPolicyId"] = args ? args.networkFirewallPolicyId : undefined;
-            resourceInputs["position"] = args ? args.position : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["condition"] = args?.condition;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFirewallPolicyId"] = args?.networkFirewallPolicyId;
+            resourceInputs["position"] = args?.position;
+            resourceInputs["type"] = args?.type;
             resourceInputs["parentResourceId"] = undefined /*out*/;
             resourceInputs["priorityOrder"] = undefined /*out*/;
         }

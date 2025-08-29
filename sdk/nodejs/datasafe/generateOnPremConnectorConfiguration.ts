@@ -60,7 +60,7 @@ export class GenerateOnPremConnectorConfiguration extends pulumi.CustomResource 
     /**
      * The OCID of the on-premises connector.
      */
-    public readonly onPremConnectorId!: pulumi.Output<string>;
+    declare public readonly onPremConnectorId: pulumi.Output<string>;
     /**
      * The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
      *
@@ -68,7 +68,7 @@ export class GenerateOnPremConnectorConfiguration extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
 
     /**
      * Create a GenerateOnPremConnectorConfiguration resource with the given unique name, arguments, and options.
@@ -83,17 +83,17 @@ export class GenerateOnPremConnectorConfiguration extends pulumi.CustomResource 
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GenerateOnPremConnectorConfigurationState | undefined;
-            resourceInputs["onPremConnectorId"] = state ? state.onPremConnectorId : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["onPremConnectorId"] = state?.onPremConnectorId;
+            resourceInputs["password"] = state?.password;
         } else {
             const args = argsOrState as GenerateOnPremConnectorConfigurationArgs | undefined;
-            if ((!args || args.onPremConnectorId === undefined) && !opts.urn) {
+            if (args?.onPremConnectorId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'onPremConnectorId'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            resourceInputs["onPremConnectorId"] = args ? args.onPremConnectorId : undefined;
+            resourceInputs["onPremConnectorId"] = args?.onPremConnectorId;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

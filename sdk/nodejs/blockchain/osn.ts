@@ -65,23 +65,23 @@ export class Osn extends pulumi.CustomResource {
     /**
      * Availability Domain to place new OSN
      */
-    public readonly ad!: pulumi.Output<string>;
+    declare public readonly ad: pulumi.Output<string>;
     /**
      * Unique service identifier.
      */
-    public readonly blockchainPlatformId!: pulumi.Output<string>;
+    declare public readonly blockchainPlatformId: pulumi.Output<string>;
     /**
      * (Updatable) OCPU allocation parameter
      */
-    public readonly ocpuAllocationParam!: pulumi.Output<outputs.Blockchain.OsnOcpuAllocationParam>;
+    declare public readonly ocpuAllocationParam: pulumi.Output<outputs.Blockchain.OsnOcpuAllocationParam>;
     /**
      * OSN identifier
      */
-    public /*out*/ readonly osnKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly osnKey: pulumi.Output<string>;
     /**
      * The current state of the OSN.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a Osn resource with the given unique name, arguments, and options.
@@ -96,22 +96,22 @@ export class Osn extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OsnState | undefined;
-            resourceInputs["ad"] = state ? state.ad : undefined;
-            resourceInputs["blockchainPlatformId"] = state ? state.blockchainPlatformId : undefined;
-            resourceInputs["ocpuAllocationParam"] = state ? state.ocpuAllocationParam : undefined;
-            resourceInputs["osnKey"] = state ? state.osnKey : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["ad"] = state?.ad;
+            resourceInputs["blockchainPlatformId"] = state?.blockchainPlatformId;
+            resourceInputs["ocpuAllocationParam"] = state?.ocpuAllocationParam;
+            resourceInputs["osnKey"] = state?.osnKey;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as OsnArgs | undefined;
-            if ((!args || args.ad === undefined) && !opts.urn) {
+            if (args?.ad === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ad'");
             }
-            if ((!args || args.blockchainPlatformId === undefined) && !opts.urn) {
+            if (args?.blockchainPlatformId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'blockchainPlatformId'");
             }
-            resourceInputs["ad"] = args ? args.ad : undefined;
-            resourceInputs["blockchainPlatformId"] = args ? args.blockchainPlatformId : undefined;
-            resourceInputs["ocpuAllocationParam"] = args ? args.ocpuAllocationParam : undefined;
+            resourceInputs["ad"] = args?.ad;
+            resourceInputs["blockchainPlatformId"] = args?.blockchainPlatformId;
+            resourceInputs["ocpuAllocationParam"] = args?.ocpuAllocationParam;
             resourceInputs["osnKey"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }

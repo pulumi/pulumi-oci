@@ -76,59 +76,59 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
      */
-    public readonly caCertArchiveText!: pulumi.Output<string>;
+    declare public readonly caCertArchiveText: pulumi.Output<string>;
     /**
      * (Updatable) Compartment Identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Blockchain Platform component details.
      */
-    public /*out*/ readonly componentDetails!: pulumi.Output<outputs.Blockchain.BlockchainPlatformComponentDetail[]>;
+    declare public /*out*/ readonly componentDetails: pulumi.Output<outputs.Blockchain.BlockchainPlatformComponentDetail[]>;
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
      */
-    public readonly computeShape!: pulumi.Output<string>;
+    declare public readonly computeShape: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Platform Instance Description
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Platform Instance Display name, can be renamed
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Identifier for a federated user
      */
-    public readonly federatedUserId!: pulumi.Output<string>;
+    declare public readonly federatedUserId: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of OcpuUtilization for all hosts
      */
-    public /*out*/ readonly hostOcpuUtilizationInfos!: pulumi.Output<outputs.Blockchain.BlockchainPlatformHostOcpuUtilizationInfo[]>;
+    declare public /*out*/ readonly hostOcpuUtilizationInfos: pulumi.Output<outputs.Blockchain.BlockchainPlatformHostOcpuUtilizationInfo[]>;
     /**
      * IDCS access token with Identity Domain Administrator role
      */
-    public readonly idcsAccessToken!: pulumi.Output<string>;
+    declare public readonly idcsAccessToken: pulumi.Output<string>;
     /**
      * Bring your own license
      */
-    public readonly isByol!: pulumi.Output<boolean>;
+    declare public readonly isByol: pulumi.Output<boolean>;
     /**
      * True for multi-AD blockchain plaforms, false for single-AD
      */
-    public /*out*/ readonly isMultiAd!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMultiAd: pulumi.Output<boolean>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      *
@@ -136,55 +136,55 @@ export class BlockchainPlatform extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly loadBalancerShape!: pulumi.Output<string>;
+    declare public readonly loadBalancerShape: pulumi.Output<string>;
     /**
      * Role of platform - founder or participant
      */
-    public readonly platformRole!: pulumi.Output<string>;
+    declare public readonly platformRole: pulumi.Output<string>;
     /**
      * Type of Platform shape - DEFAULT or CUSTOM
      */
-    public /*out*/ readonly platformShapeType!: pulumi.Output<string>;
+    declare public /*out*/ readonly platformShapeType: pulumi.Output<string>;
     /**
      * Platform version
      */
-    public readonly platformVersion!: pulumi.Output<string>;
+    declare public readonly platformVersion: pulumi.Output<string>;
     /**
      * Number of replicas of service components like Rest Proxy, CA and Console
      */
-    public readonly replicas!: pulumi.Output<outputs.Blockchain.BlockchainPlatformReplicas>;
+    declare public readonly replicas: pulumi.Output<outputs.Blockchain.BlockchainPlatformReplicas>;
     /**
      * Service endpoint URL, valid post-provisioning
      */
-    public /*out*/ readonly serviceEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceEndpoint: pulumi.Output<string>;
     /**
      * The version of the Platform Instance.
      */
-    public /*out*/ readonly serviceVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly serviceVersion: pulumi.Output<string>;
     /**
      * The current state of the Platform Instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * Storage size in TBs
      */
-    public readonly storageSizeInTbs!: pulumi.Output<number>;
+    declare public readonly storageSizeInTbs: pulumi.Output<number>;
     /**
      * Storage used in TBs
      */
-    public /*out*/ readonly storageUsedInTbs!: pulumi.Output<number>;
+    declare public /*out*/ readonly storageUsedInTbs: pulumi.Output<number>;
     /**
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Number of total OCPUs allocated to the platform cluster
      */
-    public readonly totalOcpuCapacity!: pulumi.Output<number>;
+    declare public readonly totalOcpuCapacity: pulumi.Output<number>;
 
     /**
      * Create a BlockchainPlatform resource with the given unique name, arguments, and options.
@@ -199,66 +199,66 @@ export class BlockchainPlatform extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BlockchainPlatformState | undefined;
-            resourceInputs["caCertArchiveText"] = state ? state.caCertArchiveText : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["componentDetails"] = state ? state.componentDetails : undefined;
-            resourceInputs["computeShape"] = state ? state.computeShape : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["federatedUserId"] = state ? state.federatedUserId : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["hostOcpuUtilizationInfos"] = state ? state.hostOcpuUtilizationInfos : undefined;
-            resourceInputs["idcsAccessToken"] = state ? state.idcsAccessToken : undefined;
-            resourceInputs["isByol"] = state ? state.isByol : undefined;
-            resourceInputs["isMultiAd"] = state ? state.isMultiAd : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["loadBalancerShape"] = state ? state.loadBalancerShape : undefined;
-            resourceInputs["platformRole"] = state ? state.platformRole : undefined;
-            resourceInputs["platformShapeType"] = state ? state.platformShapeType : undefined;
-            resourceInputs["platformVersion"] = state ? state.platformVersion : undefined;
-            resourceInputs["replicas"] = state ? state.replicas : undefined;
-            resourceInputs["serviceEndpoint"] = state ? state.serviceEndpoint : undefined;
-            resourceInputs["serviceVersion"] = state ? state.serviceVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageSizeInTbs"] = state ? state.storageSizeInTbs : undefined;
-            resourceInputs["storageUsedInTbs"] = state ? state.storageUsedInTbs : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalOcpuCapacity"] = state ? state.totalOcpuCapacity : undefined;
+            resourceInputs["caCertArchiveText"] = state?.caCertArchiveText;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["componentDetails"] = state?.componentDetails;
+            resourceInputs["computeShape"] = state?.computeShape;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["federatedUserId"] = state?.federatedUserId;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["hostOcpuUtilizationInfos"] = state?.hostOcpuUtilizationInfos;
+            resourceInputs["idcsAccessToken"] = state?.idcsAccessToken;
+            resourceInputs["isByol"] = state?.isByol;
+            resourceInputs["isMultiAd"] = state?.isMultiAd;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["loadBalancerShape"] = state?.loadBalancerShape;
+            resourceInputs["platformRole"] = state?.platformRole;
+            resourceInputs["platformShapeType"] = state?.platformShapeType;
+            resourceInputs["platformVersion"] = state?.platformVersion;
+            resourceInputs["replicas"] = state?.replicas;
+            resourceInputs["serviceEndpoint"] = state?.serviceEndpoint;
+            resourceInputs["serviceVersion"] = state?.serviceVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageSizeInTbs"] = state?.storageSizeInTbs;
+            resourceInputs["storageUsedInTbs"] = state?.storageUsedInTbs;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalOcpuCapacity"] = state?.totalOcpuCapacity;
         } else {
             const args = argsOrState as BlockchainPlatformArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.computeShape === undefined) && !opts.urn) {
+            if (args?.computeShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'computeShape'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.idcsAccessToken === undefined) && !opts.urn) {
+            if (args?.idcsAccessToken === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsAccessToken'");
             }
-            if ((!args || args.platformRole === undefined) && !opts.urn) {
+            if (args?.platformRole === undefined && !opts.urn) {
                 throw new Error("Missing required property 'platformRole'");
             }
-            resourceInputs["caCertArchiveText"] = args ? args.caCertArchiveText : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["computeShape"] = args ? args.computeShape : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["federatedUserId"] = args ? args.federatedUserId : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["caCertArchiveText"] = args?.caCertArchiveText;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["computeShape"] = args?.computeShape;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["federatedUserId"] = args?.federatedUserId;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
-            resourceInputs["isByol"] = args ? args.isByol : undefined;
-            resourceInputs["loadBalancerShape"] = args ? args.loadBalancerShape : undefined;
-            resourceInputs["platformRole"] = args ? args.platformRole : undefined;
-            resourceInputs["platformVersion"] = args ? args.platformVersion : undefined;
-            resourceInputs["replicas"] = args ? args.replicas : undefined;
-            resourceInputs["storageSizeInTbs"] = args ? args.storageSizeInTbs : undefined;
-            resourceInputs["totalOcpuCapacity"] = args ? args.totalOcpuCapacity : undefined;
+            resourceInputs["isByol"] = args?.isByol;
+            resourceInputs["loadBalancerShape"] = args?.loadBalancerShape;
+            resourceInputs["platformRole"] = args?.platformRole;
+            resourceInputs["platformVersion"] = args?.platformVersion;
+            resourceInputs["replicas"] = args?.replicas;
+            resourceInputs["storageSizeInTbs"] = args?.storageSizeInTbs;
+            resourceInputs["totalOcpuCapacity"] = args?.totalOcpuCapacity;
             resourceInputs["componentDetails"] = undefined /*out*/;
             resourceInputs["hostOcpuUtilizationInfos"] = undefined /*out*/;
             resourceInputs["isMultiAd"] = undefined /*out*/;

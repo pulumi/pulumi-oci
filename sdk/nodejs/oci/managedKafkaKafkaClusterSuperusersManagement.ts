@@ -54,7 +54,7 @@ export class ManagedKafkaKafkaClusterSuperusersManagement extends pulumi.CustomR
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -62,15 +62,15 @@ export class ManagedKafkaKafkaClusterSuperusersManagement extends pulumi.CustomR
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly enableSuperuser!: pulumi.Output<boolean>;
+    declare public readonly enableSuperuser: pulumi.Output<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
      */
-    public readonly kafkaClusterId!: pulumi.Output<string>;
+    declare public readonly kafkaClusterId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that will be populated with the generated superuser password.
      */
-    public readonly secretId!: pulumi.Output<string>;
+    declare public readonly secretId: pulumi.Output<string>;
 
     /**
      * Create a ManagedKafkaKafkaClusterSuperusersManagement resource with the given unique name, arguments, and options.
@@ -85,22 +85,22 @@ export class ManagedKafkaKafkaClusterSuperusersManagement extends pulumi.CustomR
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedKafkaKafkaClusterSuperusersManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["enableSuperuser"] = state ? state.enableSuperuser : undefined;
-            resourceInputs["kafkaClusterId"] = state ? state.kafkaClusterId : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["enableSuperuser"] = state?.enableSuperuser;
+            resourceInputs["kafkaClusterId"] = state?.kafkaClusterId;
+            resourceInputs["secretId"] = state?.secretId;
         } else {
             const args = argsOrState as ManagedKafkaKafkaClusterSuperusersManagementArgs | undefined;
-            if ((!args || args.enableSuperuser === undefined) && !opts.urn) {
+            if (args?.enableSuperuser === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enableSuperuser'");
             }
-            if ((!args || args.kafkaClusterId === undefined) && !opts.urn) {
+            if (args?.kafkaClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaClusterId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["enableSuperuser"] = args ? args.enableSuperuser : undefined;
-            resourceInputs["kafkaClusterId"] = args ? args.kafkaClusterId : undefined;
-            resourceInputs["secretId"] = args ? args.secretId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["enableSuperuser"] = args?.enableSuperuser;
+            resourceInputs["kafkaClusterId"] = args?.kafkaClusterId;
+            resourceInputs["secretId"] = args?.secretId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedKafkaKafkaClusterSuperusersManagement.__pulumiType, name, resourceInputs, opts);

@@ -60,7 +60,7 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
     /**
      * (Updatable) Provides the manifest content used to update the package list of the software source.
      */
-    public readonly content!: pulumi.Output<string | undefined>;
+    declare public readonly content: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -68,7 +68,7 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly softwareSourceId!: pulumi.Output<string>;
+    declare public readonly softwareSourceId: pulumi.Output<string>;
 
     /**
      * Create a SoftwareSourceManifest resource with the given unique name, arguments, and options.
@@ -83,15 +83,15 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SoftwareSourceManifestState | undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["softwareSourceId"] = state ? state.softwareSourceId : undefined;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["softwareSourceId"] = state?.softwareSourceId;
         } else {
             const args = argsOrState as SoftwareSourceManifestArgs | undefined;
-            if ((!args || args.softwareSourceId === undefined) && !opts.urn) {
+            if (args?.softwareSourceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceId'");
             }
-            resourceInputs["content"] = args ? args.content : undefined;
-            resourceInputs["softwareSourceId"] = args ? args.softwareSourceId : undefined;
+            resourceInputs["content"] = args?.content;
+            resourceInputs["softwareSourceId"] = args?.softwareSourceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SoftwareSourceManifest.__pulumiType, name, resourceInputs, opts);

@@ -69,7 +69,7 @@ export class TagDefault extends pulumi.CustomResource {
     /**
      * The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
@@ -77,27 +77,27 @@ export class TagDefault extends pulumi.CustomResource {
      *
      * Example: `false`
      */
-    public readonly isRequired!: pulumi.Output<boolean>;
+    declare public readonly isRequired: pulumi.Output<boolean>;
     /**
      * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */
-    public readonly tagDefinitionId!: pulumi.Output<string>;
+    declare public readonly tagDefinitionId: pulumi.Output<string>;
     /**
      * The name used in the tag definition. This field is informational in the context of the tag default.
      */
-    public /*out*/ readonly tagDefinitionName!: pulumi.Output<string>;
+    declare public /*out*/ readonly tagDefinitionName: pulumi.Output<string>;
     /**
      * The OCID of the tag namespace that contains the tag definition.
      */
-    public /*out*/ readonly tagNamespaceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tagNamespaceId: pulumi.Output<string>;
     /**
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
      *
@@ -105,7 +105,7 @@ export class TagDefault extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
 
     /**
      * Create a TagDefault resource with the given unique name, arguments, and options.
@@ -120,29 +120,29 @@ export class TagDefault extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TagDefaultState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["isRequired"] = state ? state.isRequired : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tagDefinitionId"] = state ? state.tagDefinitionId : undefined;
-            resourceInputs["tagDefinitionName"] = state ? state.tagDefinitionName : undefined;
-            resourceInputs["tagNamespaceId"] = state ? state.tagNamespaceId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["isRequired"] = state?.isRequired;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tagDefinitionId"] = state?.tagDefinitionId;
+            resourceInputs["tagDefinitionName"] = state?.tagDefinitionName;
+            resourceInputs["tagNamespaceId"] = state?.tagNamespaceId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as TagDefaultArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.tagDefinitionId === undefined) && !opts.urn) {
+            if (args?.tagDefinitionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tagDefinitionId'");
             }
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["isRequired"] = args ? args.isRequired : undefined;
-            resourceInputs["tagDefinitionId"] = args ? args.tagDefinitionId : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["isRequired"] = args?.isRequired;
+            resourceInputs["tagDefinitionId"] = args?.tagDefinitionId;
+            resourceInputs["value"] = args?.value;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["tagDefinitionName"] = undefined /*out*/;
             resourceInputs["tagNamespaceId"] = undefined /*out*/;

@@ -79,99 +79,99 @@ export class Profile extends pulumi.CustomResource {
     /**
      * The architecture type.
      */
-    public readonly archType!: pulumi.Output<string>;
+    declare public readonly archType: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified description of the registration profile.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering  confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
      */
-    public readonly isDefaultProfile!: pulumi.Output<boolean>;
+    declare public readonly isDefaultProfile: pulumi.Output<boolean>;
     /**
      * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
      */
-    public /*out*/ readonly isServiceProvidedProfile!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isServiceProvidedProfile: pulumi.Output<boolean>;
     /**
      * Provides identifying information for the specified lifecycle environment.
      */
-    public /*out*/ readonly lifecycleEnvironments!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleEnvironment[]>;
+    declare public /*out*/ readonly lifecycleEnvironments: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleEnvironment[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
-    public readonly lifecycleStageId!: pulumi.Output<string>;
+    declare public readonly lifecycleStageId: pulumi.Output<string>;
     /**
      * Provides identifying information for the specified lifecycle stage.
      */
-    public /*out*/ readonly lifecycleStages!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleStage[]>;
+    declare public /*out*/ readonly lifecycleStages: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleStage[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * Provides identifying information for the specified managed instance group.
      */
-    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[]>;
+    declare public /*out*/ readonly managedInstanceGroups: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[]>;
     /**
      * description: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate  with an instance once registered. This is required when creating a profile for non-OCI instances.
      */
-    public readonly managementStationId!: pulumi.Output<string>;
+    declare public readonly managementStationId: pulumi.Output<string>;
     /**
      * The operating system family.
      */
-    public readonly osFamily!: pulumi.Output<string>;
+    declare public readonly osFamily: pulumi.Output<string>;
     /**
      * The type of profile.
      */
-    public readonly profileType!: pulumi.Output<string>;
+    declare public readonly profileType: pulumi.Output<string>;
     /**
      * The version of the profile. The version is automatically incremented each time the profiled is edited.
      */
-    public /*out*/ readonly profileVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly profileVersion: pulumi.Output<string>;
     /**
      * The type of instance to register.
      */
-    public readonly registrationType!: pulumi.Output<string>;
+    declare public readonly registrationType: pulumi.Output<string>;
     /**
      * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
-    public readonly softwareSourceIds!: pulumi.Output<string[]>;
+    declare public readonly softwareSourceIds: pulumi.Output<string[]>;
     /**
      * The list of software sources that the registration profile will use.
      */
-    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ProfileSoftwareSource[]>;
+    declare public /*out*/ readonly softwareSources: pulumi.Output<outputs.OsManagementHub.ProfileSoftwareSource[]>;
     /**
      * The current state of the registration profile.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeModified: pulumi.Output<string>;
     /**
      * The vendor of the operating system for the instance.
      *
@@ -179,7 +179,7 @@ export class Profile extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vendorName!: pulumi.Output<string>;
+    declare public readonly vendorName: pulumi.Output<string>;
 
     /**
      * Create a Profile resource with the given unique name, arguments, and options.
@@ -194,57 +194,57 @@ export class Profile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProfileState | undefined;
-            resourceInputs["archType"] = state ? state.archType : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isDefaultProfile"] = state ? state.isDefaultProfile : undefined;
-            resourceInputs["isServiceProvidedProfile"] = state ? state.isServiceProvidedProfile : undefined;
-            resourceInputs["lifecycleEnvironments"] = state ? state.lifecycleEnvironments : undefined;
-            resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
-            resourceInputs["lifecycleStages"] = state ? state.lifecycleStages : undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["managedInstanceGroups"] = state ? state.managedInstanceGroups : undefined;
-            resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["profileType"] = state ? state.profileType : undefined;
-            resourceInputs["profileVersion"] = state ? state.profileVersion : undefined;
-            resourceInputs["registrationType"] = state ? state.registrationType : undefined;
-            resourceInputs["softwareSourceIds"] = state ? state.softwareSourceIds : undefined;
-            resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeModified"] = state ? state.timeModified : undefined;
-            resourceInputs["vendorName"] = state ? state.vendorName : undefined;
+            resourceInputs["archType"] = state?.archType;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isDefaultProfile"] = state?.isDefaultProfile;
+            resourceInputs["isServiceProvidedProfile"] = state?.isServiceProvidedProfile;
+            resourceInputs["lifecycleEnvironments"] = state?.lifecycleEnvironments;
+            resourceInputs["lifecycleStageId"] = state?.lifecycleStageId;
+            resourceInputs["lifecycleStages"] = state?.lifecycleStages;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["managedInstanceGroups"] = state?.managedInstanceGroups;
+            resourceInputs["managementStationId"] = state?.managementStationId;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["profileType"] = state?.profileType;
+            resourceInputs["profileVersion"] = state?.profileVersion;
+            resourceInputs["registrationType"] = state?.registrationType;
+            resourceInputs["softwareSourceIds"] = state?.softwareSourceIds;
+            resourceInputs["softwareSources"] = state?.softwareSources;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeModified"] = state?.timeModified;
+            resourceInputs["vendorName"] = state?.vendorName;
         } else {
             const args = argsOrState as ProfileArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.profileType === undefined) && !opts.urn) {
+            if (args?.profileType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileType'");
             }
-            resourceInputs["archType"] = args ? args.archType : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isDefaultProfile"] = args ? args.isDefaultProfile : undefined;
-            resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
-            resourceInputs["osFamily"] = args ? args.osFamily : undefined;
-            resourceInputs["profileType"] = args ? args.profileType : undefined;
-            resourceInputs["registrationType"] = args ? args.registrationType : undefined;
-            resourceInputs["softwareSourceIds"] = args ? args.softwareSourceIds : undefined;
-            resourceInputs["vendorName"] = args ? args.vendorName : undefined;
+            resourceInputs["archType"] = args?.archType;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isDefaultProfile"] = args?.isDefaultProfile;
+            resourceInputs["lifecycleStageId"] = args?.lifecycleStageId;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["managementStationId"] = args?.managementStationId;
+            resourceInputs["osFamily"] = args?.osFamily;
+            resourceInputs["profileType"] = args?.profileType;
+            resourceInputs["registrationType"] = args?.registrationType;
+            resourceInputs["softwareSourceIds"] = args?.softwareSourceIds;
+            resourceInputs["vendorName"] = args?.vendorName;
             resourceInputs["isServiceProvidedProfile"] = undefined /*out*/;
             resourceInputs["lifecycleEnvironments"] = undefined /*out*/;
             resourceInputs["lifecycleStages"] = undefined /*out*/;

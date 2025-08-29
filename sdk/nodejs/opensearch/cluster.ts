@@ -59,215 +59,215 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The availability domains to distribute the cluser nodes across.
      */
-    public /*out*/ readonly availabilityDomains!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly availabilityDomains: pulumi.Output<string[]>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
      */
-    public readonly configureOutboundClusterTrigger!: pulumi.Output<number | undefined>;
+    declare public readonly configureOutboundClusterTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The number of data nodes to configure for the cluster.
      */
-    public readonly dataNodeCount!: pulumi.Output<number>;
+    declare public readonly dataNodeCount: pulumi.Output<number>;
     /**
      * The bare metal shape for the cluster's data nodes.
      */
-    public readonly dataNodeHostBareMetalShape!: pulumi.Output<string>;
+    declare public readonly dataNodeHostBareMetalShape: pulumi.Output<string>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
-    public readonly dataNodeHostMemoryGb!: pulumi.Output<number>;
+    declare public readonly dataNodeHostMemoryGb: pulumi.Output<number>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluster's data nodes.
      */
-    public readonly dataNodeHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly dataNodeHostOcpuCount: pulumi.Output<number>;
     /**
      * (Updatable) The node shape for the cluster's data nodes.
      */
-    public readonly dataNodeHostShape!: pulumi.Output<string>;
+    declare public readonly dataNodeHostShape: pulumi.Output<string>;
     /**
      * TThe instance type for the cluster's data nodes.
      */
-    public readonly dataNodeHostType!: pulumi.Output<string>;
+    declare public readonly dataNodeHostType: pulumi.Output<string>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
      */
-    public readonly dataNodeStorageGb!: pulumi.Output<number>;
+    declare public readonly dataNodeStorageGb: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    public /*out*/ readonly fqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly fqdn: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of inbound clusters that will be queried using cross cluster search
      */
-    public readonly inboundClusterIds!: pulumi.Output<string[]>;
+    declare public readonly inboundClusterIds: pulumi.Output<string[]>;
     /**
      * Additional information about the current lifecycle state of the cluster.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) Details for creation of maintenance details
      */
-    public readonly maintenanceDetails!: pulumi.Output<outputs.Opensearch.ClusterMaintenanceDetails>;
+    declare public readonly maintenanceDetails: pulumi.Output<outputs.Opensearch.ClusterMaintenanceDetails>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
-    public readonly masterNodeCount!: pulumi.Output<number>;
+    declare public readonly masterNodeCount: pulumi.Output<number>;
     /**
      * The bare metal shape for the cluster's master nodes.
      */
-    public readonly masterNodeHostBareMetalShape!: pulumi.Output<string>;
+    declare public readonly masterNodeHostBareMetalShape: pulumi.Output<string>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
-    public readonly masterNodeHostMemoryGb!: pulumi.Output<number>;
+    declare public readonly masterNodeHostMemoryGb: pulumi.Output<number>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluser's master nodes.
      */
-    public readonly masterNodeHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly masterNodeHostOcpuCount: pulumi.Output<number>;
     /**
      * (Updatable) The node shape for the cluster's master nodes.
      */
-    public readonly masterNodeHostShape!: pulumi.Output<string>;
+    declare public readonly masterNodeHostShape: pulumi.Output<string>;
     /**
      * The instance type for the cluster's master nodes.
      */
-    public readonly masterNodeHostType!: pulumi.Output<string>;
+    declare public readonly masterNodeHostType: pulumi.Output<string>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
-    public /*out*/ readonly opendashboardFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly opendashboardFqdn: pulumi.Output<string>;
     /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
-    public readonly opendashboardNodeCount!: pulumi.Output<number>;
+    declare public readonly opendashboardNodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
      */
-    public readonly opendashboardNodeHostMemoryGb!: pulumi.Output<number>;
+    declare public readonly opendashboardNodeHostMemoryGb: pulumi.Output<number>;
     /**
      * (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
      */
-    public readonly opendashboardNodeHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly opendashboardNodeHostOcpuCount: pulumi.Output<number>;
     /**
      * (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
      */
-    public readonly opendashboardNodeHostShape!: pulumi.Output<string>;
+    declare public readonly opendashboardNodeHostShape: pulumi.Output<string>;
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
-    public /*out*/ readonly opendashboardPrivateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly opendashboardPrivateIp: pulumi.Output<string>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    public /*out*/ readonly opensearchFqdn!: pulumi.Output<string>;
+    declare public /*out*/ readonly opensearchFqdn: pulumi.Output<string>;
     /**
      * The cluster's private IP address.
      */
-    public /*out*/ readonly opensearchPrivateIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly opensearchPrivateIp: pulumi.Output<string>;
     /**
      * (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
      */
-    public readonly outboundClusterConfig!: pulumi.Output<outputs.Opensearch.ClusterOutboundClusterConfig>;
+    declare public readonly outboundClusterConfig: pulumi.Output<outputs.Opensearch.ClusterOutboundClusterConfig>;
     /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
-    public readonly reverseConnectionEndpointCustomerIps!: pulumi.Output<string[]>;
+    declare public readonly reverseConnectionEndpointCustomerIps: pulumi.Output<string[]>;
     /**
      * The list of reverse connection endpoints.
      */
-    public /*out*/ readonly reverseConnectionEndpoints!: pulumi.Output<outputs.Opensearch.ClusterReverseConnectionEndpoint[]>;
+    declare public /*out*/ readonly reverseConnectionEndpoints: pulumi.Output<outputs.Opensearch.ClusterReverseConnectionEndpoint[]>;
     /**
      * (Updatable) The number of search nodes configured for the cluster.
      */
-    public readonly searchNodeCount!: pulumi.Output<number>;
+    declare public readonly searchNodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The amount of memory in GB, for the cluster's search nodes.
      */
-    public readonly searchNodeHostMemoryGb!: pulumi.Output<number>;
+    declare public readonly searchNodeHostMemoryGb: pulumi.Output<number>;
     /**
      * (Updatable) The number of OCPUs configured for the cluster's search nodes.
      */
-    public readonly searchNodeHostOcpuCount!: pulumi.Output<number>;
+    declare public readonly searchNodeHostOcpuCount: pulumi.Output<number>;
     /**
      * (Updatable) The node shape for the cluster's search nodes.
      */
-    public readonly searchNodeHostShape!: pulumi.Output<string>;
+    declare public readonly searchNodeHostShape: pulumi.Output<string>;
     /**
      * The instance type for the cluster's search nodes.
      */
-    public readonly searchNodeHostType!: pulumi.Output<string>;
+    declare public readonly searchNodeHostType: pulumi.Output<string>;
     /**
      * (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
-    public readonly searchNodeStorageGb!: pulumi.Output<number>;
+    declare public readonly searchNodeStorageGb: pulumi.Output<number>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
-    public readonly securityMasterUserName!: pulumi.Output<string>;
+    declare public readonly securityMasterUserName: pulumi.Output<string>;
     /**
      * (Updatable) The password hash of the master user that are used to manage security config
      */
-    public readonly securityMasterUserPasswordHash!: pulumi.Output<string>;
+    declare public readonly securityMasterUserPasswordHash: pulumi.Output<string>;
     /**
      * (Updatable) The security mode of the cluster.
      */
-    public readonly securityMode!: pulumi.Output<string>;
+    declare public readonly securityMode: pulumi.Output<string>;
     /**
      * SAML policy is optionally used for Opensearch cluster to config SAML authentication
      */
-    public readonly securitySamlConfig!: pulumi.Output<outputs.Opensearch.ClusterSecuritySamlConfig>;
+    declare public readonly securitySamlConfig: pulumi.Output<outputs.Opensearch.ClusterSecuritySamlConfig>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
-    public readonly softwareVersion!: pulumi.Output<string>;
+    declare public readonly softwareVersion: pulumi.Output<string>;
     /**
      * The current state of the cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The OCID for the compartment where the cluster's subnet is located.
      */
-    public readonly subnetCompartmentId!: pulumi.Output<string>;
+    declare public readonly subnetCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the cluster's subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The amount of time in milliseconds since the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    public /*out*/ readonly timeDeleted!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeDeleted: pulumi.Output<string>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The size in GB of the cluster's total storage.
      */
-    public /*out*/ readonly totalStorageGb!: pulumi.Output<number>;
+    declare public /*out*/ readonly totalStorageGb: pulumi.Output<number>;
     /**
      * An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
      *
@@ -275,15 +275,15 @@ export class Cluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly upgradeMajorVersionTrigger!: pulumi.Output<number>;
+    declare public readonly upgradeMajorVersionTrigger: pulumi.Output<number>;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */
-    public readonly vcnCompartmentId!: pulumi.Output<string>;
+    declare public readonly vcnCompartmentId: pulumi.Output<string>;
     /**
      * The OCID of the cluster's VCN.
      */
-    public readonly vcnId!: pulumi.Output<string>;
+    declare public readonly vcnId: pulumi.Output<string>;
 
     /**
      * Create a Cluster resource with the given unique name, arguments, and options.
@@ -298,164 +298,164 @@ export class Cluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
-            resourceInputs["availabilityDomains"] = state ? state.availabilityDomains : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["configureOutboundClusterTrigger"] = state ? state.configureOutboundClusterTrigger : undefined;
-            resourceInputs["dataNodeCount"] = state ? state.dataNodeCount : undefined;
-            resourceInputs["dataNodeHostBareMetalShape"] = state ? state.dataNodeHostBareMetalShape : undefined;
-            resourceInputs["dataNodeHostMemoryGb"] = state ? state.dataNodeHostMemoryGb : undefined;
-            resourceInputs["dataNodeHostOcpuCount"] = state ? state.dataNodeHostOcpuCount : undefined;
-            resourceInputs["dataNodeHostShape"] = state ? state.dataNodeHostShape : undefined;
-            resourceInputs["dataNodeHostType"] = state ? state.dataNodeHostType : undefined;
-            resourceInputs["dataNodeStorageGb"] = state ? state.dataNodeStorageGb : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["fqdn"] = state ? state.fqdn : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["inboundClusterIds"] = state ? state.inboundClusterIds : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["maintenanceDetails"] = state ? state.maintenanceDetails : undefined;
-            resourceInputs["masterNodeCount"] = state ? state.masterNodeCount : undefined;
-            resourceInputs["masterNodeHostBareMetalShape"] = state ? state.masterNodeHostBareMetalShape : undefined;
-            resourceInputs["masterNodeHostMemoryGb"] = state ? state.masterNodeHostMemoryGb : undefined;
-            resourceInputs["masterNodeHostOcpuCount"] = state ? state.masterNodeHostOcpuCount : undefined;
-            resourceInputs["masterNodeHostShape"] = state ? state.masterNodeHostShape : undefined;
-            resourceInputs["masterNodeHostType"] = state ? state.masterNodeHostType : undefined;
-            resourceInputs["opendashboardFqdn"] = state ? state.opendashboardFqdn : undefined;
-            resourceInputs["opendashboardNodeCount"] = state ? state.opendashboardNodeCount : undefined;
-            resourceInputs["opendashboardNodeHostMemoryGb"] = state ? state.opendashboardNodeHostMemoryGb : undefined;
-            resourceInputs["opendashboardNodeHostOcpuCount"] = state ? state.opendashboardNodeHostOcpuCount : undefined;
-            resourceInputs["opendashboardNodeHostShape"] = state ? state.opendashboardNodeHostShape : undefined;
-            resourceInputs["opendashboardPrivateIp"] = state ? state.opendashboardPrivateIp : undefined;
-            resourceInputs["opensearchFqdn"] = state ? state.opensearchFqdn : undefined;
-            resourceInputs["opensearchPrivateIp"] = state ? state.opensearchPrivateIp : undefined;
-            resourceInputs["outboundClusterConfig"] = state ? state.outboundClusterConfig : undefined;
-            resourceInputs["reverseConnectionEndpointCustomerIps"] = state ? state.reverseConnectionEndpointCustomerIps : undefined;
-            resourceInputs["reverseConnectionEndpoints"] = state ? state.reverseConnectionEndpoints : undefined;
-            resourceInputs["searchNodeCount"] = state ? state.searchNodeCount : undefined;
-            resourceInputs["searchNodeHostMemoryGb"] = state ? state.searchNodeHostMemoryGb : undefined;
-            resourceInputs["searchNodeHostOcpuCount"] = state ? state.searchNodeHostOcpuCount : undefined;
-            resourceInputs["searchNodeHostShape"] = state ? state.searchNodeHostShape : undefined;
-            resourceInputs["searchNodeHostType"] = state ? state.searchNodeHostType : undefined;
-            resourceInputs["searchNodeStorageGb"] = state ? state.searchNodeStorageGb : undefined;
-            resourceInputs["securityMasterUserName"] = state ? state.securityMasterUserName : undefined;
-            resourceInputs["securityMasterUserPasswordHash"] = state ? state.securityMasterUserPasswordHash : undefined;
-            resourceInputs["securityMode"] = state ? state.securityMode : undefined;
-            resourceInputs["securitySamlConfig"] = state ? state.securitySamlConfig : undefined;
-            resourceInputs["softwareVersion"] = state ? state.softwareVersion : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetCompartmentId"] = state ? state.subnetCompartmentId : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeDeleted"] = state ? state.timeDeleted : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["totalStorageGb"] = state ? state.totalStorageGb : undefined;
-            resourceInputs["upgradeMajorVersionTrigger"] = state ? state.upgradeMajorVersionTrigger : undefined;
-            resourceInputs["vcnCompartmentId"] = state ? state.vcnCompartmentId : undefined;
-            resourceInputs["vcnId"] = state ? state.vcnId : undefined;
+            resourceInputs["availabilityDomains"] = state?.availabilityDomains;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["configureOutboundClusterTrigger"] = state?.configureOutboundClusterTrigger;
+            resourceInputs["dataNodeCount"] = state?.dataNodeCount;
+            resourceInputs["dataNodeHostBareMetalShape"] = state?.dataNodeHostBareMetalShape;
+            resourceInputs["dataNodeHostMemoryGb"] = state?.dataNodeHostMemoryGb;
+            resourceInputs["dataNodeHostOcpuCount"] = state?.dataNodeHostOcpuCount;
+            resourceInputs["dataNodeHostShape"] = state?.dataNodeHostShape;
+            resourceInputs["dataNodeHostType"] = state?.dataNodeHostType;
+            resourceInputs["dataNodeStorageGb"] = state?.dataNodeStorageGb;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["fqdn"] = state?.fqdn;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["inboundClusterIds"] = state?.inboundClusterIds;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["maintenanceDetails"] = state?.maintenanceDetails;
+            resourceInputs["masterNodeCount"] = state?.masterNodeCount;
+            resourceInputs["masterNodeHostBareMetalShape"] = state?.masterNodeHostBareMetalShape;
+            resourceInputs["masterNodeHostMemoryGb"] = state?.masterNodeHostMemoryGb;
+            resourceInputs["masterNodeHostOcpuCount"] = state?.masterNodeHostOcpuCount;
+            resourceInputs["masterNodeHostShape"] = state?.masterNodeHostShape;
+            resourceInputs["masterNodeHostType"] = state?.masterNodeHostType;
+            resourceInputs["opendashboardFqdn"] = state?.opendashboardFqdn;
+            resourceInputs["opendashboardNodeCount"] = state?.opendashboardNodeCount;
+            resourceInputs["opendashboardNodeHostMemoryGb"] = state?.opendashboardNodeHostMemoryGb;
+            resourceInputs["opendashboardNodeHostOcpuCount"] = state?.opendashboardNodeHostOcpuCount;
+            resourceInputs["opendashboardNodeHostShape"] = state?.opendashboardNodeHostShape;
+            resourceInputs["opendashboardPrivateIp"] = state?.opendashboardPrivateIp;
+            resourceInputs["opensearchFqdn"] = state?.opensearchFqdn;
+            resourceInputs["opensearchPrivateIp"] = state?.opensearchPrivateIp;
+            resourceInputs["outboundClusterConfig"] = state?.outboundClusterConfig;
+            resourceInputs["reverseConnectionEndpointCustomerIps"] = state?.reverseConnectionEndpointCustomerIps;
+            resourceInputs["reverseConnectionEndpoints"] = state?.reverseConnectionEndpoints;
+            resourceInputs["searchNodeCount"] = state?.searchNodeCount;
+            resourceInputs["searchNodeHostMemoryGb"] = state?.searchNodeHostMemoryGb;
+            resourceInputs["searchNodeHostOcpuCount"] = state?.searchNodeHostOcpuCount;
+            resourceInputs["searchNodeHostShape"] = state?.searchNodeHostShape;
+            resourceInputs["searchNodeHostType"] = state?.searchNodeHostType;
+            resourceInputs["searchNodeStorageGb"] = state?.searchNodeStorageGb;
+            resourceInputs["securityMasterUserName"] = state?.securityMasterUserName;
+            resourceInputs["securityMasterUserPasswordHash"] = state?.securityMasterUserPasswordHash;
+            resourceInputs["securityMode"] = state?.securityMode;
+            resourceInputs["securitySamlConfig"] = state?.securitySamlConfig;
+            resourceInputs["softwareVersion"] = state?.softwareVersion;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetCompartmentId"] = state?.subnetCompartmentId;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeDeleted"] = state?.timeDeleted;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["totalStorageGb"] = state?.totalStorageGb;
+            resourceInputs["upgradeMajorVersionTrigger"] = state?.upgradeMajorVersionTrigger;
+            resourceInputs["vcnCompartmentId"] = state?.vcnCompartmentId;
+            resourceInputs["vcnId"] = state?.vcnId;
         } else {
             const args = argsOrState as ClusterArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.dataNodeCount === undefined) && !opts.urn) {
+            if (args?.dataNodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataNodeCount'");
             }
-            if ((!args || args.dataNodeHostMemoryGb === undefined) && !opts.urn) {
+            if (args?.dataNodeHostMemoryGb === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataNodeHostMemoryGb'");
             }
-            if ((!args || args.dataNodeHostOcpuCount === undefined) && !opts.urn) {
+            if (args?.dataNodeHostOcpuCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataNodeHostOcpuCount'");
             }
-            if ((!args || args.dataNodeHostType === undefined) && !opts.urn) {
+            if (args?.dataNodeHostType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataNodeHostType'");
             }
-            if ((!args || args.dataNodeStorageGb === undefined) && !opts.urn) {
+            if (args?.dataNodeStorageGb === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataNodeStorageGb'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.masterNodeCount === undefined) && !opts.urn) {
+            if (args?.masterNodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNodeCount'");
             }
-            if ((!args || args.masterNodeHostMemoryGb === undefined) && !opts.urn) {
+            if (args?.masterNodeHostMemoryGb === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNodeHostMemoryGb'");
             }
-            if ((!args || args.masterNodeHostOcpuCount === undefined) && !opts.urn) {
+            if (args?.masterNodeHostOcpuCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNodeHostOcpuCount'");
             }
-            if ((!args || args.masterNodeHostType === undefined) && !opts.urn) {
+            if (args?.masterNodeHostType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNodeHostType'");
             }
-            if ((!args || args.opendashboardNodeCount === undefined) && !opts.urn) {
+            if (args?.opendashboardNodeCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'opendashboardNodeCount'");
             }
-            if ((!args || args.opendashboardNodeHostMemoryGb === undefined) && !opts.urn) {
+            if (args?.opendashboardNodeHostMemoryGb === undefined && !opts.urn) {
                 throw new Error("Missing required property 'opendashboardNodeHostMemoryGb'");
             }
-            if ((!args || args.opendashboardNodeHostOcpuCount === undefined) && !opts.urn) {
+            if (args?.opendashboardNodeHostOcpuCount === undefined && !opts.urn) {
                 throw new Error("Missing required property 'opendashboardNodeHostOcpuCount'");
             }
-            if ((!args || args.softwareVersion === undefined) && !opts.urn) {
+            if (args?.softwareVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareVersion'");
             }
-            if ((!args || args.subnetCompartmentId === undefined) && !opts.urn) {
+            if (args?.subnetCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetCompartmentId'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            if ((!args || args.vcnCompartmentId === undefined) && !opts.urn) {
+            if (args?.vcnCompartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnCompartmentId'");
             }
-            if ((!args || args.vcnId === undefined) && !opts.urn) {
+            if (args?.vcnId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vcnId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["configureOutboundClusterTrigger"] = args ? args.configureOutboundClusterTrigger : undefined;
-            resourceInputs["dataNodeCount"] = args ? args.dataNodeCount : undefined;
-            resourceInputs["dataNodeHostBareMetalShape"] = args ? args.dataNodeHostBareMetalShape : undefined;
-            resourceInputs["dataNodeHostMemoryGb"] = args ? args.dataNodeHostMemoryGb : undefined;
-            resourceInputs["dataNodeHostOcpuCount"] = args ? args.dataNodeHostOcpuCount : undefined;
-            resourceInputs["dataNodeHostShape"] = args ? args.dataNodeHostShape : undefined;
-            resourceInputs["dataNodeHostType"] = args ? args.dataNodeHostType : undefined;
-            resourceInputs["dataNodeStorageGb"] = args ? args.dataNodeStorageGb : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["inboundClusterIds"] = args ? args.inboundClusterIds : undefined;
-            resourceInputs["maintenanceDetails"] = args ? args.maintenanceDetails : undefined;
-            resourceInputs["masterNodeCount"] = args ? args.masterNodeCount : undefined;
-            resourceInputs["masterNodeHostBareMetalShape"] = args ? args.masterNodeHostBareMetalShape : undefined;
-            resourceInputs["masterNodeHostMemoryGb"] = args ? args.masterNodeHostMemoryGb : undefined;
-            resourceInputs["masterNodeHostOcpuCount"] = args ? args.masterNodeHostOcpuCount : undefined;
-            resourceInputs["masterNodeHostShape"] = args ? args.masterNodeHostShape : undefined;
-            resourceInputs["masterNodeHostType"] = args ? args.masterNodeHostType : undefined;
-            resourceInputs["opendashboardNodeCount"] = args ? args.opendashboardNodeCount : undefined;
-            resourceInputs["opendashboardNodeHostMemoryGb"] = args ? args.opendashboardNodeHostMemoryGb : undefined;
-            resourceInputs["opendashboardNodeHostOcpuCount"] = args ? args.opendashboardNodeHostOcpuCount : undefined;
-            resourceInputs["opendashboardNodeHostShape"] = args ? args.opendashboardNodeHostShape : undefined;
-            resourceInputs["outboundClusterConfig"] = args ? args.outboundClusterConfig : undefined;
-            resourceInputs["reverseConnectionEndpointCustomerIps"] = args ? args.reverseConnectionEndpointCustomerIps : undefined;
-            resourceInputs["searchNodeCount"] = args ? args.searchNodeCount : undefined;
-            resourceInputs["searchNodeHostMemoryGb"] = args ? args.searchNodeHostMemoryGb : undefined;
-            resourceInputs["searchNodeHostOcpuCount"] = args ? args.searchNodeHostOcpuCount : undefined;
-            resourceInputs["searchNodeHostShape"] = args ? args.searchNodeHostShape : undefined;
-            resourceInputs["searchNodeHostType"] = args ? args.searchNodeHostType : undefined;
-            resourceInputs["searchNodeStorageGb"] = args ? args.searchNodeStorageGb : undefined;
-            resourceInputs["securityMasterUserName"] = args ? args.securityMasterUserName : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["configureOutboundClusterTrigger"] = args?.configureOutboundClusterTrigger;
+            resourceInputs["dataNodeCount"] = args?.dataNodeCount;
+            resourceInputs["dataNodeHostBareMetalShape"] = args?.dataNodeHostBareMetalShape;
+            resourceInputs["dataNodeHostMemoryGb"] = args?.dataNodeHostMemoryGb;
+            resourceInputs["dataNodeHostOcpuCount"] = args?.dataNodeHostOcpuCount;
+            resourceInputs["dataNodeHostShape"] = args?.dataNodeHostShape;
+            resourceInputs["dataNodeHostType"] = args?.dataNodeHostType;
+            resourceInputs["dataNodeStorageGb"] = args?.dataNodeStorageGb;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["inboundClusterIds"] = args?.inboundClusterIds;
+            resourceInputs["maintenanceDetails"] = args?.maintenanceDetails;
+            resourceInputs["masterNodeCount"] = args?.masterNodeCount;
+            resourceInputs["masterNodeHostBareMetalShape"] = args?.masterNodeHostBareMetalShape;
+            resourceInputs["masterNodeHostMemoryGb"] = args?.masterNodeHostMemoryGb;
+            resourceInputs["masterNodeHostOcpuCount"] = args?.masterNodeHostOcpuCount;
+            resourceInputs["masterNodeHostShape"] = args?.masterNodeHostShape;
+            resourceInputs["masterNodeHostType"] = args?.masterNodeHostType;
+            resourceInputs["opendashboardNodeCount"] = args?.opendashboardNodeCount;
+            resourceInputs["opendashboardNodeHostMemoryGb"] = args?.opendashboardNodeHostMemoryGb;
+            resourceInputs["opendashboardNodeHostOcpuCount"] = args?.opendashboardNodeHostOcpuCount;
+            resourceInputs["opendashboardNodeHostShape"] = args?.opendashboardNodeHostShape;
+            resourceInputs["outboundClusterConfig"] = args?.outboundClusterConfig;
+            resourceInputs["reverseConnectionEndpointCustomerIps"] = args?.reverseConnectionEndpointCustomerIps;
+            resourceInputs["searchNodeCount"] = args?.searchNodeCount;
+            resourceInputs["searchNodeHostMemoryGb"] = args?.searchNodeHostMemoryGb;
+            resourceInputs["searchNodeHostOcpuCount"] = args?.searchNodeHostOcpuCount;
+            resourceInputs["searchNodeHostShape"] = args?.searchNodeHostShape;
+            resourceInputs["searchNodeHostType"] = args?.searchNodeHostType;
+            resourceInputs["searchNodeStorageGb"] = args?.searchNodeStorageGb;
+            resourceInputs["securityMasterUserName"] = args?.securityMasterUserName;
             resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
-            resourceInputs["securityMode"] = args ? args.securityMode : undefined;
+            resourceInputs["securityMode"] = args?.securityMode;
             resourceInputs["securitySamlConfig"] = args?.securitySamlConfig ? pulumi.secret(args.securitySamlConfig) : undefined;
-            resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
-            resourceInputs["subnetCompartmentId"] = args ? args.subnetCompartmentId : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
-            resourceInputs["upgradeMajorVersionTrigger"] = args ? args.upgradeMajorVersionTrigger : undefined;
-            resourceInputs["vcnCompartmentId"] = args ? args.vcnCompartmentId : undefined;
-            resourceInputs["vcnId"] = args ? args.vcnId : undefined;
+            resourceInputs["softwareVersion"] = args?.softwareVersion;
+            resourceInputs["subnetCompartmentId"] = args?.subnetCompartmentId;
+            resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["systemTags"] = args?.systemTags;
+            resourceInputs["upgradeMajorVersionTrigger"] = args?.upgradeMajorVersionTrigger;
+            resourceInputs["vcnCompartmentId"] = args?.vcnCompartmentId;
+            resourceInputs["vcnId"] = args?.vcnId;
             resourceInputs["availabilityDomains"] = undefined /*out*/;
             resourceInputs["fqdn"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

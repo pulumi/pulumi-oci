@@ -139,55 +139,55 @@ export class ModelDeployment extends pulumi.CustomResource {
     /**
      * (Updatable) The log details for each category.
      */
-    public readonly categoryLogDetails!: pulumi.Output<outputs.DataScience.ModelDeploymentCategoryLogDetails>;
+    declare public readonly categoryLogDetails: pulumi.Output<outputs.DataScience.ModelDeploymentCategoryLogDetails>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A short description of the model deployment.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Details about the state of the model deployment.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * (Updatable) The model deployment configuration details.
      */
-    public readonly modelDeploymentConfigurationDetails!: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
+    declare public readonly modelDeploymentConfigurationDetails: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
     /**
      * Model deployment system data.
      */
-    public /*out*/ readonly modelDeploymentSystemDatas!: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentSystemData[]>;
+    declare public /*out*/ readonly modelDeploymentSystemDatas: pulumi.Output<outputs.DataScience.ModelDeploymentModelDeploymentSystemData[]>;
     /**
      * The URL to interact with the model deployment.
      */
-    public /*out*/ readonly modelDeploymentUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly modelDeploymentUrl: pulumi.Output<string>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    declare public readonly opcParentRptUrl: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
-    public readonly projectId!: pulumi.Output<string>;
+    declare public readonly projectId: pulumi.Output<string>;
     /**
      * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -195,11 +195,11 @@ export class ModelDeployment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
 
     /**
      * Create a ModelDeployment resource with the given unique name, arguments, and options.
@@ -214,42 +214,42 @@ export class ModelDeployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ModelDeploymentState | undefined;
-            resourceInputs["categoryLogDetails"] = state ? state.categoryLogDetails : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["modelDeploymentConfigurationDetails"] = state ? state.modelDeploymentConfigurationDetails : undefined;
-            resourceInputs["modelDeploymentSystemDatas"] = state ? state.modelDeploymentSystemDatas : undefined;
-            resourceInputs["modelDeploymentUrl"] = state ? state.modelDeploymentUrl : undefined;
-            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
-            resourceInputs["projectId"] = state ? state.projectId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["categoryLogDetails"] = state?.categoryLogDetails;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["modelDeploymentConfigurationDetails"] = state?.modelDeploymentConfigurationDetails;
+            resourceInputs["modelDeploymentSystemDatas"] = state?.modelDeploymentSystemDatas;
+            resourceInputs["modelDeploymentUrl"] = state?.modelDeploymentUrl;
+            resourceInputs["opcParentRptUrl"] = state?.opcParentRptUrl;
+            resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
         } else {
             const args = argsOrState as ModelDeploymentArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.modelDeploymentConfigurationDetails === undefined) && !opts.urn) {
+            if (args?.modelDeploymentConfigurationDetails === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelDeploymentConfigurationDetails'");
             }
-            if ((!args || args.projectId === undefined) && !opts.urn) {
+            if (args?.projectId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
             }
-            resourceInputs["categoryLogDetails"] = args ? args.categoryLogDetails : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["modelDeploymentConfigurationDetails"] = args ? args.modelDeploymentConfigurationDetails : undefined;
-            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
-            resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["categoryLogDetails"] = args?.categoryLogDetails;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["modelDeploymentConfigurationDetails"] = args?.modelDeploymentConfigurationDetails;
+            resourceInputs["opcParentRptUrl"] = args?.opcParentRptUrl;
+            resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["state"] = args?.state;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["modelDeploymentSystemDatas"] = undefined /*out*/;

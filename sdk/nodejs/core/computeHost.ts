@@ -50,47 +50,47 @@ export class ComputeHost extends pulumi.CustomResource {
     /**
      * Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
      */
-    public /*out*/ readonly additionalData!: pulumi.Output<string>;
+    declare public /*out*/ readonly additionalData: pulumi.Output<string>;
     /**
      * The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
      */
-    public /*out*/ readonly capacityReservationId!: pulumi.Output<string>;
+    declare public /*out*/ readonly capacityReservationId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
      */
-    public readonly computeHostGroupId!: pulumi.Output<string>;
+    declare public readonly computeHostGroupId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
      */
-    public readonly computeHostId!: pulumi.Output<string>;
+    declare public readonly computeHostId: pulumi.Output<string>;
     /**
      * Compute Host Configuration Data
      */
-    public /*out*/ readonly configurationDatas!: pulumi.Output<outputs.Core.ComputeHostConfigurationData[]>;
+    declare public /*out*/ readonly configurationDatas: pulumi.Output<outputs.Core.ComputeHostConfigurationData[]>;
     /**
      * Configuration state of the Compute Bare Metal Host.
      */
-    public /*out*/ readonly configurationState!: pulumi.Output<string>;
+    declare public /*out*/ readonly configurationState: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    declare public /*out*/ readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -98,63 +98,63 @@ export class ComputeHost extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
      */
-    public /*out*/ readonly gpuMemoryFabricId!: pulumi.Output<string>;
+    declare public /*out*/ readonly gpuMemoryFabricId: pulumi.Output<string>;
     /**
      * The heathy state of the host
      */
-    public /*out*/ readonly health!: pulumi.Output<string>;
+    declare public /*out*/ readonly health: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
      */
-    public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
+    declare public /*out*/ readonly hpcIslandId: pulumi.Output<string>;
     /**
      * A list that contains impacted components related to an unhealthy host. An impacted component will be a  free-form structure of key values pairs that will provide more or less details based on data tiering
      */
-    public /*out*/ readonly impactedComponentDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly impactedComponentDetails: pulumi.Output<string>;
     /**
      * The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
      */
-    public /*out*/ readonly instanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly instanceId: pulumi.Output<string>;
     /**
      * A free-form description detailing why the host is in its current state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
      */
-    public /*out*/ readonly localBlockId!: pulumi.Output<string>;
+    declare public /*out*/ readonly localBlockId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
-    public /*out*/ readonly networkBlockId!: pulumi.Output<string>;
+    declare public /*out*/ readonly networkBlockId: pulumi.Output<string>;
     /**
      * Shows details about the last recycle performed on this host.
      */
-    public /*out*/ readonly recycleDetails!: pulumi.Output<outputs.Core.ComputeHostRecycleDetail[]>;
+    declare public /*out*/ readonly recycleDetails: pulumi.Output<outputs.Core.ComputeHostRecycleDetail[]>;
     /**
      * The shape of host
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
      * The lifecycle state of the host
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeConfigurationCheck!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeConfigurationCheck: pulumi.Output<string>;
     /**
      * The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ComputeHost resource with the given unique name, arguments, and options.
@@ -169,39 +169,39 @@ export class ComputeHost extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ComputeHostState | undefined;
-            resourceInputs["additionalData"] = state ? state.additionalData : undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["computeHostGroupId"] = state ? state.computeHostGroupId : undefined;
-            resourceInputs["computeHostId"] = state ? state.computeHostId : undefined;
-            resourceInputs["configurationDatas"] = state ? state.configurationDatas : undefined;
-            resourceInputs["configurationState"] = state ? state.configurationState : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["gpuMemoryFabricId"] = state ? state.gpuMemoryFabricId : undefined;
-            resourceInputs["health"] = state ? state.health : undefined;
-            resourceInputs["hpcIslandId"] = state ? state.hpcIslandId : undefined;
-            resourceInputs["impactedComponentDetails"] = state ? state.impactedComponentDetails : undefined;
-            resourceInputs["instanceId"] = state ? state.instanceId : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["localBlockId"] = state ? state.localBlockId : undefined;
-            resourceInputs["networkBlockId"] = state ? state.networkBlockId : undefined;
-            resourceInputs["recycleDetails"] = state ? state.recycleDetails : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeConfigurationCheck"] = state ? state.timeConfigurationCheck : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["additionalData"] = state?.additionalData;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["computeHostGroupId"] = state?.computeHostGroupId;
+            resourceInputs["computeHostId"] = state?.computeHostId;
+            resourceInputs["configurationDatas"] = state?.configurationDatas;
+            resourceInputs["configurationState"] = state?.configurationState;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["gpuMemoryFabricId"] = state?.gpuMemoryFabricId;
+            resourceInputs["health"] = state?.health;
+            resourceInputs["hpcIslandId"] = state?.hpcIslandId;
+            resourceInputs["impactedComponentDetails"] = state?.impactedComponentDetails;
+            resourceInputs["instanceId"] = state?.instanceId;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["localBlockId"] = state?.localBlockId;
+            resourceInputs["networkBlockId"] = state?.networkBlockId;
+            resourceInputs["recycleDetails"] = state?.recycleDetails;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeConfigurationCheck"] = state?.timeConfigurationCheck;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ComputeHostArgs | undefined;
-            if ((!args || args.computeHostId === undefined) && !opts.urn) {
+            if (args?.computeHostId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'computeHostId'");
             }
-            resourceInputs["computeHostGroupId"] = args ? args.computeHostGroupId : undefined;
-            resourceInputs["computeHostId"] = args ? args.computeHostId : undefined;
+            resourceInputs["computeHostGroupId"] = args?.computeHostGroupId;
+            resourceInputs["computeHostId"] = args?.computeHostId;
             resourceInputs["additionalData"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["capacityReservationId"] = undefined /*out*/;

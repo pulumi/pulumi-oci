@@ -32,12 +32,12 @@ export class OracleManagedCustomEndpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === OracleManagedCustomEndpoint.__pulumiType;
     }
 
-    public readonly dnsType!: pulumi.Output<string>;
-    public readonly dnsZoneName!: pulumi.Output<string | undefined>;
-    public readonly hostname!: pulumi.Output<string>;
-    public readonly integrationInstanceId!: pulumi.Output<string>;
-    public readonly managedType!: pulumi.Output<string>;
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly dnsType: pulumi.Output<string>;
+    declare public readonly dnsZoneName: pulumi.Output<string | undefined>;
+    declare public readonly hostname: pulumi.Output<string>;
+    declare public readonly integrationInstanceId: pulumi.Output<string>;
+    declare public readonly managedType: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
 
     /**
      * Create a OracleManagedCustomEndpoint resource with the given unique name, arguments, and options.
@@ -52,26 +52,26 @@ export class OracleManagedCustomEndpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OracleManagedCustomEndpointState | undefined;
-            resourceInputs["dnsType"] = state ? state.dnsType : undefined;
-            resourceInputs["dnsZoneName"] = state ? state.dnsZoneName : undefined;
-            resourceInputs["hostname"] = state ? state.hostname : undefined;
-            resourceInputs["integrationInstanceId"] = state ? state.integrationInstanceId : undefined;
-            resourceInputs["managedType"] = state ? state.managedType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["dnsType"] = state?.dnsType;
+            resourceInputs["dnsZoneName"] = state?.dnsZoneName;
+            resourceInputs["hostname"] = state?.hostname;
+            resourceInputs["integrationInstanceId"] = state?.integrationInstanceId;
+            resourceInputs["managedType"] = state?.managedType;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as OracleManagedCustomEndpointArgs | undefined;
-            if ((!args || args.hostname === undefined) && !opts.urn) {
+            if (args?.hostname === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hostname'");
             }
-            if ((!args || args.integrationInstanceId === undefined) && !opts.urn) {
+            if (args?.integrationInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'integrationInstanceId'");
             }
-            resourceInputs["dnsType"] = args ? args.dnsType : undefined;
-            resourceInputs["dnsZoneName"] = args ? args.dnsZoneName : undefined;
-            resourceInputs["hostname"] = args ? args.hostname : undefined;
-            resourceInputs["integrationInstanceId"] = args ? args.integrationInstanceId : undefined;
-            resourceInputs["managedType"] = args ? args.managedType : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
+            resourceInputs["dnsType"] = args?.dnsType;
+            resourceInputs["dnsZoneName"] = args?.dnsZoneName;
+            resourceInputs["hostname"] = args?.hostname;
+            resourceInputs["integrationInstanceId"] = args?.integrationInstanceId;
+            resourceInputs["managedType"] = args?.managedType;
+            resourceInputs["state"] = args?.state;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OracleManagedCustomEndpoint.__pulumiType, name, resourceInputs, opts);

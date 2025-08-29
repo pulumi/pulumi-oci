@@ -66,19 +66,19 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates if the user can use API keys.
      */
-    public readonly canUseApiKeys!: pulumi.Output<boolean>;
+    declare public readonly canUseApiKeys: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      */
-    public readonly canUseAuthTokens!: pulumi.Output<boolean>;
+    declare public readonly canUseAuthTokens: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if the user can log in to the console.
      */
-    public readonly canUseConsolePassword!: pulumi.Output<boolean>;
+    declare public readonly canUseConsolePassword: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      */
-    public readonly canUseCustomerSecretKeys!: pulumi.Output<boolean>;
+    declare public readonly canUseCustomerSecretKeys: pulumi.Output<boolean>;
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
@@ -86,11 +86,11 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly canUseSmtpCredentials!: pulumi.Output<boolean>;
+    declare public readonly canUseSmtpCredentials: pulumi.Output<boolean>;
     /**
      * The OCID of the user.
      */
-    public readonly userId!: pulumi.Output<string>;
+    declare public readonly userId: pulumi.Output<string>;
 
     /**
      * Create a UserCapabilitiesManagement resource with the given unique name, arguments, and options.
@@ -105,23 +105,23 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserCapabilitiesManagementState | undefined;
-            resourceInputs["canUseApiKeys"] = state ? state.canUseApiKeys : undefined;
-            resourceInputs["canUseAuthTokens"] = state ? state.canUseAuthTokens : undefined;
-            resourceInputs["canUseConsolePassword"] = state ? state.canUseConsolePassword : undefined;
-            resourceInputs["canUseCustomerSecretKeys"] = state ? state.canUseCustomerSecretKeys : undefined;
-            resourceInputs["canUseSmtpCredentials"] = state ? state.canUseSmtpCredentials : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
+            resourceInputs["canUseApiKeys"] = state?.canUseApiKeys;
+            resourceInputs["canUseAuthTokens"] = state?.canUseAuthTokens;
+            resourceInputs["canUseConsolePassword"] = state?.canUseConsolePassword;
+            resourceInputs["canUseCustomerSecretKeys"] = state?.canUseCustomerSecretKeys;
+            resourceInputs["canUseSmtpCredentials"] = state?.canUseSmtpCredentials;
+            resourceInputs["userId"] = state?.userId;
         } else {
             const args = argsOrState as UserCapabilitiesManagementArgs | undefined;
-            if ((!args || args.userId === undefined) && !opts.urn) {
+            if (args?.userId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userId'");
             }
-            resourceInputs["canUseApiKeys"] = args ? args.canUseApiKeys : undefined;
-            resourceInputs["canUseAuthTokens"] = args ? args.canUseAuthTokens : undefined;
-            resourceInputs["canUseConsolePassword"] = args ? args.canUseConsolePassword : undefined;
-            resourceInputs["canUseCustomerSecretKeys"] = args ? args.canUseCustomerSecretKeys : undefined;
-            resourceInputs["canUseSmtpCredentials"] = args ? args.canUseSmtpCredentials : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["canUseApiKeys"] = args?.canUseApiKeys;
+            resourceInputs["canUseAuthTokens"] = args?.canUseAuthTokens;
+            resourceInputs["canUseConsolePassword"] = args?.canUseConsolePassword;
+            resourceInputs["canUseCustomerSecretKeys"] = args?.canUseCustomerSecretKeys;
+            resourceInputs["canUseSmtpCredentials"] = args?.canUseSmtpCredentials;
+            resourceInputs["userId"] = args?.userId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UserCapabilitiesManagement.__pulumiType, name, resourceInputs, opts);

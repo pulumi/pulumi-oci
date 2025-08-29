@@ -70,49 +70,49 @@ export class HttpProbe extends pulumi.CustomResource {
     /**
      * The OCID of the compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A dictionary of HTTP request headers.
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    public readonly headers!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly headers: pulumi.Output<{[key: string]: string}>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    public /*out*/ readonly homeRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly homeRegion: pulumi.Output<string>;
     /**
      * The supported HTTP methods available for probes.
      */
-    public readonly method!: pulumi.Output<string>;
+    declare public readonly method: pulumi.Output<string>;
     /**
      * The optional URL path to probe, including query parameters.
      */
-    public readonly path!: pulumi.Output<string>;
+    declare public readonly path: pulumi.Output<string>;
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The supported protocols available for HTTP probes.
      */
-    public readonly protocol!: pulumi.Output<string>;
+    declare public readonly protocol: pulumi.Output<string>;
     /**
      * A URL for fetching the probe results.
      */
-    public /*out*/ readonly resultsUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly resultsUrl: pulumi.Output<string>;
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
      */
-    public readonly targets!: pulumi.Output<string[]>;
+    declare public readonly targets: pulumi.Output<string[]>;
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * A list of names of vantage points from which to execute the probe.
      *
@@ -120,7 +120,7 @@ export class HttpProbe extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vantagePointNames!: pulumi.Output<string[]>;
+    declare public readonly vantagePointNames: pulumi.Output<string[]>;
 
     /**
      * Create a HttpProbe resource with the given unique name, arguments, and options.
@@ -135,38 +135,38 @@ export class HttpProbe extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as HttpProbeState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["homeRegion"] = state ? state.homeRegion : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["path"] = state ? state.path : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["resultsUrl"] = state ? state.resultsUrl : undefined;
-            resourceInputs["targets"] = state ? state.targets : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["vantagePointNames"] = state ? state.vantagePointNames : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["homeRegion"] = state?.homeRegion;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["path"] = state?.path;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["resultsUrl"] = state?.resultsUrl;
+            resourceInputs["targets"] = state?.targets;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["vantagePointNames"] = state?.vantagePointNames;
         } else {
             const args = argsOrState as HttpProbeArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.protocol === undefined) && !opts.urn) {
+            if (args?.protocol === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocol'");
             }
-            if ((!args || args.targets === undefined) && !opts.urn) {
+            if (args?.targets === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targets'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["path"] = args ? args.path : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["targets"] = args ? args.targets : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["vantagePointNames"] = args ? args.vantagePointNames : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["path"] = args?.path;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["targets"] = args?.targets;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["vantagePointNames"] = args?.vantagePointNames;
             resourceInputs["homeRegion"] = undefined /*out*/;
             resourceInputs["resultsUrl"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;

@@ -84,77 +84,77 @@ export class Function extends pulumi.CustomResource {
     /**
      * The OCID of the application this function belongs to.
      */
-    public readonly applicationId!: pulumi.Output<string>;
+    declare public readonly applicationId: pulumi.Output<string>;
     /**
      * The OCID of the compartment that contains the function.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    public readonly config!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly config: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    public readonly image!: pulumi.Output<string>;
+    declare public readonly image: pulumi.Output<string>;
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
-    public readonly imageDigest!: pulumi.Output<string>;
+    declare public readonly imageDigest: pulumi.Output<string>;
     /**
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      */
-    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly invokeEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) Maximum usable memory for the function (MiB).
      */
-    public readonly memoryInMbs!: pulumi.Output<string>;
+    declare public readonly memoryInMbs: pulumi.Output<string>;
     /**
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
-    public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    declare public readonly provisionedConcurrencyConfig: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
     /**
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    declare public /*out*/ readonly shape: pulumi.Output<string>;
     /**
      * The source details for the Function. The function can be created from various sources.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
+    declare public readonly sourceDetails: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
     /**
      * The current state of the function.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    declare public readonly timeoutInSeconds: pulumi.Output<number>;
     /**
      * (Updatable) Define the tracing configuration for a function.
      */
-    public readonly traceConfig!: pulumi.Output<outputs.Functions.FunctionTraceConfig>;
+    declare public readonly traceConfig: pulumi.Output<outputs.Functions.FunctionTraceConfig>;
 
     /**
      * Create a Function resource with the given unique name, arguments, and options.
@@ -169,47 +169,47 @@ export class Function extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FunctionState | undefined;
-            resourceInputs["applicationId"] = state ? state.applicationId : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["image"] = state ? state.image : undefined;
-            resourceInputs["imageDigest"] = state ? state.imageDigest : undefined;
-            resourceInputs["invokeEndpoint"] = state ? state.invokeEndpoint : undefined;
-            resourceInputs["memoryInMbs"] = state ? state.memoryInMbs : undefined;
-            resourceInputs["provisionedConcurrencyConfig"] = state ? state.provisionedConcurrencyConfig : undefined;
-            resourceInputs["shape"] = state ? state.shape : undefined;
-            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeoutInSeconds"] = state ? state.timeoutInSeconds : undefined;
-            resourceInputs["traceConfig"] = state ? state.traceConfig : undefined;
+            resourceInputs["applicationId"] = state?.applicationId;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["image"] = state?.image;
+            resourceInputs["imageDigest"] = state?.imageDigest;
+            resourceInputs["invokeEndpoint"] = state?.invokeEndpoint;
+            resourceInputs["memoryInMbs"] = state?.memoryInMbs;
+            resourceInputs["provisionedConcurrencyConfig"] = state?.provisionedConcurrencyConfig;
+            resourceInputs["shape"] = state?.shape;
+            resourceInputs["sourceDetails"] = state?.sourceDetails;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeoutInSeconds"] = state?.timeoutInSeconds;
+            resourceInputs["traceConfig"] = state?.traceConfig;
         } else {
             const args = argsOrState as FunctionArgs | undefined;
-            if ((!args || args.applicationId === undefined) && !opts.urn) {
+            if (args?.applicationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.memoryInMbs === undefined) && !opts.urn) {
+            if (args?.memoryInMbs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memoryInMbs'");
             }
-            resourceInputs["applicationId"] = args ? args.applicationId : undefined;
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["image"] = args ? args.image : undefined;
-            resourceInputs["imageDigest"] = args ? args.imageDigest : undefined;
-            resourceInputs["memoryInMbs"] = args ? args.memoryInMbs : undefined;
-            resourceInputs["provisionedConcurrencyConfig"] = args ? args.provisionedConcurrencyConfig : undefined;
-            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
-            resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
-            resourceInputs["traceConfig"] = args ? args.traceConfig : undefined;
+            resourceInputs["applicationId"] = args?.applicationId;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["image"] = args?.image;
+            resourceInputs["imageDigest"] = args?.imageDigest;
+            resourceInputs["memoryInMbs"] = args?.memoryInMbs;
+            resourceInputs["provisionedConcurrencyConfig"] = args?.provisionedConcurrencyConfig;
+            resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["timeoutInSeconds"] = args?.timeoutInSeconds;
+            resourceInputs["traceConfig"] = args?.traceConfig;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["invokeEndpoint"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;

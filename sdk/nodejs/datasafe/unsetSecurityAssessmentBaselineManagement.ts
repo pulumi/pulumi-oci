@@ -64,11 +64,11 @@ export class UnsetSecurityAssessmentBaselineManagement extends pulumi.CustomReso
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * The OCID of the security assessment.
      */
-    public readonly securityAssessmentId!: pulumi.Output<string>;
+    declare public readonly securityAssessmentId: pulumi.Output<string>;
 
     /**
      * Create a UnsetSecurityAssessmentBaselineManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class UnsetSecurityAssessmentBaselineManagement extends pulumi.CustomReso
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnsetSecurityAssessmentBaselineManagementState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["securityAssessmentId"] = state?.securityAssessmentId;
         } else {
             const args = argsOrState as UnsetSecurityAssessmentBaselineManagementArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.securityAssessmentId === undefined) && !opts.urn) {
+            if (args?.securityAssessmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'securityAssessmentId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["securityAssessmentId"] = args ? args.securityAssessmentId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["securityAssessmentId"] = args?.securityAssessmentId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UnsetSecurityAssessmentBaselineManagement.__pulumiType, name, resourceInputs, opts);

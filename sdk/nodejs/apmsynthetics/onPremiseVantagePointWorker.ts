@@ -75,87 +75,87 @@ export class OnPremiseVantagePointWorker extends pulumi.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    public readonly apmDomainId!: pulumi.Output<string>;
+    declare public readonly apmDomainId: pulumi.Output<string>;
     /**
      * (Updatable) Configuration details of the On-premise VP worker.
      */
-    public readonly configurationDetails!: pulumi.Output<string>;
+    declare public readonly configurationDetails: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Geographical information of the On-premise VP worker.
      */
-    public /*out*/ readonly geoInfo!: pulumi.Output<string>;
+    declare public /*out*/ readonly geoInfo: pulumi.Output<string>;
     /**
      * Domain details of the On-premise VP worker.
      */
-    public /*out*/ readonly identityInfos!: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerIdentityInfo[]>;
+    declare public /*out*/ readonly identityInfos: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerIdentityInfo[]>;
     /**
      * Monitors list assigned to the On-premise VP worker.
      */
-    public /*out*/ readonly monitorLists!: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerMonitorList[]>;
+    declare public /*out*/ readonly monitorLists: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerMonitorList[]>;
     /**
      * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The OCID of the On-premise vantage point.
      */
-    public readonly onPremiseVantagePointId!: pulumi.Output<string>;
+    declare public readonly onPremiseVantagePointId: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
      */
-    public /*out*/ readonly opvpId!: pulumi.Output<string>;
+    declare public /*out*/ readonly opvpId: pulumi.Output<string>;
     /**
      * On-premise vantage point name.
      */
-    public /*out*/ readonly opvpName!: pulumi.Output<string>;
+    declare public /*out*/ readonly opvpName: pulumi.Output<string>;
     /**
      * (Updatable) Priority of the On-premise VP worker to schedule monitors.
      */
-    public readonly priority!: pulumi.Output<number>;
+    declare public readonly priority: pulumi.Output<number>;
     /**
      * public key for resource Principal Token based validation to be used in further calls.
      */
-    public readonly resourcePrincipalTokenPublicKey!: pulumi.Output<string>;
+    declare public readonly resourcePrincipalTokenPublicKey: pulumi.Output<string>;
     /**
      * The runtime assigned id of the On-premise VP worker.
      */
-    public /*out*/ readonly runtimeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly runtimeId: pulumi.Output<string>;
     /**
      * (Updatable) Enables or disables the On-premise VP worker.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time the resource was last synced, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeLastSyncUp!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastSyncUp: pulumi.Output<string>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Image version of the On-premise VP worker.
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
     /**
      * Image version details of the On-premise VP worker.
      */
-    public /*out*/ readonly versionDetails!: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerVersionDetail[]>;
+    declare public /*out*/ readonly versionDetails: pulumi.Output<outputs.ApmSynthetics.OnPremiseVantagePointWorkerVersionDetail[]>;
     /**
      * Type of the On-premise VP worker.
      *
@@ -163,7 +163,7 @@ export class OnPremiseVantagePointWorker extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workerType!: pulumi.Output<string>;
+    declare public readonly workerType: pulumi.Output<string>;
 
     /**
      * Create a OnPremiseVantagePointWorker resource with the given unique name, arguments, and options.
@@ -178,53 +178,53 @@ export class OnPremiseVantagePointWorker extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OnPremiseVantagePointWorkerState | undefined;
-            resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
-            resourceInputs["configurationDetails"] = state ? state.configurationDetails : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["geoInfo"] = state ? state.geoInfo : undefined;
-            resourceInputs["identityInfos"] = state ? state.identityInfos : undefined;
-            resourceInputs["monitorLists"] = state ? state.monitorLists : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["onPremiseVantagePointId"] = state ? state.onPremiseVantagePointId : undefined;
-            resourceInputs["opvpId"] = state ? state.opvpId : undefined;
-            resourceInputs["opvpName"] = state ? state.opvpName : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["resourcePrincipalTokenPublicKey"] = state ? state.resourcePrincipalTokenPublicKey : undefined;
-            resourceInputs["runtimeId"] = state ? state.runtimeId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastSyncUp"] = state ? state.timeLastSyncUp : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["versionDetails"] = state ? state.versionDetails : undefined;
-            resourceInputs["workerType"] = state ? state.workerType : undefined;
+            resourceInputs["apmDomainId"] = state?.apmDomainId;
+            resourceInputs["configurationDetails"] = state?.configurationDetails;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["geoInfo"] = state?.geoInfo;
+            resourceInputs["identityInfos"] = state?.identityInfos;
+            resourceInputs["monitorLists"] = state?.monitorLists;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["onPremiseVantagePointId"] = state?.onPremiseVantagePointId;
+            resourceInputs["opvpId"] = state?.opvpId;
+            resourceInputs["opvpName"] = state?.opvpName;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["resourcePrincipalTokenPublicKey"] = state?.resourcePrincipalTokenPublicKey;
+            resourceInputs["runtimeId"] = state?.runtimeId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastSyncUp"] = state?.timeLastSyncUp;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["versionDetails"] = state?.versionDetails;
+            resourceInputs["workerType"] = state?.workerType;
         } else {
             const args = argsOrState as OnPremiseVantagePointWorkerArgs | undefined;
-            if ((!args || args.apmDomainId === undefined) && !opts.urn) {
+            if (args?.apmDomainId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'apmDomainId'");
             }
-            if ((!args || args.onPremiseVantagePointId === undefined) && !opts.urn) {
+            if (args?.onPremiseVantagePointId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'onPremiseVantagePointId'");
             }
-            if ((!args || args.resourcePrincipalTokenPublicKey === undefined) && !opts.urn) {
+            if (args?.resourcePrincipalTokenPublicKey === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourcePrincipalTokenPublicKey'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
-            resourceInputs["configurationDetails"] = args ? args.configurationDetails : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["onPremiseVantagePointId"] = args ? args.onPremiseVantagePointId : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
-            resourceInputs["resourcePrincipalTokenPublicKey"] = args ? args.resourcePrincipalTokenPublicKey : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
-            resourceInputs["workerType"] = args ? args.workerType : undefined;
+            resourceInputs["apmDomainId"] = args?.apmDomainId;
+            resourceInputs["configurationDetails"] = args?.configurationDetails;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["onPremiseVantagePointId"] = args?.onPremiseVantagePointId;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["resourcePrincipalTokenPublicKey"] = args?.resourcePrincipalTokenPublicKey;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["version"] = args?.version;
+            resourceInputs["workerType"] = args?.workerType;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["geoInfo"] = undefined /*out*/;
             resourceInputs["identityInfos"] = undefined /*out*/;

@@ -66,15 +66,15 @@ export class ManagedInstanceGroupDetachSoftwareSourcesManagement extends pulumi.
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      */
-    public readonly softwareSources!: pulumi.Output<string[]>;
+    declare public readonly softwareSources: pulumi.Output<string[]>;
     /**
      * Provides the name and description of the job.
      */
-    public readonly workRequestDetails!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails>;
+    declare public readonly workRequestDetails: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails>;
 
     /**
      * Create a ManagedInstanceGroupDetachSoftwareSourcesManagement resource with the given unique name, arguments, and options.
@@ -89,20 +89,20 @@ export class ManagedInstanceGroupDetachSoftwareSourcesManagement extends pulumi.
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupDetachSoftwareSourcesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
-            resourceInputs["workRequestDetails"] = state ? state.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["softwareSources"] = state?.softwareSources;
+            resourceInputs["workRequestDetails"] = state?.workRequestDetails;
         } else {
             const args = argsOrState as ManagedInstanceGroupDetachSoftwareSourcesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.softwareSources === undefined) && !opts.urn) {
+            if (args?.softwareSources === undefined && !opts.urn) {
                 throw new Error("Missing required property 'softwareSources'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["softwareSources"] = args ? args.softwareSources : undefined;
-            resourceInputs["workRequestDetails"] = args ? args.workRequestDetails : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["softwareSources"] = args?.softwareSources;
+            resourceInputs["workRequestDetails"] = args?.workRequestDetails;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupDetachSoftwareSourcesManagement.__pulumiType, name, resourceInputs, opts);

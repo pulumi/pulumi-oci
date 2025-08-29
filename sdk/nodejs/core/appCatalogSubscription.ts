@@ -65,47 +65,47 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
     /**
      * The compartmentID for the subscription.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * EULA link
      */
-    public readonly eulaLink!: pulumi.Output<string | undefined>;
+    declare public readonly eulaLink: pulumi.Output<string | undefined>;
     /**
      * The OCID of the listing.
      */
-    public readonly listingId!: pulumi.Output<string>;
+    declare public readonly listingId: pulumi.Output<string>;
     /**
      * Listing resource id.
      */
-    public /*out*/ readonly listingResourceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly listingResourceId: pulumi.Output<string>;
     /**
      * Listing resource version.
      */
-    public readonly listingResourceVersion!: pulumi.Output<string>;
+    declare public readonly listingResourceVersion: pulumi.Output<string>;
     /**
      * Oracle TOU link
      */
-    public readonly oracleTermsOfUseLink!: pulumi.Output<string>;
+    declare public readonly oracleTermsOfUseLink: pulumi.Output<string>;
     /**
      * Name of the publisher who published this listing.
      */
-    public /*out*/ readonly publisherName!: pulumi.Output<string>;
+    declare public /*out*/ readonly publisherName: pulumi.Output<string>;
     /**
      * A generated signature for this listing resource version retrieved the agreements API.
      */
-    public readonly signature!: pulumi.Output<string>;
+    declare public readonly signature: pulumi.Output<string>;
     /**
      * The short summary to the listing.
      */
-    public /*out*/ readonly summary!: pulumi.Output<string>;
+    declare public /*out*/ readonly summary: pulumi.Output<string>;
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
      *
@@ -113,7 +113,7 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeRetrieved!: pulumi.Output<string>;
+    declare public readonly timeRetrieved: pulumi.Output<string>;
 
     /**
      * Create a AppCatalogSubscription resource with the given unique name, arguments, and options.
@@ -128,45 +128,45 @@ export class AppCatalogSubscription extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppCatalogSubscriptionState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["eulaLink"] = state ? state.eulaLink : undefined;
-            resourceInputs["listingId"] = state ? state.listingId : undefined;
-            resourceInputs["listingResourceId"] = state ? state.listingResourceId : undefined;
-            resourceInputs["listingResourceVersion"] = state ? state.listingResourceVersion : undefined;
-            resourceInputs["oracleTermsOfUseLink"] = state ? state.oracleTermsOfUseLink : undefined;
-            resourceInputs["publisherName"] = state ? state.publisherName : undefined;
-            resourceInputs["signature"] = state ? state.signature : undefined;
-            resourceInputs["summary"] = state ? state.summary : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeRetrieved"] = state ? state.timeRetrieved : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["eulaLink"] = state?.eulaLink;
+            resourceInputs["listingId"] = state?.listingId;
+            resourceInputs["listingResourceId"] = state?.listingResourceId;
+            resourceInputs["listingResourceVersion"] = state?.listingResourceVersion;
+            resourceInputs["oracleTermsOfUseLink"] = state?.oracleTermsOfUseLink;
+            resourceInputs["publisherName"] = state?.publisherName;
+            resourceInputs["signature"] = state?.signature;
+            resourceInputs["summary"] = state?.summary;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeRetrieved"] = state?.timeRetrieved;
         } else {
             const args = argsOrState as AppCatalogSubscriptionArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.listingId === undefined) && !opts.urn) {
+            if (args?.listingId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingId'");
             }
-            if ((!args || args.listingResourceVersion === undefined) && !opts.urn) {
+            if (args?.listingResourceVersion === undefined && !opts.urn) {
                 throw new Error("Missing required property 'listingResourceVersion'");
             }
-            if ((!args || args.oracleTermsOfUseLink === undefined) && !opts.urn) {
+            if (args?.oracleTermsOfUseLink === undefined && !opts.urn) {
                 throw new Error("Missing required property 'oracleTermsOfUseLink'");
             }
-            if ((!args || args.signature === undefined) && !opts.urn) {
+            if (args?.signature === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signature'");
             }
-            if ((!args || args.timeRetrieved === undefined) && !opts.urn) {
+            if (args?.timeRetrieved === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeRetrieved'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["eulaLink"] = args ? args.eulaLink : undefined;
-            resourceInputs["listingId"] = args ? args.listingId : undefined;
-            resourceInputs["listingResourceVersion"] = args ? args.listingResourceVersion : undefined;
-            resourceInputs["oracleTermsOfUseLink"] = args ? args.oracleTermsOfUseLink : undefined;
-            resourceInputs["signature"] = args ? args.signature : undefined;
-            resourceInputs["timeRetrieved"] = args ? args.timeRetrieved : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["eulaLink"] = args?.eulaLink;
+            resourceInputs["listingId"] = args?.listingId;
+            resourceInputs["listingResourceVersion"] = args?.listingResourceVersion;
+            resourceInputs["oracleTermsOfUseLink"] = args?.oracleTermsOfUseLink;
+            resourceInputs["signature"] = args?.signature;
+            resourceInputs["timeRetrieved"] = args?.timeRetrieved;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["listingResourceId"] = undefined /*out*/;
             resourceInputs["publisherName"] = undefined /*out*/;

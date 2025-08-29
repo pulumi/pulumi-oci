@@ -60,7 +60,7 @@ export class ManagedInstanceGroupDetachManagedInstancesManagement extends pulumi
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    public readonly managedInstanceGroupId!: pulumi.Output<string>;
+    declare public readonly managedInstanceGroupId: pulumi.Output<string>;
     /**
      * List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      *
@@ -68,7 +68,7 @@ export class ManagedInstanceGroupDetachManagedInstancesManagement extends pulumi
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly managedInstances!: pulumi.Output<string[]>;
+    declare public readonly managedInstances: pulumi.Output<string[]>;
 
     /**
      * Create a ManagedInstanceGroupDetachManagedInstancesManagement resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class ManagedInstanceGroupDetachManagedInstancesManagement extends pulumi
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceGroupDetachManagedInstancesManagementState | undefined;
-            resourceInputs["managedInstanceGroupId"] = state ? state.managedInstanceGroupId : undefined;
-            resourceInputs["managedInstances"] = state ? state.managedInstances : undefined;
+            resourceInputs["managedInstanceGroupId"] = state?.managedInstanceGroupId;
+            resourceInputs["managedInstances"] = state?.managedInstances;
         } else {
             const args = argsOrState as ManagedInstanceGroupDetachManagedInstancesManagementArgs | undefined;
-            if ((!args || args.managedInstanceGroupId === undefined) && !opts.urn) {
+            if (args?.managedInstanceGroupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceGroupId'");
             }
-            if ((!args || args.managedInstances === undefined) && !opts.urn) {
+            if (args?.managedInstances === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstances'");
             }
-            resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
-            resourceInputs["managedInstances"] = args ? args.managedInstances : undefined;
+            resourceInputs["managedInstanceGroupId"] = args?.managedInstanceGroupId;
+            resourceInputs["managedInstances"] = args?.managedInstances;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ManagedInstanceGroupDetachManagedInstancesManagement.__pulumiType, name, resourceInputs, opts);

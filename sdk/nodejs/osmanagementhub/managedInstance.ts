@@ -50,119 +50,119 @@ export class ManagedInstance extends pulumi.CustomResource {
     /**
      * The version of osmh-agent running on the managed instance
      */
-    public /*out*/ readonly agentVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly agentVersion: pulumi.Output<string>;
     /**
      * The CPU architecture type of the managed instance.
      */
-    public /*out*/ readonly architecture!: pulumi.Output<string>;
+    declare public /*out*/ readonly architecture: pulumi.Output<string>;
     /**
      * (Updatable) Updatable settings for the Autonomous Linux service.
      */
-    public readonly autonomousSettings!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
+    declare public readonly autonomousSettings: pulumi.Output<outputs.OsManagementHub.ManagedInstanceAutonomousSettings>;
     /**
      * Number of bug fix type updates available for installation.
      */
-    public /*out*/ readonly bugUpdatesAvailable!: pulumi.Output<number>;
+    declare public /*out*/ readonly bugUpdatesAvailable: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Software source name.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * Number of enhancement type updates available for installation.
      */
-    public /*out*/ readonly enhancementUpdatesAvailable!: pulumi.Output<number>;
+    declare public /*out*/ readonly enhancementUpdatesAvailable: pulumi.Output<number>;
     /**
      * Number of packages installed on the instance.
      */
-    public /*out*/ readonly installedPackages!: pulumi.Output<number>;
+    declare public /*out*/ readonly installedPackages: pulumi.Output<number>;
     /**
      * Number of Windows updates installed on the instance.
      */
-    public /*out*/ readonly installedWindowsUpdates!: pulumi.Output<number>;
+    declare public /*out*/ readonly installedWindowsUpdates: pulumi.Output<number>;
     /**
      * Indicates whether the Autonomous Linux service manages the instance.
      */
-    public /*out*/ readonly isManagedByAutonomousLinux!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isManagedByAutonomousLinux: pulumi.Output<boolean>;
     /**
      * Indicates whether this managed instance is acting as an on-premises management station.
      */
-    public /*out*/ readonly isManagementStation!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isManagementStation: pulumi.Output<boolean>;
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      */
-    public /*out*/ readonly isRebootRequired!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRebootRequired: pulumi.Output<boolean>;
     /**
      * The ksplice effective kernel version.
      */
-    public /*out*/ readonly kspliceEffectiveKernelVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly kspliceEffectiveKernelVersion: pulumi.Output<string>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    public /*out*/ readonly lifecycleEnvironments!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceLifecycleEnvironment[]>;
+    declare public /*out*/ readonly lifecycleEnvironments: pulumi.Output<outputs.OsManagementHub.ManagedInstanceLifecycleEnvironment[]>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    public /*out*/ readonly lifecycleStages!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceLifecycleStage[]>;
+    declare public /*out*/ readonly lifecycleStages: pulumi.Output<outputs.OsManagementHub.ManagedInstanceLifecycleStage[]>;
     /**
      * The location of the managed instance.
      */
-    public /*out*/ readonly location!: pulumi.Output<string>;
+    declare public /*out*/ readonly location: pulumi.Output<string>;
     /**
      * Id and name of a resource to simplify the display for the user.
      */
-    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceManagedInstanceGroup[]>;
+    declare public /*out*/ readonly managedInstanceGroups: pulumi.Output<outputs.OsManagementHub.ManagedInstanceManagedInstanceGroup[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    public readonly managedInstanceId!: pulumi.Output<string>;
+    declare public readonly managedInstanceId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
      */
-    public readonly notificationTopicId!: pulumi.Output<string>;
+    declare public readonly notificationTopicId: pulumi.Output<string>;
     /**
      * The operating system type of the managed instance.
      */
-    public /*out*/ readonly osFamily!: pulumi.Output<string>;
+    declare public /*out*/ readonly osFamily: pulumi.Output<string>;
     /**
      * Operating system kernel version.
      */
-    public /*out*/ readonly osKernelVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly osKernelVersion: pulumi.Output<string>;
     /**
      * Operating system name.
      */
-    public /*out*/ readonly osName!: pulumi.Output<string>;
+    declare public /*out*/ readonly osName: pulumi.Output<string>;
     /**
      * Operating system version.
      */
-    public /*out*/ readonly osVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly osVersion: pulumi.Output<string>;
     /**
      * Number of non-classified (other) updates available for installation.
      */
-    public /*out*/ readonly otherUpdatesAvailable!: pulumi.Output<number>;
+    declare public /*out*/ readonly otherUpdatesAvailable: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
      */
-    public readonly primaryManagementStationId!: pulumi.Output<string>;
+    declare public readonly primaryManagementStationId: pulumi.Output<string>;
     /**
      * The profile that was used to register this instance with the service.
      */
-    public /*out*/ readonly profile!: pulumi.Output<string>;
+    declare public /*out*/ readonly profile: pulumi.Output<string>;
     /**
      * The version of the profile that was used to register this instance with the service.
      */
-    public /*out*/ readonly profileVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly profileVersion: pulumi.Output<string>;
     /**
      * Number of scheduled jobs associated with this instance.
      */
-    public /*out*/ readonly scheduledJobCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly scheduledJobCount: pulumi.Output<number>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
      *
@@ -170,47 +170,47 @@ export class ManagedInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly secondaryManagementStationId!: pulumi.Output<string>;
+    declare public readonly secondaryManagementStationId: pulumi.Output<string>;
     /**
      * Number of security type updates available for installation.
      */
-    public /*out*/ readonly securityUpdatesAvailable!: pulumi.Output<number>;
+    declare public /*out*/ readonly securityUpdatesAvailable: pulumi.Output<number>;
     /**
      * The list of software sources currently attached to the managed instance.
      */
-    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceSoftwareSource[]>;
+    declare public /*out*/ readonly softwareSources: pulumi.Output<outputs.OsManagementHub.ManagedInstanceSoftwareSource[]>;
     /**
      * Current status of the managed instance.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyId: pulumi.Output<string>;
     /**
      * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeLastBoot!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastBoot: pulumi.Output<string>;
     /**
      * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeLastCheckin!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastCheckin: pulumi.Output<string>;
     /**
      * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Number of updates available for installation.
      */
-    public /*out*/ readonly updatesAvailable!: pulumi.Output<number>;
+    declare public /*out*/ readonly updatesAvailable: pulumi.Output<number>;
     /**
      * Number of work requests associated with this instance.
      */
-    public /*out*/ readonly workRequestCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly workRequestCount: pulumi.Output<number>;
 
     /**
      * Create a ManagedInstance resource with the given unique name, arguments, and options.
@@ -225,57 +225,57 @@ export class ManagedInstance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ManagedInstanceState | undefined;
-            resourceInputs["agentVersion"] = state ? state.agentVersion : undefined;
-            resourceInputs["architecture"] = state ? state.architecture : undefined;
-            resourceInputs["autonomousSettings"] = state ? state.autonomousSettings : undefined;
-            resourceInputs["bugUpdatesAvailable"] = state ? state.bugUpdatesAvailable : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["enhancementUpdatesAvailable"] = state ? state.enhancementUpdatesAvailable : undefined;
-            resourceInputs["installedPackages"] = state ? state.installedPackages : undefined;
-            resourceInputs["installedWindowsUpdates"] = state ? state.installedWindowsUpdates : undefined;
-            resourceInputs["isManagedByAutonomousLinux"] = state ? state.isManagedByAutonomousLinux : undefined;
-            resourceInputs["isManagementStation"] = state ? state.isManagementStation : undefined;
-            resourceInputs["isRebootRequired"] = state ? state.isRebootRequired : undefined;
-            resourceInputs["kspliceEffectiveKernelVersion"] = state ? state.kspliceEffectiveKernelVersion : undefined;
-            resourceInputs["lifecycleEnvironments"] = state ? state.lifecycleEnvironments : undefined;
-            resourceInputs["lifecycleStages"] = state ? state.lifecycleStages : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["managedInstanceGroups"] = state ? state.managedInstanceGroups : undefined;
-            resourceInputs["managedInstanceId"] = state ? state.managedInstanceId : undefined;
-            resourceInputs["notificationTopicId"] = state ? state.notificationTopicId : undefined;
-            resourceInputs["osFamily"] = state ? state.osFamily : undefined;
-            resourceInputs["osKernelVersion"] = state ? state.osKernelVersion : undefined;
-            resourceInputs["osName"] = state ? state.osName : undefined;
-            resourceInputs["osVersion"] = state ? state.osVersion : undefined;
-            resourceInputs["otherUpdatesAvailable"] = state ? state.otherUpdatesAvailable : undefined;
-            resourceInputs["primaryManagementStationId"] = state ? state.primaryManagementStationId : undefined;
-            resourceInputs["profile"] = state ? state.profile : undefined;
-            resourceInputs["profileVersion"] = state ? state.profileVersion : undefined;
-            resourceInputs["scheduledJobCount"] = state ? state.scheduledJobCount : undefined;
-            resourceInputs["secondaryManagementStationId"] = state ? state.secondaryManagementStationId : undefined;
-            resourceInputs["securityUpdatesAvailable"] = state ? state.securityUpdatesAvailable : undefined;
-            resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tenancyId"] = state ? state.tenancyId : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastBoot"] = state ? state.timeLastBoot : undefined;
-            resourceInputs["timeLastCheckin"] = state ? state.timeLastCheckin : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["updatesAvailable"] = state ? state.updatesAvailable : undefined;
-            resourceInputs["workRequestCount"] = state ? state.workRequestCount : undefined;
+            resourceInputs["agentVersion"] = state?.agentVersion;
+            resourceInputs["architecture"] = state?.architecture;
+            resourceInputs["autonomousSettings"] = state?.autonomousSettings;
+            resourceInputs["bugUpdatesAvailable"] = state?.bugUpdatesAvailable;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["enhancementUpdatesAvailable"] = state?.enhancementUpdatesAvailable;
+            resourceInputs["installedPackages"] = state?.installedPackages;
+            resourceInputs["installedWindowsUpdates"] = state?.installedWindowsUpdates;
+            resourceInputs["isManagedByAutonomousLinux"] = state?.isManagedByAutonomousLinux;
+            resourceInputs["isManagementStation"] = state?.isManagementStation;
+            resourceInputs["isRebootRequired"] = state?.isRebootRequired;
+            resourceInputs["kspliceEffectiveKernelVersion"] = state?.kspliceEffectiveKernelVersion;
+            resourceInputs["lifecycleEnvironments"] = state?.lifecycleEnvironments;
+            resourceInputs["lifecycleStages"] = state?.lifecycleStages;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["managedInstanceGroups"] = state?.managedInstanceGroups;
+            resourceInputs["managedInstanceId"] = state?.managedInstanceId;
+            resourceInputs["notificationTopicId"] = state?.notificationTopicId;
+            resourceInputs["osFamily"] = state?.osFamily;
+            resourceInputs["osKernelVersion"] = state?.osKernelVersion;
+            resourceInputs["osName"] = state?.osName;
+            resourceInputs["osVersion"] = state?.osVersion;
+            resourceInputs["otherUpdatesAvailable"] = state?.otherUpdatesAvailable;
+            resourceInputs["primaryManagementStationId"] = state?.primaryManagementStationId;
+            resourceInputs["profile"] = state?.profile;
+            resourceInputs["profileVersion"] = state?.profileVersion;
+            resourceInputs["scheduledJobCount"] = state?.scheduledJobCount;
+            resourceInputs["secondaryManagementStationId"] = state?.secondaryManagementStationId;
+            resourceInputs["securityUpdatesAvailable"] = state?.securityUpdatesAvailable;
+            resourceInputs["softwareSources"] = state?.softwareSources;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tenancyId"] = state?.tenancyId;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastBoot"] = state?.timeLastBoot;
+            resourceInputs["timeLastCheckin"] = state?.timeLastCheckin;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["updatesAvailable"] = state?.updatesAvailable;
+            resourceInputs["workRequestCount"] = state?.workRequestCount;
         } else {
             const args = argsOrState as ManagedInstanceArgs | undefined;
-            if ((!args || args.managedInstanceId === undefined) && !opts.urn) {
+            if (args?.managedInstanceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'managedInstanceId'");
             }
-            resourceInputs["autonomousSettings"] = args ? args.autonomousSettings : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["managedInstanceId"] = args ? args.managedInstanceId : undefined;
-            resourceInputs["notificationTopicId"] = args ? args.notificationTopicId : undefined;
-            resourceInputs["primaryManagementStationId"] = args ? args.primaryManagementStationId : undefined;
-            resourceInputs["secondaryManagementStationId"] = args ? args.secondaryManagementStationId : undefined;
+            resourceInputs["autonomousSettings"] = args?.autonomousSettings;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["managedInstanceId"] = args?.managedInstanceId;
+            resourceInputs["notificationTopicId"] = args?.notificationTopicId;
+            resourceInputs["primaryManagementStationId"] = args?.primaryManagementStationId;
+            resourceInputs["secondaryManagementStationId"] = args?.secondaryManagementStationId;
             resourceInputs["agentVersion"] = undefined /*out*/;
             resourceInputs["architecture"] = undefined /*out*/;
             resourceInputs["bugUpdatesAvailable"] = undefined /*out*/;

@@ -63,59 +63,59 @@ export class Property extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment OCID
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Associated region
      */
-    public /*out*/ readonly resourceRegion!: pulumi.Output<string>;
+    declare public /*out*/ readonly resourceRegion: pulumi.Output<string>;
     /**
      * The scope of the property.
      */
-    public /*out*/ readonly scope!: pulumi.Output<string>;
+    declare public /*out*/ readonly scope: pulumi.Output<string>;
     /**
      * (Updatable) Text selection of the property.
      */
-    public readonly selection!: pulumi.Output<string>;
+    declare public readonly selection: pulumi.Output<string>;
     /**
      * The current state of the Property.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The type of the property.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * (Updatable) Format of the value.
      */
-    public readonly valueType!: pulumi.Output<string>;
+    declare public readonly valueType: pulumi.Output<string>;
     /**
      * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
@@ -123,7 +123,7 @@ export class Property extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly values!: pulumi.Output<string[]>;
+    declare public readonly values: pulumi.Output<string[]>;
 
     /**
      * Create a Property resource with the given unique name, arguments, and options.
@@ -138,40 +138,40 @@ export class Property extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PropertyState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["resourceRegion"] = state ? state.resourceRegion : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["selection"] = state ? state.selection : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["valueType"] = state ? state.valueType : undefined;
-            resourceInputs["values"] = state ? state.values : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["resourceRegion"] = state?.resourceRegion;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["selection"] = state?.selection;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["valueType"] = state?.valueType;
+            resourceInputs["values"] = state?.values;
         } else {
             const args = argsOrState as PropertyArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.selection === undefined) && !opts.urn) {
+            if (args?.selection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'selection'");
             }
-            if ((!args || args.valueType === undefined) && !opts.urn) {
+            if (args?.valueType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'valueType'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["selection"] = args ? args.selection : undefined;
-            resourceInputs["valueType"] = args ? args.valueType : undefined;
-            resourceInputs["values"] = args ? args.values : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["selection"] = args?.selection;
+            resourceInputs["valueType"] = args?.valueType;
+            resourceInputs["values"] = args?.values;
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;

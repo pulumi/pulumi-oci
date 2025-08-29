@@ -16,8 +16,7 @@ from .. import _utilities
 
 auth: Optional[str]
 """
-(Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
-'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+(Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 """
 
 configFileProfile: Optional[str]
@@ -27,22 +26,21 @@ configFileProfile: Optional[str]
 
 disableAutoRetries: Optional[bool]
 """
-(Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
-consistency problems but it also introduced performance issues on destroy operations.
+(Optional) Disable automatic retries for retriable errors.
+Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
 """
 
 fingerprint: Optional[str]
 """
-(Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
-console. Required if auth is set to 'ApiKey', ignored otherwise.
+(Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 """
 
 ignoreDefinedTags: Optional[str]
 
 privateKey: Optional[str]
 """
-(Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
-set to 'ApiKey', ignored otherwise.
+(Optional) A PEM formatted RSA private key for the user.
+A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
 """
 
 privateKeyPassword: Optional[str]
@@ -52,8 +50,8 @@ privateKeyPassword: Optional[str]
 
 privateKeyPath: Optional[str]
 """
-(Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-auth is set to 'ApiKey', ignored otherwise.
+(Optional) The path to the user's PEM formatted private key.
+A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
 """
 
 realmSpecificServiceEndpointTemplateEnabled: Optional[bool]
@@ -68,22 +66,19 @@ region: Optional[str]
 
 retryDurationSeconds: Optional[int]
 """
-(Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-is set to true.
+(Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
+The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
 """
 
 tenancyOcid: Optional[str]
 """
-(Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
-Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+(Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 """
 
 testTimeMaintenanceRebootDue: Optional[str]
 
 userOcid: Optional[str]
 """
-(Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
-auth is set to 'ApiKey', ignored otherwise.
+(Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 """
 

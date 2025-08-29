@@ -32,8 +32,8 @@ export class MaskingPoliciesApplyDifferenceToMaskingColumns extends pulumi.Custo
         return obj['__pulumiType'] === MaskingPoliciesApplyDifferenceToMaskingColumns.__pulumiType;
     }
 
-    public readonly maskingPolicyId!: pulumi.Output<string>;
-    public readonly sdmMaskingPolicyDifferenceId!: pulumi.Output<string>;
+    declare public readonly maskingPolicyId: pulumi.Output<string>;
+    declare public readonly sdmMaskingPolicyDifferenceId: pulumi.Output<string>;
 
     /**
      * Create a MaskingPoliciesApplyDifferenceToMaskingColumns resource with the given unique name, arguments, and options.
@@ -48,18 +48,18 @@ export class MaskingPoliciesApplyDifferenceToMaskingColumns extends pulumi.Custo
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaskingPoliciesApplyDifferenceToMaskingColumnsState | undefined;
-            resourceInputs["maskingPolicyId"] = state ? state.maskingPolicyId : undefined;
-            resourceInputs["sdmMaskingPolicyDifferenceId"] = state ? state.sdmMaskingPolicyDifferenceId : undefined;
+            resourceInputs["maskingPolicyId"] = state?.maskingPolicyId;
+            resourceInputs["sdmMaskingPolicyDifferenceId"] = state?.sdmMaskingPolicyDifferenceId;
         } else {
             const args = argsOrState as MaskingPoliciesApplyDifferenceToMaskingColumnsArgs | undefined;
-            if ((!args || args.maskingPolicyId === undefined) && !opts.urn) {
+            if (args?.maskingPolicyId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maskingPolicyId'");
             }
-            if ((!args || args.sdmMaskingPolicyDifferenceId === undefined) && !opts.urn) {
+            if (args?.sdmMaskingPolicyDifferenceId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sdmMaskingPolicyDifferenceId'");
             }
-            resourceInputs["maskingPolicyId"] = args ? args.maskingPolicyId : undefined;
-            resourceInputs["sdmMaskingPolicyDifferenceId"] = args ? args.sdmMaskingPolicyDifferenceId : undefined;
+            resourceInputs["maskingPolicyId"] = args?.maskingPolicyId;
+            resourceInputs["sdmMaskingPolicyDifferenceId"] = args?.sdmMaskingPolicyDifferenceId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaskingPoliciesApplyDifferenceToMaskingColumns.__pulumiType, name, resourceInputs, opts);

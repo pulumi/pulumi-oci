@@ -64,12 +64,12 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public readonly autonomousDatabaseId!: pulumi.Output<string>;
-    public readonly base64EncodeContent!: pulumi.Output<boolean | undefined>;
+    declare public readonly autonomousDatabaseId: pulumi.Output<string>;
+    declare public readonly base64EncodeContent: pulumi.Output<boolean | undefined>;
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    public /*out*/ readonly content!: pulumi.Output<string>;
+    declare public /*out*/ readonly content: pulumi.Output<string>;
     /**
      * The type of wallet to generate.
      *
@@ -79,11 +79,11 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
      *
      * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
-    public readonly generateType!: pulumi.Output<string | undefined>;
+    declare public readonly generateType: pulumi.Output<string | undefined>;
     /**
      * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
      */
-    public readonly isRegional!: pulumi.Output<boolean>;
+    declare public readonly isRegional: pulumi.Output<boolean>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *
@@ -91,7 +91,7 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
 
     /**
      * Create a AutonomousDatabaseWallet resource with the given unique name, arguments, and options.
@@ -106,24 +106,24 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseWalletState | undefined;
-            resourceInputs["autonomousDatabaseId"] = state ? state.autonomousDatabaseId : undefined;
-            resourceInputs["base64EncodeContent"] = state ? state.base64EncodeContent : undefined;
-            resourceInputs["content"] = state ? state.content : undefined;
-            resourceInputs["generateType"] = state ? state.generateType : undefined;
-            resourceInputs["isRegional"] = state ? state.isRegional : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["autonomousDatabaseId"] = state?.autonomousDatabaseId;
+            resourceInputs["base64EncodeContent"] = state?.base64EncodeContent;
+            resourceInputs["content"] = state?.content;
+            resourceInputs["generateType"] = state?.generateType;
+            resourceInputs["isRegional"] = state?.isRegional;
+            resourceInputs["password"] = state?.password;
         } else {
             const args = argsOrState as AutonomousDatabaseWalletArgs | undefined;
-            if ((!args || args.autonomousDatabaseId === undefined) && !opts.urn) {
+            if (args?.autonomousDatabaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'autonomousDatabaseId'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
-            resourceInputs["base64EncodeContent"] = args ? args.base64EncodeContent : undefined;
-            resourceInputs["generateType"] = args ? args.generateType : undefined;
-            resourceInputs["isRegional"] = args ? args.isRegional : undefined;
+            resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
+            resourceInputs["base64EncodeContent"] = args?.base64EncodeContent;
+            resourceInputs["generateType"] = args?.generateType;
+            resourceInputs["isRegional"] = args?.isRegional;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["content"] = undefined /*out*/;
         }

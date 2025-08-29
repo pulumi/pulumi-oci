@@ -50,15 +50,15 @@ export class DomainsGroup extends pulumi.CustomResource {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    public readonly attributeSets!: pulumi.Output<string[] | undefined>;
+    declare public readonly attributeSets: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    public readonly attributes!: pulumi.Output<string | undefined>;
+    declare public readonly attributes: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    public readonly authorization!: pulumi.Output<string | undefined>;
+    declare public readonly authorization: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -72,7 +72,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly compartmentOcid: pulumi.Output<string>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deleteInProgress: pulumi.Output<boolean>;
     /**
      * (Updatable) The Group display name.
      *
@@ -102,7 +102,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -116,7 +116,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly domainOcid: pulumi.Output<string>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -130,8 +130,8 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
-    public readonly forceDelete!: pulumi.Output<boolean | undefined>;
+    declare public readonly externalId: pulumi.Output<string>;
+    declare public readonly forceDelete: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -143,11 +143,11 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsCreatedBy[]>;
+    declare public /*out*/ readonly idcsCreatedBies: pulumi.Output<outputs.Identity.DomainsGroupIdcsCreatedBy[]>;
     /**
      * The basic endpoint for the identity domain
      */
-    public readonly idcsEndpoint!: pulumi.Output<string>;
+    declare public readonly idcsEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -159,7 +159,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsLastModifiedBy[]>;
+    declare public /*out*/ readonly idcsLastModifiedBies: pulumi.Output<outputs.Identity.DomainsGroupIdcsLastModifiedBy[]>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -173,7 +173,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    declare public /*out*/ readonly idcsLastUpgradedInRelease: pulumi.Output<string>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -186,7 +186,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly idcsPreventedOperations: pulumi.Output<string[]>;
     /**
      * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
@@ -203,7 +203,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly members!: pulumi.Output<outputs.Identity.DomainsGroupMember[]>;
+    declare public readonly members: pulumi.Output<outputs.Identity.DomainsGroupMember[]>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -217,7 +217,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGroupMeta[]>;
+    declare public /*out*/ readonly metas: pulumi.Output<outputs.Identity.DomainsGroupMeta[]>;
     /**
      * (Updatable) A human readable name for the group as defined by the Service Consumer.
      *
@@ -233,7 +233,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: always
      * * type: string
      */
-    public readonly nonUniqueDisplayName!: pulumi.Output<string>;
+    declare public readonly nonUniqueDisplayName: pulumi.Output<string>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -247,11 +247,11 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    declare public readonly ocid: pulumi.Output<string>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    public readonly resourceTypeSchemaVersion!: pulumi.Output<string | undefined>;
+    declare public readonly resourceTypeSchemaVersion: pulumi.Output<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -265,7 +265,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly schemas!: pulumi.Output<string[]>;
+    declare public readonly schemas: pulumi.Output<string[]>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -279,7 +279,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGroupTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.Identity.DomainsGroupTag[]>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -293,31 +293,31 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenancyOcid: pulumi.Output<string>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionOciTags: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags>;
     /**
      * (Updatable) Schema for Database Service  Resource
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbcsGroups!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup[]>;
+    declare public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbcsGroups: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup[]>;
     /**
      * (Updatable) Dynamic Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
     /**
      * (Updatable) Oracle Identity Cloud Service Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
     /**
      * (Updatable) POSIX Group extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionposixGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionposixGroup: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup>;
     /**
      * (Updatable) Requestable Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionrequestableGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup>;
+    declare public readonly urnietfparamsscimschemasoracleidcsextensionrequestableGroup: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup>;
 
     /**
      * Create a DomainsGroup resource with the given unique name, arguments, and options.
@@ -332,63 +332,63 @@ export class DomainsGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsGroupState | undefined;
-            resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
-            resourceInputs["attributes"] = state ? state.attributes : undefined;
-            resourceInputs["authorization"] = state ? state.authorization : undefined;
-            resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
-            resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["forceDelete"] = state ? state.forceDelete : undefined;
-            resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
-            resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
-            resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
-            resourceInputs["idcsLastUpgradedInRelease"] = state ? state.idcsLastUpgradedInRelease : undefined;
-            resourceInputs["idcsPreventedOperations"] = state ? state.idcsPreventedOperations : undefined;
-            resourceInputs["members"] = state ? state.members : undefined;
-            resourceInputs["metas"] = state ? state.metas : undefined;
-            resourceInputs["nonUniqueDisplayName"] = state ? state.nonUniqueDisplayName : undefined;
-            resourceInputs["ocid"] = state ? state.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = state ? state.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = state ? state.schemas : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["tenancyOcid"] = state ? state.tenancyOcid : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = state ? state.urnietfparamsscimschemasoracleidcsextensionOciTags : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbcsGroups"] = state ? state.urnietfparamsscimschemasoracleidcsextensiondbcsGroups : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondynamicGroup"] = state ? state.urnietfparamsscimschemasoracleidcsextensiondynamicGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiongroupGroup"] = state ? state.urnietfparamsscimschemasoracleidcsextensiongroupGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixGroup"] = state ? state.urnietfparamsscimschemasoracleidcsextensionposixGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionrequestableGroup"] = state ? state.urnietfparamsscimschemasoracleidcsextensionrequestableGroup : undefined;
+            resourceInputs["attributeSets"] = state?.attributeSets;
+            resourceInputs["attributes"] = state?.attributes;
+            resourceInputs["authorization"] = state?.authorization;
+            resourceInputs["compartmentOcid"] = state?.compartmentOcid;
+            resourceInputs["deleteInProgress"] = state?.deleteInProgress;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["domainOcid"] = state?.domainOcid;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["forceDelete"] = state?.forceDelete;
+            resourceInputs["idcsCreatedBies"] = state?.idcsCreatedBies;
+            resourceInputs["idcsEndpoint"] = state?.idcsEndpoint;
+            resourceInputs["idcsLastModifiedBies"] = state?.idcsLastModifiedBies;
+            resourceInputs["idcsLastUpgradedInRelease"] = state?.idcsLastUpgradedInRelease;
+            resourceInputs["idcsPreventedOperations"] = state?.idcsPreventedOperations;
+            resourceInputs["members"] = state?.members;
+            resourceInputs["metas"] = state?.metas;
+            resourceInputs["nonUniqueDisplayName"] = state?.nonUniqueDisplayName;
+            resourceInputs["ocid"] = state?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = state?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = state?.schemas;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["tenancyOcid"] = state?.tenancyOcid;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = state?.urnietfparamsscimschemasoracleidcsextensionOciTags;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondbcsGroups"] = state?.urnietfparamsscimschemasoracleidcsextensiondbcsGroups;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondynamicGroup"] = state?.urnietfparamsscimschemasoracleidcsextensiondynamicGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiongroupGroup"] = state?.urnietfparamsscimschemasoracleidcsextensiongroupGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixGroup"] = state?.urnietfparamsscimschemasoracleidcsextensionposixGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionrequestableGroup"] = state?.urnietfparamsscimschemasoracleidcsextensionrequestableGroup;
         } else {
             const args = argsOrState as DomainsGroupArgs | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.idcsEndpoint === undefined) && !opts.urn) {
+            if (args?.idcsEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idcsEndpoint'");
             }
-            if ((!args || args.schemas === undefined) && !opts.urn) {
+            if (args?.schemas === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
-            resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
-            resourceInputs["attributes"] = args ? args.attributes : undefined;
-            resourceInputs["authorization"] = args ? args.authorization : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["externalId"] = args ? args.externalId : undefined;
-            resourceInputs["forceDelete"] = args ? args.forceDelete : undefined;
-            resourceInputs["idcsEndpoint"] = args ? args.idcsEndpoint : undefined;
-            resourceInputs["members"] = args ? args.members : undefined;
-            resourceInputs["nonUniqueDisplayName"] = args ? args.nonUniqueDisplayName : undefined;
-            resourceInputs["ocid"] = args ? args.ocid : undefined;
-            resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
-            resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = args ? args.urnietfparamsscimschemasoracleidcsextensionOciTags : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondynamicGroup"] = args ? args.urnietfparamsscimschemasoracleidcsextensiondynamicGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensiongroupGroup"] = args ? args.urnietfparamsscimschemasoracleidcsextensiongroupGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixGroup"] = args ? args.urnietfparamsscimschemasoracleidcsextensionposixGroup : undefined;
-            resourceInputs["urnietfparamsscimschemasoracleidcsextensionrequestableGroup"] = args ? args.urnietfparamsscimschemasoracleidcsextensionrequestableGroup : undefined;
+            resourceInputs["attributeSets"] = args?.attributeSets;
+            resourceInputs["attributes"] = args?.attributes;
+            resourceInputs["authorization"] = args?.authorization;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["externalId"] = args?.externalId;
+            resourceInputs["forceDelete"] = args?.forceDelete;
+            resourceInputs["idcsEndpoint"] = args?.idcsEndpoint;
+            resourceInputs["members"] = args?.members;
+            resourceInputs["nonUniqueDisplayName"] = args?.nonUniqueDisplayName;
+            resourceInputs["ocid"] = args?.ocid;
+            resourceInputs["resourceTypeSchemaVersion"] = args?.resourceTypeSchemaVersion;
+            resourceInputs["schemas"] = args?.schemas;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionOciTags"] = args?.urnietfparamsscimschemasoracleidcsextensionOciTags;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiondynamicGroup"] = args?.urnietfparamsscimschemasoracleidcsextensiondynamicGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensiongroupGroup"] = args?.urnietfparamsscimschemasoracleidcsextensiongroupGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionposixGroup"] = args?.urnietfparamsscimschemasoracleidcsextensionposixGroup;
+            resourceInputs["urnietfparamsscimschemasoracleidcsextensionrequestableGroup"] = args?.urnietfparamsscimschemasoracleidcsextensionrequestableGroup;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;

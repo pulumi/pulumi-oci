@@ -50,213 +50,213 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The availability domain of a placement.
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * (Updatable) Defines the backup schedule details for create operation.
      */
-    public readonly backupSchedule!: pulumi.Output<outputs.GoldenGate.DeploymentBackupSchedule>;
+    declare public readonly backupSchedule: pulumi.Output<outputs.GoldenGate.DeploymentBackupSchedule>;
     /**
      * (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
      */
-    public readonly byolCpuCoreCountLimit!: pulumi.Output<number>;
+    declare public readonly byolCpuCoreCountLimit: pulumi.Output<number>;
     /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
      */
-    public readonly cpuCoreCount!: pulumi.Output<number>;
+    declare public readonly cpuCoreCount: pulumi.Output<number>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
-    public readonly deploymentBackupId!: pulumi.Output<string>;
+    declare public readonly deploymentBackupId: pulumi.Output<string>;
     /**
      * Information regarding the deployment diagnostic collection
      */
-    public /*out*/ readonly deploymentDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[]>;
+    declare public /*out*/ readonly deploymentDiagnosticDatas: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[]>;
     /**
      * The type of the deployment role.
      */
-    public /*out*/ readonly deploymentRole!: pulumi.Output<string>;
+    declare public /*out*/ readonly deploymentRole: pulumi.Output<string>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    public readonly deploymentType!: pulumi.Output<string>;
+    declare public readonly deploymentType: pulumi.Output<string>;
     /**
      * The URL of a resource.
      */
-    public /*out*/ readonly deploymentUrl!: pulumi.Output<string>;
+    declare public /*out*/ readonly deploymentUrl: pulumi.Output<string>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) An object's Display Name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Specifies whether the deployment is used in a production or development/testing environment.
      */
-    public readonly environmentType!: pulumi.Output<string>;
+    declare public readonly environmentType: pulumi.Output<string>;
     /**
      * The fault domain of a placement.
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    declare public readonly faultDomain: pulumi.Output<string>;
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    public readonly fqdn!: pulumi.Output<string>;
+    declare public readonly fqdn: pulumi.Output<string>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.DeploymentIngressIp[]>;
+    declare public /*out*/ readonly ingressIps: pulumi.Output<outputs.GoldenGate.DeploymentIngressIp[]>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    public readonly isAutoScalingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isAutoScalingEnabled: pulumi.Output<boolean>;
     /**
      * (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
      */
-    public readonly isByolCpuCoreCountLimitEnabled!: pulumi.Output<boolean>;
+    declare public readonly isByolCpuCoreCountLimitEnabled: pulumi.Output<boolean>;
     /**
      * True if all of the aggregate resources are working correctly.
      */
-    public /*out*/ readonly isHealthy!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isHealthy: pulumi.Output<boolean>;
     /**
      * Indicates if the resource is the the latest available version.
      */
-    public /*out*/ readonly isLatestVersion!: pulumi.Output<boolean>;
-    public readonly isLockOverride!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isLatestVersion: pulumi.Output<boolean>;
+    declare public readonly isLockOverride: pulumi.Output<boolean>;
     /**
      * (Updatable) True if this object is publicly available.
      */
-    public readonly isPublic!: pulumi.Output<boolean>;
+    declare public readonly isPublic: pulumi.Output<boolean>;
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
-    public /*out*/ readonly isStorageUtilizationLimitExceeded!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isStorageUtilizationLimitExceeded: pulumi.Output<boolean>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    declare public readonly licenseModel: pulumi.Output<string>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * Possible GGS lifecycle sub-states.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleSubState: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
      */
-    public /*out*/ readonly loadBalancerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly loadBalancerId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      */
-    public readonly loadBalancerSubnetId!: pulumi.Output<string>;
+    declare public readonly loadBalancerSubnetId: pulumi.Output<string>;
     /**
      * Locks associated with this resource.
      */
-    public readonly locks!: pulumi.Output<outputs.GoldenGate.DeploymentLock[]>;
+    declare public readonly locks: pulumi.Output<outputs.GoldenGate.DeploymentLock[]>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
-    public readonly maintenanceConfiguration!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    declare public readonly maintenanceConfiguration: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceConfiguration>;
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
-    public readonly maintenanceWindow!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow>;
+    declare public readonly maintenanceWindow: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow>;
     /**
      * Type of the next maintenance.
      */
-    public /*out*/ readonly nextMaintenanceActionType!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceActionType: pulumi.Output<string>;
     /**
      * Description of the next maintenance.
      */
-    public /*out*/ readonly nextMaintenanceDescription!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextMaintenanceDescription: pulumi.Output<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
      * (Updatable) Deployment Data for creating an OggDeployment
      */
-    public readonly oggData!: pulumi.Output<outputs.GoldenGate.DeploymentOggData>;
+    declare public readonly oggData: pulumi.Output<outputs.GoldenGate.DeploymentOggData>;
     /**
      * (Updatable) An array of local peers of deployment
      */
-    public readonly placements!: pulumi.Output<outputs.GoldenGate.DeploymentPlacement[]>;
+    declare public readonly placements: pulumi.Output<outputs.GoldenGate.DeploymentPlacement[]>;
     /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
-    public /*out*/ readonly privateIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly privateIpAddress: pulumi.Output<string>;
     /**
      * The public IP address representing the access point for the Deployment.
      */
-    public /*out*/ readonly publicIpAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicIpAddress: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    public readonly sourceDeploymentId!: pulumi.Output<string>;
-    public readonly state!: pulumi.Output<string>;
+    declare public readonly sourceDeploymentId: pulumi.Output<string>;
+    declare public readonly state: pulumi.Output<string>;
     /**
      * The amount of storage being utilized (in bytes)
      */
-    public /*out*/ readonly storageUtilizationInBytes!: pulumi.Output<string>;
+    declare public /*out*/ readonly storageUtilizationInBytes: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    declare public readonly subnetId: pulumi.Output<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
      */
-    public /*out*/ readonly timeLastBackupScheduled!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastBackupScheduled: pulumi.Output<string>;
     /**
      * The timestamp of next deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-26T20:19:29.600Z`.
      */
-    public /*out*/ readonly timeNextBackupScheduled!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeNextBackupScheduled: pulumi.Output<string>;
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOfNextMaintenance: pulumi.Output<string>;
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOggVersionSupportedUntil!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeOggVersionSupportedUntil: pulumi.Output<string>;
     /**
      * The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeRoleChanged!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeRoleChanged: pulumi.Output<string>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpgradeRequired!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpgradeRequired: pulumi.Output<string>;
 
     /**
      * Create a Deployment resource with the given unique name, arguments, and options.
@@ -271,100 +271,100 @@ export class Deployment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeploymentState | undefined;
-            resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
-            resourceInputs["backupSchedule"] = state ? state.backupSchedule : undefined;
-            resourceInputs["byolCpuCoreCountLimit"] = state ? state.byolCpuCoreCountLimit : undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["deploymentBackupId"] = state ? state.deploymentBackupId : undefined;
-            resourceInputs["deploymentDiagnosticDatas"] = state ? state.deploymentDiagnosticDatas : undefined;
-            resourceInputs["deploymentRole"] = state ? state.deploymentRole : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["deploymentUrl"] = state ? state.deploymentUrl : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["environmentType"] = state ? state.environmentType : undefined;
-            resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
-            resourceInputs["fqdn"] = state ? state.fqdn : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
-            resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
-            resourceInputs["isByolCpuCoreCountLimitEnabled"] = state ? state.isByolCpuCoreCountLimitEnabled : undefined;
-            resourceInputs["isHealthy"] = state ? state.isHealthy : undefined;
-            resourceInputs["isLatestVersion"] = state ? state.isLatestVersion : undefined;
-            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
-            resourceInputs["isPublic"] = state ? state.isPublic : undefined;
-            resourceInputs["isStorageUtilizationLimitExceeded"] = state ? state.isStorageUtilizationLimitExceeded : undefined;
-            resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
-            resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
-            resourceInputs["loadBalancerSubnetId"] = state ? state.loadBalancerSubnetId : undefined;
-            resourceInputs["locks"] = state ? state.locks : undefined;
-            resourceInputs["maintenanceConfiguration"] = state ? state.maintenanceConfiguration : undefined;
-            resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
-            resourceInputs["nextMaintenanceActionType"] = state ? state.nextMaintenanceActionType : undefined;
-            resourceInputs["nextMaintenanceDescription"] = state ? state.nextMaintenanceDescription : undefined;
-            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
-            resourceInputs["oggData"] = state ? state.oggData : undefined;
-            resourceInputs["placements"] = state ? state.placements : undefined;
-            resourceInputs["privateIpAddress"] = state ? state.privateIpAddress : undefined;
-            resourceInputs["publicIpAddress"] = state ? state.publicIpAddress : undefined;
-            resourceInputs["sourceDeploymentId"] = state ? state.sourceDeploymentId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["storageUtilizationInBytes"] = state ? state.storageUtilizationInBytes : undefined;
-            resourceInputs["subnetId"] = state ? state.subnetId : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastBackupScheduled"] = state ? state.timeLastBackupScheduled : undefined;
-            resourceInputs["timeNextBackupScheduled"] = state ? state.timeNextBackupScheduled : undefined;
-            resourceInputs["timeOfNextMaintenance"] = state ? state.timeOfNextMaintenance : undefined;
-            resourceInputs["timeOggVersionSupportedUntil"] = state ? state.timeOggVersionSupportedUntil : undefined;
-            resourceInputs["timeRoleChanged"] = state ? state.timeRoleChanged : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["timeUpgradeRequired"] = state ? state.timeUpgradeRequired : undefined;
+            resourceInputs["availabilityDomain"] = state?.availabilityDomain;
+            resourceInputs["backupSchedule"] = state?.backupSchedule;
+            resourceInputs["byolCpuCoreCountLimit"] = state?.byolCpuCoreCountLimit;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["deploymentBackupId"] = state?.deploymentBackupId;
+            resourceInputs["deploymentDiagnosticDatas"] = state?.deploymentDiagnosticDatas;
+            resourceInputs["deploymentRole"] = state?.deploymentRole;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["deploymentUrl"] = state?.deploymentUrl;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["environmentType"] = state?.environmentType;
+            resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["fqdn"] = state?.fqdn;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ingressIps"] = state?.ingressIps;
+            resourceInputs["isAutoScalingEnabled"] = state?.isAutoScalingEnabled;
+            resourceInputs["isByolCpuCoreCountLimitEnabled"] = state?.isByolCpuCoreCountLimitEnabled;
+            resourceInputs["isHealthy"] = state?.isHealthy;
+            resourceInputs["isLatestVersion"] = state?.isLatestVersion;
+            resourceInputs["isLockOverride"] = state?.isLockOverride;
+            resourceInputs["isPublic"] = state?.isPublic;
+            resourceInputs["isStorageUtilizationLimitExceeded"] = state?.isStorageUtilizationLimitExceeded;
+            resourceInputs["licenseModel"] = state?.licenseModel;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["lifecycleSubState"] = state?.lifecycleSubState;
+            resourceInputs["loadBalancerId"] = state?.loadBalancerId;
+            resourceInputs["loadBalancerSubnetId"] = state?.loadBalancerSubnetId;
+            resourceInputs["locks"] = state?.locks;
+            resourceInputs["maintenanceConfiguration"] = state?.maintenanceConfiguration;
+            resourceInputs["maintenanceWindow"] = state?.maintenanceWindow;
+            resourceInputs["nextMaintenanceActionType"] = state?.nextMaintenanceActionType;
+            resourceInputs["nextMaintenanceDescription"] = state?.nextMaintenanceDescription;
+            resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["oggData"] = state?.oggData;
+            resourceInputs["placements"] = state?.placements;
+            resourceInputs["privateIpAddress"] = state?.privateIpAddress;
+            resourceInputs["publicIpAddress"] = state?.publicIpAddress;
+            resourceInputs["sourceDeploymentId"] = state?.sourceDeploymentId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["storageUtilizationInBytes"] = state?.storageUtilizationInBytes;
+            resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastBackupScheduled"] = state?.timeLastBackupScheduled;
+            resourceInputs["timeNextBackupScheduled"] = state?.timeNextBackupScheduled;
+            resourceInputs["timeOfNextMaintenance"] = state?.timeOfNextMaintenance;
+            resourceInputs["timeOggVersionSupportedUntil"] = state?.timeOggVersionSupportedUntil;
+            resourceInputs["timeRoleChanged"] = state?.timeRoleChanged;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["timeUpgradeRequired"] = state?.timeUpgradeRequired;
         } else {
             const args = argsOrState as DeploymentArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.subnetId === undefined) && !opts.urn) {
+            if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
-            resourceInputs["backupSchedule"] = args ? args.backupSchedule : undefined;
-            resourceInputs["byolCpuCoreCountLimit"] = args ? args.byolCpuCoreCountLimit : undefined;
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["deploymentBackupId"] = args ? args.deploymentBackupId : undefined;
-            resourceInputs["deploymentType"] = args ? args.deploymentType : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["environmentType"] = args ? args.environmentType : undefined;
-            resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
-            resourceInputs["fqdn"] = args ? args.fqdn : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
-            resourceInputs["isByolCpuCoreCountLimitEnabled"] = args ? args.isByolCpuCoreCountLimitEnabled : undefined;
-            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
-            resourceInputs["isPublic"] = args ? args.isPublic : undefined;
-            resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
-            resourceInputs["loadBalancerSubnetId"] = args ? args.loadBalancerSubnetId : undefined;
-            resourceInputs["locks"] = args ? args.locks : undefined;
-            resourceInputs["maintenanceConfiguration"] = args ? args.maintenanceConfiguration : undefined;
-            resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
-            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["oggData"] = args ? args.oggData : undefined;
-            resourceInputs["placements"] = args ? args.placements : undefined;
-            resourceInputs["sourceDeploymentId"] = args ? args.sourceDeploymentId : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
+            resourceInputs["backupSchedule"] = args?.backupSchedule;
+            resourceInputs["byolCpuCoreCountLimit"] = args?.byolCpuCoreCountLimit;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["deploymentBackupId"] = args?.deploymentBackupId;
+            resourceInputs["deploymentType"] = args?.deploymentType;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["environmentType"] = args?.environmentType;
+            resourceInputs["faultDomain"] = args?.faultDomain;
+            resourceInputs["fqdn"] = args?.fqdn;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isAutoScalingEnabled"] = args?.isAutoScalingEnabled;
+            resourceInputs["isByolCpuCoreCountLimitEnabled"] = args?.isByolCpuCoreCountLimitEnabled;
+            resourceInputs["isLockOverride"] = args?.isLockOverride;
+            resourceInputs["isPublic"] = args?.isPublic;
+            resourceInputs["licenseModel"] = args?.licenseModel;
+            resourceInputs["loadBalancerSubnetId"] = args?.loadBalancerSubnetId;
+            resourceInputs["locks"] = args?.locks;
+            resourceInputs["maintenanceConfiguration"] = args?.maintenanceConfiguration;
+            resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
+            resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["oggData"] = args?.oggData;
+            resourceInputs["placements"] = args?.placements;
+            resourceInputs["sourceDeploymentId"] = args?.sourceDeploymentId;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["deploymentDiagnosticDatas"] = undefined /*out*/;
             resourceInputs["deploymentRole"] = undefined /*out*/;

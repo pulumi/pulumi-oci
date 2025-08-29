@@ -61,7 +61,7 @@ export class MaintenanceWindowsStop extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly maintenanceWindowId!: pulumi.Output<string>;
+    declare public readonly maintenanceWindowId: pulumi.Output<string>;
 
     /**
      * Create a MaintenanceWindowsStop resource with the given unique name, arguments, and options.
@@ -76,13 +76,13 @@ export class MaintenanceWindowsStop extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaintenanceWindowsStopState | undefined;
-            resourceInputs["maintenanceWindowId"] = state ? state.maintenanceWindowId : undefined;
+            resourceInputs["maintenanceWindowId"] = state?.maintenanceWindowId;
         } else {
             const args = argsOrState as MaintenanceWindowsStopArgs | undefined;
-            if ((!args || args.maintenanceWindowId === undefined) && !opts.urn) {
+            if (args?.maintenanceWindowId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maintenanceWindowId'");
             }
-            resourceInputs["maintenanceWindowId"] = args ? args.maintenanceWindowId : undefined;
+            resourceInputs["maintenanceWindowId"] = args?.maintenanceWindowId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaintenanceWindowsStop.__pulumiType, name, resourceInputs, opts);

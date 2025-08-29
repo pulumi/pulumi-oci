@@ -50,67 +50,67 @@ export class MigrationPlan extends pulumi.CustomResource {
     /**
      * Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
      */
-    public /*out*/ readonly calculatedLimits!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly calculatedLimits: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Compartment identifier
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Migration plan identifier
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
      * The OCID of the associated migration.
      */
-    public readonly migrationId!: pulumi.Output<string>;
+    declare public readonly migrationId: pulumi.Output<string>;
     /**
      * Status of the migration plan.
      */
-    public /*out*/ readonly migrationPlanStats!: pulumi.Output<outputs.CloudMigrations.MigrationPlanMigrationPlanStat[]>;
+    declare public /*out*/ readonly migrationPlanStats: pulumi.Output<outputs.CloudMigrations.MigrationPlanMigrationPlanStat[]>;
     /**
      * OCID of the referenced ORM job.
      */
-    public /*out*/ readonly referenceToRmsStack!: pulumi.Output<string>;
+    declare public /*out*/ readonly referenceToRmsStack: pulumi.Output<string>;
     /**
      * Source migraiton plan ID to be cloned.
      */
-    public readonly sourceMigrationPlanId!: pulumi.Output<string>;
+    declare public readonly sourceMigrationPlanId: pulumi.Output<string>;
     /**
      * The current state of the migration plan.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) List of strategies for the resources to be migrated.
      */
-    public readonly strategies!: pulumi.Output<outputs.CloudMigrations.MigrationPlanStrategy[]>;
+    declare public readonly strategies: pulumi.Output<outputs.CloudMigrations.MigrationPlanStrategy[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) List of target environments.
      */
-    public readonly targetEnvironments!: pulumi.Output<outputs.CloudMigrations.MigrationPlanTargetEnvironment[]>;
+    declare public readonly targetEnvironments: pulumi.Output<outputs.CloudMigrations.MigrationPlanTargetEnvironment[]>;
     /**
      * The time when the migration plan was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time when the migration plan was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a MigrationPlan resource with the given unique name, arguments, and options.
@@ -125,41 +125,41 @@ export class MigrationPlan extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MigrationPlanState | undefined;
-            resourceInputs["calculatedLimits"] = state ? state.calculatedLimits : undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["migrationId"] = state ? state.migrationId : undefined;
-            resourceInputs["migrationPlanStats"] = state ? state.migrationPlanStats : undefined;
-            resourceInputs["referenceToRmsStack"] = state ? state.referenceToRmsStack : undefined;
-            resourceInputs["sourceMigrationPlanId"] = state ? state.sourceMigrationPlanId : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["strategies"] = state ? state.strategies : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["targetEnvironments"] = state ? state.targetEnvironments : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["calculatedLimits"] = state?.calculatedLimits;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["migrationId"] = state?.migrationId;
+            resourceInputs["migrationPlanStats"] = state?.migrationPlanStats;
+            resourceInputs["referenceToRmsStack"] = state?.referenceToRmsStack;
+            resourceInputs["sourceMigrationPlanId"] = state?.sourceMigrationPlanId;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["strategies"] = state?.strategies;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetEnvironments"] = state?.targetEnvironments;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as MigrationPlanArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.migrationId === undefined) && !opts.urn) {
+            if (args?.migrationId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'migrationId'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["migrationId"] = args ? args.migrationId : undefined;
-            resourceInputs["sourceMigrationPlanId"] = args ? args.sourceMigrationPlanId : undefined;
-            resourceInputs["strategies"] = args ? args.strategies : undefined;
-            resourceInputs["targetEnvironments"] = args ? args.targetEnvironments : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["migrationId"] = args?.migrationId;
+            resourceInputs["sourceMigrationPlanId"] = args?.sourceMigrationPlanId;
+            resourceInputs["strategies"] = args?.strategies;
+            resourceInputs["targetEnvironments"] = args?.targetEnvironments;
             resourceInputs["calculatedLimits"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["migrationPlanStats"] = undefined /*out*/;

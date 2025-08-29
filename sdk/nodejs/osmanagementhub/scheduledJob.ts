@@ -117,55 +117,55 @@ export class ScheduledJob extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * Indicates whether this scheduled job is managed by the Autonomous Linux service.
      */
-    public readonly isManagedByAutonomousLinux!: pulumi.Output<boolean>;
+    declare public readonly isManagedByAutonomousLinux: pulumi.Output<boolean>;
     /**
      * Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
      */
-    public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isRestricted: pulumi.Output<boolean>;
     /**
      * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
      */
-    public readonly isSubcompartmentIncluded!: pulumi.Output<boolean>;
+    declare public readonly isSubcompartmentIncluded: pulumi.Output<boolean>;
     /**
      * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds.
      */
-    public readonly lifecycleStageIds!: pulumi.Output<string[]>;
+    declare public readonly lifecycleStageIds: pulumi.Output<string[]>;
     /**
      * The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
      */
-    public readonly locations!: pulumi.Output<string[]>;
+    declare public readonly locations: pulumi.Output<string[]>;
     /**
      * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
      */
-    public readonly managedCompartmentIds!: pulumi.Output<string[]>;
+    declare public readonly managedCompartmentIds: pulumi.Output<string[]>;
     /**
      * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds.
      */
-    public readonly managedInstanceGroupIds!: pulumi.Output<string[]>;
+    declare public readonly managedInstanceGroupIds: pulumi.Output<string[]>;
     /**
      * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
      */
-    public readonly managedInstanceIds!: pulumi.Output<string[]>;
+    declare public readonly managedInstanceIds: pulumi.Output<string[]>;
     /**
      * (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
      * * UPDATE_PACKAGES
@@ -177,43 +177,43 @@ export class ScheduledJob extends pulumi.CustomResource {
      * * UPDATE_KSPLICE_USERSPACE
      * * UPDATE_KSPLICE_KERNEL
      */
-    public readonly operations!: pulumi.Output<outputs.OsManagementHub.ScheduledJobOperation[]>;
+    declare public readonly operations: pulumi.Output<outputs.OsManagementHub.ScheduledJobOperation[]>;
     /**
      * (Updatable) The frequency schedule for a recurring scheduled job.
      */
-    public readonly recurringRule!: pulumi.Output<string>;
+    declare public readonly recurringRule: pulumi.Output<string>;
     /**
      * (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
      */
-    public readonly retryIntervals!: pulumi.Output<number[]>;
+    declare public readonly retryIntervals: pulumi.Output<number[]>;
     /**
      * (Updatable) The type of scheduling frequency for the scheduled job.
      */
-    public readonly scheduleType!: pulumi.Output<string>;
+    declare public readonly scheduleType: pulumi.Output<string>;
     /**
      * The current state of the scheduled job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeLastExecution!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeLastExecution: pulumi.Output<string>;
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public readonly timeNextExecution!: pulumi.Output<string>;
+    declare public readonly timeNextExecution: pulumi.Output<string>;
     /**
      * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
      *
@@ -221,11 +221,11 @@ export class ScheduledJob extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly workRequestId!: pulumi.Output<string>;
+    declare public readonly workRequestId: pulumi.Output<string>;
     /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      */
-    public /*out*/ readonly workRequestIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly workRequestIds: pulumi.Output<string[]>;
 
     /**
      * Create a ScheduledJob resource with the given unique name, arguments, and options.
@@ -240,63 +240,63 @@ export class ScheduledJob extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScheduledJobState | undefined;
-            resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
-            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
-            resourceInputs["isManagedByAutonomousLinux"] = state ? state.isManagedByAutonomousLinux : undefined;
-            resourceInputs["isRestricted"] = state ? state.isRestricted : undefined;
-            resourceInputs["isSubcompartmentIncluded"] = state ? state.isSubcompartmentIncluded : undefined;
-            resourceInputs["lifecycleStageIds"] = state ? state.lifecycleStageIds : undefined;
-            resourceInputs["locations"] = state ? state.locations : undefined;
-            resourceInputs["managedCompartmentIds"] = state ? state.managedCompartmentIds : undefined;
-            resourceInputs["managedInstanceGroupIds"] = state ? state.managedInstanceGroupIds : undefined;
-            resourceInputs["managedInstanceIds"] = state ? state.managedInstanceIds : undefined;
-            resourceInputs["operations"] = state ? state.operations : undefined;
-            resourceInputs["recurringRule"] = state ? state.recurringRule : undefined;
-            resourceInputs["retryIntervals"] = state ? state.retryIntervals : undefined;
-            resourceInputs["scheduleType"] = state ? state.scheduleType : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
-            resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
-            resourceInputs["timeLastExecution"] = state ? state.timeLastExecution : undefined;
-            resourceInputs["timeNextExecution"] = state ? state.timeNextExecution : undefined;
-            resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
-            resourceInputs["workRequestId"] = state ? state.workRequestId : undefined;
-            resourceInputs["workRequestIds"] = state ? state.workRequestIds : undefined;
+            resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isManagedByAutonomousLinux"] = state?.isManagedByAutonomousLinux;
+            resourceInputs["isRestricted"] = state?.isRestricted;
+            resourceInputs["isSubcompartmentIncluded"] = state?.isSubcompartmentIncluded;
+            resourceInputs["lifecycleStageIds"] = state?.lifecycleStageIds;
+            resourceInputs["locations"] = state?.locations;
+            resourceInputs["managedCompartmentIds"] = state?.managedCompartmentIds;
+            resourceInputs["managedInstanceGroupIds"] = state?.managedInstanceGroupIds;
+            resourceInputs["managedInstanceIds"] = state?.managedInstanceIds;
+            resourceInputs["operations"] = state?.operations;
+            resourceInputs["recurringRule"] = state?.recurringRule;
+            resourceInputs["retryIntervals"] = state?.retryIntervals;
+            resourceInputs["scheduleType"] = state?.scheduleType;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeLastExecution"] = state?.timeLastExecution;
+            resourceInputs["timeNextExecution"] = state?.timeNextExecution;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["workRequestId"] = state?.workRequestId;
+            resourceInputs["workRequestIds"] = state?.workRequestIds;
         } else {
             const args = argsOrState as ScheduledJobArgs | undefined;
-            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+            if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.operations === undefined) && !opts.urn) {
+            if (args?.operations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operations'");
             }
-            if ((!args || args.scheduleType === undefined) && !opts.urn) {
+            if (args?.scheduleType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'scheduleType'");
             }
-            if ((!args || args.timeNextExecution === undefined) && !opts.urn) {
+            if (args?.timeNextExecution === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeNextExecution'");
             }
-            resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
-            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["isManagedByAutonomousLinux"] = args ? args.isManagedByAutonomousLinux : undefined;
-            resourceInputs["isSubcompartmentIncluded"] = args ? args.isSubcompartmentIncluded : undefined;
-            resourceInputs["lifecycleStageIds"] = args ? args.lifecycleStageIds : undefined;
-            resourceInputs["locations"] = args ? args.locations : undefined;
-            resourceInputs["managedCompartmentIds"] = args ? args.managedCompartmentIds : undefined;
-            resourceInputs["managedInstanceGroupIds"] = args ? args.managedInstanceGroupIds : undefined;
-            resourceInputs["managedInstanceIds"] = args ? args.managedInstanceIds : undefined;
-            resourceInputs["operations"] = args ? args.operations : undefined;
-            resourceInputs["recurringRule"] = args ? args.recurringRule : undefined;
-            resourceInputs["retryIntervals"] = args ? args.retryIntervals : undefined;
-            resourceInputs["scheduleType"] = args ? args.scheduleType : undefined;
-            resourceInputs["timeNextExecution"] = args ? args.timeNextExecution : undefined;
-            resourceInputs["workRequestId"] = args ? args.workRequestId : undefined;
+            resourceInputs["compartmentId"] = args?.compartmentId;
+            resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isManagedByAutonomousLinux"] = args?.isManagedByAutonomousLinux;
+            resourceInputs["isSubcompartmentIncluded"] = args?.isSubcompartmentIncluded;
+            resourceInputs["lifecycleStageIds"] = args?.lifecycleStageIds;
+            resourceInputs["locations"] = args?.locations;
+            resourceInputs["managedCompartmentIds"] = args?.managedCompartmentIds;
+            resourceInputs["managedInstanceGroupIds"] = args?.managedInstanceGroupIds;
+            resourceInputs["managedInstanceIds"] = args?.managedInstanceIds;
+            resourceInputs["operations"] = args?.operations;
+            resourceInputs["recurringRule"] = args?.recurringRule;
+            resourceInputs["retryIntervals"] = args?.retryIntervals;
+            resourceInputs["scheduleType"] = args?.scheduleType;
+            resourceInputs["timeNextExecution"] = args?.timeNextExecution;
+            resourceInputs["workRequestId"] = args?.workRequestId;
             resourceInputs["isRestricted"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
